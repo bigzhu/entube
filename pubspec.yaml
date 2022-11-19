@@ -44,6 +44,8 @@ dependencies:
   shimmer: ^2.0.0
   nhost_flutter_graphql: ^2.1.0
   graphql_flutter: ^5.0.0
+  app_links: ^3.3.0
+  url_launcher: ^6.1.6
 
 dev_dependencies:
   flutter_test:

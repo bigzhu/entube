@@ -1,51 +1,122 @@
+/// This example demonstrates the ability to sign in using an OAuth 2.0
+/// provider, on Android and iOS.
+///
+/// This example depends on the `url_launcher` and `app_links` packages
+/// (https://pub.dev/packages/flutter_appauth), and requires that you set up a
+/// GitHub OAuth application.
+///
+/// Then, in your Nhost project's "Sign-In" settings, set:
+///
+/// Success redirect URL: `nhost-example://oauth.login.success`.
+/// Failure redirect URL: `nhost-example://oauth.login.failure`.
+library oauth_providers_example;
+
+import 'package:app_links/app_links.dart';
 import 'package:flutter/material.dart';
-import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:nhost_flutter_auth/nhost_flutter_auth.dart';
+import 'package:url_launcher/url_launcher.dart' as url_launcher;
 
-import 'package:entube/components/Home.dart';
+import 'config.dart';
+import 'simple_auth_example.dart';
 
-//import './article_items_page.dart';
-//import './acquiring_words_page.dart';
-//import '../components/PageRoute/provider.dart';
-//import './settings.dart';
+/// Fill in this value with the backend URL found on your Nhost project page.
+const nhostGithubSignInUrl = '$nhostUrl/v1/auth/providers/github/';
+
+const signInSuccessHost = 'oauth.login.success';
+const signInFailureHost = 'oauth.login.failure';
 
 void main() async {
-  runApp(const MyApp());
+  runApp(OAuthExample());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class OAuthExample extends StatefulWidget {
+  @override
+  _OAuthExampleState createState() => _OAuthExampleState();
+}
 
-  // This widget is the root of your application.
+class _OAuthExampleState extends State<OAuthExample> {
+  late NhostClient nhostClient;
+  late AppLinks appLinks;
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Create a new Nhost client using your project's backend URL.
+    nhostClient = NhostClient(backendUrl: nhostUrl);
+
+    appLinks = AppLinks(
+      onAppLink: (uri, stringUri) async {
+        if (uri.host == signInSuccessHost) {
+          // ignore: unawaited_futures
+          nhostClient.auth.completeOAuthProviderSignIn(uri);
+        }
+        await url_launcher.closeWebView();
+      },
+    );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    nhostClient.close();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'English Tube',
-      // The Mandy red, light theme.
-      theme: FlexThemeData.light(scheme: FlexScheme.mandyRed),
-      // The Mandy red, dark theme.
-      darkTheme: FlexThemeData.dark(scheme: FlexScheme.mandyRed),
-      // Use dark or light theme based on system setting.
-      themeMode: ThemeMode.system,
-      home: const HomeLayout(),
+    return NhostAuthProvider(
+      auth: nhostClient.auth,
+      child: MaterialApp(
+        title: 'Nhost.io OAuth Example',
+        home: Scaffold(
+          body: SafeArea(
+            child: ExampleProtectedScreen(),
+          ),
+        ),
+      ),
     );
   }
 }
 
-class HomeLayout extends HookConsumerWidget {
-  const HomeLayout({super.key});
-
+class ExampleProtectedScreen extends StatelessWidget {
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-        body: PageView(
-      physics: const NeverScrollableScrollPhysics(),
-      children: const [
-        Home(),
-        //AcquiringWordsPage(),
-        //SettingsPage(),
-      ],
-      //controller: ref.read(pageControllerProvider),
-    ));
+  Widget build(BuildContext context) {
+    // NhostAuthProvider.of will register this widget so that it rebuilds
+    // whenever the user's authentication state changes.
+    final auth = NhostAuthProvider.of(context)!;
+    Widget widget;
+
+    switch (auth.authenticationState) {
+      case AuthenticationState.signedIn:
+        widget = LoggedInUserDetails();
+        break;
+      default:
+        widget = ProviderSignInForm();
+        break;
+    }
+
+    return Padding(
+      padding: EdgeInsets.all(32),
+      child: widget,
+    );
+  }
+}
+
+class ProviderSignInForm extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () async {
+        try {
+          await url_launcher.launch(
+            nhostGithubSignInUrl,
+            forceSafariVC: true,
+          );
+        } on Exception {
+          // Exceptions can occur due to weirdness with redirects
+        }
+      },
+      child: Text('Authenticate with GitHub'),
+    );
   }
 }

@@ -5,7 +5,7 @@ import 'package:nhost_sdk/nhost_sdk.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 final nhostClientP = Provider<NhostClient>((ref) {
-  return NhostClient(backendUrl: 'https://backend-5e69d1d7.nhost.app');
+  return NhostClient(backendUrl: 'https://jysijxgffjwavdtqcuir.nhost.run');
 });
 
 final gqlClientP = Provider<GraphQLClient>((ref) {
