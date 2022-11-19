@@ -1,7 +1,7 @@
 //const String configTitle = 'Acquire English By YouTube';
 const String configTitle = 'English Tube';
 const String configDefaultAvatar = 'assets/pngs/icon.png';
-const String configTransparent = 'assets/res/transparent_icon.png';
+const String configTransparent = 'assets/pngs/transparent_icon.png';
 const String square = 'assets/res/square.png';
 const Map<Symbol, dynamic> configSupabase = {
   Symbol('url'): 'https://pjmzfgpgsbhoxhsgqiqy.supabase.co',
