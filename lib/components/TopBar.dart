@@ -11,7 +11,6 @@ class TopBar extends HookConsumerWidget implements PreferredSizeWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     String avatar = '';
     return AppBar(
-      backgroundColor: Colors.black.withOpacity(0.8),
       leading: UserAvatar(avatar: avatar),
       title: const Text(configTitle),
       actions: [
