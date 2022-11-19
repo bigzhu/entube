@@ -6,7 +6,7 @@ import 'package:entube/configs.dart';
 class TopBar extends HookConsumerWidget implements PreferredSizeWidget {
   const TopBar({super.key});
   @override
-  Size get preferredSize => const Size.fromHeight(100);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     String avatar = '';
