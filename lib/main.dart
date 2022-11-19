@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'package:entube/components/Articles.dart';
+import 'package:entube/components/Home.dart';
 //import './article_items_page.dart';
 //import './acquiring_words_page.dart';
 //import '../components/PageRoute/provider.dart';
@@ -26,13 +26,13 @@ class MyApp extends StatelessWidget {
       darkTheme: FlexThemeData.dark(scheme: FlexScheme.mandyRed),
       // Use dark or light theme based on system setting.
       themeMode: ThemeMode.system,
-      home: const Home(),
+      home: const HomeLayout(),
     );
   }
 }
 
-class Home extends HookConsumerWidget {
-  const Home({super.key});
+class HomeLayout extends HookConsumerWidget {
+  const HomeLayout({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -40,7 +40,7 @@ class Home extends HookConsumerWidget {
         body: PageView(
       physics: const NeverScrollableScrollPhysics(),
       children: const [
-        Articles(),
+        Home(),
         //AcquiringWordsPage(),
         //SettingsPage(),
       ],
