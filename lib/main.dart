@@ -6,11 +6,14 @@ import 'package:app_links/app_links.dart';
 import 'package:url_launcher/url_launcher.dart' as url_launcher;
 
 import 'package:entube/components/Home.dart';
+import './state.dart';
+
 //import './article_items_page.dart';
 //import './acquiring_words_page.dart';
 //import '../components/PageRoute/provider.dart';
 //import './settings.dart';
-
+const signInSuccessHost = 'oauth.login.success';
+const signInFailureHost = 'oauth.login.failure';
 void main() {
   runApp(const MyApp());
 }
@@ -40,13 +43,13 @@ class HomeLayout extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     AppLinks appLinks = AppLinks();
+    final nhostClient = ref.watch(nhostClientP);
     useEffect(
       () {
         final linkSubscription = appLinks.uriLinkStream.listen((uri) {
-          //if (uri.host == signInSuccessHost) {
-          //  // ignore: unawaited_futures
-          //  nhostClient.auth.completeOAuthProviderSignIn(uri);
-          //}
+          if (uri.host == signInSuccessHost) {
+            nhostClient.auth.completeOAuthProviderSignIn(uri);
+          }
           url_launcher.closeInAppWebView();
         });
         return () {
