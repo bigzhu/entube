@@ -19,7 +19,7 @@ class Home extends HookConsumerWidget {
     return Scaffold(
       appBar: TopBar(),
       //body: ArticleItems(),
-      body: Query(),
+      body: Container(),
       bottomNavigationBar: BottomBar(),
     );
   }

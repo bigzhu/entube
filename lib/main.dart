@@ -15,7 +15,7 @@ import './state.dart';
 const signInSuccessHost = 'oauth.login.success';
 const signInFailureHost = 'oauth.login.failure';
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
