@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'package:entube/components/Articles.dart';
 //import './article_items_page.dart';
 //import './acquiring_words_page.dart';
 //import '../components/PageRoute/provider.dart';
@@ -38,8 +39,8 @@ class Home extends HookConsumerWidget {
     return Scaffold(
         body: PageView(
       physics: const NeverScrollableScrollPhysics(),
-      children: [
-        AritcleItemsPage(),
+      children: const [
+        Articles(),
         //AcquiringWordsPage(),
         //SettingsPage(),
       ],
