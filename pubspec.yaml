@@ -39,6 +39,7 @@ dependencies:
   nhost_sdk: ^3.0.4
   flex_color_scheme: ^6.0.1
   hooks_riverpod: ^2.1.1
+  cached_network_image: ^3.2.2
 
 dev_dependencies:
   flutter_test:
