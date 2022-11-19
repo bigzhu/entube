@@ -12,14 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'English Tube',
       // The Mandy red, light theme.
       theme: FlexThemeData.light(scheme: FlexScheme.mandyRed),
       // The Mandy red, dark theme.
       darkTheme: FlexThemeData.dark(scheme: FlexScheme.mandyRed),
       // Use dark or light theme based on system setting.
       themeMode: ThemeMode.system,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'English Tube Home Page'),
     );
   }
 }
