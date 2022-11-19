@@ -4,8 +4,19 @@ import 'package:nhost_flutter_graphql/nhost_flutter_graphql.dart';
 import 'package:nhost_sdk/nhost_sdk.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
+final backendUrlP = Provider<String>((ref) {
+  return 'https://jysijxgffjwavdtqcuir.nhost.run';
+});
+
 final nhostClientP = Provider<NhostClient>((ref) {
-  return NhostClient(backendUrl: 'https://jysijxgffjwavdtqcuir.nhost.run');
+  final backendUrl = ref.watch(backendUrlP);
+  return NhostClient(backendUrl: backendUrl);
+});
+
+final nhostGithubSignInUrlP = Provider<String>((ref) {
+  final backendUrl = ref.watch(backendUrlP);
+  //return "$backendUrl/v1/auth/providers/github/";
+  return "$backendUrl/v1/auth/signin/provider/github/";
 });
 
 final gqlClientP = Provider<GraphQLClient>((ref) {
