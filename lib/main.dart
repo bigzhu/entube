@@ -3,12 +3,13 @@ import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:entube/components/Home.dart';
+
 //import './article_items_page.dart';
 //import './acquiring_words_page.dart';
 //import '../components/PageRoute/provider.dart';
 //import './settings.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 

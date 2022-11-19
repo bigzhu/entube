@@ -42,6 +42,8 @@ dependencies:
   cached_network_image: ^3.2.2
   scrollable_positioned_list: ^0.3.5
   shimmer: ^2.0.0
+  nhost_flutter_graphql: ^2.1.0
+  graphql_flutter: ^5.0.0
 
 dev_dependencies:
   flutter_test:

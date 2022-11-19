@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
 //import 'package:AcquireEnglish/components/ArticleItems/index.dart';
 //import 'package:AcquireEnglish/components/PageRoute/index.dart';
 //import '../configs.dart';
@@ -18,7 +19,7 @@ class Home extends HookConsumerWidget {
     return Scaffold(
       appBar: TopBar(),
       //body: ArticleItems(),
-      body: Container(),
+      body: Query(),
       bottomNavigationBar: BottomBar(),
     );
   }
