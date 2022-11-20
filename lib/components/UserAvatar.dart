@@ -1,6 +1,6 @@
+import 'package:entube/components/Avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:entube/components/Avatar.dart';
 
 class UserAvatar extends ConsumerWidget {
   const UserAvatar({

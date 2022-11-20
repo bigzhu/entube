@@ -1,14 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:app_links/app_links.dart';
-import 'package:url_launcher/url_launcher.dart' as url_launcher;
-import 'package:nhost_flutter_auth/nhost_flutter_auth.dart';
-
-import 'package:entube/components/Home.dart';
-import './state.dart';
 import 'package:entube/components/Auth/index.dart';
+import 'package:flex_color_scheme/flex_color_scheme.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:nhost_flutter_auth/nhost_flutter_auth.dart';
+import 'package:url_launcher/url_launcher.dart' as url_launcher;
 
 //import './article_items_page.dart';
 //import './acquiring_words_page.dart';
@@ -111,93 +108,3 @@ class ExampleProtectedScreen extends HookConsumerWidget {
     );
   }
 }
-
-class ProviderSignInForm extends HookConsumerWidget {
-  const ProviderSignInForm({super.key});
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final nhostGithubSignInUrl = ref.watch(nhostGithubSignInUrlP);
-    final nhostGoogleSignInUrl = ref.watch(nhostGoogleSignInUrlP);
-    return Column(children: [
-      TextButton(
-        onPressed: () async {
-          try {
-            await url_launcher.launch(
-              nhostGithubSignInUrl,
-              forceSafariVC: true,
-            );
-          } on Exception {
-            // Exceptions can occur due to weirdness with redirects
-          }
-        },
-        child: const Text('Authenticate with GitHub'),
-      ),
-      TextButton(
-        onPressed: () async {
-          try {
-            await url_launcher.launch(
-              nhostGoogleSignInUrl,
-              forceSafariVC: true,
-            );
-          } on Exception {
-            // Exceptions can occur due to weirdness with redirects
-          }
-        },
-        child: const Text('Authenticate with Google'),
-      )
-    ]);
-  }
-}
-
-class LoggedInUserDetails extends HookConsumerWidget {
-  const LoggedInUserDetails({super.key});
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final auth = ref.watch(authP);
-
-    final textTheme = Theme.of(context).textTheme;
-    const cellPadding = EdgeInsets.all(4);
-    final currentUser = auth.currentUser!;
-    return Center(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Welcome ${currentUser.email}!',
-            style: textTheme.headline5,
-          ),
-          rowSpacing,
-          Text('User details:', style: textTheme.caption),
-          rowSpacing,
-          Table(
-            defaultColumnWidth: IntrinsicColumnWidth(),
-            children: [
-              for (final row in currentUser.toJson().entries)
-                TableRow(
-                  children: [
-                    Padding(
-                      padding: cellPadding.copyWith(right: 12),
-                      child: Text(row.key),
-                    ),
-                    Padding(
-                      padding: cellPadding,
-                      child: Text('${row.value}'),
-                    ),
-                  ],
-                )
-            ],
-          ),
-          rowSpacing,
-          ElevatedButton(
-            onPressed: () {
-              ref.read(authSNP.notifier).logout();
-            },
-            child: const Text('Logout'),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-const rowSpacing = SizedBox(height: 12);
