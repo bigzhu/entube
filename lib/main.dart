@@ -43,12 +43,11 @@ class HomeLayout extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     AppLinks appLinks = AppLinks();
-    final nhostClient = ref.watch(nhostClientP);
     useEffect(
       () {
         final linkSubscription = appLinks.uriLinkStream.listen((uri) {
           if (uri.host == signInSuccessHost) {
-            ref.read(refreshTokenUriSP.notifier).state = uri;
+            ref.read(authSNP.notifier).completeOAuth(uri);
             //nhostClient.auth.completeOAuthProviderSignIn(uri).then((_) {
             //  ref.read(authenticationStateSP.notifier).state =
             //      nhostClient.auth.authenticationState;
@@ -95,27 +94,23 @@ class ExampleProtectedScreen extends HookConsumerWidget {
     // whenever the user's authentication state changes.
     // final authenticationState = ref.watch(authenticationStateSP);
 
-    AsyncValue<void> oauthResult = ref.watch(completeOAuthFP);
-    return oauthResult.when(
-      loading: () => const CircularProgressIndicator(),
-      error: (err, stack) => Text('Error: $err'),
-      data: (config) {
-        final auth = ref.watch(authP);
-        Widget widget;
-        switch (auth.authenticationState) {
-          case AuthenticationState.signedIn:
-            widget = const LoggedInUserDetails();
-            break;
-          default:
-            widget = const ProviderSignInForm();
-            break;
-        }
+    final authenticationState = ref.watch(authSNP);
+    Widget widget;
+    switch (authenticationState) {
+      case AuthenticationState.signedIn:
+        widget = const LoggedInUserDetails();
+        break;
+      case AuthenticationState.inProgress:
+        widget = const CircularProgressIndicator();
+        break;
+      default:
+        widget = const ProviderSignInForm();
+        break;
+    }
 
-        return Padding(
-          padding: EdgeInsets.all(32),
-          child: widget,
-        );
-      },
+    return Padding(
+      padding: EdgeInsets.all(32),
+      child: widget,
     );
   }
 }
@@ -162,11 +157,10 @@ class LoggedInUserDetails extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final auth = ref.watch(authP);
-    final currentUser = auth.currentUser!;
 
     final textTheme = Theme.of(context).textTheme;
     const cellPadding = EdgeInsets.all(4);
-
+    final currentUser = auth.currentUser!;
     return Center(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -199,9 +193,9 @@ class LoggedInUserDetails extends HookConsumerWidget {
           rowSpacing,
           ElevatedButton(
             onPressed: () {
-              auth.signOut();
+              ref.read(authSNP.notifier).logout();
             },
-            child: Text('Logout'),
+            child: const Text('Logout'),
           ),
         ],
       ),

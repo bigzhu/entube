@@ -34,13 +34,27 @@ final authP = Provider<AuthClient>((ref) {
   return ref.watch(nhostClientP).auth;
 });
 
-final refreshTokenUriSP = StateProvider<Uri?>((ref) {
-  return null;
-});
+class AuthStateNotifier extends StateNotifier<AuthenticationState> {
+  AuthStateNotifier(this.ref) : super(ref.watch(authP).authenticationState) {
+    auth = ref.watch(authP);
+  }
+  final Ref ref;
+  late AuthClient auth;
 
-final completeOAuthFP = FutureProvider<void>((ref) async {
-  final nhostClient = ref.watch(nhostClientP);
-  final uri = ref.watch(refreshTokenUriSP);
-  if (uri == null) return;
-  return nhostClient.auth.completeOAuthProviderSignIn(uri);
+  Future<void> completeOAuth(Uri uri) async {
+    state = AuthenticationState.inProgress;
+    await auth.completeOAuthProviderSignIn(uri);
+    state = auth.authenticationState;
+  }
+
+  Future<void> logout() async {
+    state = AuthenticationState.inProgress;
+    await auth.signOut();
+    state = auth.authenticationState;
+  }
+}
+
+final authSNP =
+    StateNotifierProvider<AuthStateNotifier, AuthenticationState>((ref) {
+  return AuthStateNotifier(ref);
 });
