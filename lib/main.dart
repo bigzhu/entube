@@ -48,7 +48,10 @@ class HomeLayout extends HookConsumerWidget {
       () {
         final linkSubscription = appLinks.uriLinkStream.listen((uri) {
           if (uri.host == signInSuccessHost) {
-            nhostClient.auth.completeOAuthProviderSignIn(uri);
+            nhostClient.auth.completeOAuthProviderSignIn(uri).then((_) {
+              ref.read(authenticationStateSP.notifier).state =
+                  nhostClient.auth.authenticationState;
+            });
           }
           url_launcher.closeInAppWebView();
         });
@@ -59,14 +62,11 @@ class HomeLayout extends HookConsumerWidget {
       [appLinks],
     );
 
-    return NhostAuthProvider(
-      auth: nhostClient.auth,
-      child: const MaterialApp(
-        title: 'Nhost.io OAuth Example',
-        home: Scaffold(
-          body: SafeArea(
-            child: ExampleProtectedScreen(),
-          ),
+    return const MaterialApp(
+      title: 'Nhost.io OAuth Example',
+      home: Scaffold(
+        body: SafeArea(
+          child: ExampleProtectedScreen(),
         ),
       ),
     );
@@ -86,18 +86,17 @@ class HomeLayout extends HookConsumerWidget {
   }
 }
 
-class ExampleProtectedScreen extends StatelessWidget {
+class ExampleProtectedScreen extends HookConsumerWidget {
   const ExampleProtectedScreen({super.key});
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     // NhostAuthProvider.of will register this widget so that it rebuilds
     // whenever the user's authentication state changes.
-    final auth = NhostAuthProvider.of(context)!;
+    final authenticationState = ref.watch(authenticationStateSP);
     Widget widget;
-    print(auth.authenticationState);
-    switch (auth.authenticationState) {
+    switch (authenticationState) {
       case AuthenticationState.signedIn:
-        widget = LoggedInUserDetails();
+        widget = const LoggedInUserDetails();
         break;
       default:
         widget = const ProviderSignInForm();
@@ -132,10 +131,11 @@ class ProviderSignInForm extends HookConsumerWidget {
   }
 }
 
-class LoggedInUserDetails extends StatelessWidget {
+class LoggedInUserDetails extends HookConsumerWidget {
+  const LoggedInUserDetails({super.key});
   @override
-  Widget build(BuildContext context) {
-    final auth = NhostAuthProvider.of(context)!;
+  Widget build(BuildContext context, WidgetRef ref) {
+    final auth = ref.watch(authP);
     final currentUser = auth.currentUser!;
 
     final textTheme = Theme.of(context).textTheme;

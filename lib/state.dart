@@ -26,3 +26,11 @@ final gqlClientP = Provider<GraphQLClient>((ref) {
     cache: GraphQLCache(),
   );
 });
+
+final authP = Provider<AuthClient>((ref) {
+  return ref.watch(nhostClientP).auth;
+});
+
+final authenticationStateSP = StateProvider<AuthenticationState>((ref) {
+  return ref.watch(nhostClientP).auth.authenticationState;
+});
