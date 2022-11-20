@@ -22,7 +22,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -49,12 +48,7 @@ class HomeLayout extends HookConsumerWidget {
       () {
         final linkSubscription = appLinks.uriLinkStream.listen((uri) {
           if (uri.host == signInSuccessHost) {
-            nhostClient.auth.completeOAuthProviderSignIn(uri).then((value) {
-              print('bigzhu');
-              print(nhostClient.auth.authenticationState);
-            }).onError((error, stackTrace) {
-              print(error);
-            });
+            nhostClient.auth.completeOAuthProviderSignIn(uri);
           }
           url_launcher.closeInAppWebView();
         });
