@@ -15,8 +15,11 @@ final nhostClientP = Provider<NhostClient>((ref) {
 
 final nhostGithubSignInUrlP = Provider<String>((ref) {
   final backendUrl = ref.watch(backendUrlP);
-  //return "$backendUrl/v1/auth/providers/github/";
   return "$backendUrl/v1/auth/signin/provider/github/";
+});
+final nhostGoogleSignInUrlP = Provider<String>((ref) {
+  final backendUrl = ref.watch(backendUrlP);
+  return "$backendUrl/v1/auth/signin/provider/google/";
 });
 
 final gqlClientP = Provider<GraphQLClient>((ref) {

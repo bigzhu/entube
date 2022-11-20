@@ -115,19 +115,35 @@ class ProviderSignInForm extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final nhostGithubSignInUrl = ref.watch(nhostGithubSignInUrlP);
-    return TextButton(
-      onPressed: () async {
-        try {
-          await url_launcher.launch(
-            nhostGithubSignInUrl,
-            forceSafariVC: true,
-          );
-        } on Exception {
-          // Exceptions can occur due to weirdness with redirects
-        }
-      },
-      child: const Text('Authenticate with GitHub'),
-    );
+    final nhostGoogleSignInUrl = ref.watch(nhostGoogleSignInUrlP);
+    return Column(children: [
+      TextButton(
+        onPressed: () async {
+          try {
+            await url_launcher.launch(
+              nhostGithubSignInUrl,
+              forceSafariVC: true,
+            );
+          } on Exception {
+            // Exceptions can occur due to weirdness with redirects
+          }
+        },
+        child: const Text('Authenticate with GitHub'),
+      ),
+      TextButton(
+        onPressed: () async {
+          try {
+            await url_launcher.launch(
+              nhostGoogleSignInUrl,
+              forceSafariVC: true,
+            );
+          } on Exception {
+            // Exceptions can occur due to weirdness with redirects
+          }
+        },
+        child: const Text('Authenticate with Google'),
+      )
+    ]);
   }
 }
 
