@@ -34,6 +34,13 @@ final authP = Provider<AuthClient>((ref) {
   return ref.watch(nhostClientP).auth;
 });
 
-final authenticationStateSP = StateProvider<AuthenticationState>((ref) {
-  return ref.watch(nhostClientP).auth.authenticationState;
+final refreshTokenUriSP = StateProvider<Uri?>((ref) {
+  return null;
+});
+
+final completeOAuthFP = FutureProvider<void>((ref) async {
+  final nhostClient = ref.watch(nhostClientP);
+  final uri = ref.watch(refreshTokenUriSP);
+  if (uri == null) return;
+  return nhostClient.auth.completeOAuthProviderSignIn(uri);
 });

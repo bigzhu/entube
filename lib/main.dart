@@ -48,10 +48,11 @@ class HomeLayout extends HookConsumerWidget {
       () {
         final linkSubscription = appLinks.uriLinkStream.listen((uri) {
           if (uri.host == signInSuccessHost) {
-            nhostClient.auth.completeOAuthProviderSignIn(uri).then((_) {
-              ref.read(authenticationStateSP.notifier).state =
-                  nhostClient.auth.authenticationState;
-            });
+            ref.read(refreshTokenUriSP.notifier).state = uri;
+            //nhostClient.auth.completeOAuthProviderSignIn(uri).then((_) {
+            //  ref.read(authenticationStateSP.notifier).state =
+            //      nhostClient.auth.authenticationState;
+            //});
           }
           url_launcher.closeInAppWebView();
         });
@@ -92,20 +93,29 @@ class ExampleProtectedScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // NhostAuthProvider.of will register this widget so that it rebuilds
     // whenever the user's authentication state changes.
-    final authenticationState = ref.watch(authenticationStateSP);
-    Widget widget;
-    switch (authenticationState) {
-      case AuthenticationState.signedIn:
-        widget = const LoggedInUserDetails();
-        break;
-      default:
-        widget = const ProviderSignInForm();
-        break;
-    }
+    // final authenticationState = ref.watch(authenticationStateSP);
 
-    return Padding(
-      padding: EdgeInsets.all(32),
-      child: widget,
+    AsyncValue<void> oauthResult = ref.watch(completeOAuthFP);
+    return oauthResult.when(
+      loading: () => const CircularProgressIndicator(),
+      error: (err, stack) => Text('Error: $err'),
+      data: (config) {
+        final auth = ref.watch(authP);
+        Widget widget;
+        switch (auth.authenticationState) {
+          case AuthenticationState.signedIn:
+            widget = const LoggedInUserDetails();
+            break;
+          default:
+            widget = const ProviderSignInForm();
+            break;
+        }
+
+        return Padding(
+          padding: EdgeInsets.all(32),
+          child: widget,
+        );
+      },
     );
   }
 }
