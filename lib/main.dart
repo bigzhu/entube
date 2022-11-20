@@ -8,6 +8,7 @@ import 'package:nhost_flutter_auth/nhost_flutter_auth.dart';
 
 import 'package:entube/components/Home.dart';
 import './state.dart';
+import 'package:entube/components/Auth/index.dart';
 
 //import './article_items_page.dart';
 //import './acquiring_words_page.dart';
@@ -48,10 +49,6 @@ class HomeLayout extends HookConsumerWidget {
         final linkSubscription = appLinks.uriLinkStream.listen((uri) {
           if (uri.host == signInSuccessHost) {
             ref.read(authSNP.notifier).completeOAuth(uri);
-            //nhostClient.auth.completeOAuthProviderSignIn(uri).then((_) {
-            //  ref.read(authenticationStateSP.notifier).state =
-            //      nhostClient.auth.authenticationState;
-            //});
           }
           url_launcher.closeInAppWebView();
         });
