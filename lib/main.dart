@@ -8,7 +8,6 @@ import 'package:nhost_flutter_auth/nhost_flutter_auth.dart';
 
 import 'package:entube/components/Home.dart';
 import './state.dart';
-import './auth.dart';
 
 //import './article_items_page.dart';
 //import './acquiring_words_page.dart';
@@ -50,7 +49,12 @@ class HomeLayout extends HookConsumerWidget {
       () {
         final linkSubscription = appLinks.uriLinkStream.listen((uri) {
           if (uri.host == signInSuccessHost) {
-            nhostClient.auth.completeOAuthProviderSignIn(uri);
+            nhostClient.auth.completeOAuthProviderSignIn(uri).then((value) {
+              print('bigzhu');
+              print(nhostClient.auth.authenticationState);
+            }).onError((error, stackTrace) {
+              print(error);
+            });
           }
           url_launcher.closeInAppWebView();
         });
@@ -63,7 +67,7 @@ class HomeLayout extends HookConsumerWidget {
 
     return NhostAuthProvider(
       auth: nhostClient.auth,
-      child: MaterialApp(
+      child: const MaterialApp(
         title: 'Nhost.io OAuth Example',
         home: Scaffold(
           body: SafeArea(
@@ -96,7 +100,7 @@ class ExampleProtectedScreen extends StatelessWidget {
     // whenever the user's authentication state changes.
     final auth = NhostAuthProvider.of(context)!;
     Widget widget;
-
+    print(auth.authenticationState);
     switch (auth.authenticationState) {
       case AuthenticationState.signedIn:
         widget = LoggedInUserDetails();
@@ -133,3 +137,56 @@ class ProviderSignInForm extends HookConsumerWidget {
     );
   }
 }
+
+class LoggedInUserDetails extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final auth = NhostAuthProvider.of(context)!;
+    final currentUser = auth.currentUser!;
+
+    final textTheme = Theme.of(context).textTheme;
+    const cellPadding = EdgeInsets.all(4);
+
+    return Center(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Welcome ${currentUser.email}!',
+            style: textTheme.headline5,
+          ),
+          rowSpacing,
+          Text('User details:', style: textTheme.caption),
+          rowSpacing,
+          Table(
+            defaultColumnWidth: IntrinsicColumnWidth(),
+            children: [
+              for (final row in currentUser.toJson().entries)
+                TableRow(
+                  children: [
+                    Padding(
+                      padding: cellPadding.copyWith(right: 12),
+                      child: Text(row.key),
+                    ),
+                    Padding(
+                      padding: cellPadding,
+                      child: Text('${row.value}'),
+                    ),
+                  ],
+                )
+            ],
+          ),
+          rowSpacing,
+          ElevatedButton(
+            onPressed: () {
+              auth.signOut();
+            },
+            child: Text('Logout'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+const rowSpacing = SizedBox(height: 12);
