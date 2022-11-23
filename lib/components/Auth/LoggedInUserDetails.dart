@@ -15,7 +15,8 @@ class LoggedInUserDetails extends HookConsumerWidget {
     final textTheme = Theme.of(context).textTheme;
     const cellPadding = EdgeInsets.all(4);
     final currentUser = auth.currentUser!;
-    return Center(
+    return Scaffold(
+        body: Center(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -53,6 +54,6 @@ class LoggedInUserDetails extends HookConsumerWidget {
           ),
         ],
       ),
-    );
+    ));
   }
 }

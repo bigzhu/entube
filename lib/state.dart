@@ -1,8 +1,13 @@
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:nhost_graphql_adapter/nhost_graphql_adapter.dart';
-import 'package:nhost_flutter_graphql/nhost_flutter_graphql.dart';
-import 'package:nhost_sdk/nhost_sdk.dart';
+import 'package:fluro/fluro.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:nhost_flutter_graphql/nhost_flutter_graphql.dart';
+import 'package:nhost_graphql_adapter/nhost_graphql_adapter.dart';
+import 'package:nhost_sdk/nhost_sdk.dart';
+
+final routerP = Provider<FluroRouter>((ref) {
+  return FluroRouter();
+});
 
 final backendUrlP = Provider<String>((ref) {
   return 'https://jysijxgffjwavdtqcuir.nhost.run';

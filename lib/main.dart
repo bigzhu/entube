@@ -1,10 +1,15 @@
 import 'package:app_links/app_links.dart';
 import 'package:entube/components/Auth/index.dart';
+import 'package:entube/components_old/logo_loading.dart';
 import 'package:entube/configs.dart';
+import 'package:entube/router.dart';
+import 'package:entube/state.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:nhost_sdk/nhost_sdk.dart';
 import 'package:url_launcher/url_launcher.dart' as url_launcher;
 
 //import './article_items_page.dart';
@@ -17,32 +22,18 @@ void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends HookConsumerWidget {
   const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: configTitle,
-      // The Mandy red, light theme.
-      theme: FlexThemeData.light(scheme: FlexScheme.mandyRed),
-      // The Mandy red, dark theme.
-      darkTheme: FlexThemeData.dark(scheme: FlexScheme.mandyRed),
-      // Use dark or light theme based on system setting.
-      themeMode: ThemeMode.system,
-      home: const HomeLayout(),
-    );
-  }
-}
-
-class HomeLayout extends HookConsumerWidget {
-  const HomeLayout({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     AppLinks appLinks = AppLinks();
+    final router = ref.watch(routerP);
     useEffect(
       () {
+        // register router
+        defineRoutes(router);
+        //register the app link handler
         final linkSubscription = appLinks.uriLinkStream.listen((uri) {
           if (uri.host == signInSuccessHost) {
             ref.read(authSNP.notifier).completeOAuth(uri);
@@ -53,29 +44,18 @@ class HomeLayout extends HookConsumerWidget {
           linkSubscription.cancel();
         };
       },
-      [appLinks],
+      [],
     );
 
-    return const MaterialApp(
-      title: 'Nhost.io OAuth Example',
-      home: Scaffold(
-        body: SafeArea(
-          child: ExampleProtectedScreen(),
-        ),
-      ),
+    return MaterialApp(
+      title: configTitle,
+      // The Mandy red, light theme.
+      theme: FlexThemeData.light(scheme: FlexScheme.mandyRed),
+      // The Mandy red, dark theme.
+      darkTheme: FlexThemeData.dark(scheme: FlexScheme.mandyRed),
+      // Use dark or light theme based on system setting.
+      themeMode: ThemeMode.system,
+      onGenerateRoute: router.generator,
     );
-
-/*
-    return Scaffold(
-        body: PageView(
-      physics: const NeverScrollableScrollPhysics(),
-      children: const [
-        Home(),
-        //AcquiringWordsPage(),
-        //SettingsPage(),
-      ],
-      //controller: ref.read(pageControllerProvider),
-    ));
-    */
   }
 }
