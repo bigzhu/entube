@@ -1,10 +1,10 @@
 import 'package:app_links/app_links.dart';
 import 'package:entube/components/Auth/index.dart';
+import 'package:entube/configs.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:nhost_flutter_auth/nhost_flutter_auth.dart';
 import 'package:url_launcher/url_launcher.dart' as url_launcher;
 
 //import './article_items_page.dart';
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'English Tube',
+      title: configTitle,
       // The Mandy red, light theme.
       theme: FlexThemeData.light(scheme: FlexScheme.mandyRed),
       // The Mandy red, dark theme.
@@ -77,34 +77,5 @@ class HomeLayout extends HookConsumerWidget {
       //controller: ref.read(pageControllerProvider),
     ));
     */
-  }
-}
-
-class ExampleProtectedScreen extends HookConsumerWidget {
-  const ExampleProtectedScreen({super.key});
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    // NhostAuthProvider.of will register this widget so that it rebuilds
-    // whenever the user's authentication state changes.
-    // final authenticationState = ref.watch(authenticationStateSP);
-
-    final authenticationState = ref.watch(authSNP);
-    Widget widget;
-    switch (authenticationState) {
-      case AuthenticationState.signedIn:
-        widget = const LoggedInUserDetails();
-        break;
-      case AuthenticationState.inProgress:
-        widget = const CircularProgressIndicator();
-        break;
-      default:
-        widget = const ProviderSignInForm();
-        break;
-    }
-
-    return Padding(
-      padding: EdgeInsets.all(32),
-      child: widget,
-    );
   }
 }
