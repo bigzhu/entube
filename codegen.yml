@@ -1,7 +1,8 @@
-
 schema: './schema.graphql'
 generates:
- ./lib/data/models/app_models.dart:
+ ./lib/models.dart:
   plugins:
     - flutter-freezed
+  config:
+    camelCasedEnums: true
 
