@@ -28,7 +28,7 @@ class LoggedInUserDetails extends HookConsumerWidget {
           Text('User details:', style: textTheme.caption),
           rowSpacing,
           Table(
-            defaultColumnWidth: IntrinsicColumnWidth(),
+            defaultColumnWidth: const IntrinsicColumnWidth(),
             children: [
               for (final row in currentUser.toJson().entries)
                 TableRow(
