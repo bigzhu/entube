@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nhost_sdk/nhost_sdk.dart';
 import 'package:url_launcher/url_launcher.dart' as url_launcher;
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignIn extends HookConsumerWidget {
   const SignIn({super.key});
@@ -16,32 +17,33 @@ class SignIn extends HookConsumerWidget {
     if (authenticationState == AuthenticationState.inProgress) {
       return const LogoLoading();
     }
-    return Column(children: [
-      TextButton(
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      ElevatedButton.icon(
         onPressed: () async {
           try {
-            await url_launcher.launch(
-              nhostGithubSignInUrl,
-              forceSafariVC: true,
+            await url_launcher.launchUrl(
+              Uri(host: nhostGithubSignInUrl),
             );
           } on Exception {
             // Exceptions can occur due to weirdness with redirects
           }
         },
-        child: const Text('Authenticate with GitHub'),
+        icon: const Icon(FontAwesomeIcons.github),
+        label: const Text('Sign in with GitHub'),
       ),
-      TextButton(
+      SizedBox(height: 40),
+      ElevatedButton.icon(
         onPressed: () async {
           try {
-            await url_launcher.launch(
-              nhostGoogleSignInUrl,
-              forceSafariVC: true,
+            await url_launcher.launchUrl(
+              Uri(host: nhostGoogleSignInUrl),
             );
           } on Exception {
             // Exceptions can occur due to weirdness with redirects
           }
         },
-        child: const Text('Authenticate with Google'),
+        icon: const Icon(FontAwesomeIcons.google),
+        label: const Text('Sign in with Google'),
       )
     ]);
   }
