@@ -1,0 +1,15 @@
+{
+  "name": "GraphQL Code Generator Flutter Freezed",
+  "version": "1.0.0",
+  "scripts": {
+    "flutter-freezed": "graphql-codegen"
+  },
+  "dependencies": {
+    "graphql": "^16.6.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^2.14.0",
+    "@graphql-codegen/flutter-freezed": "^2.11.2",
+    "typescript": "^4.9.3"
+  }
+}

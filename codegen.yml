@@ -1,0 +1,7 @@
+
+schema: './schema.graphql'
+generates:
+ ./lib/data/models/app_models.dart:
+  plugins:
+    - flutter-freezed
+

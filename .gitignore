@@ -45,3 +45,6 @@ app.*.map.json
 
 # bigzhu
 *_old
+
+# graphql-code-generator related
+node_modules/
