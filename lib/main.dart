@@ -1,13 +1,11 @@
 import 'package:app_links/app_links.dart';
 import 'package:entube/components/Auth/index.dart';
-import 'package:entube/components_old/logo_loading.dart';
 import 'package:entube/configs.dart';
-import 'package:entube/router.dart';
-import 'package:entube/state.dart';
+import 'package:entube/routes.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nhost_sdk/nhost_sdk.dart';
 import 'package:url_launcher/url_launcher.dart' as url_launcher;
@@ -28,11 +26,9 @@ class MyApp extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     AppLinks appLinks = AppLinks();
-    final router = ref.watch(routerP);
     useEffect(
       () {
         // register router
-        defineRoutes(router);
         //register the app link handler
         final linkSubscription = appLinks.uriLinkStream.listen((uri) {
           if (uri.host == signInSuccessHost) {
@@ -47,7 +43,8 @@ class MyApp extends HookConsumerWidget {
       [],
     );
 
-    return MaterialApp(
+    final authenticationState = ref.watch(authSNP);
+    return MaterialApp.router(
       title: configTitle,
       // The Mandy red, light theme.
       theme: FlexThemeData.light(scheme: FlexScheme.mandyRed),
@@ -55,7 +52,20 @@ class MyApp extends HookConsumerWidget {
       darkTheme: FlexThemeData.dark(scheme: FlexScheme.mandyRed),
       // Use dark or light theme based on system setting.
       themeMode: ThemeMode.system,
-      onGenerateRoute: router.generator,
+      routerConfig: GoRouter(
+          routes: routes,
+          redirect: (BuildContext context, GoRouterState state) {
+            switch (authenticationState) {
+              case AuthenticationState.signedIn:
+                return '/LoggedInUserDetails';
+              case AuthenticationState.inProgress:
+                return '/AuthLoading';
+              case AuthenticationState.signedOut:
+                return '/SignIn';
+              default:
+                return null;
+            }
+          }),
     );
   }
 }
