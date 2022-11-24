@@ -4,7 +4,7 @@ import 'package:entube/state.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nhost_sdk/nhost_sdk.dart';
-import 'package:url_launcher/url_launcher.dart' as url_launcher;
+import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignIn extends HookConsumerWidget {
@@ -20,27 +20,17 @@ class SignIn extends HookConsumerWidget {
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       ElevatedButton.icon(
         onPressed: () async {
-          try {
-            await url_launcher.launchUrl(
-              Uri(host: nhostGithubSignInUrl),
-            );
-          } on Exception {
-            // Exceptions can occur due to weirdness with redirects
-          }
+          await launchUrl(Uri.parse(nhostGithubSignInUrl),
+              mode: LaunchMode.externalApplication);
         },
         icon: const Icon(FontAwesomeIcons.github),
         label: const Text('Sign in with GitHub'),
       ),
-      SizedBox(height: 40),
+      const SizedBox(height: 40),
       ElevatedButton.icon(
         onPressed: () async {
-          try {
-            await url_launcher.launchUrl(
-              Uri(host: nhostGoogleSignInUrl),
-            );
-          } on Exception {
-            // Exceptions can occur due to weirdness with redirects
-          }
+          await launchUrl(Uri.parse(nhostGoogleSignInUrl),
+              mode: LaunchMode.externalApplication);
         },
         icon: const Icon(FontAwesomeIcons.google),
         label: const Text('Sign in with Google'),
