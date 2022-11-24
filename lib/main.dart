@@ -4,6 +4,7 @@ import 'package:entube/configs.dart';
 import 'package:entube/routes.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -28,7 +29,6 @@ class MyApp extends HookConsumerWidget {
     AppLinks appLinks = AppLinks();
     useEffect(
       () {
-        // register router
         //register the app link handler
         final linkSubscription = appLinks.uriLinkStream.listen((uri) {
           if (uri.host == signInSuccessHost) {

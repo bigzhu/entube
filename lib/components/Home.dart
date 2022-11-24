@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:entube/components/BottomBar.dart';
 //import 'package:AcquireEnglish/components/ArticleItems/index.dart';
 //import 'package:AcquireEnglish/components/PageRoute/index.dart';
 //import '../configs.dart';
@@ -9,7 +7,8 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 //import 'package:leancloud_storage/leancloud.dart';
 
 import 'package:entube/components/TopBar.dart';
-import 'package:entube/components/BottomBar.dart';
+import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class Home extends HookConsumerWidget {
   const Home({super.key});
@@ -17,10 +16,10 @@ class Home extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: TopBar(),
+      appBar: const TopBar(),
       //body: ArticleItems(),
       body: Container(),
-      bottomNavigationBar: BottomBar(),
+      bottomNavigationBar: const BottomBar(),
     );
   }
 }
