@@ -280,49 +280,49 @@ packages:
       name: ferry
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.10.4"
+    version: "0.13.0-dev.0"
   ferry_cache:
     dependency: transitive
     description:
       name: ferry_cache
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.5"
+    version: "0.7.0-dev.0"
   ferry_exec:
     dependency: transitive
     description:
       name: ferry_exec
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.4"
+    version: "0.3.0-dev.0"
   ferry_flutter:
     dependency: "direct main"
     description:
       name: ferry_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.4"
+    version: "0.8.0-dev.2"
   ferry_generator:
     dependency: "direct dev"
     description:
       name: ferry_generator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.4"
+    version: "0.7.0-dev.0"
   ferry_hive_store:
     dependency: "direct main"
     description:
       name: ferry_hive_store
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.5"
+    version: "0.5.0-dev.0"
   ferry_store:
     dependency: transitive
     description:
       name: ferry_store
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.5"
+    version: "0.5.0-dev.0"
   ffi:
     dependency: transitive
     description:
@@ -465,7 +465,7 @@ packages:
     source: hosted
     version: "0.7.0"
   gql_code_builder:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       name: gql_code_builder
       url: "https://pub.dartlang.org"
@@ -500,12 +500,12 @@ packages:
     source: hosted
     version: "0.4.2"
   gql_link:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: gql_link
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.3-alpha+1659910170117"
+    version: "0.5.0+1"
   gql_transform_link:
     dependency: transitive
     description:
@@ -703,12 +703,12 @@ packages:
     source: hosted
     version: "0.5.0"
   normalize:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       name: normalize
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.5"
+    version: "0.8.0-dev.1"
   octo_image:
     dependency: transitive
     description:

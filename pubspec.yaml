@@ -1,5 +1,5 @@
 name: entube
-description: A new Flutter project.
+description: English Tube.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -50,13 +50,13 @@ dependencies:
   font_awesome_flutter: ^10.2.1
   freezed_annotation: ^2.2.0
   json_annotation: ^4.7.0
-  ferry: ^0.10.2+2
+  ferry: ^0.11.0
   gql_http_link: ^0.4.0
   hive: ^2.2.3
-  ferry_hive_store: ^0.4.2
+  ferry_hive_store: ^0.5.0-dev.0
   hive_flutter: ^1.1.0
   gql_build: ^0.7.0
-  ferry_flutter: ^0.5.4
+  ferry_flutter: ^0.8.0-dev.2
 
 dev_dependencies:
   flutter_test:
@@ -67,16 +67,19 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: 2.0.1
   build_runner: ^2.3.2
   freezed: ^2.2.1
   json_serializable: ^6.5.4
-  ferry_generator: ^0.4.4
+  ferry_generator: ^0.7.0-dev.0
 dependency_overrides:
-  gql_code_builder: ^0.7.0
+  ferry: ^0.13.0-dev.0
+  gql_link: ^0.5.0
+  normalize: ^0.8.0-dev.1
+    #gql_code_builder: ^0.7.0
   gql_exec: ^0.4.3
   gql: ^0.14.0
-  gql_build: ^0.7.0
+    #gql_build: ^0.7.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
