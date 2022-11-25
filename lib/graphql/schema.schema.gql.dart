@@ -4,10 +4,11 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
+import 'package:built_value/json_object.dart' as _i2;
 import 'package:built_value/serializer.dart';
 import 'package:entube/graphql/serializers.gql.dart' as _i1;
 import 'package:gql_code_builder/src/serializers/default_scalar_serializer.dart'
-    as _i2;
+    as _i3;
 
 part 'schema.schema.gql.g.dart';
 
@@ -155,7 +156,7 @@ abstract class Garticle_append_input
           [Function(Garticle_append_inputBuilder b) updates]) =
       _$Garticle_append_input;
 
-  Gjsonb? get sentences;
+  _i2.JsonObject? get sentences;
   static Serializer<Garticle_append_input> get serializer =>
       _$garticleAppendInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -302,7 +303,7 @@ abstract class Garticle_insert_input
   Gtimestamptz? get deleted_at;
   String? get favicon;
   Guuid? get id;
-  Gjsonb? get sentences;
+  _i2.JsonObject? get sentences;
   String? get thumbnail;
   String? get title;
   Gtimestamptz? get updated_at;
@@ -407,7 +408,7 @@ abstract class Garticle_prepend_input
           [Function(Garticle_prepend_inputBuilder b) updates]) =
       _$Garticle_prepend_input;
 
-  Gjsonb? get sentences;
+  _i2.JsonObject? get sentences;
   static Serializer<Garticle_prepend_input> get serializer =>
       _$garticlePrependInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -473,7 +474,7 @@ abstract class Garticle_set_input
   Gtimestamptz? get deleted_at;
   String? get favicon;
   Guuid? get id;
-  Gjsonb? get sentences;
+  _i2.JsonObject? get sentences;
   String? get thumbnail;
   String? get title;
   Gtimestamptz? get updated_at;
@@ -532,7 +533,7 @@ abstract class Garticle_stream_cursor_value_input
   Gtimestamptz? get deleted_at;
   String? get favicon;
   Guuid? get id;
-  Gjsonb? get sentences;
+  _i2.JsonObject? get sentences;
   String? get thumbnail;
   String? get title;
   Gtimestamptz? get updated_at;
@@ -635,7 +636,7 @@ abstract class GauthProviderRequests_append_input
           [Function(GauthProviderRequests_append_inputBuilder b) updates]) =
       _$GauthProviderRequests_append_input;
 
-  Gjsonb? get options;
+  _i2.JsonObject? get options;
   static Serializer<GauthProviderRequests_append_input> get serializer =>
       _$gauthProviderRequestsAppendInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -781,7 +782,7 @@ abstract class GauthProviderRequests_insert_input
       _$GauthProviderRequests_insert_input;
 
   Guuid? get id;
-  Gjsonb? get options;
+  _i2.JsonObject? get options;
   static Serializer<GauthProviderRequests_insert_input> get serializer =>
       _$gauthProviderRequestsInsertInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -883,7 +884,7 @@ abstract class GauthProviderRequests_prepend_input
           [Function(GauthProviderRequests_prepend_inputBuilder b) updates]) =
       _$GauthProviderRequests_prepend_input;
 
-  Gjsonb? get options;
+  _i2.JsonObject? get options;
   static Serializer<GauthProviderRequests_prepend_input> get serializer =>
       _$gauthProviderRequestsPrependInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -926,7 +927,7 @@ abstract class GauthProviderRequests_set_input
       _$GauthProviderRequests_set_input;
 
   Guuid? get id;
-  Gjsonb? get options;
+  _i2.JsonObject? get options;
   static Serializer<GauthProviderRequests_set_input> get serializer =>
       _$gauthProviderRequestsSetInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -977,7 +978,7 @@ abstract class GauthProviderRequests_stream_cursor_value_input
           updates]) = _$GauthProviderRequests_stream_cursor_value_input;
 
   Guuid? get id;
-  Gjsonb? get options;
+  _i2.JsonObject? get options;
   static Serializer<GauthProviderRequests_stream_cursor_value_input>
       get serializer => _$gauthProviderRequestsStreamCursorValueInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -3829,7 +3830,7 @@ abstract class Gbigint implements Built<Gbigint, GbigintBuilder> {
   String get value;
   @BuiltValueSerializer(custom: true)
   static Serializer<Gbigint> get serializer =>
-      _i2.DefaultScalarSerializer<Gbigint>(
+      _i3.DefaultScalarSerializer<Gbigint>(
           (Object serialized) => Gbigint((serialized as String?)));
 }
 
@@ -4262,7 +4263,7 @@ abstract class Gbytea implements Built<Gbytea, GbyteaBuilder> {
   String get value;
   @BuiltValueSerializer(custom: true)
   static Serializer<Gbytea> get serializer =>
-      _i2.DefaultScalarSerializer<Gbytea>(
+      _i3.DefaultScalarSerializer<Gbytea>(
           (Object serialized) => Gbytea((serialized as String?)));
 }
 
@@ -4314,7 +4315,7 @@ abstract class Gcitext implements Built<Gcitext, GcitextBuilder> {
   String get value;
   @BuiltValueSerializer(custom: true)
   static Serializer<Gcitext> get serializer =>
-      _i2.DefaultScalarSerializer<Gcitext>(
+      _i3.DefaultScalarSerializer<Gcitext>(
           (Object serialized) => Gcitext((serialized as String?)));
 }
 
@@ -5197,19 +5198,6 @@ abstract class Gfiles_variance_order_by
       );
 }
 
-abstract class Gjsonb implements Built<Gjsonb, GjsonbBuilder> {
-  Gjsonb._();
-
-  factory Gjsonb([String? value]) =>
-      _$Gjsonb((b) => value != null ? (b..value = value) : b);
-
-  String get value;
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Gjsonb> get serializer =>
-      _i2.DefaultScalarSerializer<Gjsonb>(
-          (Object serialized) => Gjsonb((serialized as String?)));
-}
-
 abstract class Gjsonb_cast_exp
     implements Built<Gjsonb_cast_exp, Gjsonb_cast_expBuilder> {
   Gjsonb_cast_exp._();
@@ -5243,15 +5231,15 @@ abstract class Gjsonb_comparison_exp
   @BuiltValueField(wireName: '_cast')
   Gjsonb_cast_exp? get G_cast;
   @BuiltValueField(wireName: '_contained_in')
-  Gjsonb? get G_contained_in;
+  _i2.JsonObject? get G_contained_in;
   @BuiltValueField(wireName: '_contains')
-  Gjsonb? get G_contains;
+  _i2.JsonObject? get G_contains;
   @BuiltValueField(wireName: '_eq')
-  Gjsonb? get G_eq;
+  _i2.JsonObject? get G_eq;
   @BuiltValueField(wireName: '_gt')
-  Gjsonb? get G_gt;
+  _i2.JsonObject? get G_gt;
   @BuiltValueField(wireName: '_gte')
-  Gjsonb? get G_gte;
+  _i2.JsonObject? get G_gte;
   @BuiltValueField(wireName: '_has_key')
   String? get G_has_key;
   @BuiltValueField(wireName: '_has_keys_all')
@@ -5259,17 +5247,17 @@ abstract class Gjsonb_comparison_exp
   @BuiltValueField(wireName: '_has_keys_any')
   BuiltList<String>? get G_has_keys_any;
   @BuiltValueField(wireName: '_in')
-  BuiltList<Gjsonb>? get G_in;
+  BuiltList<_i2.JsonObject>? get G_in;
   @BuiltValueField(wireName: '_is_null')
   bool? get G_is_null;
   @BuiltValueField(wireName: '_lt')
-  Gjsonb? get G_lt;
+  _i2.JsonObject? get G_lt;
   @BuiltValueField(wireName: '_lte')
-  Gjsonb? get G_lte;
+  _i2.JsonObject? get G_lte;
   @BuiltValueField(wireName: '_neq')
-  Gjsonb? get G_neq;
+  _i2.JsonObject? get G_neq;
   @BuiltValueField(wireName: '_nin')
-  BuiltList<Gjsonb>? get G_nin;
+  BuiltList<_i2.JsonObject>? get G_nin;
   static Serializer<Gjsonb_comparison_exp> get serializer =>
       _$gjsonbComparisonExpSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -5313,7 +5301,7 @@ abstract class Gtimestamptz
   String get value;
   @BuiltValueSerializer(custom: true)
   static Serializer<Gtimestamptz> get serializer =>
-      _i2.DefaultScalarSerializer<Gtimestamptz>(
+      _i3.DefaultScalarSerializer<Gtimestamptz>(
           (Object serialized) => Gtimestamptz((serialized as String?)));
 }
 
@@ -5499,7 +5487,7 @@ abstract class Gusers_append_input
   factory Gusers_append_input(
       [Function(Gusers_append_inputBuilder b) updates]) = _$Gusers_append_input;
 
-  Gjsonb? get metadata;
+  _i2.JsonObject? get metadata;
   static Serializer<Gusers_append_input> get serializer =>
       _$gusersAppendInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -5704,7 +5692,7 @@ abstract class Gusers_insert_input
   bool? get isAnonymous;
   Gtimestamptz? get lastSeen;
   String? get locale;
-  Gjsonb? get metadata;
+  _i2.JsonObject? get metadata;
   Gcitext? get newEmail;
   String? get otpHash;
   Gtimestamptz? get otpHashExpiresAt;
@@ -5940,7 +5928,7 @@ abstract class Gusers_prepend_input
           [Function(Gusers_prepend_inputBuilder b) updates]) =
       _$Gusers_prepend_input;
 
-  Gjsonb? get metadata;
+  _i2.JsonObject? get metadata;
   static Serializer<Gusers_prepend_input> get serializer =>
       _$gusersPrependInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -6119,7 +6107,7 @@ abstract class Gusers_set_input
   bool? get isAnonymous;
   Gtimestamptz? get lastSeen;
   String? get locale;
-  Gjsonb? get metadata;
+  _i2.JsonObject? get metadata;
   Gcitext? get newEmail;
   String? get otpHash;
   Gtimestamptz? get otpHashExpiresAt;
@@ -6191,7 +6179,7 @@ abstract class Gusers_stream_cursor_value_input
   bool? get isAnonymous;
   Gtimestamptz? get lastSeen;
   String? get locale;
-  Gjsonb? get metadata;
+  _i2.JsonObject? get metadata;
   Gcitext? get newEmail;
   String? get otpHash;
   Gtimestamptz? get otpHashExpiresAt;
@@ -6330,7 +6318,7 @@ abstract class Guuid implements Built<Guuid, GuuidBuilder> {
 
   String get value;
   @BuiltValueSerializer(custom: true)
-  static Serializer<Guuid> get serializer => _i2.DefaultScalarSerializer<Guuid>(
+  static Serializer<Guuid> get serializer => _i3.DefaultScalarSerializer<Guuid>(
       (Object serialized) => Guuid((serialized as String?)));
 }
 

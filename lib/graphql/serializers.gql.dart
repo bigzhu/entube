@@ -2,6 +2,7 @@
 // ignore_for_file: type=lint
 
 import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart' show StandardJsonPlugin;
 import 'package:entube/components/ArticleItems/services.data.gql.dart'
@@ -208,7 +209,6 @@ import 'package:entube/graphql/schema.schema.gql.dart'
         Gfiles_var_pop_order_by,
         Gfiles_var_samp_order_by,
         Gfiles_variance_order_by,
-        Gjsonb,
         Gjsonb_cast_exp,
         Gjsonb_comparison_exp,
         Gorder_by,
@@ -454,7 +454,6 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   Gfiles_var_pop_order_by,
   Gfiles_var_samp_order_by,
   Gfiles_variance_order_by,
-  Gjsonb,
   Gjsonb_cast_exp,
   Gjsonb_comparison_exp,
   Gorder_by,

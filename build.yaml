@@ -6,9 +6,17 @@ targets:
         options:
           schema: entube|lib/graphql/schema.graphql
           output_dir: ''
+          type_overrides:
+            jsonb:
+              name: JsonObject
+              import: "package:built_value/json_object.dart"
 
       ferry_generator|serializer_builder:
         enabled: true
         options:
           schema: entube|lib/graphql/schema.graphql
           output_dir: ''
+          type_overrides:
+            jsonb:
+              name: JsonObject
+              import: "package:built_value/json_object.dart"

@@ -2697,7 +2697,7 @@ class _$Garticle_append_inputSerializer
       result
         ..add('sentences')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     return result;
   }
@@ -2715,8 +2715,8 @@ class _$Garticle_append_inputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'sentences':
-          result.sentences.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.sentences = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
       }
     }
@@ -3154,7 +3154,7 @@ class _$Garticle_insert_inputSerializer
       result
         ..add('sentences')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     value = object.thumbnail;
     if (value != null) {
@@ -3227,8 +3227,8 @@ class _$Garticle_insert_inputSerializer
               specifiedType: const FullType(Guuid))! as Guuid);
           break;
         case 'sentences':
-          result.sentences.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.sentences = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
         case 'thumbnail':
           result.thumbnail = serializers.deserialize(value,
@@ -3547,7 +3547,7 @@ class _$Garticle_prepend_inputSerializer
       result
         ..add('sentences')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     return result;
   }
@@ -3565,8 +3565,8 @@ class _$Garticle_prepend_inputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'sentences':
-          result.sentences.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.sentences = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
       }
     }
@@ -3646,7 +3646,7 @@ class _$Garticle_set_inputSerializer
       result
         ..add('sentences')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     value = object.thumbnail;
     if (value != null) {
@@ -3719,8 +3719,8 @@ class _$Garticle_set_inputSerializer
               specifiedType: const FullType(Guuid))! as Guuid);
           break;
         case 'sentences':
-          result.sentences.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.sentences = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
         case 'thumbnail':
           result.thumbnail = serializers.deserialize(value,
@@ -3865,7 +3865,7 @@ class _$Garticle_stream_cursor_value_inputSerializer
       result
         ..add('sentences')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     value = object.thumbnail;
     if (value != null) {
@@ -3938,8 +3938,8 @@ class _$Garticle_stream_cursor_value_inputSerializer
               specifiedType: const FullType(Guuid))! as Guuid);
           break;
         case 'sentences':
-          result.sentences.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.sentences = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
         case 'thumbnail':
           result.thumbnail = serializers.deserialize(value,
@@ -4122,7 +4122,7 @@ class _$GauthProviderRequests_append_inputSerializer
       result
         ..add('options')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     return result;
   }
@@ -4140,8 +4140,8 @@ class _$GauthProviderRequests_append_inputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'options':
-          result.options.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.options = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
       }
     }
@@ -4451,7 +4451,7 @@ class _$GauthProviderRequests_insert_inputSerializer
       result
         ..add('options')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     return result;
   }
@@ -4473,8 +4473,8 @@ class _$GauthProviderRequests_insert_inputSerializer
               specifiedType: const FullType(Guuid))! as Guuid);
           break;
         case 'options':
-          result.options.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.options = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
       }
     }
@@ -4680,7 +4680,7 @@ class _$GauthProviderRequests_prepend_inputSerializer
       result
         ..add('options')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     return result;
   }
@@ -4698,8 +4698,8 @@ class _$GauthProviderRequests_prepend_inputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'options':
-          result.options.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.options = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
       }
     }
@@ -4758,7 +4758,7 @@ class _$GauthProviderRequests_set_inputSerializer
       result
         ..add('options')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     return result;
   }
@@ -4780,8 +4780,8 @@ class _$GauthProviderRequests_set_inputSerializer
               specifiedType: const FullType(Guuid))! as Guuid);
           break;
         case 'options':
-          result.options.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.options = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
       }
     }
@@ -4880,7 +4880,7 @@ class _$GauthProviderRequests_stream_cursor_value_inputSerializer
       result
         ..add('options')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     return result;
   }
@@ -4902,8 +4902,8 @@ class _$GauthProviderRequests_stream_cursor_value_inputSerializer
               specifiedType: const FullType(Guuid))! as Guuid);
           break;
         case 'options':
-          result.options.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.options = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
       }
     }
@@ -16739,35 +16739,35 @@ class _$Gjsonb_comparison_expSerializer
       result
         ..add('_contained_in')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     value = object.G_contains;
     if (value != null) {
       result
         ..add('_contains')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     value = object.G_eq;
     if (value != null) {
       result
         ..add('_eq')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     value = object.G_gt;
     if (value != null) {
       result
         ..add('_gt')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     value = object.G_gte;
     if (value != null) {
       result
         ..add('_gte')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     value = object.G_has_key;
     if (value != null) {
@@ -16797,8 +16797,8 @@ class _$Gjsonb_comparison_expSerializer
       result
         ..add('_in')
         ..add(serializers.serialize(value,
-            specifiedType:
-                const FullType(BuiltList, const [const FullType(Gjsonb)])));
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(_i2.JsonObject)])));
     }
     value = object.G_is_null;
     if (value != null) {
@@ -16812,29 +16812,29 @@ class _$Gjsonb_comparison_expSerializer
       result
         ..add('_lt')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     value = object.G_lte;
     if (value != null) {
       result
         ..add('_lte')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     value = object.G_neq;
     if (value != null) {
       result
         ..add('_neq')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     value = object.G_nin;
     if (value != null) {
       result
         ..add('_nin')
         ..add(serializers.serialize(value,
-            specifiedType:
-                const FullType(BuiltList, const [const FullType(Gjsonb)])));
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(_i2.JsonObject)])));
     }
     return result;
   }
@@ -16857,24 +16857,24 @@ class _$Gjsonb_comparison_expSerializer
               as Gjsonb_cast_exp);
           break;
         case '_contained_in':
-          result.G_contained_in.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.G_contained_in = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
         case '_contains':
-          result.G_contains.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.G_contains = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
         case '_eq':
-          result.G_eq.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.G_eq = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
         case '_gt':
-          result.G_gt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.G_gt = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
         case '_gte':
-          result.G_gte.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.G_gte = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
         case '_has_key':
           result.G_has_key = serializers.deserialize(value,
@@ -16895,7 +16895,7 @@ class _$Gjsonb_comparison_expSerializer
         case '_in':
           result.G_in.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(Gjsonb)]))!
+                      BuiltList, const [const FullType(_i2.JsonObject)]))!
               as BuiltList<Object?>);
           break;
         case '_is_null':
@@ -16903,21 +16903,21 @@ class _$Gjsonb_comparison_expSerializer
               specifiedType: const FullType(bool)) as bool?;
           break;
         case '_lt':
-          result.G_lt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.G_lt = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
         case '_lte':
-          result.G_lte.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.G_lte = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
         case '_neq':
-          result.G_neq.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.G_neq = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
         case '_nin':
           result.G_nin.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(Gjsonb)]))!
+                      BuiltList, const [const FullType(_i2.JsonObject)]))!
               as BuiltList<Object?>);
           break;
       }
@@ -17502,7 +17502,7 @@ class _$Gusers_append_inputSerializer
       result
         ..add('metadata')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     return result;
   }
@@ -17520,8 +17520,8 @@ class _$Gusers_append_inputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'metadata':
-          result.metadata.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.metadata = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
       }
     }
@@ -18367,7 +18367,7 @@ class _$Gusers_insert_inputSerializer
       result
         ..add('metadata')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     value = object.newEmail;
     if (value != null) {
@@ -18552,8 +18552,8 @@ class _$Gusers_insert_inputSerializer
               specifiedType: const FullType(String)) as String?;
           break;
         case 'metadata':
-          result.metadata.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.metadata = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
         case 'newEmail':
           result.newEmail.replace(serializers.deserialize(value,
@@ -19713,7 +19713,7 @@ class _$Gusers_prepend_inputSerializer
       result
         ..add('metadata')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     return result;
   }
@@ -19731,8 +19731,8 @@ class _$Gusers_prepend_inputSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'metadata':
-          result.metadata.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.metadata = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
       }
     }
@@ -19923,7 +19923,7 @@ class _$Gusers_set_inputSerializer
       result
         ..add('metadata')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     value = object.newEmail;
     if (value != null) {
@@ -20070,8 +20070,8 @@ class _$Gusers_set_inputSerializer
               specifiedType: const FullType(String)) as String?;
           break;
         case 'metadata':
-          result.metadata.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.metadata = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
         case 'newEmail':
           result.newEmail.replace(serializers.deserialize(value,
@@ -20296,7 +20296,7 @@ class _$Gusers_stream_cursor_value_inputSerializer
       result
         ..add('metadata')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gjsonb)));
+            specifiedType: const FullType(_i2.JsonObject)));
     }
     value = object.newEmail;
     if (value != null) {
@@ -20443,8 +20443,8 @@ class _$Gusers_stream_cursor_value_inputSerializer
               specifiedType: const FullType(String)) as String?;
           break;
         case 'metadata':
-          result.metadata.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Gjsonb))! as Gjsonb);
+          result.metadata = serializers.deserialize(value,
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
           break;
         case 'newEmail':
           result.newEmail.replace(serializers.deserialize(value,
@@ -21510,7 +21510,7 @@ class GString_comparison_expBuilder
 
 class _$Garticle_append_input extends Garticle_append_input {
   @override
-  final Gjsonb? sentences;
+  final _i2.JsonObject? sentences;
 
   factory _$Garticle_append_input(
           [void Function(Garticle_append_inputBuilder)? updates]) =>
@@ -21550,16 +21550,16 @@ class Garticle_append_inputBuilder
     implements Builder<Garticle_append_input, Garticle_append_inputBuilder> {
   _$Garticle_append_input? _$v;
 
-  GjsonbBuilder? _sentences;
-  GjsonbBuilder get sentences => _$this._sentences ??= new GjsonbBuilder();
-  set sentences(GjsonbBuilder? sentences) => _$this._sentences = sentences;
+  _i2.JsonObject? _sentences;
+  _i2.JsonObject? get sentences => _$this._sentences;
+  set sentences(_i2.JsonObject? sentences) => _$this._sentences = sentences;
 
   Garticle_append_inputBuilder();
 
   Garticle_append_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _sentences = $v.sentences?.toBuilder();
+      _sentences = $v.sentences;
       _$v = null;
     }
     return this;
@@ -21580,21 +21580,7 @@ class Garticle_append_inputBuilder
   Garticle_append_input build() => _build();
 
   _$Garticle_append_input _build() {
-    _$Garticle_append_input _$result;
-    try {
-      _$result =
-          _$v ?? new _$Garticle_append_input._(sentences: _sentences?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'sentences';
-        _sentences?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'Garticle_append_input', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ?? new _$Garticle_append_input._(sentences: sentences);
     replace(_$result);
     return _$result;
   }
@@ -22180,7 +22166,7 @@ class _$Garticle_insert_input extends Garticle_insert_input {
   @override
   final Guuid? id;
   @override
-  final Gjsonb? sentences;
+  final _i2.JsonObject? sentences;
   @override
   final String? thumbnail;
   @override
@@ -22306,9 +22292,9 @@ class Garticle_insert_inputBuilder
   GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
   set id(GuuidBuilder? id) => _$this._id = id;
 
-  GjsonbBuilder? _sentences;
-  GjsonbBuilder get sentences => _$this._sentences ??= new GjsonbBuilder();
-  set sentences(GjsonbBuilder? sentences) => _$this._sentences = sentences;
+  _i2.JsonObject? _sentences;
+  _i2.JsonObject? get sentences => _$this._sentences;
+  set sentences(_i2.JsonObject? sentences) => _$this._sentences = sentences;
 
   String? _thumbnail;
   String? get thumbnail => _$this._thumbnail;
@@ -22342,7 +22328,7 @@ class Garticle_insert_inputBuilder
       _deleted_at = $v.deleted_at?.toBuilder();
       _favicon = $v.favicon;
       _id = $v.id?.toBuilder();
-      _sentences = $v.sentences?.toBuilder();
+      _sentences = $v.sentences;
       _thumbnail = $v.thumbnail;
       _title = $v.title;
       _updated_at = $v.updated_at?.toBuilder();
@@ -22377,7 +22363,7 @@ class Garticle_insert_inputBuilder
               deleted_at: _deleted_at?.build(),
               favicon: favicon,
               id: _id?.build(),
-              sentences: _sentences?.build(),
+              sentences: sentences,
               thumbnail: thumbnail,
               title: title,
               updated_at: _updated_at?.build(),
@@ -22395,8 +22381,6 @@ class Garticle_insert_inputBuilder
 
         _$failedField = 'id';
         _id?.build();
-        _$failedField = 'sentences';
-        _sentences?.build();
 
         _$failedField = 'updated_at';
         _updated_at?.build();
@@ -22850,7 +22834,7 @@ class Garticle_pk_columns_inputBuilder
 
 class _$Garticle_prepend_input extends Garticle_prepend_input {
   @override
-  final Gjsonb? sentences;
+  final _i2.JsonObject? sentences;
 
   factory _$Garticle_prepend_input(
           [void Function(Garticle_prepend_inputBuilder)? updates]) =>
@@ -22890,16 +22874,16 @@ class Garticle_prepend_inputBuilder
     implements Builder<Garticle_prepend_input, Garticle_prepend_inputBuilder> {
   _$Garticle_prepend_input? _$v;
 
-  GjsonbBuilder? _sentences;
-  GjsonbBuilder get sentences => _$this._sentences ??= new GjsonbBuilder();
-  set sentences(GjsonbBuilder? sentences) => _$this._sentences = sentences;
+  _i2.JsonObject? _sentences;
+  _i2.JsonObject? get sentences => _$this._sentences;
+  set sentences(_i2.JsonObject? sentences) => _$this._sentences = sentences;
 
   Garticle_prepend_inputBuilder();
 
   Garticle_prepend_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _sentences = $v.sentences?.toBuilder();
+      _sentences = $v.sentences;
       _$v = null;
     }
     return this;
@@ -22920,21 +22904,8 @@ class Garticle_prepend_inputBuilder
   Garticle_prepend_input build() => _build();
 
   _$Garticle_prepend_input _build() {
-    _$Garticle_prepend_input _$result;
-    try {
-      _$result =
-          _$v ?? new _$Garticle_prepend_input._(sentences: _sentences?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'sentences';
-        _sentences?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'Garticle_prepend_input', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result =
+        _$v ?? new _$Garticle_prepend_input._(sentences: sentences);
     replace(_$result);
     return _$result;
   }
@@ -22952,7 +22923,7 @@ class _$Garticle_set_input extends Garticle_set_input {
   @override
   final Guuid? id;
   @override
-  final Gjsonb? sentences;
+  final _i2.JsonObject? sentences;
   @override
   final String? thumbnail;
   @override
@@ -23078,9 +23049,9 @@ class Garticle_set_inputBuilder
   GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
   set id(GuuidBuilder? id) => _$this._id = id;
 
-  GjsonbBuilder? _sentences;
-  GjsonbBuilder get sentences => _$this._sentences ??= new GjsonbBuilder();
-  set sentences(GjsonbBuilder? sentences) => _$this._sentences = sentences;
+  _i2.JsonObject? _sentences;
+  _i2.JsonObject? get sentences => _$this._sentences;
+  set sentences(_i2.JsonObject? sentences) => _$this._sentences = sentences;
 
   String? _thumbnail;
   String? get thumbnail => _$this._thumbnail;
@@ -23114,7 +23085,7 @@ class Garticle_set_inputBuilder
       _deleted_at = $v.deleted_at?.toBuilder();
       _favicon = $v.favicon;
       _id = $v.id?.toBuilder();
-      _sentences = $v.sentences?.toBuilder();
+      _sentences = $v.sentences;
       _thumbnail = $v.thumbnail;
       _title = $v.title;
       _updated_at = $v.updated_at?.toBuilder();
@@ -23149,7 +23120,7 @@ class Garticle_set_inputBuilder
               deleted_at: _deleted_at?.build(),
               favicon: favicon,
               id: _id?.build(),
-              sentences: _sentences?.build(),
+              sentences: sentences,
               thumbnail: thumbnail,
               title: title,
               updated_at: _updated_at?.build(),
@@ -23167,8 +23138,6 @@ class Garticle_set_inputBuilder
 
         _$failedField = 'id';
         _id?.build();
-        _$failedField = 'sentences';
-        _sentences?.build();
 
         _$failedField = 'updated_at';
         _updated_at?.build();
@@ -23309,7 +23278,7 @@ class _$Garticle_stream_cursor_value_input
   @override
   final Guuid? id;
   @override
-  final Gjsonb? sentences;
+  final _i2.JsonObject? sentences;
   @override
   final String? thumbnail;
   @override
@@ -23439,9 +23408,9 @@ class Garticle_stream_cursor_value_inputBuilder
   GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
   set id(GuuidBuilder? id) => _$this._id = id;
 
-  GjsonbBuilder? _sentences;
-  GjsonbBuilder get sentences => _$this._sentences ??= new GjsonbBuilder();
-  set sentences(GjsonbBuilder? sentences) => _$this._sentences = sentences;
+  _i2.JsonObject? _sentences;
+  _i2.JsonObject? get sentences => _$this._sentences;
+  set sentences(_i2.JsonObject? sentences) => _$this._sentences = sentences;
 
   String? _thumbnail;
   String? get thumbnail => _$this._thumbnail;
@@ -23475,7 +23444,7 @@ class Garticle_stream_cursor_value_inputBuilder
       _deleted_at = $v.deleted_at?.toBuilder();
       _favicon = $v.favicon;
       _id = $v.id?.toBuilder();
-      _sentences = $v.sentences?.toBuilder();
+      _sentences = $v.sentences;
       _thumbnail = $v.thumbnail;
       _title = $v.title;
       _updated_at = $v.updated_at?.toBuilder();
@@ -23511,7 +23480,7 @@ class Garticle_stream_cursor_value_inputBuilder
               deleted_at: _deleted_at?.build(),
               favicon: favicon,
               id: _id?.build(),
-              sentences: _sentences?.build(),
+              sentences: sentences,
               thumbnail: thumbnail,
               title: title,
               updated_at: _updated_at?.build(),
@@ -23529,8 +23498,6 @@ class Garticle_stream_cursor_value_inputBuilder
 
         _$failedField = 'id';
         _id?.build();
-        _$failedField = 'sentences';
-        _sentences?.build();
 
         _$failedField = 'updated_at';
         _updated_at?.build();
@@ -23749,7 +23716,7 @@ class Garticle_updatesBuilder
 class _$GauthProviderRequests_append_input
     extends GauthProviderRequests_append_input {
   @override
-  final Gjsonb? options;
+  final _i2.JsonObject? options;
 
   factory _$GauthProviderRequests_append_input(
           [void Function(GauthProviderRequests_append_inputBuilder)?
@@ -23794,16 +23761,16 @@ class GauthProviderRequests_append_inputBuilder
             GauthProviderRequests_append_inputBuilder> {
   _$GauthProviderRequests_append_input? _$v;
 
-  GjsonbBuilder? _options;
-  GjsonbBuilder get options => _$this._options ??= new GjsonbBuilder();
-  set options(GjsonbBuilder? options) => _$this._options = options;
+  _i2.JsonObject? _options;
+  _i2.JsonObject? get options => _$this._options;
+  set options(_i2.JsonObject? options) => _$this._options = options;
 
   GauthProviderRequests_append_inputBuilder();
 
   GauthProviderRequests_append_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _options = $v.options?.toBuilder();
+      _options = $v.options;
       _$v = null;
     }
     return this;
@@ -23825,22 +23792,8 @@ class GauthProviderRequests_append_inputBuilder
   GauthProviderRequests_append_input build() => _build();
 
   _$GauthProviderRequests_append_input _build() {
-    _$GauthProviderRequests_append_input _$result;
-    try {
-      _$result = _$v ??
-          new _$GauthProviderRequests_append_input._(
-              options: _options?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'options';
-        _options?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GauthProviderRequests_append_input', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result =
+        _$v ?? new _$GauthProviderRequests_append_input._(options: options);
     replace(_$result);
     return _$result;
   }
@@ -24291,7 +24244,7 @@ class _$GauthProviderRequests_insert_input
   @override
   final Guuid? id;
   @override
-  final Gjsonb? options;
+  final _i2.JsonObject? options;
 
   factory _$GauthProviderRequests_insert_input(
           [void Function(GauthProviderRequests_insert_inputBuilder)?
@@ -24342,9 +24295,9 @@ class GauthProviderRequests_insert_inputBuilder
   GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
   set id(GuuidBuilder? id) => _$this._id = id;
 
-  GjsonbBuilder? _options;
-  GjsonbBuilder get options => _$this._options ??= new GjsonbBuilder();
-  set options(GjsonbBuilder? options) => _$this._options = options;
+  _i2.JsonObject? _options;
+  _i2.JsonObject? get options => _$this._options;
+  set options(_i2.JsonObject? options) => _$this._options = options;
 
   GauthProviderRequests_insert_inputBuilder();
 
@@ -24352,7 +24305,7 @@ class GauthProviderRequests_insert_inputBuilder
     final $v = _$v;
     if ($v != null) {
       _id = $v.id?.toBuilder();
-      _options = $v.options?.toBuilder();
+      _options = $v.options;
       _$v = null;
     }
     return this;
@@ -24378,14 +24331,12 @@ class GauthProviderRequests_insert_inputBuilder
     try {
       _$result = _$v ??
           new _$GauthProviderRequests_insert_input._(
-              id: _id?.build(), options: _options?.build());
+              id: _id?.build(), options: options);
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'id';
         _id?.build();
-        _$failedField = 'options';
-        _options?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GauthProviderRequests_insert_input', _$failedField, e.toString());
@@ -24733,7 +24684,7 @@ class GauthProviderRequests_pk_columns_inputBuilder
 class _$GauthProviderRequests_prepend_input
     extends GauthProviderRequests_prepend_input {
   @override
-  final Gjsonb? options;
+  final _i2.JsonObject? options;
 
   factory _$GauthProviderRequests_prepend_input(
           [void Function(GauthProviderRequests_prepend_inputBuilder)?
@@ -24778,16 +24729,16 @@ class GauthProviderRequests_prepend_inputBuilder
             GauthProviderRequests_prepend_inputBuilder> {
   _$GauthProviderRequests_prepend_input? _$v;
 
-  GjsonbBuilder? _options;
-  GjsonbBuilder get options => _$this._options ??= new GjsonbBuilder();
-  set options(GjsonbBuilder? options) => _$this._options = options;
+  _i2.JsonObject? _options;
+  _i2.JsonObject? get options => _$this._options;
+  set options(_i2.JsonObject? options) => _$this._options = options;
 
   GauthProviderRequests_prepend_inputBuilder();
 
   GauthProviderRequests_prepend_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _options = $v.options?.toBuilder();
+      _options = $v.options;
       _$v = null;
     }
     return this;
@@ -24809,24 +24760,8 @@ class GauthProviderRequests_prepend_inputBuilder
   GauthProviderRequests_prepend_input build() => _build();
 
   _$GauthProviderRequests_prepend_input _build() {
-    _$GauthProviderRequests_prepend_input _$result;
-    try {
-      _$result = _$v ??
-          new _$GauthProviderRequests_prepend_input._(
-              options: _options?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'options';
-        _options?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GauthProviderRequests_prepend_input',
-            _$failedField,
-            e.toString());
-      }
-      rethrow;
-    }
+    final _$result =
+        _$v ?? new _$GauthProviderRequests_prepend_input._(options: options);
     replace(_$result);
     return _$result;
   }
@@ -24837,7 +24772,7 @@ class _$GauthProviderRequests_set_input
   @override
   final Guuid? id;
   @override
-  final Gjsonb? options;
+  final _i2.JsonObject? options;
 
   factory _$GauthProviderRequests_set_input(
           [void Function(GauthProviderRequests_set_inputBuilder)? updates]) =>
@@ -24886,9 +24821,9 @@ class GauthProviderRequests_set_inputBuilder
   GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
   set id(GuuidBuilder? id) => _$this._id = id;
 
-  GjsonbBuilder? _options;
-  GjsonbBuilder get options => _$this._options ??= new GjsonbBuilder();
-  set options(GjsonbBuilder? options) => _$this._options = options;
+  _i2.JsonObject? _options;
+  _i2.JsonObject? get options => _$this._options;
+  set options(_i2.JsonObject? options) => _$this._options = options;
 
   GauthProviderRequests_set_inputBuilder();
 
@@ -24896,7 +24831,7 @@ class GauthProviderRequests_set_inputBuilder
     final $v = _$v;
     if ($v != null) {
       _id = $v.id?.toBuilder();
-      _options = $v.options?.toBuilder();
+      _options = $v.options;
       _$v = null;
     }
     return this;
@@ -24921,14 +24856,12 @@ class GauthProviderRequests_set_inputBuilder
     try {
       _$result = _$v ??
           new _$GauthProviderRequests_set_input._(
-              id: _id?.build(), options: _options?.build());
+              id: _id?.build(), options: options);
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'id';
         _id?.build();
-        _$failedField = 'options';
-        _options?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GauthProviderRequests_set_input', _$failedField, e.toString());
@@ -25069,7 +25002,7 @@ class _$GauthProviderRequests_stream_cursor_value_input
   @override
   final Guuid? id;
   @override
-  final Gjsonb? options;
+  final _i2.JsonObject? options;
 
   factory _$GauthProviderRequests_stream_cursor_value_input(
           [void Function(
@@ -25126,9 +25059,9 @@ class GauthProviderRequests_stream_cursor_value_inputBuilder
   GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
   set id(GuuidBuilder? id) => _$this._id = id;
 
-  GjsonbBuilder? _options;
-  GjsonbBuilder get options => _$this._options ??= new GjsonbBuilder();
-  set options(GjsonbBuilder? options) => _$this._options = options;
+  _i2.JsonObject? _options;
+  _i2.JsonObject? get options => _$this._options;
+  set options(_i2.JsonObject? options) => _$this._options = options;
 
   GauthProviderRequests_stream_cursor_value_inputBuilder();
 
@@ -25136,7 +25069,7 @@ class GauthProviderRequests_stream_cursor_value_inputBuilder
     final $v = _$v;
     if ($v != null) {
       _id = $v.id?.toBuilder();
-      _options = $v.options?.toBuilder();
+      _options = $v.options;
       _$v = null;
     }
     return this;
@@ -25163,14 +25096,12 @@ class GauthProviderRequests_stream_cursor_value_inputBuilder
     try {
       _$result = _$v ??
           new _$GauthProviderRequests_stream_cursor_value_input._(
-              id: _id?.build(), options: _options?.build());
+              id: _id?.build(), options: options);
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'id';
         _id?.build();
-        _$failedField = 'options';
-        _options?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GauthProviderRequests_stream_cursor_value_input',
@@ -44126,84 +44057,6 @@ class Gfiles_variance_order_byBuilder
   }
 }
 
-class _$Gjsonb extends Gjsonb {
-  @override
-  final String value;
-
-  factory _$Gjsonb([void Function(GjsonbBuilder)? updates]) =>
-      (new GjsonbBuilder()..update(updates))._build();
-
-  _$Gjsonb._({required this.value}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(value, r'Gjsonb', 'value');
-  }
-
-  @override
-  Gjsonb rebuild(void Function(GjsonbBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GjsonbBuilder toBuilder() => new GjsonbBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is Gjsonb && value == other.value;
-  }
-
-  @override
-  int get hashCode {
-    return $jf($jc(0, value.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'Gjsonb')..add('value', value))
-        .toString();
-  }
-}
-
-class GjsonbBuilder implements Builder<Gjsonb, GjsonbBuilder> {
-  _$Gjsonb? _$v;
-
-  String? _value;
-  String? get value => _$this._value;
-  set value(String? value) => _$this._value = value;
-
-  GjsonbBuilder();
-
-  GjsonbBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _value = $v.value;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(Gjsonb other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Gjsonb;
-  }
-
-  @override
-  void update(void Function(GjsonbBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  Gjsonb build() => _build();
-
-  _$Gjsonb _build() {
-    final _$result = _$v ??
-        new _$Gjsonb._(
-            value: BuiltValueNullFieldError.checkNotNull(
-                value, r'Gjsonb', 'value'));
-    replace(_$result);
-    return _$result;
-  }
-}
-
 class _$Gjsonb_cast_exp extends Gjsonb_cast_exp {
   @override
   final GString_comparison_exp? GString;
@@ -44299,15 +44152,15 @@ class _$Gjsonb_comparison_exp extends Gjsonb_comparison_exp {
   @override
   final Gjsonb_cast_exp? G_cast;
   @override
-  final Gjsonb? G_contained_in;
+  final _i2.JsonObject? G_contained_in;
   @override
-  final Gjsonb? G_contains;
+  final _i2.JsonObject? G_contains;
   @override
-  final Gjsonb? G_eq;
+  final _i2.JsonObject? G_eq;
   @override
-  final Gjsonb? G_gt;
+  final _i2.JsonObject? G_gt;
   @override
-  final Gjsonb? G_gte;
+  final _i2.JsonObject? G_gte;
   @override
   final String? G_has_key;
   @override
@@ -44315,17 +44168,17 @@ class _$Gjsonb_comparison_exp extends Gjsonb_comparison_exp {
   @override
   final BuiltList<String>? G_has_keys_any;
   @override
-  final BuiltList<Gjsonb>? G_in;
+  final BuiltList<_i2.JsonObject>? G_in;
   @override
   final bool? G_is_null;
   @override
-  final Gjsonb? G_lt;
+  final _i2.JsonObject? G_lt;
   @override
-  final Gjsonb? G_lte;
+  final _i2.JsonObject? G_lte;
   @override
-  final Gjsonb? G_neq;
+  final _i2.JsonObject? G_neq;
   @override
-  final BuiltList<Gjsonb>? G_nin;
+  final BuiltList<_i2.JsonObject>? G_nin;
 
   factory _$Gjsonb_comparison_exp(
           [void Function(Gjsonb_comparison_expBuilder)? updates]) =>
@@ -44447,27 +44300,26 @@ class Gjsonb_comparison_expBuilder
       _$this._G_cast ??= new Gjsonb_cast_expBuilder();
   set G_cast(Gjsonb_cast_expBuilder? G_cast) => _$this._G_cast = G_cast;
 
-  GjsonbBuilder? _G_contained_in;
-  GjsonbBuilder get G_contained_in =>
-      _$this._G_contained_in ??= new GjsonbBuilder();
-  set G_contained_in(GjsonbBuilder? G_contained_in) =>
+  _i2.JsonObject? _G_contained_in;
+  _i2.JsonObject? get G_contained_in => _$this._G_contained_in;
+  set G_contained_in(_i2.JsonObject? G_contained_in) =>
       _$this._G_contained_in = G_contained_in;
 
-  GjsonbBuilder? _G_contains;
-  GjsonbBuilder get G_contains => _$this._G_contains ??= new GjsonbBuilder();
-  set G_contains(GjsonbBuilder? G_contains) => _$this._G_contains = G_contains;
+  _i2.JsonObject? _G_contains;
+  _i2.JsonObject? get G_contains => _$this._G_contains;
+  set G_contains(_i2.JsonObject? G_contains) => _$this._G_contains = G_contains;
 
-  GjsonbBuilder? _G_eq;
-  GjsonbBuilder get G_eq => _$this._G_eq ??= new GjsonbBuilder();
-  set G_eq(GjsonbBuilder? G_eq) => _$this._G_eq = G_eq;
+  _i2.JsonObject? _G_eq;
+  _i2.JsonObject? get G_eq => _$this._G_eq;
+  set G_eq(_i2.JsonObject? G_eq) => _$this._G_eq = G_eq;
 
-  GjsonbBuilder? _G_gt;
-  GjsonbBuilder get G_gt => _$this._G_gt ??= new GjsonbBuilder();
-  set G_gt(GjsonbBuilder? G_gt) => _$this._G_gt = G_gt;
+  _i2.JsonObject? _G_gt;
+  _i2.JsonObject? get G_gt => _$this._G_gt;
+  set G_gt(_i2.JsonObject? G_gt) => _$this._G_gt = G_gt;
 
-  GjsonbBuilder? _G_gte;
-  GjsonbBuilder get G_gte => _$this._G_gte ??= new GjsonbBuilder();
-  set G_gte(GjsonbBuilder? G_gte) => _$this._G_gte = G_gte;
+  _i2.JsonObject? _G_gte;
+  _i2.JsonObject? get G_gte => _$this._G_gte;
+  set G_gte(_i2.JsonObject? G_gte) => _$this._G_gte = G_gte;
 
   String? _G_has_key;
   String? get G_has_key => _$this._G_has_key;
@@ -44485,29 +44337,31 @@ class Gjsonb_comparison_expBuilder
   set G_has_keys_any(ListBuilder<String>? G_has_keys_any) =>
       _$this._G_has_keys_any = G_has_keys_any;
 
-  ListBuilder<Gjsonb>? _G_in;
-  ListBuilder<Gjsonb> get G_in => _$this._G_in ??= new ListBuilder<Gjsonb>();
-  set G_in(ListBuilder<Gjsonb>? G_in) => _$this._G_in = G_in;
+  ListBuilder<_i2.JsonObject>? _G_in;
+  ListBuilder<_i2.JsonObject> get G_in =>
+      _$this._G_in ??= new ListBuilder<_i2.JsonObject>();
+  set G_in(ListBuilder<_i2.JsonObject>? G_in) => _$this._G_in = G_in;
 
   bool? _G_is_null;
   bool? get G_is_null => _$this._G_is_null;
   set G_is_null(bool? G_is_null) => _$this._G_is_null = G_is_null;
 
-  GjsonbBuilder? _G_lt;
-  GjsonbBuilder get G_lt => _$this._G_lt ??= new GjsonbBuilder();
-  set G_lt(GjsonbBuilder? G_lt) => _$this._G_lt = G_lt;
+  _i2.JsonObject? _G_lt;
+  _i2.JsonObject? get G_lt => _$this._G_lt;
+  set G_lt(_i2.JsonObject? G_lt) => _$this._G_lt = G_lt;
 
-  GjsonbBuilder? _G_lte;
-  GjsonbBuilder get G_lte => _$this._G_lte ??= new GjsonbBuilder();
-  set G_lte(GjsonbBuilder? G_lte) => _$this._G_lte = G_lte;
+  _i2.JsonObject? _G_lte;
+  _i2.JsonObject? get G_lte => _$this._G_lte;
+  set G_lte(_i2.JsonObject? G_lte) => _$this._G_lte = G_lte;
 
-  GjsonbBuilder? _G_neq;
-  GjsonbBuilder get G_neq => _$this._G_neq ??= new GjsonbBuilder();
-  set G_neq(GjsonbBuilder? G_neq) => _$this._G_neq = G_neq;
+  _i2.JsonObject? _G_neq;
+  _i2.JsonObject? get G_neq => _$this._G_neq;
+  set G_neq(_i2.JsonObject? G_neq) => _$this._G_neq = G_neq;
 
-  ListBuilder<Gjsonb>? _G_nin;
-  ListBuilder<Gjsonb> get G_nin => _$this._G_nin ??= new ListBuilder<Gjsonb>();
-  set G_nin(ListBuilder<Gjsonb>? G_nin) => _$this._G_nin = G_nin;
+  ListBuilder<_i2.JsonObject>? _G_nin;
+  ListBuilder<_i2.JsonObject> get G_nin =>
+      _$this._G_nin ??= new ListBuilder<_i2.JsonObject>();
+  set G_nin(ListBuilder<_i2.JsonObject>? G_nin) => _$this._G_nin = G_nin;
 
   Gjsonb_comparison_expBuilder();
 
@@ -44515,19 +44369,19 @@ class Gjsonb_comparison_expBuilder
     final $v = _$v;
     if ($v != null) {
       _G_cast = $v.G_cast?.toBuilder();
-      _G_contained_in = $v.G_contained_in?.toBuilder();
-      _G_contains = $v.G_contains?.toBuilder();
-      _G_eq = $v.G_eq?.toBuilder();
-      _G_gt = $v.G_gt?.toBuilder();
-      _G_gte = $v.G_gte?.toBuilder();
+      _G_contained_in = $v.G_contained_in;
+      _G_contains = $v.G_contains;
+      _G_eq = $v.G_eq;
+      _G_gt = $v.G_gt;
+      _G_gte = $v.G_gte;
       _G_has_key = $v.G_has_key;
       _G_has_keys_all = $v.G_has_keys_all?.toBuilder();
       _G_has_keys_any = $v.G_has_keys_any?.toBuilder();
       _G_in = $v.G_in?.toBuilder();
       _G_is_null = $v.G_is_null;
-      _G_lt = $v.G_lt?.toBuilder();
-      _G_lte = $v.G_lte?.toBuilder();
-      _G_neq = $v.G_neq?.toBuilder();
+      _G_lt = $v.G_lt;
+      _G_lte = $v.G_lte;
+      _G_neq = $v.G_neq;
       _G_nin = $v.G_nin?.toBuilder();
       _$v = null;
     }
@@ -44554,35 +44408,25 @@ class Gjsonb_comparison_expBuilder
       _$result = _$v ??
           new _$Gjsonb_comparison_exp._(
               G_cast: _G_cast?.build(),
-              G_contained_in: _G_contained_in?.build(),
-              G_contains: _G_contains?.build(),
-              G_eq: _G_eq?.build(),
-              G_gt: _G_gt?.build(),
-              G_gte: _G_gte?.build(),
+              G_contained_in: G_contained_in,
+              G_contains: G_contains,
+              G_eq: G_eq,
+              G_gt: G_gt,
+              G_gte: G_gte,
               G_has_key: G_has_key,
               G_has_keys_all: _G_has_keys_all?.build(),
               G_has_keys_any: _G_has_keys_any?.build(),
               G_in: _G_in?.build(),
               G_is_null: G_is_null,
-              G_lt: _G_lt?.build(),
-              G_lte: _G_lte?.build(),
-              G_neq: _G_neq?.build(),
+              G_lt: G_lt,
+              G_lte: G_lte,
+              G_neq: G_neq,
               G_nin: _G_nin?.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'G_cast';
         _G_cast?.build();
-        _$failedField = 'G_contained_in';
-        _G_contained_in?.build();
-        _$failedField = 'G_contains';
-        _G_contains?.build();
-        _$failedField = 'G_eq';
-        _G_eq?.build();
-        _$failedField = 'G_gt';
-        _G_gt?.build();
-        _$failedField = 'G_gte';
-        _G_gte?.build();
 
         _$failedField = 'G_has_keys_all';
         _G_has_keys_all?.build();
@@ -44591,12 +44435,6 @@ class Gjsonb_comparison_expBuilder
         _$failedField = 'G_in';
         _G_in?.build();
 
-        _$failedField = 'G_lt';
-        _G_lt?.build();
-        _$failedField = 'G_lte';
-        _G_lte?.build();
-        _$failedField = 'G_neq';
-        _G_neq?.build();
         _$failedField = 'G_nin';
         _G_nin?.build();
       } catch (e) {
@@ -45605,7 +45443,7 @@ class Gusers_aggregate_order_byBuilder
 
 class _$Gusers_append_input extends Gusers_append_input {
   @override
-  final Gjsonb? metadata;
+  final _i2.JsonObject? metadata;
 
   factory _$Gusers_append_input(
           [void Function(Gusers_append_inputBuilder)? updates]) =>
@@ -45645,16 +45483,16 @@ class Gusers_append_inputBuilder
     implements Builder<Gusers_append_input, Gusers_append_inputBuilder> {
   _$Gusers_append_input? _$v;
 
-  GjsonbBuilder? _metadata;
-  GjsonbBuilder get metadata => _$this._metadata ??= new GjsonbBuilder();
-  set metadata(GjsonbBuilder? metadata) => _$this._metadata = metadata;
+  _i2.JsonObject? _metadata;
+  _i2.JsonObject? get metadata => _$this._metadata;
+  set metadata(_i2.JsonObject? metadata) => _$this._metadata = metadata;
 
   Gusers_append_inputBuilder();
 
   Gusers_append_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _metadata = $v.metadata?.toBuilder();
+      _metadata = $v.metadata;
       _$v = null;
     }
     return this;
@@ -45675,21 +45513,7 @@ class Gusers_append_inputBuilder
   Gusers_append_input build() => _build();
 
   _$Gusers_append_input _build() {
-    _$Gusers_append_input _$result;
-    try {
-      _$result =
-          _$v ?? new _$Gusers_append_input._(metadata: _metadata?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'metadata';
-        _metadata?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'Gusers_append_input', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ?? new _$Gusers_append_input._(metadata: metadata);
     replace(_$result);
     return _$result;
   }
@@ -46770,7 +46594,7 @@ class _$Gusers_insert_input extends Gusers_insert_input {
   @override
   final String? locale;
   @override
-  final Gjsonb? metadata;
+  final _i2.JsonObject? metadata;
   @override
   final Gcitext? newEmail;
   @override
@@ -47033,9 +46857,9 @@ class Gusers_insert_inputBuilder
   String? get locale => _$this._locale;
   set locale(String? locale) => _$this._locale = locale;
 
-  GjsonbBuilder? _metadata;
-  GjsonbBuilder get metadata => _$this._metadata ??= new GjsonbBuilder();
-  set metadata(GjsonbBuilder? metadata) => _$this._metadata = metadata;
+  _i2.JsonObject? _metadata;
+  _i2.JsonObject? get metadata => _$this._metadata;
+  set metadata(_i2.JsonObject? metadata) => _$this._metadata = metadata;
 
   GcitextBuilder? _newEmail;
   GcitextBuilder get newEmail => _$this._newEmail ??= new GcitextBuilder();
@@ -47138,7 +46962,7 @@ class Gusers_insert_inputBuilder
       _isAnonymous = $v.isAnonymous;
       _lastSeen = $v.lastSeen?.toBuilder();
       _locale = $v.locale;
-      _metadata = $v.metadata?.toBuilder();
+      _metadata = $v.metadata;
       _newEmail = $v.newEmail?.toBuilder();
       _otpHash = $v.otpHash;
       _otpHashExpiresAt = $v.otpHashExpiresAt?.toBuilder();
@@ -47192,7 +47016,7 @@ class Gusers_insert_inputBuilder
               isAnonymous: isAnonymous,
               lastSeen: _lastSeen?.build(),
               locale: locale,
-              metadata: _metadata?.build(),
+              metadata: metadata,
               newEmail: _newEmail?.build(),
               otpHash: otpHash,
               otpHashExpiresAt: _otpHashExpiresAt?.build(),
@@ -47226,8 +47050,6 @@ class Gusers_insert_inputBuilder
         _$failedField = 'lastSeen';
         _lastSeen?.build();
 
-        _$failedField = 'metadata';
-        _metadata?.build();
         _$failedField = 'newEmail';
         _newEmail?.build();
 
@@ -48757,7 +48579,7 @@ class Gusers_pk_columns_inputBuilder
 
 class _$Gusers_prepend_input extends Gusers_prepend_input {
   @override
-  final Gjsonb? metadata;
+  final _i2.JsonObject? metadata;
 
   factory _$Gusers_prepend_input(
           [void Function(Gusers_prepend_inputBuilder)? updates]) =>
@@ -48797,16 +48619,16 @@ class Gusers_prepend_inputBuilder
     implements Builder<Gusers_prepend_input, Gusers_prepend_inputBuilder> {
   _$Gusers_prepend_input? _$v;
 
-  GjsonbBuilder? _metadata;
-  GjsonbBuilder get metadata => _$this._metadata ??= new GjsonbBuilder();
-  set metadata(GjsonbBuilder? metadata) => _$this._metadata = metadata;
+  _i2.JsonObject? _metadata;
+  _i2.JsonObject? get metadata => _$this._metadata;
+  set metadata(_i2.JsonObject? metadata) => _$this._metadata = metadata;
 
   Gusers_prepend_inputBuilder();
 
   Gusers_prepend_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _metadata = $v.metadata?.toBuilder();
+      _metadata = $v.metadata;
       _$v = null;
     }
     return this;
@@ -48827,21 +48649,7 @@ class Gusers_prepend_inputBuilder
   Gusers_prepend_input build() => _build();
 
   _$Gusers_prepend_input _build() {
-    _$Gusers_prepend_input _$result;
-    try {
-      _$result =
-          _$v ?? new _$Gusers_prepend_input._(metadata: _metadata?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'metadata';
-        _metadata?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'Gusers_prepend_input', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ?? new _$Gusers_prepend_input._(metadata: metadata);
     replace(_$result);
     return _$result;
   }
@@ -48875,7 +48683,7 @@ class _$Gusers_set_input extends Gusers_set_input {
   @override
   final String? locale;
   @override
-  final Gjsonb? metadata;
+  final _i2.JsonObject? metadata;
   @override
   final Gcitext? newEmail;
   @override
@@ -49106,9 +48914,9 @@ class Gusers_set_inputBuilder
   String? get locale => _$this._locale;
   set locale(String? locale) => _$this._locale = locale;
 
-  GjsonbBuilder? _metadata;
-  GjsonbBuilder get metadata => _$this._metadata ??= new GjsonbBuilder();
-  set metadata(GjsonbBuilder? metadata) => _$this._metadata = metadata;
+  _i2.JsonObject? _metadata;
+  _i2.JsonObject? get metadata => _$this._metadata;
+  set metadata(_i2.JsonObject? metadata) => _$this._metadata = metadata;
 
   GcitextBuilder? _newEmail;
   GcitextBuilder get newEmail => _$this._newEmail ??= new GcitextBuilder();
@@ -49180,7 +48988,7 @@ class Gusers_set_inputBuilder
       _isAnonymous = $v.isAnonymous;
       _lastSeen = $v.lastSeen?.toBuilder();
       _locale = $v.locale;
-      _metadata = $v.metadata?.toBuilder();
+      _metadata = $v.metadata;
       _newEmail = $v.newEmail?.toBuilder();
       _otpHash = $v.otpHash;
       _otpHashExpiresAt = $v.otpHashExpiresAt?.toBuilder();
@@ -49229,7 +49037,7 @@ class Gusers_set_inputBuilder
               isAnonymous: isAnonymous,
               lastSeen: _lastSeen?.build(),
               locale: locale,
-              metadata: _metadata?.build(),
+              metadata: metadata,
               newEmail: _newEmail?.build(),
               otpHash: otpHash,
               otpHashExpiresAt: _otpHashExpiresAt?.build(),
@@ -49256,8 +49064,6 @@ class Gusers_set_inputBuilder
         _$failedField = 'lastSeen';
         _lastSeen?.build();
 
-        _$failedField = 'metadata';
-        _metadata?.build();
         _$failedField = 'newEmail';
         _newEmail?.build();
 
@@ -49419,7 +49225,7 @@ class _$Gusers_stream_cursor_value_input
   @override
   final String? locale;
   @override
-  final Gjsonb? metadata;
+  final _i2.JsonObject? metadata;
   @override
   final Gcitext? newEmail;
   @override
@@ -49653,9 +49459,9 @@ class Gusers_stream_cursor_value_inputBuilder
   String? get locale => _$this._locale;
   set locale(String? locale) => _$this._locale = locale;
 
-  GjsonbBuilder? _metadata;
-  GjsonbBuilder get metadata => _$this._metadata ??= new GjsonbBuilder();
-  set metadata(GjsonbBuilder? metadata) => _$this._metadata = metadata;
+  _i2.JsonObject? _metadata;
+  _i2.JsonObject? get metadata => _$this._metadata;
+  set metadata(_i2.JsonObject? metadata) => _$this._metadata = metadata;
 
   GcitextBuilder? _newEmail;
   GcitextBuilder get newEmail => _$this._newEmail ??= new GcitextBuilder();
@@ -49727,7 +49533,7 @@ class Gusers_stream_cursor_value_inputBuilder
       _isAnonymous = $v.isAnonymous;
       _lastSeen = $v.lastSeen?.toBuilder();
       _locale = $v.locale;
-      _metadata = $v.metadata?.toBuilder();
+      _metadata = $v.metadata;
       _newEmail = $v.newEmail?.toBuilder();
       _otpHash = $v.otpHash;
       _otpHashExpiresAt = $v.otpHashExpiresAt?.toBuilder();
@@ -49776,7 +49582,7 @@ class Gusers_stream_cursor_value_inputBuilder
               isAnonymous: isAnonymous,
               lastSeen: _lastSeen?.build(),
               locale: locale,
-              metadata: _metadata?.build(),
+              metadata: metadata,
               newEmail: _newEmail?.build(),
               otpHash: otpHash,
               otpHashExpiresAt: _otpHashExpiresAt?.build(),
@@ -49803,8 +49609,6 @@ class Gusers_stream_cursor_value_inputBuilder
         _$failedField = 'lastSeen';
         _lastSeen?.build();
 
-        _$failedField = 'metadata';
-        _metadata?.build();
         _$failedField = 'newEmail';
         _newEmail?.build();
 

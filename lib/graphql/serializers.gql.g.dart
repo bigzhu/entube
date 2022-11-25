@@ -212,7 +212,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Gfiles_var_pop_order_by.serializer)
       ..add(Gfiles_var_samp_order_by.serializer)
       ..add(Gfiles_variance_order_by.serializer)
-      ..add(Gjsonb.serializer)
       ..add(Gjsonb_cast_exp.serializer)
       ..add(Gjsonb_comparison_exp.serializer)
       ..add(Gorder_by.serializer)
@@ -480,11 +479,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Gjsonb)]),
-          () => new ListBuilder<Gjsonb>())
+          const FullType(BuiltList, const [const FullType(JsonObject)]),
+          () => new ListBuilder<JsonObject>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Gjsonb)]),
-          () => new ListBuilder<Gjsonb>())
+          const FullType(BuiltList, const [const FullType(JsonObject)]),
+          () => new ListBuilder<JsonObject>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(bool)]),
           () => new ListBuilder<bool>())
