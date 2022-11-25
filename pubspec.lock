@@ -528,7 +528,7 @@ packages:
     source: hosted
     version: "5.0.1-beta.1"
   graphql_flutter:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: graphql_flutter
       url: "https://pub.dartlang.org"
