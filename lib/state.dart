@@ -1,12 +1,11 @@
 import 'package:entube/graphql/schema.schema.gql.dart' show possibleTypesMap;
 import 'package:ferry/ferry.dart';
 import 'package:ferry_hive_store/ferry_hive_store.dart';
-import 'package:gql_http_link/gql_http_link.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nhost_flutter_graphql/nhost_flutter_graphql.dart';
 //// ignore: depend_on_referenced_packages
-//import 'package:nhost_graphql_adapter/nhost_graphql_adapter.dart';
+import 'package:nhost_graphql_adapter/nhost_graphql_adapter.dart';
 import 'package:nhost_sdk/nhost_sdk.dart';
 
 final backendUrlP = Provider<String>((ref) {
@@ -27,14 +26,6 @@ final nhostGoogleSignInUrlP = Provider<String>((ref) {
   return "$backendUrl/v1/auth/signin/provider/google/";
 });
 
-//final gqlClientP = Provider<GraphQLClient>((ref) {
-//  final nhostLink = combinedLinkForNhost(ref.watch(nhostClientP));
-//  return GraphQLClient(
-//    link: nhostLink,
-//    cache: GraphQLCache(),
-//  );
-//});
-
 final gqlClientFP = FutureProvider<Client>((ref) async {
   Hive.init('hive_data');
   // OR, if using flutter
@@ -46,10 +37,9 @@ final gqlClientFP = FutureProvider<Client>((ref) async {
 
   final cache = Cache(store: store, possibleTypes: possibleTypesMap);
 
-  final link = HttpLink('[path/to/endpoint]');
-
+  final nhostLink = combinedLinkForNhost(ref.watch(nhostClientP));
   final client = Client(
-    link: link,
+    link: nhostLink,
     cache: cache,
   );
 
