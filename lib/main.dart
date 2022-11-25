@@ -44,6 +44,7 @@ class MyApp extends HookConsumerWidget {
     );
 
     final authenticationState = ref.watch(authSNP);
+
     return MaterialApp.router(
       title: configTitle,
       // The Mandy red, light theme.

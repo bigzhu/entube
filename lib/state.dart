@@ -29,9 +29,7 @@ final nhostGoogleSignInUrlP = Provider<String>((ref) {
 });
 
 final gqlClientP = Provider<Future<Client>>((ref) async {
-  Hive.init('hive_data');
-  // OR, if using flutter
-  // await Hive.initFlutter();
+  await Hive.initFlutter();
 
   final box = await Hive.openBox("graphql");
 
@@ -40,7 +38,6 @@ final gqlClientP = Provider<Future<Client>>((ref) async {
   final cache = Cache(store: store, possibleTypes: possibleTypesMap);
 
   final nhostLink = combinedLinkForNhost(ref.watch(nhostClientP));
-  //final link = HttpLink('[path/to/endpoint]', defaultHeaders: );
   final client = Client(
     link: nhostLink,
     cache: cache,

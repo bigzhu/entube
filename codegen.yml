@@ -1,4 +1,4 @@
-schema: './schema.graphql'
+schema: './lib/graphql/schema.graphql'
 generates:
  ./lib/models.dart:
   plugins:
