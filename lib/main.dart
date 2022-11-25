@@ -2,6 +2,7 @@ import 'package:app_links/app_links.dart';
 import 'package:entube/components/Auth/index.dart';
 import 'package:entube/configs.dart';
 import 'package:entube/routes.dart';
+import 'package:entube/state.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
@@ -27,6 +28,7 @@ class MyApp extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     AppLinks appLinks = AppLinks();
+    final nhostClient = ref.watch(nhostClientP);
     useEffect(
       () {
         //register the app link handler
@@ -37,6 +39,7 @@ class MyApp extends HookConsumerWidget {
           closeInAppWebView();
         });
         return () {
+          nhostClient.close();
           linkSubscription.cancel();
         };
       },
@@ -58,7 +61,8 @@ class MyApp extends HookConsumerWidget {
           redirect: (BuildContext context, GoRouterState state) {
             switch (authenticationState) {
               case AuthenticationState.signedIn:
-                return '/ArticleItems';
+                //return '/ArticleItems';
+                return '/LoggedInUserDetails';
               case AuthenticationState.inProgress:
                 return '/AuthLoading';
               case AuthenticationState.signedOut:

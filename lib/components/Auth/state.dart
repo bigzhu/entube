@@ -14,19 +14,33 @@ final authSNP =
 class AuthStateNotifier extends StateNotifier<AuthenticationState> {
   final Ref ref;
   late AuthClient auth;
-  AuthStateNotifier(this.ref) : super(ref.watch(authP).authenticationState) {
+  AuthStateNotifier(this.ref) : super(AuthenticationState.inProgress) {
     auth = ref.watch(authP);
+    autoSignIn();
+  }
+  Future<void> autoSignIn() async {
+    try {
+      await auth.signInWithStoredCredentials();
+      state = auth.authenticationState;
+      return;
+    } on Exception catch (e) {
+      print('$e');
+    }
+    state = AuthenticationState.signedOut;
   }
 
   Future<void> completeOAuth(Uri uri) async {
     state = AuthenticationState.inProgress;
     await auth.completeOAuthProviderSignIn(uri);
     state = auth.authenticationState;
+    // use close to save the token
+    ref.watch(nhostClientP).close();
   }
 
   Future<void> logout() async {
     state = AuthenticationState.inProgress;
     await auth.signOut();
     state = auth.authenticationState;
+    ref.watch(nhostClientP).close();
   }
 }

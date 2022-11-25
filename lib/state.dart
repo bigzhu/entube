@@ -9,6 +9,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 //import 'package:nhost_graphql_adapter/nhost_graphql_adapter.dart';
 import 'package:entube/utils/nhost/links.dart';
 import 'package:entube/utils/nhost/nhost_sdk/nhost_sdk.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final backendUrlP = Provider<String>((ref) {
   return 'https://jysijxgffjwavdtqcuir.nhost.run';
@@ -16,7 +17,8 @@ final backendUrlP = Provider<String>((ref) {
 
 final nhostClientP = Provider<NhostClient>((ref) {
   final backendUrl = ref.watch(backendUrlP);
-  return NhostClient(backendUrl: backendUrl);
+  return NhostClient(
+      backendUrl: backendUrl, authStore: SharedPreferencesAuthStore());
 });
 
 final nhostGithubSignInUrlP = Provider<String>((ref) {
@@ -45,3 +47,23 @@ final gqlClientP = Provider<Future<Client>>((ref) async {
 
   return client;
 });
+
+class SharedPreferencesAuthStore implements AuthStore {
+  @override
+  Future<String?> getString(String key) async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(key);
+  }
+
+  @override
+  Future<void> setString(String key, String value) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(key, value);
+  }
+
+  @override
+  Future<void> removeItem(String key) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove(key);
+  }
+}
