@@ -1,6 +1,5 @@
 import 'package:entube/state.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:nhost_flutter_graphql/nhost_flutter_graphql.dart';
 import 'package:nhost_sdk/nhost_sdk.dart';
 
 final authP = Provider<AuthClient>((ref) {

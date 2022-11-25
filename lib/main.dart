@@ -57,7 +57,7 @@ class MyApp extends HookConsumerWidget {
           redirect: (BuildContext context, GoRouterState state) {
             switch (authenticationState) {
               case AuthenticationState.signedIn:
-                return '/LoggedInUserDetails';
+                return '/ArticleItems';
               case AuthenticationState.inProgress:
                 return '/AuthLoading';
               case AuthenticationState.signedOut:

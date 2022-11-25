@@ -196,7 +196,7 @@ packages:
       name: connectivity_plus
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.0"
+    version: "2.3.9"
   connectivity_plus_linux:
     dependency: transitive
     description:
@@ -477,14 +477,14 @@ packages:
       name: gql_dedupe_link
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.3+1"
   gql_error_link:
     dependency: transitive
     description:
       name: gql_error_link
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.2"
+    version: "0.2.3+1"
   gql_exec:
     dependency: "direct overridden"
     description:
@@ -512,28 +512,28 @@ packages:
       name: gql_transform_link
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.2"
+    version: "0.2.2+1"
   gql_websocket_link:
     dependency: transitive
     description:
       name: gql_websocket_link
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.4-alpha+1659910170125"
+    version: "0.3.4+1"
   graphql:
     dependency: transitive
     description:
       name: graphql
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.0.1-beta.1"
+    version: "5.1.1"
   graphql_flutter:
     dependency: transitive
     description:
       name: graphql_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.0.0"
+    version: "5.1.0"
   graphs:
     dependency: transitive
     description:
