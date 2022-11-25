@@ -1,6 +1,6 @@
 import 'package:entube/state.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:nhost_sdk/nhost_sdk.dart';
+import 'package:entube/utils/nhost/nhost_sdk/nhost_sdk.dart';
 
 final authP = Provider<AuthClient>((ref) {
   return ref.watch(nhostClientP).auth;

@@ -3,7 +3,7 @@ import 'package:entube/components/LogoLoading.dart';
 import 'package:entube/state.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:nhost_sdk/nhost_sdk.dart';
+import 'package:entube/utils/nhost/nhost_sdk/nhost_sdk.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

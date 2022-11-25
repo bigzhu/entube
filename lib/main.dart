@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:nhost_sdk/nhost_sdk.dart';
+import 'package:entube/utils/nhost/nhost_sdk/nhost_sdk.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 //import './article_items_page.dart';

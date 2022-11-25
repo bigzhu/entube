@@ -56,6 +56,8 @@ dependencies:
   hive_flutter: ^1.1.0
   gql_build: ^0.7.0
   ferry_flutter: ^0.8.0-dev.2
+  jwt_decoder: ^2.0.1
+  gql_websocket_link: ^0.3.4+1
 
 dev_dependencies:
   flutter_test:
