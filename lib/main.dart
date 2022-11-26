@@ -1,5 +1,6 @@
 import 'package:app_links/app_links.dart';
 import 'package:entube/components/Auth/index.dart';
+import 'package:entube/components_old/logo_loading.dart';
 import 'package:entube/configs.dart';
 import 'package:entube/routes.dart';
 import 'package:entube/state.dart';
@@ -8,6 +9,7 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:entube/utils/nhost/nhost_sdk/nhost_sdk.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -28,7 +30,7 @@ class MyApp extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     AppLinks appLinks = AppLinks();
-    final nhostClient = ref.watch(nhostClientP);
+
     useEffect(
       () {
         //register the app link handler
@@ -38,13 +40,17 @@ class MyApp extends HookConsumerWidget {
           }
           closeInAppWebView();
         });
+
         return () {
-          nhostClient.close();
           linkSubscription.cancel();
         };
       },
       [],
     );
+    final openHiveBox = ref.watch(openHiveBoxP);
+    final snapshot = useFuture(openHiveBox, initialData: null);
+
+    if (snapshot.data == null) return const LogoLoading();
 
     final authenticationState = ref.watch(authSNP);
 
@@ -61,8 +67,8 @@ class MyApp extends HookConsumerWidget {
           redirect: (BuildContext context, GoRouterState state) {
             switch (authenticationState) {
               case AuthenticationState.signedIn:
-                //return '/ArticleItems';
-                return '/LoggedInUserDetails';
+                return '/ArticleItems';
+              //return '/LoggedInUserDetails';
               case AuthenticationState.inProgress:
                 return '/AuthLoading';
               case AuthenticationState.signedOut:

@@ -9,7 +9,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 //import 'package:nhost_graphql_adapter/nhost_graphql_adapter.dart';
 import 'package:entube/utils/nhost/links.dart';
 import 'package:entube/utils/nhost/nhost_sdk/nhost_sdk.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 final backendUrlP = Provider<String>((ref) {
   return 'https://jysijxgffjwavdtqcuir.nhost.run';
@@ -18,24 +17,23 @@ final backendUrlP = Provider<String>((ref) {
 final nhostClientP = Provider<NhostClient>((ref) {
   final backendUrl = ref.watch(backendUrlP);
   return NhostClient(
-      backendUrl: backendUrl, authStore: SharedPreferencesAuthStore());
+      backendUrl: backendUrl, authStore: HiveAuthStore(ref.watch(authBoxSP)!));
 });
 
 final nhostGithubSignInUrlP = Provider<String>((ref) {
   final backendUrl = ref.watch(backendUrlP);
   return "$backendUrl/v1/auth/signin/provider/github/";
 });
+
 final nhostGoogleSignInUrlP = Provider<String>((ref) {
   final backendUrl = ref.watch(backendUrlP);
   return "$backendUrl/v1/auth/signin/provider/google/";
 });
 
-final gqlClientP = Provider<Future<Client>>((ref) async {
-  await Hive.initFlutter();
+final gqlClientP = Provider<Client>((ref) {
+  final box = ref.watch(graphqlBoxSP);
 
-  final box = await Hive.openBox("graphql");
-
-  final store = HiveStore(box);
+  final store = HiveStore(box!);
 
   final cache = Cache(store: store, possibleTypes: possibleTypesMap);
 
@@ -48,22 +46,41 @@ final gqlClientP = Provider<Future<Client>>((ref) async {
   return client;
 });
 
-class SharedPreferencesAuthStore implements AuthStore {
+final graphqlBoxSP = StateProvider<Box?>(
+  // We return the default sort type, here name.
+  (ref) => null,
+);
+
+final authBoxSP = StateProvider<Box?>(
+  // We return the default sort type, here name.
+  (ref) => null,
+);
+
+final openHiveBoxP = Provider<Future<String>>((ref) async {
+  print('openHiveBoxP');
+  await Hive.initFlutter();
+  final graphqlBox = await Hive.openBox("graphql");
+  ref.read(graphqlBoxSP.notifier).state = graphqlBox;
+  final authBox = await Hive.openBox("graphql");
+  ref.read(authBoxSP.notifier).state = authBox;
+  return 'done';
+});
+
+class HiveAuthStore implements AuthStore {
+  HiveAuthStore(this.authBox);
+  late Box authBox;
   @override
-  Future<String?> getString(String key) async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getString(key);
+  String? getString(String key) {
+    return authBox.get(key);
   }
 
   @override
   Future<void> setString(String key, String value) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(key, value);
+    await authBox.put(key, value);
   }
 
   @override
   Future<void> removeItem(String key) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.remove(key);
+    await authBox.delete(key);
   }
 }

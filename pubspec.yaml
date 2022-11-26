@@ -59,7 +59,6 @@ dependencies:
   jwt_decoder: ^2.0.1
   gql_websocket_link: ^0.3.4+1
   flutter_hooks: ^0.18.5+1
-  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:
