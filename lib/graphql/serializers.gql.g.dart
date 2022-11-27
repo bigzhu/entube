@@ -8,10 +8,10 @@ part of 'serializers.gql.dart';
 
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(FetchPolicy.serializer)
-      ..add(GArticlesData.serializer)
-      ..add(GArticlesData_articles.serializer)
-      ..add(GArticlesReq.serializer)
-      ..add(GArticlesVars.serializer)
+      ..add(GArticleItemsData.serializer)
+      ..add(GArticleItemsData_articles.serializer)
+      ..add(GArticleItemsReq.serializer)
+      ..add(GArticleItemsVars.serializer)
       ..add(GBoolean_comparison_exp.serializer)
       ..add(GInt_comparison_exp.serializer)
       ..add(GString_comparison_exp.serializer)
@@ -253,8 +253,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Guuid_comparison_exp.serializer)
       ..addBuilderFactory(
           const FullType(
-              BuiltList, const [const FullType(GArticlesData_articles)]),
-          () => new ListBuilder<GArticlesData_articles>())
+              BuiltList, const [const FullType(GArticleItemsData_articles)]),
+          () => new ListBuilder<GArticleItemsData_articles>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Garticles_bool_exp)]),
           () => new ListBuilder<Garticles_bool_exp>())

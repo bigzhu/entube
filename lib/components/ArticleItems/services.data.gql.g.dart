@@ -6,19 +6,20 @@ part of 'services.data.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GArticlesData> _$gArticlesDataSerializer =
-    new _$GArticlesDataSerializer();
-Serializer<GArticlesData_articles> _$gArticlesDataArticlesSerializer =
-    new _$GArticlesData_articlesSerializer();
+Serializer<GArticleItemsData> _$gArticleItemsDataSerializer =
+    new _$GArticleItemsDataSerializer();
+Serializer<GArticleItemsData_articles> _$gArticleItemsDataArticlesSerializer =
+    new _$GArticleItemsData_articlesSerializer();
 
-class _$GArticlesDataSerializer implements StructuredSerializer<GArticlesData> {
+class _$GArticleItemsDataSerializer
+    implements StructuredSerializer<GArticleItemsData> {
   @override
-  final Iterable<Type> types = const [GArticlesData, _$GArticlesData];
+  final Iterable<Type> types = const [GArticleItemsData, _$GArticleItemsData];
   @override
-  final String wireName = 'GArticlesData';
+  final String wireName = 'GArticleItemsData';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GArticlesData object,
+  Iterable<Object?> serialize(Serializers serializers, GArticleItemsData object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -27,17 +28,17 @@ class _$GArticlesDataSerializer implements StructuredSerializer<GArticlesData> {
       'articles',
       serializers.serialize(object.articles,
           specifiedType: const FullType(
-              BuiltList, const [const FullType(GArticlesData_articles)])),
+              BuiltList, const [const FullType(GArticleItemsData_articles)])),
     ];
 
     return result;
   }
 
   @override
-  GArticlesData deserialize(
+  GArticleItemsData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GArticlesDataBuilder();
+    final result = new GArticleItemsDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -52,7 +53,7 @@ class _$GArticlesDataSerializer implements StructuredSerializer<GArticlesData> {
         case 'articles':
           result.articles.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
-                const FullType(GArticlesData_articles)
+                const FullType(GArticleItemsData_articles)
               ]))! as BuiltList<Object?>);
           break;
       }
@@ -62,19 +63,19 @@ class _$GArticlesDataSerializer implements StructuredSerializer<GArticlesData> {
   }
 }
 
-class _$GArticlesData_articlesSerializer
-    implements StructuredSerializer<GArticlesData_articles> {
+class _$GArticleItemsData_articlesSerializer
+    implements StructuredSerializer<GArticleItemsData_articles> {
   @override
   final Iterable<Type> types = const [
-    GArticlesData_articles,
-    _$GArticlesData_articles
+    GArticleItemsData_articles,
+    _$GArticleItemsData_articles
   ];
   @override
-  final String wireName = 'GArticlesData_articles';
+  final String wireName = 'GArticleItemsData_articles';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GArticlesData_articles object,
+      Serializers serializers, GArticleItemsData_articles object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -86,9 +87,6 @@ class _$GArticlesData_articlesSerializer
       'created_at',
       serializers.serialize(object.created_at,
           specifiedType: const FullType(_i2.Gtimestamptz)),
-      'sentences',
-      serializers.serialize(object.sentences,
-          specifiedType: const FullType(_i3.JsonObject)),
       'updated_at',
       serializers.serialize(object.updated_at,
           specifiedType: const FullType(_i2.Gtimestamptz)),
@@ -135,10 +133,10 @@ class _$GArticlesData_articlesSerializer
   }
 
   @override
-  GArticlesData_articles deserialize(
+  GArticleItemsData_articles deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GArticlesData_articlesBuilder();
+    final result = new GArticleItemsData_articlesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -166,10 +164,6 @@ class _$GArticlesData_articlesSerializer
           result.created_at.replace(serializers.deserialize(value,
                   specifiedType: const FullType(_i2.Gtimestamptz))!
               as _i2.Gtimestamptz);
-          break;
-        case 'sentences':
-          result.sentences = serializers.deserialize(value,
-              specifiedType: const FullType(_i3.JsonObject))! as _i3.JsonObject;
           break;
         case 'thumbnail':
           result.thumbnail = serializers.deserialize(value,
@@ -199,34 +193,36 @@ class _$GArticlesData_articlesSerializer
   }
 }
 
-class _$GArticlesData extends GArticlesData {
+class _$GArticleItemsData extends GArticleItemsData {
   @override
   final String G__typename;
   @override
-  final BuiltList<GArticlesData_articles> articles;
+  final BuiltList<GArticleItemsData_articles> articles;
 
-  factory _$GArticlesData([void Function(GArticlesDataBuilder)? updates]) =>
-      (new GArticlesDataBuilder()..update(updates))._build();
+  factory _$GArticleItemsData(
+          [void Function(GArticleItemsDataBuilder)? updates]) =>
+      (new GArticleItemsDataBuilder()..update(updates))._build();
 
-  _$GArticlesData._({required this.G__typename, required this.articles})
+  _$GArticleItemsData._({required this.G__typename, required this.articles})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GArticlesData', 'G__typename');
+        G__typename, r'GArticleItemsData', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
-        articles, r'GArticlesData', 'articles');
+        articles, r'GArticleItemsData', 'articles');
   }
 
   @override
-  GArticlesData rebuild(void Function(GArticlesDataBuilder) updates) =>
+  GArticleItemsData rebuild(void Function(GArticleItemsDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GArticlesDataBuilder toBuilder() => new GArticlesDataBuilder()..replace(this);
+  GArticleItemsDataBuilder toBuilder() =>
+      new GArticleItemsDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GArticlesData &&
+    return other is GArticleItemsData &&
         G__typename == other.G__typename &&
         articles == other.articles;
   }
@@ -238,32 +234,32 @@ class _$GArticlesData extends GArticlesData {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GArticlesData')
+    return (newBuiltValueToStringHelper(r'GArticleItemsData')
           ..add('G__typename', G__typename)
           ..add('articles', articles))
         .toString();
   }
 }
 
-class GArticlesDataBuilder
-    implements Builder<GArticlesData, GArticlesDataBuilder> {
-  _$GArticlesData? _$v;
+class GArticleItemsDataBuilder
+    implements Builder<GArticleItemsData, GArticleItemsDataBuilder> {
+  _$GArticleItemsData? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  ListBuilder<GArticlesData_articles>? _articles;
-  ListBuilder<GArticlesData_articles> get articles =>
-      _$this._articles ??= new ListBuilder<GArticlesData_articles>();
-  set articles(ListBuilder<GArticlesData_articles>? articles) =>
+  ListBuilder<GArticleItemsData_articles>? _articles;
+  ListBuilder<GArticleItemsData_articles> get articles =>
+      _$this._articles ??= new ListBuilder<GArticleItemsData_articles>();
+  set articles(ListBuilder<GArticleItemsData_articles>? articles) =>
       _$this._articles = articles;
 
-  GArticlesDataBuilder() {
-    GArticlesData._initializeBuilder(this);
+  GArticleItemsDataBuilder() {
+    GArticleItemsData._initializeBuilder(this);
   }
 
-  GArticlesDataBuilder get _$this {
+  GArticleItemsDataBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
@@ -274,26 +270,26 @@ class GArticlesDataBuilder
   }
 
   @override
-  void replace(GArticlesData other) {
+  void replace(GArticleItemsData other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GArticlesData;
+    _$v = other as _$GArticleItemsData;
   }
 
   @override
-  void update(void Function(GArticlesDataBuilder)? updates) {
+  void update(void Function(GArticleItemsDataBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GArticlesData build() => _build();
+  GArticleItemsData build() => _build();
 
-  _$GArticlesData _build() {
-    _$GArticlesData _$result;
+  _$GArticleItemsData _build() {
+    _$GArticleItemsData _$result;
     try {
       _$result = _$v ??
-          new _$GArticlesData._(
+          new _$GArticleItemsData._(
               G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GArticlesData', 'G__typename'),
+                  G__typename, r'GArticleItemsData', 'G__typename'),
               articles: articles.build());
     } catch (_) {
       late String _$failedField;
@@ -302,7 +298,7 @@ class GArticlesDataBuilder
         articles.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GArticlesData', _$failedField, e.toString());
+            r'GArticleItemsData', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -311,7 +307,7 @@ class GArticlesDataBuilder
   }
 }
 
-class _$GArticlesData_articles extends GArticlesData_articles {
+class _$GArticleItemsData_articles extends GArticleItemsData_articles {
   @override
   final String G__typename;
   @override
@@ -323,8 +319,6 @@ class _$GArticlesData_articles extends GArticlesData_articles {
   @override
   final _i2.Gtimestamptz created_at;
   @override
-  final _i3.JsonObject sentences;
-  @override
   final String? thumbnail;
   @override
   final String? title;
@@ -335,17 +329,16 @@ class _$GArticlesData_articles extends GArticlesData_articles {
   @override
   final _i2.Guuid? updated_by;
 
-  factory _$GArticlesData_articles(
-          [void Function(GArticlesData_articlesBuilder)? updates]) =>
-      (new GArticlesData_articlesBuilder()..update(updates))._build();
+  factory _$GArticleItemsData_articles(
+          [void Function(GArticleItemsData_articlesBuilder)? updates]) =>
+      (new GArticleItemsData_articlesBuilder()..update(updates))._build();
 
-  _$GArticlesData_articles._(
+  _$GArticleItemsData_articles._(
       {required this.G__typename,
       required this.id,
       this.favicon,
       this.created_by,
       required this.created_at,
-      required this.sentences,
       this.thumbnail,
       this.title,
       required this.updated_at,
@@ -353,37 +346,35 @@ class _$GArticlesData_articles extends GArticlesData_articles {
       this.updated_by})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GArticlesData_articles', 'G__typename');
-    BuiltValueNullFieldError.checkNotNull(id, r'GArticlesData_articles', 'id');
+        G__typename, r'GArticleItemsData_articles', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
-        created_at, r'GArticlesData_articles', 'created_at');
+        id, r'GArticleItemsData_articles', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        sentences, r'GArticlesData_articles', 'sentences');
+        created_at, r'GArticleItemsData_articles', 'created_at');
     BuiltValueNullFieldError.checkNotNull(
-        updated_at, r'GArticlesData_articles', 'updated_at');
+        updated_at, r'GArticleItemsData_articles', 'updated_at');
     BuiltValueNullFieldError.checkNotNull(
-        url, r'GArticlesData_articles', 'url');
+        url, r'GArticleItemsData_articles', 'url');
   }
 
   @override
-  GArticlesData_articles rebuild(
-          void Function(GArticlesData_articlesBuilder) updates) =>
+  GArticleItemsData_articles rebuild(
+          void Function(GArticleItemsData_articlesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GArticlesData_articlesBuilder toBuilder() =>
-      new GArticlesData_articlesBuilder()..replace(this);
+  GArticleItemsData_articlesBuilder toBuilder() =>
+      new GArticleItemsData_articlesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GArticlesData_articles &&
+    return other is GArticleItemsData_articles &&
         G__typename == other.G__typename &&
         id == other.id &&
         favicon == other.favicon &&
         created_by == other.created_by &&
         created_at == other.created_at &&
-        sentences == other.sentences &&
         thumbnail == other.thumbnail &&
         title == other.title &&
         updated_at == other.updated_at &&
@@ -401,13 +392,11 @@ class _$GArticlesData_articles extends GArticlesData_articles {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc(
-                                        $jc($jc(0, G__typename.hashCode),
-                                            id.hashCode),
-                                        favicon.hashCode),
-                                    created_by.hashCode),
-                                created_at.hashCode),
-                            sentences.hashCode),
+                                    $jc($jc(0, G__typename.hashCode),
+                                        id.hashCode),
+                                    favicon.hashCode),
+                                created_by.hashCode),
+                            created_at.hashCode),
                         thumbnail.hashCode),
                     title.hashCode),
                 updated_at.hashCode),
@@ -417,13 +406,12 @@ class _$GArticlesData_articles extends GArticlesData_articles {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GArticlesData_articles')
+    return (newBuiltValueToStringHelper(r'GArticleItemsData_articles')
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('favicon', favicon)
           ..add('created_by', created_by)
           ..add('created_at', created_at)
-          ..add('sentences', sentences)
           ..add('thumbnail', thumbnail)
           ..add('title', title)
           ..add('updated_at', updated_at)
@@ -433,9 +421,10 @@ class _$GArticlesData_articles extends GArticlesData_articles {
   }
 }
 
-class GArticlesData_articlesBuilder
-    implements Builder<GArticlesData_articles, GArticlesData_articlesBuilder> {
-  _$GArticlesData_articles? _$v;
+class GArticleItemsData_articlesBuilder
+    implements
+        Builder<GArticleItemsData_articles, GArticleItemsData_articlesBuilder> {
+  _$GArticleItemsData_articles? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
@@ -461,10 +450,6 @@ class GArticlesData_articlesBuilder
   set created_at(_i2.GtimestamptzBuilder? created_at) =>
       _$this._created_at = created_at;
 
-  _i3.JsonObject? _sentences;
-  _i3.JsonObject? get sentences => _$this._sentences;
-  set sentences(_i3.JsonObject? sentences) => _$this._sentences = sentences;
-
   String? _thumbnail;
   String? get thumbnail => _$this._thumbnail;
   set thumbnail(String? thumbnail) => _$this._thumbnail = thumbnail;
@@ -489,11 +474,11 @@ class GArticlesData_articlesBuilder
   set updated_by(_i2.GuuidBuilder? updated_by) =>
       _$this._updated_by = updated_by;
 
-  GArticlesData_articlesBuilder() {
-    GArticlesData_articles._initializeBuilder(this);
+  GArticleItemsData_articlesBuilder() {
+    GArticleItemsData_articles._initializeBuilder(this);
   }
 
-  GArticlesData_articlesBuilder get _$this {
+  GArticleItemsData_articlesBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
@@ -501,7 +486,6 @@ class GArticlesData_articlesBuilder
       _favicon = $v.favicon;
       _created_by = $v.created_by?.toBuilder();
       _created_at = $v.created_at.toBuilder();
-      _sentences = $v.sentences;
       _thumbnail = $v.thumbnail;
       _title = $v.title;
       _updated_at = $v.updated_at.toBuilder();
@@ -513,37 +497,35 @@ class GArticlesData_articlesBuilder
   }
 
   @override
-  void replace(GArticlesData_articles other) {
+  void replace(GArticleItemsData_articles other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GArticlesData_articles;
+    _$v = other as _$GArticleItemsData_articles;
   }
 
   @override
-  void update(void Function(GArticlesData_articlesBuilder)? updates) {
+  void update(void Function(GArticleItemsData_articlesBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GArticlesData_articles build() => _build();
+  GArticleItemsData_articles build() => _build();
 
-  _$GArticlesData_articles _build() {
-    _$GArticlesData_articles _$result;
+  _$GArticleItemsData_articles _build() {
+    _$GArticleItemsData_articles _$result;
     try {
       _$result = _$v ??
-          new _$GArticlesData_articles._(
+          new _$GArticleItemsData_articles._(
               G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GArticlesData_articles', 'G__typename'),
+                  G__typename, r'GArticleItemsData_articles', 'G__typename'),
               id: id.build(),
               favicon: favicon,
               created_by: _created_by?.build(),
               created_at: created_at.build(),
-              sentences: BuiltValueNullFieldError.checkNotNull(
-                  sentences, r'GArticlesData_articles', 'sentences'),
               thumbnail: thumbnail,
               title: title,
               updated_at: updated_at.build(),
               url: BuiltValueNullFieldError.checkNotNull(
-                  url, r'GArticlesData_articles', 'url'),
+                  url, r'GArticleItemsData_articles', 'url'),
               updated_by: _updated_by?.build());
     } catch (_) {
       late String _$failedField;
@@ -563,7 +545,7 @@ class GArticlesData_articlesBuilder
         _updated_by?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GArticlesData_articles', _$failedField, e.toString());
+            r'GArticleItemsData_articles', _$failedField, e.toString());
       }
       rethrow;
     }

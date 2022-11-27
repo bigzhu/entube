@@ -6,11 +6,11 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart' show StandardJsonPlugin;
 import 'package:entube/components/ArticleItems/services.data.gql.dart'
-    show GArticlesData, GArticlesData_articles;
+    show GArticleItemsData, GArticleItemsData_articles;
 import 'package:entube/components/ArticleItems/services.req.gql.dart'
-    show GArticlesReq;
+    show GArticleItemsReq;
 import 'package:entube/components/ArticleItems/services.var.gql.dart'
-    show GArticlesVars;
+    show GArticleItemsVars;
 import 'package:entube/graphql/schema.schema.gql.dart'
     show
         GBoolean_comparison_exp,
@@ -254,10 +254,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(OperationSerializer())
   ..addPlugin(StandardJsonPlugin());
 @SerializersFor([
-  GArticlesData,
-  GArticlesData_articles,
-  GArticlesReq,
-  GArticlesVars,
+  GArticleItemsData,
+  GArticleItemsData_articles,
+  GArticleItemsReq,
+  GArticleItemsVars,
   GBoolean_comparison_exp,
   GInt_comparison_exp,
   GString_comparison_exp,

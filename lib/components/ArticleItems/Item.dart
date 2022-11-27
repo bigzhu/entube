@@ -8,10 +8,9 @@ import './ItemCard.dart';
 import './services.data.gql.dart';
 
 class Item extends HookConsumerWidget {
-  const Item({Key? key, required this.article, this.loading})
-      : super(key: key);
+  const Item({Key? key, required this.article, this.loading}) : super(key: key);
 
-  final GArticlesData_articles article;
+  final GArticleItemsData_articles article;
   final bool? loading;
 
   @override

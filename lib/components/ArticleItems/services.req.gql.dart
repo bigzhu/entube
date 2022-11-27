@@ -13,23 +13,23 @@ import 'package:gql_exec/gql_exec.dart' as _i4;
 
 part 'services.req.gql.g.dart';
 
-abstract class GArticlesReq
+abstract class GArticleItemsReq
     implements
-        Built<GArticlesReq, GArticlesReqBuilder>,
-        _i1.OperationRequest<_i2.GArticlesData, _i3.GArticlesVars> {
-  GArticlesReq._();
+        Built<GArticleItemsReq, GArticleItemsReqBuilder>,
+        _i1.OperationRequest<_i2.GArticleItemsData, _i3.GArticleItemsVars> {
+  GArticleItemsReq._();
 
-  factory GArticlesReq([Function(GArticlesReqBuilder b) updates]) =
-      _$GArticlesReq;
+  factory GArticleItemsReq([Function(GArticleItemsReqBuilder b) updates]) =
+      _$GArticleItemsReq;
 
-  static void _initializeBuilder(GArticlesReqBuilder b) => b
+  static void _initializeBuilder(GArticleItemsReqBuilder b) => b
     ..operation = _i4.Operation(
       document: _i5.document,
-      operationName: 'Articles',
+      operationName: 'ArticleItems',
     )
     ..executeOnListen = true;
   @override
-  _i3.GArticlesVars get vars;
+  _i3.GArticleItemsVars get vars;
   @override
   _i4.Operation get operation;
   @override
@@ -41,12 +41,12 @@ abstract class GArticlesReq
   String? get requestId;
   @override
   @BuiltValueField(serialize: false)
-  _i2.GArticlesData? Function(
-    _i2.GArticlesData?,
-    _i2.GArticlesData?,
+  _i2.GArticleItemsData? Function(
+    _i2.GArticleItemsData?,
+    _i2.GArticleItemsData?,
   )? get updateResult;
   @override
-  _i2.GArticlesData? get optimisticResponse;
+  _i2.GArticleItemsData? get optimisticResponse;
   @override
   String? get updateCacheHandlerKey;
   @override
@@ -56,16 +56,17 @@ abstract class GArticlesReq
   @override
   bool get executeOnListen;
   @override
-  _i2.GArticlesData? parseData(Map<String, dynamic> json) =>
-      _i2.GArticlesData.fromJson(json);
-  static Serializer<GArticlesReq> get serializer => _$gArticlesReqSerializer;
+  _i2.GArticleItemsData? parseData(Map<String, dynamic> json) =>
+      _i2.GArticleItemsData.fromJson(json);
+  static Serializer<GArticleItemsReq> get serializer =>
+      _$gArticleItemsReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
-        GArticlesReq.serializer,
+        GArticleItemsReq.serializer,
         this,
       ) as Map<String, dynamic>);
-  static GArticlesReq? fromJson(Map<String, dynamic> json) =>
+  static GArticleItemsReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
-        GArticlesReq.serializer,
+        GArticleItemsReq.serializer,
         json,
       );
 }

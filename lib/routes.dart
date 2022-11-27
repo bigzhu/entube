@@ -22,6 +22,6 @@ final routes = [
   ),
   GoRoute(
     path: '/ArticleItems',
-    builder: (context, state) => const ArticleItems(),
+    builder: (context, state) => const Items(),
   ),
 ];

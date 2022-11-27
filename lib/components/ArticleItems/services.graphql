@@ -1,10 +1,9 @@
-query Articles($offset: Int = 0, $limit: Int = 10) {
+query ArticleItems($offset: Int = 0, $limit: Int = 10) {
   articles(offset: $offset, limit: $limit) {
     id
     favicon
     created_by
     created_at
-    sentences
     thumbnail
     title
     updated_at

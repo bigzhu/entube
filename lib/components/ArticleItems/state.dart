@@ -8,7 +8,7 @@ final articleItemsScrollControllerProvider =
     Provider<ItemScrollController>((ref) => ItemScrollController());
 
 final articleItemsSP = StreamProvider((ref) {
-  final articlesReq = GArticlesReq(
+  final articlesReq = GArticleItemsReq(
     (b) => b
       ..vars.limit = 10
       ..vars.offset = 0,
