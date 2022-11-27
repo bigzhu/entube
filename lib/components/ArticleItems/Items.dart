@@ -3,12 +3,12 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 //import 'package:AcquireEnglish/components/UserArticles/index.dart';
-import './ArticleItem.dart';
+import './Item.dart';
 //import './Loading.dart';
 import './state.dart';
 
-class ArticleItems extends HookConsumerWidget {
-  const ArticleItems({Key? key}) : super(key: key);
+class Items extends HookConsumerWidget {
+  const Items({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final articleItems = ref.watch(articleItemsSP);
@@ -29,7 +29,7 @@ class ArticleItems extends HookConsumerWidget {
           itemScrollController: ref.read(articleItemsScrollControllerProvider),
           itemCount: articles.length,
           itemBuilder: (context, index) {
-            return ArticleItem(
+            return Item(
                 article: articles[index],
                 loading: articles[index].title == loadingTitle);
           },

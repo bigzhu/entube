@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import './ArticleAvatar.dart';
+import './ItemAvatar.dart';
 import './IncreasePercentNumber.dart';
 
 // if percent is 0, hide itself
-class ArticleItemBar extends StatelessWidget {
-  const ArticleItemBar(
+class ItemBar extends StatelessWidget {
+  const ItemBar(
       {Key? key,
       this.title,
       this.percent,
@@ -27,7 +27,7 @@ class ArticleItemBar extends StatelessWidget {
             percent != null ? IncreasePercentNumber(percent: percent!) : null,
         dense: false,
         onTap: onTap,
-        leading: ArticleAvatar(
+        leading: ItemAvatar(
           avatar: avatar ?? '',
           loading: loading,
         ),

@@ -1,6 +1,6 @@
 import 'package:entube/components/ArticleItems/services.data.gql.dart';
 import 'package:flutter/material.dart';
-import './ArticleItemBar.dart';
+import './ItemBar.dart';
 import './Thumbnail.dart';
 
 class ItemCard extends StatelessWidget {
@@ -29,7 +29,7 @@ class ItemCard extends StatelessWidget {
             tag: 'youtube_title_${article.id}',
             child: Material(
               color: Colors.black.withOpacity(0.5),
-              child: ArticleItemBar(
+              child: ItemBar(
                 title: article.title,
                 avatar: article.favicon,
                 percent: percent,

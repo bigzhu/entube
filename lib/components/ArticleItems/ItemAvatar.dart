@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 
 // 文章对应的 youtube 图标或者头像
 // 删除时候显示 loading 动画
-class ArticleAvatar extends StatelessWidget {
+class ItemAvatar extends StatelessWidget {
   final String? avatar;
   final bool? loading;
-  const ArticleAvatar({
+  const ItemAvatar({
     Key? key,
     this.avatar,
     this.loading = false,

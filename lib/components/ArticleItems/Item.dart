@@ -7,8 +7,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import './ItemCard.dart';
 import './services.data.gql.dart';
 
-class ArticleItem extends HookConsumerWidget {
-  const ArticleItem({Key? key, required this.article, this.loading})
+class Item extends HookConsumerWidget {
+  const Item({Key? key, required this.article, this.loading})
       : super(key: key);
 
   final GArticlesData_articles article;
