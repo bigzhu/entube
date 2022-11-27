@@ -424,8 +424,8 @@ const String_comparison_exp = _i1.InputObjectTypeDefinitionNode(
     ),
   ],
 );
-const article = _i1.ObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article'),
+const articles = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles'),
   directives: [],
   interfaces: [],
   fields: [
@@ -540,8 +540,8 @@ const article = _i1.ObjectTypeDefinitionNode(
     ),
   ],
 );
-const article_aggregate = _i1.ObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_aggregate'),
+const articles_aggregate = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_aggregate'),
   directives: [],
   interfaces: [],
   fields: [
@@ -550,7 +550,7 @@ const article_aggregate = _i1.ObjectTypeDefinitionNode(
       directives: [],
       args: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_aggregate_fields'),
+        name: _i1.NameNode(value: 'articles_aggregate_fields'),
         isNonNull: false,
       ),
     ),
@@ -560,7 +560,7 @@ const article_aggregate = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'article'),
+          name: _i1.NameNode(value: 'articles'),
           isNonNull: true,
         ),
         isNonNull: true,
@@ -568,8 +568,8 @@ const article_aggregate = _i1.ObjectTypeDefinitionNode(
     ),
   ],
 );
-const article_aggregate_fields = _i1.ObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_aggregate_fields'),
+const articles_aggregate_fields = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_aggregate_fields'),
   directives: [],
   interfaces: [],
   fields: [
@@ -582,7 +582,7 @@ const article_aggregate_fields = _i1.ObjectTypeDefinitionNode(
           directives: [],
           type: _i1.ListTypeNode(
             type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'article_select_column'),
+              name: _i1.NameNode(value: 'articles_select_column'),
               isNonNull: true,
             ),
             isNonNull: false,
@@ -609,7 +609,7 @@ const article_aggregate_fields = _i1.ObjectTypeDefinitionNode(
       directives: [],
       args: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_max_fields'),
+        name: _i1.NameNode(value: 'articles_max_fields'),
         isNonNull: false,
       ),
     ),
@@ -618,14 +618,14 @@ const article_aggregate_fields = _i1.ObjectTypeDefinitionNode(
       directives: [],
       args: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_min_fields'),
+        name: _i1.NameNode(value: 'articles_min_fields'),
         isNonNull: false,
       ),
     ),
   ],
 );
-const article_append_input = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_append_input'),
+const articles_append_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_append_input'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
@@ -639,8 +639,8 @@ const article_append_input = _i1.InputObjectTypeDefinitionNode(
     )
   ],
 );
-const article_bool_exp = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_bool_exp'),
+const articles_bool_exp = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_bool_exp'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
@@ -648,7 +648,7 @@ const article_bool_exp = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'article_bool_exp'),
+          name: _i1.NameNode(value: 'articles_bool_exp'),
           isNonNull: true,
         ),
         isNonNull: false,
@@ -659,7 +659,7 @@ const article_bool_exp = _i1.InputObjectTypeDefinitionNode(
       name: _i1.NameNode(value: '_not'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_bool_exp'),
+        name: _i1.NameNode(value: 'articles_bool_exp'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -669,7 +669,7 @@ const article_bool_exp = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'article_bool_exp'),
+          name: _i1.NameNode(value: 'articles_bool_exp'),
           isNonNull: true,
         ),
         isNonNull: false,
@@ -777,8 +777,8 @@ const article_bool_exp = _i1.InputObjectTypeDefinitionNode(
     ),
   ],
 );
-const article_constraint = _i1.EnumTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_constraint'),
+const articles_constraint = _i1.EnumTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_constraint'),
   directives: [],
   values: [
     _i1.EnumValueDefinitionNode(
@@ -787,8 +787,8 @@ const article_constraint = _i1.EnumTypeDefinitionNode(
     )
   ],
 );
-const article_delete_at_path_input = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_delete_at_path_input'),
+const articles_delete_at_path_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_delete_at_path_input'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
@@ -805,8 +805,8 @@ const article_delete_at_path_input = _i1.InputObjectTypeDefinitionNode(
     )
   ],
 );
-const article_delete_elem_input = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_delete_elem_input'),
+const articles_delete_elem_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_delete_elem_input'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
@@ -820,8 +820,8 @@ const article_delete_elem_input = _i1.InputObjectTypeDefinitionNode(
     )
   ],
 );
-const article_delete_key_input = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_delete_key_input'),
+const articles_delete_key_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_delete_key_input'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
@@ -835,8 +835,8 @@ const article_delete_key_input = _i1.InputObjectTypeDefinitionNode(
     )
   ],
 );
-const article_insert_input = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_insert_input'),
+const articles_insert_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_insert_input'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
@@ -940,8 +940,8 @@ const article_insert_input = _i1.InputObjectTypeDefinitionNode(
     ),
   ],
 );
-const article_max_fields = _i1.ObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_max_fields'),
+const articles_max_fields = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_max_fields'),
   directives: [],
   interfaces: [],
   fields: [
@@ -1037,8 +1037,8 @@ const article_max_fields = _i1.ObjectTypeDefinitionNode(
     ),
   ],
 );
-const article_min_fields = _i1.ObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_min_fields'),
+const articles_min_fields = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_min_fields'),
   directives: [],
   interfaces: [],
   fields: [
@@ -1134,8 +1134,8 @@ const article_min_fields = _i1.ObjectTypeDefinitionNode(
     ),
   ],
 );
-const article_mutation_response = _i1.ObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_mutation_response'),
+const articles_mutation_response = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_mutation_response'),
   directives: [],
   interfaces: [],
   fields: [
@@ -1154,7 +1154,7 @@ const article_mutation_response = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'article'),
+          name: _i1.NameNode(value: 'articles'),
           isNonNull: true,
         ),
         isNonNull: true,
@@ -1162,15 +1162,15 @@ const article_mutation_response = _i1.ObjectTypeDefinitionNode(
     ),
   ],
 );
-const article_on_conflict = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_on_conflict'),
+const articles_on_conflict = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_on_conflict'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'constraint'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_constraint'),
+        name: _i1.NameNode(value: 'articles_constraint'),
         isNonNull: true,
       ),
       defaultValue: null,
@@ -1180,7 +1180,7 @@ const article_on_conflict = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'article_update_column'),
+          name: _i1.NameNode(value: 'articles_update_column'),
           isNonNull: true,
         ),
         isNonNull: true,
@@ -1191,15 +1191,15 @@ const article_on_conflict = _i1.InputObjectTypeDefinitionNode(
       name: _i1.NameNode(value: 'where'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_bool_exp'),
+        name: _i1.NameNode(value: 'articles_bool_exp'),
         isNonNull: false,
       ),
       defaultValue: null,
     ),
   ],
 );
-const article_order_by = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_order_by'),
+const articles_order_by = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_order_by'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
@@ -1303,8 +1303,8 @@ const article_order_by = _i1.InputObjectTypeDefinitionNode(
     ),
   ],
 );
-const article_pk_columns_input = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_pk_columns_input'),
+const articles_pk_columns_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_pk_columns_input'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
@@ -1318,8 +1318,8 @@ const article_pk_columns_input = _i1.InputObjectTypeDefinitionNode(
     )
   ],
 );
-const article_prepend_input = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_prepend_input'),
+const articles_prepend_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_prepend_input'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
@@ -1333,8 +1333,8 @@ const article_prepend_input = _i1.InputObjectTypeDefinitionNode(
     )
   ],
 );
-const article_select_column = _i1.EnumTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_select_column'),
+const articles_select_column = _i1.EnumTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_select_column'),
   directives: [],
   values: [
     _i1.EnumValueDefinitionNode(
@@ -1383,8 +1383,8 @@ const article_select_column = _i1.EnumTypeDefinitionNode(
     ),
   ],
 );
-const article_set_input = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_set_input'),
+const articles_set_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_set_input'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
@@ -1488,15 +1488,15 @@ const article_set_input = _i1.InputObjectTypeDefinitionNode(
     ),
   ],
 );
-const article_stream_cursor_input = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_stream_cursor_input'),
+const articles_stream_cursor_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_stream_cursor_input'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'initial_value'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_stream_cursor_value_input'),
+        name: _i1.NameNode(value: 'articles_stream_cursor_value_input'),
         isNonNull: true,
       ),
       defaultValue: null,
@@ -1512,8 +1512,8 @@ const article_stream_cursor_input = _i1.InputObjectTypeDefinitionNode(
     ),
   ],
 );
-const article_stream_cursor_value_input = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_stream_cursor_value_input'),
+const articles_stream_cursor_value_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_stream_cursor_value_input'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
@@ -1617,8 +1617,8 @@ const article_stream_cursor_value_input = _i1.InputObjectTypeDefinitionNode(
     ),
   ],
 );
-const article_update_column = _i1.EnumTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_update_column'),
+const articles_update_column = _i1.EnumTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_update_column'),
   directives: [],
   values: [
     _i1.EnumValueDefinitionNode(
@@ -1667,15 +1667,15 @@ const article_update_column = _i1.EnumTypeDefinitionNode(
     ),
   ],
 );
-const article_updates = _i1.InputObjectTypeDefinitionNode(
-  name: _i1.NameNode(value: 'article_updates'),
+const articles_updates = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_updates'),
   directives: [],
   fields: [
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: '_append'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_append_input'),
+        name: _i1.NameNode(value: 'articles_append_input'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -1684,7 +1684,7 @@ const article_updates = _i1.InputObjectTypeDefinitionNode(
       name: _i1.NameNode(value: '_delete_at_path'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_delete_at_path_input'),
+        name: _i1.NameNode(value: 'articles_delete_at_path_input'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -1693,7 +1693,7 @@ const article_updates = _i1.InputObjectTypeDefinitionNode(
       name: _i1.NameNode(value: '_delete_elem'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_delete_elem_input'),
+        name: _i1.NameNode(value: 'articles_delete_elem_input'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -1702,7 +1702,7 @@ const article_updates = _i1.InputObjectTypeDefinitionNode(
       name: _i1.NameNode(value: '_delete_key'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_delete_key_input'),
+        name: _i1.NameNode(value: 'articles_delete_key_input'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -1711,7 +1711,7 @@ const article_updates = _i1.InputObjectTypeDefinitionNode(
       name: _i1.NameNode(value: '_prepend'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_prepend_input'),
+        name: _i1.NameNode(value: 'articles_prepend_input'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -1720,7 +1720,7 @@ const article_updates = _i1.InputObjectTypeDefinitionNode(
       name: _i1.NameNode(value: '_set'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_set_input'),
+        name: _i1.NameNode(value: 'articles_set_input'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -1729,7 +1729,7 @@ const article_updates = _i1.InputObjectTypeDefinitionNode(
       name: _i1.NameNode(value: 'where'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_bool_exp'),
+        name: _i1.NameNode(value: 'articles_bool_exp'),
         isNonNull: true,
       ),
       defaultValue: null,
@@ -12784,26 +12784,26 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'delete_article'),
+      name: _i1.NameNode(value: 'delete_articles'),
       directives: [],
       args: [
         _i1.InputValueDefinitionNode(
           name: _i1.NameNode(value: 'where'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_bool_exp'),
+            name: _i1.NameNode(value: 'articles_bool_exp'),
             isNonNull: true,
           ),
           defaultValue: null,
         )
       ],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_mutation_response'),
+        name: _i1.NameNode(value: 'articles_mutation_response'),
         isNonNull: false,
       ),
     ),
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'delete_article_by_pk'),
+      name: _i1.NameNode(value: 'delete_articles_by_pk'),
       directives: [],
       args: [
         _i1.InputValueDefinitionNode(
@@ -12817,7 +12817,7 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
         )
       ],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article'),
+        name: _i1.NameNode(value: 'articles'),
         isNonNull: false,
       ),
     ),
@@ -13412,7 +13412,7 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'insert_article'),
+      name: _i1.NameNode(value: 'insert_articles'),
       directives: [],
       args: [
         _i1.InputValueDefinitionNode(
@@ -13420,7 +13420,7 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           directives: [],
           type: _i1.ListTypeNode(
             type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'article_insert_input'),
+              name: _i1.NameNode(value: 'articles_insert_input'),
               isNonNull: true,
             ),
             isNonNull: true,
@@ -13431,26 +13431,26 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: 'on_conflict'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_on_conflict'),
+            name: _i1.NameNode(value: 'articles_on_conflict'),
             isNonNull: false,
           ),
           defaultValue: null,
         ),
       ],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_mutation_response'),
+        name: _i1.NameNode(value: 'articles_mutation_response'),
         isNonNull: false,
       ),
     ),
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'insert_article_one'),
+      name: _i1.NameNode(value: 'insert_articles_one'),
       directives: [],
       args: [
         _i1.InputValueDefinitionNode(
           name: _i1.NameNode(value: 'object'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_insert_input'),
+            name: _i1.NameNode(value: 'articles_insert_input'),
             isNonNull: true,
           ),
           defaultValue: null,
@@ -13459,14 +13459,14 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: 'on_conflict'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_on_conflict'),
+            name: _i1.NameNode(value: 'articles_on_conflict'),
             isNonNull: false,
           ),
           defaultValue: null,
         ),
       ],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article'),
+        name: _i1.NameNode(value: 'articles'),
         isNonNull: false,
       ),
     ),
@@ -14267,14 +14267,14 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'update_article'),
+      name: _i1.NameNode(value: 'update_articles'),
       directives: [],
       args: [
         _i1.InputValueDefinitionNode(
           name: _i1.NameNode(value: '_append'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_append_input'),
+            name: _i1.NameNode(value: 'articles_append_input'),
             isNonNull: false,
           ),
           defaultValue: null,
@@ -14283,7 +14283,7 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: '_delete_at_path'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_delete_at_path_input'),
+            name: _i1.NameNode(value: 'articles_delete_at_path_input'),
             isNonNull: false,
           ),
           defaultValue: null,
@@ -14292,7 +14292,7 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: '_delete_elem'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_delete_elem_input'),
+            name: _i1.NameNode(value: 'articles_delete_elem_input'),
             isNonNull: false,
           ),
           defaultValue: null,
@@ -14301,7 +14301,7 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: '_delete_key'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_delete_key_input'),
+            name: _i1.NameNode(value: 'articles_delete_key_input'),
             isNonNull: false,
           ),
           defaultValue: null,
@@ -14310,7 +14310,7 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: '_prepend'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_prepend_input'),
+            name: _i1.NameNode(value: 'articles_prepend_input'),
             isNonNull: false,
           ),
           defaultValue: null,
@@ -14319,7 +14319,7 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: '_set'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_set_input'),
+            name: _i1.NameNode(value: 'articles_set_input'),
             isNonNull: false,
           ),
           defaultValue: null,
@@ -14328,26 +14328,26 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: 'where'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_bool_exp'),
+            name: _i1.NameNode(value: 'articles_bool_exp'),
             isNonNull: true,
           ),
           defaultValue: null,
         ),
       ],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_mutation_response'),
+        name: _i1.NameNode(value: 'articles_mutation_response'),
         isNonNull: false,
       ),
     ),
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'update_article_by_pk'),
+      name: _i1.NameNode(value: 'update_articles_by_pk'),
       directives: [],
       args: [
         _i1.InputValueDefinitionNode(
           name: _i1.NameNode(value: '_append'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_append_input'),
+            name: _i1.NameNode(value: 'articles_append_input'),
             isNonNull: false,
           ),
           defaultValue: null,
@@ -14356,7 +14356,7 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: '_delete_at_path'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_delete_at_path_input'),
+            name: _i1.NameNode(value: 'articles_delete_at_path_input'),
             isNonNull: false,
           ),
           defaultValue: null,
@@ -14365,7 +14365,7 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: '_delete_elem'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_delete_elem_input'),
+            name: _i1.NameNode(value: 'articles_delete_elem_input'),
             isNonNull: false,
           ),
           defaultValue: null,
@@ -14374,7 +14374,7 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: '_delete_key'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_delete_key_input'),
+            name: _i1.NameNode(value: 'articles_delete_key_input'),
             isNonNull: false,
           ),
           defaultValue: null,
@@ -14383,7 +14383,7 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: '_prepend'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_prepend_input'),
+            name: _i1.NameNode(value: 'articles_prepend_input'),
             isNonNull: false,
           ),
           defaultValue: null,
@@ -14392,7 +14392,7 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: '_set'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_set_input'),
+            name: _i1.NameNode(value: 'articles_set_input'),
             isNonNull: false,
           ),
           defaultValue: null,
@@ -14401,19 +14401,19 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: 'pk_columns'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_pk_columns_input'),
+            name: _i1.NameNode(value: 'articles_pk_columns_input'),
             isNonNull: true,
           ),
           defaultValue: null,
         ),
       ],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article'),
+        name: _i1.NameNode(value: 'articles'),
         isNonNull: false,
       ),
     ),
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'update_article_many'),
+      name: _i1.NameNode(value: 'update_articles_many'),
       directives: [],
       args: [
         _i1.InputValueDefinitionNode(
@@ -14421,7 +14421,7 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
           directives: [],
           type: _i1.ListTypeNode(
             type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'article_updates'),
+              name: _i1.NameNode(value: 'articles_updates'),
               isNonNull: true,
             ),
             isNonNull: true,
@@ -14431,7 +14431,7 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
       ],
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'article_mutation_response'),
+          name: _i1.NameNode(value: 'articles_mutation_response'),
           isNonNull: false,
         ),
         isNonNull: false,
@@ -14725,7 +14725,7 @@ const query_root = _i1.ObjectTypeDefinitionNode(
   interfaces: [],
   fields: [
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'article'),
+      name: _i1.NameNode(value: 'articles'),
       directives: [],
       args: [
         _i1.InputValueDefinitionNode(
@@ -14733,7 +14733,7 @@ const query_root = _i1.ObjectTypeDefinitionNode(
           directives: [],
           type: _i1.ListTypeNode(
             type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'article_select_column'),
+              name: _i1.NameNode(value: 'articles_select_column'),
               isNonNull: true,
             ),
             isNonNull: false,
@@ -14763,7 +14763,7 @@ const query_root = _i1.ObjectTypeDefinitionNode(
           directives: [],
           type: _i1.ListTypeNode(
             type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'article_order_by'),
+              name: _i1.NameNode(value: 'articles_order_by'),
               isNonNull: true,
             ),
             isNonNull: false,
@@ -14774,7 +14774,7 @@ const query_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: 'where'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_bool_exp'),
+            name: _i1.NameNode(value: 'articles_bool_exp'),
             isNonNull: false,
           ),
           defaultValue: null,
@@ -14782,14 +14782,14 @@ const query_root = _i1.ObjectTypeDefinitionNode(
       ],
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'article'),
+          name: _i1.NameNode(value: 'articles'),
           isNonNull: true,
         ),
         isNonNull: true,
       ),
     ),
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'article_aggregate'),
+      name: _i1.NameNode(value: 'articles_aggregate'),
       directives: [],
       args: [
         _i1.InputValueDefinitionNode(
@@ -14797,7 +14797,7 @@ const query_root = _i1.ObjectTypeDefinitionNode(
           directives: [],
           type: _i1.ListTypeNode(
             type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'article_select_column'),
+              name: _i1.NameNode(value: 'articles_select_column'),
               isNonNull: true,
             ),
             isNonNull: false,
@@ -14827,7 +14827,7 @@ const query_root = _i1.ObjectTypeDefinitionNode(
           directives: [],
           type: _i1.ListTypeNode(
             type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'article_order_by'),
+              name: _i1.NameNode(value: 'articles_order_by'),
               isNonNull: true,
             ),
             isNonNull: false,
@@ -14838,19 +14838,19 @@ const query_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: 'where'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_bool_exp'),
+            name: _i1.NameNode(value: 'articles_bool_exp'),
             isNonNull: false,
           ),
           defaultValue: null,
         ),
       ],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_aggregate'),
+        name: _i1.NameNode(value: 'articles_aggregate'),
         isNonNull: true,
       ),
     ),
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'article_by_pk'),
+      name: _i1.NameNode(value: 'articles_by_pk'),
       directives: [],
       args: [
         _i1.InputValueDefinitionNode(
@@ -14864,7 +14864,7 @@ const query_root = _i1.ObjectTypeDefinitionNode(
         )
       ],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article'),
+        name: _i1.NameNode(value: 'articles'),
         isNonNull: false,
       ),
     ),
@@ -16316,7 +16316,7 @@ const subscription_root = _i1.ObjectTypeDefinitionNode(
   interfaces: [],
   fields: [
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'article'),
+      name: _i1.NameNode(value: 'articles'),
       directives: [],
       args: [
         _i1.InputValueDefinitionNode(
@@ -16324,7 +16324,7 @@ const subscription_root = _i1.ObjectTypeDefinitionNode(
           directives: [],
           type: _i1.ListTypeNode(
             type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'article_select_column'),
+              name: _i1.NameNode(value: 'articles_select_column'),
               isNonNull: true,
             ),
             isNonNull: false,
@@ -16354,7 +16354,7 @@ const subscription_root = _i1.ObjectTypeDefinitionNode(
           directives: [],
           type: _i1.ListTypeNode(
             type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'article_order_by'),
+              name: _i1.NameNode(value: 'articles_order_by'),
               isNonNull: true,
             ),
             isNonNull: false,
@@ -16365,7 +16365,7 @@ const subscription_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: 'where'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_bool_exp'),
+            name: _i1.NameNode(value: 'articles_bool_exp'),
             isNonNull: false,
           ),
           defaultValue: null,
@@ -16373,14 +16373,14 @@ const subscription_root = _i1.ObjectTypeDefinitionNode(
       ],
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'article'),
+          name: _i1.NameNode(value: 'articles'),
           isNonNull: true,
         ),
         isNonNull: true,
       ),
     ),
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'article_aggregate'),
+      name: _i1.NameNode(value: 'articles_aggregate'),
       directives: [],
       args: [
         _i1.InputValueDefinitionNode(
@@ -16388,7 +16388,7 @@ const subscription_root = _i1.ObjectTypeDefinitionNode(
           directives: [],
           type: _i1.ListTypeNode(
             type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'article_select_column'),
+              name: _i1.NameNode(value: 'articles_select_column'),
               isNonNull: true,
             ),
             isNonNull: false,
@@ -16418,7 +16418,7 @@ const subscription_root = _i1.ObjectTypeDefinitionNode(
           directives: [],
           type: _i1.ListTypeNode(
             type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'article_order_by'),
+              name: _i1.NameNode(value: 'articles_order_by'),
               isNonNull: true,
             ),
             isNonNull: false,
@@ -16429,19 +16429,19 @@ const subscription_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: 'where'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_bool_exp'),
+            name: _i1.NameNode(value: 'articles_bool_exp'),
             isNonNull: false,
           ),
           defaultValue: null,
         ),
       ],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article_aggregate'),
+        name: _i1.NameNode(value: 'articles_aggregate'),
         isNonNull: true,
       ),
     ),
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'article_by_pk'),
+      name: _i1.NameNode(value: 'articles_by_pk'),
       directives: [],
       args: [
         _i1.InputValueDefinitionNode(
@@ -16455,12 +16455,12 @@ const subscription_root = _i1.ObjectTypeDefinitionNode(
         )
       ],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'article'),
+        name: _i1.NameNode(value: 'articles'),
         isNonNull: false,
       ),
     ),
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'article_stream'),
+      name: _i1.NameNode(value: 'articles_stream'),
       directives: [],
       args: [
         _i1.InputValueDefinitionNode(
@@ -16477,7 +16477,7 @@ const subscription_root = _i1.ObjectTypeDefinitionNode(
           directives: [],
           type: _i1.ListTypeNode(
             type: _i1.NamedTypeNode(
-              name: _i1.NameNode(value: 'article_stream_cursor_input'),
+              name: _i1.NameNode(value: 'articles_stream_cursor_input'),
               isNonNull: false,
             ),
             isNonNull: true,
@@ -16488,7 +16488,7 @@ const subscription_root = _i1.ObjectTypeDefinitionNode(
           name: _i1.NameNode(value: 'where'),
           directives: [],
           type: _i1.NamedTypeNode(
-            name: _i1.NameNode(value: 'article_bool_exp'),
+            name: _i1.NameNode(value: 'articles_bool_exp'),
             isNonNull: false,
           ),
           defaultValue: null,
@@ -16496,7 +16496,7 @@ const subscription_root = _i1.ObjectTypeDefinitionNode(
       ],
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
-          name: _i1.NameNode(value: 'article'),
+          name: _i1.NameNode(value: 'articles'),
           isNonNull: true,
         ),
         isNonNull: true,
@@ -22298,29 +22298,29 @@ const document = _i1.DocumentNode(definitions: [
   Boolean_comparison_exp,
   Int_comparison_exp,
   String_comparison_exp,
-  article,
-  article_aggregate,
-  article_aggregate_fields,
-  article_append_input,
-  article_bool_exp,
-  article_constraint,
-  article_delete_at_path_input,
-  article_delete_elem_input,
-  article_delete_key_input,
-  article_insert_input,
-  article_max_fields,
-  article_min_fields,
-  article_mutation_response,
-  article_on_conflict,
-  article_order_by,
-  article_pk_columns_input,
-  article_prepend_input,
-  article_select_column,
-  article_set_input,
-  article_stream_cursor_input,
-  article_stream_cursor_value_input,
-  article_update_column,
-  article_updates,
+  articles,
+  articles_aggregate,
+  articles_aggregate_fields,
+  articles_append_input,
+  articles_bool_exp,
+  articles_constraint,
+  articles_delete_at_path_input,
+  articles_delete_elem_input,
+  articles_delete_key_input,
+  articles_insert_input,
+  articles_max_fields,
+  articles_min_fields,
+  articles_mutation_response,
+  articles_on_conflict,
+  articles_order_by,
+  articles_pk_columns_input,
+  articles_prepend_input,
+  articles_select_column,
+  articles_set_input,
+  articles_stream_cursor_input,
+  articles_stream_cursor_value_input,
+  articles_update_column,
+  articles_updates,
   authProviderRequests,
   authProviderRequests_aggregate,
   authProviderRequests_aggregate_fields,

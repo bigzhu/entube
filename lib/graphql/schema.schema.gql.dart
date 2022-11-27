@@ -148,41 +148,41 @@ abstract class GString_comparison_exp
       );
 }
 
-abstract class Garticle_append_input
-    implements Built<Garticle_append_input, Garticle_append_inputBuilder> {
-  Garticle_append_input._();
+abstract class Garticles_append_input
+    implements Built<Garticles_append_input, Garticles_append_inputBuilder> {
+  Garticles_append_input._();
 
-  factory Garticle_append_input(
-          [Function(Garticle_append_inputBuilder b) updates]) =
-      _$Garticle_append_input;
+  factory Garticles_append_input(
+          [Function(Garticles_append_inputBuilder b) updates]) =
+      _$Garticles_append_input;
 
   _i2.JsonObject? get sentences;
-  static Serializer<Garticle_append_input> get serializer =>
-      _$garticleAppendInputSerializer;
+  static Serializer<Garticles_append_input> get serializer =>
+      _$garticlesAppendInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Garticle_append_input.serializer,
+        Garticles_append_input.serializer,
         this,
       ) as Map<String, dynamic>);
-  static Garticle_append_input? fromJson(Map<String, dynamic> json) =>
+  static Garticles_append_input? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        Garticle_append_input.serializer,
+        Garticles_append_input.serializer,
         json,
       );
 }
 
-abstract class Garticle_bool_exp
-    implements Built<Garticle_bool_exp, Garticle_bool_expBuilder> {
-  Garticle_bool_exp._();
+abstract class Garticles_bool_exp
+    implements Built<Garticles_bool_exp, Garticles_bool_expBuilder> {
+  Garticles_bool_exp._();
 
-  factory Garticle_bool_exp([Function(Garticle_bool_expBuilder b) updates]) =
-      _$Garticle_bool_exp;
+  factory Garticles_bool_exp([Function(Garticles_bool_expBuilder b) updates]) =
+      _$Garticles_bool_exp;
 
   @BuiltValueField(wireName: '_and')
-  BuiltList<Garticle_bool_exp>? get G_and;
+  BuiltList<Garticles_bool_exp>? get G_and;
   @BuiltValueField(wireName: '_not')
-  Garticle_bool_exp? get G_not;
+  Garticles_bool_exp? get G_not;
   @BuiltValueField(wireName: '_or')
-  BuiltList<Garticle_bool_exp>? get G_or;
+  BuiltList<Garticles_bool_exp>? get G_or;
   Gtimestamptz_comparison_exp? get created_at;
   Guuid_comparison_exp? get created_by;
   Gtimestamptz_comparison_exp? get deleted_at;
@@ -194,109 +194,110 @@ abstract class Garticle_bool_exp
   Gtimestamptz_comparison_exp? get updated_at;
   Guuid_comparison_exp? get updated_by;
   GString_comparison_exp? get url;
-  static Serializer<Garticle_bool_exp> get serializer =>
-      _$garticleBoolExpSerializer;
+  static Serializer<Garticles_bool_exp> get serializer =>
+      _$garticlesBoolExpSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Garticle_bool_exp.serializer,
+        Garticles_bool_exp.serializer,
         this,
       ) as Map<String, dynamic>);
-  static Garticle_bool_exp? fromJson(Map<String, dynamic> json) =>
+  static Garticles_bool_exp? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        Garticle_bool_exp.serializer,
+        Garticles_bool_exp.serializer,
         json,
       );
 }
 
-class Garticle_constraint extends EnumClass {
-  const Garticle_constraint._(String name) : super(name);
+class Garticles_constraint extends EnumClass {
+  const Garticles_constraint._(String name) : super(name);
 
-  static const Garticle_constraint article_pkey =
-      _$garticleConstraintarticle_pkey;
+  static const Garticles_constraint article_pkey =
+      _$garticlesConstraintarticle_pkey;
 
-  static Serializer<Garticle_constraint> get serializer =>
-      _$garticleConstraintSerializer;
-  static BuiltSet<Garticle_constraint> get values => _$garticleConstraintValues;
-  static Garticle_constraint valueOf(String name) =>
-      _$garticleConstraintValueOf(name);
+  static Serializer<Garticles_constraint> get serializer =>
+      _$garticlesConstraintSerializer;
+  static BuiltSet<Garticles_constraint> get values =>
+      _$garticlesConstraintValues;
+  static Garticles_constraint valueOf(String name) =>
+      _$garticlesConstraintValueOf(name);
 }
 
-abstract class Garticle_delete_at_path_input
+abstract class Garticles_delete_at_path_input
     implements
-        Built<Garticle_delete_at_path_input,
-            Garticle_delete_at_path_inputBuilder> {
-  Garticle_delete_at_path_input._();
+        Built<Garticles_delete_at_path_input,
+            Garticles_delete_at_path_inputBuilder> {
+  Garticles_delete_at_path_input._();
 
-  factory Garticle_delete_at_path_input(
-          [Function(Garticle_delete_at_path_inputBuilder b) updates]) =
-      _$Garticle_delete_at_path_input;
+  factory Garticles_delete_at_path_input(
+          [Function(Garticles_delete_at_path_inputBuilder b) updates]) =
+      _$Garticles_delete_at_path_input;
 
   BuiltList<String>? get sentences;
-  static Serializer<Garticle_delete_at_path_input> get serializer =>
-      _$garticleDeleteAtPathInputSerializer;
+  static Serializer<Garticles_delete_at_path_input> get serializer =>
+      _$garticlesDeleteAtPathInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Garticle_delete_at_path_input.serializer,
+        Garticles_delete_at_path_input.serializer,
         this,
       ) as Map<String, dynamic>);
-  static Garticle_delete_at_path_input? fromJson(Map<String, dynamic> json) =>
+  static Garticles_delete_at_path_input? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        Garticle_delete_at_path_input.serializer,
+        Garticles_delete_at_path_input.serializer,
         json,
       );
 }
 
-abstract class Garticle_delete_elem_input
+abstract class Garticles_delete_elem_input
     implements
-        Built<Garticle_delete_elem_input, Garticle_delete_elem_inputBuilder> {
-  Garticle_delete_elem_input._();
+        Built<Garticles_delete_elem_input, Garticles_delete_elem_inputBuilder> {
+  Garticles_delete_elem_input._();
 
-  factory Garticle_delete_elem_input(
-          [Function(Garticle_delete_elem_inputBuilder b) updates]) =
-      _$Garticle_delete_elem_input;
+  factory Garticles_delete_elem_input(
+          [Function(Garticles_delete_elem_inputBuilder b) updates]) =
+      _$Garticles_delete_elem_input;
 
   int? get sentences;
-  static Serializer<Garticle_delete_elem_input> get serializer =>
-      _$garticleDeleteElemInputSerializer;
+  static Serializer<Garticles_delete_elem_input> get serializer =>
+      _$garticlesDeleteElemInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Garticle_delete_elem_input.serializer,
+        Garticles_delete_elem_input.serializer,
         this,
       ) as Map<String, dynamic>);
-  static Garticle_delete_elem_input? fromJson(Map<String, dynamic> json) =>
+  static Garticles_delete_elem_input? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        Garticle_delete_elem_input.serializer,
+        Garticles_delete_elem_input.serializer,
         json,
       );
 }
 
-abstract class Garticle_delete_key_input
+abstract class Garticles_delete_key_input
     implements
-        Built<Garticle_delete_key_input, Garticle_delete_key_inputBuilder> {
-  Garticle_delete_key_input._();
+        Built<Garticles_delete_key_input, Garticles_delete_key_inputBuilder> {
+  Garticles_delete_key_input._();
 
-  factory Garticle_delete_key_input(
-          [Function(Garticle_delete_key_inputBuilder b) updates]) =
-      _$Garticle_delete_key_input;
+  factory Garticles_delete_key_input(
+          [Function(Garticles_delete_key_inputBuilder b) updates]) =
+      _$Garticles_delete_key_input;
 
   String? get sentences;
-  static Serializer<Garticle_delete_key_input> get serializer =>
-      _$garticleDeleteKeyInputSerializer;
+  static Serializer<Garticles_delete_key_input> get serializer =>
+      _$garticlesDeleteKeyInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Garticle_delete_key_input.serializer,
+        Garticles_delete_key_input.serializer,
         this,
       ) as Map<String, dynamic>);
-  static Garticle_delete_key_input? fromJson(Map<String, dynamic> json) =>
+  static Garticles_delete_key_input? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        Garticle_delete_key_input.serializer,
+        Garticles_delete_key_input.serializer,
         json,
       );
 }
 
-abstract class Garticle_insert_input
-    implements Built<Garticle_insert_input, Garticle_insert_inputBuilder> {
-  Garticle_insert_input._();
+abstract class Garticles_insert_input
+    implements Built<Garticles_insert_input, Garticles_insert_inputBuilder> {
+  Garticles_insert_input._();
 
-  factory Garticle_insert_input(
-          [Function(Garticle_insert_inputBuilder b) updates]) =
-      _$Garticle_insert_input;
+  factory Garticles_insert_input(
+          [Function(Garticles_insert_inputBuilder b) updates]) =
+      _$Garticles_insert_input;
 
   Gtimestamptz? get created_at;
   Guuid? get created_by;
@@ -309,49 +310,49 @@ abstract class Garticle_insert_input
   Gtimestamptz? get updated_at;
   Guuid? get updated_by;
   String? get url;
-  static Serializer<Garticle_insert_input> get serializer =>
-      _$garticleInsertInputSerializer;
+  static Serializer<Garticles_insert_input> get serializer =>
+      _$garticlesInsertInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Garticle_insert_input.serializer,
+        Garticles_insert_input.serializer,
         this,
       ) as Map<String, dynamic>);
-  static Garticle_insert_input? fromJson(Map<String, dynamic> json) =>
+  static Garticles_insert_input? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        Garticle_insert_input.serializer,
+        Garticles_insert_input.serializer,
         json,
       );
 }
 
-abstract class Garticle_on_conflict
-    implements Built<Garticle_on_conflict, Garticle_on_conflictBuilder> {
-  Garticle_on_conflict._();
+abstract class Garticles_on_conflict
+    implements Built<Garticles_on_conflict, Garticles_on_conflictBuilder> {
+  Garticles_on_conflict._();
 
-  factory Garticle_on_conflict(
-          [Function(Garticle_on_conflictBuilder b) updates]) =
-      _$Garticle_on_conflict;
+  factory Garticles_on_conflict(
+          [Function(Garticles_on_conflictBuilder b) updates]) =
+      _$Garticles_on_conflict;
 
-  Garticle_constraint get constraint;
-  BuiltList<Garticle_update_column> get update_columns;
-  Garticle_bool_exp? get where;
-  static Serializer<Garticle_on_conflict> get serializer =>
-      _$garticleOnConflictSerializer;
+  Garticles_constraint get constraint;
+  BuiltList<Garticles_update_column> get update_columns;
+  Garticles_bool_exp? get where;
+  static Serializer<Garticles_on_conflict> get serializer =>
+      _$garticlesOnConflictSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Garticle_on_conflict.serializer,
+        Garticles_on_conflict.serializer,
         this,
       ) as Map<String, dynamic>);
-  static Garticle_on_conflict? fromJson(Map<String, dynamic> json) =>
+  static Garticles_on_conflict? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        Garticle_on_conflict.serializer,
+        Garticles_on_conflict.serializer,
         json,
       );
 }
 
-abstract class Garticle_order_by
-    implements Built<Garticle_order_by, Garticle_order_byBuilder> {
-  Garticle_order_by._();
+abstract class Garticles_order_by
+    implements Built<Garticles_order_by, Garticles_order_byBuilder> {
+  Garticles_order_by._();
 
-  factory Garticle_order_by([Function(Garticle_order_byBuilder b) updates]) =
-      _$Garticle_order_by;
+  factory Garticles_order_by([Function(Garticles_order_byBuilder b) updates]) =
+      _$Garticles_order_by;
 
   Gorder_by? get created_at;
   Gorder_by? get created_by;
@@ -364,110 +365,110 @@ abstract class Garticle_order_by
   Gorder_by? get updated_at;
   Gorder_by? get updated_by;
   Gorder_by? get url;
-  static Serializer<Garticle_order_by> get serializer =>
-      _$garticleOrderBySerializer;
+  static Serializer<Garticles_order_by> get serializer =>
+      _$garticlesOrderBySerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Garticle_order_by.serializer,
+        Garticles_order_by.serializer,
         this,
       ) as Map<String, dynamic>);
-  static Garticle_order_by? fromJson(Map<String, dynamic> json) =>
+  static Garticles_order_by? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        Garticle_order_by.serializer,
+        Garticles_order_by.serializer,
         json,
       );
 }
 
-abstract class Garticle_pk_columns_input
+abstract class Garticles_pk_columns_input
     implements
-        Built<Garticle_pk_columns_input, Garticle_pk_columns_inputBuilder> {
-  Garticle_pk_columns_input._();
+        Built<Garticles_pk_columns_input, Garticles_pk_columns_inputBuilder> {
+  Garticles_pk_columns_input._();
 
-  factory Garticle_pk_columns_input(
-          [Function(Garticle_pk_columns_inputBuilder b) updates]) =
-      _$Garticle_pk_columns_input;
+  factory Garticles_pk_columns_input(
+          [Function(Garticles_pk_columns_inputBuilder b) updates]) =
+      _$Garticles_pk_columns_input;
 
   Guuid get id;
-  static Serializer<Garticle_pk_columns_input> get serializer =>
-      _$garticlePkColumnsInputSerializer;
+  static Serializer<Garticles_pk_columns_input> get serializer =>
+      _$garticlesPkColumnsInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Garticle_pk_columns_input.serializer,
+        Garticles_pk_columns_input.serializer,
         this,
       ) as Map<String, dynamic>);
-  static Garticle_pk_columns_input? fromJson(Map<String, dynamic> json) =>
+  static Garticles_pk_columns_input? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        Garticle_pk_columns_input.serializer,
+        Garticles_pk_columns_input.serializer,
         json,
       );
 }
 
-abstract class Garticle_prepend_input
-    implements Built<Garticle_prepend_input, Garticle_prepend_inputBuilder> {
-  Garticle_prepend_input._();
+abstract class Garticles_prepend_input
+    implements Built<Garticles_prepend_input, Garticles_prepend_inputBuilder> {
+  Garticles_prepend_input._();
 
-  factory Garticle_prepend_input(
-          [Function(Garticle_prepend_inputBuilder b) updates]) =
-      _$Garticle_prepend_input;
+  factory Garticles_prepend_input(
+          [Function(Garticles_prepend_inputBuilder b) updates]) =
+      _$Garticles_prepend_input;
 
   _i2.JsonObject? get sentences;
-  static Serializer<Garticle_prepend_input> get serializer =>
-      _$garticlePrependInputSerializer;
+  static Serializer<Garticles_prepend_input> get serializer =>
+      _$garticlesPrependInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Garticle_prepend_input.serializer,
+        Garticles_prepend_input.serializer,
         this,
       ) as Map<String, dynamic>);
-  static Garticle_prepend_input? fromJson(Map<String, dynamic> json) =>
+  static Garticles_prepend_input? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        Garticle_prepend_input.serializer,
+        Garticles_prepend_input.serializer,
         json,
       );
 }
 
-class Garticle_select_column extends EnumClass {
-  const Garticle_select_column._(String name) : super(name);
+class Garticles_select_column extends EnumClass {
+  const Garticles_select_column._(String name) : super(name);
 
-  static const Garticle_select_column created_at =
-      _$garticleSelectColumncreated_at;
+  static const Garticles_select_column created_at =
+      _$garticlesSelectColumncreated_at;
 
-  static const Garticle_select_column created_by =
-      _$garticleSelectColumncreated_by;
+  static const Garticles_select_column created_by =
+      _$garticlesSelectColumncreated_by;
 
-  static const Garticle_select_column deleted_at =
-      _$garticleSelectColumndeleted_at;
+  static const Garticles_select_column deleted_at =
+      _$garticlesSelectColumndeleted_at;
 
-  static const Garticle_select_column favicon = _$garticleSelectColumnfavicon;
+  static const Garticles_select_column favicon = _$garticlesSelectColumnfavicon;
 
-  static const Garticle_select_column id = _$garticleSelectColumnid;
+  static const Garticles_select_column id = _$garticlesSelectColumnid;
 
-  static const Garticle_select_column sentences =
-      _$garticleSelectColumnsentences;
+  static const Garticles_select_column sentences =
+      _$garticlesSelectColumnsentences;
 
-  static const Garticle_select_column thumbnail =
-      _$garticleSelectColumnthumbnail;
+  static const Garticles_select_column thumbnail =
+      _$garticlesSelectColumnthumbnail;
 
-  static const Garticle_select_column title = _$garticleSelectColumntitle;
+  static const Garticles_select_column title = _$garticlesSelectColumntitle;
 
-  static const Garticle_select_column updated_at =
-      _$garticleSelectColumnupdated_at;
+  static const Garticles_select_column updated_at =
+      _$garticlesSelectColumnupdated_at;
 
-  static const Garticle_select_column updated_by =
-      _$garticleSelectColumnupdated_by;
+  static const Garticles_select_column updated_by =
+      _$garticlesSelectColumnupdated_by;
 
-  static const Garticle_select_column url = _$garticleSelectColumnurl;
+  static const Garticles_select_column url = _$garticlesSelectColumnurl;
 
-  static Serializer<Garticle_select_column> get serializer =>
-      _$garticleSelectColumnSerializer;
-  static BuiltSet<Garticle_select_column> get values =>
-      _$garticleSelectColumnValues;
-  static Garticle_select_column valueOf(String name) =>
-      _$garticleSelectColumnValueOf(name);
+  static Serializer<Garticles_select_column> get serializer =>
+      _$garticlesSelectColumnSerializer;
+  static BuiltSet<Garticles_select_column> get values =>
+      _$garticlesSelectColumnValues;
+  static Garticles_select_column valueOf(String name) =>
+      _$garticlesSelectColumnValueOf(name);
 }
 
-abstract class Garticle_set_input
-    implements Built<Garticle_set_input, Garticle_set_inputBuilder> {
-  Garticle_set_input._();
+abstract class Garticles_set_input
+    implements Built<Garticles_set_input, Garticles_set_inputBuilder> {
+  Garticles_set_input._();
 
-  factory Garticle_set_input([Function(Garticle_set_inputBuilder b) updates]) =
-      _$Garticle_set_input;
+  factory Garticles_set_input(
+      [Function(Garticles_set_inputBuilder b) updates]) = _$Garticles_set_input;
 
   Gtimestamptz? get created_at;
   Guuid? get created_by;
@@ -480,53 +481,53 @@ abstract class Garticle_set_input
   Gtimestamptz? get updated_at;
   Guuid? get updated_by;
   String? get url;
-  static Serializer<Garticle_set_input> get serializer =>
-      _$garticleSetInputSerializer;
+  static Serializer<Garticles_set_input> get serializer =>
+      _$garticlesSetInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Garticle_set_input.serializer,
+        Garticles_set_input.serializer,
         this,
       ) as Map<String, dynamic>);
-  static Garticle_set_input? fromJson(Map<String, dynamic> json) =>
+  static Garticles_set_input? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        Garticle_set_input.serializer,
+        Garticles_set_input.serializer,
         json,
       );
 }
 
-abstract class Garticle_stream_cursor_input
+abstract class Garticles_stream_cursor_input
     implements
-        Built<Garticle_stream_cursor_input,
-            Garticle_stream_cursor_inputBuilder> {
-  Garticle_stream_cursor_input._();
+        Built<Garticles_stream_cursor_input,
+            Garticles_stream_cursor_inputBuilder> {
+  Garticles_stream_cursor_input._();
 
-  factory Garticle_stream_cursor_input(
-          [Function(Garticle_stream_cursor_inputBuilder b) updates]) =
-      _$Garticle_stream_cursor_input;
+  factory Garticles_stream_cursor_input(
+          [Function(Garticles_stream_cursor_inputBuilder b) updates]) =
+      _$Garticles_stream_cursor_input;
 
-  Garticle_stream_cursor_value_input get initial_value;
+  Garticles_stream_cursor_value_input get initial_value;
   Gcursor_ordering? get ordering;
-  static Serializer<Garticle_stream_cursor_input> get serializer =>
-      _$garticleStreamCursorInputSerializer;
+  static Serializer<Garticles_stream_cursor_input> get serializer =>
+      _$garticlesStreamCursorInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Garticle_stream_cursor_input.serializer,
+        Garticles_stream_cursor_input.serializer,
         this,
       ) as Map<String, dynamic>);
-  static Garticle_stream_cursor_input? fromJson(Map<String, dynamic> json) =>
+  static Garticles_stream_cursor_input? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        Garticle_stream_cursor_input.serializer,
+        Garticles_stream_cursor_input.serializer,
         json,
       );
 }
 
-abstract class Garticle_stream_cursor_value_input
+abstract class Garticles_stream_cursor_value_input
     implements
-        Built<Garticle_stream_cursor_value_input,
-            Garticle_stream_cursor_value_inputBuilder> {
-  Garticle_stream_cursor_value_input._();
+        Built<Garticles_stream_cursor_value_input,
+            Garticles_stream_cursor_value_inputBuilder> {
+  Garticles_stream_cursor_value_input._();
 
-  factory Garticle_stream_cursor_value_input(
-          [Function(Garticle_stream_cursor_value_inputBuilder b) updates]) =
-      _$Garticle_stream_cursor_value_input;
+  factory Garticles_stream_cursor_value_input(
+          [Function(Garticles_stream_cursor_value_inputBuilder b) updates]) =
+      _$Garticles_stream_cursor_value_input;
 
   Gtimestamptz? get created_at;
   Guuid? get created_by;
@@ -539,89 +540,89 @@ abstract class Garticle_stream_cursor_value_input
   Gtimestamptz? get updated_at;
   Guuid? get updated_by;
   String? get url;
-  static Serializer<Garticle_stream_cursor_value_input> get serializer =>
-      _$garticleStreamCursorValueInputSerializer;
+  static Serializer<Garticles_stream_cursor_value_input> get serializer =>
+      _$garticlesStreamCursorValueInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Garticle_stream_cursor_value_input.serializer,
+        Garticles_stream_cursor_value_input.serializer,
         this,
       ) as Map<String, dynamic>);
-  static Garticle_stream_cursor_value_input? fromJson(
+  static Garticles_stream_cursor_value_input? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        Garticle_stream_cursor_value_input.serializer,
+        Garticles_stream_cursor_value_input.serializer,
         json,
       );
 }
 
-class Garticle_update_column extends EnumClass {
-  const Garticle_update_column._(String name) : super(name);
+class Garticles_update_column extends EnumClass {
+  const Garticles_update_column._(String name) : super(name);
 
-  static const Garticle_update_column created_at =
-      _$garticleUpdateColumncreated_at;
+  static const Garticles_update_column created_at =
+      _$garticlesUpdateColumncreated_at;
 
-  static const Garticle_update_column created_by =
-      _$garticleUpdateColumncreated_by;
+  static const Garticles_update_column created_by =
+      _$garticlesUpdateColumncreated_by;
 
-  static const Garticle_update_column deleted_at =
-      _$garticleUpdateColumndeleted_at;
+  static const Garticles_update_column deleted_at =
+      _$garticlesUpdateColumndeleted_at;
 
-  static const Garticle_update_column favicon = _$garticleUpdateColumnfavicon;
+  static const Garticles_update_column favicon = _$garticlesUpdateColumnfavicon;
 
-  static const Garticle_update_column id = _$garticleUpdateColumnid;
+  static const Garticles_update_column id = _$garticlesUpdateColumnid;
 
-  static const Garticle_update_column sentences =
-      _$garticleUpdateColumnsentences;
+  static const Garticles_update_column sentences =
+      _$garticlesUpdateColumnsentences;
 
-  static const Garticle_update_column thumbnail =
-      _$garticleUpdateColumnthumbnail;
+  static const Garticles_update_column thumbnail =
+      _$garticlesUpdateColumnthumbnail;
 
-  static const Garticle_update_column title = _$garticleUpdateColumntitle;
+  static const Garticles_update_column title = _$garticlesUpdateColumntitle;
 
-  static const Garticle_update_column updated_at =
-      _$garticleUpdateColumnupdated_at;
+  static const Garticles_update_column updated_at =
+      _$garticlesUpdateColumnupdated_at;
 
-  static const Garticle_update_column updated_by =
-      _$garticleUpdateColumnupdated_by;
+  static const Garticles_update_column updated_by =
+      _$garticlesUpdateColumnupdated_by;
 
-  static const Garticle_update_column url = _$garticleUpdateColumnurl;
+  static const Garticles_update_column url = _$garticlesUpdateColumnurl;
 
-  static Serializer<Garticle_update_column> get serializer =>
-      _$garticleUpdateColumnSerializer;
-  static BuiltSet<Garticle_update_column> get values =>
-      _$garticleUpdateColumnValues;
-  static Garticle_update_column valueOf(String name) =>
-      _$garticleUpdateColumnValueOf(name);
+  static Serializer<Garticles_update_column> get serializer =>
+      _$garticlesUpdateColumnSerializer;
+  static BuiltSet<Garticles_update_column> get values =>
+      _$garticlesUpdateColumnValues;
+  static Garticles_update_column valueOf(String name) =>
+      _$garticlesUpdateColumnValueOf(name);
 }
 
-abstract class Garticle_updates
-    implements Built<Garticle_updates, Garticle_updatesBuilder> {
-  Garticle_updates._();
+abstract class Garticles_updates
+    implements Built<Garticles_updates, Garticles_updatesBuilder> {
+  Garticles_updates._();
 
-  factory Garticle_updates([Function(Garticle_updatesBuilder b) updates]) =
-      _$Garticle_updates;
+  factory Garticles_updates([Function(Garticles_updatesBuilder b) updates]) =
+      _$Garticles_updates;
 
   @BuiltValueField(wireName: '_append')
-  Garticle_append_input? get G_append;
+  Garticles_append_input? get G_append;
   @BuiltValueField(wireName: '_delete_at_path')
-  Garticle_delete_at_path_input? get G_delete_at_path;
+  Garticles_delete_at_path_input? get G_delete_at_path;
   @BuiltValueField(wireName: '_delete_elem')
-  Garticle_delete_elem_input? get G_delete_elem;
+  Garticles_delete_elem_input? get G_delete_elem;
   @BuiltValueField(wireName: '_delete_key')
-  Garticle_delete_key_input? get G_delete_key;
+  Garticles_delete_key_input? get G_delete_key;
   @BuiltValueField(wireName: '_prepend')
-  Garticle_prepend_input? get G_prepend;
+  Garticles_prepend_input? get G_prepend;
   @BuiltValueField(wireName: '_set')
-  Garticle_set_input? get G_set;
-  Garticle_bool_exp get where;
-  static Serializer<Garticle_updates> get serializer =>
-      _$garticleUpdatesSerializer;
+  Garticles_set_input? get G_set;
+  Garticles_bool_exp get where;
+  static Serializer<Garticles_updates> get serializer =>
+      _$garticlesUpdatesSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        Garticle_updates.serializer,
+        Garticles_updates.serializer,
         this,
       ) as Map<String, dynamic>);
-  static Garticle_updates? fromJson(Map<String, dynamic> json) =>
+  static Garticles_updates? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        Garticle_updates.serializer,
+        Garticles_updates.serializer,
         json,
       );
 }

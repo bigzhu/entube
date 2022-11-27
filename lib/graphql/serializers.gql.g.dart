@@ -9,29 +9,29 @@ part of 'serializers.gql.dart';
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(FetchPolicy.serializer)
       ..add(GArticlesData.serializer)
-      ..add(GArticlesData_article.serializer)
+      ..add(GArticlesData_articles.serializer)
       ..add(GArticlesReq.serializer)
       ..add(GArticlesVars.serializer)
       ..add(GBoolean_comparison_exp.serializer)
       ..add(GInt_comparison_exp.serializer)
       ..add(GString_comparison_exp.serializer)
-      ..add(Garticle_append_input.serializer)
-      ..add(Garticle_bool_exp.serializer)
-      ..add(Garticle_constraint.serializer)
-      ..add(Garticle_delete_at_path_input.serializer)
-      ..add(Garticle_delete_elem_input.serializer)
-      ..add(Garticle_delete_key_input.serializer)
-      ..add(Garticle_insert_input.serializer)
-      ..add(Garticle_on_conflict.serializer)
-      ..add(Garticle_order_by.serializer)
-      ..add(Garticle_pk_columns_input.serializer)
-      ..add(Garticle_prepend_input.serializer)
-      ..add(Garticle_select_column.serializer)
-      ..add(Garticle_set_input.serializer)
-      ..add(Garticle_stream_cursor_input.serializer)
-      ..add(Garticle_stream_cursor_value_input.serializer)
-      ..add(Garticle_update_column.serializer)
-      ..add(Garticle_updates.serializer)
+      ..add(Garticles_append_input.serializer)
+      ..add(Garticles_bool_exp.serializer)
+      ..add(Garticles_constraint.serializer)
+      ..add(Garticles_delete_at_path_input.serializer)
+      ..add(Garticles_delete_elem_input.serializer)
+      ..add(Garticles_delete_key_input.serializer)
+      ..add(Garticles_insert_input.serializer)
+      ..add(Garticles_on_conflict.serializer)
+      ..add(Garticles_order_by.serializer)
+      ..add(Garticles_pk_columns_input.serializer)
+      ..add(Garticles_prepend_input.serializer)
+      ..add(Garticles_select_column.serializer)
+      ..add(Garticles_set_input.serializer)
+      ..add(Garticles_stream_cursor_input.serializer)
+      ..add(Garticles_stream_cursor_value_input.serializer)
+      ..add(Garticles_update_column.serializer)
+      ..add(Garticles_updates.serializer)
       ..add(GauthProviderRequests_append_input.serializer)
       ..add(GauthProviderRequests_bool_exp.serializer)
       ..add(GauthProviderRequests_constraint.serializer)
@@ -253,18 +253,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Guuid_comparison_exp.serializer)
       ..addBuilderFactory(
           const FullType(
-              BuiltList, const [const FullType(GArticlesData_article)]),
-          () => new ListBuilder<GArticlesData_article>())
+              BuiltList, const [const FullType(GArticlesData_articles)]),
+          () => new ListBuilder<GArticlesData_articles>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Garticle_bool_exp)]),
-          () => new ListBuilder<Garticle_bool_exp>())
+          const FullType(BuiltList, const [const FullType(Garticles_bool_exp)]),
+          () => new ListBuilder<Garticles_bool_exp>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Garticle_bool_exp)]),
-          () => new ListBuilder<Garticle_bool_exp>())
+          const FullType(BuiltList, const [const FullType(Garticles_bool_exp)]),
+          () => new ListBuilder<Garticles_bool_exp>())
       ..addBuilderFactory(
           const FullType(
-              BuiltList, const [const FullType(Garticle_update_column)]),
-          () => new ListBuilder<Garticle_update_column>())
+              BuiltList, const [const FullType(Garticles_update_column)]),
+          () => new ListBuilder<Garticles_update_column>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(GauthProviderRequests_bool_exp)]),

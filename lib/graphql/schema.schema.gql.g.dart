@@ -6,155 +6,155 @@ part of 'schema.schema.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const Garticle_constraint _$garticleConstraintarticle_pkey =
-    const Garticle_constraint._('article_pkey');
+const Garticles_constraint _$garticlesConstraintarticle_pkey =
+    const Garticles_constraint._('article_pkey');
 
-Garticle_constraint _$garticleConstraintValueOf(String name) {
+Garticles_constraint _$garticlesConstraintValueOf(String name) {
   switch (name) {
     case 'article_pkey':
-      return _$garticleConstraintarticle_pkey;
+      return _$garticlesConstraintarticle_pkey;
     default:
       throw new ArgumentError(name);
   }
 }
 
-final BuiltSet<Garticle_constraint> _$garticleConstraintValues =
-    new BuiltSet<Garticle_constraint>(const <Garticle_constraint>[
-  _$garticleConstraintarticle_pkey,
+final BuiltSet<Garticles_constraint> _$garticlesConstraintValues =
+    new BuiltSet<Garticles_constraint>(const <Garticles_constraint>[
+  _$garticlesConstraintarticle_pkey,
 ]);
 
-const Garticle_select_column _$garticleSelectColumncreated_at =
-    const Garticle_select_column._('created_at');
-const Garticle_select_column _$garticleSelectColumncreated_by =
-    const Garticle_select_column._('created_by');
-const Garticle_select_column _$garticleSelectColumndeleted_at =
-    const Garticle_select_column._('deleted_at');
-const Garticle_select_column _$garticleSelectColumnfavicon =
-    const Garticle_select_column._('favicon');
-const Garticle_select_column _$garticleSelectColumnid =
-    const Garticle_select_column._('id');
-const Garticle_select_column _$garticleSelectColumnsentences =
-    const Garticle_select_column._('sentences');
-const Garticle_select_column _$garticleSelectColumnthumbnail =
-    const Garticle_select_column._('thumbnail');
-const Garticle_select_column _$garticleSelectColumntitle =
-    const Garticle_select_column._('title');
-const Garticle_select_column _$garticleSelectColumnupdated_at =
-    const Garticle_select_column._('updated_at');
-const Garticle_select_column _$garticleSelectColumnupdated_by =
-    const Garticle_select_column._('updated_by');
-const Garticle_select_column _$garticleSelectColumnurl =
-    const Garticle_select_column._('url');
+const Garticles_select_column _$garticlesSelectColumncreated_at =
+    const Garticles_select_column._('created_at');
+const Garticles_select_column _$garticlesSelectColumncreated_by =
+    const Garticles_select_column._('created_by');
+const Garticles_select_column _$garticlesSelectColumndeleted_at =
+    const Garticles_select_column._('deleted_at');
+const Garticles_select_column _$garticlesSelectColumnfavicon =
+    const Garticles_select_column._('favicon');
+const Garticles_select_column _$garticlesSelectColumnid =
+    const Garticles_select_column._('id');
+const Garticles_select_column _$garticlesSelectColumnsentences =
+    const Garticles_select_column._('sentences');
+const Garticles_select_column _$garticlesSelectColumnthumbnail =
+    const Garticles_select_column._('thumbnail');
+const Garticles_select_column _$garticlesSelectColumntitle =
+    const Garticles_select_column._('title');
+const Garticles_select_column _$garticlesSelectColumnupdated_at =
+    const Garticles_select_column._('updated_at');
+const Garticles_select_column _$garticlesSelectColumnupdated_by =
+    const Garticles_select_column._('updated_by');
+const Garticles_select_column _$garticlesSelectColumnurl =
+    const Garticles_select_column._('url');
 
-Garticle_select_column _$garticleSelectColumnValueOf(String name) {
+Garticles_select_column _$garticlesSelectColumnValueOf(String name) {
   switch (name) {
     case 'created_at':
-      return _$garticleSelectColumncreated_at;
+      return _$garticlesSelectColumncreated_at;
     case 'created_by':
-      return _$garticleSelectColumncreated_by;
+      return _$garticlesSelectColumncreated_by;
     case 'deleted_at':
-      return _$garticleSelectColumndeleted_at;
+      return _$garticlesSelectColumndeleted_at;
     case 'favicon':
-      return _$garticleSelectColumnfavicon;
+      return _$garticlesSelectColumnfavicon;
     case 'id':
-      return _$garticleSelectColumnid;
+      return _$garticlesSelectColumnid;
     case 'sentences':
-      return _$garticleSelectColumnsentences;
+      return _$garticlesSelectColumnsentences;
     case 'thumbnail':
-      return _$garticleSelectColumnthumbnail;
+      return _$garticlesSelectColumnthumbnail;
     case 'title':
-      return _$garticleSelectColumntitle;
+      return _$garticlesSelectColumntitle;
     case 'updated_at':
-      return _$garticleSelectColumnupdated_at;
+      return _$garticlesSelectColumnupdated_at;
     case 'updated_by':
-      return _$garticleSelectColumnupdated_by;
+      return _$garticlesSelectColumnupdated_by;
     case 'url':
-      return _$garticleSelectColumnurl;
+      return _$garticlesSelectColumnurl;
     default:
       throw new ArgumentError(name);
   }
 }
 
-final BuiltSet<Garticle_select_column> _$garticleSelectColumnValues =
-    new BuiltSet<Garticle_select_column>(const <Garticle_select_column>[
-  _$garticleSelectColumncreated_at,
-  _$garticleSelectColumncreated_by,
-  _$garticleSelectColumndeleted_at,
-  _$garticleSelectColumnfavicon,
-  _$garticleSelectColumnid,
-  _$garticleSelectColumnsentences,
-  _$garticleSelectColumnthumbnail,
-  _$garticleSelectColumntitle,
-  _$garticleSelectColumnupdated_at,
-  _$garticleSelectColumnupdated_by,
-  _$garticleSelectColumnurl,
+final BuiltSet<Garticles_select_column> _$garticlesSelectColumnValues =
+    new BuiltSet<Garticles_select_column>(const <Garticles_select_column>[
+  _$garticlesSelectColumncreated_at,
+  _$garticlesSelectColumncreated_by,
+  _$garticlesSelectColumndeleted_at,
+  _$garticlesSelectColumnfavicon,
+  _$garticlesSelectColumnid,
+  _$garticlesSelectColumnsentences,
+  _$garticlesSelectColumnthumbnail,
+  _$garticlesSelectColumntitle,
+  _$garticlesSelectColumnupdated_at,
+  _$garticlesSelectColumnupdated_by,
+  _$garticlesSelectColumnurl,
 ]);
 
-const Garticle_update_column _$garticleUpdateColumncreated_at =
-    const Garticle_update_column._('created_at');
-const Garticle_update_column _$garticleUpdateColumncreated_by =
-    const Garticle_update_column._('created_by');
-const Garticle_update_column _$garticleUpdateColumndeleted_at =
-    const Garticle_update_column._('deleted_at');
-const Garticle_update_column _$garticleUpdateColumnfavicon =
-    const Garticle_update_column._('favicon');
-const Garticle_update_column _$garticleUpdateColumnid =
-    const Garticle_update_column._('id');
-const Garticle_update_column _$garticleUpdateColumnsentences =
-    const Garticle_update_column._('sentences');
-const Garticle_update_column _$garticleUpdateColumnthumbnail =
-    const Garticle_update_column._('thumbnail');
-const Garticle_update_column _$garticleUpdateColumntitle =
-    const Garticle_update_column._('title');
-const Garticle_update_column _$garticleUpdateColumnupdated_at =
-    const Garticle_update_column._('updated_at');
-const Garticle_update_column _$garticleUpdateColumnupdated_by =
-    const Garticle_update_column._('updated_by');
-const Garticle_update_column _$garticleUpdateColumnurl =
-    const Garticle_update_column._('url');
+const Garticles_update_column _$garticlesUpdateColumncreated_at =
+    const Garticles_update_column._('created_at');
+const Garticles_update_column _$garticlesUpdateColumncreated_by =
+    const Garticles_update_column._('created_by');
+const Garticles_update_column _$garticlesUpdateColumndeleted_at =
+    const Garticles_update_column._('deleted_at');
+const Garticles_update_column _$garticlesUpdateColumnfavicon =
+    const Garticles_update_column._('favicon');
+const Garticles_update_column _$garticlesUpdateColumnid =
+    const Garticles_update_column._('id');
+const Garticles_update_column _$garticlesUpdateColumnsentences =
+    const Garticles_update_column._('sentences');
+const Garticles_update_column _$garticlesUpdateColumnthumbnail =
+    const Garticles_update_column._('thumbnail');
+const Garticles_update_column _$garticlesUpdateColumntitle =
+    const Garticles_update_column._('title');
+const Garticles_update_column _$garticlesUpdateColumnupdated_at =
+    const Garticles_update_column._('updated_at');
+const Garticles_update_column _$garticlesUpdateColumnupdated_by =
+    const Garticles_update_column._('updated_by');
+const Garticles_update_column _$garticlesUpdateColumnurl =
+    const Garticles_update_column._('url');
 
-Garticle_update_column _$garticleUpdateColumnValueOf(String name) {
+Garticles_update_column _$garticlesUpdateColumnValueOf(String name) {
   switch (name) {
     case 'created_at':
-      return _$garticleUpdateColumncreated_at;
+      return _$garticlesUpdateColumncreated_at;
     case 'created_by':
-      return _$garticleUpdateColumncreated_by;
+      return _$garticlesUpdateColumncreated_by;
     case 'deleted_at':
-      return _$garticleUpdateColumndeleted_at;
+      return _$garticlesUpdateColumndeleted_at;
     case 'favicon':
-      return _$garticleUpdateColumnfavicon;
+      return _$garticlesUpdateColumnfavicon;
     case 'id':
-      return _$garticleUpdateColumnid;
+      return _$garticlesUpdateColumnid;
     case 'sentences':
-      return _$garticleUpdateColumnsentences;
+      return _$garticlesUpdateColumnsentences;
     case 'thumbnail':
-      return _$garticleUpdateColumnthumbnail;
+      return _$garticlesUpdateColumnthumbnail;
     case 'title':
-      return _$garticleUpdateColumntitle;
+      return _$garticlesUpdateColumntitle;
     case 'updated_at':
-      return _$garticleUpdateColumnupdated_at;
+      return _$garticlesUpdateColumnupdated_at;
     case 'updated_by':
-      return _$garticleUpdateColumnupdated_by;
+      return _$garticlesUpdateColumnupdated_by;
     case 'url':
-      return _$garticleUpdateColumnurl;
+      return _$garticlesUpdateColumnurl;
     default:
       throw new ArgumentError(name);
   }
 }
 
-final BuiltSet<Garticle_update_column> _$garticleUpdateColumnValues =
-    new BuiltSet<Garticle_update_column>(const <Garticle_update_column>[
-  _$garticleUpdateColumncreated_at,
-  _$garticleUpdateColumncreated_by,
-  _$garticleUpdateColumndeleted_at,
-  _$garticleUpdateColumnfavicon,
-  _$garticleUpdateColumnid,
-  _$garticleUpdateColumnsentences,
-  _$garticleUpdateColumnthumbnail,
-  _$garticleUpdateColumntitle,
-  _$garticleUpdateColumnupdated_at,
-  _$garticleUpdateColumnupdated_by,
-  _$garticleUpdateColumnurl,
+final BuiltSet<Garticles_update_column> _$garticlesUpdateColumnValues =
+    new BuiltSet<Garticles_update_column>(const <Garticles_update_column>[
+  _$garticlesUpdateColumncreated_at,
+  _$garticlesUpdateColumncreated_by,
+  _$garticlesUpdateColumndeleted_at,
+  _$garticlesUpdateColumnfavicon,
+  _$garticlesUpdateColumnid,
+  _$garticlesUpdateColumnsentences,
+  _$garticlesUpdateColumnthumbnail,
+  _$garticlesUpdateColumntitle,
+  _$garticlesUpdateColumnupdated_at,
+  _$garticlesUpdateColumnupdated_by,
+  _$garticlesUpdateColumnurl,
 ]);
 
 const GauthProviderRequests_constraint
@@ -1585,42 +1585,43 @@ Serializer<GInt_comparison_exp> _$gIntComparisonExpSerializer =
     new _$GInt_comparison_expSerializer();
 Serializer<GString_comparison_exp> _$gStringComparisonExpSerializer =
     new _$GString_comparison_expSerializer();
-Serializer<Garticle_append_input> _$garticleAppendInputSerializer =
-    new _$Garticle_append_inputSerializer();
-Serializer<Garticle_bool_exp> _$garticleBoolExpSerializer =
-    new _$Garticle_bool_expSerializer();
-Serializer<Garticle_constraint> _$garticleConstraintSerializer =
-    new _$Garticle_constraintSerializer();
-Serializer<Garticle_delete_at_path_input>
-    _$garticleDeleteAtPathInputSerializer =
-    new _$Garticle_delete_at_path_inputSerializer();
-Serializer<Garticle_delete_elem_input> _$garticleDeleteElemInputSerializer =
-    new _$Garticle_delete_elem_inputSerializer();
-Serializer<Garticle_delete_key_input> _$garticleDeleteKeyInputSerializer =
-    new _$Garticle_delete_key_inputSerializer();
-Serializer<Garticle_insert_input> _$garticleInsertInputSerializer =
-    new _$Garticle_insert_inputSerializer();
-Serializer<Garticle_on_conflict> _$garticleOnConflictSerializer =
-    new _$Garticle_on_conflictSerializer();
-Serializer<Garticle_order_by> _$garticleOrderBySerializer =
-    new _$Garticle_order_bySerializer();
-Serializer<Garticle_pk_columns_input> _$garticlePkColumnsInputSerializer =
-    new _$Garticle_pk_columns_inputSerializer();
-Serializer<Garticle_prepend_input> _$garticlePrependInputSerializer =
-    new _$Garticle_prepend_inputSerializer();
-Serializer<Garticle_select_column> _$garticleSelectColumnSerializer =
-    new _$Garticle_select_columnSerializer();
-Serializer<Garticle_set_input> _$garticleSetInputSerializer =
-    new _$Garticle_set_inputSerializer();
-Serializer<Garticle_stream_cursor_input> _$garticleStreamCursorInputSerializer =
-    new _$Garticle_stream_cursor_inputSerializer();
-Serializer<Garticle_stream_cursor_value_input>
-    _$garticleStreamCursorValueInputSerializer =
-    new _$Garticle_stream_cursor_value_inputSerializer();
-Serializer<Garticle_update_column> _$garticleUpdateColumnSerializer =
-    new _$Garticle_update_columnSerializer();
-Serializer<Garticle_updates> _$garticleUpdatesSerializer =
-    new _$Garticle_updatesSerializer();
+Serializer<Garticles_append_input> _$garticlesAppendInputSerializer =
+    new _$Garticles_append_inputSerializer();
+Serializer<Garticles_bool_exp> _$garticlesBoolExpSerializer =
+    new _$Garticles_bool_expSerializer();
+Serializer<Garticles_constraint> _$garticlesConstraintSerializer =
+    new _$Garticles_constraintSerializer();
+Serializer<Garticles_delete_at_path_input>
+    _$garticlesDeleteAtPathInputSerializer =
+    new _$Garticles_delete_at_path_inputSerializer();
+Serializer<Garticles_delete_elem_input> _$garticlesDeleteElemInputSerializer =
+    new _$Garticles_delete_elem_inputSerializer();
+Serializer<Garticles_delete_key_input> _$garticlesDeleteKeyInputSerializer =
+    new _$Garticles_delete_key_inputSerializer();
+Serializer<Garticles_insert_input> _$garticlesInsertInputSerializer =
+    new _$Garticles_insert_inputSerializer();
+Serializer<Garticles_on_conflict> _$garticlesOnConflictSerializer =
+    new _$Garticles_on_conflictSerializer();
+Serializer<Garticles_order_by> _$garticlesOrderBySerializer =
+    new _$Garticles_order_bySerializer();
+Serializer<Garticles_pk_columns_input> _$garticlesPkColumnsInputSerializer =
+    new _$Garticles_pk_columns_inputSerializer();
+Serializer<Garticles_prepend_input> _$garticlesPrependInputSerializer =
+    new _$Garticles_prepend_inputSerializer();
+Serializer<Garticles_select_column> _$garticlesSelectColumnSerializer =
+    new _$Garticles_select_columnSerializer();
+Serializer<Garticles_set_input> _$garticlesSetInputSerializer =
+    new _$Garticles_set_inputSerializer();
+Serializer<Garticles_stream_cursor_input>
+    _$garticlesStreamCursorInputSerializer =
+    new _$Garticles_stream_cursor_inputSerializer();
+Serializer<Garticles_stream_cursor_value_input>
+    _$garticlesStreamCursorValueInputSerializer =
+    new _$Garticles_stream_cursor_value_inputSerializer();
+Serializer<Garticles_update_column> _$garticlesUpdateColumnSerializer =
+    new _$Garticles_update_columnSerializer();
+Serializer<Garticles_updates> _$garticlesUpdatesSerializer =
+    new _$Garticles_updatesSerializer();
 Serializer<GauthProviderRequests_append_input>
     _$gauthProviderRequestsAppendInputSerializer =
     new _$GauthProviderRequests_append_inputSerializer();
@@ -2676,19 +2677,19 @@ class _$GString_comparison_expSerializer
   }
 }
 
-class _$Garticle_append_inputSerializer
-    implements StructuredSerializer<Garticle_append_input> {
+class _$Garticles_append_inputSerializer
+    implements StructuredSerializer<Garticles_append_input> {
   @override
   final Iterable<Type> types = const [
-    Garticle_append_input,
-    _$Garticle_append_input
+    Garticles_append_input,
+    _$Garticles_append_input
   ];
   @override
-  final String wireName = 'Garticle_append_input';
+  final String wireName = 'Garticles_append_input';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, Garticle_append_input object,
+      Serializers serializers, Garticles_append_input object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
@@ -2703,10 +2704,10 @@ class _$Garticle_append_inputSerializer
   }
 
   @override
-  Garticle_append_input deserialize(
+  Garticles_append_input deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new Garticle_append_inputBuilder();
+    final result = new Garticles_append_inputBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2725,15 +2726,16 @@ class _$Garticle_append_inputSerializer
   }
 }
 
-class _$Garticle_bool_expSerializer
-    implements StructuredSerializer<Garticle_bool_exp> {
+class _$Garticles_bool_expSerializer
+    implements StructuredSerializer<Garticles_bool_exp> {
   @override
-  final Iterable<Type> types = const [Garticle_bool_exp, _$Garticle_bool_exp];
+  final Iterable<Type> types = const [Garticles_bool_exp, _$Garticles_bool_exp];
   @override
-  final String wireName = 'Garticle_bool_exp';
+  final String wireName = 'Garticles_bool_exp';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Garticle_bool_exp object,
+  Iterable<Object?> serialize(
+      Serializers serializers, Garticles_bool_exp object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
@@ -2743,14 +2745,14 @@ class _$Garticle_bool_expSerializer
         ..add('_and')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
-                BuiltList, const [const FullType(Garticle_bool_exp)])));
+                BuiltList, const [const FullType(Garticles_bool_exp)])));
     }
     value = object.G_not;
     if (value != null) {
       result
         ..add('_not')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Garticle_bool_exp)));
+            specifiedType: const FullType(Garticles_bool_exp)));
     }
     value = object.G_or;
     if (value != null) {
@@ -2758,7 +2760,7 @@ class _$Garticle_bool_expSerializer
         ..add('_or')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
-                BuiltList, const [const FullType(Garticle_bool_exp)])));
+                BuiltList, const [const FullType(Garticles_bool_exp)])));
     }
     value = object.created_at;
     if (value != null) {
@@ -2841,10 +2843,10 @@ class _$Garticle_bool_expSerializer
   }
 
   @override
-  Garticle_bool_exp deserialize(
+  Garticles_bool_exp deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new Garticle_bool_expBuilder();
+    final result = new Garticles_bool_expBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -2855,18 +2857,18 @@ class _$Garticle_bool_expSerializer
         case '_and':
           result.G_and.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(Garticle_bool_exp)]))!
+                      BuiltList, const [const FullType(Garticles_bool_exp)]))!
               as BuiltList<Object?>);
           break;
         case '_not':
           result.G_not.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(Garticle_bool_exp))!
-              as Garticle_bool_exp);
+                  specifiedType: const FullType(Garticles_bool_exp))!
+              as Garticles_bool_exp);
           break;
         case '_or':
           result.G_or.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(Garticle_bool_exp)]))!
+                      BuiltList, const [const FullType(Garticles_bool_exp)]))!
               as BuiltList<Object?>);
           break;
         case 'created_at':
@@ -2931,37 +2933,37 @@ class _$Garticle_bool_expSerializer
   }
 }
 
-class _$Garticle_constraintSerializer
-    implements PrimitiveSerializer<Garticle_constraint> {
+class _$Garticles_constraintSerializer
+    implements PrimitiveSerializer<Garticles_constraint> {
   @override
-  final Iterable<Type> types = const <Type>[Garticle_constraint];
+  final Iterable<Type> types = const <Type>[Garticles_constraint];
   @override
-  final String wireName = 'Garticle_constraint';
+  final String wireName = 'Garticles_constraint';
 
   @override
-  Object serialize(Serializers serializers, Garticle_constraint object,
+  Object serialize(Serializers serializers, Garticles_constraint object,
           {FullType specifiedType = FullType.unspecified}) =>
       object.name;
 
   @override
-  Garticle_constraint deserialize(Serializers serializers, Object serialized,
+  Garticles_constraint deserialize(Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      Garticle_constraint.valueOf(serialized as String);
+      Garticles_constraint.valueOf(serialized as String);
 }
 
-class _$Garticle_delete_at_path_inputSerializer
-    implements StructuredSerializer<Garticle_delete_at_path_input> {
+class _$Garticles_delete_at_path_inputSerializer
+    implements StructuredSerializer<Garticles_delete_at_path_input> {
   @override
   final Iterable<Type> types = const [
-    Garticle_delete_at_path_input,
-    _$Garticle_delete_at_path_input
+    Garticles_delete_at_path_input,
+    _$Garticles_delete_at_path_input
   ];
   @override
-  final String wireName = 'Garticle_delete_at_path_input';
+  final String wireName = 'Garticles_delete_at_path_input';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, Garticle_delete_at_path_input object,
+      Serializers serializers, Garticles_delete_at_path_input object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
@@ -2977,10 +2979,10 @@ class _$Garticle_delete_at_path_inputSerializer
   }
 
   @override
-  Garticle_delete_at_path_input deserialize(
+  Garticles_delete_at_path_input deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new Garticle_delete_at_path_inputBuilder();
+    final result = new Garticles_delete_at_path_inputBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3001,19 +3003,19 @@ class _$Garticle_delete_at_path_inputSerializer
   }
 }
 
-class _$Garticle_delete_elem_inputSerializer
-    implements StructuredSerializer<Garticle_delete_elem_input> {
+class _$Garticles_delete_elem_inputSerializer
+    implements StructuredSerializer<Garticles_delete_elem_input> {
   @override
   final Iterable<Type> types = const [
-    Garticle_delete_elem_input,
-    _$Garticle_delete_elem_input
+    Garticles_delete_elem_input,
+    _$Garticles_delete_elem_input
   ];
   @override
-  final String wireName = 'Garticle_delete_elem_input';
+  final String wireName = 'Garticles_delete_elem_input';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, Garticle_delete_elem_input object,
+      Serializers serializers, Garticles_delete_elem_input object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
@@ -3027,10 +3029,10 @@ class _$Garticle_delete_elem_inputSerializer
   }
 
   @override
-  Garticle_delete_elem_input deserialize(
+  Garticles_delete_elem_input deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new Garticle_delete_elem_inputBuilder();
+    final result = new Garticles_delete_elem_inputBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3049,19 +3051,19 @@ class _$Garticle_delete_elem_inputSerializer
   }
 }
 
-class _$Garticle_delete_key_inputSerializer
-    implements StructuredSerializer<Garticle_delete_key_input> {
+class _$Garticles_delete_key_inputSerializer
+    implements StructuredSerializer<Garticles_delete_key_input> {
   @override
   final Iterable<Type> types = const [
-    Garticle_delete_key_input,
-    _$Garticle_delete_key_input
+    Garticles_delete_key_input,
+    _$Garticles_delete_key_input
   ];
   @override
-  final String wireName = 'Garticle_delete_key_input';
+  final String wireName = 'Garticles_delete_key_input';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, Garticle_delete_key_input object,
+      Serializers serializers, Garticles_delete_key_input object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
@@ -3076,10 +3078,10 @@ class _$Garticle_delete_key_inputSerializer
   }
 
   @override
-  Garticle_delete_key_input deserialize(
+  Garticles_delete_key_input deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new Garticle_delete_key_inputBuilder();
+    final result = new Garticles_delete_key_inputBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3098,19 +3100,19 @@ class _$Garticle_delete_key_inputSerializer
   }
 }
 
-class _$Garticle_insert_inputSerializer
-    implements StructuredSerializer<Garticle_insert_input> {
+class _$Garticles_insert_inputSerializer
+    implements StructuredSerializer<Garticles_insert_input> {
   @override
   final Iterable<Type> types = const [
-    Garticle_insert_input,
-    _$Garticle_insert_input
+    Garticles_insert_input,
+    _$Garticles_insert_input
   ];
   @override
-  final String wireName = 'Garticle_insert_input';
+  final String wireName = 'Garticles_insert_input';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, Garticle_insert_input object,
+      Serializers serializers, Garticles_insert_input object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
@@ -3195,10 +3197,10 @@ class _$Garticle_insert_inputSerializer
   }
 
   @override
-  Garticle_insert_input deserialize(
+  Garticles_insert_input deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new Garticle_insert_inputBuilder();
+    final result = new Garticles_insert_inputBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3257,28 +3259,28 @@ class _$Garticle_insert_inputSerializer
   }
 }
 
-class _$Garticle_on_conflictSerializer
-    implements StructuredSerializer<Garticle_on_conflict> {
+class _$Garticles_on_conflictSerializer
+    implements StructuredSerializer<Garticles_on_conflict> {
   @override
   final Iterable<Type> types = const [
-    Garticle_on_conflict,
-    _$Garticle_on_conflict
+    Garticles_on_conflict,
+    _$Garticles_on_conflict
   ];
   @override
-  final String wireName = 'Garticle_on_conflict';
+  final String wireName = 'Garticles_on_conflict';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, Garticle_on_conflict object,
+      Serializers serializers, Garticles_on_conflict object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'constraint',
       serializers.serialize(object.constraint,
-          specifiedType: const FullType(Garticle_constraint)),
+          specifiedType: const FullType(Garticles_constraint)),
       'update_columns',
       serializers.serialize(object.update_columns,
           specifiedType: const FullType(
-              BuiltList, const [const FullType(Garticle_update_column)])),
+              BuiltList, const [const FullType(Garticles_update_column)])),
     ];
     Object? value;
     value = object.where;
@@ -3286,16 +3288,16 @@ class _$Garticle_on_conflictSerializer
       result
         ..add('where')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Garticle_bool_exp)));
+            specifiedType: const FullType(Garticles_bool_exp)));
     }
     return result;
   }
 
   @override
-  Garticle_on_conflict deserialize(
+  Garticles_on_conflict deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new Garticle_on_conflictBuilder();
+    final result = new Garticles_on_conflictBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3305,19 +3307,19 @@ class _$Garticle_on_conflictSerializer
       switch (key) {
         case 'constraint':
           result.constraint = serializers.deserialize(value,
-                  specifiedType: const FullType(Garticle_constraint))!
-              as Garticle_constraint;
+                  specifiedType: const FullType(Garticles_constraint))!
+              as Garticles_constraint;
           break;
         case 'update_columns':
           result.update_columns.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
-                const FullType(Garticle_update_column)
+                const FullType(Garticles_update_column)
               ]))! as BuiltList<Object?>);
           break;
         case 'where':
           result.where.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(Garticle_bool_exp))!
-              as Garticle_bool_exp);
+                  specifiedType: const FullType(Garticles_bool_exp))!
+              as Garticles_bool_exp);
           break;
       }
     }
@@ -3326,15 +3328,16 @@ class _$Garticle_on_conflictSerializer
   }
 }
 
-class _$Garticle_order_bySerializer
-    implements StructuredSerializer<Garticle_order_by> {
+class _$Garticles_order_bySerializer
+    implements StructuredSerializer<Garticles_order_by> {
   @override
-  final Iterable<Type> types = const [Garticle_order_by, _$Garticle_order_by];
+  final Iterable<Type> types = const [Garticles_order_by, _$Garticles_order_by];
   @override
-  final String wireName = 'Garticle_order_by';
+  final String wireName = 'Garticles_order_by';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Garticle_order_by object,
+  Iterable<Object?> serialize(
+      Serializers serializers, Garticles_order_by object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
@@ -3419,10 +3422,10 @@ class _$Garticle_order_bySerializer
   }
 
   @override
-  Garticle_order_by deserialize(
+  Garticles_order_by deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new Garticle_order_byBuilder();
+    final result = new Garticles_order_byBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3481,19 +3484,19 @@ class _$Garticle_order_bySerializer
   }
 }
 
-class _$Garticle_pk_columns_inputSerializer
-    implements StructuredSerializer<Garticle_pk_columns_input> {
+class _$Garticles_pk_columns_inputSerializer
+    implements StructuredSerializer<Garticles_pk_columns_input> {
   @override
   final Iterable<Type> types = const [
-    Garticle_pk_columns_input,
-    _$Garticle_pk_columns_input
+    Garticles_pk_columns_input,
+    _$Garticles_pk_columns_input
   ];
   @override
-  final String wireName = 'Garticle_pk_columns_input';
+  final String wireName = 'Garticles_pk_columns_input';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, Garticle_pk_columns_input object,
+      Serializers serializers, Garticles_pk_columns_input object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'id',
@@ -3504,10 +3507,10 @@ class _$Garticle_pk_columns_inputSerializer
   }
 
   @override
-  Garticle_pk_columns_input deserialize(
+  Garticles_pk_columns_input deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new Garticle_pk_columns_inputBuilder();
+    final result = new Garticles_pk_columns_inputBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3526,19 +3529,19 @@ class _$Garticle_pk_columns_inputSerializer
   }
 }
 
-class _$Garticle_prepend_inputSerializer
-    implements StructuredSerializer<Garticle_prepend_input> {
+class _$Garticles_prepend_inputSerializer
+    implements StructuredSerializer<Garticles_prepend_input> {
   @override
   final Iterable<Type> types = const [
-    Garticle_prepend_input,
-    _$Garticle_prepend_input
+    Garticles_prepend_input,
+    _$Garticles_prepend_input
   ];
   @override
-  final String wireName = 'Garticle_prepend_input';
+  final String wireName = 'Garticles_prepend_input';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, Garticle_prepend_input object,
+      Serializers serializers, Garticles_prepend_input object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
@@ -3553,10 +3556,10 @@ class _$Garticle_prepend_inputSerializer
   }
 
   @override
-  Garticle_prepend_input deserialize(
+  Garticles_prepend_input deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new Garticle_prepend_inputBuilder();
+    final result = new Garticles_prepend_inputBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3575,34 +3578,38 @@ class _$Garticle_prepend_inputSerializer
   }
 }
 
-class _$Garticle_select_columnSerializer
-    implements PrimitiveSerializer<Garticle_select_column> {
+class _$Garticles_select_columnSerializer
+    implements PrimitiveSerializer<Garticles_select_column> {
   @override
-  final Iterable<Type> types = const <Type>[Garticle_select_column];
+  final Iterable<Type> types = const <Type>[Garticles_select_column];
   @override
-  final String wireName = 'Garticle_select_column';
+  final String wireName = 'Garticles_select_column';
 
   @override
-  Object serialize(Serializers serializers, Garticle_select_column object,
+  Object serialize(Serializers serializers, Garticles_select_column object,
           {FullType specifiedType = FullType.unspecified}) =>
       object.name;
 
   @override
-  Garticle_select_column deserialize(Serializers serializers, Object serialized,
+  Garticles_select_column deserialize(
+          Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      Garticle_select_column.valueOf(serialized as String);
+      Garticles_select_column.valueOf(serialized as String);
 }
 
-class _$Garticle_set_inputSerializer
-    implements StructuredSerializer<Garticle_set_input> {
+class _$Garticles_set_inputSerializer
+    implements StructuredSerializer<Garticles_set_input> {
   @override
-  final Iterable<Type> types = const [Garticle_set_input, _$Garticle_set_input];
+  final Iterable<Type> types = const [
+    Garticles_set_input,
+    _$Garticles_set_input
+  ];
   @override
-  final String wireName = 'Garticle_set_input';
+  final String wireName = 'Garticles_set_input';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, Garticle_set_input object,
+      Serializers serializers, Garticles_set_input object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
@@ -3687,10 +3694,10 @@ class _$Garticle_set_inputSerializer
   }
 
   @override
-  Garticle_set_input deserialize(
+  Garticles_set_input deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new Garticle_set_inputBuilder();
+    final result = new Garticles_set_inputBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3749,24 +3756,24 @@ class _$Garticle_set_inputSerializer
   }
 }
 
-class _$Garticle_stream_cursor_inputSerializer
-    implements StructuredSerializer<Garticle_stream_cursor_input> {
+class _$Garticles_stream_cursor_inputSerializer
+    implements StructuredSerializer<Garticles_stream_cursor_input> {
   @override
   final Iterable<Type> types = const [
-    Garticle_stream_cursor_input,
-    _$Garticle_stream_cursor_input
+    Garticles_stream_cursor_input,
+    _$Garticles_stream_cursor_input
   ];
   @override
-  final String wireName = 'Garticle_stream_cursor_input';
+  final String wireName = 'Garticles_stream_cursor_input';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, Garticle_stream_cursor_input object,
+      Serializers serializers, Garticles_stream_cursor_input object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'initial_value',
       serializers.serialize(object.initial_value,
-          specifiedType: const FullType(Garticle_stream_cursor_value_input)),
+          specifiedType: const FullType(Garticles_stream_cursor_value_input)),
     ];
     Object? value;
     value = object.ordering;
@@ -3780,10 +3787,10 @@ class _$Garticle_stream_cursor_inputSerializer
   }
 
   @override
-  Garticle_stream_cursor_input deserialize(
+  Garticles_stream_cursor_input deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new Garticle_stream_cursor_inputBuilder();
+    final result = new Garticles_stream_cursor_inputBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3794,8 +3801,8 @@ class _$Garticle_stream_cursor_inputSerializer
         case 'initial_value':
           result.initial_value.replace(serializers.deserialize(value,
                   specifiedType:
-                      const FullType(Garticle_stream_cursor_value_input))!
-              as Garticle_stream_cursor_value_input);
+                      const FullType(Garticles_stream_cursor_value_input))!
+              as Garticles_stream_cursor_value_input);
           break;
         case 'ordering':
           result.ordering = serializers.deserialize(value,
@@ -3809,19 +3816,19 @@ class _$Garticle_stream_cursor_inputSerializer
   }
 }
 
-class _$Garticle_stream_cursor_value_inputSerializer
-    implements StructuredSerializer<Garticle_stream_cursor_value_input> {
+class _$Garticles_stream_cursor_value_inputSerializer
+    implements StructuredSerializer<Garticles_stream_cursor_value_input> {
   @override
   final Iterable<Type> types = const [
-    Garticle_stream_cursor_value_input,
-    _$Garticle_stream_cursor_value_input
+    Garticles_stream_cursor_value_input,
+    _$Garticles_stream_cursor_value_input
   ];
   @override
-  final String wireName = 'Garticle_stream_cursor_value_input';
+  final String wireName = 'Garticles_stream_cursor_value_input';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, Garticle_stream_cursor_value_input object,
+      Serializers serializers, Garticles_stream_cursor_value_input object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
@@ -3906,10 +3913,10 @@ class _$Garticle_stream_cursor_value_inputSerializer
   }
 
   @override
-  Garticle_stream_cursor_value_input deserialize(
+  Garticles_stream_cursor_value_input deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new Garticle_stream_cursor_value_inputBuilder();
+    final result = new Garticles_stream_cursor_value_inputBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -3968,38 +3975,39 @@ class _$Garticle_stream_cursor_value_inputSerializer
   }
 }
 
-class _$Garticle_update_columnSerializer
-    implements PrimitiveSerializer<Garticle_update_column> {
+class _$Garticles_update_columnSerializer
+    implements PrimitiveSerializer<Garticles_update_column> {
   @override
-  final Iterable<Type> types = const <Type>[Garticle_update_column];
+  final Iterable<Type> types = const <Type>[Garticles_update_column];
   @override
-  final String wireName = 'Garticle_update_column';
+  final String wireName = 'Garticles_update_column';
 
   @override
-  Object serialize(Serializers serializers, Garticle_update_column object,
+  Object serialize(Serializers serializers, Garticles_update_column object,
           {FullType specifiedType = FullType.unspecified}) =>
       object.name;
 
   @override
-  Garticle_update_column deserialize(Serializers serializers, Object serialized,
+  Garticles_update_column deserialize(
+          Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      Garticle_update_column.valueOf(serialized as String);
+      Garticles_update_column.valueOf(serialized as String);
 }
 
-class _$Garticle_updatesSerializer
-    implements StructuredSerializer<Garticle_updates> {
+class _$Garticles_updatesSerializer
+    implements StructuredSerializer<Garticles_updates> {
   @override
-  final Iterable<Type> types = const [Garticle_updates, _$Garticle_updates];
+  final Iterable<Type> types = const [Garticles_updates, _$Garticles_updates];
   @override
-  final String wireName = 'Garticle_updates';
+  final String wireName = 'Garticles_updates';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Garticle_updates object,
+  Iterable<Object?> serialize(Serializers serializers, Garticles_updates object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'where',
       serializers.serialize(object.where,
-          specifiedType: const FullType(Garticle_bool_exp)),
+          specifiedType: const FullType(Garticles_bool_exp)),
     ];
     Object? value;
     value = object.G_append;
@@ -4007,51 +4015,51 @@ class _$Garticle_updatesSerializer
       result
         ..add('_append')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Garticle_append_input)));
+            specifiedType: const FullType(Garticles_append_input)));
     }
     value = object.G_delete_at_path;
     if (value != null) {
       result
         ..add('_delete_at_path')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Garticle_delete_at_path_input)));
+            specifiedType: const FullType(Garticles_delete_at_path_input)));
     }
     value = object.G_delete_elem;
     if (value != null) {
       result
         ..add('_delete_elem')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Garticle_delete_elem_input)));
+            specifiedType: const FullType(Garticles_delete_elem_input)));
     }
     value = object.G_delete_key;
     if (value != null) {
       result
         ..add('_delete_key')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Garticle_delete_key_input)));
+            specifiedType: const FullType(Garticles_delete_key_input)));
     }
     value = object.G_prepend;
     if (value != null) {
       result
         ..add('_prepend')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Garticle_prepend_input)));
+            specifiedType: const FullType(Garticles_prepend_input)));
     }
     value = object.G_set;
     if (value != null) {
       result
         ..add('_set')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Garticle_set_input)));
+            specifiedType: const FullType(Garticles_set_input)));
     }
     return result;
   }
 
   @override
-  Garticle_updates deserialize(
+  Garticles_updates deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new Garticle_updatesBuilder();
+    final result = new Garticles_updatesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -4061,38 +4069,39 @@ class _$Garticle_updatesSerializer
       switch (key) {
         case '_append':
           result.G_append.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(Garticle_append_input))!
-              as Garticle_append_input);
+                  specifiedType: const FullType(Garticles_append_input))!
+              as Garticles_append_input);
           break;
         case '_delete_at_path':
           result.G_delete_at_path.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(Garticle_delete_at_path_input))!
-              as Garticle_delete_at_path_input);
+                  specifiedType:
+                      const FullType(Garticles_delete_at_path_input))!
+              as Garticles_delete_at_path_input);
           break;
         case '_delete_elem':
           result.G_delete_elem.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(Garticle_delete_elem_input))!
-              as Garticle_delete_elem_input);
+                  specifiedType: const FullType(Garticles_delete_elem_input))!
+              as Garticles_delete_elem_input);
           break;
         case '_delete_key':
           result.G_delete_key.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(Garticle_delete_key_input))!
-              as Garticle_delete_key_input);
+                  specifiedType: const FullType(Garticles_delete_key_input))!
+              as Garticles_delete_key_input);
           break;
         case '_prepend':
           result.G_prepend.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(Garticle_prepend_input))!
-              as Garticle_prepend_input);
+                  specifiedType: const FullType(Garticles_prepend_input))!
+              as Garticles_prepend_input);
           break;
         case '_set':
           result.G_set.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(Garticle_set_input))!
-              as Garticle_set_input);
+                  specifiedType: const FullType(Garticles_set_input))!
+              as Garticles_set_input);
           break;
         case 'where':
           result.where.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(Garticle_bool_exp))!
-              as Garticle_bool_exp);
+                  specifiedType: const FullType(Garticles_bool_exp))!
+              as Garticles_bool_exp);
           break;
       }
     }
@@ -21508,29 +21517,29 @@ class GString_comparison_expBuilder
   }
 }
 
-class _$Garticle_append_input extends Garticle_append_input {
+class _$Garticles_append_input extends Garticles_append_input {
   @override
   final _i2.JsonObject? sentences;
 
-  factory _$Garticle_append_input(
-          [void Function(Garticle_append_inputBuilder)? updates]) =>
-      (new Garticle_append_inputBuilder()..update(updates))._build();
+  factory _$Garticles_append_input(
+          [void Function(Garticles_append_inputBuilder)? updates]) =>
+      (new Garticles_append_inputBuilder()..update(updates))._build();
 
-  _$Garticle_append_input._({this.sentences}) : super._();
+  _$Garticles_append_input._({this.sentences}) : super._();
 
   @override
-  Garticle_append_input rebuild(
-          void Function(Garticle_append_inputBuilder) updates) =>
+  Garticles_append_input rebuild(
+          void Function(Garticles_append_inputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Garticle_append_inputBuilder toBuilder() =>
-      new Garticle_append_inputBuilder()..replace(this);
+  Garticles_append_inputBuilder toBuilder() =>
+      new Garticles_append_inputBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Garticle_append_input && sentences == other.sentences;
+    return other is Garticles_append_input && sentences == other.sentences;
   }
 
   @override
@@ -21540,23 +21549,23 @@ class _$Garticle_append_input extends Garticle_append_input {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Garticle_append_input')
+    return (newBuiltValueToStringHelper(r'Garticles_append_input')
           ..add('sentences', sentences))
         .toString();
   }
 }
 
-class Garticle_append_inputBuilder
-    implements Builder<Garticle_append_input, Garticle_append_inputBuilder> {
-  _$Garticle_append_input? _$v;
+class Garticles_append_inputBuilder
+    implements Builder<Garticles_append_input, Garticles_append_inputBuilder> {
+  _$Garticles_append_input? _$v;
 
   _i2.JsonObject? _sentences;
   _i2.JsonObject? get sentences => _$this._sentences;
   set sentences(_i2.JsonObject? sentences) => _$this._sentences = sentences;
 
-  Garticle_append_inputBuilder();
+  Garticles_append_inputBuilder();
 
-  Garticle_append_inputBuilder get _$this {
+  Garticles_append_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _sentences = $v.sentences;
@@ -21566,33 +21575,34 @@ class Garticle_append_inputBuilder
   }
 
   @override
-  void replace(Garticle_append_input other) {
+  void replace(Garticles_append_input other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Garticle_append_input;
+    _$v = other as _$Garticles_append_input;
   }
 
   @override
-  void update(void Function(Garticle_append_inputBuilder)? updates) {
+  void update(void Function(Garticles_append_inputBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Garticle_append_input build() => _build();
+  Garticles_append_input build() => _build();
 
-  _$Garticle_append_input _build() {
-    final _$result = _$v ?? new _$Garticle_append_input._(sentences: sentences);
+  _$Garticles_append_input _build() {
+    final _$result =
+        _$v ?? new _$Garticles_append_input._(sentences: sentences);
     replace(_$result);
     return _$result;
   }
 }
 
-class _$Garticle_bool_exp extends Garticle_bool_exp {
+class _$Garticles_bool_exp extends Garticles_bool_exp {
   @override
-  final BuiltList<Garticle_bool_exp>? G_and;
+  final BuiltList<Garticles_bool_exp>? G_and;
   @override
-  final Garticle_bool_exp? G_not;
+  final Garticles_bool_exp? G_not;
   @override
-  final BuiltList<Garticle_bool_exp>? G_or;
+  final BuiltList<Garticles_bool_exp>? G_or;
   @override
   final Gtimestamptz_comparison_exp? created_at;
   @override
@@ -21616,11 +21626,11 @@ class _$Garticle_bool_exp extends Garticle_bool_exp {
   @override
   final GString_comparison_exp? url;
 
-  factory _$Garticle_bool_exp(
-          [void Function(Garticle_bool_expBuilder)? updates]) =>
-      (new Garticle_bool_expBuilder()..update(updates))._build();
+  factory _$Garticles_bool_exp(
+          [void Function(Garticles_bool_expBuilder)? updates]) =>
+      (new Garticles_bool_expBuilder()..update(updates))._build();
 
-  _$Garticle_bool_exp._(
+  _$Garticles_bool_exp._(
       {this.G_and,
       this.G_not,
       this.G_or,
@@ -21638,17 +21648,18 @@ class _$Garticle_bool_exp extends Garticle_bool_exp {
       : super._();
 
   @override
-  Garticle_bool_exp rebuild(void Function(Garticle_bool_expBuilder) updates) =>
+  Garticles_bool_exp rebuild(
+          void Function(Garticles_bool_expBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Garticle_bool_expBuilder toBuilder() =>
-      new Garticle_bool_expBuilder()..replace(this);
+  Garticles_bool_expBuilder toBuilder() =>
+      new Garticles_bool_expBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Garticle_bool_exp &&
+    return other is Garticles_bool_exp &&
         G_and == other.G_and &&
         G_not == other.G_not &&
         G_or == other.G_or &&
@@ -21697,7 +21708,7 @@ class _$Garticle_bool_exp extends Garticle_bool_exp {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Garticle_bool_exp')
+    return (newBuiltValueToStringHelper(r'Garticles_bool_exp')
           ..add('G_and', G_and)
           ..add('G_not', G_not)
           ..add('G_or', G_or)
@@ -21716,24 +21727,24 @@ class _$Garticle_bool_exp extends Garticle_bool_exp {
   }
 }
 
-class Garticle_bool_expBuilder
-    implements Builder<Garticle_bool_exp, Garticle_bool_expBuilder> {
-  _$Garticle_bool_exp? _$v;
+class Garticles_bool_expBuilder
+    implements Builder<Garticles_bool_exp, Garticles_bool_expBuilder> {
+  _$Garticles_bool_exp? _$v;
 
-  ListBuilder<Garticle_bool_exp>? _G_and;
-  ListBuilder<Garticle_bool_exp> get G_and =>
-      _$this._G_and ??= new ListBuilder<Garticle_bool_exp>();
-  set G_and(ListBuilder<Garticle_bool_exp>? G_and) => _$this._G_and = G_and;
+  ListBuilder<Garticles_bool_exp>? _G_and;
+  ListBuilder<Garticles_bool_exp> get G_and =>
+      _$this._G_and ??= new ListBuilder<Garticles_bool_exp>();
+  set G_and(ListBuilder<Garticles_bool_exp>? G_and) => _$this._G_and = G_and;
 
-  Garticle_bool_expBuilder? _G_not;
-  Garticle_bool_expBuilder get G_not =>
-      _$this._G_not ??= new Garticle_bool_expBuilder();
-  set G_not(Garticle_bool_expBuilder? G_not) => _$this._G_not = G_not;
+  Garticles_bool_expBuilder? _G_not;
+  Garticles_bool_expBuilder get G_not =>
+      _$this._G_not ??= new Garticles_bool_expBuilder();
+  set G_not(Garticles_bool_expBuilder? G_not) => _$this._G_not = G_not;
 
-  ListBuilder<Garticle_bool_exp>? _G_or;
-  ListBuilder<Garticle_bool_exp> get G_or =>
-      _$this._G_or ??= new ListBuilder<Garticle_bool_exp>();
-  set G_or(ListBuilder<Garticle_bool_exp>? G_or) => _$this._G_or = G_or;
+  ListBuilder<Garticles_bool_exp>? _G_or;
+  ListBuilder<Garticles_bool_exp> get G_or =>
+      _$this._G_or ??= new ListBuilder<Garticles_bool_exp>();
+  set G_or(ListBuilder<Garticles_bool_exp>? G_or) => _$this._G_or = G_or;
 
   Gtimestamptz_comparison_expBuilder? _created_at;
   Gtimestamptz_comparison_expBuilder get created_at =>
@@ -21798,9 +21809,9 @@ class Garticle_bool_expBuilder
       _$this._url ??= new GString_comparison_expBuilder();
   set url(GString_comparison_expBuilder? url) => _$this._url = url;
 
-  Garticle_bool_expBuilder();
+  Garticles_bool_expBuilder();
 
-  Garticle_bool_expBuilder get _$this {
+  Garticles_bool_expBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G_and = $v.G_and?.toBuilder();
@@ -21823,24 +21834,24 @@ class Garticle_bool_expBuilder
   }
 
   @override
-  void replace(Garticle_bool_exp other) {
+  void replace(Garticles_bool_exp other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Garticle_bool_exp;
+    _$v = other as _$Garticles_bool_exp;
   }
 
   @override
-  void update(void Function(Garticle_bool_expBuilder)? updates) {
+  void update(void Function(Garticles_bool_expBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Garticle_bool_exp build() => _build();
+  Garticles_bool_exp build() => _build();
 
-  _$Garticle_bool_exp _build() {
-    _$Garticle_bool_exp _$result;
+  _$Garticles_bool_exp _build() {
+    _$Garticles_bool_exp _$result;
     try {
       _$result = _$v ??
-          new _$Garticle_bool_exp._(
+          new _$Garticles_bool_exp._(
               G_and: _G_and?.build(),
               G_not: _G_not?.build(),
               G_or: _G_or?.build(),
@@ -21888,7 +21899,7 @@ class Garticle_bool_expBuilder
         _url?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'Garticle_bool_exp', _$failedField, e.toString());
+            r'Garticles_bool_exp', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -21897,29 +21908,29 @@ class Garticle_bool_expBuilder
   }
 }
 
-class _$Garticle_delete_at_path_input extends Garticle_delete_at_path_input {
+class _$Garticles_delete_at_path_input extends Garticles_delete_at_path_input {
   @override
   final BuiltList<String>? sentences;
 
-  factory _$Garticle_delete_at_path_input(
-          [void Function(Garticle_delete_at_path_inputBuilder)? updates]) =>
-      (new Garticle_delete_at_path_inputBuilder()..update(updates))._build();
+  factory _$Garticles_delete_at_path_input(
+          [void Function(Garticles_delete_at_path_inputBuilder)? updates]) =>
+      (new Garticles_delete_at_path_inputBuilder()..update(updates))._build();
 
-  _$Garticle_delete_at_path_input._({this.sentences}) : super._();
+  _$Garticles_delete_at_path_input._({this.sentences}) : super._();
 
   @override
-  Garticle_delete_at_path_input rebuild(
-          void Function(Garticle_delete_at_path_inputBuilder) updates) =>
+  Garticles_delete_at_path_input rebuild(
+          void Function(Garticles_delete_at_path_inputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Garticle_delete_at_path_inputBuilder toBuilder() =>
-      new Garticle_delete_at_path_inputBuilder()..replace(this);
+  Garticles_delete_at_path_inputBuilder toBuilder() =>
+      new Garticles_delete_at_path_inputBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Garticle_delete_at_path_input &&
+    return other is Garticles_delete_at_path_input &&
         sentences == other.sentences;
   }
 
@@ -21930,17 +21941,17 @@ class _$Garticle_delete_at_path_input extends Garticle_delete_at_path_input {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Garticle_delete_at_path_input')
+    return (newBuiltValueToStringHelper(r'Garticles_delete_at_path_input')
           ..add('sentences', sentences))
         .toString();
   }
 }
 
-class Garticle_delete_at_path_inputBuilder
+class Garticles_delete_at_path_inputBuilder
     implements
-        Builder<Garticle_delete_at_path_input,
-            Garticle_delete_at_path_inputBuilder> {
-  _$Garticle_delete_at_path_input? _$v;
+        Builder<Garticles_delete_at_path_input,
+            Garticles_delete_at_path_inputBuilder> {
+  _$Garticles_delete_at_path_input? _$v;
 
   ListBuilder<String>? _sentences;
   ListBuilder<String> get sentences =>
@@ -21948,9 +21959,9 @@ class Garticle_delete_at_path_inputBuilder
   set sentences(ListBuilder<String>? sentences) =>
       _$this._sentences = sentences;
 
-  Garticle_delete_at_path_inputBuilder();
+  Garticles_delete_at_path_inputBuilder();
 
-  Garticle_delete_at_path_inputBuilder get _$this {
+  Garticles_delete_at_path_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _sentences = $v.sentences?.toBuilder();
@@ -21960,24 +21971,25 @@ class Garticle_delete_at_path_inputBuilder
   }
 
   @override
-  void replace(Garticle_delete_at_path_input other) {
+  void replace(Garticles_delete_at_path_input other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Garticle_delete_at_path_input;
+    _$v = other as _$Garticles_delete_at_path_input;
   }
 
   @override
-  void update(void Function(Garticle_delete_at_path_inputBuilder)? updates) {
+  void update(void Function(Garticles_delete_at_path_inputBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Garticle_delete_at_path_input build() => _build();
+  Garticles_delete_at_path_input build() => _build();
 
-  _$Garticle_delete_at_path_input _build() {
-    _$Garticle_delete_at_path_input _$result;
+  _$Garticles_delete_at_path_input _build() {
+    _$Garticles_delete_at_path_input _$result;
     try {
       _$result = _$v ??
-          new _$Garticle_delete_at_path_input._(sentences: _sentences?.build());
+          new _$Garticles_delete_at_path_input._(
+              sentences: _sentences?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -21985,7 +21997,7 @@ class Garticle_delete_at_path_inputBuilder
         _sentences?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'Garticle_delete_at_path_input', _$failedField, e.toString());
+            r'Garticles_delete_at_path_input', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -21994,29 +22006,29 @@ class Garticle_delete_at_path_inputBuilder
   }
 }
 
-class _$Garticle_delete_elem_input extends Garticle_delete_elem_input {
+class _$Garticles_delete_elem_input extends Garticles_delete_elem_input {
   @override
   final int? sentences;
 
-  factory _$Garticle_delete_elem_input(
-          [void Function(Garticle_delete_elem_inputBuilder)? updates]) =>
-      (new Garticle_delete_elem_inputBuilder()..update(updates))._build();
+  factory _$Garticles_delete_elem_input(
+          [void Function(Garticles_delete_elem_inputBuilder)? updates]) =>
+      (new Garticles_delete_elem_inputBuilder()..update(updates))._build();
 
-  _$Garticle_delete_elem_input._({this.sentences}) : super._();
+  _$Garticles_delete_elem_input._({this.sentences}) : super._();
 
   @override
-  Garticle_delete_elem_input rebuild(
-          void Function(Garticle_delete_elem_inputBuilder) updates) =>
+  Garticles_delete_elem_input rebuild(
+          void Function(Garticles_delete_elem_inputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Garticle_delete_elem_inputBuilder toBuilder() =>
-      new Garticle_delete_elem_inputBuilder()..replace(this);
+  Garticles_delete_elem_inputBuilder toBuilder() =>
+      new Garticles_delete_elem_inputBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Garticle_delete_elem_input && sentences == other.sentences;
+    return other is Garticles_delete_elem_input && sentences == other.sentences;
   }
 
   @override
@@ -22026,24 +22038,25 @@ class _$Garticle_delete_elem_input extends Garticle_delete_elem_input {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Garticle_delete_elem_input')
+    return (newBuiltValueToStringHelper(r'Garticles_delete_elem_input')
           ..add('sentences', sentences))
         .toString();
   }
 }
 
-class Garticle_delete_elem_inputBuilder
+class Garticles_delete_elem_inputBuilder
     implements
-        Builder<Garticle_delete_elem_input, Garticle_delete_elem_inputBuilder> {
-  _$Garticle_delete_elem_input? _$v;
+        Builder<Garticles_delete_elem_input,
+            Garticles_delete_elem_inputBuilder> {
+  _$Garticles_delete_elem_input? _$v;
 
   int? _sentences;
   int? get sentences => _$this._sentences;
   set sentences(int? sentences) => _$this._sentences = sentences;
 
-  Garticle_delete_elem_inputBuilder();
+  Garticles_delete_elem_inputBuilder();
 
-  Garticle_delete_elem_inputBuilder get _$this {
+  Garticles_delete_elem_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _sentences = $v.sentences;
@@ -22053,50 +22066,50 @@ class Garticle_delete_elem_inputBuilder
   }
 
   @override
-  void replace(Garticle_delete_elem_input other) {
+  void replace(Garticles_delete_elem_input other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Garticle_delete_elem_input;
+    _$v = other as _$Garticles_delete_elem_input;
   }
 
   @override
-  void update(void Function(Garticle_delete_elem_inputBuilder)? updates) {
+  void update(void Function(Garticles_delete_elem_inputBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Garticle_delete_elem_input build() => _build();
+  Garticles_delete_elem_input build() => _build();
 
-  _$Garticle_delete_elem_input _build() {
+  _$Garticles_delete_elem_input _build() {
     final _$result =
-        _$v ?? new _$Garticle_delete_elem_input._(sentences: sentences);
+        _$v ?? new _$Garticles_delete_elem_input._(sentences: sentences);
     replace(_$result);
     return _$result;
   }
 }
 
-class _$Garticle_delete_key_input extends Garticle_delete_key_input {
+class _$Garticles_delete_key_input extends Garticles_delete_key_input {
   @override
   final String? sentences;
 
-  factory _$Garticle_delete_key_input(
-          [void Function(Garticle_delete_key_inputBuilder)? updates]) =>
-      (new Garticle_delete_key_inputBuilder()..update(updates))._build();
+  factory _$Garticles_delete_key_input(
+          [void Function(Garticles_delete_key_inputBuilder)? updates]) =>
+      (new Garticles_delete_key_inputBuilder()..update(updates))._build();
 
-  _$Garticle_delete_key_input._({this.sentences}) : super._();
+  _$Garticles_delete_key_input._({this.sentences}) : super._();
 
   @override
-  Garticle_delete_key_input rebuild(
-          void Function(Garticle_delete_key_inputBuilder) updates) =>
+  Garticles_delete_key_input rebuild(
+          void Function(Garticles_delete_key_inputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Garticle_delete_key_inputBuilder toBuilder() =>
-      new Garticle_delete_key_inputBuilder()..replace(this);
+  Garticles_delete_key_inputBuilder toBuilder() =>
+      new Garticles_delete_key_inputBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Garticle_delete_key_input && sentences == other.sentences;
+    return other is Garticles_delete_key_input && sentences == other.sentences;
   }
 
   @override
@@ -22106,24 +22119,24 @@ class _$Garticle_delete_key_input extends Garticle_delete_key_input {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Garticle_delete_key_input')
+    return (newBuiltValueToStringHelper(r'Garticles_delete_key_input')
           ..add('sentences', sentences))
         .toString();
   }
 }
 
-class Garticle_delete_key_inputBuilder
+class Garticles_delete_key_inputBuilder
     implements
-        Builder<Garticle_delete_key_input, Garticle_delete_key_inputBuilder> {
-  _$Garticle_delete_key_input? _$v;
+        Builder<Garticles_delete_key_input, Garticles_delete_key_inputBuilder> {
+  _$Garticles_delete_key_input? _$v;
 
   String? _sentences;
   String? get sentences => _$this._sentences;
   set sentences(String? sentences) => _$this._sentences = sentences;
 
-  Garticle_delete_key_inputBuilder();
+  Garticles_delete_key_inputBuilder();
 
-  Garticle_delete_key_inputBuilder get _$this {
+  Garticles_delete_key_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _sentences = $v.sentences;
@@ -22133,28 +22146,28 @@ class Garticle_delete_key_inputBuilder
   }
 
   @override
-  void replace(Garticle_delete_key_input other) {
+  void replace(Garticles_delete_key_input other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Garticle_delete_key_input;
+    _$v = other as _$Garticles_delete_key_input;
   }
 
   @override
-  void update(void Function(Garticle_delete_key_inputBuilder)? updates) {
+  void update(void Function(Garticles_delete_key_inputBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Garticle_delete_key_input build() => _build();
+  Garticles_delete_key_input build() => _build();
 
-  _$Garticle_delete_key_input _build() {
+  _$Garticles_delete_key_input _build() {
     final _$result =
-        _$v ?? new _$Garticle_delete_key_input._(sentences: sentences);
+        _$v ?? new _$Garticles_delete_key_input._(sentences: sentences);
     replace(_$result);
     return _$result;
   }
 }
 
-class _$Garticle_insert_input extends Garticle_insert_input {
+class _$Garticles_insert_input extends Garticles_insert_input {
   @override
   final Gtimestamptz? created_at;
   @override
@@ -22178,11 +22191,11 @@ class _$Garticle_insert_input extends Garticle_insert_input {
   @override
   final String? url;
 
-  factory _$Garticle_insert_input(
-          [void Function(Garticle_insert_inputBuilder)? updates]) =>
-      (new Garticle_insert_inputBuilder()..update(updates))._build();
+  factory _$Garticles_insert_input(
+          [void Function(Garticles_insert_inputBuilder)? updates]) =>
+      (new Garticles_insert_inputBuilder()..update(updates))._build();
 
-  _$Garticle_insert_input._(
+  _$Garticles_insert_input._(
       {this.created_at,
       this.created_by,
       this.deleted_at,
@@ -22197,18 +22210,18 @@ class _$Garticle_insert_input extends Garticle_insert_input {
       : super._();
 
   @override
-  Garticle_insert_input rebuild(
-          void Function(Garticle_insert_inputBuilder) updates) =>
+  Garticles_insert_input rebuild(
+          void Function(Garticles_insert_inputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Garticle_insert_inputBuilder toBuilder() =>
-      new Garticle_insert_inputBuilder()..replace(this);
+  Garticles_insert_inputBuilder toBuilder() =>
+      new Garticles_insert_inputBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Garticle_insert_input &&
+    return other is Garticles_insert_input &&
         created_at == other.created_at &&
         created_by == other.created_by &&
         deleted_at == other.deleted_at &&
@@ -22248,7 +22261,7 @@ class _$Garticle_insert_input extends Garticle_insert_input {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Garticle_insert_input')
+    return (newBuiltValueToStringHelper(r'Garticles_insert_input')
           ..add('created_at', created_at)
           ..add('created_by', created_by)
           ..add('deleted_at', deleted_at)
@@ -22264,9 +22277,9 @@ class _$Garticle_insert_input extends Garticle_insert_input {
   }
 }
 
-class Garticle_insert_inputBuilder
-    implements Builder<Garticle_insert_input, Garticle_insert_inputBuilder> {
-  _$Garticle_insert_input? _$v;
+class Garticles_insert_inputBuilder
+    implements Builder<Garticles_insert_input, Garticles_insert_inputBuilder> {
+  _$Garticles_insert_input? _$v;
 
   GtimestamptzBuilder? _created_at;
   GtimestamptzBuilder get created_at =>
@@ -22318,9 +22331,9 @@ class Garticle_insert_inputBuilder
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
-  Garticle_insert_inputBuilder();
+  Garticles_insert_inputBuilder();
 
-  Garticle_insert_inputBuilder get _$this {
+  Garticles_insert_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _created_at = $v.created_at?.toBuilder();
@@ -22340,24 +22353,24 @@ class Garticle_insert_inputBuilder
   }
 
   @override
-  void replace(Garticle_insert_input other) {
+  void replace(Garticles_insert_input other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Garticle_insert_input;
+    _$v = other as _$Garticles_insert_input;
   }
 
   @override
-  void update(void Function(Garticle_insert_inputBuilder)? updates) {
+  void update(void Function(Garticles_insert_inputBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Garticle_insert_input build() => _build();
+  Garticles_insert_input build() => _build();
 
-  _$Garticle_insert_input _build() {
-    _$Garticle_insert_input _$result;
+  _$Garticles_insert_input _build() {
+    _$Garticles_insert_input _$result;
     try {
       _$result = _$v ??
-          new _$Garticle_insert_input._(
+          new _$Garticles_insert_input._(
               created_at: _created_at?.build(),
               created_by: _created_by?.build(),
               deleted_at: _deleted_at?.build(),
@@ -22388,7 +22401,7 @@ class Garticle_insert_inputBuilder
         _updated_by?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'Garticle_insert_input', _$failedField, e.toString());
+            r'Garticles_insert_input', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -22397,40 +22410,40 @@ class Garticle_insert_inputBuilder
   }
 }
 
-class _$Garticle_on_conflict extends Garticle_on_conflict {
+class _$Garticles_on_conflict extends Garticles_on_conflict {
   @override
-  final Garticle_constraint constraint;
+  final Garticles_constraint constraint;
   @override
-  final BuiltList<Garticle_update_column> update_columns;
+  final BuiltList<Garticles_update_column> update_columns;
   @override
-  final Garticle_bool_exp? where;
+  final Garticles_bool_exp? where;
 
-  factory _$Garticle_on_conflict(
-          [void Function(Garticle_on_conflictBuilder)? updates]) =>
-      (new Garticle_on_conflictBuilder()..update(updates))._build();
+  factory _$Garticles_on_conflict(
+          [void Function(Garticles_on_conflictBuilder)? updates]) =>
+      (new Garticles_on_conflictBuilder()..update(updates))._build();
 
-  _$Garticle_on_conflict._(
+  _$Garticles_on_conflict._(
       {required this.constraint, required this.update_columns, this.where})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        constraint, r'Garticle_on_conflict', 'constraint');
+        constraint, r'Garticles_on_conflict', 'constraint');
     BuiltValueNullFieldError.checkNotNull(
-        update_columns, r'Garticle_on_conflict', 'update_columns');
+        update_columns, r'Garticles_on_conflict', 'update_columns');
   }
 
   @override
-  Garticle_on_conflict rebuild(
-          void Function(Garticle_on_conflictBuilder) updates) =>
+  Garticles_on_conflict rebuild(
+          void Function(Garticles_on_conflictBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Garticle_on_conflictBuilder toBuilder() =>
-      new Garticle_on_conflictBuilder()..replace(this);
+  Garticles_on_conflictBuilder toBuilder() =>
+      new Garticles_on_conflictBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Garticle_on_conflict &&
+    return other is Garticles_on_conflict &&
         constraint == other.constraint &&
         update_columns == other.update_columns &&
         where == other.where;
@@ -22444,7 +22457,7 @@ class _$Garticle_on_conflict extends Garticle_on_conflict {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Garticle_on_conflict')
+    return (newBuiltValueToStringHelper(r'Garticles_on_conflict')
           ..add('constraint', constraint)
           ..add('update_columns', update_columns)
           ..add('where', where))
@@ -22452,29 +22465,29 @@ class _$Garticle_on_conflict extends Garticle_on_conflict {
   }
 }
 
-class Garticle_on_conflictBuilder
-    implements Builder<Garticle_on_conflict, Garticle_on_conflictBuilder> {
-  _$Garticle_on_conflict? _$v;
+class Garticles_on_conflictBuilder
+    implements Builder<Garticles_on_conflict, Garticles_on_conflictBuilder> {
+  _$Garticles_on_conflict? _$v;
 
-  Garticle_constraint? _constraint;
-  Garticle_constraint? get constraint => _$this._constraint;
-  set constraint(Garticle_constraint? constraint) =>
+  Garticles_constraint? _constraint;
+  Garticles_constraint? get constraint => _$this._constraint;
+  set constraint(Garticles_constraint? constraint) =>
       _$this._constraint = constraint;
 
-  ListBuilder<Garticle_update_column>? _update_columns;
-  ListBuilder<Garticle_update_column> get update_columns =>
-      _$this._update_columns ??= new ListBuilder<Garticle_update_column>();
-  set update_columns(ListBuilder<Garticle_update_column>? update_columns) =>
+  ListBuilder<Garticles_update_column>? _update_columns;
+  ListBuilder<Garticles_update_column> get update_columns =>
+      _$this._update_columns ??= new ListBuilder<Garticles_update_column>();
+  set update_columns(ListBuilder<Garticles_update_column>? update_columns) =>
       _$this._update_columns = update_columns;
 
-  Garticle_bool_expBuilder? _where;
-  Garticle_bool_expBuilder get where =>
-      _$this._where ??= new Garticle_bool_expBuilder();
-  set where(Garticle_bool_expBuilder? where) => _$this._where = where;
+  Garticles_bool_expBuilder? _where;
+  Garticles_bool_expBuilder get where =>
+      _$this._where ??= new Garticles_bool_expBuilder();
+  set where(Garticles_bool_expBuilder? where) => _$this._where = where;
 
-  Garticle_on_conflictBuilder();
+  Garticles_on_conflictBuilder();
 
-  Garticle_on_conflictBuilder get _$this {
+  Garticles_on_conflictBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _constraint = $v.constraint;
@@ -22486,26 +22499,26 @@ class Garticle_on_conflictBuilder
   }
 
   @override
-  void replace(Garticle_on_conflict other) {
+  void replace(Garticles_on_conflict other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Garticle_on_conflict;
+    _$v = other as _$Garticles_on_conflict;
   }
 
   @override
-  void update(void Function(Garticle_on_conflictBuilder)? updates) {
+  void update(void Function(Garticles_on_conflictBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Garticle_on_conflict build() => _build();
+  Garticles_on_conflict build() => _build();
 
-  _$Garticle_on_conflict _build() {
-    _$Garticle_on_conflict _$result;
+  _$Garticles_on_conflict _build() {
+    _$Garticles_on_conflict _$result;
     try {
       _$result = _$v ??
-          new _$Garticle_on_conflict._(
+          new _$Garticles_on_conflict._(
               constraint: BuiltValueNullFieldError.checkNotNull(
-                  constraint, r'Garticle_on_conflict', 'constraint'),
+                  constraint, r'Garticles_on_conflict', 'constraint'),
               update_columns: update_columns.build(),
               where: _where?.build());
     } catch (_) {
@@ -22517,7 +22530,7 @@ class Garticle_on_conflictBuilder
         _where?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'Garticle_on_conflict', _$failedField, e.toString());
+            r'Garticles_on_conflict', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -22526,7 +22539,7 @@ class Garticle_on_conflictBuilder
   }
 }
 
-class _$Garticle_order_by extends Garticle_order_by {
+class _$Garticles_order_by extends Garticles_order_by {
   @override
   final Gorder_by? created_at;
   @override
@@ -22550,11 +22563,11 @@ class _$Garticle_order_by extends Garticle_order_by {
   @override
   final Gorder_by? url;
 
-  factory _$Garticle_order_by(
-          [void Function(Garticle_order_byBuilder)? updates]) =>
-      (new Garticle_order_byBuilder()..update(updates))._build();
+  factory _$Garticles_order_by(
+          [void Function(Garticles_order_byBuilder)? updates]) =>
+      (new Garticles_order_byBuilder()..update(updates))._build();
 
-  _$Garticle_order_by._(
+  _$Garticles_order_by._(
       {this.created_at,
       this.created_by,
       this.deleted_at,
@@ -22569,17 +22582,18 @@ class _$Garticle_order_by extends Garticle_order_by {
       : super._();
 
   @override
-  Garticle_order_by rebuild(void Function(Garticle_order_byBuilder) updates) =>
+  Garticles_order_by rebuild(
+          void Function(Garticles_order_byBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Garticle_order_byBuilder toBuilder() =>
-      new Garticle_order_byBuilder()..replace(this);
+  Garticles_order_byBuilder toBuilder() =>
+      new Garticles_order_byBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Garticle_order_by &&
+    return other is Garticles_order_by &&
         created_at == other.created_at &&
         created_by == other.created_by &&
         deleted_at == other.deleted_at &&
@@ -22619,7 +22633,7 @@ class _$Garticle_order_by extends Garticle_order_by {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Garticle_order_by')
+    return (newBuiltValueToStringHelper(r'Garticles_order_by')
           ..add('created_at', created_at)
           ..add('created_by', created_by)
           ..add('deleted_at', deleted_at)
@@ -22635,9 +22649,9 @@ class _$Garticle_order_by extends Garticle_order_by {
   }
 }
 
-class Garticle_order_byBuilder
-    implements Builder<Garticle_order_by, Garticle_order_byBuilder> {
-  _$Garticle_order_by? _$v;
+class Garticles_order_byBuilder
+    implements Builder<Garticles_order_by, Garticles_order_byBuilder> {
+  _$Garticles_order_by? _$v;
 
   Gorder_by? _created_at;
   Gorder_by? get created_at => _$this._created_at;
@@ -22683,9 +22697,9 @@ class Garticle_order_byBuilder
   Gorder_by? get url => _$this._url;
   set url(Gorder_by? url) => _$this._url = url;
 
-  Garticle_order_byBuilder();
+  Garticles_order_byBuilder();
 
-  Garticle_order_byBuilder get _$this {
+  Garticles_order_byBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _created_at = $v.created_at;
@@ -22705,22 +22719,22 @@ class Garticle_order_byBuilder
   }
 
   @override
-  void replace(Garticle_order_by other) {
+  void replace(Garticles_order_by other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Garticle_order_by;
+    _$v = other as _$Garticles_order_by;
   }
 
   @override
-  void update(void Function(Garticle_order_byBuilder)? updates) {
+  void update(void Function(Garticles_order_byBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Garticle_order_by build() => _build();
+  Garticles_order_by build() => _build();
 
-  _$Garticle_order_by _build() {
+  _$Garticles_order_by _build() {
     final _$result = _$v ??
-        new _$Garticle_order_by._(
+        new _$Garticles_order_by._(
             created_at: created_at,
             created_by: created_by,
             deleted_at: deleted_at,
@@ -22737,32 +22751,32 @@ class Garticle_order_byBuilder
   }
 }
 
-class _$Garticle_pk_columns_input extends Garticle_pk_columns_input {
+class _$Garticles_pk_columns_input extends Garticles_pk_columns_input {
   @override
   final Guuid id;
 
-  factory _$Garticle_pk_columns_input(
-          [void Function(Garticle_pk_columns_inputBuilder)? updates]) =>
-      (new Garticle_pk_columns_inputBuilder()..update(updates))._build();
+  factory _$Garticles_pk_columns_input(
+          [void Function(Garticles_pk_columns_inputBuilder)? updates]) =>
+      (new Garticles_pk_columns_inputBuilder()..update(updates))._build();
 
-  _$Garticle_pk_columns_input._({required this.id}) : super._() {
+  _$Garticles_pk_columns_input._({required this.id}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        id, r'Garticle_pk_columns_input', 'id');
+        id, r'Garticles_pk_columns_input', 'id');
   }
 
   @override
-  Garticle_pk_columns_input rebuild(
-          void Function(Garticle_pk_columns_inputBuilder) updates) =>
+  Garticles_pk_columns_input rebuild(
+          void Function(Garticles_pk_columns_inputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Garticle_pk_columns_inputBuilder toBuilder() =>
-      new Garticle_pk_columns_inputBuilder()..replace(this);
+  Garticles_pk_columns_inputBuilder toBuilder() =>
+      new Garticles_pk_columns_inputBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Garticle_pk_columns_input && id == other.id;
+    return other is Garticles_pk_columns_input && id == other.id;
   }
 
   @override
@@ -22772,24 +22786,24 @@ class _$Garticle_pk_columns_input extends Garticle_pk_columns_input {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Garticle_pk_columns_input')
+    return (newBuiltValueToStringHelper(r'Garticles_pk_columns_input')
           ..add('id', id))
         .toString();
   }
 }
 
-class Garticle_pk_columns_inputBuilder
+class Garticles_pk_columns_inputBuilder
     implements
-        Builder<Garticle_pk_columns_input, Garticle_pk_columns_inputBuilder> {
-  _$Garticle_pk_columns_input? _$v;
+        Builder<Garticles_pk_columns_input, Garticles_pk_columns_inputBuilder> {
+  _$Garticles_pk_columns_input? _$v;
 
   GuuidBuilder? _id;
   GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
   set id(GuuidBuilder? id) => _$this._id = id;
 
-  Garticle_pk_columns_inputBuilder();
+  Garticles_pk_columns_inputBuilder();
 
-  Garticle_pk_columns_inputBuilder get _$this {
+  Garticles_pk_columns_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id.toBuilder();
@@ -22799,23 +22813,23 @@ class Garticle_pk_columns_inputBuilder
   }
 
   @override
-  void replace(Garticle_pk_columns_input other) {
+  void replace(Garticles_pk_columns_input other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Garticle_pk_columns_input;
+    _$v = other as _$Garticles_pk_columns_input;
   }
 
   @override
-  void update(void Function(Garticle_pk_columns_inputBuilder)? updates) {
+  void update(void Function(Garticles_pk_columns_inputBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Garticle_pk_columns_input build() => _build();
+  Garticles_pk_columns_input build() => _build();
 
-  _$Garticle_pk_columns_input _build() {
-    _$Garticle_pk_columns_input _$result;
+  _$Garticles_pk_columns_input _build() {
+    _$Garticles_pk_columns_input _$result;
     try {
-      _$result = _$v ?? new _$Garticle_pk_columns_input._(id: id.build());
+      _$result = _$v ?? new _$Garticles_pk_columns_input._(id: id.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -22823,7 +22837,7 @@ class Garticle_pk_columns_inputBuilder
         id.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'Garticle_pk_columns_input', _$failedField, e.toString());
+            r'Garticles_pk_columns_input', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -22832,29 +22846,29 @@ class Garticle_pk_columns_inputBuilder
   }
 }
 
-class _$Garticle_prepend_input extends Garticle_prepend_input {
+class _$Garticles_prepend_input extends Garticles_prepend_input {
   @override
   final _i2.JsonObject? sentences;
 
-  factory _$Garticle_prepend_input(
-          [void Function(Garticle_prepend_inputBuilder)? updates]) =>
-      (new Garticle_prepend_inputBuilder()..update(updates))._build();
+  factory _$Garticles_prepend_input(
+          [void Function(Garticles_prepend_inputBuilder)? updates]) =>
+      (new Garticles_prepend_inputBuilder()..update(updates))._build();
 
-  _$Garticle_prepend_input._({this.sentences}) : super._();
+  _$Garticles_prepend_input._({this.sentences}) : super._();
 
   @override
-  Garticle_prepend_input rebuild(
-          void Function(Garticle_prepend_inputBuilder) updates) =>
+  Garticles_prepend_input rebuild(
+          void Function(Garticles_prepend_inputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Garticle_prepend_inputBuilder toBuilder() =>
-      new Garticle_prepend_inputBuilder()..replace(this);
+  Garticles_prepend_inputBuilder toBuilder() =>
+      new Garticles_prepend_inputBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Garticle_prepend_input && sentences == other.sentences;
+    return other is Garticles_prepend_input && sentences == other.sentences;
   }
 
   @override
@@ -22864,23 +22878,24 @@ class _$Garticle_prepend_input extends Garticle_prepend_input {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Garticle_prepend_input')
+    return (newBuiltValueToStringHelper(r'Garticles_prepend_input')
           ..add('sentences', sentences))
         .toString();
   }
 }
 
-class Garticle_prepend_inputBuilder
-    implements Builder<Garticle_prepend_input, Garticle_prepend_inputBuilder> {
-  _$Garticle_prepend_input? _$v;
+class Garticles_prepend_inputBuilder
+    implements
+        Builder<Garticles_prepend_input, Garticles_prepend_inputBuilder> {
+  _$Garticles_prepend_input? _$v;
 
   _i2.JsonObject? _sentences;
   _i2.JsonObject? get sentences => _$this._sentences;
   set sentences(_i2.JsonObject? sentences) => _$this._sentences = sentences;
 
-  Garticle_prepend_inputBuilder();
+  Garticles_prepend_inputBuilder();
 
-  Garticle_prepend_inputBuilder get _$this {
+  Garticles_prepend_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _sentences = $v.sentences;
@@ -22890,28 +22905,28 @@ class Garticle_prepend_inputBuilder
   }
 
   @override
-  void replace(Garticle_prepend_input other) {
+  void replace(Garticles_prepend_input other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Garticle_prepend_input;
+    _$v = other as _$Garticles_prepend_input;
   }
 
   @override
-  void update(void Function(Garticle_prepend_inputBuilder)? updates) {
+  void update(void Function(Garticles_prepend_inputBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Garticle_prepend_input build() => _build();
+  Garticles_prepend_input build() => _build();
 
-  _$Garticle_prepend_input _build() {
+  _$Garticles_prepend_input _build() {
     final _$result =
-        _$v ?? new _$Garticle_prepend_input._(sentences: sentences);
+        _$v ?? new _$Garticles_prepend_input._(sentences: sentences);
     replace(_$result);
     return _$result;
   }
 }
 
-class _$Garticle_set_input extends Garticle_set_input {
+class _$Garticles_set_input extends Garticles_set_input {
   @override
   final Gtimestamptz? created_at;
   @override
@@ -22935,11 +22950,11 @@ class _$Garticle_set_input extends Garticle_set_input {
   @override
   final String? url;
 
-  factory _$Garticle_set_input(
-          [void Function(Garticle_set_inputBuilder)? updates]) =>
-      (new Garticle_set_inputBuilder()..update(updates))._build();
+  factory _$Garticles_set_input(
+          [void Function(Garticles_set_inputBuilder)? updates]) =>
+      (new Garticles_set_inputBuilder()..update(updates))._build();
 
-  _$Garticle_set_input._(
+  _$Garticles_set_input._(
       {this.created_at,
       this.created_by,
       this.deleted_at,
@@ -22954,18 +22969,18 @@ class _$Garticle_set_input extends Garticle_set_input {
       : super._();
 
   @override
-  Garticle_set_input rebuild(
-          void Function(Garticle_set_inputBuilder) updates) =>
+  Garticles_set_input rebuild(
+          void Function(Garticles_set_inputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Garticle_set_inputBuilder toBuilder() =>
-      new Garticle_set_inputBuilder()..replace(this);
+  Garticles_set_inputBuilder toBuilder() =>
+      new Garticles_set_inputBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Garticle_set_input &&
+    return other is Garticles_set_input &&
         created_at == other.created_at &&
         created_by == other.created_by &&
         deleted_at == other.deleted_at &&
@@ -23005,7 +23020,7 @@ class _$Garticle_set_input extends Garticle_set_input {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Garticle_set_input')
+    return (newBuiltValueToStringHelper(r'Garticles_set_input')
           ..add('created_at', created_at)
           ..add('created_by', created_by)
           ..add('deleted_at', deleted_at)
@@ -23021,9 +23036,9 @@ class _$Garticle_set_input extends Garticle_set_input {
   }
 }
 
-class Garticle_set_inputBuilder
-    implements Builder<Garticle_set_input, Garticle_set_inputBuilder> {
-  _$Garticle_set_input? _$v;
+class Garticles_set_inputBuilder
+    implements Builder<Garticles_set_input, Garticles_set_inputBuilder> {
+  _$Garticles_set_input? _$v;
 
   GtimestamptzBuilder? _created_at;
   GtimestamptzBuilder get created_at =>
@@ -23075,9 +23090,9 @@ class Garticle_set_inputBuilder
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
-  Garticle_set_inputBuilder();
+  Garticles_set_inputBuilder();
 
-  Garticle_set_inputBuilder get _$this {
+  Garticles_set_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _created_at = $v.created_at?.toBuilder();
@@ -23097,24 +23112,24 @@ class Garticle_set_inputBuilder
   }
 
   @override
-  void replace(Garticle_set_input other) {
+  void replace(Garticles_set_input other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Garticle_set_input;
+    _$v = other as _$Garticles_set_input;
   }
 
   @override
-  void update(void Function(Garticle_set_inputBuilder)? updates) {
+  void update(void Function(Garticles_set_inputBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Garticle_set_input build() => _build();
+  Garticles_set_input build() => _build();
 
-  _$Garticle_set_input _build() {
-    _$Garticle_set_input _$result;
+  _$Garticles_set_input _build() {
+    _$Garticles_set_input _$result;
     try {
       _$result = _$v ??
-          new _$Garticle_set_input._(
+          new _$Garticles_set_input._(
               created_at: _created_at?.build(),
               created_by: _created_by?.build(),
               deleted_at: _deleted_at?.build(),
@@ -23145,7 +23160,7 @@ class Garticle_set_inputBuilder
         _updated_by?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'Garticle_set_input', _$failedField, e.toString());
+            r'Garticles_set_input', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -23154,35 +23169,36 @@ class Garticle_set_inputBuilder
   }
 }
 
-class _$Garticle_stream_cursor_input extends Garticle_stream_cursor_input {
+class _$Garticles_stream_cursor_input extends Garticles_stream_cursor_input {
   @override
-  final Garticle_stream_cursor_value_input initial_value;
+  final Garticles_stream_cursor_value_input initial_value;
   @override
   final Gcursor_ordering? ordering;
 
-  factory _$Garticle_stream_cursor_input(
-          [void Function(Garticle_stream_cursor_inputBuilder)? updates]) =>
-      (new Garticle_stream_cursor_inputBuilder()..update(updates))._build();
+  factory _$Garticles_stream_cursor_input(
+          [void Function(Garticles_stream_cursor_inputBuilder)? updates]) =>
+      (new Garticles_stream_cursor_inputBuilder()..update(updates))._build();
 
-  _$Garticle_stream_cursor_input._({required this.initial_value, this.ordering})
+  _$Garticles_stream_cursor_input._(
+      {required this.initial_value, this.ordering})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        initial_value, r'Garticle_stream_cursor_input', 'initial_value');
+        initial_value, r'Garticles_stream_cursor_input', 'initial_value');
   }
 
   @override
-  Garticle_stream_cursor_input rebuild(
-          void Function(Garticle_stream_cursor_inputBuilder) updates) =>
+  Garticles_stream_cursor_input rebuild(
+          void Function(Garticles_stream_cursor_inputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Garticle_stream_cursor_inputBuilder toBuilder() =>
-      new Garticle_stream_cursor_inputBuilder()..replace(this);
+  Garticles_stream_cursor_inputBuilder toBuilder() =>
+      new Garticles_stream_cursor_inputBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Garticle_stream_cursor_input &&
+    return other is Garticles_stream_cursor_input &&
         initial_value == other.initial_value &&
         ordering == other.ordering;
   }
@@ -23194,32 +23210,34 @@ class _$Garticle_stream_cursor_input extends Garticle_stream_cursor_input {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Garticle_stream_cursor_input')
+    return (newBuiltValueToStringHelper(r'Garticles_stream_cursor_input')
           ..add('initial_value', initial_value)
           ..add('ordering', ordering))
         .toString();
   }
 }
 
-class Garticle_stream_cursor_inputBuilder
+class Garticles_stream_cursor_inputBuilder
     implements
-        Builder<Garticle_stream_cursor_input,
-            Garticle_stream_cursor_inputBuilder> {
-  _$Garticle_stream_cursor_input? _$v;
+        Builder<Garticles_stream_cursor_input,
+            Garticles_stream_cursor_inputBuilder> {
+  _$Garticles_stream_cursor_input? _$v;
 
-  Garticle_stream_cursor_value_inputBuilder? _initial_value;
-  Garticle_stream_cursor_value_inputBuilder get initial_value =>
-      _$this._initial_value ??= new Garticle_stream_cursor_value_inputBuilder();
-  set initial_value(Garticle_stream_cursor_value_inputBuilder? initial_value) =>
+  Garticles_stream_cursor_value_inputBuilder? _initial_value;
+  Garticles_stream_cursor_value_inputBuilder get initial_value =>
+      _$this._initial_value ??=
+          new Garticles_stream_cursor_value_inputBuilder();
+  set initial_value(
+          Garticles_stream_cursor_value_inputBuilder? initial_value) =>
       _$this._initial_value = initial_value;
 
   Gcursor_ordering? _ordering;
   Gcursor_ordering? get ordering => _$this._ordering;
   set ordering(Gcursor_ordering? ordering) => _$this._ordering = ordering;
 
-  Garticle_stream_cursor_inputBuilder();
+  Garticles_stream_cursor_inputBuilder();
 
-  Garticle_stream_cursor_inputBuilder get _$this {
+  Garticles_stream_cursor_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _initial_value = $v.initial_value.toBuilder();
@@ -23230,24 +23248,24 @@ class Garticle_stream_cursor_inputBuilder
   }
 
   @override
-  void replace(Garticle_stream_cursor_input other) {
+  void replace(Garticles_stream_cursor_input other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Garticle_stream_cursor_input;
+    _$v = other as _$Garticles_stream_cursor_input;
   }
 
   @override
-  void update(void Function(Garticle_stream_cursor_inputBuilder)? updates) {
+  void update(void Function(Garticles_stream_cursor_inputBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Garticle_stream_cursor_input build() => _build();
+  Garticles_stream_cursor_input build() => _build();
 
-  _$Garticle_stream_cursor_input _build() {
-    _$Garticle_stream_cursor_input _$result;
+  _$Garticles_stream_cursor_input _build() {
+    _$Garticles_stream_cursor_input _$result;
     try {
       _$result = _$v ??
-          new _$Garticle_stream_cursor_input._(
+          new _$Garticles_stream_cursor_input._(
               initial_value: initial_value.build(), ordering: ordering);
     } catch (_) {
       late String _$failedField;
@@ -23256,7 +23274,7 @@ class Garticle_stream_cursor_inputBuilder
         initial_value.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'Garticle_stream_cursor_input', _$failedField, e.toString());
+            r'Garticles_stream_cursor_input', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -23265,8 +23283,8 @@ class Garticle_stream_cursor_inputBuilder
   }
 }
 
-class _$Garticle_stream_cursor_value_input
-    extends Garticle_stream_cursor_value_input {
+class _$Garticles_stream_cursor_value_input
+    extends Garticles_stream_cursor_value_input {
   @override
   final Gtimestamptz? created_at;
   @override
@@ -23290,13 +23308,13 @@ class _$Garticle_stream_cursor_value_input
   @override
   final String? url;
 
-  factory _$Garticle_stream_cursor_value_input(
-          [void Function(Garticle_stream_cursor_value_inputBuilder)?
+  factory _$Garticles_stream_cursor_value_input(
+          [void Function(Garticles_stream_cursor_value_inputBuilder)?
               updates]) =>
-      (new Garticle_stream_cursor_value_inputBuilder()..update(updates))
+      (new Garticles_stream_cursor_value_inputBuilder()..update(updates))
           ._build();
 
-  _$Garticle_stream_cursor_value_input._(
+  _$Garticles_stream_cursor_value_input._(
       {this.created_at,
       this.created_by,
       this.deleted_at,
@@ -23311,18 +23329,18 @@ class _$Garticle_stream_cursor_value_input
       : super._();
 
   @override
-  Garticle_stream_cursor_value_input rebuild(
-          void Function(Garticle_stream_cursor_value_inputBuilder) updates) =>
+  Garticles_stream_cursor_value_input rebuild(
+          void Function(Garticles_stream_cursor_value_inputBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Garticle_stream_cursor_value_inputBuilder toBuilder() =>
-      new Garticle_stream_cursor_value_inputBuilder()..replace(this);
+  Garticles_stream_cursor_value_inputBuilder toBuilder() =>
+      new Garticles_stream_cursor_value_inputBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Garticle_stream_cursor_value_input &&
+    return other is Garticles_stream_cursor_value_input &&
         created_at == other.created_at &&
         created_by == other.created_by &&
         deleted_at == other.deleted_at &&
@@ -23362,7 +23380,7 @@ class _$Garticle_stream_cursor_value_input
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Garticle_stream_cursor_value_input')
+    return (newBuiltValueToStringHelper(r'Garticles_stream_cursor_value_input')
           ..add('created_at', created_at)
           ..add('created_by', created_by)
           ..add('deleted_at', deleted_at)
@@ -23378,11 +23396,11 @@ class _$Garticle_stream_cursor_value_input
   }
 }
 
-class Garticle_stream_cursor_value_inputBuilder
+class Garticles_stream_cursor_value_inputBuilder
     implements
-        Builder<Garticle_stream_cursor_value_input,
-            Garticle_stream_cursor_value_inputBuilder> {
-  _$Garticle_stream_cursor_value_input? _$v;
+        Builder<Garticles_stream_cursor_value_input,
+            Garticles_stream_cursor_value_inputBuilder> {
+  _$Garticles_stream_cursor_value_input? _$v;
 
   GtimestamptzBuilder? _created_at;
   GtimestamptzBuilder get created_at =>
@@ -23434,9 +23452,9 @@ class Garticle_stream_cursor_value_inputBuilder
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
-  Garticle_stream_cursor_value_inputBuilder();
+  Garticles_stream_cursor_value_inputBuilder();
 
-  Garticle_stream_cursor_value_inputBuilder get _$this {
+  Garticles_stream_cursor_value_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _created_at = $v.created_at?.toBuilder();
@@ -23456,25 +23474,25 @@ class Garticle_stream_cursor_value_inputBuilder
   }
 
   @override
-  void replace(Garticle_stream_cursor_value_input other) {
+  void replace(Garticles_stream_cursor_value_input other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Garticle_stream_cursor_value_input;
+    _$v = other as _$Garticles_stream_cursor_value_input;
   }
 
   @override
   void update(
-      void Function(Garticle_stream_cursor_value_inputBuilder)? updates) {
+      void Function(Garticles_stream_cursor_value_inputBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Garticle_stream_cursor_value_input build() => _build();
+  Garticles_stream_cursor_value_input build() => _build();
 
-  _$Garticle_stream_cursor_value_input _build() {
-    _$Garticle_stream_cursor_value_input _$result;
+  _$Garticles_stream_cursor_value_input _build() {
+    _$Garticles_stream_cursor_value_input _$result;
     try {
       _$result = _$v ??
-          new _$Garticle_stream_cursor_value_input._(
+          new _$Garticles_stream_cursor_value_input._(
               created_at: _created_at?.build(),
               created_by: _created_by?.build(),
               deleted_at: _deleted_at?.build(),
@@ -23505,7 +23523,9 @@ class Garticle_stream_cursor_value_inputBuilder
         _updated_by?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'Garticle_stream_cursor_value_input', _$failedField, e.toString());
+            r'Garticles_stream_cursor_value_input',
+            _$failedField,
+            e.toString());
       }
       rethrow;
     }
@@ -23514,27 +23534,27 @@ class Garticle_stream_cursor_value_inputBuilder
   }
 }
 
-class _$Garticle_updates extends Garticle_updates {
+class _$Garticles_updates extends Garticles_updates {
   @override
-  final Garticle_append_input? G_append;
+  final Garticles_append_input? G_append;
   @override
-  final Garticle_delete_at_path_input? G_delete_at_path;
+  final Garticles_delete_at_path_input? G_delete_at_path;
   @override
-  final Garticle_delete_elem_input? G_delete_elem;
+  final Garticles_delete_elem_input? G_delete_elem;
   @override
-  final Garticle_delete_key_input? G_delete_key;
+  final Garticles_delete_key_input? G_delete_key;
   @override
-  final Garticle_prepend_input? G_prepend;
+  final Garticles_prepend_input? G_prepend;
   @override
-  final Garticle_set_input? G_set;
+  final Garticles_set_input? G_set;
   @override
-  final Garticle_bool_exp where;
+  final Garticles_bool_exp where;
 
-  factory _$Garticle_updates(
-          [void Function(Garticle_updatesBuilder)? updates]) =>
-      (new Garticle_updatesBuilder()..update(updates))._build();
+  factory _$Garticles_updates(
+          [void Function(Garticles_updatesBuilder)? updates]) =>
+      (new Garticles_updatesBuilder()..update(updates))._build();
 
-  _$Garticle_updates._(
+  _$Garticles_updates._(
       {this.G_append,
       this.G_delete_at_path,
       this.G_delete_elem,
@@ -23543,21 +23563,21 @@ class _$Garticle_updates extends Garticle_updates {
       this.G_set,
       required this.where})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(where, r'Garticle_updates', 'where');
+    BuiltValueNullFieldError.checkNotNull(where, r'Garticles_updates', 'where');
   }
 
   @override
-  Garticle_updates rebuild(void Function(Garticle_updatesBuilder) updates) =>
+  Garticles_updates rebuild(void Function(Garticles_updatesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  Garticle_updatesBuilder toBuilder() =>
-      new Garticle_updatesBuilder()..replace(this);
+  Garticles_updatesBuilder toBuilder() =>
+      new Garticles_updatesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Garticle_updates &&
+    return other is Garticles_updates &&
         G_append == other.G_append &&
         G_delete_at_path == other.G_delete_at_path &&
         G_delete_elem == other.G_delete_elem &&
@@ -23585,7 +23605,7 @@ class _$Garticle_updates extends Garticle_updates {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Garticle_updates')
+    return (newBuiltValueToStringHelper(r'Garticles_updates')
           ..add('G_append', G_append)
           ..add('G_delete_at_path', G_delete_at_path)
           ..add('G_delete_elem', G_delete_elem)
@@ -23597,54 +23617,54 @@ class _$Garticle_updates extends Garticle_updates {
   }
 }
 
-class Garticle_updatesBuilder
-    implements Builder<Garticle_updates, Garticle_updatesBuilder> {
-  _$Garticle_updates? _$v;
+class Garticles_updatesBuilder
+    implements Builder<Garticles_updates, Garticles_updatesBuilder> {
+  _$Garticles_updates? _$v;
 
-  Garticle_append_inputBuilder? _G_append;
-  Garticle_append_inputBuilder get G_append =>
-      _$this._G_append ??= new Garticle_append_inputBuilder();
-  set G_append(Garticle_append_inputBuilder? G_append) =>
+  Garticles_append_inputBuilder? _G_append;
+  Garticles_append_inputBuilder get G_append =>
+      _$this._G_append ??= new Garticles_append_inputBuilder();
+  set G_append(Garticles_append_inputBuilder? G_append) =>
       _$this._G_append = G_append;
 
-  Garticle_delete_at_path_inputBuilder? _G_delete_at_path;
-  Garticle_delete_at_path_inputBuilder get G_delete_at_path =>
-      _$this._G_delete_at_path ??= new Garticle_delete_at_path_inputBuilder();
+  Garticles_delete_at_path_inputBuilder? _G_delete_at_path;
+  Garticles_delete_at_path_inputBuilder get G_delete_at_path =>
+      _$this._G_delete_at_path ??= new Garticles_delete_at_path_inputBuilder();
   set G_delete_at_path(
-          Garticle_delete_at_path_inputBuilder? G_delete_at_path) =>
+          Garticles_delete_at_path_inputBuilder? G_delete_at_path) =>
       _$this._G_delete_at_path = G_delete_at_path;
 
-  Garticle_delete_elem_inputBuilder? _G_delete_elem;
-  Garticle_delete_elem_inputBuilder get G_delete_elem =>
-      _$this._G_delete_elem ??= new Garticle_delete_elem_inputBuilder();
-  set G_delete_elem(Garticle_delete_elem_inputBuilder? G_delete_elem) =>
+  Garticles_delete_elem_inputBuilder? _G_delete_elem;
+  Garticles_delete_elem_inputBuilder get G_delete_elem =>
+      _$this._G_delete_elem ??= new Garticles_delete_elem_inputBuilder();
+  set G_delete_elem(Garticles_delete_elem_inputBuilder? G_delete_elem) =>
       _$this._G_delete_elem = G_delete_elem;
 
-  Garticle_delete_key_inputBuilder? _G_delete_key;
-  Garticle_delete_key_inputBuilder get G_delete_key =>
-      _$this._G_delete_key ??= new Garticle_delete_key_inputBuilder();
-  set G_delete_key(Garticle_delete_key_inputBuilder? G_delete_key) =>
+  Garticles_delete_key_inputBuilder? _G_delete_key;
+  Garticles_delete_key_inputBuilder get G_delete_key =>
+      _$this._G_delete_key ??= new Garticles_delete_key_inputBuilder();
+  set G_delete_key(Garticles_delete_key_inputBuilder? G_delete_key) =>
       _$this._G_delete_key = G_delete_key;
 
-  Garticle_prepend_inputBuilder? _G_prepend;
-  Garticle_prepend_inputBuilder get G_prepend =>
-      _$this._G_prepend ??= new Garticle_prepend_inputBuilder();
-  set G_prepend(Garticle_prepend_inputBuilder? G_prepend) =>
+  Garticles_prepend_inputBuilder? _G_prepend;
+  Garticles_prepend_inputBuilder get G_prepend =>
+      _$this._G_prepend ??= new Garticles_prepend_inputBuilder();
+  set G_prepend(Garticles_prepend_inputBuilder? G_prepend) =>
       _$this._G_prepend = G_prepend;
 
-  Garticle_set_inputBuilder? _G_set;
-  Garticle_set_inputBuilder get G_set =>
-      _$this._G_set ??= new Garticle_set_inputBuilder();
-  set G_set(Garticle_set_inputBuilder? G_set) => _$this._G_set = G_set;
+  Garticles_set_inputBuilder? _G_set;
+  Garticles_set_inputBuilder get G_set =>
+      _$this._G_set ??= new Garticles_set_inputBuilder();
+  set G_set(Garticles_set_inputBuilder? G_set) => _$this._G_set = G_set;
 
-  Garticle_bool_expBuilder? _where;
-  Garticle_bool_expBuilder get where =>
-      _$this._where ??= new Garticle_bool_expBuilder();
-  set where(Garticle_bool_expBuilder? where) => _$this._where = where;
+  Garticles_bool_expBuilder? _where;
+  Garticles_bool_expBuilder get where =>
+      _$this._where ??= new Garticles_bool_expBuilder();
+  set where(Garticles_bool_expBuilder? where) => _$this._where = where;
 
-  Garticle_updatesBuilder();
+  Garticles_updatesBuilder();
 
-  Garticle_updatesBuilder get _$this {
+  Garticles_updatesBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G_append = $v.G_append?.toBuilder();
@@ -23660,24 +23680,24 @@ class Garticle_updatesBuilder
   }
 
   @override
-  void replace(Garticle_updates other) {
+  void replace(Garticles_updates other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Garticle_updates;
+    _$v = other as _$Garticles_updates;
   }
 
   @override
-  void update(void Function(Garticle_updatesBuilder)? updates) {
+  void update(void Function(Garticles_updatesBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Garticle_updates build() => _build();
+  Garticles_updates build() => _build();
 
-  _$Garticle_updates _build() {
-    _$Garticle_updates _$result;
+  _$Garticles_updates _build() {
+    _$Garticles_updates _$result;
     try {
       _$result = _$v ??
-          new _$Garticle_updates._(
+          new _$Garticles_updates._(
               G_append: _G_append?.build(),
               G_delete_at_path: _G_delete_at_path?.build(),
               G_delete_elem: _G_delete_elem?.build(),
@@ -23704,7 +23724,7 @@ class Garticle_updatesBuilder
         where.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'Garticle_updates', _$failedField, e.toString());
+            r'Garticles_updates', _$failedField, e.toString());
       }
       rethrow;
     }
