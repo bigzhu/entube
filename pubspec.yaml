@@ -61,6 +61,7 @@ dependencies:
   flutter_hooks: ^0.18.5+1
   flutter_slidable: ^2.0.0
   percent_indicator: ^4.2.2
+  youtube_player_iframe: ^3.1.0
 
 dev_dependencies:
   flutter_test:

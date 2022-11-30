@@ -1,0 +1,46 @@
+import 'package:flutter/material.dart';
+import 'package:AcquireEnglish/components/ArticleItems/index.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:AcquireEnglish/components/Article/index.dart';
+
+class ArticleItemBarIn extends HookConsumerWidget {
+  const ArticleItemBarIn({Key? key, required this.article}) : super(key: key);
+
+  final ArticleModel article;
+  Future<void> launchUniversalLinkIos(Uri url) async {
+    final bool nativeAppLaunchSucceeded = await launchUrl(
+      url,
+      mode: LaunchMode.externalNonBrowserApplication,
+    );
+    if (!nativeAppLaunchSucceeded) {
+      await launchUrl(
+        url,
+        mode: LaunchMode.inAppWebView,
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    bool isToBottom =
+        ref.watch(isToArticleBottomStateNotifierProvider(article.objectId!));
+
+    return BottomAppBar(
+        color: Theme.of(context).primaryColorDark,
+        shape: isToBottom ? const CircularNotchedRectangle() : null,
+        child: Hero(
+            tag: "youtube_title_${article.objectId}",
+            child: Material(
+                //这里必须用 ,不然会报错
+                color: Colors
+                    .transparent, //透明色, 以利用父组件的颜色实现 CircularNotchedRectangle 否则是白色
+                child: ArticleItemBar(
+                  title: article.title,
+                  avatar: article.avatar,
+                  //onTap: () => launch(article.youtube),
+                  onTap: () =>
+                      launchUniversalLinkIos(Uri.parse(article.youtube)),
+                ))));
+  }
+}

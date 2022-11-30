@@ -12,6 +12,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GArticleItemsData_articles.serializer)
       ..add(GArticleItemsReq.serializer)
       ..add(GArticleItemsVars.serializer)
+      ..add(GArticleSentencesData.serializer)
+      ..add(GArticleSentencesData_articles.serializer)
+      ..add(GArticleSentencesReq.serializer)
+      ..add(GArticleSentencesVars.serializer)
       ..add(GBoolean_comparison_exp.serializer)
       ..add(GInt_comparison_exp.serializer)
       ..add(GString_comparison_exp.serializer)
@@ -255,6 +259,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GArticleItemsData_articles)]),
           () => new ListBuilder<GArticleItemsData_articles>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GArticleSentencesData_articles)]),
+          () => new ListBuilder<GArticleSentencesData_articles>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Garticles_bool_exp)]),
           () => new ListBuilder<Garticles_bool_exp>())

@@ -5,6 +5,12 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart' show StandardJsonPlugin;
+import 'package:entube/components/Article/services.data.gql.dart'
+    show GArticleSentencesData, GArticleSentencesData_articles;
+import 'package:entube/components/Article/services.req.gql.dart'
+    show GArticleSentencesReq;
+import 'package:entube/components/Article/services.var.gql.dart'
+    show GArticleSentencesVars;
 import 'package:entube/components/ArticleItems/services.data.gql.dart'
     show GArticleItemsData, GArticleItemsData_articles;
 import 'package:entube/components/ArticleItems/services.req.gql.dart'
@@ -258,6 +264,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GArticleItemsData_articles,
   GArticleItemsReq,
   GArticleItemsVars,
+  GArticleSentencesData,
+  GArticleSentencesData_articles,
+  GArticleSentencesReq,
+  GArticleSentencesVars,
   GBoolean_comparison_exp,
   GInt_comparison_exp,
   GString_comparison_exp,
