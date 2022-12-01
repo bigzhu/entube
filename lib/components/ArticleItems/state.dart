@@ -2,6 +2,7 @@ import 'package:entube/state.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import './services.req.gql.dart';
+import 'services.data.gql.dart';
 
 const String loadingTitle = '☕ 🍕   loading new YouTube ......';
 final articleItemsScrollControllerProvider =
@@ -18,5 +19,5 @@ final articleItemsStreamP = Provider<Stream>((ref) {
 });
 
 final articleItemsSP = StateProvider((ref) {
-  return [];
+  return <GArticleItemsData_articles>[];
 });

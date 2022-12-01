@@ -9,14 +9,14 @@ import './services.req.gql.dart';
 
 final sentencesP = Provider.family<
     Stream<OperationResponse<GSentencesData, GSentencesVars>>,
-    Guuid>((ref, id) {
-  final articlesReq = GSentencesReq((b) => b..vars.id = id.toBuilder());
+    String>((ref, id) {
+  final articlesReq = GSentencesReq((b) => b..vars.id = Guuid(id).toBuilder());
   final client = ref.watch(gqlClientP);
   return client.request(articlesReq);
 });
 
 // 因为多个句子有可能在一个播放高亮区间里, 所以这里是一个 list
 final playingSentencesIndexStateProvider =
-    StateProvider.family<List<int>, Guuid>((ref, articleId) {
+    StateProvider.family<List<int>, String>((ref, articleId) {
   return <int>[];
 });

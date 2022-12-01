@@ -7,6 +7,7 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import './Item.dart';
 //import './Loading.dart';
 import './state.dart';
+import 'services.data.gql.dart';
 
 class Items extends HookConsumerWidget {
   const Items({Key? key}) : super(key: key);
@@ -21,8 +22,9 @@ class Items extends HookConsumerWidget {
     }
     if (articleItemsRsp.data == null) return const CircularProgressIndicator();
 
-    final articles = articleItemsRsp.data?.data?.articles;
-    if (articles == null) {
+    List<GArticleItemsData_articles> articles =
+        articleItemsRsp.data?.data?.articles;
+    if (articles.isEmpty) {
       return const AlertDialog(
           title: Text('No Data'),
           content:

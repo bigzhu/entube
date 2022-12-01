@@ -14,7 +14,7 @@ class Sentence extends ConsumerWidget {
       : super(key: key);
   final SentenceModel sentence;
   final int index;
-  final Guuid articleId;
+  final String articleId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
