@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+import 'package:built_collection/built_collection.dart';
 
 //import 'package:AcquireEnglish/components/UserArticles/index.dart';
 import './Item.dart';
@@ -22,15 +23,17 @@ class Items extends HookConsumerWidget {
     }
     if (articleItemsRsp.data == null) return const CircularProgressIndicator();
 
-    List<GArticleItemsData_articles> articles =
+    BuiltList<GArticleItemsData_articles>? articles =
         articleItemsRsp.data?.data?.articles;
-    if (articles.isEmpty) {
+    if (articles == null) {
       return const AlertDialog(
           title: Text('No Data'),
           content:
               Text('Please share some video from YouTube or add from Explore'));
     }
-    ref.read(articleItemsSP.notifier).state = articles;
+    Future(() {
+      ref.read(articleItemsSP.notifier).state = articles;
+    });
 
     return ScrollablePositionedList.builder(
       itemScrollController: ref.read(articleItemsScrollControllerProvider),
