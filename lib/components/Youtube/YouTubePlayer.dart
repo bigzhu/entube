@@ -1,16 +1,12 @@
-
+import 'package:entube/components/AcquiringWords/index.dart';
+//import 'package:entube/components/UserArticles/index.dart';
+import 'package:entube/components/Error/index.dart';
+import 'package:entube/components/articleItems/index.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:entube/components/AcquiringWords/index.dart';
-import 'package:entube/components/articleItems/index.dart';
-
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 import './provider.dart';
-
-//import 'package:entube/components/UserArticles/index.dart';
-import 'package:entube/components/Error/index.dart';
-import 'package:entube/components/Article/index.dart';
 
 class NewYouTubePlayer extends StatefulHookConsumerWidget {
   const NewYouTubePlayer({Key? key, required this.article}) : super(key: key);

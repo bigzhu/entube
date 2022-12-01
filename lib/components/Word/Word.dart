@@ -1,20 +1,15 @@
-import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart' as audio;
+import 'package:entube/components/AcquiringWords/index.dart';
+import 'package:entube/components/Settings/index.dart';
+import 'package:entube/themes.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'package:leancloud_storage/leancloud.dart';
-import 'package:AcquireEnglish/components/Youtube/index.dart';
+//import 'package:leancloud_storage/leancloud.dart';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
-import 'package:audioplayers/audioplayers.dart' as audio;
-import 'package:AcquireEnglish/components/AcquiringWords/index.dart';
-import 'package:AcquireEnglish/components/Error/index.dart';
-import '../../themes.dart';
-import '../Settings/provider.dart';
-
-import './provider.dart';
+import 'state.dart';
 
 // no need learn and no need add blank
 final List<String> noNeedBlank = [
@@ -71,20 +66,13 @@ class _StateWord extends ConsumerState<Word> {
     bool done,
   ) async {
     word = word.toLowerCase();
-    try {
-      final acquiringWordsStateNotifierProviderNotifier =
-          ref.read(acquiringWordsStateNotifierProvider.notifier);
-      if (done) {
-        await acquiringWordsStateNotifierProviderNotifier.remove(word);
-      }
-      if (done == false) {
-        await acquiringWordsStateNotifierProviderNotifier.add(word);
-      }
-    } on LCException catch (e) {
-      ref
-          .read(errorMeesageStateProvider.notifier)
-          .update((state) => "${e.message}");
-      rethrow;
+    final acquiringWordsStateNotifierProviderNotifier =
+        ref.read(acquiringWordsStateNotifierProvider.notifier);
+    if (done) {
+      await acquiringWordsStateNotifierProviderNotifier.remove(word);
+    }
+    if (done == false) {
+      await acquiringWordsStateNotifierProviderNotifier.add(word);
     }
   }
 
@@ -115,28 +103,20 @@ class _StateWord extends ConsumerState<Word> {
         //https://ssl.gstatic.com/dictionary/static/sounds/oxford/big--_gb_1.mp3
         //https://ssl.gstatic.com/dictionary/static/sounds/oxford/big--_us_1.mp3
         setTapStyle(true);
-        YoutubePlayerController? youtubePlayerController =
-            ref.watch(youtubePlayerControllerStateProvider);
-
-        PlayerState? playerState = youtubePlayerController?.value.playerState;
-
         //播放 youtube时候不能发音， 否则 iOS 下 youtube 音频会不正常
         if (ref.watch(switchSettingsNotifierProvider
-                .select((value) => value[IS_SPEECH_WORD] ?? false)) &&
-            (playerState == PlayerState.unknown ||
-                playerState == PlayerState.paused)) {
-          try {
-            _audioPlayer.play(
-                audio.UrlSource(
-                    "https://ssl.gstatic.com/dictionary/static/sounds/oxford/${word.toLowerCase()}--_us_1.mp3"),
-                mode: audio.PlayerMode.lowLatency);
-          } catch (e) {}
+            .select((value) => value[IS_SPEECH_WORD] ?? false))) {
+          _audioPlayer.play(
+              audio.UrlSource(
+                  "https://ssl.gstatic.com/dictionary/static/sounds/oxford/${word.toLowerCase()}--_us_1.mp3"),
+              mode: audio.PlayerMode.lowLatency);
         }
         // 避免长按的同时触发
         await upsertAcquiringWord(word, false);
         if (ref.watch(switchSettingsNotifierProvider
-            .select((value) => value[IS_COPY_TO_CLIPBOARD] ?? false)))
+            .select((value) => value[IS_COPY_TO_CLIPBOARD] ?? false))) {
           Clipboard.setData(ClipboardData(text: word));
+        }
         setTapStyle(false);
       };
   }
@@ -158,10 +138,12 @@ class _StateWord extends ConsumerState<Word> {
   }
 
   bool isAcquiringWord() {
+    /*
     final AcquiringWordModel? acquiringWord = ref.watch(
         acquiringWordsMapStateProvider
             .select((value) => value[word.toLowerCase()]));
     if (acquiringWord?.done == false) return true;
+    */
     return false;
   }
 

@@ -1,1 +1,1 @@
-export './Word.dart';
+export 'Word.dart';

@@ -4,10 +4,10 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:entube/components/Article/services.ast.gql.dart' as _i5;
-import 'package:entube/components/Article/services.data.gql.dart' as _i2;
-import 'package:entube/components/Article/services.var.gql.dart' as _i3;
-import 'package:entube/graphql/serializers.gql.dart' as _i6;
+import 'package:entube/components/Article/g/services.ast.gql.dart' as _i5;
+import 'package:entube/components/Article/g/services.data.gql.dart' as _i2;
+import 'package:entube/components/Article/g/services.var.gql.dart' as _i3;
+import 'package:entube/graphql/g/serializers.gql.dart' as _i6;
 import 'package:ferry_exec/ferry_exec.dart' as _i1;
 import 'package:gql_exec/gql_exec.dart' as _i4;
 

@@ -63,6 +63,10 @@ dependencies:
   percent_indicator: ^4.2.2
   youtube_player_iframe: ^3.1.0
   language_picker: ^0.4.1
+  translator: ^0.1.7
+  audioplayers: ^1.1.1
+  flutter_svg: ^1.1.6
+  receive_sharing_intent: ^1.4.5
 
 dev_dependencies:
   flutter_test:

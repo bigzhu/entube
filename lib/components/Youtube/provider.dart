@@ -1,18 +1,18 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 import 'dart:io';
+
+import 'package:entube/components/Article/index.dart';
+import 'package:entube/components/ArticleItems/index.dart';
+import 'package:entube/components/Error/index.dart';
+import 'package:entube/components/UserArticles/index.dart';
+import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:leancloud_storage/leancloud.dart';
+//import 'package:leancloud_storage/leancloud.dart';
 import 'package:receive_sharing_intent/receive_sharing_intent.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
-import 'dart:async';
 
-import '../../utils/compute.dart';
-
-import 'package:AcquireEnglish/components/UserArticles/index.dart';
-import 'package:AcquireEnglish/components/Error/index.dart';
-import 'package:AcquireEnglish/components/ArticleItems/index.dart';
-import 'package:AcquireEnglish/components/Article/index.dart';
 import './service.dart';
+import '../../utils/compute.dart';
 
 // 监听分享
 final receiveSharingIntentProvider = Provider<StreamSubscription?>((ref) {

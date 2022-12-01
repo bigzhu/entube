@@ -12860,6 +12860,44 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'delete_words'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'words_bool_exp'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_mutation_response'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'delete_words_by_pk'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'id'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'uuid'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'insertAuthProvider'),
       directives: [],
       args: [
@@ -13564,6 +13602,65 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
       ],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'user_articles'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'insert_words'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'objects'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'words_insert_input'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'on_conflict'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'words_on_conflict'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_mutation_response'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'insert_words_one'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'object'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'words_insert_input'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'on_conflict'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'words_on_conflict'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words'),
         isNonNull: false,
       ),
     ),
@@ -14878,6 +14975,105 @@ const mutation_root = _i1.ObjectTypeDefinitionNode(
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
           name: _i1.NameNode(value: 'users_mutation_response'),
+          isNonNull: false,
+        ),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'update_words'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: '_inc'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'words_inc_input'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: '_set'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'words_set_input'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'words_bool_exp'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_mutation_response'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'update_words_by_pk'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: '_inc'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'words_inc_input'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: '_set'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'words_set_input'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'pk_columns'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'words_pk_columns_input'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'update_words_many'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'updates'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'words_updates'),
+              isNonNull: true,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'words_mutation_response'),
           isNonNull: false,
         ),
         isNonNull: false,
@@ -16646,6 +16842,150 @@ const query_root = _i1.ObjectTypeDefinitionNode(
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'users_aggregate'),
         isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'words'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'distinct_on'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'words_select_column'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'limit'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'offset'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'order_by'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'words_order_by'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'words_bool_exp'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'words'),
+          isNonNull: true,
+        ),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'words_aggregate'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'distinct_on'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'words_select_column'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'limit'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'offset'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'order_by'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'words_order_by'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'words_bool_exp'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_aggregate'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'words_by_pk'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'id'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'uuid'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words'),
+        isNonNull: false,
       ),
     ),
   ],
@@ -18898,6 +19238,193 @@ const subscription_root = _i1.ObjectTypeDefinitionNode(
       type: _i1.ListTypeNode(
         type: _i1.NamedTypeNode(
           name: _i1.NameNode(value: 'users'),
+          isNonNull: true,
+        ),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'words'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'distinct_on'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'words_select_column'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'limit'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'offset'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'order_by'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'words_order_by'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'words_bool_exp'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'words'),
+          isNonNull: true,
+        ),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'words_aggregate'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'distinct_on'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'words_select_column'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'limit'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'offset'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'order_by'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'words_order_by'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'words_bool_exp'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_aggregate'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'words_by_pk'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'id'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'uuid'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        )
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'words_stream'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'batch_size'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'cursor'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'words_stream_cursor_input'),
+              isNonNull: false,
+            ),
+            isNonNull: true,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'words_bool_exp'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'words'),
           isNonNull: true,
         ),
         isNonNull: true,
@@ -24081,6 +24608,1249 @@ const uuid_comparison_exp = _i1.InputObjectTypeDefinitionNode(
     ),
   ],
 );
+const words = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'created_at'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'created_by'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'deleted_at'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'done'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updated_at'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updated_by'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'word'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+  ],
+);
+const words_aggregate = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_aggregate'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'aggregate'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_aggregate_fields'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'nodes'),
+      directives: [],
+      args: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'words'),
+          isNonNull: true,
+        ),
+        isNonNull: true,
+      ),
+    ),
+  ],
+);
+const words_aggregate_fields = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_aggregate_fields'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'avg'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_avg_fields'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'count'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'columns'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'words_select_column'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'distinct'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Boolean'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'max'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_max_fields'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'min'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_min_fields'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'stddev'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_stddev_fields'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'stddev_pop'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_stddev_pop_fields'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'stddev_samp'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_stddev_samp_fields'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'sum'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_sum_fields'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'var_pop'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_var_pop_fields'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'var_samp'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_var_samp_fields'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'variance'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_variance_fields'),
+        isNonNull: false,
+      ),
+    ),
+  ],
+);
+const words_avg_fields = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_avg_fields'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Float'),
+        isNonNull: false,
+      ),
+    )
+  ],
+);
+const words_bool_exp = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_bool_exp'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: '_and'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'words_bool_exp'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: '_not'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_bool_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: '_or'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'words_bool_exp'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz_comparison_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_by'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid_comparison_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'deleted_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz_comparison_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'done'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean_comparison_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid_comparison_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int_comparison_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz_comparison_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_by'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid_comparison_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'word'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String_comparison_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const words_constraint = _i1.EnumTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_constraint'),
+  directives: [],
+  values: [
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'words_pkey'),
+      directives: [],
+    )
+  ],
+);
+const words_inc_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_inc_input'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    )
+  ],
+);
+const words_insert_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_insert_input'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_by'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'deleted_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'done'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_by'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'word'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const words_max_fields = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_max_fields'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'created_at'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'created_by'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'deleted_at'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updated_at'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updated_by'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'word'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+  ],
+);
+const words_min_fields = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_min_fields'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'created_at'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'created_by'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'deleted_at'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updated_at'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'updated_by'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'word'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+  ],
+);
+const words_mutation_response = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_mutation_response'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'affected_rows'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'returning'),
+      directives: [],
+      args: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'words'),
+          isNonNull: true,
+        ),
+        isNonNull: true,
+      ),
+    ),
+  ],
+);
+const words_on_conflict = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_on_conflict'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'constraint'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_constraint'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'update_columns'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'words_update_column'),
+          isNonNull: true,
+        ),
+        isNonNull: true,
+      ),
+      defaultValue: _i1.ListValueNode(values: []),
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'where'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_bool_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const words_order_by = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_order_by'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_by'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'deleted_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'done'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_by'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'word'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const words_pk_columns_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_pk_columns_input'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    )
+  ],
+);
+const words_select_column = _i1.EnumTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_select_column'),
+  directives: [],
+  values: [
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_at'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_by'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'deleted_at'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'done'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_at'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_by'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'word'),
+      directives: [],
+    ),
+  ],
+);
+const words_set_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_set_input'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_by'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'deleted_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'done'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_by'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'word'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const words_stddev_fields = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_stddev_fields'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Float'),
+        isNonNull: false,
+      ),
+    )
+  ],
+);
+const words_stddev_pop_fields = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_stddev_pop_fields'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Float'),
+        isNonNull: false,
+      ),
+    )
+  ],
+);
+const words_stddev_samp_fields = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_stddev_samp_fields'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Float'),
+        isNonNull: false,
+      ),
+    )
+  ],
+);
+const words_stream_cursor_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_stream_cursor_input'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'initial_value'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_stream_cursor_value_input'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'ordering'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'cursor_ordering'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const words_stream_cursor_value_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_stream_cursor_value_input'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_by'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'deleted_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'done'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'timestamptz'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_by'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'word'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const words_sum_fields = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_sum_fields'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+    )
+  ],
+);
+const words_update_column = _i1.EnumTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_update_column'),
+  directives: [],
+  values: [
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_at'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_by'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'deleted_at'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'done'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_at'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_by'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'word'),
+      directives: [],
+    ),
+  ],
+);
+const words_updates = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_updates'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: '_inc'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_inc_input'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: '_set'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_set_input'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'where'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'words_bool_exp'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const words_var_pop_fields = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_var_pop_fields'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Float'),
+        isNonNull: false,
+      ),
+    )
+  ],
+);
+const words_var_samp_fields = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_var_samp_fields'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Float'),
+        isNonNull: false,
+      ),
+    )
+  ],
+);
+const words_variance_fields = _i1.ObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'words_variance_fields'),
+  directives: [],
+  interfaces: [],
+  fields: [
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'times'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Float'),
+        isNonNull: false,
+      ),
+    )
+  ],
+);
 const document = _i1.DocumentNode(definitions: [
   schema,
   cached,
@@ -24436,4 +26206,31 @@ const document = _i1.DocumentNode(definitions: [
   users_updates,
   uuid,
   uuid_comparison_exp,
+  words,
+  words_aggregate,
+  words_aggregate_fields,
+  words_avg_fields,
+  words_bool_exp,
+  words_constraint,
+  words_inc_input,
+  words_insert_input,
+  words_max_fields,
+  words_min_fields,
+  words_mutation_response,
+  words_on_conflict,
+  words_order_by,
+  words_pk_columns_input,
+  words_select_column,
+  words_set_input,
+  words_stddev_fields,
+  words_stddev_pop_fields,
+  words_stddev_samp_fields,
+  words_stream_cursor_input,
+  words_stream_cursor_value_input,
+  words_sum_fields,
+  words_update_column,
+  words_updates,
+  words_var_pop_fields,
+  words_var_samp_fields,
+  words_variance_fields,
 ]);

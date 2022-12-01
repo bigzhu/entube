@@ -3,9 +3,9 @@ import 'package:flutter/gestures.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 //import 'package:entube/utils/compute.dart';
-import 'package:entube/components/Youtube/index.dart';
+//import 'package:entube/components/Youtube/index.dart';
 import 'package:entube/themes.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+//import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class Seek extends HookConsumerWidget {
   const Seek({Key? key, required this.time, required this.isPlaying})
@@ -22,13 +22,14 @@ class Seek extends HookConsumerWidget {
       ..onTap = (i) {
         isTapping.value = true;
         debugPrint('click $seekTime');
-        ref.read(seekStateProvider.notifier).state = seekTime;
+        //ref.read(seekStateProvider.notifier).state = seekTime;
 
         Future.delayed(const Duration(milliseconds: 800), () {
           isTapping.value = false;
         });
         //如果当前没有播放, 点击后播放
 
+/*
         YoutubePlayerController? youtubePlayerController =
             ref.watch(youtubePlayerControllerStateProvider);
 
@@ -36,6 +37,7 @@ class Seek extends HookConsumerWidget {
             youtubePlayerController.value.playerState != PlayerState.playing) {
           youtubePlayerController.playVideo();
         }
+        */
       };
     //TextStyle playTextStyle = bodyTextStyle.copyWith(color: mainColor[700]);
     return Text.rich(TextSpan(

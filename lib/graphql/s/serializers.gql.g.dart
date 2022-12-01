@@ -8,6 +8,10 @@ part of 'serializers.gql.dart';
 
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(FetchPolicy.serializer)
+      ..add(GAcquiringWordsData.serializer)
+      ..add(GAcquiringWordsData_words.serializer)
+      ..add(GAcquiringWordsReq.serializer)
+      ..add(GAcquiringWordsVars.serializer)
       ..add(GArticleItemsData.serializer)
       ..add(GArticleItemsData_articles.serializer)
       ..add(GArticleItemsReq.serializer)
@@ -268,6 +272,23 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Gusers_updates.serializer)
       ..add(Guuid.serializer)
       ..add(Guuid_comparison_exp.serializer)
+      ..add(Gwords_bool_exp.serializer)
+      ..add(Gwords_constraint.serializer)
+      ..add(Gwords_inc_input.serializer)
+      ..add(Gwords_insert_input.serializer)
+      ..add(Gwords_on_conflict.serializer)
+      ..add(Gwords_order_by.serializer)
+      ..add(Gwords_pk_columns_input.serializer)
+      ..add(Gwords_select_column.serializer)
+      ..add(Gwords_set_input.serializer)
+      ..add(Gwords_stream_cursor_input.serializer)
+      ..add(Gwords_stream_cursor_value_input.serializer)
+      ..add(Gwords_update_column.serializer)
+      ..add(Gwords_updates.serializer)
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(GAcquiringWordsData_words)]),
+          () => new ListBuilder<GAcquiringWordsData_words>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GArticleItemsData_articles)]),
@@ -490,6 +511,16 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Guuid)]),
           () => new ListBuilder<Guuid>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Gwords_bool_exp)]),
+          () => new ListBuilder<Gwords_bool_exp>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Gwords_bool_exp)]),
+          () => new ListBuilder<Gwords_bool_exp>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(Gwords_update_column)]),
+          () => new ListBuilder<Gwords_update_column>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

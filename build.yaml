@@ -5,7 +5,7 @@ targets:
         enabled: true
         options:
           schema: entube|lib/graphql/schema.graphql
-          output_dir: ''
+          output_dir: 'g'
           type_overrides:
             jsonb:
               name: JsonObject
@@ -15,7 +15,7 @@ targets:
         enabled: true
         options:
           schema: entube|lib/graphql/schema.graphql
-          output_dir: ''
+          output_dir: 's'
           type_overrides:
             jsonb:
               name: JsonObject

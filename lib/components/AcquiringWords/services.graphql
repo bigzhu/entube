@@ -1,0 +1,8 @@
+query AcquiringWords() {
+  words {
+    id
+    done
+    times
+    word
+  }
+}

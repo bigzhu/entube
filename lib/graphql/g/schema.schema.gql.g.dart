@@ -1712,6 +1712,137 @@ final BuiltSet<Gusers_update_column> _$gusersUpdateColumnValues =
   _$gusersUpdateColumnupdatedAt,
 ]);
 
+const Gwords_constraint _$gwordsConstraintwords_pkey =
+    const Gwords_constraint._('words_pkey');
+
+Gwords_constraint _$gwordsConstraintValueOf(String name) {
+  switch (name) {
+    case 'words_pkey':
+      return _$gwordsConstraintwords_pkey;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<Gwords_constraint> _$gwordsConstraintValues =
+    new BuiltSet<Gwords_constraint>(const <Gwords_constraint>[
+  _$gwordsConstraintwords_pkey,
+]);
+
+const Gwords_select_column _$gwordsSelectColumncreated_at =
+    const Gwords_select_column._('created_at');
+const Gwords_select_column _$gwordsSelectColumncreated_by =
+    const Gwords_select_column._('created_by');
+const Gwords_select_column _$gwordsSelectColumndeleted_at =
+    const Gwords_select_column._('deleted_at');
+const Gwords_select_column _$gwordsSelectColumndone =
+    const Gwords_select_column._('done');
+const Gwords_select_column _$gwordsSelectColumnid =
+    const Gwords_select_column._('id');
+const Gwords_select_column _$gwordsSelectColumntimes =
+    const Gwords_select_column._('times');
+const Gwords_select_column _$gwordsSelectColumnupdated_at =
+    const Gwords_select_column._('updated_at');
+const Gwords_select_column _$gwordsSelectColumnupdated_by =
+    const Gwords_select_column._('updated_by');
+const Gwords_select_column _$gwordsSelectColumnword =
+    const Gwords_select_column._('word');
+
+Gwords_select_column _$gwordsSelectColumnValueOf(String name) {
+  switch (name) {
+    case 'created_at':
+      return _$gwordsSelectColumncreated_at;
+    case 'created_by':
+      return _$gwordsSelectColumncreated_by;
+    case 'deleted_at':
+      return _$gwordsSelectColumndeleted_at;
+    case 'done':
+      return _$gwordsSelectColumndone;
+    case 'id':
+      return _$gwordsSelectColumnid;
+    case 'times':
+      return _$gwordsSelectColumntimes;
+    case 'updated_at':
+      return _$gwordsSelectColumnupdated_at;
+    case 'updated_by':
+      return _$gwordsSelectColumnupdated_by;
+    case 'word':
+      return _$gwordsSelectColumnword;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<Gwords_select_column> _$gwordsSelectColumnValues =
+    new BuiltSet<Gwords_select_column>(const <Gwords_select_column>[
+  _$gwordsSelectColumncreated_at,
+  _$gwordsSelectColumncreated_by,
+  _$gwordsSelectColumndeleted_at,
+  _$gwordsSelectColumndone,
+  _$gwordsSelectColumnid,
+  _$gwordsSelectColumntimes,
+  _$gwordsSelectColumnupdated_at,
+  _$gwordsSelectColumnupdated_by,
+  _$gwordsSelectColumnword,
+]);
+
+const Gwords_update_column _$gwordsUpdateColumncreated_at =
+    const Gwords_update_column._('created_at');
+const Gwords_update_column _$gwordsUpdateColumncreated_by =
+    const Gwords_update_column._('created_by');
+const Gwords_update_column _$gwordsUpdateColumndeleted_at =
+    const Gwords_update_column._('deleted_at');
+const Gwords_update_column _$gwordsUpdateColumndone =
+    const Gwords_update_column._('done');
+const Gwords_update_column _$gwordsUpdateColumnid =
+    const Gwords_update_column._('id');
+const Gwords_update_column _$gwordsUpdateColumntimes =
+    const Gwords_update_column._('times');
+const Gwords_update_column _$gwordsUpdateColumnupdated_at =
+    const Gwords_update_column._('updated_at');
+const Gwords_update_column _$gwordsUpdateColumnupdated_by =
+    const Gwords_update_column._('updated_by');
+const Gwords_update_column _$gwordsUpdateColumnword =
+    const Gwords_update_column._('word');
+
+Gwords_update_column _$gwordsUpdateColumnValueOf(String name) {
+  switch (name) {
+    case 'created_at':
+      return _$gwordsUpdateColumncreated_at;
+    case 'created_by':
+      return _$gwordsUpdateColumncreated_by;
+    case 'deleted_at':
+      return _$gwordsUpdateColumndeleted_at;
+    case 'done':
+      return _$gwordsUpdateColumndone;
+    case 'id':
+      return _$gwordsUpdateColumnid;
+    case 'times':
+      return _$gwordsUpdateColumntimes;
+    case 'updated_at':
+      return _$gwordsUpdateColumnupdated_at;
+    case 'updated_by':
+      return _$gwordsUpdateColumnupdated_by;
+    case 'word':
+      return _$gwordsUpdateColumnword;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<Gwords_update_column> _$gwordsUpdateColumnValues =
+    new BuiltSet<Gwords_update_column>(const <Gwords_update_column>[
+  _$gwordsUpdateColumncreated_at,
+  _$gwordsUpdateColumncreated_by,
+  _$gwordsUpdateColumndeleted_at,
+  _$gwordsUpdateColumndone,
+  _$gwordsUpdateColumnid,
+  _$gwordsUpdateColumntimes,
+  _$gwordsUpdateColumnupdated_at,
+  _$gwordsUpdateColumnupdated_by,
+  _$gwordsUpdateColumnword,
+]);
+
 Serializer<GBoolean_comparison_exp> _$gBooleanComparisonExpSerializer =
     new _$GBoolean_comparison_expSerializer();
 Serializer<GInt_comparison_exp> _$gIntComparisonExpSerializer =
@@ -2305,6 +2436,33 @@ Serializer<Gusers_updates> _$gusersUpdatesSerializer =
     new _$Gusers_updatesSerializer();
 Serializer<Guuid_comparison_exp> _$guuidComparisonExpSerializer =
     new _$Guuid_comparison_expSerializer();
+Serializer<Gwords_bool_exp> _$gwordsBoolExpSerializer =
+    new _$Gwords_bool_expSerializer();
+Serializer<Gwords_constraint> _$gwordsConstraintSerializer =
+    new _$Gwords_constraintSerializer();
+Serializer<Gwords_inc_input> _$gwordsIncInputSerializer =
+    new _$Gwords_inc_inputSerializer();
+Serializer<Gwords_insert_input> _$gwordsInsertInputSerializer =
+    new _$Gwords_insert_inputSerializer();
+Serializer<Gwords_on_conflict> _$gwordsOnConflictSerializer =
+    new _$Gwords_on_conflictSerializer();
+Serializer<Gwords_order_by> _$gwordsOrderBySerializer =
+    new _$Gwords_order_bySerializer();
+Serializer<Gwords_pk_columns_input> _$gwordsPkColumnsInputSerializer =
+    new _$Gwords_pk_columns_inputSerializer();
+Serializer<Gwords_select_column> _$gwordsSelectColumnSerializer =
+    new _$Gwords_select_columnSerializer();
+Serializer<Gwords_set_input> _$gwordsSetInputSerializer =
+    new _$Gwords_set_inputSerializer();
+Serializer<Gwords_stream_cursor_input> _$gwordsStreamCursorInputSerializer =
+    new _$Gwords_stream_cursor_inputSerializer();
+Serializer<Gwords_stream_cursor_value_input>
+    _$gwordsStreamCursorValueInputSerializer =
+    new _$Gwords_stream_cursor_value_inputSerializer();
+Serializer<Gwords_update_column> _$gwordsUpdateColumnSerializer =
+    new _$Gwords_update_columnSerializer();
+Serializer<Gwords_updates> _$gwordsUpdatesSerializer =
+    new _$Gwords_updatesSerializer();
 
 class _$GBoolean_comparison_expSerializer
     implements StructuredSerializer<GBoolean_comparison_exp> {
@@ -22018,6 +22176,1061 @@ class _$Guuid_comparison_expSerializer
                   specifiedType:
                       const FullType(BuiltList, const [const FullType(Guuid)]))!
               as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Gwords_bool_expSerializer
+    implements StructuredSerializer<Gwords_bool_exp> {
+  @override
+  final Iterable<Type> types = const [Gwords_bool_exp, _$Gwords_bool_exp];
+  @override
+  final String wireName = 'Gwords_bool_exp';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, Gwords_bool_exp object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.G_and;
+    if (value != null) {
+      result
+        ..add('_and')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(Gwords_bool_exp)])));
+    }
+    value = object.G_not;
+    if (value != null) {
+      result
+        ..add('_not')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gwords_bool_exp)));
+    }
+    value = object.G_or;
+    if (value != null) {
+      result
+        ..add('_or')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(Gwords_bool_exp)])));
+    }
+    value = object.created_at;
+    if (value != null) {
+      result
+        ..add('created_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz_comparison_exp)));
+    }
+    value = object.created_by;
+    if (value != null) {
+      result
+        ..add('created_by')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guuid_comparison_exp)));
+    }
+    value = object.deleted_at;
+    if (value != null) {
+      result
+        ..add('deleted_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz_comparison_exp)));
+    }
+    value = object.done;
+    if (value != null) {
+      result
+        ..add('done')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GBoolean_comparison_exp)));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guuid_comparison_exp)));
+    }
+    value = object.times;
+    if (value != null) {
+      result
+        ..add('times')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GInt_comparison_exp)));
+    }
+    value = object.updated_at;
+    if (value != null) {
+      result
+        ..add('updated_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz_comparison_exp)));
+    }
+    value = object.updated_by;
+    if (value != null) {
+      result
+        ..add('updated_by')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guuid_comparison_exp)));
+    }
+    value = object.word;
+    if (value != null) {
+      result
+        ..add('word')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GString_comparison_exp)));
+    }
+    return result;
+  }
+
+  @override
+  Gwords_bool_exp deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Gwords_bool_expBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '_and':
+          result.G_and.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(Gwords_bool_exp)]))!
+              as BuiltList<Object?>);
+          break;
+        case '_not':
+          result.G_not.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Gwords_bool_exp))!
+              as Gwords_bool_exp);
+          break;
+        case '_or':
+          result.G_or.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(Gwords_bool_exp)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'created_at':
+          result.created_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Gtimestamptz_comparison_exp))!
+              as Gtimestamptz_comparison_exp);
+          break;
+        case 'created_by':
+          result.created_by.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guuid_comparison_exp))!
+              as Guuid_comparison_exp);
+          break;
+        case 'deleted_at':
+          result.deleted_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Gtimestamptz_comparison_exp))!
+              as Gtimestamptz_comparison_exp);
+          break;
+        case 'done':
+          result.done.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GBoolean_comparison_exp))!
+              as GBoolean_comparison_exp);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guuid_comparison_exp))!
+              as Guuid_comparison_exp);
+          break;
+        case 'times':
+          result.times.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GInt_comparison_exp))!
+              as GInt_comparison_exp);
+          break;
+        case 'updated_at':
+          result.updated_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Gtimestamptz_comparison_exp))!
+              as Gtimestamptz_comparison_exp);
+          break;
+        case 'updated_by':
+          result.updated_by.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guuid_comparison_exp))!
+              as Guuid_comparison_exp);
+          break;
+        case 'word':
+          result.word.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GString_comparison_exp))!
+              as GString_comparison_exp);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Gwords_constraintSerializer
+    implements PrimitiveSerializer<Gwords_constraint> {
+  @override
+  final Iterable<Type> types = const <Type>[Gwords_constraint];
+  @override
+  final String wireName = 'Gwords_constraint';
+
+  @override
+  Object serialize(Serializers serializers, Gwords_constraint object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      object.name;
+
+  @override
+  Gwords_constraint deserialize(Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      Gwords_constraint.valueOf(serialized as String);
+}
+
+class _$Gwords_inc_inputSerializer
+    implements StructuredSerializer<Gwords_inc_input> {
+  @override
+  final Iterable<Type> types = const [Gwords_inc_input, _$Gwords_inc_input];
+  @override
+  final String wireName = 'Gwords_inc_input';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, Gwords_inc_input object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.times;
+    if (value != null) {
+      result
+        ..add('times')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  Gwords_inc_input deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Gwords_inc_inputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'times':
+          result.times = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Gwords_insert_inputSerializer
+    implements StructuredSerializer<Gwords_insert_input> {
+  @override
+  final Iterable<Type> types = const [
+    Gwords_insert_input,
+    _$Gwords_insert_input
+  ];
+  @override
+  final String wireName = 'Gwords_insert_input';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Gwords_insert_input object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.created_at;
+    if (value != null) {
+      result
+        ..add('created_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.created_by;
+    if (value != null) {
+      result
+        ..add('created_by')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.deleted_at;
+    if (value != null) {
+      result
+        ..add('deleted_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.done;
+    if (value != null) {
+      result
+        ..add('done')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.times;
+    if (value != null) {
+      result
+        ..add('times')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.updated_at;
+    if (value != null) {
+      result
+        ..add('updated_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.updated_by;
+    if (value != null) {
+      result
+        ..add('updated_by')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.word;
+    if (value != null) {
+      result
+        ..add('word')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  Gwords_insert_input deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Gwords_insert_inputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'created_at':
+          result.created_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'created_by':
+          result.created_by.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'deleted_at':
+          result.deleted_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'done':
+          result.done = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'times':
+          result.times = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'updated_at':
+          result.updated_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'updated_by':
+          result.updated_by.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'word':
+          result.word = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Gwords_on_conflictSerializer
+    implements StructuredSerializer<Gwords_on_conflict> {
+  @override
+  final Iterable<Type> types = const [Gwords_on_conflict, _$Gwords_on_conflict];
+  @override
+  final String wireName = 'Gwords_on_conflict';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Gwords_on_conflict object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'constraint',
+      serializers.serialize(object.constraint,
+          specifiedType: const FullType(Gwords_constraint)),
+      'update_columns',
+      serializers.serialize(object.update_columns,
+          specifiedType: const FullType(
+              BuiltList, const [const FullType(Gwords_update_column)])),
+    ];
+    Object? value;
+    value = object.where;
+    if (value != null) {
+      result
+        ..add('where')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gwords_bool_exp)));
+    }
+    return result;
+  }
+
+  @override
+  Gwords_on_conflict deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Gwords_on_conflictBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'constraint':
+          result.constraint = serializers.deserialize(value,
+                  specifiedType: const FullType(Gwords_constraint))!
+              as Gwords_constraint;
+          break;
+        case 'update_columns':
+          result.update_columns.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(Gwords_update_column)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Gwords_bool_exp))!
+              as Gwords_bool_exp);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Gwords_order_bySerializer
+    implements StructuredSerializer<Gwords_order_by> {
+  @override
+  final Iterable<Type> types = const [Gwords_order_by, _$Gwords_order_by];
+  @override
+  final String wireName = 'Gwords_order_by';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, Gwords_order_by object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.created_at;
+    if (value != null) {
+      result
+        ..add('created_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.created_by;
+    if (value != null) {
+      result
+        ..add('created_by')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.deleted_at;
+    if (value != null) {
+      result
+        ..add('deleted_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.done;
+    if (value != null) {
+      result
+        ..add('done')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.times;
+    if (value != null) {
+      result
+        ..add('times')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.updated_at;
+    if (value != null) {
+      result
+        ..add('updated_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.updated_by;
+    if (value != null) {
+      result
+        ..add('updated_by')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.word;
+    if (value != null) {
+      result
+        ..add('word')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    return result;
+  }
+
+  @override
+  Gwords_order_by deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Gwords_order_byBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'created_at':
+          result.created_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'created_by':
+          result.created_by = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'deleted_at':
+          result.deleted_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'done':
+          result.done = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'times':
+          result.times = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'updated_at':
+          result.updated_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'updated_by':
+          result.updated_by = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'word':
+          result.word = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Gwords_pk_columns_inputSerializer
+    implements StructuredSerializer<Gwords_pk_columns_input> {
+  @override
+  final Iterable<Type> types = const [
+    Gwords_pk_columns_input,
+    _$Gwords_pk_columns_input
+  ];
+  @override
+  final String wireName = 'Gwords_pk_columns_input';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Gwords_pk_columns_input object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(Guuid)),
+    ];
+
+    return result;
+  }
+
+  @override
+  Gwords_pk_columns_input deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Gwords_pk_columns_inputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Gwords_select_columnSerializer
+    implements PrimitiveSerializer<Gwords_select_column> {
+  @override
+  final Iterable<Type> types = const <Type>[Gwords_select_column];
+  @override
+  final String wireName = 'Gwords_select_column';
+
+  @override
+  Object serialize(Serializers serializers, Gwords_select_column object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      object.name;
+
+  @override
+  Gwords_select_column deserialize(Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      Gwords_select_column.valueOf(serialized as String);
+}
+
+class _$Gwords_set_inputSerializer
+    implements StructuredSerializer<Gwords_set_input> {
+  @override
+  final Iterable<Type> types = const [Gwords_set_input, _$Gwords_set_input];
+  @override
+  final String wireName = 'Gwords_set_input';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, Gwords_set_input object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.created_at;
+    if (value != null) {
+      result
+        ..add('created_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.created_by;
+    if (value != null) {
+      result
+        ..add('created_by')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.deleted_at;
+    if (value != null) {
+      result
+        ..add('deleted_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.done;
+    if (value != null) {
+      result
+        ..add('done')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.times;
+    if (value != null) {
+      result
+        ..add('times')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.updated_at;
+    if (value != null) {
+      result
+        ..add('updated_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.updated_by;
+    if (value != null) {
+      result
+        ..add('updated_by')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.word;
+    if (value != null) {
+      result
+        ..add('word')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  Gwords_set_input deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Gwords_set_inputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'created_at':
+          result.created_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'created_by':
+          result.created_by.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'deleted_at':
+          result.deleted_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'done':
+          result.done = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'times':
+          result.times = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'updated_at':
+          result.updated_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'updated_by':
+          result.updated_by.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'word':
+          result.word = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Gwords_stream_cursor_inputSerializer
+    implements StructuredSerializer<Gwords_stream_cursor_input> {
+  @override
+  final Iterable<Type> types = const [
+    Gwords_stream_cursor_input,
+    _$Gwords_stream_cursor_input
+  ];
+  @override
+  final String wireName = 'Gwords_stream_cursor_input';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Gwords_stream_cursor_input object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'initial_value',
+      serializers.serialize(object.initial_value,
+          specifiedType: const FullType(Gwords_stream_cursor_value_input)),
+    ];
+    Object? value;
+    value = object.ordering;
+    if (value != null) {
+      result
+        ..add('ordering')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gcursor_ordering)));
+    }
+    return result;
+  }
+
+  @override
+  Gwords_stream_cursor_input deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Gwords_stream_cursor_inputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'initial_value':
+          result.initial_value.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(Gwords_stream_cursor_value_input))!
+              as Gwords_stream_cursor_value_input);
+          break;
+        case 'ordering':
+          result.ordering = serializers.deserialize(value,
+                  specifiedType: const FullType(Gcursor_ordering))
+              as Gcursor_ordering?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Gwords_stream_cursor_value_inputSerializer
+    implements StructuredSerializer<Gwords_stream_cursor_value_input> {
+  @override
+  final Iterable<Type> types = const [
+    Gwords_stream_cursor_value_input,
+    _$Gwords_stream_cursor_value_input
+  ];
+  @override
+  final String wireName = 'Gwords_stream_cursor_value_input';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Gwords_stream_cursor_value_input object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.created_at;
+    if (value != null) {
+      result
+        ..add('created_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.created_by;
+    if (value != null) {
+      result
+        ..add('created_by')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.deleted_at;
+    if (value != null) {
+      result
+        ..add('deleted_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.done;
+    if (value != null) {
+      result
+        ..add('done')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.times;
+    if (value != null) {
+      result
+        ..add('times')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.updated_at;
+    if (value != null) {
+      result
+        ..add('updated_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.updated_by;
+    if (value != null) {
+      result
+        ..add('updated_by')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.word;
+    if (value != null) {
+      result
+        ..add('word')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  Gwords_stream_cursor_value_input deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Gwords_stream_cursor_value_inputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'created_at':
+          result.created_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'created_by':
+          result.created_by.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'deleted_at':
+          result.deleted_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'done':
+          result.done = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'times':
+          result.times = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'updated_at':
+          result.updated_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'updated_by':
+          result.updated_by.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'word':
+          result.word = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Gwords_update_columnSerializer
+    implements PrimitiveSerializer<Gwords_update_column> {
+  @override
+  final Iterable<Type> types = const <Type>[Gwords_update_column];
+  @override
+  final String wireName = 'Gwords_update_column';
+
+  @override
+  Object serialize(Serializers serializers, Gwords_update_column object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      object.name;
+
+  @override
+  Gwords_update_column deserialize(Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      Gwords_update_column.valueOf(serialized as String);
+}
+
+class _$Gwords_updatesSerializer
+    implements StructuredSerializer<Gwords_updates> {
+  @override
+  final Iterable<Type> types = const [Gwords_updates, _$Gwords_updates];
+  @override
+  final String wireName = 'Gwords_updates';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, Gwords_updates object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(Gwords_bool_exp)),
+    ];
+    Object? value;
+    value = object.G_inc;
+    if (value != null) {
+      result
+        ..add('_inc')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gwords_inc_input)));
+    }
+    value = object.G_set;
+    if (value != null) {
+      result
+        ..add('_set')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gwords_set_input)));
+    }
+    return result;
+  }
+
+  @override
+  Gwords_updates deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Gwords_updatesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '_inc':
+          result.G_inc.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Gwords_inc_input))!
+              as Gwords_inc_input);
+          break;
+        case '_set':
+          result.G_set.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Gwords_set_input))!
+              as Gwords_set_input);
+          break;
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Gwords_bool_exp))!
+              as Gwords_bool_exp);
           break;
       }
     }
@@ -53067,6 +54280,1651 @@ class Guuid_comparison_expBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'Guuid_comparison_exp', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Gwords_bool_exp extends Gwords_bool_exp {
+  @override
+  final BuiltList<Gwords_bool_exp>? G_and;
+  @override
+  final Gwords_bool_exp? G_not;
+  @override
+  final BuiltList<Gwords_bool_exp>? G_or;
+  @override
+  final Gtimestamptz_comparison_exp? created_at;
+  @override
+  final Guuid_comparison_exp? created_by;
+  @override
+  final Gtimestamptz_comparison_exp? deleted_at;
+  @override
+  final GBoolean_comparison_exp? done;
+  @override
+  final Guuid_comparison_exp? id;
+  @override
+  final GInt_comparison_exp? times;
+  @override
+  final Gtimestamptz_comparison_exp? updated_at;
+  @override
+  final Guuid_comparison_exp? updated_by;
+  @override
+  final GString_comparison_exp? word;
+
+  factory _$Gwords_bool_exp([void Function(Gwords_bool_expBuilder)? updates]) =>
+      (new Gwords_bool_expBuilder()..update(updates))._build();
+
+  _$Gwords_bool_exp._(
+      {this.G_and,
+      this.G_not,
+      this.G_or,
+      this.created_at,
+      this.created_by,
+      this.deleted_at,
+      this.done,
+      this.id,
+      this.times,
+      this.updated_at,
+      this.updated_by,
+      this.word})
+      : super._();
+
+  @override
+  Gwords_bool_exp rebuild(void Function(Gwords_bool_expBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Gwords_bool_expBuilder toBuilder() =>
+      new Gwords_bool_expBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Gwords_bool_exp &&
+        G_and == other.G_and &&
+        G_not == other.G_not &&
+        G_or == other.G_or &&
+        created_at == other.created_at &&
+        created_by == other.created_by &&
+        deleted_at == other.deleted_at &&
+        done == other.done &&
+        id == other.id &&
+        times == other.times &&
+        updated_at == other.updated_at &&
+        updated_by == other.updated_by &&
+        word == other.word;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc($jc(0, G_and.hashCode),
+                                                G_not.hashCode),
+                                            G_or.hashCode),
+                                        created_at.hashCode),
+                                    created_by.hashCode),
+                                deleted_at.hashCode),
+                            done.hashCode),
+                        id.hashCode),
+                    times.hashCode),
+                updated_at.hashCode),
+            updated_by.hashCode),
+        word.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Gwords_bool_exp')
+          ..add('G_and', G_and)
+          ..add('G_not', G_not)
+          ..add('G_or', G_or)
+          ..add('created_at', created_at)
+          ..add('created_by', created_by)
+          ..add('deleted_at', deleted_at)
+          ..add('done', done)
+          ..add('id', id)
+          ..add('times', times)
+          ..add('updated_at', updated_at)
+          ..add('updated_by', updated_by)
+          ..add('word', word))
+        .toString();
+  }
+}
+
+class Gwords_bool_expBuilder
+    implements Builder<Gwords_bool_exp, Gwords_bool_expBuilder> {
+  _$Gwords_bool_exp? _$v;
+
+  ListBuilder<Gwords_bool_exp>? _G_and;
+  ListBuilder<Gwords_bool_exp> get G_and =>
+      _$this._G_and ??= new ListBuilder<Gwords_bool_exp>();
+  set G_and(ListBuilder<Gwords_bool_exp>? G_and) => _$this._G_and = G_and;
+
+  Gwords_bool_expBuilder? _G_not;
+  Gwords_bool_expBuilder get G_not =>
+      _$this._G_not ??= new Gwords_bool_expBuilder();
+  set G_not(Gwords_bool_expBuilder? G_not) => _$this._G_not = G_not;
+
+  ListBuilder<Gwords_bool_exp>? _G_or;
+  ListBuilder<Gwords_bool_exp> get G_or =>
+      _$this._G_or ??= new ListBuilder<Gwords_bool_exp>();
+  set G_or(ListBuilder<Gwords_bool_exp>? G_or) => _$this._G_or = G_or;
+
+  Gtimestamptz_comparison_expBuilder? _created_at;
+  Gtimestamptz_comparison_expBuilder get created_at =>
+      _$this._created_at ??= new Gtimestamptz_comparison_expBuilder();
+  set created_at(Gtimestamptz_comparison_expBuilder? created_at) =>
+      _$this._created_at = created_at;
+
+  Guuid_comparison_expBuilder? _created_by;
+  Guuid_comparison_expBuilder get created_by =>
+      _$this._created_by ??= new Guuid_comparison_expBuilder();
+  set created_by(Guuid_comparison_expBuilder? created_by) =>
+      _$this._created_by = created_by;
+
+  Gtimestamptz_comparison_expBuilder? _deleted_at;
+  Gtimestamptz_comparison_expBuilder get deleted_at =>
+      _$this._deleted_at ??= new Gtimestamptz_comparison_expBuilder();
+  set deleted_at(Gtimestamptz_comparison_expBuilder? deleted_at) =>
+      _$this._deleted_at = deleted_at;
+
+  GBoolean_comparison_expBuilder? _done;
+  GBoolean_comparison_expBuilder get done =>
+      _$this._done ??= new GBoolean_comparison_expBuilder();
+  set done(GBoolean_comparison_expBuilder? done) => _$this._done = done;
+
+  Guuid_comparison_expBuilder? _id;
+  Guuid_comparison_expBuilder get id =>
+      _$this._id ??= new Guuid_comparison_expBuilder();
+  set id(Guuid_comparison_expBuilder? id) => _$this._id = id;
+
+  GInt_comparison_expBuilder? _times;
+  GInt_comparison_expBuilder get times =>
+      _$this._times ??= new GInt_comparison_expBuilder();
+  set times(GInt_comparison_expBuilder? times) => _$this._times = times;
+
+  Gtimestamptz_comparison_expBuilder? _updated_at;
+  Gtimestamptz_comparison_expBuilder get updated_at =>
+      _$this._updated_at ??= new Gtimestamptz_comparison_expBuilder();
+  set updated_at(Gtimestamptz_comparison_expBuilder? updated_at) =>
+      _$this._updated_at = updated_at;
+
+  Guuid_comparison_expBuilder? _updated_by;
+  Guuid_comparison_expBuilder get updated_by =>
+      _$this._updated_by ??= new Guuid_comparison_expBuilder();
+  set updated_by(Guuid_comparison_expBuilder? updated_by) =>
+      _$this._updated_by = updated_by;
+
+  GString_comparison_expBuilder? _word;
+  GString_comparison_expBuilder get word =>
+      _$this._word ??= new GString_comparison_expBuilder();
+  set word(GString_comparison_expBuilder? word) => _$this._word = word;
+
+  Gwords_bool_expBuilder();
+
+  Gwords_bool_expBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G_and = $v.G_and?.toBuilder();
+      _G_not = $v.G_not?.toBuilder();
+      _G_or = $v.G_or?.toBuilder();
+      _created_at = $v.created_at?.toBuilder();
+      _created_by = $v.created_by?.toBuilder();
+      _deleted_at = $v.deleted_at?.toBuilder();
+      _done = $v.done?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _times = $v.times?.toBuilder();
+      _updated_at = $v.updated_at?.toBuilder();
+      _updated_by = $v.updated_by?.toBuilder();
+      _word = $v.word?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Gwords_bool_exp other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Gwords_bool_exp;
+  }
+
+  @override
+  void update(void Function(Gwords_bool_expBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Gwords_bool_exp build() => _build();
+
+  _$Gwords_bool_exp _build() {
+    _$Gwords_bool_exp _$result;
+    try {
+      _$result = _$v ??
+          new _$Gwords_bool_exp._(
+              G_and: _G_and?.build(),
+              G_not: _G_not?.build(),
+              G_or: _G_or?.build(),
+              created_at: _created_at?.build(),
+              created_by: _created_by?.build(),
+              deleted_at: _deleted_at?.build(),
+              done: _done?.build(),
+              id: _id?.build(),
+              times: _times?.build(),
+              updated_at: _updated_at?.build(),
+              updated_by: _updated_by?.build(),
+              word: _word?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'G_and';
+        _G_and?.build();
+        _$failedField = 'G_not';
+        _G_not?.build();
+        _$failedField = 'G_or';
+        _G_or?.build();
+        _$failedField = 'created_at';
+        _created_at?.build();
+        _$failedField = 'created_by';
+        _created_by?.build();
+        _$failedField = 'deleted_at';
+        _deleted_at?.build();
+        _$failedField = 'done';
+        _done?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'times';
+        _times?.build();
+        _$failedField = 'updated_at';
+        _updated_at?.build();
+        _$failedField = 'updated_by';
+        _updated_by?.build();
+        _$failedField = 'word';
+        _word?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Gwords_bool_exp', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Gwords_inc_input extends Gwords_inc_input {
+  @override
+  final int? times;
+
+  factory _$Gwords_inc_input(
+          [void Function(Gwords_inc_inputBuilder)? updates]) =>
+      (new Gwords_inc_inputBuilder()..update(updates))._build();
+
+  _$Gwords_inc_input._({this.times}) : super._();
+
+  @override
+  Gwords_inc_input rebuild(void Function(Gwords_inc_inputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Gwords_inc_inputBuilder toBuilder() =>
+      new Gwords_inc_inputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Gwords_inc_input && times == other.times;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, times.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Gwords_inc_input')
+          ..add('times', times))
+        .toString();
+  }
+}
+
+class Gwords_inc_inputBuilder
+    implements Builder<Gwords_inc_input, Gwords_inc_inputBuilder> {
+  _$Gwords_inc_input? _$v;
+
+  int? _times;
+  int? get times => _$this._times;
+  set times(int? times) => _$this._times = times;
+
+  Gwords_inc_inputBuilder();
+
+  Gwords_inc_inputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _times = $v.times;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Gwords_inc_input other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Gwords_inc_input;
+  }
+
+  @override
+  void update(void Function(Gwords_inc_inputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Gwords_inc_input build() => _build();
+
+  _$Gwords_inc_input _build() {
+    final _$result = _$v ?? new _$Gwords_inc_input._(times: times);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Gwords_insert_input extends Gwords_insert_input {
+  @override
+  final Gtimestamptz? created_at;
+  @override
+  final Guuid? created_by;
+  @override
+  final Gtimestamptz? deleted_at;
+  @override
+  final bool? done;
+  @override
+  final Guuid? id;
+  @override
+  final int? times;
+  @override
+  final Gtimestamptz? updated_at;
+  @override
+  final Guuid? updated_by;
+  @override
+  final String? word;
+
+  factory _$Gwords_insert_input(
+          [void Function(Gwords_insert_inputBuilder)? updates]) =>
+      (new Gwords_insert_inputBuilder()..update(updates))._build();
+
+  _$Gwords_insert_input._(
+      {this.created_at,
+      this.created_by,
+      this.deleted_at,
+      this.done,
+      this.id,
+      this.times,
+      this.updated_at,
+      this.updated_by,
+      this.word})
+      : super._();
+
+  @override
+  Gwords_insert_input rebuild(
+          void Function(Gwords_insert_inputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Gwords_insert_inputBuilder toBuilder() =>
+      new Gwords_insert_inputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Gwords_insert_input &&
+        created_at == other.created_at &&
+        created_by == other.created_by &&
+        deleted_at == other.deleted_at &&
+        done == other.done &&
+        id == other.id &&
+        times == other.times &&
+        updated_at == other.updated_at &&
+        updated_by == other.updated_by &&
+        word == other.word;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc($jc(0, created_at.hashCode),
+                                    created_by.hashCode),
+                                deleted_at.hashCode),
+                            done.hashCode),
+                        id.hashCode),
+                    times.hashCode),
+                updated_at.hashCode),
+            updated_by.hashCode),
+        word.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Gwords_insert_input')
+          ..add('created_at', created_at)
+          ..add('created_by', created_by)
+          ..add('deleted_at', deleted_at)
+          ..add('done', done)
+          ..add('id', id)
+          ..add('times', times)
+          ..add('updated_at', updated_at)
+          ..add('updated_by', updated_by)
+          ..add('word', word))
+        .toString();
+  }
+}
+
+class Gwords_insert_inputBuilder
+    implements Builder<Gwords_insert_input, Gwords_insert_inputBuilder> {
+  _$Gwords_insert_input? _$v;
+
+  GtimestamptzBuilder? _created_at;
+  GtimestamptzBuilder get created_at =>
+      _$this._created_at ??= new GtimestamptzBuilder();
+  set created_at(GtimestamptzBuilder? created_at) =>
+      _$this._created_at = created_at;
+
+  GuuidBuilder? _created_by;
+  GuuidBuilder get created_by => _$this._created_by ??= new GuuidBuilder();
+  set created_by(GuuidBuilder? created_by) => _$this._created_by = created_by;
+
+  GtimestamptzBuilder? _deleted_at;
+  GtimestamptzBuilder get deleted_at =>
+      _$this._deleted_at ??= new GtimestamptzBuilder();
+  set deleted_at(GtimestamptzBuilder? deleted_at) =>
+      _$this._deleted_at = deleted_at;
+
+  bool? _done;
+  bool? get done => _$this._done;
+  set done(bool? done) => _$this._done = done;
+
+  GuuidBuilder? _id;
+  GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
+  set id(GuuidBuilder? id) => _$this._id = id;
+
+  int? _times;
+  int? get times => _$this._times;
+  set times(int? times) => _$this._times = times;
+
+  GtimestamptzBuilder? _updated_at;
+  GtimestamptzBuilder get updated_at =>
+      _$this._updated_at ??= new GtimestamptzBuilder();
+  set updated_at(GtimestamptzBuilder? updated_at) =>
+      _$this._updated_at = updated_at;
+
+  GuuidBuilder? _updated_by;
+  GuuidBuilder get updated_by => _$this._updated_by ??= new GuuidBuilder();
+  set updated_by(GuuidBuilder? updated_by) => _$this._updated_by = updated_by;
+
+  String? _word;
+  String? get word => _$this._word;
+  set word(String? word) => _$this._word = word;
+
+  Gwords_insert_inputBuilder();
+
+  Gwords_insert_inputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _created_at = $v.created_at?.toBuilder();
+      _created_by = $v.created_by?.toBuilder();
+      _deleted_at = $v.deleted_at?.toBuilder();
+      _done = $v.done;
+      _id = $v.id?.toBuilder();
+      _times = $v.times;
+      _updated_at = $v.updated_at?.toBuilder();
+      _updated_by = $v.updated_by?.toBuilder();
+      _word = $v.word;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Gwords_insert_input other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Gwords_insert_input;
+  }
+
+  @override
+  void update(void Function(Gwords_insert_inputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Gwords_insert_input build() => _build();
+
+  _$Gwords_insert_input _build() {
+    _$Gwords_insert_input _$result;
+    try {
+      _$result = _$v ??
+          new _$Gwords_insert_input._(
+              created_at: _created_at?.build(),
+              created_by: _created_by?.build(),
+              deleted_at: _deleted_at?.build(),
+              done: done,
+              id: _id?.build(),
+              times: times,
+              updated_at: _updated_at?.build(),
+              updated_by: _updated_by?.build(),
+              word: word);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'created_at';
+        _created_at?.build();
+        _$failedField = 'created_by';
+        _created_by?.build();
+        _$failedField = 'deleted_at';
+        _deleted_at?.build();
+
+        _$failedField = 'id';
+        _id?.build();
+
+        _$failedField = 'updated_at';
+        _updated_at?.build();
+        _$failedField = 'updated_by';
+        _updated_by?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Gwords_insert_input', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Gwords_on_conflict extends Gwords_on_conflict {
+  @override
+  final Gwords_constraint constraint;
+  @override
+  final BuiltList<Gwords_update_column> update_columns;
+  @override
+  final Gwords_bool_exp? where;
+
+  factory _$Gwords_on_conflict(
+          [void Function(Gwords_on_conflictBuilder)? updates]) =>
+      (new Gwords_on_conflictBuilder()..update(updates))._build();
+
+  _$Gwords_on_conflict._(
+      {required this.constraint, required this.update_columns, this.where})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        constraint, r'Gwords_on_conflict', 'constraint');
+    BuiltValueNullFieldError.checkNotNull(
+        update_columns, r'Gwords_on_conflict', 'update_columns');
+  }
+
+  @override
+  Gwords_on_conflict rebuild(
+          void Function(Gwords_on_conflictBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Gwords_on_conflictBuilder toBuilder() =>
+      new Gwords_on_conflictBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Gwords_on_conflict &&
+        constraint == other.constraint &&
+        update_columns == other.update_columns &&
+        where == other.where;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc($jc(0, constraint.hashCode), update_columns.hashCode),
+        where.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Gwords_on_conflict')
+          ..add('constraint', constraint)
+          ..add('update_columns', update_columns)
+          ..add('where', where))
+        .toString();
+  }
+}
+
+class Gwords_on_conflictBuilder
+    implements Builder<Gwords_on_conflict, Gwords_on_conflictBuilder> {
+  _$Gwords_on_conflict? _$v;
+
+  Gwords_constraint? _constraint;
+  Gwords_constraint? get constraint => _$this._constraint;
+  set constraint(Gwords_constraint? constraint) =>
+      _$this._constraint = constraint;
+
+  ListBuilder<Gwords_update_column>? _update_columns;
+  ListBuilder<Gwords_update_column> get update_columns =>
+      _$this._update_columns ??= new ListBuilder<Gwords_update_column>();
+  set update_columns(ListBuilder<Gwords_update_column>? update_columns) =>
+      _$this._update_columns = update_columns;
+
+  Gwords_bool_expBuilder? _where;
+  Gwords_bool_expBuilder get where =>
+      _$this._where ??= new Gwords_bool_expBuilder();
+  set where(Gwords_bool_expBuilder? where) => _$this._where = where;
+
+  Gwords_on_conflictBuilder();
+
+  Gwords_on_conflictBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _constraint = $v.constraint;
+      _update_columns = $v.update_columns.toBuilder();
+      _where = $v.where?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Gwords_on_conflict other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Gwords_on_conflict;
+  }
+
+  @override
+  void update(void Function(Gwords_on_conflictBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Gwords_on_conflict build() => _build();
+
+  _$Gwords_on_conflict _build() {
+    _$Gwords_on_conflict _$result;
+    try {
+      _$result = _$v ??
+          new _$Gwords_on_conflict._(
+              constraint: BuiltValueNullFieldError.checkNotNull(
+                  constraint, r'Gwords_on_conflict', 'constraint'),
+              update_columns: update_columns.build(),
+              where: _where?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'update_columns';
+        update_columns.build();
+        _$failedField = 'where';
+        _where?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Gwords_on_conflict', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Gwords_order_by extends Gwords_order_by {
+  @override
+  final Gorder_by? created_at;
+  @override
+  final Gorder_by? created_by;
+  @override
+  final Gorder_by? deleted_at;
+  @override
+  final Gorder_by? done;
+  @override
+  final Gorder_by? id;
+  @override
+  final Gorder_by? times;
+  @override
+  final Gorder_by? updated_at;
+  @override
+  final Gorder_by? updated_by;
+  @override
+  final Gorder_by? word;
+
+  factory _$Gwords_order_by([void Function(Gwords_order_byBuilder)? updates]) =>
+      (new Gwords_order_byBuilder()..update(updates))._build();
+
+  _$Gwords_order_by._(
+      {this.created_at,
+      this.created_by,
+      this.deleted_at,
+      this.done,
+      this.id,
+      this.times,
+      this.updated_at,
+      this.updated_by,
+      this.word})
+      : super._();
+
+  @override
+  Gwords_order_by rebuild(void Function(Gwords_order_byBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Gwords_order_byBuilder toBuilder() =>
+      new Gwords_order_byBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Gwords_order_by &&
+        created_at == other.created_at &&
+        created_by == other.created_by &&
+        deleted_at == other.deleted_at &&
+        done == other.done &&
+        id == other.id &&
+        times == other.times &&
+        updated_at == other.updated_at &&
+        updated_by == other.updated_by &&
+        word == other.word;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc($jc(0, created_at.hashCode),
+                                    created_by.hashCode),
+                                deleted_at.hashCode),
+                            done.hashCode),
+                        id.hashCode),
+                    times.hashCode),
+                updated_at.hashCode),
+            updated_by.hashCode),
+        word.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Gwords_order_by')
+          ..add('created_at', created_at)
+          ..add('created_by', created_by)
+          ..add('deleted_at', deleted_at)
+          ..add('done', done)
+          ..add('id', id)
+          ..add('times', times)
+          ..add('updated_at', updated_at)
+          ..add('updated_by', updated_by)
+          ..add('word', word))
+        .toString();
+  }
+}
+
+class Gwords_order_byBuilder
+    implements Builder<Gwords_order_by, Gwords_order_byBuilder> {
+  _$Gwords_order_by? _$v;
+
+  Gorder_by? _created_at;
+  Gorder_by? get created_at => _$this._created_at;
+  set created_at(Gorder_by? created_at) => _$this._created_at = created_at;
+
+  Gorder_by? _created_by;
+  Gorder_by? get created_by => _$this._created_by;
+  set created_by(Gorder_by? created_by) => _$this._created_by = created_by;
+
+  Gorder_by? _deleted_at;
+  Gorder_by? get deleted_at => _$this._deleted_at;
+  set deleted_at(Gorder_by? deleted_at) => _$this._deleted_at = deleted_at;
+
+  Gorder_by? _done;
+  Gorder_by? get done => _$this._done;
+  set done(Gorder_by? done) => _$this._done = done;
+
+  Gorder_by? _id;
+  Gorder_by? get id => _$this._id;
+  set id(Gorder_by? id) => _$this._id = id;
+
+  Gorder_by? _times;
+  Gorder_by? get times => _$this._times;
+  set times(Gorder_by? times) => _$this._times = times;
+
+  Gorder_by? _updated_at;
+  Gorder_by? get updated_at => _$this._updated_at;
+  set updated_at(Gorder_by? updated_at) => _$this._updated_at = updated_at;
+
+  Gorder_by? _updated_by;
+  Gorder_by? get updated_by => _$this._updated_by;
+  set updated_by(Gorder_by? updated_by) => _$this._updated_by = updated_by;
+
+  Gorder_by? _word;
+  Gorder_by? get word => _$this._word;
+  set word(Gorder_by? word) => _$this._word = word;
+
+  Gwords_order_byBuilder();
+
+  Gwords_order_byBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _created_at = $v.created_at;
+      _created_by = $v.created_by;
+      _deleted_at = $v.deleted_at;
+      _done = $v.done;
+      _id = $v.id;
+      _times = $v.times;
+      _updated_at = $v.updated_at;
+      _updated_by = $v.updated_by;
+      _word = $v.word;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Gwords_order_by other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Gwords_order_by;
+  }
+
+  @override
+  void update(void Function(Gwords_order_byBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Gwords_order_by build() => _build();
+
+  _$Gwords_order_by _build() {
+    final _$result = _$v ??
+        new _$Gwords_order_by._(
+            created_at: created_at,
+            created_by: created_by,
+            deleted_at: deleted_at,
+            done: done,
+            id: id,
+            times: times,
+            updated_at: updated_at,
+            updated_by: updated_by,
+            word: word);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Gwords_pk_columns_input extends Gwords_pk_columns_input {
+  @override
+  final Guuid id;
+
+  factory _$Gwords_pk_columns_input(
+          [void Function(Gwords_pk_columns_inputBuilder)? updates]) =>
+      (new Gwords_pk_columns_inputBuilder()..update(updates))._build();
+
+  _$Gwords_pk_columns_input._({required this.id}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(id, r'Gwords_pk_columns_input', 'id');
+  }
+
+  @override
+  Gwords_pk_columns_input rebuild(
+          void Function(Gwords_pk_columns_inputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Gwords_pk_columns_inputBuilder toBuilder() =>
+      new Gwords_pk_columns_inputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Gwords_pk_columns_input && id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, id.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Gwords_pk_columns_input')
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class Gwords_pk_columns_inputBuilder
+    implements
+        Builder<Gwords_pk_columns_input, Gwords_pk_columns_inputBuilder> {
+  _$Gwords_pk_columns_input? _$v;
+
+  GuuidBuilder? _id;
+  GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
+  set id(GuuidBuilder? id) => _$this._id = id;
+
+  Gwords_pk_columns_inputBuilder();
+
+  Gwords_pk_columns_inputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Gwords_pk_columns_input other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Gwords_pk_columns_input;
+  }
+
+  @override
+  void update(void Function(Gwords_pk_columns_inputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Gwords_pk_columns_input build() => _build();
+
+  _$Gwords_pk_columns_input _build() {
+    _$Gwords_pk_columns_input _$result;
+    try {
+      _$result = _$v ?? new _$Gwords_pk_columns_input._(id: id.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'id';
+        id.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Gwords_pk_columns_input', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Gwords_set_input extends Gwords_set_input {
+  @override
+  final Gtimestamptz? created_at;
+  @override
+  final Guuid? created_by;
+  @override
+  final Gtimestamptz? deleted_at;
+  @override
+  final bool? done;
+  @override
+  final Guuid? id;
+  @override
+  final int? times;
+  @override
+  final Gtimestamptz? updated_at;
+  @override
+  final Guuid? updated_by;
+  @override
+  final String? word;
+
+  factory _$Gwords_set_input(
+          [void Function(Gwords_set_inputBuilder)? updates]) =>
+      (new Gwords_set_inputBuilder()..update(updates))._build();
+
+  _$Gwords_set_input._(
+      {this.created_at,
+      this.created_by,
+      this.deleted_at,
+      this.done,
+      this.id,
+      this.times,
+      this.updated_at,
+      this.updated_by,
+      this.word})
+      : super._();
+
+  @override
+  Gwords_set_input rebuild(void Function(Gwords_set_inputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Gwords_set_inputBuilder toBuilder() =>
+      new Gwords_set_inputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Gwords_set_input &&
+        created_at == other.created_at &&
+        created_by == other.created_by &&
+        deleted_at == other.deleted_at &&
+        done == other.done &&
+        id == other.id &&
+        times == other.times &&
+        updated_at == other.updated_at &&
+        updated_by == other.updated_by &&
+        word == other.word;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc($jc(0, created_at.hashCode),
+                                    created_by.hashCode),
+                                deleted_at.hashCode),
+                            done.hashCode),
+                        id.hashCode),
+                    times.hashCode),
+                updated_at.hashCode),
+            updated_by.hashCode),
+        word.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Gwords_set_input')
+          ..add('created_at', created_at)
+          ..add('created_by', created_by)
+          ..add('deleted_at', deleted_at)
+          ..add('done', done)
+          ..add('id', id)
+          ..add('times', times)
+          ..add('updated_at', updated_at)
+          ..add('updated_by', updated_by)
+          ..add('word', word))
+        .toString();
+  }
+}
+
+class Gwords_set_inputBuilder
+    implements Builder<Gwords_set_input, Gwords_set_inputBuilder> {
+  _$Gwords_set_input? _$v;
+
+  GtimestamptzBuilder? _created_at;
+  GtimestamptzBuilder get created_at =>
+      _$this._created_at ??= new GtimestamptzBuilder();
+  set created_at(GtimestamptzBuilder? created_at) =>
+      _$this._created_at = created_at;
+
+  GuuidBuilder? _created_by;
+  GuuidBuilder get created_by => _$this._created_by ??= new GuuidBuilder();
+  set created_by(GuuidBuilder? created_by) => _$this._created_by = created_by;
+
+  GtimestamptzBuilder? _deleted_at;
+  GtimestamptzBuilder get deleted_at =>
+      _$this._deleted_at ??= new GtimestamptzBuilder();
+  set deleted_at(GtimestamptzBuilder? deleted_at) =>
+      _$this._deleted_at = deleted_at;
+
+  bool? _done;
+  bool? get done => _$this._done;
+  set done(bool? done) => _$this._done = done;
+
+  GuuidBuilder? _id;
+  GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
+  set id(GuuidBuilder? id) => _$this._id = id;
+
+  int? _times;
+  int? get times => _$this._times;
+  set times(int? times) => _$this._times = times;
+
+  GtimestamptzBuilder? _updated_at;
+  GtimestamptzBuilder get updated_at =>
+      _$this._updated_at ??= new GtimestamptzBuilder();
+  set updated_at(GtimestamptzBuilder? updated_at) =>
+      _$this._updated_at = updated_at;
+
+  GuuidBuilder? _updated_by;
+  GuuidBuilder get updated_by => _$this._updated_by ??= new GuuidBuilder();
+  set updated_by(GuuidBuilder? updated_by) => _$this._updated_by = updated_by;
+
+  String? _word;
+  String? get word => _$this._word;
+  set word(String? word) => _$this._word = word;
+
+  Gwords_set_inputBuilder();
+
+  Gwords_set_inputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _created_at = $v.created_at?.toBuilder();
+      _created_by = $v.created_by?.toBuilder();
+      _deleted_at = $v.deleted_at?.toBuilder();
+      _done = $v.done;
+      _id = $v.id?.toBuilder();
+      _times = $v.times;
+      _updated_at = $v.updated_at?.toBuilder();
+      _updated_by = $v.updated_by?.toBuilder();
+      _word = $v.word;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Gwords_set_input other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Gwords_set_input;
+  }
+
+  @override
+  void update(void Function(Gwords_set_inputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Gwords_set_input build() => _build();
+
+  _$Gwords_set_input _build() {
+    _$Gwords_set_input _$result;
+    try {
+      _$result = _$v ??
+          new _$Gwords_set_input._(
+              created_at: _created_at?.build(),
+              created_by: _created_by?.build(),
+              deleted_at: _deleted_at?.build(),
+              done: done,
+              id: _id?.build(),
+              times: times,
+              updated_at: _updated_at?.build(),
+              updated_by: _updated_by?.build(),
+              word: word);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'created_at';
+        _created_at?.build();
+        _$failedField = 'created_by';
+        _created_by?.build();
+        _$failedField = 'deleted_at';
+        _deleted_at?.build();
+
+        _$failedField = 'id';
+        _id?.build();
+
+        _$failedField = 'updated_at';
+        _updated_at?.build();
+        _$failedField = 'updated_by';
+        _updated_by?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Gwords_set_input', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Gwords_stream_cursor_input extends Gwords_stream_cursor_input {
+  @override
+  final Gwords_stream_cursor_value_input initial_value;
+  @override
+  final Gcursor_ordering? ordering;
+
+  factory _$Gwords_stream_cursor_input(
+          [void Function(Gwords_stream_cursor_inputBuilder)? updates]) =>
+      (new Gwords_stream_cursor_inputBuilder()..update(updates))._build();
+
+  _$Gwords_stream_cursor_input._({required this.initial_value, this.ordering})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        initial_value, r'Gwords_stream_cursor_input', 'initial_value');
+  }
+
+  @override
+  Gwords_stream_cursor_input rebuild(
+          void Function(Gwords_stream_cursor_inputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Gwords_stream_cursor_inputBuilder toBuilder() =>
+      new Gwords_stream_cursor_inputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Gwords_stream_cursor_input &&
+        initial_value == other.initial_value &&
+        ordering == other.ordering;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, initial_value.hashCode), ordering.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Gwords_stream_cursor_input')
+          ..add('initial_value', initial_value)
+          ..add('ordering', ordering))
+        .toString();
+  }
+}
+
+class Gwords_stream_cursor_inputBuilder
+    implements
+        Builder<Gwords_stream_cursor_input, Gwords_stream_cursor_inputBuilder> {
+  _$Gwords_stream_cursor_input? _$v;
+
+  Gwords_stream_cursor_value_inputBuilder? _initial_value;
+  Gwords_stream_cursor_value_inputBuilder get initial_value =>
+      _$this._initial_value ??= new Gwords_stream_cursor_value_inputBuilder();
+  set initial_value(Gwords_stream_cursor_value_inputBuilder? initial_value) =>
+      _$this._initial_value = initial_value;
+
+  Gcursor_ordering? _ordering;
+  Gcursor_ordering? get ordering => _$this._ordering;
+  set ordering(Gcursor_ordering? ordering) => _$this._ordering = ordering;
+
+  Gwords_stream_cursor_inputBuilder();
+
+  Gwords_stream_cursor_inputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _initial_value = $v.initial_value.toBuilder();
+      _ordering = $v.ordering;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Gwords_stream_cursor_input other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Gwords_stream_cursor_input;
+  }
+
+  @override
+  void update(void Function(Gwords_stream_cursor_inputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Gwords_stream_cursor_input build() => _build();
+
+  _$Gwords_stream_cursor_input _build() {
+    _$Gwords_stream_cursor_input _$result;
+    try {
+      _$result = _$v ??
+          new _$Gwords_stream_cursor_input._(
+              initial_value: initial_value.build(), ordering: ordering);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'initial_value';
+        initial_value.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Gwords_stream_cursor_input', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Gwords_stream_cursor_value_input
+    extends Gwords_stream_cursor_value_input {
+  @override
+  final Gtimestamptz? created_at;
+  @override
+  final Guuid? created_by;
+  @override
+  final Gtimestamptz? deleted_at;
+  @override
+  final bool? done;
+  @override
+  final Guuid? id;
+  @override
+  final int? times;
+  @override
+  final Gtimestamptz? updated_at;
+  @override
+  final Guuid? updated_by;
+  @override
+  final String? word;
+
+  factory _$Gwords_stream_cursor_value_input(
+          [void Function(Gwords_stream_cursor_value_inputBuilder)? updates]) =>
+      (new Gwords_stream_cursor_value_inputBuilder()..update(updates))._build();
+
+  _$Gwords_stream_cursor_value_input._(
+      {this.created_at,
+      this.created_by,
+      this.deleted_at,
+      this.done,
+      this.id,
+      this.times,
+      this.updated_at,
+      this.updated_by,
+      this.word})
+      : super._();
+
+  @override
+  Gwords_stream_cursor_value_input rebuild(
+          void Function(Gwords_stream_cursor_value_inputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Gwords_stream_cursor_value_inputBuilder toBuilder() =>
+      new Gwords_stream_cursor_value_inputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Gwords_stream_cursor_value_input &&
+        created_at == other.created_at &&
+        created_by == other.created_by &&
+        deleted_at == other.deleted_at &&
+        done == other.done &&
+        id == other.id &&
+        times == other.times &&
+        updated_at == other.updated_at &&
+        updated_by == other.updated_by &&
+        word == other.word;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc($jc(0, created_at.hashCode),
+                                    created_by.hashCode),
+                                deleted_at.hashCode),
+                            done.hashCode),
+                        id.hashCode),
+                    times.hashCode),
+                updated_at.hashCode),
+            updated_by.hashCode),
+        word.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Gwords_stream_cursor_value_input')
+          ..add('created_at', created_at)
+          ..add('created_by', created_by)
+          ..add('deleted_at', deleted_at)
+          ..add('done', done)
+          ..add('id', id)
+          ..add('times', times)
+          ..add('updated_at', updated_at)
+          ..add('updated_by', updated_by)
+          ..add('word', word))
+        .toString();
+  }
+}
+
+class Gwords_stream_cursor_value_inputBuilder
+    implements
+        Builder<Gwords_stream_cursor_value_input,
+            Gwords_stream_cursor_value_inputBuilder> {
+  _$Gwords_stream_cursor_value_input? _$v;
+
+  GtimestamptzBuilder? _created_at;
+  GtimestamptzBuilder get created_at =>
+      _$this._created_at ??= new GtimestamptzBuilder();
+  set created_at(GtimestamptzBuilder? created_at) =>
+      _$this._created_at = created_at;
+
+  GuuidBuilder? _created_by;
+  GuuidBuilder get created_by => _$this._created_by ??= new GuuidBuilder();
+  set created_by(GuuidBuilder? created_by) => _$this._created_by = created_by;
+
+  GtimestamptzBuilder? _deleted_at;
+  GtimestamptzBuilder get deleted_at =>
+      _$this._deleted_at ??= new GtimestamptzBuilder();
+  set deleted_at(GtimestamptzBuilder? deleted_at) =>
+      _$this._deleted_at = deleted_at;
+
+  bool? _done;
+  bool? get done => _$this._done;
+  set done(bool? done) => _$this._done = done;
+
+  GuuidBuilder? _id;
+  GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
+  set id(GuuidBuilder? id) => _$this._id = id;
+
+  int? _times;
+  int? get times => _$this._times;
+  set times(int? times) => _$this._times = times;
+
+  GtimestamptzBuilder? _updated_at;
+  GtimestamptzBuilder get updated_at =>
+      _$this._updated_at ??= new GtimestamptzBuilder();
+  set updated_at(GtimestamptzBuilder? updated_at) =>
+      _$this._updated_at = updated_at;
+
+  GuuidBuilder? _updated_by;
+  GuuidBuilder get updated_by => _$this._updated_by ??= new GuuidBuilder();
+  set updated_by(GuuidBuilder? updated_by) => _$this._updated_by = updated_by;
+
+  String? _word;
+  String? get word => _$this._word;
+  set word(String? word) => _$this._word = word;
+
+  Gwords_stream_cursor_value_inputBuilder();
+
+  Gwords_stream_cursor_value_inputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _created_at = $v.created_at?.toBuilder();
+      _created_by = $v.created_by?.toBuilder();
+      _deleted_at = $v.deleted_at?.toBuilder();
+      _done = $v.done;
+      _id = $v.id?.toBuilder();
+      _times = $v.times;
+      _updated_at = $v.updated_at?.toBuilder();
+      _updated_by = $v.updated_by?.toBuilder();
+      _word = $v.word;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Gwords_stream_cursor_value_input other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Gwords_stream_cursor_value_input;
+  }
+
+  @override
+  void update(void Function(Gwords_stream_cursor_value_inputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Gwords_stream_cursor_value_input build() => _build();
+
+  _$Gwords_stream_cursor_value_input _build() {
+    _$Gwords_stream_cursor_value_input _$result;
+    try {
+      _$result = _$v ??
+          new _$Gwords_stream_cursor_value_input._(
+              created_at: _created_at?.build(),
+              created_by: _created_by?.build(),
+              deleted_at: _deleted_at?.build(),
+              done: done,
+              id: _id?.build(),
+              times: times,
+              updated_at: _updated_at?.build(),
+              updated_by: _updated_by?.build(),
+              word: word);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'created_at';
+        _created_at?.build();
+        _$failedField = 'created_by';
+        _created_by?.build();
+        _$failedField = 'deleted_at';
+        _deleted_at?.build();
+
+        _$failedField = 'id';
+        _id?.build();
+
+        _$failedField = 'updated_at';
+        _updated_at?.build();
+        _$failedField = 'updated_by';
+        _updated_by?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Gwords_stream_cursor_value_input', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Gwords_updates extends Gwords_updates {
+  @override
+  final Gwords_inc_input? G_inc;
+  @override
+  final Gwords_set_input? G_set;
+  @override
+  final Gwords_bool_exp where;
+
+  factory _$Gwords_updates([void Function(Gwords_updatesBuilder)? updates]) =>
+      (new Gwords_updatesBuilder()..update(updates))._build();
+
+  _$Gwords_updates._({this.G_inc, this.G_set, required this.where})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(where, r'Gwords_updates', 'where');
+  }
+
+  @override
+  Gwords_updates rebuild(void Function(Gwords_updatesBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Gwords_updatesBuilder toBuilder() =>
+      new Gwords_updatesBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Gwords_updates &&
+        G_inc == other.G_inc &&
+        G_set == other.G_set &&
+        where == other.where;
+  }
+
+  @override
+  int get hashCode {
+    return $jf(
+        $jc($jc($jc(0, G_inc.hashCode), G_set.hashCode), where.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Gwords_updates')
+          ..add('G_inc', G_inc)
+          ..add('G_set', G_set)
+          ..add('where', where))
+        .toString();
+  }
+}
+
+class Gwords_updatesBuilder
+    implements Builder<Gwords_updates, Gwords_updatesBuilder> {
+  _$Gwords_updates? _$v;
+
+  Gwords_inc_inputBuilder? _G_inc;
+  Gwords_inc_inputBuilder get G_inc =>
+      _$this._G_inc ??= new Gwords_inc_inputBuilder();
+  set G_inc(Gwords_inc_inputBuilder? G_inc) => _$this._G_inc = G_inc;
+
+  Gwords_set_inputBuilder? _G_set;
+  Gwords_set_inputBuilder get G_set =>
+      _$this._G_set ??= new Gwords_set_inputBuilder();
+  set G_set(Gwords_set_inputBuilder? G_set) => _$this._G_set = G_set;
+
+  Gwords_bool_expBuilder? _where;
+  Gwords_bool_expBuilder get where =>
+      _$this._where ??= new Gwords_bool_expBuilder();
+  set where(Gwords_bool_expBuilder? where) => _$this._where = where;
+
+  Gwords_updatesBuilder();
+
+  Gwords_updatesBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G_inc = $v.G_inc?.toBuilder();
+      _G_set = $v.G_set?.toBuilder();
+      _where = $v.where.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Gwords_updates other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Gwords_updates;
+  }
+
+  @override
+  void update(void Function(Gwords_updatesBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Gwords_updates build() => _build();
+
+  _$Gwords_updates _build() {
+    _$Gwords_updates _$result;
+    try {
+      _$result = _$v ??
+          new _$Gwords_updates._(
+              G_inc: _G_inc?.build(),
+              G_set: _G_set?.build(),
+              where: where.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'G_inc';
+        _G_inc?.build();
+        _$failedField = 'G_set';
+        _G_set?.build();
+        _$failedField = 'where';
+        where.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Gwords_updates', _$failedField, e.toString());
       }
       rethrow;
     }

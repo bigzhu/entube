@@ -1,9 +1,9 @@
+import 'package:entube/components/LogoLoading.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import './provider.dart';
 import './model.dart';
-import '../../components/logo_loading.dart';
 import '../../components/word/index.dart';
 
 class AcquiringWordsListView extends HookConsumerWidget {

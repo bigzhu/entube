@@ -6,7 +6,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/json_object.dart' as _i2;
 import 'package:built_value/serializer.dart';
-import 'package:entube/graphql/serializers.gql.dart' as _i1;
+import 'package:entube/graphql/g/serializers.gql.dart' as _i1;
 import 'package:gql_code_builder/src/serializers/default_scalar_serializer.dart'
     as _i3;
 
@@ -6731,6 +6731,345 @@ abstract class Guuid_comparison_exp
   static Guuid_comparison_exp? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         Guuid_comparison_exp.serializer,
+        json,
+      );
+}
+
+abstract class Gwords_bool_exp
+    implements Built<Gwords_bool_exp, Gwords_bool_expBuilder> {
+  Gwords_bool_exp._();
+
+  factory Gwords_bool_exp([Function(Gwords_bool_expBuilder b) updates]) =
+      _$Gwords_bool_exp;
+
+  @BuiltValueField(wireName: '_and')
+  BuiltList<Gwords_bool_exp>? get G_and;
+  @BuiltValueField(wireName: '_not')
+  Gwords_bool_exp? get G_not;
+  @BuiltValueField(wireName: '_or')
+  BuiltList<Gwords_bool_exp>? get G_or;
+  Gtimestamptz_comparison_exp? get created_at;
+  Guuid_comparison_exp? get created_by;
+  Gtimestamptz_comparison_exp? get deleted_at;
+  GBoolean_comparison_exp? get done;
+  Guuid_comparison_exp? get id;
+  GInt_comparison_exp? get times;
+  Gtimestamptz_comparison_exp? get updated_at;
+  Guuid_comparison_exp? get updated_by;
+  GString_comparison_exp? get word;
+  static Serializer<Gwords_bool_exp> get serializer =>
+      _$gwordsBoolExpSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Gwords_bool_exp.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Gwords_bool_exp? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Gwords_bool_exp.serializer,
+        json,
+      );
+}
+
+class Gwords_constraint extends EnumClass {
+  const Gwords_constraint._(String name) : super(name);
+
+  static const Gwords_constraint words_pkey = _$gwordsConstraintwords_pkey;
+
+  static Serializer<Gwords_constraint> get serializer =>
+      _$gwordsConstraintSerializer;
+  static BuiltSet<Gwords_constraint> get values => _$gwordsConstraintValues;
+  static Gwords_constraint valueOf(String name) =>
+      _$gwordsConstraintValueOf(name);
+}
+
+abstract class Gwords_inc_input
+    implements Built<Gwords_inc_input, Gwords_inc_inputBuilder> {
+  Gwords_inc_input._();
+
+  factory Gwords_inc_input([Function(Gwords_inc_inputBuilder b) updates]) =
+      _$Gwords_inc_input;
+
+  int? get times;
+  static Serializer<Gwords_inc_input> get serializer =>
+      _$gwordsIncInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Gwords_inc_input.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Gwords_inc_input? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Gwords_inc_input.serializer,
+        json,
+      );
+}
+
+abstract class Gwords_insert_input
+    implements Built<Gwords_insert_input, Gwords_insert_inputBuilder> {
+  Gwords_insert_input._();
+
+  factory Gwords_insert_input(
+      [Function(Gwords_insert_inputBuilder b) updates]) = _$Gwords_insert_input;
+
+  Gtimestamptz? get created_at;
+  Guuid? get created_by;
+  Gtimestamptz? get deleted_at;
+  bool? get done;
+  Guuid? get id;
+  int? get times;
+  Gtimestamptz? get updated_at;
+  Guuid? get updated_by;
+  String? get word;
+  static Serializer<Gwords_insert_input> get serializer =>
+      _$gwordsInsertInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Gwords_insert_input.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Gwords_insert_input? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Gwords_insert_input.serializer,
+        json,
+      );
+}
+
+abstract class Gwords_on_conflict
+    implements Built<Gwords_on_conflict, Gwords_on_conflictBuilder> {
+  Gwords_on_conflict._();
+
+  factory Gwords_on_conflict([Function(Gwords_on_conflictBuilder b) updates]) =
+      _$Gwords_on_conflict;
+
+  Gwords_constraint get constraint;
+  BuiltList<Gwords_update_column> get update_columns;
+  Gwords_bool_exp? get where;
+  static Serializer<Gwords_on_conflict> get serializer =>
+      _$gwordsOnConflictSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Gwords_on_conflict.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Gwords_on_conflict? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Gwords_on_conflict.serializer,
+        json,
+      );
+}
+
+abstract class Gwords_order_by
+    implements Built<Gwords_order_by, Gwords_order_byBuilder> {
+  Gwords_order_by._();
+
+  factory Gwords_order_by([Function(Gwords_order_byBuilder b) updates]) =
+      _$Gwords_order_by;
+
+  Gorder_by? get created_at;
+  Gorder_by? get created_by;
+  Gorder_by? get deleted_at;
+  Gorder_by? get done;
+  Gorder_by? get id;
+  Gorder_by? get times;
+  Gorder_by? get updated_at;
+  Gorder_by? get updated_by;
+  Gorder_by? get word;
+  static Serializer<Gwords_order_by> get serializer =>
+      _$gwordsOrderBySerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Gwords_order_by.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Gwords_order_by? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Gwords_order_by.serializer,
+        json,
+      );
+}
+
+abstract class Gwords_pk_columns_input
+    implements Built<Gwords_pk_columns_input, Gwords_pk_columns_inputBuilder> {
+  Gwords_pk_columns_input._();
+
+  factory Gwords_pk_columns_input(
+          [Function(Gwords_pk_columns_inputBuilder b) updates]) =
+      _$Gwords_pk_columns_input;
+
+  Guuid get id;
+  static Serializer<Gwords_pk_columns_input> get serializer =>
+      _$gwordsPkColumnsInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Gwords_pk_columns_input.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Gwords_pk_columns_input? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Gwords_pk_columns_input.serializer,
+        json,
+      );
+}
+
+class Gwords_select_column extends EnumClass {
+  const Gwords_select_column._(String name) : super(name);
+
+  static const Gwords_select_column created_at = _$gwordsSelectColumncreated_at;
+
+  static const Gwords_select_column created_by = _$gwordsSelectColumncreated_by;
+
+  static const Gwords_select_column deleted_at = _$gwordsSelectColumndeleted_at;
+
+  static const Gwords_select_column done = _$gwordsSelectColumndone;
+
+  static const Gwords_select_column id = _$gwordsSelectColumnid;
+
+  static const Gwords_select_column times = _$gwordsSelectColumntimes;
+
+  static const Gwords_select_column updated_at = _$gwordsSelectColumnupdated_at;
+
+  static const Gwords_select_column updated_by = _$gwordsSelectColumnupdated_by;
+
+  static const Gwords_select_column word = _$gwordsSelectColumnword;
+
+  static Serializer<Gwords_select_column> get serializer =>
+      _$gwordsSelectColumnSerializer;
+  static BuiltSet<Gwords_select_column> get values =>
+      _$gwordsSelectColumnValues;
+  static Gwords_select_column valueOf(String name) =>
+      _$gwordsSelectColumnValueOf(name);
+}
+
+abstract class Gwords_set_input
+    implements Built<Gwords_set_input, Gwords_set_inputBuilder> {
+  Gwords_set_input._();
+
+  factory Gwords_set_input([Function(Gwords_set_inputBuilder b) updates]) =
+      _$Gwords_set_input;
+
+  Gtimestamptz? get created_at;
+  Guuid? get created_by;
+  Gtimestamptz? get deleted_at;
+  bool? get done;
+  Guuid? get id;
+  int? get times;
+  Gtimestamptz? get updated_at;
+  Guuid? get updated_by;
+  String? get word;
+  static Serializer<Gwords_set_input> get serializer =>
+      _$gwordsSetInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Gwords_set_input.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Gwords_set_input? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Gwords_set_input.serializer,
+        json,
+      );
+}
+
+abstract class Gwords_stream_cursor_input
+    implements
+        Built<Gwords_stream_cursor_input, Gwords_stream_cursor_inputBuilder> {
+  Gwords_stream_cursor_input._();
+
+  factory Gwords_stream_cursor_input(
+          [Function(Gwords_stream_cursor_inputBuilder b) updates]) =
+      _$Gwords_stream_cursor_input;
+
+  Gwords_stream_cursor_value_input get initial_value;
+  Gcursor_ordering? get ordering;
+  static Serializer<Gwords_stream_cursor_input> get serializer =>
+      _$gwordsStreamCursorInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Gwords_stream_cursor_input.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Gwords_stream_cursor_input? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Gwords_stream_cursor_input.serializer,
+        json,
+      );
+}
+
+abstract class Gwords_stream_cursor_value_input
+    implements
+        Built<Gwords_stream_cursor_value_input,
+            Gwords_stream_cursor_value_inputBuilder> {
+  Gwords_stream_cursor_value_input._();
+
+  factory Gwords_stream_cursor_value_input(
+          [Function(Gwords_stream_cursor_value_inputBuilder b) updates]) =
+      _$Gwords_stream_cursor_value_input;
+
+  Gtimestamptz? get created_at;
+  Guuid? get created_by;
+  Gtimestamptz? get deleted_at;
+  bool? get done;
+  Guuid? get id;
+  int? get times;
+  Gtimestamptz? get updated_at;
+  Guuid? get updated_by;
+  String? get word;
+  static Serializer<Gwords_stream_cursor_value_input> get serializer =>
+      _$gwordsStreamCursorValueInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Gwords_stream_cursor_value_input.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Gwords_stream_cursor_value_input? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Gwords_stream_cursor_value_input.serializer,
+        json,
+      );
+}
+
+class Gwords_update_column extends EnumClass {
+  const Gwords_update_column._(String name) : super(name);
+
+  static const Gwords_update_column created_at = _$gwordsUpdateColumncreated_at;
+
+  static const Gwords_update_column created_by = _$gwordsUpdateColumncreated_by;
+
+  static const Gwords_update_column deleted_at = _$gwordsUpdateColumndeleted_at;
+
+  static const Gwords_update_column done = _$gwordsUpdateColumndone;
+
+  static const Gwords_update_column id = _$gwordsUpdateColumnid;
+
+  static const Gwords_update_column times = _$gwordsUpdateColumntimes;
+
+  static const Gwords_update_column updated_at = _$gwordsUpdateColumnupdated_at;
+
+  static const Gwords_update_column updated_by = _$gwordsUpdateColumnupdated_by;
+
+  static const Gwords_update_column word = _$gwordsUpdateColumnword;
+
+  static Serializer<Gwords_update_column> get serializer =>
+      _$gwordsUpdateColumnSerializer;
+  static BuiltSet<Gwords_update_column> get values =>
+      _$gwordsUpdateColumnValues;
+  static Gwords_update_column valueOf(String name) =>
+      _$gwordsUpdateColumnValueOf(name);
+}
+
+abstract class Gwords_updates
+    implements Built<Gwords_updates, Gwords_updatesBuilder> {
+  Gwords_updates._();
+
+  factory Gwords_updates([Function(Gwords_updatesBuilder b) updates]) =
+      _$Gwords_updates;
+
+  @BuiltValueField(wireName: '_inc')
+  Gwords_inc_input? get G_inc;
+  @BuiltValueField(wireName: '_set')
+  Gwords_set_input? get G_set;
+  Gwords_bool_exp get where;
+  static Serializer<Gwords_updates> get serializer => _$gwordsUpdatesSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Gwords_updates.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Gwords_updates? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Gwords_updates.serializer,
         json,
       );
 }

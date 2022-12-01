@@ -5,19 +5,25 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart' show StandardJsonPlugin;
-import 'package:entube/components/Article/services.data.gql.dart'
+import 'package:entube/components/AcquiringWords/g/services.data.gql.dart'
+    show GAcquiringWordsData, GAcquiringWordsData_words;
+import 'package:entube/components/AcquiringWords/g/services.req.gql.dart'
+    show GAcquiringWordsReq;
+import 'package:entube/components/AcquiringWords/g/services.var.gql.dart'
+    show GAcquiringWordsVars;
+import 'package:entube/components/Article/g/services.data.gql.dart'
     show GSentencesData, GSentencesData_articles;
-import 'package:entube/components/Article/services.req.gql.dart'
+import 'package:entube/components/Article/g/services.req.gql.dart'
     show GSentencesReq;
-import 'package:entube/components/Article/services.var.gql.dart'
+import 'package:entube/components/Article/g/services.var.gql.dart'
     show GSentencesVars;
-import 'package:entube/components/ArticleItems/services.data.gql.dart'
+import 'package:entube/components/ArticleItems/g/services.data.gql.dart'
     show GArticleItemsData, GArticleItemsData_articles;
-import 'package:entube/components/ArticleItems/services.req.gql.dart'
+import 'package:entube/components/ArticleItems/g/services.req.gql.dart'
     show GArticleItemsReq;
-import 'package:entube/components/ArticleItems/services.var.gql.dart'
+import 'package:entube/components/ArticleItems/g/services.var.gql.dart'
     show GArticleItemsVars;
-import 'package:entube/graphql/schema.schema.gql.dart'
+import 'package:entube/graphql/g/schema.schema.gql.dart'
     show
         GBoolean_comparison_exp,
         GInt_comparison_exp,
@@ -262,7 +268,20 @@ import 'package:entube/graphql/schema.schema.gql.dart'
         Gusers_update_column,
         Gusers_updates,
         Guuid,
-        Guuid_comparison_exp;
+        Guuid_comparison_exp,
+        Gwords_bool_exp,
+        Gwords_constraint,
+        Gwords_inc_input,
+        Gwords_insert_input,
+        Gwords_on_conflict,
+        Gwords_order_by,
+        Gwords_pk_columns_input,
+        Gwords_select_column,
+        Gwords_set_input,
+        Gwords_stream_cursor_input,
+        Gwords_stream_cursor_value_input,
+        Gwords_update_column,
+        Gwords_updates;
 import 'package:ferry_exec/ferry_exec.dart';
 import 'package:gql_code_builder/src/serializers/operation_serializer.dart'
     show OperationSerializer;
@@ -273,6 +292,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   ..add(OperationSerializer())
   ..addPlugin(StandardJsonPlugin());
 @SerializersFor([
+  GAcquiringWordsData,
+  GAcquiringWordsData_words,
+  GAcquiringWordsReq,
+  GAcquiringWordsVars,
   GArticleItemsData,
   GArticleItemsData_articles,
   GArticleItemsReq,
@@ -525,5 +548,18 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   Gusers_updates,
   Guuid,
   Guuid_comparison_exp,
+  Gwords_bool_exp,
+  Gwords_constraint,
+  Gwords_inc_input,
+  Gwords_insert_input,
+  Gwords_on_conflict,
+  Gwords_order_by,
+  Gwords_pk_columns_input,
+  Gwords_select_column,
+  Gwords_set_input,
+  Gwords_stream_cursor_input,
+  Gwords_stream_cursor_value_input,
+  Gwords_update_column,
+  Gwords_updates,
 ])
 final Serializers serializers = _serializersBuilder.build();
