@@ -1,11 +1,11 @@
-import 'package:entube/components/Article/services.data.gql.dart';
-import 'package:entube/components/Article/services.var.gql.dart';
-import 'package:entube/graphql/schema.schema.gql.dart';
+import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:entube/state.dart';
 import 'package:ferry/ferry.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import './services.req.gql.dart';
+import 'g/services.data.gql.dart';
+import 'g/services.req.gql.dart';
+import 'g/services.var.gql.dart';
 
 final sentencesP = Provider.family<
     Stream<OperationResponse<GSentencesData, GSentencesVars>>,
@@ -14,4 +14,3 @@ final sentencesP = Provider.family<
   final client = ref.watch(gqlClientP);
   return client.request(articlesReq);
 });
-

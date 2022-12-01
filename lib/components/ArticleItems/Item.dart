@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import './ItemCard.dart';
-import './services.data.gql.dart';
+import 'ItemCard.dart';
+import 'g/services.data.gql.dart';
 
 class Item extends HookConsumerWidget {
   const Item({Key? key, required this.article, this.loading}) : super(key: key);

@@ -1,4 +1,4 @@
-import 'package:entube/graphql/schema.schema.gql.dart' show possibleTypesMap;
+import 'package:entube/graphql/g/schema.schema.gql.dart' show possibleTypesMap;
 import 'package:ferry/ferry.dart';
 import 'package:ferry_hive_store/ferry_hive_store.dart';
 //import 'package:gql_http_link/gql_http_link.dart';

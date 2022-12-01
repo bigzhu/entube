@@ -8,7 +8,7 @@ import 'package:built_collection/built_collection.dart';
 import './Item.dart';
 //import './Loading.dart';
 import './state.dart';
-import 'services.data.gql.dart';
+import 'g/services.data.gql.dart';
 
 class Items extends HookConsumerWidget {
   const Items({Key? key}) : super(key: key);

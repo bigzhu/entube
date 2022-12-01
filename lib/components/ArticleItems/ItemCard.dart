@@ -1,7 +1,7 @@
-import 'package:entube/components/ArticleItems/services.data.gql.dart';
+import 'package:entube/components/ArticleItems/g/services.data.gql.dart';
 import 'package:flutter/material.dart';
-import './ItemBar.dart';
-import './Thumbnail.dart';
+import 'ItemBar.dart';
+import 'Thumbnail.dart';
 
 class ItemCard extends StatelessWidget {
   const ItemCard({Key? key, required this.article, this.percent, this.loading})
