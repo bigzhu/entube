@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:language_picker/languages.dart';
@@ -39,10 +41,11 @@ final wordWiseLanguageStateNotifierProvider =
   //用上面这个会炸, 不知道是 flutter 哪里的 bug
   Language language;
   int index = languages.indexWhere((v) => v.isoCode == isoCode);
-  if (index == -1)
+  if (index == -1) {
     language = Language('zh-cn', 'Chinese (Simplified)');
-  else
+  } else {
     language = languages[index];
+  }
   return WordWiseLanguageStateNotifier(language);
 });
 
@@ -166,18 +169,16 @@ final countryEmojiProvider =
   List<String> countryCodes =
       ref.watch(languageCodeToCountryCodesProvider(languageCode));
   String emoji = '';
-  countryCodes.forEach((v) {
+  for (var v in countryCodes) {
     int flagOffset = 0x1F1E6;
     int asciiOffset = 0x41;
 
     int firstChar = v.codeUnitAt(0) - asciiOffset + flagOffset;
     int secondChar = v.codeUnitAt(1) - asciiOffset + flagOffset;
 
-    emoji = emoji +
-        " " +
-        String.fromCharCode(firstChar) +
-        String.fromCharCode(secondChar);
-  });
+    emoji =
+        "$emoji ${String.fromCharCode(firstChar)}${String.fromCharCode(secondChar)}";
+  }
 
   return emoji;
 });

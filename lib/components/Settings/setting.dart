@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import './provider.dart';
+import './state.dart';
 
 class Setting extends HookConsumerWidget {
-  const Setting({Key? key, this.title, this.desc, this.settingKey, this.icon})
+  const Setting(
+      {Key? key,
+      required this.title,
+      required this.desc,
+      required this.settingKey,
+      required this.icon})
       : super(key: key);
-  final title;
-  final desc;
-  final settingKey;
-  final icon;
+  final String title;
+  final String desc;
+  final String settingKey;
+  final IconData icon;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Card(
