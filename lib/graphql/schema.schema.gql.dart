@@ -5346,6 +5346,379 @@ abstract class Gtimestamptz_comparison_exp
       );
 }
 
+abstract class Guser_articles_bool_exp
+    implements Built<Guser_articles_bool_exp, Guser_articles_bool_expBuilder> {
+  Guser_articles_bool_exp._();
+
+  factory Guser_articles_bool_exp(
+          [Function(Guser_articles_bool_expBuilder b) updates]) =
+      _$Guser_articles_bool_exp;
+
+  @BuiltValueField(wireName: '_and')
+  BuiltList<Guser_articles_bool_exp>? get G_and;
+  @BuiltValueField(wireName: '_not')
+  Guser_articles_bool_exp? get G_not;
+  @BuiltValueField(wireName: '_or')
+  BuiltList<Guser_articles_bool_exp>? get G_or;
+  Guuid_comparison_exp? get article_id;
+  Gtimestamptz_comparison_exp? get created_at;
+  Guuid_comparison_exp? get created_by;
+  Gtimestamptz_comparison_exp? get deleted_at;
+  Guuid_comparison_exp? get id;
+  GInt_comparison_exp? get play_at;
+  Gtimestamptz_comparison_exp? get updated_at;
+  Guuid_comparison_exp? get updated_by;
+  Guuid_comparison_exp? get user_id;
+  static Serializer<Guser_articles_bool_exp> get serializer =>
+      _$guserArticlesBoolExpSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_bool_exp.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_bool_exp? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_bool_exp.serializer,
+        json,
+      );
+}
+
+class Guser_articles_constraint extends EnumClass {
+  const Guser_articles_constraint._(String name) : super(name);
+
+  static const Guser_articles_constraint user_articles_pkey =
+      _$guserArticlesConstraintuser_articles_pkey;
+
+  static Serializer<Guser_articles_constraint> get serializer =>
+      _$guserArticlesConstraintSerializer;
+  static BuiltSet<Guser_articles_constraint> get values =>
+      _$guserArticlesConstraintValues;
+  static Guser_articles_constraint valueOf(String name) =>
+      _$guserArticlesConstraintValueOf(name);
+}
+
+abstract class Guser_articles_inc_input
+    implements
+        Built<Guser_articles_inc_input, Guser_articles_inc_inputBuilder> {
+  Guser_articles_inc_input._();
+
+  factory Guser_articles_inc_input(
+          [Function(Guser_articles_inc_inputBuilder b) updates]) =
+      _$Guser_articles_inc_input;
+
+  int? get play_at;
+  static Serializer<Guser_articles_inc_input> get serializer =>
+      _$guserArticlesIncInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_inc_input.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_inc_input? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_inc_input.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_insert_input
+    implements
+        Built<Guser_articles_insert_input, Guser_articles_insert_inputBuilder> {
+  Guser_articles_insert_input._();
+
+  factory Guser_articles_insert_input(
+          [Function(Guser_articles_insert_inputBuilder b) updates]) =
+      _$Guser_articles_insert_input;
+
+  Guuid? get article_id;
+  Gtimestamptz? get created_at;
+  Guuid? get created_by;
+  Gtimestamptz? get deleted_at;
+  Guuid? get id;
+  int? get play_at;
+  Gtimestamptz? get updated_at;
+  Guuid? get updated_by;
+  Guuid? get user_id;
+  static Serializer<Guser_articles_insert_input> get serializer =>
+      _$guserArticlesInsertInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_insert_input.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_insert_input? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_insert_input.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_on_conflict
+    implements
+        Built<Guser_articles_on_conflict, Guser_articles_on_conflictBuilder> {
+  Guser_articles_on_conflict._();
+
+  factory Guser_articles_on_conflict(
+          [Function(Guser_articles_on_conflictBuilder b) updates]) =
+      _$Guser_articles_on_conflict;
+
+  Guser_articles_constraint get constraint;
+  BuiltList<Guser_articles_update_column> get update_columns;
+  Guser_articles_bool_exp? get where;
+  static Serializer<Guser_articles_on_conflict> get serializer =>
+      _$guserArticlesOnConflictSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_on_conflict.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_on_conflict? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_on_conflict.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_order_by
+    implements Built<Guser_articles_order_by, Guser_articles_order_byBuilder> {
+  Guser_articles_order_by._();
+
+  factory Guser_articles_order_by(
+          [Function(Guser_articles_order_byBuilder b) updates]) =
+      _$Guser_articles_order_by;
+
+  Gorder_by? get article_id;
+  Gorder_by? get created_at;
+  Gorder_by? get created_by;
+  Gorder_by? get deleted_at;
+  Gorder_by? get id;
+  Gorder_by? get play_at;
+  Gorder_by? get updated_at;
+  Gorder_by? get updated_by;
+  Gorder_by? get user_id;
+  static Serializer<Guser_articles_order_by> get serializer =>
+      _$guserArticlesOrderBySerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_order_by.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_order_by? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_order_by.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_pk_columns_input
+    implements
+        Built<Guser_articles_pk_columns_input,
+            Guser_articles_pk_columns_inputBuilder> {
+  Guser_articles_pk_columns_input._();
+
+  factory Guser_articles_pk_columns_input(
+          [Function(Guser_articles_pk_columns_inputBuilder b) updates]) =
+      _$Guser_articles_pk_columns_input;
+
+  Guuid get id;
+  static Serializer<Guser_articles_pk_columns_input> get serializer =>
+      _$guserArticlesPkColumnsInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_pk_columns_input.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_pk_columns_input? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_pk_columns_input.serializer,
+        json,
+      );
+}
+
+class Guser_articles_select_column extends EnumClass {
+  const Guser_articles_select_column._(String name) : super(name);
+
+  static const Guser_articles_select_column article_id =
+      _$guserArticlesSelectColumnarticle_id;
+
+  static const Guser_articles_select_column created_at =
+      _$guserArticlesSelectColumncreated_at;
+
+  static const Guser_articles_select_column created_by =
+      _$guserArticlesSelectColumncreated_by;
+
+  static const Guser_articles_select_column deleted_at =
+      _$guserArticlesSelectColumndeleted_at;
+
+  static const Guser_articles_select_column id = _$guserArticlesSelectColumnid;
+
+  static const Guser_articles_select_column play_at =
+      _$guserArticlesSelectColumnplay_at;
+
+  static const Guser_articles_select_column updated_at =
+      _$guserArticlesSelectColumnupdated_at;
+
+  static const Guser_articles_select_column updated_by =
+      _$guserArticlesSelectColumnupdated_by;
+
+  static const Guser_articles_select_column user_id =
+      _$guserArticlesSelectColumnuser_id;
+
+  static Serializer<Guser_articles_select_column> get serializer =>
+      _$guserArticlesSelectColumnSerializer;
+  static BuiltSet<Guser_articles_select_column> get values =>
+      _$guserArticlesSelectColumnValues;
+  static Guser_articles_select_column valueOf(String name) =>
+      _$guserArticlesSelectColumnValueOf(name);
+}
+
+abstract class Guser_articles_set_input
+    implements
+        Built<Guser_articles_set_input, Guser_articles_set_inputBuilder> {
+  Guser_articles_set_input._();
+
+  factory Guser_articles_set_input(
+          [Function(Guser_articles_set_inputBuilder b) updates]) =
+      _$Guser_articles_set_input;
+
+  Guuid? get article_id;
+  Gtimestamptz? get created_at;
+  Guuid? get created_by;
+  Gtimestamptz? get deleted_at;
+  Guuid? get id;
+  int? get play_at;
+  Gtimestamptz? get updated_at;
+  Guuid? get updated_by;
+  Guuid? get user_id;
+  static Serializer<Guser_articles_set_input> get serializer =>
+      _$guserArticlesSetInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_set_input.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_set_input? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_set_input.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_stream_cursor_input
+    implements
+        Built<Guser_articles_stream_cursor_input,
+            Guser_articles_stream_cursor_inputBuilder> {
+  Guser_articles_stream_cursor_input._();
+
+  factory Guser_articles_stream_cursor_input(
+          [Function(Guser_articles_stream_cursor_inputBuilder b) updates]) =
+      _$Guser_articles_stream_cursor_input;
+
+  Guser_articles_stream_cursor_value_input get initial_value;
+  Gcursor_ordering? get ordering;
+  static Serializer<Guser_articles_stream_cursor_input> get serializer =>
+      _$guserArticlesStreamCursorInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_stream_cursor_input.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_stream_cursor_input? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_stream_cursor_input.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_stream_cursor_value_input
+    implements
+        Built<Guser_articles_stream_cursor_value_input,
+            Guser_articles_stream_cursor_value_inputBuilder> {
+  Guser_articles_stream_cursor_value_input._();
+
+  factory Guser_articles_stream_cursor_value_input(
+      [Function(Guser_articles_stream_cursor_value_inputBuilder b)
+          updates]) = _$Guser_articles_stream_cursor_value_input;
+
+  Guuid? get article_id;
+  Gtimestamptz? get created_at;
+  Guuid? get created_by;
+  Gtimestamptz? get deleted_at;
+  Guuid? get id;
+  int? get play_at;
+  Gtimestamptz? get updated_at;
+  Guuid? get updated_by;
+  Guuid? get user_id;
+  static Serializer<Guser_articles_stream_cursor_value_input> get serializer =>
+      _$guserArticlesStreamCursorValueInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_stream_cursor_value_input.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_stream_cursor_value_input? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_stream_cursor_value_input.serializer,
+        json,
+      );
+}
+
+class Guser_articles_update_column extends EnumClass {
+  const Guser_articles_update_column._(String name) : super(name);
+
+  static const Guser_articles_update_column article_id =
+      _$guserArticlesUpdateColumnarticle_id;
+
+  static const Guser_articles_update_column created_at =
+      _$guserArticlesUpdateColumncreated_at;
+
+  static const Guser_articles_update_column created_by =
+      _$guserArticlesUpdateColumncreated_by;
+
+  static const Guser_articles_update_column deleted_at =
+      _$guserArticlesUpdateColumndeleted_at;
+
+  static const Guser_articles_update_column id = _$guserArticlesUpdateColumnid;
+
+  static const Guser_articles_update_column play_at =
+      _$guserArticlesUpdateColumnplay_at;
+
+  static const Guser_articles_update_column updated_at =
+      _$guserArticlesUpdateColumnupdated_at;
+
+  static const Guser_articles_update_column updated_by =
+      _$guserArticlesUpdateColumnupdated_by;
+
+  static const Guser_articles_update_column user_id =
+      _$guserArticlesUpdateColumnuser_id;
+
+  static Serializer<Guser_articles_update_column> get serializer =>
+      _$guserArticlesUpdateColumnSerializer;
+  static BuiltSet<Guser_articles_update_column> get values =>
+      _$guserArticlesUpdateColumnValues;
+  static Guser_articles_update_column valueOf(String name) =>
+      _$guserArticlesUpdateColumnValueOf(name);
+}
+
+abstract class Guser_articles_updates
+    implements Built<Guser_articles_updates, Guser_articles_updatesBuilder> {
+  Guser_articles_updates._();
+
+  factory Guser_articles_updates(
+          [Function(Guser_articles_updatesBuilder b) updates]) =
+      _$Guser_articles_updates;
+
+  @BuiltValueField(wireName: '_inc')
+  Guser_articles_inc_input? get G_inc;
+  @BuiltValueField(wireName: '_set')
+  Guser_articles_set_input? get G_set;
+  Guser_articles_bool_exp get where;
+  static Serializer<Guser_articles_updates> get serializer =>
+      _$guserArticlesUpdatesSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_updates.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_updates? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_updates.serializer,
+        json,
+      );
+}
+
 abstract class Gusers_aggregate_bool_exp
     implements
         Built<Gusers_aggregate_bool_exp, Gusers_aggregate_bool_expBuilder> {

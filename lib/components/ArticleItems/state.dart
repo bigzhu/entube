@@ -7,7 +7,7 @@ const String loadingTitle = '☕ 🍕   loading new YouTube ......';
 final articleItemsScrollControllerProvider =
     Provider<ItemScrollController>((ref) => ItemScrollController());
 
-final articleItemsSP = StreamProvider((ref) {
+final articleItemsStreamP = Provider<Stream>((ref) {
   final articlesReq = GArticleItemsReq(
     (b) => b
       ..vars.limit = 10
@@ -15,4 +15,8 @@ final articleItemsSP = StreamProvider((ref) {
   );
   final client = ref.watch(gqlClientP);
   return client.request(articlesReq);
+});
+
+final articleItemsSP = StateProvider((ref) {
+  return [];
 });

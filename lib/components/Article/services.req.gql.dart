@@ -13,25 +13,23 @@ import 'package:gql_exec/gql_exec.dart' as _i4;
 
 part 'services.req.gql.g.dart';
 
-abstract class GArticleSentencesReq
+abstract class GSentencesReq
     implements
-        Built<GArticleSentencesReq, GArticleSentencesReqBuilder>,
-        _i1.OperationRequest<_i2.GArticleSentencesData,
-            _i3.GArticleSentencesVars> {
-  GArticleSentencesReq._();
+        Built<GSentencesReq, GSentencesReqBuilder>,
+        _i1.OperationRequest<_i2.GSentencesData, _i3.GSentencesVars> {
+  GSentencesReq._();
 
-  factory GArticleSentencesReq(
-          [Function(GArticleSentencesReqBuilder b) updates]) =
-      _$GArticleSentencesReq;
+  factory GSentencesReq([Function(GSentencesReqBuilder b) updates]) =
+      _$GSentencesReq;
 
-  static void _initializeBuilder(GArticleSentencesReqBuilder b) => b
+  static void _initializeBuilder(GSentencesReqBuilder b) => b
     ..operation = _i4.Operation(
       document: _i5.document,
-      operationName: 'ArticleSentences',
+      operationName: 'Sentences',
     )
     ..executeOnListen = true;
   @override
-  _i3.GArticleSentencesVars get vars;
+  _i3.GSentencesVars get vars;
   @override
   _i4.Operation get operation;
   @override
@@ -43,12 +41,12 @@ abstract class GArticleSentencesReq
   String? get requestId;
   @override
   @BuiltValueField(serialize: false)
-  _i2.GArticleSentencesData? Function(
-    _i2.GArticleSentencesData?,
-    _i2.GArticleSentencesData?,
+  _i2.GSentencesData? Function(
+    _i2.GSentencesData?,
+    _i2.GSentencesData?,
   )? get updateResult;
   @override
-  _i2.GArticleSentencesData? get optimisticResponse;
+  _i2.GSentencesData? get optimisticResponse;
   @override
   String? get updateCacheHandlerKey;
   @override
@@ -58,17 +56,16 @@ abstract class GArticleSentencesReq
   @override
   bool get executeOnListen;
   @override
-  _i2.GArticleSentencesData? parseData(Map<String, dynamic> json) =>
-      _i2.GArticleSentencesData.fromJson(json);
-  static Serializer<GArticleSentencesReq> get serializer =>
-      _$gArticleSentencesReqSerializer;
+  _i2.GSentencesData? parseData(Map<String, dynamic> json) =>
+      _i2.GSentencesData.fromJson(json);
+  static Serializer<GSentencesReq> get serializer => _$gSentencesReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
-        GArticleSentencesReq.serializer,
+        GSentencesReq.serializer,
         this,
       ) as Map<String, dynamic>);
-  static GArticleSentencesReq? fromJson(Map<String, dynamic> json) =>
+  static GSentencesReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
-        GArticleSentencesReq.serializer,
+        GSentencesReq.serializer,
         json,
       );
 }

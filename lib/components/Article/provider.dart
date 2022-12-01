@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'dart:collection';
 
+import 'package:entube/graphql/schema.schema.gql.dart';
 import 'package:entube/components/AcquiringWords/index.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -37,7 +38,7 @@ class IsToArticleBottomStateNotifier extends StateNotifier<bool> {
 
 //得到是否滚动到了文章底部
 final isToArticleBottomStateNotifierProvider = StateNotifierProvider.autoDispose
-    .family<IsToArticleBottomStateNotifier, bool, String>((ref, articleId) {
+    .family<IsToArticleBottomStateNotifier, bool, Guuid>((ref, articleId) {
   int lastSentencesIndex = -1;
   GArticleSentencesData_articles? articleWithSentence =
       ref.watch(articleStateNotifierProvider(articleId));
@@ -63,7 +64,7 @@ class ArticlesStateNotifier extends StateNotifier<ArticleModel?> {
     fetch();
   }
   final Ref ref;
-  final String articleId;
+  final Guuid articleId;
   late Box box;
 
   void fetch() async {
@@ -71,7 +72,7 @@ class ArticlesStateNotifier extends StateNotifier<ArticleModel?> {
     state = fromJson();
     if (state == null) {
       try {
-        state = await ArticleService().fetchSentencesById(articleId);
+        state = await ArticleService().fetchSentencesById(articleId.toString());
       } on LCException catch (e) {
         ref
             .read(errorMeesageStateProvider.notifier)
@@ -93,7 +94,7 @@ class ArticlesStateNotifier extends StateNotifier<ArticleModel?> {
 }
 
 final articleStateNotifierProvider = StateNotifierProvider.autoDispose
-    .family<ArticlesStateNotifier, GArticleSentencesData_articles?, String>(
+    .family<ArticlesStateNotifier, GArticleSentencesData_articles?, Guuid>(
         (ref, articleId) {
   ArticlesStateNotifier articlesStateNotifier =
       ArticlesStateNotifier(ref, articleId);

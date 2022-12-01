@@ -1,4 +1,4 @@
-query ArticleSentences($id: uuid!) {
+query Sentences($id: uuid!) {
   articles(where: { id: { _eq: $id } }) {
     sentences
   }

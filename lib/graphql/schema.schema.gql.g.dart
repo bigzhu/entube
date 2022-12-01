@@ -1188,6 +1188,139 @@ final BuiltSet<Gorder_by> _$gorderByValues =
   _$gorderBydesc_nulls_last,
 ]);
 
+const Guser_articles_constraint _$guserArticlesConstraintuser_articles_pkey =
+    const Guser_articles_constraint._('user_articles_pkey');
+
+Guser_articles_constraint _$guserArticlesConstraintValueOf(String name) {
+  switch (name) {
+    case 'user_articles_pkey':
+      return _$guserArticlesConstraintuser_articles_pkey;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<Guser_articles_constraint> _$guserArticlesConstraintValues =
+    new BuiltSet<Guser_articles_constraint>(const <Guser_articles_constraint>[
+  _$guserArticlesConstraintuser_articles_pkey,
+]);
+
+const Guser_articles_select_column _$guserArticlesSelectColumnarticle_id =
+    const Guser_articles_select_column._('article_id');
+const Guser_articles_select_column _$guserArticlesSelectColumncreated_at =
+    const Guser_articles_select_column._('created_at');
+const Guser_articles_select_column _$guserArticlesSelectColumncreated_by =
+    const Guser_articles_select_column._('created_by');
+const Guser_articles_select_column _$guserArticlesSelectColumndeleted_at =
+    const Guser_articles_select_column._('deleted_at');
+const Guser_articles_select_column _$guserArticlesSelectColumnid =
+    const Guser_articles_select_column._('id');
+const Guser_articles_select_column _$guserArticlesSelectColumnplay_at =
+    const Guser_articles_select_column._('play_at');
+const Guser_articles_select_column _$guserArticlesSelectColumnupdated_at =
+    const Guser_articles_select_column._('updated_at');
+const Guser_articles_select_column _$guserArticlesSelectColumnupdated_by =
+    const Guser_articles_select_column._('updated_by');
+const Guser_articles_select_column _$guserArticlesSelectColumnuser_id =
+    const Guser_articles_select_column._('user_id');
+
+Guser_articles_select_column _$guserArticlesSelectColumnValueOf(String name) {
+  switch (name) {
+    case 'article_id':
+      return _$guserArticlesSelectColumnarticle_id;
+    case 'created_at':
+      return _$guserArticlesSelectColumncreated_at;
+    case 'created_by':
+      return _$guserArticlesSelectColumncreated_by;
+    case 'deleted_at':
+      return _$guserArticlesSelectColumndeleted_at;
+    case 'id':
+      return _$guserArticlesSelectColumnid;
+    case 'play_at':
+      return _$guserArticlesSelectColumnplay_at;
+    case 'updated_at':
+      return _$guserArticlesSelectColumnupdated_at;
+    case 'updated_by':
+      return _$guserArticlesSelectColumnupdated_by;
+    case 'user_id':
+      return _$guserArticlesSelectColumnuser_id;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<Guser_articles_select_column> _$guserArticlesSelectColumnValues =
+    new BuiltSet<Guser_articles_select_column>(const <
+        Guser_articles_select_column>[
+  _$guserArticlesSelectColumnarticle_id,
+  _$guserArticlesSelectColumncreated_at,
+  _$guserArticlesSelectColumncreated_by,
+  _$guserArticlesSelectColumndeleted_at,
+  _$guserArticlesSelectColumnid,
+  _$guserArticlesSelectColumnplay_at,
+  _$guserArticlesSelectColumnupdated_at,
+  _$guserArticlesSelectColumnupdated_by,
+  _$guserArticlesSelectColumnuser_id,
+]);
+
+const Guser_articles_update_column _$guserArticlesUpdateColumnarticle_id =
+    const Guser_articles_update_column._('article_id');
+const Guser_articles_update_column _$guserArticlesUpdateColumncreated_at =
+    const Guser_articles_update_column._('created_at');
+const Guser_articles_update_column _$guserArticlesUpdateColumncreated_by =
+    const Guser_articles_update_column._('created_by');
+const Guser_articles_update_column _$guserArticlesUpdateColumndeleted_at =
+    const Guser_articles_update_column._('deleted_at');
+const Guser_articles_update_column _$guserArticlesUpdateColumnid =
+    const Guser_articles_update_column._('id');
+const Guser_articles_update_column _$guserArticlesUpdateColumnplay_at =
+    const Guser_articles_update_column._('play_at');
+const Guser_articles_update_column _$guserArticlesUpdateColumnupdated_at =
+    const Guser_articles_update_column._('updated_at');
+const Guser_articles_update_column _$guserArticlesUpdateColumnupdated_by =
+    const Guser_articles_update_column._('updated_by');
+const Guser_articles_update_column _$guserArticlesUpdateColumnuser_id =
+    const Guser_articles_update_column._('user_id');
+
+Guser_articles_update_column _$guserArticlesUpdateColumnValueOf(String name) {
+  switch (name) {
+    case 'article_id':
+      return _$guserArticlesUpdateColumnarticle_id;
+    case 'created_at':
+      return _$guserArticlesUpdateColumncreated_at;
+    case 'created_by':
+      return _$guserArticlesUpdateColumncreated_by;
+    case 'deleted_at':
+      return _$guserArticlesUpdateColumndeleted_at;
+    case 'id':
+      return _$guserArticlesUpdateColumnid;
+    case 'play_at':
+      return _$guserArticlesUpdateColumnplay_at;
+    case 'updated_at':
+      return _$guserArticlesUpdateColumnupdated_at;
+    case 'updated_by':
+      return _$guserArticlesUpdateColumnupdated_by;
+    case 'user_id':
+      return _$guserArticlesUpdateColumnuser_id;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<Guser_articles_update_column> _$guserArticlesUpdateColumnValues =
+    new BuiltSet<Guser_articles_update_column>(const <
+        Guser_articles_update_column>[
+  _$guserArticlesUpdateColumnarticle_id,
+  _$guserArticlesUpdateColumncreated_at,
+  _$guserArticlesUpdateColumncreated_by,
+  _$guserArticlesUpdateColumndeleted_at,
+  _$guserArticlesUpdateColumnid,
+  _$guserArticlesUpdateColumnplay_at,
+  _$guserArticlesUpdateColumnupdated_at,
+  _$guserArticlesUpdateColumnupdated_by,
+  _$guserArticlesUpdateColumnuser_id,
+]);
+
 const Gusers_constraint _$gusersConstraintusers_email_key =
     const Gusers_constraint._('users_email_key');
 const Gusers_constraint _$gusersConstraintusers_phone_number_key =
@@ -2077,6 +2210,35 @@ Serializer<Gjsonb_comparison_exp> _$gjsonbComparisonExpSerializer =
 Serializer<Gorder_by> _$gorderBySerializer = new _$Gorder_bySerializer();
 Serializer<Gtimestamptz_comparison_exp> _$gtimestamptzComparisonExpSerializer =
     new _$Gtimestamptz_comparison_expSerializer();
+Serializer<Guser_articles_bool_exp> _$guserArticlesBoolExpSerializer =
+    new _$Guser_articles_bool_expSerializer();
+Serializer<Guser_articles_constraint> _$guserArticlesConstraintSerializer =
+    new _$Guser_articles_constraintSerializer();
+Serializer<Guser_articles_inc_input> _$guserArticlesIncInputSerializer =
+    new _$Guser_articles_inc_inputSerializer();
+Serializer<Guser_articles_insert_input> _$guserArticlesInsertInputSerializer =
+    new _$Guser_articles_insert_inputSerializer();
+Serializer<Guser_articles_on_conflict> _$guserArticlesOnConflictSerializer =
+    new _$Guser_articles_on_conflictSerializer();
+Serializer<Guser_articles_order_by> _$guserArticlesOrderBySerializer =
+    new _$Guser_articles_order_bySerializer();
+Serializer<Guser_articles_pk_columns_input>
+    _$guserArticlesPkColumnsInputSerializer =
+    new _$Guser_articles_pk_columns_inputSerializer();
+Serializer<Guser_articles_select_column> _$guserArticlesSelectColumnSerializer =
+    new _$Guser_articles_select_columnSerializer();
+Serializer<Guser_articles_set_input> _$guserArticlesSetInputSerializer =
+    new _$Guser_articles_set_inputSerializer();
+Serializer<Guser_articles_stream_cursor_input>
+    _$guserArticlesStreamCursorInputSerializer =
+    new _$Guser_articles_stream_cursor_inputSerializer();
+Serializer<Guser_articles_stream_cursor_value_input>
+    _$guserArticlesStreamCursorValueInputSerializer =
+    new _$Guser_articles_stream_cursor_value_inputSerializer();
+Serializer<Guser_articles_update_column> _$guserArticlesUpdateColumnSerializer =
+    new _$Guser_articles_update_columnSerializer();
+Serializer<Guser_articles_updates> _$guserArticlesUpdatesSerializer =
+    new _$Guser_articles_updatesSerializer();
 Serializer<Gusers_aggregate_bool_exp> _$gusersAggregateBoolExpSerializer =
     new _$Gusers_aggregate_bool_expSerializer();
 Serializer<Gusers_aggregate_bool_exp_bool_and>
@@ -17088,6 +17250,1088 @@ class _$Gtimestamptz_comparison_expSerializer
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(Gtimestamptz)]))!
               as BuiltList<Object?>);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_bool_expSerializer
+    implements StructuredSerializer<Guser_articles_bool_exp> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_bool_exp,
+    _$Guser_articles_bool_exp
+  ];
+  @override
+  final String wireName = 'Guser_articles_bool_exp';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_bool_exp object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.G_and;
+    if (value != null) {
+      result
+        ..add('_and')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(Guser_articles_bool_exp)])));
+    }
+    value = object.G_not;
+    if (value != null) {
+      result
+        ..add('_not')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_bool_exp)));
+    }
+    value = object.G_or;
+    if (value != null) {
+      result
+        ..add('_or')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(Guser_articles_bool_exp)])));
+    }
+    value = object.article_id;
+    if (value != null) {
+      result
+        ..add('article_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guuid_comparison_exp)));
+    }
+    value = object.created_at;
+    if (value != null) {
+      result
+        ..add('created_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz_comparison_exp)));
+    }
+    value = object.created_by;
+    if (value != null) {
+      result
+        ..add('created_by')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guuid_comparison_exp)));
+    }
+    value = object.deleted_at;
+    if (value != null) {
+      result
+        ..add('deleted_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz_comparison_exp)));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guuid_comparison_exp)));
+    }
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GInt_comparison_exp)));
+    }
+    value = object.updated_at;
+    if (value != null) {
+      result
+        ..add('updated_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz_comparison_exp)));
+    }
+    value = object.updated_by;
+    if (value != null) {
+      result
+        ..add('updated_by')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guuid_comparison_exp)));
+    }
+    value = object.user_id;
+    if (value != null) {
+      result
+        ..add('user_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guuid_comparison_exp)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_bool_exp deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_bool_expBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '_and':
+          result.G_and.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(Guser_articles_bool_exp)
+              ]))! as BuiltList<Object?>);
+          break;
+        case '_not':
+          result.G_not.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guser_articles_bool_exp))!
+              as Guser_articles_bool_exp);
+          break;
+        case '_or':
+          result.G_or.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(Guser_articles_bool_exp)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'article_id':
+          result.article_id.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guuid_comparison_exp))!
+              as Guuid_comparison_exp);
+          break;
+        case 'created_at':
+          result.created_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Gtimestamptz_comparison_exp))!
+              as Gtimestamptz_comparison_exp);
+          break;
+        case 'created_by':
+          result.created_by.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guuid_comparison_exp))!
+              as Guuid_comparison_exp);
+          break;
+        case 'deleted_at':
+          result.deleted_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Gtimestamptz_comparison_exp))!
+              as Gtimestamptz_comparison_exp);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guuid_comparison_exp))!
+              as Guuid_comparison_exp);
+          break;
+        case 'play_at':
+          result.play_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GInt_comparison_exp))!
+              as GInt_comparison_exp);
+          break;
+        case 'updated_at':
+          result.updated_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Gtimestamptz_comparison_exp))!
+              as Gtimestamptz_comparison_exp);
+          break;
+        case 'updated_by':
+          result.updated_by.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guuid_comparison_exp))!
+              as Guuid_comparison_exp);
+          break;
+        case 'user_id':
+          result.user_id.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guuid_comparison_exp))!
+              as Guuid_comparison_exp);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_constraintSerializer
+    implements PrimitiveSerializer<Guser_articles_constraint> {
+  @override
+  final Iterable<Type> types = const <Type>[Guser_articles_constraint];
+  @override
+  final String wireName = 'Guser_articles_constraint';
+
+  @override
+  Object serialize(Serializers serializers, Guser_articles_constraint object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      object.name;
+
+  @override
+  Guser_articles_constraint deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      Guser_articles_constraint.valueOf(serialized as String);
+}
+
+class _$Guser_articles_inc_inputSerializer
+    implements StructuredSerializer<Guser_articles_inc_input> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_inc_input,
+    _$Guser_articles_inc_input
+  ];
+  @override
+  final String wireName = 'Guser_articles_inc_input';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_inc_input object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_inc_input deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_inc_inputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_insert_inputSerializer
+    implements StructuredSerializer<Guser_articles_insert_input> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_insert_input,
+    _$Guser_articles_insert_input
+  ];
+  @override
+  final String wireName = 'Guser_articles_insert_input';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_insert_input object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.article_id;
+    if (value != null) {
+      result
+        ..add('article_id')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.created_at;
+    if (value != null) {
+      result
+        ..add('created_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.created_by;
+    if (value != null) {
+      result
+        ..add('created_by')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.deleted_at;
+    if (value != null) {
+      result
+        ..add('deleted_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.updated_at;
+    if (value != null) {
+      result
+        ..add('updated_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.updated_by;
+    if (value != null) {
+      result
+        ..add('updated_by')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.user_id;
+    if (value != null) {
+      result
+        ..add('user_id')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_insert_input deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_insert_inputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'article_id':
+          result.article_id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'created_at':
+          result.created_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'created_by':
+          result.created_by.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'deleted_at':
+          result.deleted_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'updated_at':
+          result.updated_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'updated_by':
+          result.updated_by.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'user_id':
+          result.user_id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_on_conflictSerializer
+    implements StructuredSerializer<Guser_articles_on_conflict> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_on_conflict,
+    _$Guser_articles_on_conflict
+  ];
+  @override
+  final String wireName = 'Guser_articles_on_conflict';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_on_conflict object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'constraint',
+      serializers.serialize(object.constraint,
+          specifiedType: const FullType(Guser_articles_constraint)),
+      'update_columns',
+      serializers.serialize(object.update_columns,
+          specifiedType: const FullType(
+              BuiltList, const [const FullType(Guser_articles_update_column)])),
+    ];
+    Object? value;
+    value = object.where;
+    if (value != null) {
+      result
+        ..add('where')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_bool_exp)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_on_conflict deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_on_conflictBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'constraint':
+          result.constraint = serializers.deserialize(value,
+                  specifiedType: const FullType(Guser_articles_constraint))!
+              as Guser_articles_constraint;
+          break;
+        case 'update_columns':
+          result.update_columns.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(Guser_articles_update_column)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guser_articles_bool_exp))!
+              as Guser_articles_bool_exp);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_order_bySerializer
+    implements StructuredSerializer<Guser_articles_order_by> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_order_by,
+    _$Guser_articles_order_by
+  ];
+  @override
+  final String wireName = 'Guser_articles_order_by';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_order_by object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.article_id;
+    if (value != null) {
+      result
+        ..add('article_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.created_at;
+    if (value != null) {
+      result
+        ..add('created_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.created_by;
+    if (value != null) {
+      result
+        ..add('created_by')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.deleted_at;
+    if (value != null) {
+      result
+        ..add('deleted_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.updated_at;
+    if (value != null) {
+      result
+        ..add('updated_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.updated_by;
+    if (value != null) {
+      result
+        ..add('updated_by')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.user_id;
+    if (value != null) {
+      result
+        ..add('user_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_order_by deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_order_byBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'article_id':
+          result.article_id = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'created_at':
+          result.created_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'created_by':
+          result.created_by = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'deleted_at':
+          result.deleted_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'updated_at':
+          result.updated_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'updated_by':
+          result.updated_by = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'user_id':
+          result.user_id = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_pk_columns_inputSerializer
+    implements StructuredSerializer<Guser_articles_pk_columns_input> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_pk_columns_input,
+    _$Guser_articles_pk_columns_input
+  ];
+  @override
+  final String wireName = 'Guser_articles_pk_columns_input';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_pk_columns_input object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(Guuid)),
+    ];
+
+    return result;
+  }
+
+  @override
+  Guser_articles_pk_columns_input deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_pk_columns_inputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_select_columnSerializer
+    implements PrimitiveSerializer<Guser_articles_select_column> {
+  @override
+  final Iterable<Type> types = const <Type>[Guser_articles_select_column];
+  @override
+  final String wireName = 'Guser_articles_select_column';
+
+  @override
+  Object serialize(Serializers serializers, Guser_articles_select_column object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      object.name;
+
+  @override
+  Guser_articles_select_column deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      Guser_articles_select_column.valueOf(serialized as String);
+}
+
+class _$Guser_articles_set_inputSerializer
+    implements StructuredSerializer<Guser_articles_set_input> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_set_input,
+    _$Guser_articles_set_input
+  ];
+  @override
+  final String wireName = 'Guser_articles_set_input';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_set_input object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.article_id;
+    if (value != null) {
+      result
+        ..add('article_id')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.created_at;
+    if (value != null) {
+      result
+        ..add('created_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.created_by;
+    if (value != null) {
+      result
+        ..add('created_by')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.deleted_at;
+    if (value != null) {
+      result
+        ..add('deleted_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.updated_at;
+    if (value != null) {
+      result
+        ..add('updated_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.updated_by;
+    if (value != null) {
+      result
+        ..add('updated_by')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.user_id;
+    if (value != null) {
+      result
+        ..add('user_id')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_set_input deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_set_inputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'article_id':
+          result.article_id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'created_at':
+          result.created_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'created_by':
+          result.created_by.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'deleted_at':
+          result.deleted_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'updated_at':
+          result.updated_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'updated_by':
+          result.updated_by.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'user_id':
+          result.user_id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_stream_cursor_inputSerializer
+    implements StructuredSerializer<Guser_articles_stream_cursor_input> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_stream_cursor_input,
+    _$Guser_articles_stream_cursor_input
+  ];
+  @override
+  final String wireName = 'Guser_articles_stream_cursor_input';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_stream_cursor_input object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'initial_value',
+      serializers.serialize(object.initial_value,
+          specifiedType:
+              const FullType(Guser_articles_stream_cursor_value_input)),
+    ];
+    Object? value;
+    value = object.ordering;
+    if (value != null) {
+      result
+        ..add('ordering')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gcursor_ordering)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_stream_cursor_input deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_stream_cursor_inputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'initial_value':
+          result.initial_value.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(Guser_articles_stream_cursor_value_input))!
+              as Guser_articles_stream_cursor_value_input);
+          break;
+        case 'ordering':
+          result.ordering = serializers.deserialize(value,
+                  specifiedType: const FullType(Gcursor_ordering))
+              as Gcursor_ordering?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_stream_cursor_value_inputSerializer
+    implements StructuredSerializer<Guser_articles_stream_cursor_value_input> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_stream_cursor_value_input,
+    _$Guser_articles_stream_cursor_value_input
+  ];
+  @override
+  final String wireName = 'Guser_articles_stream_cursor_value_input';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_stream_cursor_value_input object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.article_id;
+    if (value != null) {
+      result
+        ..add('article_id')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.created_at;
+    if (value != null) {
+      result
+        ..add('created_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.created_by;
+    if (value != null) {
+      result
+        ..add('created_by')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.deleted_at;
+    if (value != null) {
+      result
+        ..add('deleted_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.updated_at;
+    if (value != null) {
+      result
+        ..add('updated_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gtimestamptz)));
+    }
+    value = object.updated_by;
+    if (value != null) {
+      result
+        ..add('updated_by')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.user_id;
+    if (value != null) {
+      result
+        ..add('user_id')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_stream_cursor_value_input deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_stream_cursor_value_inputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'article_id':
+          result.article_id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'created_at':
+          result.created_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'created_by':
+          result.created_by.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'deleted_at':
+          result.deleted_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'updated_at':
+          result.updated_at.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
+          break;
+        case 'updated_by':
+          result.updated_by.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'user_id':
+          result.user_id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_update_columnSerializer
+    implements PrimitiveSerializer<Guser_articles_update_column> {
+  @override
+  final Iterable<Type> types = const <Type>[Guser_articles_update_column];
+  @override
+  final String wireName = 'Guser_articles_update_column';
+
+  @override
+  Object serialize(Serializers serializers, Guser_articles_update_column object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      object.name;
+
+  @override
+  Guser_articles_update_column deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      Guser_articles_update_column.valueOf(serialized as String);
+}
+
+class _$Guser_articles_updatesSerializer
+    implements StructuredSerializer<Guser_articles_updates> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_updates,
+    _$Guser_articles_updates
+  ];
+  @override
+  final String wireName = 'Guser_articles_updates';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_updates object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'where',
+      serializers.serialize(object.where,
+          specifiedType: const FullType(Guser_articles_bool_exp)),
+    ];
+    Object? value;
+    value = object.G_inc;
+    if (value != null) {
+      result
+        ..add('_inc')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_inc_input)));
+    }
+    value = object.G_set;
+    if (value != null) {
+      result
+        ..add('_set')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_set_input)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_updates deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_updatesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '_inc':
+          result.G_inc.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guser_articles_inc_input))!
+              as Guser_articles_inc_input);
+          break;
+        case '_set':
+          result.G_set.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guser_articles_set_input))!
+              as Guser_articles_set_input);
+          break;
+        case 'where':
+          result.where.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guser_articles_bool_exp))!
+              as Guser_articles_bool_exp);
           break;
       }
     }
@@ -44755,6 +45999,1699 @@ class Gtimestamptz_comparison_expBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'Gtimestamptz_comparison_exp', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_bool_exp extends Guser_articles_bool_exp {
+  @override
+  final BuiltList<Guser_articles_bool_exp>? G_and;
+  @override
+  final Guser_articles_bool_exp? G_not;
+  @override
+  final BuiltList<Guser_articles_bool_exp>? G_or;
+  @override
+  final Guuid_comparison_exp? article_id;
+  @override
+  final Gtimestamptz_comparison_exp? created_at;
+  @override
+  final Guuid_comparison_exp? created_by;
+  @override
+  final Gtimestamptz_comparison_exp? deleted_at;
+  @override
+  final Guuid_comparison_exp? id;
+  @override
+  final GInt_comparison_exp? play_at;
+  @override
+  final Gtimestamptz_comparison_exp? updated_at;
+  @override
+  final Guuid_comparison_exp? updated_by;
+  @override
+  final Guuid_comparison_exp? user_id;
+
+  factory _$Guser_articles_bool_exp(
+          [void Function(Guser_articles_bool_expBuilder)? updates]) =>
+      (new Guser_articles_bool_expBuilder()..update(updates))._build();
+
+  _$Guser_articles_bool_exp._(
+      {this.G_and,
+      this.G_not,
+      this.G_or,
+      this.article_id,
+      this.created_at,
+      this.created_by,
+      this.deleted_at,
+      this.id,
+      this.play_at,
+      this.updated_at,
+      this.updated_by,
+      this.user_id})
+      : super._();
+
+  @override
+  Guser_articles_bool_exp rebuild(
+          void Function(Guser_articles_bool_expBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_bool_expBuilder toBuilder() =>
+      new Guser_articles_bool_expBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_bool_exp &&
+        G_and == other.G_and &&
+        G_not == other.G_not &&
+        G_or == other.G_or &&
+        article_id == other.article_id &&
+        created_at == other.created_at &&
+        created_by == other.created_by &&
+        deleted_at == other.deleted_at &&
+        id == other.id &&
+        play_at == other.play_at &&
+        updated_at == other.updated_at &&
+        updated_by == other.updated_by &&
+        user_id == other.user_id;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc($jc(0, G_and.hashCode),
+                                                G_not.hashCode),
+                                            G_or.hashCode),
+                                        article_id.hashCode),
+                                    created_at.hashCode),
+                                created_by.hashCode),
+                            deleted_at.hashCode),
+                        id.hashCode),
+                    play_at.hashCode),
+                updated_at.hashCode),
+            updated_by.hashCode),
+        user_id.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_bool_exp')
+          ..add('G_and', G_and)
+          ..add('G_not', G_not)
+          ..add('G_or', G_or)
+          ..add('article_id', article_id)
+          ..add('created_at', created_at)
+          ..add('created_by', created_by)
+          ..add('deleted_at', deleted_at)
+          ..add('id', id)
+          ..add('play_at', play_at)
+          ..add('updated_at', updated_at)
+          ..add('updated_by', updated_by)
+          ..add('user_id', user_id))
+        .toString();
+  }
+}
+
+class Guser_articles_bool_expBuilder
+    implements
+        Builder<Guser_articles_bool_exp, Guser_articles_bool_expBuilder> {
+  _$Guser_articles_bool_exp? _$v;
+
+  ListBuilder<Guser_articles_bool_exp>? _G_and;
+  ListBuilder<Guser_articles_bool_exp> get G_and =>
+      _$this._G_and ??= new ListBuilder<Guser_articles_bool_exp>();
+  set G_and(ListBuilder<Guser_articles_bool_exp>? G_and) =>
+      _$this._G_and = G_and;
+
+  Guser_articles_bool_expBuilder? _G_not;
+  Guser_articles_bool_expBuilder get G_not =>
+      _$this._G_not ??= new Guser_articles_bool_expBuilder();
+  set G_not(Guser_articles_bool_expBuilder? G_not) => _$this._G_not = G_not;
+
+  ListBuilder<Guser_articles_bool_exp>? _G_or;
+  ListBuilder<Guser_articles_bool_exp> get G_or =>
+      _$this._G_or ??= new ListBuilder<Guser_articles_bool_exp>();
+  set G_or(ListBuilder<Guser_articles_bool_exp>? G_or) => _$this._G_or = G_or;
+
+  Guuid_comparison_expBuilder? _article_id;
+  Guuid_comparison_expBuilder get article_id =>
+      _$this._article_id ??= new Guuid_comparison_expBuilder();
+  set article_id(Guuid_comparison_expBuilder? article_id) =>
+      _$this._article_id = article_id;
+
+  Gtimestamptz_comparison_expBuilder? _created_at;
+  Gtimestamptz_comparison_expBuilder get created_at =>
+      _$this._created_at ??= new Gtimestamptz_comparison_expBuilder();
+  set created_at(Gtimestamptz_comparison_expBuilder? created_at) =>
+      _$this._created_at = created_at;
+
+  Guuid_comparison_expBuilder? _created_by;
+  Guuid_comparison_expBuilder get created_by =>
+      _$this._created_by ??= new Guuid_comparison_expBuilder();
+  set created_by(Guuid_comparison_expBuilder? created_by) =>
+      _$this._created_by = created_by;
+
+  Gtimestamptz_comparison_expBuilder? _deleted_at;
+  Gtimestamptz_comparison_expBuilder get deleted_at =>
+      _$this._deleted_at ??= new Gtimestamptz_comparison_expBuilder();
+  set deleted_at(Gtimestamptz_comparison_expBuilder? deleted_at) =>
+      _$this._deleted_at = deleted_at;
+
+  Guuid_comparison_expBuilder? _id;
+  Guuid_comparison_expBuilder get id =>
+      _$this._id ??= new Guuid_comparison_expBuilder();
+  set id(Guuid_comparison_expBuilder? id) => _$this._id = id;
+
+  GInt_comparison_expBuilder? _play_at;
+  GInt_comparison_expBuilder get play_at =>
+      _$this._play_at ??= new GInt_comparison_expBuilder();
+  set play_at(GInt_comparison_expBuilder? play_at) => _$this._play_at = play_at;
+
+  Gtimestamptz_comparison_expBuilder? _updated_at;
+  Gtimestamptz_comparison_expBuilder get updated_at =>
+      _$this._updated_at ??= new Gtimestamptz_comparison_expBuilder();
+  set updated_at(Gtimestamptz_comparison_expBuilder? updated_at) =>
+      _$this._updated_at = updated_at;
+
+  Guuid_comparison_expBuilder? _updated_by;
+  Guuid_comparison_expBuilder get updated_by =>
+      _$this._updated_by ??= new Guuid_comparison_expBuilder();
+  set updated_by(Guuid_comparison_expBuilder? updated_by) =>
+      _$this._updated_by = updated_by;
+
+  Guuid_comparison_expBuilder? _user_id;
+  Guuid_comparison_expBuilder get user_id =>
+      _$this._user_id ??= new Guuid_comparison_expBuilder();
+  set user_id(Guuid_comparison_expBuilder? user_id) =>
+      _$this._user_id = user_id;
+
+  Guser_articles_bool_expBuilder();
+
+  Guser_articles_bool_expBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G_and = $v.G_and?.toBuilder();
+      _G_not = $v.G_not?.toBuilder();
+      _G_or = $v.G_or?.toBuilder();
+      _article_id = $v.article_id?.toBuilder();
+      _created_at = $v.created_at?.toBuilder();
+      _created_by = $v.created_by?.toBuilder();
+      _deleted_at = $v.deleted_at?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _play_at = $v.play_at?.toBuilder();
+      _updated_at = $v.updated_at?.toBuilder();
+      _updated_by = $v.updated_by?.toBuilder();
+      _user_id = $v.user_id?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_bool_exp other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_bool_exp;
+  }
+
+  @override
+  void update(void Function(Guser_articles_bool_expBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_bool_exp build() => _build();
+
+  _$Guser_articles_bool_exp _build() {
+    _$Guser_articles_bool_exp _$result;
+    try {
+      _$result = _$v ??
+          new _$Guser_articles_bool_exp._(
+              G_and: _G_and?.build(),
+              G_not: _G_not?.build(),
+              G_or: _G_or?.build(),
+              article_id: _article_id?.build(),
+              created_at: _created_at?.build(),
+              created_by: _created_by?.build(),
+              deleted_at: _deleted_at?.build(),
+              id: _id?.build(),
+              play_at: _play_at?.build(),
+              updated_at: _updated_at?.build(),
+              updated_by: _updated_by?.build(),
+              user_id: _user_id?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'G_and';
+        _G_and?.build();
+        _$failedField = 'G_not';
+        _G_not?.build();
+        _$failedField = 'G_or';
+        _G_or?.build();
+        _$failedField = 'article_id';
+        _article_id?.build();
+        _$failedField = 'created_at';
+        _created_at?.build();
+        _$failedField = 'created_by';
+        _created_by?.build();
+        _$failedField = 'deleted_at';
+        _deleted_at?.build();
+        _$failedField = 'id';
+        _id?.build();
+        _$failedField = 'play_at';
+        _play_at?.build();
+        _$failedField = 'updated_at';
+        _updated_at?.build();
+        _$failedField = 'updated_by';
+        _updated_by?.build();
+        _$failedField = 'user_id';
+        _user_id?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Guser_articles_bool_exp', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_inc_input extends Guser_articles_inc_input {
+  @override
+  final int? play_at;
+
+  factory _$Guser_articles_inc_input(
+          [void Function(Guser_articles_inc_inputBuilder)? updates]) =>
+      (new Guser_articles_inc_inputBuilder()..update(updates))._build();
+
+  _$Guser_articles_inc_input._({this.play_at}) : super._();
+
+  @override
+  Guser_articles_inc_input rebuild(
+          void Function(Guser_articles_inc_inputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_inc_inputBuilder toBuilder() =>
+      new Guser_articles_inc_inputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_inc_input && play_at == other.play_at;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, play_at.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_inc_input')
+          ..add('play_at', play_at))
+        .toString();
+  }
+}
+
+class Guser_articles_inc_inputBuilder
+    implements
+        Builder<Guser_articles_inc_input, Guser_articles_inc_inputBuilder> {
+  _$Guser_articles_inc_input? _$v;
+
+  int? _play_at;
+  int? get play_at => _$this._play_at;
+  set play_at(int? play_at) => _$this._play_at = play_at;
+
+  Guser_articles_inc_inputBuilder();
+
+  Guser_articles_inc_inputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _play_at = $v.play_at;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_inc_input other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_inc_input;
+  }
+
+  @override
+  void update(void Function(Guser_articles_inc_inputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_inc_input build() => _build();
+
+  _$Guser_articles_inc_input _build() {
+    final _$result = _$v ?? new _$Guser_articles_inc_input._(play_at: play_at);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_insert_input extends Guser_articles_insert_input {
+  @override
+  final Guuid? article_id;
+  @override
+  final Gtimestamptz? created_at;
+  @override
+  final Guuid? created_by;
+  @override
+  final Gtimestamptz? deleted_at;
+  @override
+  final Guuid? id;
+  @override
+  final int? play_at;
+  @override
+  final Gtimestamptz? updated_at;
+  @override
+  final Guuid? updated_by;
+  @override
+  final Guuid? user_id;
+
+  factory _$Guser_articles_insert_input(
+          [void Function(Guser_articles_insert_inputBuilder)? updates]) =>
+      (new Guser_articles_insert_inputBuilder()..update(updates))._build();
+
+  _$Guser_articles_insert_input._(
+      {this.article_id,
+      this.created_at,
+      this.created_by,
+      this.deleted_at,
+      this.id,
+      this.play_at,
+      this.updated_at,
+      this.updated_by,
+      this.user_id})
+      : super._();
+
+  @override
+  Guser_articles_insert_input rebuild(
+          void Function(Guser_articles_insert_inputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_insert_inputBuilder toBuilder() =>
+      new Guser_articles_insert_inputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_insert_input &&
+        article_id == other.article_id &&
+        created_at == other.created_at &&
+        created_by == other.created_by &&
+        deleted_at == other.deleted_at &&
+        id == other.id &&
+        play_at == other.play_at &&
+        updated_at == other.updated_at &&
+        updated_by == other.updated_by &&
+        user_id == other.user_id;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc($jc(0, article_id.hashCode),
+                                    created_at.hashCode),
+                                created_by.hashCode),
+                            deleted_at.hashCode),
+                        id.hashCode),
+                    play_at.hashCode),
+                updated_at.hashCode),
+            updated_by.hashCode),
+        user_id.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_insert_input')
+          ..add('article_id', article_id)
+          ..add('created_at', created_at)
+          ..add('created_by', created_by)
+          ..add('deleted_at', deleted_at)
+          ..add('id', id)
+          ..add('play_at', play_at)
+          ..add('updated_at', updated_at)
+          ..add('updated_by', updated_by)
+          ..add('user_id', user_id))
+        .toString();
+  }
+}
+
+class Guser_articles_insert_inputBuilder
+    implements
+        Builder<Guser_articles_insert_input,
+            Guser_articles_insert_inputBuilder> {
+  _$Guser_articles_insert_input? _$v;
+
+  GuuidBuilder? _article_id;
+  GuuidBuilder get article_id => _$this._article_id ??= new GuuidBuilder();
+  set article_id(GuuidBuilder? article_id) => _$this._article_id = article_id;
+
+  GtimestamptzBuilder? _created_at;
+  GtimestamptzBuilder get created_at =>
+      _$this._created_at ??= new GtimestamptzBuilder();
+  set created_at(GtimestamptzBuilder? created_at) =>
+      _$this._created_at = created_at;
+
+  GuuidBuilder? _created_by;
+  GuuidBuilder get created_by => _$this._created_by ??= new GuuidBuilder();
+  set created_by(GuuidBuilder? created_by) => _$this._created_by = created_by;
+
+  GtimestamptzBuilder? _deleted_at;
+  GtimestamptzBuilder get deleted_at =>
+      _$this._deleted_at ??= new GtimestamptzBuilder();
+  set deleted_at(GtimestamptzBuilder? deleted_at) =>
+      _$this._deleted_at = deleted_at;
+
+  GuuidBuilder? _id;
+  GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
+  set id(GuuidBuilder? id) => _$this._id = id;
+
+  int? _play_at;
+  int? get play_at => _$this._play_at;
+  set play_at(int? play_at) => _$this._play_at = play_at;
+
+  GtimestamptzBuilder? _updated_at;
+  GtimestamptzBuilder get updated_at =>
+      _$this._updated_at ??= new GtimestamptzBuilder();
+  set updated_at(GtimestamptzBuilder? updated_at) =>
+      _$this._updated_at = updated_at;
+
+  GuuidBuilder? _updated_by;
+  GuuidBuilder get updated_by => _$this._updated_by ??= new GuuidBuilder();
+  set updated_by(GuuidBuilder? updated_by) => _$this._updated_by = updated_by;
+
+  GuuidBuilder? _user_id;
+  GuuidBuilder get user_id => _$this._user_id ??= new GuuidBuilder();
+  set user_id(GuuidBuilder? user_id) => _$this._user_id = user_id;
+
+  Guser_articles_insert_inputBuilder();
+
+  Guser_articles_insert_inputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _article_id = $v.article_id?.toBuilder();
+      _created_at = $v.created_at?.toBuilder();
+      _created_by = $v.created_by?.toBuilder();
+      _deleted_at = $v.deleted_at?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _play_at = $v.play_at;
+      _updated_at = $v.updated_at?.toBuilder();
+      _updated_by = $v.updated_by?.toBuilder();
+      _user_id = $v.user_id?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_insert_input other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_insert_input;
+  }
+
+  @override
+  void update(void Function(Guser_articles_insert_inputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_insert_input build() => _build();
+
+  _$Guser_articles_insert_input _build() {
+    _$Guser_articles_insert_input _$result;
+    try {
+      _$result = _$v ??
+          new _$Guser_articles_insert_input._(
+              article_id: _article_id?.build(),
+              created_at: _created_at?.build(),
+              created_by: _created_by?.build(),
+              deleted_at: _deleted_at?.build(),
+              id: _id?.build(),
+              play_at: play_at,
+              updated_at: _updated_at?.build(),
+              updated_by: _updated_by?.build(),
+              user_id: _user_id?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'article_id';
+        _article_id?.build();
+        _$failedField = 'created_at';
+        _created_at?.build();
+        _$failedField = 'created_by';
+        _created_by?.build();
+        _$failedField = 'deleted_at';
+        _deleted_at?.build();
+        _$failedField = 'id';
+        _id?.build();
+
+        _$failedField = 'updated_at';
+        _updated_at?.build();
+        _$failedField = 'updated_by';
+        _updated_by?.build();
+        _$failedField = 'user_id';
+        _user_id?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Guser_articles_insert_input', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_on_conflict extends Guser_articles_on_conflict {
+  @override
+  final Guser_articles_constraint constraint;
+  @override
+  final BuiltList<Guser_articles_update_column> update_columns;
+  @override
+  final Guser_articles_bool_exp? where;
+
+  factory _$Guser_articles_on_conflict(
+          [void Function(Guser_articles_on_conflictBuilder)? updates]) =>
+      (new Guser_articles_on_conflictBuilder()..update(updates))._build();
+
+  _$Guser_articles_on_conflict._(
+      {required this.constraint, required this.update_columns, this.where})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        constraint, r'Guser_articles_on_conflict', 'constraint');
+    BuiltValueNullFieldError.checkNotNull(
+        update_columns, r'Guser_articles_on_conflict', 'update_columns');
+  }
+
+  @override
+  Guser_articles_on_conflict rebuild(
+          void Function(Guser_articles_on_conflictBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_on_conflictBuilder toBuilder() =>
+      new Guser_articles_on_conflictBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_on_conflict &&
+        constraint == other.constraint &&
+        update_columns == other.update_columns &&
+        where == other.where;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc($jc(0, constraint.hashCode), update_columns.hashCode),
+        where.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_on_conflict')
+          ..add('constraint', constraint)
+          ..add('update_columns', update_columns)
+          ..add('where', where))
+        .toString();
+  }
+}
+
+class Guser_articles_on_conflictBuilder
+    implements
+        Builder<Guser_articles_on_conflict, Guser_articles_on_conflictBuilder> {
+  _$Guser_articles_on_conflict? _$v;
+
+  Guser_articles_constraint? _constraint;
+  Guser_articles_constraint? get constraint => _$this._constraint;
+  set constraint(Guser_articles_constraint? constraint) =>
+      _$this._constraint = constraint;
+
+  ListBuilder<Guser_articles_update_column>? _update_columns;
+  ListBuilder<Guser_articles_update_column> get update_columns =>
+      _$this._update_columns ??=
+          new ListBuilder<Guser_articles_update_column>();
+  set update_columns(
+          ListBuilder<Guser_articles_update_column>? update_columns) =>
+      _$this._update_columns = update_columns;
+
+  Guser_articles_bool_expBuilder? _where;
+  Guser_articles_bool_expBuilder get where =>
+      _$this._where ??= new Guser_articles_bool_expBuilder();
+  set where(Guser_articles_bool_expBuilder? where) => _$this._where = where;
+
+  Guser_articles_on_conflictBuilder();
+
+  Guser_articles_on_conflictBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _constraint = $v.constraint;
+      _update_columns = $v.update_columns.toBuilder();
+      _where = $v.where?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_on_conflict other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_on_conflict;
+  }
+
+  @override
+  void update(void Function(Guser_articles_on_conflictBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_on_conflict build() => _build();
+
+  _$Guser_articles_on_conflict _build() {
+    _$Guser_articles_on_conflict _$result;
+    try {
+      _$result = _$v ??
+          new _$Guser_articles_on_conflict._(
+              constraint: BuiltValueNullFieldError.checkNotNull(
+                  constraint, r'Guser_articles_on_conflict', 'constraint'),
+              update_columns: update_columns.build(),
+              where: _where?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'update_columns';
+        update_columns.build();
+        _$failedField = 'where';
+        _where?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Guser_articles_on_conflict', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_order_by extends Guser_articles_order_by {
+  @override
+  final Gorder_by? article_id;
+  @override
+  final Gorder_by? created_at;
+  @override
+  final Gorder_by? created_by;
+  @override
+  final Gorder_by? deleted_at;
+  @override
+  final Gorder_by? id;
+  @override
+  final Gorder_by? play_at;
+  @override
+  final Gorder_by? updated_at;
+  @override
+  final Gorder_by? updated_by;
+  @override
+  final Gorder_by? user_id;
+
+  factory _$Guser_articles_order_by(
+          [void Function(Guser_articles_order_byBuilder)? updates]) =>
+      (new Guser_articles_order_byBuilder()..update(updates))._build();
+
+  _$Guser_articles_order_by._(
+      {this.article_id,
+      this.created_at,
+      this.created_by,
+      this.deleted_at,
+      this.id,
+      this.play_at,
+      this.updated_at,
+      this.updated_by,
+      this.user_id})
+      : super._();
+
+  @override
+  Guser_articles_order_by rebuild(
+          void Function(Guser_articles_order_byBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_order_byBuilder toBuilder() =>
+      new Guser_articles_order_byBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_order_by &&
+        article_id == other.article_id &&
+        created_at == other.created_at &&
+        created_by == other.created_by &&
+        deleted_at == other.deleted_at &&
+        id == other.id &&
+        play_at == other.play_at &&
+        updated_at == other.updated_at &&
+        updated_by == other.updated_by &&
+        user_id == other.user_id;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc($jc(0, article_id.hashCode),
+                                    created_at.hashCode),
+                                created_by.hashCode),
+                            deleted_at.hashCode),
+                        id.hashCode),
+                    play_at.hashCode),
+                updated_at.hashCode),
+            updated_by.hashCode),
+        user_id.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_order_by')
+          ..add('article_id', article_id)
+          ..add('created_at', created_at)
+          ..add('created_by', created_by)
+          ..add('deleted_at', deleted_at)
+          ..add('id', id)
+          ..add('play_at', play_at)
+          ..add('updated_at', updated_at)
+          ..add('updated_by', updated_by)
+          ..add('user_id', user_id))
+        .toString();
+  }
+}
+
+class Guser_articles_order_byBuilder
+    implements
+        Builder<Guser_articles_order_by, Guser_articles_order_byBuilder> {
+  _$Guser_articles_order_by? _$v;
+
+  Gorder_by? _article_id;
+  Gorder_by? get article_id => _$this._article_id;
+  set article_id(Gorder_by? article_id) => _$this._article_id = article_id;
+
+  Gorder_by? _created_at;
+  Gorder_by? get created_at => _$this._created_at;
+  set created_at(Gorder_by? created_at) => _$this._created_at = created_at;
+
+  Gorder_by? _created_by;
+  Gorder_by? get created_by => _$this._created_by;
+  set created_by(Gorder_by? created_by) => _$this._created_by = created_by;
+
+  Gorder_by? _deleted_at;
+  Gorder_by? get deleted_at => _$this._deleted_at;
+  set deleted_at(Gorder_by? deleted_at) => _$this._deleted_at = deleted_at;
+
+  Gorder_by? _id;
+  Gorder_by? get id => _$this._id;
+  set id(Gorder_by? id) => _$this._id = id;
+
+  Gorder_by? _play_at;
+  Gorder_by? get play_at => _$this._play_at;
+  set play_at(Gorder_by? play_at) => _$this._play_at = play_at;
+
+  Gorder_by? _updated_at;
+  Gorder_by? get updated_at => _$this._updated_at;
+  set updated_at(Gorder_by? updated_at) => _$this._updated_at = updated_at;
+
+  Gorder_by? _updated_by;
+  Gorder_by? get updated_by => _$this._updated_by;
+  set updated_by(Gorder_by? updated_by) => _$this._updated_by = updated_by;
+
+  Gorder_by? _user_id;
+  Gorder_by? get user_id => _$this._user_id;
+  set user_id(Gorder_by? user_id) => _$this._user_id = user_id;
+
+  Guser_articles_order_byBuilder();
+
+  Guser_articles_order_byBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _article_id = $v.article_id;
+      _created_at = $v.created_at;
+      _created_by = $v.created_by;
+      _deleted_at = $v.deleted_at;
+      _id = $v.id;
+      _play_at = $v.play_at;
+      _updated_at = $v.updated_at;
+      _updated_by = $v.updated_by;
+      _user_id = $v.user_id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_order_by other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_order_by;
+  }
+
+  @override
+  void update(void Function(Guser_articles_order_byBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_order_by build() => _build();
+
+  _$Guser_articles_order_by _build() {
+    final _$result = _$v ??
+        new _$Guser_articles_order_by._(
+            article_id: article_id,
+            created_at: created_at,
+            created_by: created_by,
+            deleted_at: deleted_at,
+            id: id,
+            play_at: play_at,
+            updated_at: updated_at,
+            updated_by: updated_by,
+            user_id: user_id);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_pk_columns_input
+    extends Guser_articles_pk_columns_input {
+  @override
+  final Guuid id;
+
+  factory _$Guser_articles_pk_columns_input(
+          [void Function(Guser_articles_pk_columns_inputBuilder)? updates]) =>
+      (new Guser_articles_pk_columns_inputBuilder()..update(updates))._build();
+
+  _$Guser_articles_pk_columns_input._({required this.id}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'Guser_articles_pk_columns_input', 'id');
+  }
+
+  @override
+  Guser_articles_pk_columns_input rebuild(
+          void Function(Guser_articles_pk_columns_inputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_pk_columns_inputBuilder toBuilder() =>
+      new Guser_articles_pk_columns_inputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_pk_columns_input && id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, id.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_pk_columns_input')
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class Guser_articles_pk_columns_inputBuilder
+    implements
+        Builder<Guser_articles_pk_columns_input,
+            Guser_articles_pk_columns_inputBuilder> {
+  _$Guser_articles_pk_columns_input? _$v;
+
+  GuuidBuilder? _id;
+  GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
+  set id(GuuidBuilder? id) => _$this._id = id;
+
+  Guser_articles_pk_columns_inputBuilder();
+
+  Guser_articles_pk_columns_inputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_pk_columns_input other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_pk_columns_input;
+  }
+
+  @override
+  void update(void Function(Guser_articles_pk_columns_inputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_pk_columns_input build() => _build();
+
+  _$Guser_articles_pk_columns_input _build() {
+    _$Guser_articles_pk_columns_input _$result;
+    try {
+      _$result = _$v ?? new _$Guser_articles_pk_columns_input._(id: id.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'id';
+        id.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Guser_articles_pk_columns_input', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_set_input extends Guser_articles_set_input {
+  @override
+  final Guuid? article_id;
+  @override
+  final Gtimestamptz? created_at;
+  @override
+  final Guuid? created_by;
+  @override
+  final Gtimestamptz? deleted_at;
+  @override
+  final Guuid? id;
+  @override
+  final int? play_at;
+  @override
+  final Gtimestamptz? updated_at;
+  @override
+  final Guuid? updated_by;
+  @override
+  final Guuid? user_id;
+
+  factory _$Guser_articles_set_input(
+          [void Function(Guser_articles_set_inputBuilder)? updates]) =>
+      (new Guser_articles_set_inputBuilder()..update(updates))._build();
+
+  _$Guser_articles_set_input._(
+      {this.article_id,
+      this.created_at,
+      this.created_by,
+      this.deleted_at,
+      this.id,
+      this.play_at,
+      this.updated_at,
+      this.updated_by,
+      this.user_id})
+      : super._();
+
+  @override
+  Guser_articles_set_input rebuild(
+          void Function(Guser_articles_set_inputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_set_inputBuilder toBuilder() =>
+      new Guser_articles_set_inputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_set_input &&
+        article_id == other.article_id &&
+        created_at == other.created_at &&
+        created_by == other.created_by &&
+        deleted_at == other.deleted_at &&
+        id == other.id &&
+        play_at == other.play_at &&
+        updated_at == other.updated_at &&
+        updated_by == other.updated_by &&
+        user_id == other.user_id;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc($jc(0, article_id.hashCode),
+                                    created_at.hashCode),
+                                created_by.hashCode),
+                            deleted_at.hashCode),
+                        id.hashCode),
+                    play_at.hashCode),
+                updated_at.hashCode),
+            updated_by.hashCode),
+        user_id.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_set_input')
+          ..add('article_id', article_id)
+          ..add('created_at', created_at)
+          ..add('created_by', created_by)
+          ..add('deleted_at', deleted_at)
+          ..add('id', id)
+          ..add('play_at', play_at)
+          ..add('updated_at', updated_at)
+          ..add('updated_by', updated_by)
+          ..add('user_id', user_id))
+        .toString();
+  }
+}
+
+class Guser_articles_set_inputBuilder
+    implements
+        Builder<Guser_articles_set_input, Guser_articles_set_inputBuilder> {
+  _$Guser_articles_set_input? _$v;
+
+  GuuidBuilder? _article_id;
+  GuuidBuilder get article_id => _$this._article_id ??= new GuuidBuilder();
+  set article_id(GuuidBuilder? article_id) => _$this._article_id = article_id;
+
+  GtimestamptzBuilder? _created_at;
+  GtimestamptzBuilder get created_at =>
+      _$this._created_at ??= new GtimestamptzBuilder();
+  set created_at(GtimestamptzBuilder? created_at) =>
+      _$this._created_at = created_at;
+
+  GuuidBuilder? _created_by;
+  GuuidBuilder get created_by => _$this._created_by ??= new GuuidBuilder();
+  set created_by(GuuidBuilder? created_by) => _$this._created_by = created_by;
+
+  GtimestamptzBuilder? _deleted_at;
+  GtimestamptzBuilder get deleted_at =>
+      _$this._deleted_at ??= new GtimestamptzBuilder();
+  set deleted_at(GtimestamptzBuilder? deleted_at) =>
+      _$this._deleted_at = deleted_at;
+
+  GuuidBuilder? _id;
+  GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
+  set id(GuuidBuilder? id) => _$this._id = id;
+
+  int? _play_at;
+  int? get play_at => _$this._play_at;
+  set play_at(int? play_at) => _$this._play_at = play_at;
+
+  GtimestamptzBuilder? _updated_at;
+  GtimestamptzBuilder get updated_at =>
+      _$this._updated_at ??= new GtimestamptzBuilder();
+  set updated_at(GtimestamptzBuilder? updated_at) =>
+      _$this._updated_at = updated_at;
+
+  GuuidBuilder? _updated_by;
+  GuuidBuilder get updated_by => _$this._updated_by ??= new GuuidBuilder();
+  set updated_by(GuuidBuilder? updated_by) => _$this._updated_by = updated_by;
+
+  GuuidBuilder? _user_id;
+  GuuidBuilder get user_id => _$this._user_id ??= new GuuidBuilder();
+  set user_id(GuuidBuilder? user_id) => _$this._user_id = user_id;
+
+  Guser_articles_set_inputBuilder();
+
+  Guser_articles_set_inputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _article_id = $v.article_id?.toBuilder();
+      _created_at = $v.created_at?.toBuilder();
+      _created_by = $v.created_by?.toBuilder();
+      _deleted_at = $v.deleted_at?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _play_at = $v.play_at;
+      _updated_at = $v.updated_at?.toBuilder();
+      _updated_by = $v.updated_by?.toBuilder();
+      _user_id = $v.user_id?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_set_input other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_set_input;
+  }
+
+  @override
+  void update(void Function(Guser_articles_set_inputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_set_input build() => _build();
+
+  _$Guser_articles_set_input _build() {
+    _$Guser_articles_set_input _$result;
+    try {
+      _$result = _$v ??
+          new _$Guser_articles_set_input._(
+              article_id: _article_id?.build(),
+              created_at: _created_at?.build(),
+              created_by: _created_by?.build(),
+              deleted_at: _deleted_at?.build(),
+              id: _id?.build(),
+              play_at: play_at,
+              updated_at: _updated_at?.build(),
+              updated_by: _updated_by?.build(),
+              user_id: _user_id?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'article_id';
+        _article_id?.build();
+        _$failedField = 'created_at';
+        _created_at?.build();
+        _$failedField = 'created_by';
+        _created_by?.build();
+        _$failedField = 'deleted_at';
+        _deleted_at?.build();
+        _$failedField = 'id';
+        _id?.build();
+
+        _$failedField = 'updated_at';
+        _updated_at?.build();
+        _$failedField = 'updated_by';
+        _updated_by?.build();
+        _$failedField = 'user_id';
+        _user_id?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Guser_articles_set_input', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_stream_cursor_input
+    extends Guser_articles_stream_cursor_input {
+  @override
+  final Guser_articles_stream_cursor_value_input initial_value;
+  @override
+  final Gcursor_ordering? ordering;
+
+  factory _$Guser_articles_stream_cursor_input(
+          [void Function(Guser_articles_stream_cursor_inputBuilder)?
+              updates]) =>
+      (new Guser_articles_stream_cursor_inputBuilder()..update(updates))
+          ._build();
+
+  _$Guser_articles_stream_cursor_input._(
+      {required this.initial_value, this.ordering})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        initial_value, r'Guser_articles_stream_cursor_input', 'initial_value');
+  }
+
+  @override
+  Guser_articles_stream_cursor_input rebuild(
+          void Function(Guser_articles_stream_cursor_inputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_stream_cursor_inputBuilder toBuilder() =>
+      new Guser_articles_stream_cursor_inputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_stream_cursor_input &&
+        initial_value == other.initial_value &&
+        ordering == other.ordering;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, initial_value.hashCode), ordering.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_stream_cursor_input')
+          ..add('initial_value', initial_value)
+          ..add('ordering', ordering))
+        .toString();
+  }
+}
+
+class Guser_articles_stream_cursor_inputBuilder
+    implements
+        Builder<Guser_articles_stream_cursor_input,
+            Guser_articles_stream_cursor_inputBuilder> {
+  _$Guser_articles_stream_cursor_input? _$v;
+
+  Guser_articles_stream_cursor_value_inputBuilder? _initial_value;
+  Guser_articles_stream_cursor_value_inputBuilder get initial_value =>
+      _$this._initial_value ??=
+          new Guser_articles_stream_cursor_value_inputBuilder();
+  set initial_value(
+          Guser_articles_stream_cursor_value_inputBuilder? initial_value) =>
+      _$this._initial_value = initial_value;
+
+  Gcursor_ordering? _ordering;
+  Gcursor_ordering? get ordering => _$this._ordering;
+  set ordering(Gcursor_ordering? ordering) => _$this._ordering = ordering;
+
+  Guser_articles_stream_cursor_inputBuilder();
+
+  Guser_articles_stream_cursor_inputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _initial_value = $v.initial_value.toBuilder();
+      _ordering = $v.ordering;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_stream_cursor_input other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_stream_cursor_input;
+  }
+
+  @override
+  void update(
+      void Function(Guser_articles_stream_cursor_inputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_stream_cursor_input build() => _build();
+
+  _$Guser_articles_stream_cursor_input _build() {
+    _$Guser_articles_stream_cursor_input _$result;
+    try {
+      _$result = _$v ??
+          new _$Guser_articles_stream_cursor_input._(
+              initial_value: initial_value.build(), ordering: ordering);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'initial_value';
+        initial_value.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Guser_articles_stream_cursor_input', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_stream_cursor_value_input
+    extends Guser_articles_stream_cursor_value_input {
+  @override
+  final Guuid? article_id;
+  @override
+  final Gtimestamptz? created_at;
+  @override
+  final Guuid? created_by;
+  @override
+  final Gtimestamptz? deleted_at;
+  @override
+  final Guuid? id;
+  @override
+  final int? play_at;
+  @override
+  final Gtimestamptz? updated_at;
+  @override
+  final Guuid? updated_by;
+  @override
+  final Guuid? user_id;
+
+  factory _$Guser_articles_stream_cursor_value_input(
+          [void Function(Guser_articles_stream_cursor_value_inputBuilder)?
+              updates]) =>
+      (new Guser_articles_stream_cursor_value_inputBuilder()..update(updates))
+          ._build();
+
+  _$Guser_articles_stream_cursor_value_input._(
+      {this.article_id,
+      this.created_at,
+      this.created_by,
+      this.deleted_at,
+      this.id,
+      this.play_at,
+      this.updated_at,
+      this.updated_by,
+      this.user_id})
+      : super._();
+
+  @override
+  Guser_articles_stream_cursor_value_input rebuild(
+          void Function(Guser_articles_stream_cursor_value_inputBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_stream_cursor_value_inputBuilder toBuilder() =>
+      new Guser_articles_stream_cursor_value_inputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_stream_cursor_value_input &&
+        article_id == other.article_id &&
+        created_at == other.created_at &&
+        created_by == other.created_by &&
+        deleted_at == other.deleted_at &&
+        id == other.id &&
+        play_at == other.play_at &&
+        updated_at == other.updated_at &&
+        updated_by == other.updated_by &&
+        user_id == other.user_id;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc($jc(0, article_id.hashCode),
+                                    created_at.hashCode),
+                                created_by.hashCode),
+                            deleted_at.hashCode),
+                        id.hashCode),
+                    play_at.hashCode),
+                updated_at.hashCode),
+            updated_by.hashCode),
+        user_id.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'Guser_articles_stream_cursor_value_input')
+          ..add('article_id', article_id)
+          ..add('created_at', created_at)
+          ..add('created_by', created_by)
+          ..add('deleted_at', deleted_at)
+          ..add('id', id)
+          ..add('play_at', play_at)
+          ..add('updated_at', updated_at)
+          ..add('updated_by', updated_by)
+          ..add('user_id', user_id))
+        .toString();
+  }
+}
+
+class Guser_articles_stream_cursor_value_inputBuilder
+    implements
+        Builder<Guser_articles_stream_cursor_value_input,
+            Guser_articles_stream_cursor_value_inputBuilder> {
+  _$Guser_articles_stream_cursor_value_input? _$v;
+
+  GuuidBuilder? _article_id;
+  GuuidBuilder get article_id => _$this._article_id ??= new GuuidBuilder();
+  set article_id(GuuidBuilder? article_id) => _$this._article_id = article_id;
+
+  GtimestamptzBuilder? _created_at;
+  GtimestamptzBuilder get created_at =>
+      _$this._created_at ??= new GtimestamptzBuilder();
+  set created_at(GtimestamptzBuilder? created_at) =>
+      _$this._created_at = created_at;
+
+  GuuidBuilder? _created_by;
+  GuuidBuilder get created_by => _$this._created_by ??= new GuuidBuilder();
+  set created_by(GuuidBuilder? created_by) => _$this._created_by = created_by;
+
+  GtimestamptzBuilder? _deleted_at;
+  GtimestamptzBuilder get deleted_at =>
+      _$this._deleted_at ??= new GtimestamptzBuilder();
+  set deleted_at(GtimestamptzBuilder? deleted_at) =>
+      _$this._deleted_at = deleted_at;
+
+  GuuidBuilder? _id;
+  GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
+  set id(GuuidBuilder? id) => _$this._id = id;
+
+  int? _play_at;
+  int? get play_at => _$this._play_at;
+  set play_at(int? play_at) => _$this._play_at = play_at;
+
+  GtimestamptzBuilder? _updated_at;
+  GtimestamptzBuilder get updated_at =>
+      _$this._updated_at ??= new GtimestamptzBuilder();
+  set updated_at(GtimestamptzBuilder? updated_at) =>
+      _$this._updated_at = updated_at;
+
+  GuuidBuilder? _updated_by;
+  GuuidBuilder get updated_by => _$this._updated_by ??= new GuuidBuilder();
+  set updated_by(GuuidBuilder? updated_by) => _$this._updated_by = updated_by;
+
+  GuuidBuilder? _user_id;
+  GuuidBuilder get user_id => _$this._user_id ??= new GuuidBuilder();
+  set user_id(GuuidBuilder? user_id) => _$this._user_id = user_id;
+
+  Guser_articles_stream_cursor_value_inputBuilder();
+
+  Guser_articles_stream_cursor_value_inputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _article_id = $v.article_id?.toBuilder();
+      _created_at = $v.created_at?.toBuilder();
+      _created_by = $v.created_by?.toBuilder();
+      _deleted_at = $v.deleted_at?.toBuilder();
+      _id = $v.id?.toBuilder();
+      _play_at = $v.play_at;
+      _updated_at = $v.updated_at?.toBuilder();
+      _updated_by = $v.updated_by?.toBuilder();
+      _user_id = $v.user_id?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_stream_cursor_value_input other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_stream_cursor_value_input;
+  }
+
+  @override
+  void update(
+      void Function(Guser_articles_stream_cursor_value_inputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_stream_cursor_value_input build() => _build();
+
+  _$Guser_articles_stream_cursor_value_input _build() {
+    _$Guser_articles_stream_cursor_value_input _$result;
+    try {
+      _$result = _$v ??
+          new _$Guser_articles_stream_cursor_value_input._(
+              article_id: _article_id?.build(),
+              created_at: _created_at?.build(),
+              created_by: _created_by?.build(),
+              deleted_at: _deleted_at?.build(),
+              id: _id?.build(),
+              play_at: play_at,
+              updated_at: _updated_at?.build(),
+              updated_by: _updated_by?.build(),
+              user_id: _user_id?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'article_id';
+        _article_id?.build();
+        _$failedField = 'created_at';
+        _created_at?.build();
+        _$failedField = 'created_by';
+        _created_by?.build();
+        _$failedField = 'deleted_at';
+        _deleted_at?.build();
+        _$failedField = 'id';
+        _id?.build();
+
+        _$failedField = 'updated_at';
+        _updated_at?.build();
+        _$failedField = 'updated_by';
+        _updated_by?.build();
+        _$failedField = 'user_id';
+        _user_id?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Guser_articles_stream_cursor_value_input',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_updates extends Guser_articles_updates {
+  @override
+  final Guser_articles_inc_input? G_inc;
+  @override
+  final Guser_articles_set_input? G_set;
+  @override
+  final Guser_articles_bool_exp where;
+
+  factory _$Guser_articles_updates(
+          [void Function(Guser_articles_updatesBuilder)? updates]) =>
+      (new Guser_articles_updatesBuilder()..update(updates))._build();
+
+  _$Guser_articles_updates._({this.G_inc, this.G_set, required this.where})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        where, r'Guser_articles_updates', 'where');
+  }
+
+  @override
+  Guser_articles_updates rebuild(
+          void Function(Guser_articles_updatesBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_updatesBuilder toBuilder() =>
+      new Guser_articles_updatesBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_updates &&
+        G_inc == other.G_inc &&
+        G_set == other.G_set &&
+        where == other.where;
+  }
+
+  @override
+  int get hashCode {
+    return $jf(
+        $jc($jc($jc(0, G_inc.hashCode), G_set.hashCode), where.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_updates')
+          ..add('G_inc', G_inc)
+          ..add('G_set', G_set)
+          ..add('where', where))
+        .toString();
+  }
+}
+
+class Guser_articles_updatesBuilder
+    implements Builder<Guser_articles_updates, Guser_articles_updatesBuilder> {
+  _$Guser_articles_updates? _$v;
+
+  Guser_articles_inc_inputBuilder? _G_inc;
+  Guser_articles_inc_inputBuilder get G_inc =>
+      _$this._G_inc ??= new Guser_articles_inc_inputBuilder();
+  set G_inc(Guser_articles_inc_inputBuilder? G_inc) => _$this._G_inc = G_inc;
+
+  Guser_articles_set_inputBuilder? _G_set;
+  Guser_articles_set_inputBuilder get G_set =>
+      _$this._G_set ??= new Guser_articles_set_inputBuilder();
+  set G_set(Guser_articles_set_inputBuilder? G_set) => _$this._G_set = G_set;
+
+  Guser_articles_bool_expBuilder? _where;
+  Guser_articles_bool_expBuilder get where =>
+      _$this._where ??= new Guser_articles_bool_expBuilder();
+  set where(Guser_articles_bool_expBuilder? where) => _$this._where = where;
+
+  Guser_articles_updatesBuilder();
+
+  Guser_articles_updatesBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G_inc = $v.G_inc?.toBuilder();
+      _G_set = $v.G_set?.toBuilder();
+      _where = $v.where.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_updates other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_updates;
+  }
+
+  @override
+  void update(void Function(Guser_articles_updatesBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_updates build() => _build();
+
+  _$Guser_articles_updates _build() {
+    _$Guser_articles_updates _$result;
+    try {
+      _$result = _$v ??
+          new _$Guser_articles_updates._(
+              G_inc: _G_inc?.build(),
+              G_set: _G_set?.build(),
+              where: where.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'G_inc';
+        _G_inc?.build();
+        _$failedField = 'G_set';
+        _G_set?.build();
+        _$failedField = 'where';
+        where.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Guser_articles_updates', _$failedField, e.toString());
       }
       rethrow;
     }

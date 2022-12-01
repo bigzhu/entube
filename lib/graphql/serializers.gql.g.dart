@@ -12,12 +12,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GArticleItemsData_articles.serializer)
       ..add(GArticleItemsReq.serializer)
       ..add(GArticleItemsVars.serializer)
-      ..add(GArticleSentencesData.serializer)
-      ..add(GArticleSentencesData_articles.serializer)
-      ..add(GArticleSentencesReq.serializer)
-      ..add(GArticleSentencesVars.serializer)
       ..add(GBoolean_comparison_exp.serializer)
       ..add(GInt_comparison_exp.serializer)
+      ..add(GSentencesData.serializer)
+      ..add(GSentencesData_articles.serializer)
+      ..add(GSentencesReq.serializer)
+      ..add(GSentencesVars.serializer)
       ..add(GString_comparison_exp.serializer)
       ..add(Garticles_append_input.serializer)
       ..add(Garticles_bool_exp.serializer)
@@ -221,6 +221,19 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Gorder_by.serializer)
       ..add(Gtimestamptz.serializer)
       ..add(Gtimestamptz_comparison_exp.serializer)
+      ..add(Guser_articles_bool_exp.serializer)
+      ..add(Guser_articles_constraint.serializer)
+      ..add(Guser_articles_inc_input.serializer)
+      ..add(Guser_articles_insert_input.serializer)
+      ..add(Guser_articles_on_conflict.serializer)
+      ..add(Guser_articles_order_by.serializer)
+      ..add(Guser_articles_pk_columns_input.serializer)
+      ..add(Guser_articles_select_column.serializer)
+      ..add(Guser_articles_set_input.serializer)
+      ..add(Guser_articles_stream_cursor_input.serializer)
+      ..add(Guser_articles_stream_cursor_value_input.serializer)
+      ..add(Guser_articles_update_column.serializer)
+      ..add(Guser_articles_updates.serializer)
       ..add(Gusers_aggregate_bool_exp.serializer)
       ..add(Gusers_aggregate_bool_exp_bool_and.serializer)
       ..add(Gusers_aggregate_bool_exp_bool_or.serializer)
@@ -260,9 +273,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(GArticleItemsData_articles)]),
           () => new ListBuilder<GArticleItemsData_articles>())
       ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(GArticleSentencesData_articles)]),
-          () => new ListBuilder<GArticleSentencesData_articles>())
+          const FullType(
+              BuiltList, const [const FullType(GSentencesData_articles)]),
+          () => new ListBuilder<GSentencesData_articles>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Garticles_bool_exp)]),
           () => new ListBuilder<Garticles_bool_exp>())
@@ -441,6 +454,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Gtimestamptz)]),
           () => new ListBuilder<Gtimestamptz>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(Guser_articles_bool_exp)]),
+          () => new ListBuilder<Guser_articles_bool_exp>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(Guser_articles_bool_exp)]),
+          () => new ListBuilder<Guser_articles_bool_exp>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(Guser_articles_update_column)]),
+          () => new ListBuilder<Guser_articles_update_column>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Gusers_bool_exp)]),
           () => new ListBuilder<Gusers_bool_exp>())

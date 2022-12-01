@@ -9,24 +9,23 @@ import 'package:entube/graphql/serializers.gql.dart' as _i2;
 
 part 'services.var.gql.g.dart';
 
-abstract class GArticleSentencesVars
-    implements Built<GArticleSentencesVars, GArticleSentencesVarsBuilder> {
-  GArticleSentencesVars._();
+abstract class GSentencesVars
+    implements Built<GSentencesVars, GSentencesVarsBuilder> {
+  GSentencesVars._();
 
-  factory GArticleSentencesVars(
-          [Function(GArticleSentencesVarsBuilder b) updates]) =
-      _$GArticleSentencesVars;
+  factory GSentencesVars([Function(GSentencesVarsBuilder b) updates]) =
+      _$GSentencesVars;
 
   _i1.Guuid get id;
-  static Serializer<GArticleSentencesVars> get serializer =>
-      _$gArticleSentencesVarsSerializer;
+  static Serializer<GSentencesVars> get serializer =>
+      _$gSentencesVarsSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
-        GArticleSentencesVars.serializer,
+        GSentencesVars.serializer,
         this,
       ) as Map<String, dynamic>);
-  static GArticleSentencesVars? fromJson(Map<String, dynamic> json) =>
+  static GSentencesVars? fromJson(Map<String, dynamic> json) =>
       _i2.serializers.deserializeWith(
-        GArticleSentencesVars.serializer,
+        GSentencesVars.serializer,
         json,
       );
 }

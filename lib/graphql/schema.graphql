@@ -3356,6 +3356,19 @@ type mutation_root {
   delete_articles_by_pk(id: uuid!): articles
 
   """
+  delete data from the table: "user_articles"
+  """
+  delete_user_articles(
+    """filter the rows which have to be deleted"""
+    where: user_articles_bool_exp!
+  ): user_articles_mutation_response
+
+  """
+  delete single row from the table: "user_articles"
+  """
+  delete_user_articles_by_pk(id: uuid!): user_articles
+
+  """
   insert a single row into the table: "auth.providers"
   """
   insertAuthProvider(
@@ -3596,6 +3609,28 @@ type mutation_root {
     """upsert condition"""
     on_conflict: articles_on_conflict
   ): articles
+
+  """
+  insert data into the table: "user_articles"
+  """
+  insert_user_articles(
+    """the rows to be inserted"""
+    objects: [user_articles_insert_input!]!
+
+    """upsert condition"""
+    on_conflict: user_articles_on_conflict
+  ): user_articles_mutation_response
+
+  """
+  insert a single row into the table: "user_articles"
+  """
+  insert_user_articles_one(
+    """the row to be inserted"""
+    object: user_articles_insert_input!
+
+    """upsert condition"""
+    on_conflict: user_articles_on_conflict
+  ): user_articles
 
   """
   update single row of the table: "auth.providers"
@@ -4040,6 +4075,40 @@ type mutation_root {
     """updates to execute, in order"""
     updates: [files_updates!]!
   ): [files_mutation_response]
+
+  """
+  update data of the table: "user_articles"
+  """
+  update_user_articles(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: user_articles_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: user_articles_set_input
+
+    """filter the rows which have to be updated"""
+    where: user_articles_bool_exp!
+  ): user_articles_mutation_response
+
+  """
+  update single row of the table: "user_articles"
+  """
+  update_user_articles_by_pk(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: user_articles_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: user_articles_set_input
+    pk_columns: user_articles_pk_columns_input!
+  ): user_articles
+
+  """
+  update multiples rows of table: "user_articles"
+  """
+  update_user_articles_many(
+    """updates to execute, in order"""
+    updates: [user_articles_updates!]!
+  ): [user_articles_mutation_response]
 
   """
   update multiples rows of table: "auth.users"
@@ -4510,6 +4579,49 @@ type query_root {
 
   """fetch data from the table: "auth.users" using primary key columns"""
   user(id: uuid!): users
+
+  """
+  fetch data from the table: "user_articles"
+  """
+  user_articles(
+    """distinct select on columns"""
+    distinct_on: [user_articles_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_articles_order_by!]
+
+    """filter the rows returned"""
+    where: user_articles_bool_exp
+  ): [user_articles!]!
+
+  """
+  fetch aggregated fields from the table: "user_articles"
+  """
+  user_articles_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_articles_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_articles_order_by!]
+
+    """filter the rows returned"""
+    where: user_articles_bool_exp
+  ): user_articles_aggregate!
+
+  """fetch data from the table: "user_articles" using primary key columns"""
+  user_articles_by_pk(id: uuid!): user_articles
 
   """
   fetch data from the table: "auth.users"
@@ -5133,6 +5245,63 @@ type subscription_root {
   user(id: uuid!): users
 
   """
+  fetch data from the table: "user_articles"
+  """
+  user_articles(
+    """distinct select on columns"""
+    distinct_on: [user_articles_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_articles_order_by!]
+
+    """filter the rows returned"""
+    where: user_articles_bool_exp
+  ): [user_articles!]!
+
+  """
+  fetch aggregated fields from the table: "user_articles"
+  """
+  user_articles_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_articles_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_articles_order_by!]
+
+    """filter the rows returned"""
+    where: user_articles_bool_exp
+  ): user_articles_aggregate!
+
+  """fetch data from the table: "user_articles" using primary key columns"""
+  user_articles_by_pk(id: uuid!): user_articles
+
+  """
+  fetch data from the table in a streaming manner: "user_articles"
+  """
+  user_articles_stream(
+    """maximum number of rows returned in a single batch"""
+    batch_size: Int!
+
+    """cursor to stream the results returned by the query"""
+    cursor: [user_articles_stream_cursor_input]!
+
+    """filter the rows returned"""
+    where: user_articles_bool_exp
+  ): [user_articles!]!
+
+  """
   fetch data from the table: "auth.users"
   """
   users(
@@ -5202,6 +5371,312 @@ input timestamptz_comparison_exp {
   _lte: timestamptz
   _neq: timestamptz
   _nin: [timestamptz!]
+}
+
+"""
+columns and relationships of "user_articles"
+"""
+type user_articles {
+  article_id: uuid!
+  created_at: timestamptz!
+  created_by: uuid!
+  deleted_at: timestamptz
+  id: uuid!
+  play_at: Int
+  updated_at: timestamptz!
+  updated_by: uuid!
+  user_id: uuid
+}
+
+"""
+aggregated selection of "user_articles"
+"""
+type user_articles_aggregate {
+  aggregate: user_articles_aggregate_fields
+  nodes: [user_articles!]!
+}
+
+"""
+aggregate fields of "user_articles"
+"""
+type user_articles_aggregate_fields {
+  avg: user_articles_avg_fields
+  count(columns: [user_articles_select_column!], distinct: Boolean): Int!
+  max: user_articles_max_fields
+  min: user_articles_min_fields
+  stddev: user_articles_stddev_fields
+  stddev_pop: user_articles_stddev_pop_fields
+  stddev_samp: user_articles_stddev_samp_fields
+  sum: user_articles_sum_fields
+  var_pop: user_articles_var_pop_fields
+  var_samp: user_articles_var_samp_fields
+  variance: user_articles_variance_fields
+}
+
+"""aggregate avg on columns"""
+type user_articles_avg_fields {
+  play_at: Float
+}
+
+"""
+Boolean expression to filter rows from the table "user_articles". All fields are combined with a logical 'AND'.
+"""
+input user_articles_bool_exp {
+  _and: [user_articles_bool_exp!]
+  _not: user_articles_bool_exp
+  _or: [user_articles_bool_exp!]
+  article_id: uuid_comparison_exp
+  created_at: timestamptz_comparison_exp
+  created_by: uuid_comparison_exp
+  deleted_at: timestamptz_comparison_exp
+  id: uuid_comparison_exp
+  play_at: Int_comparison_exp
+  updated_at: timestamptz_comparison_exp
+  updated_by: uuid_comparison_exp
+  user_id: uuid_comparison_exp
+}
+
+"""
+unique or primary key constraints on table "user_articles"
+"""
+enum user_articles_constraint {
+  """
+  unique or primary key constraint on columns "id"
+  """
+  user_articles_pkey
+}
+
+"""
+input type for incrementing numeric columns in table "user_articles"
+"""
+input user_articles_inc_input {
+  play_at: Int
+}
+
+"""
+input type for inserting data into table "user_articles"
+"""
+input user_articles_insert_input {
+  article_id: uuid
+  created_at: timestamptz
+  created_by: uuid
+  deleted_at: timestamptz
+  id: uuid
+  play_at: Int
+  updated_at: timestamptz
+  updated_by: uuid
+  user_id: uuid
+}
+
+"""aggregate max on columns"""
+type user_articles_max_fields {
+  article_id: uuid
+  created_at: timestamptz
+  created_by: uuid
+  deleted_at: timestamptz
+  id: uuid
+  play_at: Int
+  updated_at: timestamptz
+  updated_by: uuid
+  user_id: uuid
+}
+
+"""aggregate min on columns"""
+type user_articles_min_fields {
+  article_id: uuid
+  created_at: timestamptz
+  created_by: uuid
+  deleted_at: timestamptz
+  id: uuid
+  play_at: Int
+  updated_at: timestamptz
+  updated_by: uuid
+  user_id: uuid
+}
+
+"""
+response of any mutation on the table "user_articles"
+"""
+type user_articles_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [user_articles!]!
+}
+
+"""
+on_conflict condition type for table "user_articles"
+"""
+input user_articles_on_conflict {
+  constraint: user_articles_constraint!
+  update_columns: [user_articles_update_column!]! = []
+  where: user_articles_bool_exp
+}
+
+"""Ordering options when selecting data from "user_articles"."""
+input user_articles_order_by {
+  article_id: order_by
+  created_at: order_by
+  created_by: order_by
+  deleted_at: order_by
+  id: order_by
+  play_at: order_by
+  updated_at: order_by
+  updated_by: order_by
+  user_id: order_by
+}
+
+"""primary key columns input for table: user_articles"""
+input user_articles_pk_columns_input {
+  id: uuid!
+}
+
+"""
+select columns of table "user_articles"
+"""
+enum user_articles_select_column {
+  """column name"""
+  article_id
+
+  """column name"""
+  created_at
+
+  """column name"""
+  created_by
+
+  """column name"""
+  deleted_at
+
+  """column name"""
+  id
+
+  """column name"""
+  play_at
+
+  """column name"""
+  updated_at
+
+  """column name"""
+  updated_by
+
+  """column name"""
+  user_id
+}
+
+"""
+input type for updating data in table "user_articles"
+"""
+input user_articles_set_input {
+  article_id: uuid
+  created_at: timestamptz
+  created_by: uuid
+  deleted_at: timestamptz
+  id: uuid
+  play_at: Int
+  updated_at: timestamptz
+  updated_by: uuid
+  user_id: uuid
+}
+
+"""aggregate stddev on columns"""
+type user_articles_stddev_fields {
+  play_at: Float
+}
+
+"""aggregate stddev_pop on columns"""
+type user_articles_stddev_pop_fields {
+  play_at: Float
+}
+
+"""aggregate stddev_samp on columns"""
+type user_articles_stddev_samp_fields {
+  play_at: Float
+}
+
+"""
+Streaming cursor of the table "user_articles"
+"""
+input user_articles_stream_cursor_input {
+  """Stream column input with initial value"""
+  initial_value: user_articles_stream_cursor_value_input!
+
+  """cursor ordering"""
+  ordering: cursor_ordering
+}
+
+"""Initial value of the column from where the streaming should start"""
+input user_articles_stream_cursor_value_input {
+  article_id: uuid
+  created_at: timestamptz
+  created_by: uuid
+  deleted_at: timestamptz
+  id: uuid
+  play_at: Int
+  updated_at: timestamptz
+  updated_by: uuid
+  user_id: uuid
+}
+
+"""aggregate sum on columns"""
+type user_articles_sum_fields {
+  play_at: Int
+}
+
+"""
+update columns of table "user_articles"
+"""
+enum user_articles_update_column {
+  """column name"""
+  article_id
+
+  """column name"""
+  created_at
+
+  """column name"""
+  created_by
+
+  """column name"""
+  deleted_at
+
+  """column name"""
+  id
+
+  """column name"""
+  play_at
+
+  """column name"""
+  updated_at
+
+  """column name"""
+  updated_by
+
+  """column name"""
+  user_id
+}
+
+input user_articles_updates {
+  """increments the numeric columns with given value of the filtered values"""
+  _inc: user_articles_inc_input
+
+  """sets the columns of the filtered rows to the given values"""
+  _set: user_articles_set_input
+  where: user_articles_bool_exp!
+}
+
+"""aggregate var_pop on columns"""
+type user_articles_var_pop_fields {
+  play_at: Float
+}
+
+"""aggregate var_samp on columns"""
+type user_articles_var_samp_fields {
+  play_at: Float
+}
+
+"""aggregate variance on columns"""
+type user_articles_variance_fields {
+  play_at: Float
 }
 
 """

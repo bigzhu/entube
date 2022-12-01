@@ -6,11 +6,11 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart' show StandardJsonPlugin;
 import 'package:entube/components/Article/services.data.gql.dart'
-    show GArticleSentencesData, GArticleSentencesData_articles;
+    show GSentencesData, GSentencesData_articles;
 import 'package:entube/components/Article/services.req.gql.dart'
-    show GArticleSentencesReq;
+    show GSentencesReq;
 import 'package:entube/components/Article/services.var.gql.dart'
-    show GArticleSentencesVars;
+    show GSentencesVars;
 import 'package:entube/components/ArticleItems/services.data.gql.dart'
     show GArticleItemsData, GArticleItemsData_articles;
 import 'package:entube/components/ArticleItems/services.req.gql.dart'
@@ -220,6 +220,19 @@ import 'package:entube/graphql/schema.schema.gql.dart'
         Gorder_by,
         Gtimestamptz,
         Gtimestamptz_comparison_exp,
+        Guser_articles_bool_exp,
+        Guser_articles_constraint,
+        Guser_articles_inc_input,
+        Guser_articles_insert_input,
+        Guser_articles_on_conflict,
+        Guser_articles_order_by,
+        Guser_articles_pk_columns_input,
+        Guser_articles_select_column,
+        Guser_articles_set_input,
+        Guser_articles_stream_cursor_input,
+        Guser_articles_stream_cursor_value_input,
+        Guser_articles_update_column,
+        Guser_articles_updates,
         Gusers_aggregate_bool_exp,
         Gusers_aggregate_bool_exp_bool_and,
         Gusers_aggregate_bool_exp_bool_or,
@@ -264,12 +277,12 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GArticleItemsData_articles,
   GArticleItemsReq,
   GArticleItemsVars,
-  GArticleSentencesData,
-  GArticleSentencesData_articles,
-  GArticleSentencesReq,
-  GArticleSentencesVars,
   GBoolean_comparison_exp,
   GInt_comparison_exp,
+  GSentencesData,
+  GSentencesData_articles,
+  GSentencesReq,
+  GSentencesVars,
   GString_comparison_exp,
   Garticles_append_input,
   Garticles_bool_exp,
@@ -469,6 +482,19 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   Gorder_by,
   Gtimestamptz,
   Gtimestamptz_comparison_exp,
+  Guser_articles_bool_exp,
+  Guser_articles_constraint,
+  Guser_articles_inc_input,
+  Guser_articles_insert_input,
+  Guser_articles_on_conflict,
+  Guser_articles_order_by,
+  Guser_articles_pk_columns_input,
+  Guser_articles_select_column,
+  Guser_articles_set_input,
+  Guser_articles_stream_cursor_input,
+  Guser_articles_stream_cursor_value_input,
+  Guser_articles_update_column,
+  Guser_articles_updates,
   Gusers_aggregate_bool_exp,
   Gusers_aggregate_bool_exp_bool_and,
   Gusers_aggregate_bool_exp_bool_or,

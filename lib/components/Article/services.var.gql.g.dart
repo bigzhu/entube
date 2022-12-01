@@ -6,22 +6,18 @@ part of 'services.var.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GArticleSentencesVars> _$gArticleSentencesVarsSerializer =
-    new _$GArticleSentencesVarsSerializer();
+Serializer<GSentencesVars> _$gSentencesVarsSerializer =
+    new _$GSentencesVarsSerializer();
 
-class _$GArticleSentencesVarsSerializer
-    implements StructuredSerializer<GArticleSentencesVars> {
+class _$GSentencesVarsSerializer
+    implements StructuredSerializer<GSentencesVars> {
   @override
-  final Iterable<Type> types = const [
-    GArticleSentencesVars,
-    _$GArticleSentencesVars
-  ];
+  final Iterable<Type> types = const [GSentencesVars, _$GSentencesVars];
   @override
-  final String wireName = 'GArticleSentencesVars';
+  final String wireName = 'GSentencesVars';
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, GArticleSentencesVars object,
+  Iterable<Object?> serialize(Serializers serializers, GSentencesVars object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'id',
@@ -33,10 +29,10 @@ class _$GArticleSentencesVarsSerializer
   }
 
   @override
-  GArticleSentencesVars deserialize(
+  GSentencesVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GArticleSentencesVarsBuilder();
+    final result = new GSentencesVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -55,31 +51,29 @@ class _$GArticleSentencesVarsSerializer
   }
 }
 
-class _$GArticleSentencesVars extends GArticleSentencesVars {
+class _$GSentencesVars extends GSentencesVars {
   @override
   final _i1.Guuid id;
 
-  factory _$GArticleSentencesVars(
-          [void Function(GArticleSentencesVarsBuilder)? updates]) =>
-      (new GArticleSentencesVarsBuilder()..update(updates))._build();
+  factory _$GSentencesVars([void Function(GSentencesVarsBuilder)? updates]) =>
+      (new GSentencesVarsBuilder()..update(updates))._build();
 
-  _$GArticleSentencesVars._({required this.id}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, r'GArticleSentencesVars', 'id');
+  _$GSentencesVars._({required this.id}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(id, r'GSentencesVars', 'id');
   }
 
   @override
-  GArticleSentencesVars rebuild(
-          void Function(GArticleSentencesVarsBuilder) updates) =>
+  GSentencesVars rebuild(void Function(GSentencesVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GArticleSentencesVarsBuilder toBuilder() =>
-      new GArticleSentencesVarsBuilder()..replace(this);
+  GSentencesVarsBuilder toBuilder() =>
+      new GSentencesVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GArticleSentencesVars && id == other.id;
+    return other is GSentencesVars && id == other.id;
   }
 
   @override
@@ -89,23 +83,22 @@ class _$GArticleSentencesVars extends GArticleSentencesVars {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GArticleSentencesVars')
-          ..add('id', id))
+    return (newBuiltValueToStringHelper(r'GSentencesVars')..add('id', id))
         .toString();
   }
 }
 
-class GArticleSentencesVarsBuilder
-    implements Builder<GArticleSentencesVars, GArticleSentencesVarsBuilder> {
-  _$GArticleSentencesVars? _$v;
+class GSentencesVarsBuilder
+    implements Builder<GSentencesVars, GSentencesVarsBuilder> {
+  _$GSentencesVars? _$v;
 
   _i1.GuuidBuilder? _id;
   _i1.GuuidBuilder get id => _$this._id ??= new _i1.GuuidBuilder();
   set id(_i1.GuuidBuilder? id) => _$this._id = id;
 
-  GArticleSentencesVarsBuilder();
+  GSentencesVarsBuilder();
 
-  GArticleSentencesVarsBuilder get _$this {
+  GSentencesVarsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id.toBuilder();
@@ -115,23 +108,23 @@ class GArticleSentencesVarsBuilder
   }
 
   @override
-  void replace(GArticleSentencesVars other) {
+  void replace(GSentencesVars other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GArticleSentencesVars;
+    _$v = other as _$GSentencesVars;
   }
 
   @override
-  void update(void Function(GArticleSentencesVarsBuilder)? updates) {
+  void update(void Function(GSentencesVarsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GArticleSentencesVars build() => _build();
+  GSentencesVars build() => _build();
 
-  _$GArticleSentencesVars _build() {
-    _$GArticleSentencesVars _$result;
+  _$GSentencesVars _build() {
+    _$GSentencesVars _$result;
     try {
-      _$result = _$v ?? new _$GArticleSentencesVars._(id: id.build());
+      _$result = _$v ?? new _$GSentencesVars._(id: id.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -139,7 +132,7 @@ class GArticleSentencesVarsBuilder
         id.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GArticleSentencesVars', _$failedField, e.toString());
+            r'GSentencesVars', _$failedField, e.toString());
       }
       rethrow;
     }

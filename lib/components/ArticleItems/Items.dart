@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -11,29 +12,31 @@ class Items extends HookConsumerWidget {
   const Items({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final articleItems = ref.watch(articleItemsSP);
+    final articleItemsStream = ref.watch(articleItemsStreamP);
+    final articleItemsRsp = useStream(articleItemsStream);
+    if (articleItemsRsp.hasError) {
+      return AlertDialog(
+          title: const Text('Error'),
+          content: Text(articleItemsRsp.error.toString()));
+    }
+    if (articleItemsRsp.data == null) return const CircularProgressIndicator();
 
-    return articleItems.when(
-      loading: () => const CircularProgressIndicator(),
-      error: (err, stack) => Text('Error: $err'),
-      data: (items) {
-        if (items.data?.articles == null) {
-          return const AlertDialog(
-              title: Text('No Data'),
-              content: Text(
-                  'Please share some video from YouTube or add from Explore'));
-        }
-        final articles = items.data!.articles;
+    final articles = articleItemsRsp.data?.data?.articles;
+    if (articles == null) {
+      return const AlertDialog(
+          title: Text('No Data'),
+          content:
+              Text('Please share some video from YouTube or add from Explore'));
+    }
+    ref.read(articleItemsSP.notifier).state = articles;
 
-        return ScrollablePositionedList.builder(
-          itemScrollController: ref.read(articleItemsScrollControllerProvider),
-          itemCount: articles.length,
-          itemBuilder: (context, index) {
-            return Item(
-                article: articles[index],
-                loading: articles[index].title == loadingTitle);
-          },
-        );
+    return ScrollablePositionedList.builder(
+      itemScrollController: ref.read(articleItemsScrollControllerProvider),
+      itemCount: articles.length,
+      itemBuilder: (context, index) {
+        return Item(
+            article: articles[index],
+            loading: articles[index].title == loadingTitle);
       },
     );
   }

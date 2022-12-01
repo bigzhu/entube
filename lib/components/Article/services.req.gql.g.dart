@@ -6,27 +6,22 @@ part of 'services.req.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GArticleSentencesReq> _$gArticleSentencesReqSerializer =
-    new _$GArticleSentencesReqSerializer();
+Serializer<GSentencesReq> _$gSentencesReqSerializer =
+    new _$GSentencesReqSerializer();
 
-class _$GArticleSentencesReqSerializer
-    implements StructuredSerializer<GArticleSentencesReq> {
+class _$GSentencesReqSerializer implements StructuredSerializer<GSentencesReq> {
   @override
-  final Iterable<Type> types = const [
-    GArticleSentencesReq,
-    _$GArticleSentencesReq
-  ];
+  final Iterable<Type> types = const [GSentencesReq, _$GSentencesReq];
   @override
-  final String wireName = 'GArticleSentencesReq';
+  final String wireName = 'GSentencesReq';
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, GArticleSentencesReq object,
+  Iterable<Object?> serialize(Serializers serializers, GSentencesReq object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'vars',
       serializers.serialize(object.vars,
-          specifiedType: const FullType(_i3.GArticleSentencesVars)),
+          specifiedType: const FullType(_i3.GSentencesVars)),
       'operation',
       serializers.serialize(object.operation,
           specifiedType: const FullType(_i4.Operation)),
@@ -47,7 +42,7 @@ class _$GArticleSentencesReqSerializer
       result
         ..add('optimisticResponse')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i2.GArticleSentencesData)));
+            specifiedType: const FullType(_i2.GSentencesData)));
     }
     value = object.updateCacheHandlerKey;
     if (value != null) {
@@ -75,10 +70,10 @@ class _$GArticleSentencesReqSerializer
   }
 
   @override
-  GArticleSentencesReq deserialize(
+  GSentencesReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GArticleSentencesReqBuilder();
+    final result = new GSentencesReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -88,8 +83,8 @@ class _$GArticleSentencesReqSerializer
       switch (key) {
         case 'vars':
           result.vars.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(_i3.GArticleSentencesVars))!
-              as _i3.GArticleSentencesVars);
+                  specifiedType: const FullType(_i3.GSentencesVars))!
+              as _i3.GSentencesVars);
           break;
         case 'operation':
           result.operation = serializers.deserialize(value,
@@ -101,8 +96,8 @@ class _$GArticleSentencesReqSerializer
           break;
         case 'optimisticResponse':
           result.optimisticResponse.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(_i2.GArticleSentencesData))!
-              as _i2.GArticleSentencesData);
+                  specifiedType: const FullType(_i2.GSentencesData))!
+              as _i2.GSentencesData);
           break;
         case 'updateCacheHandlerKey':
           result.updateCacheHandlerKey = serializers.deserialize(value,
@@ -131,18 +126,18 @@ class _$GArticleSentencesReqSerializer
   }
 }
 
-class _$GArticleSentencesReq extends GArticleSentencesReq {
+class _$GSentencesReq extends GSentencesReq {
   @override
-  final _i3.GArticleSentencesVars vars;
+  final _i3.GSentencesVars vars;
   @override
   final _i4.Operation operation;
   @override
   final String? requestId;
   @override
-  final _i2.GArticleSentencesData? Function(
-      _i2.GArticleSentencesData?, _i2.GArticleSentencesData?)? updateResult;
+  final _i2.GSentencesData? Function(_i2.GSentencesData?, _i2.GSentencesData?)?
+      updateResult;
   @override
-  final _i2.GArticleSentencesData? optimisticResponse;
+  final _i2.GSentencesData? optimisticResponse;
   @override
   final String? updateCacheHandlerKey;
   @override
@@ -152,11 +147,10 @@ class _$GArticleSentencesReq extends GArticleSentencesReq {
   @override
   final bool executeOnListen;
 
-  factory _$GArticleSentencesReq(
-          [void Function(GArticleSentencesReqBuilder)? updates]) =>
-      (new GArticleSentencesReqBuilder()..update(updates))._build();
+  factory _$GSentencesReq([void Function(GSentencesReqBuilder)? updates]) =>
+      (new GSentencesReqBuilder()..update(updates))._build();
 
-  _$GArticleSentencesReq._(
+  _$GSentencesReq._(
       {required this.vars,
       required this.operation,
       this.requestId,
@@ -167,28 +161,25 @@ class _$GArticleSentencesReq extends GArticleSentencesReq {
       this.fetchPolicy,
       required this.executeOnListen})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(vars, r'GSentencesReq', 'vars');
     BuiltValueNullFieldError.checkNotNull(
-        vars, r'GArticleSentencesReq', 'vars');
+        operation, r'GSentencesReq', 'operation');
     BuiltValueNullFieldError.checkNotNull(
-        operation, r'GArticleSentencesReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GArticleSentencesReq', 'executeOnListen');
+        executeOnListen, r'GSentencesReq', 'executeOnListen');
   }
 
   @override
-  GArticleSentencesReq rebuild(
-          void Function(GArticleSentencesReqBuilder) updates) =>
+  GSentencesReq rebuild(void Function(GSentencesReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GArticleSentencesReqBuilder toBuilder() =>
-      new GArticleSentencesReqBuilder()..replace(this);
+  GSentencesReqBuilder toBuilder() => new GSentencesReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     final dynamic _$dynamicOther = other;
-    return other is GArticleSentencesReq &&
+    return other is GSentencesReq &&
         vars == other.vars &&
         operation == other.operation &&
         requestId == other.requestId &&
@@ -220,7 +211,7 @@ class _$GArticleSentencesReq extends GArticleSentencesReq {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GArticleSentencesReq')
+    return (newBuiltValueToStringHelper(r'GSentencesReq')
           ..add('vars', vars)
           ..add('operation', operation)
           ..add('requestId', requestId)
@@ -234,14 +225,14 @@ class _$GArticleSentencesReq extends GArticleSentencesReq {
   }
 }
 
-class GArticleSentencesReqBuilder
-    implements Builder<GArticleSentencesReq, GArticleSentencesReqBuilder> {
-  _$GArticleSentencesReq? _$v;
+class GSentencesReqBuilder
+    implements Builder<GSentencesReq, GSentencesReqBuilder> {
+  _$GSentencesReq? _$v;
 
-  _i3.GArticleSentencesVarsBuilder? _vars;
-  _i3.GArticleSentencesVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GArticleSentencesVarsBuilder();
-  set vars(_i3.GArticleSentencesVarsBuilder? vars) => _$this._vars = vars;
+  _i3.GSentencesVarsBuilder? _vars;
+  _i3.GSentencesVarsBuilder get vars =>
+      _$this._vars ??= new _i3.GSentencesVarsBuilder();
+  set vars(_i3.GSentencesVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
   _i4.Operation? get operation => _$this._operation;
@@ -251,22 +242,20 @@ class GArticleSentencesReqBuilder
   String? get requestId => _$this._requestId;
   set requestId(String? requestId) => _$this._requestId = requestId;
 
-  _i2.GArticleSentencesData? Function(
-      _i2.GArticleSentencesData?, _i2.GArticleSentencesData?)? _updateResult;
-  _i2.GArticleSentencesData? Function(
-          _i2.GArticleSentencesData?, _i2.GArticleSentencesData?)?
+  _i2.GSentencesData? Function(_i2.GSentencesData?, _i2.GSentencesData?)?
+      _updateResult;
+  _i2.GSentencesData? Function(_i2.GSentencesData?, _i2.GSentencesData?)?
       get updateResult => _$this._updateResult;
   set updateResult(
-          _i2.GArticleSentencesData? Function(
-                  _i2.GArticleSentencesData?, _i2.GArticleSentencesData?)?
+          _i2.GSentencesData? Function(
+                  _i2.GSentencesData?, _i2.GSentencesData?)?
               updateResult) =>
       _$this._updateResult = updateResult;
 
-  _i2.GArticleSentencesDataBuilder? _optimisticResponse;
-  _i2.GArticleSentencesDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GArticleSentencesDataBuilder();
-  set optimisticResponse(
-          _i2.GArticleSentencesDataBuilder? optimisticResponse) =>
+  _i2.GSentencesDataBuilder? _optimisticResponse;
+  _i2.GSentencesDataBuilder get optimisticResponse =>
+      _$this._optimisticResponse ??= new _i2.GSentencesDataBuilder();
+  set optimisticResponse(_i2.GSentencesDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
   String? _updateCacheHandlerKey;
@@ -291,11 +280,11 @@ class GArticleSentencesReqBuilder
   set executeOnListen(bool? executeOnListen) =>
       _$this._executeOnListen = executeOnListen;
 
-  GArticleSentencesReqBuilder() {
-    GArticleSentencesReq._initializeBuilder(this);
+  GSentencesReqBuilder() {
+    GSentencesReq._initializeBuilder(this);
   }
 
-  GArticleSentencesReqBuilder get _$this {
+  GSentencesReqBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _vars = $v.vars.toBuilder();
@@ -313,27 +302,27 @@ class GArticleSentencesReqBuilder
   }
 
   @override
-  void replace(GArticleSentencesReq other) {
+  void replace(GSentencesReq other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GArticleSentencesReq;
+    _$v = other as _$GSentencesReq;
   }
 
   @override
-  void update(void Function(GArticleSentencesReqBuilder)? updates) {
+  void update(void Function(GSentencesReqBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GArticleSentencesReq build() => _build();
+  GSentencesReq build() => _build();
 
-  _$GArticleSentencesReq _build() {
-    _$GArticleSentencesReq _$result;
+  _$GSentencesReq _build() {
+    _$GSentencesReq _$result;
     try {
       _$result = _$v ??
-          new _$GArticleSentencesReq._(
+          new _$GSentencesReq._(
               vars: vars.build(),
               operation: BuiltValueNullFieldError.checkNotNull(
-                  operation, r'GArticleSentencesReq', 'operation'),
+                  operation, r'GSentencesReq', 'operation'),
               requestId: requestId,
               updateResult: updateResult,
               optimisticResponse: _optimisticResponse?.build(),
@@ -341,7 +330,7 @@ class GArticleSentencesReqBuilder
               updateCacheHandlerContext: updateCacheHandlerContext,
               fetchPolicy: fetchPolicy,
               executeOnListen: BuiltValueNullFieldError.checkNotNull(
-                  executeOnListen, r'GArticleSentencesReq', 'executeOnListen'));
+                  executeOnListen, r'GSentencesReq', 'executeOnListen'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -352,7 +341,7 @@ class GArticleSentencesReqBuilder
         _optimisticResponse?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GArticleSentencesReq', _$failedField, e.toString());
+            r'GSentencesReq', _$failedField, e.toString());
       }
       rethrow;
     }

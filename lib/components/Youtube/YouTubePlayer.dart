@@ -22,7 +22,7 @@ class NewYouTubePlayer extends StatefulHookConsumerWidget {
 
 class _NewYouTubePlayerState extends ConsumerState<NewYouTubePlayer>
     with WidgetsBindingObserver {
-  late ArticleModel articleNoSe;
+  late GArticleItemsData_articles articleNoSe;
   late String articleId;
   late UserArticleModel userArticle;
   late YoutubePlayerController _controller;

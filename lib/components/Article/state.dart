@@ -1,15 +1,16 @@
+import 'package:entube/components/Article/services.data.gql.dart';
+import 'package:entube/components/Article/services.var.gql.dart';
 import 'package:entube/graphql/schema.schema.gql.dart';
 import 'package:entube/state.dart';
 import 'package:ferry/ferry.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import './services.req.gql.dart';
-import 'services.data.gql.dart';
-import 'services.var.gql.dart';
 
-final articleSP = StreamProvider.family<
-    OperationResponse<GArticleSentencesData, GArticleSentencesVars>,
+import './services.req.gql.dart';
+
+final sentencesP = Provider.family<
+    Stream<OperationResponse<GSentencesData, GSentencesVars>>,
     Guuid>((ref, id) {
-  final articlesReq = GArticleSentencesReq((b) => b..vars.id = id.toBuilder());
+  final articlesReq = GSentencesReq((b) => b..vars.id = id.toBuilder());
   final client = ref.watch(gqlClientP);
   return client.request(articlesReq);
 });
