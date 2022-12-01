@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../Settings/provider.dart';
+//import '../Settings/provider.dart';
 import '../word/word.dart';
-import './Seek.dart';
-import './sentence_trans.dart';
+import 'Seek.dart';
+//import './sentence_trans.dart';
 import 'SentenceModel.dart';
 
 class Words extends ConsumerWidget {
@@ -39,6 +39,7 @@ class Words extends ConsumerWidget {
       words = [blankSpan, ...words];
     }
 
+/*
     if (ref.watch(switchSettingsNotifierProvider
         .select((value) => value[IS_SHOW_SENTENCE_TRANS] ?? false))) {
       //add word trans
@@ -46,6 +47,7 @@ class Words extends ConsumerWidget {
       WidgetSpan sentenceSpan = WidgetSpan(child: sentenceTrans);
       words = [...words, sentenceSpan];
     }
+    */
 
     return RichText(text: TextSpan(text: '', children: words));
   }

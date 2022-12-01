@@ -1,22 +1,22 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import '../../utils/compute.dart';
+import 'package:AcquireEnglish/components/AcquiringWords/index.dart';
 import 'package:AcquireEnglish/components/Youtube/index.dart';
-import '../../themes.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:language_picker/languages.dart';
+import 'package:language_picker/languages.dart';
+import 'package:translator/translator.dart';
+import 'package:translator/translator.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 import './sentence_model.dart';
-import 'package:translator/translator.dart';
-import 'package:language_picker/languages.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:language_picker/languages.dart';
-import 'package:translator/translator.dart';
-import 'package:AcquireEnglish/components/AcquiringWords/index.dart';
-import '../Settings/provider.dart';
 import '../../themes.dart';
+import '../../themes.dart';
+import '../../utils/compute.dart';
+import '../Settings/provider.dart';
 
 class SentenceTrans extends StatefulHookConsumerWidget {
   const SentenceTrans(this.sentence, {Key? key}) : super(key: key);

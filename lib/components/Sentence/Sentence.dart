@@ -1,9 +1,9 @@
-import 'package:entube/components/Article/index.dart';
-import 'package:entube/graphql/schema.schema.gql.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
 import 'SentenceModel.dart';
 import 'Words.dart';
+import 'state.dart';
 
 class Sentence extends ConsumerWidget {
   const Sentence(

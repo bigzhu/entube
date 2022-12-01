@@ -1,9 +1,8 @@
 import 'package:entube/components/ArticleItems/index.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-
 import 'package:entube/components/Sentence/index.dart';
 import 'package:entube/graphql/schema.schema.gql.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 

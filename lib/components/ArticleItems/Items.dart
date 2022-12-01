@@ -31,6 +31,7 @@ class Items extends HookConsumerWidget {
           content:
               Text('Please share some video from YouTube or add from Explore'));
     }
+// Add articles to state
     Future(() {
       ref.read(articleItemsSP.notifier).state = articles;
     });
