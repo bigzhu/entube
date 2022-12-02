@@ -24995,7 +24995,11 @@ const words_constraint = _i1.EnumTypeDefinitionNode(
     _i1.EnumValueDefinitionNode(
       name: _i1.NameNode(value: 'words_pkey'),
       directives: [],
-    )
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'words_word_created_by_key'),
+      directives: [],
+    ),
   ],
 );
 const words_inc_input = _i1.InputObjectTypeDefinitionNode(

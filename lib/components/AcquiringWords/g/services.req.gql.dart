@@ -73,3 +73,63 @@ abstract class GAcquiringWordsReq
         json,
       );
 }
+
+abstract class GupsertAcquiringWordsReq
+    implements
+        Built<GupsertAcquiringWordsReq, GupsertAcquiringWordsReqBuilder>,
+        _i1.OperationRequest<_i2.GupsertAcquiringWordsData,
+            _i3.GupsertAcquiringWordsVars> {
+  GupsertAcquiringWordsReq._();
+
+  factory GupsertAcquiringWordsReq(
+          [Function(GupsertAcquiringWordsReqBuilder b) updates]) =
+      _$GupsertAcquiringWordsReq;
+
+  static void _initializeBuilder(GupsertAcquiringWordsReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'upsertAcquiringWords',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GupsertAcquiringWordsVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GupsertAcquiringWordsData? Function(
+    _i2.GupsertAcquiringWordsData?,
+    _i2.GupsertAcquiringWordsData?,
+  )? get updateResult;
+  @override
+  _i2.GupsertAcquiringWordsData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GupsertAcquiringWordsData? parseData(Map<String, dynamic> json) =>
+      _i2.GupsertAcquiringWordsData.fromJson(json);
+  static Serializer<GupsertAcquiringWordsReq> get serializer =>
+      _$gupsertAcquiringWordsReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GupsertAcquiringWordsReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GupsertAcquiringWordsReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GupsertAcquiringWordsReq.serializer,
+        json,
+      );
+}

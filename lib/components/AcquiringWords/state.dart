@@ -1,22 +1,40 @@
 import 'package:entube/components/AcquiringWords/g/services.req.gql.dart';
 import 'package:entube/state.dart';
+import 'package:ferry/ferry.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:built_collection/built_collection.dart';
 
 import 'g/services.data.gql.dart';
+import 'g/services.var.gql.dart';
 
+// select acquiringWords
 final acquiringWordsStreamP = Provider((ref) {
   final articlesReq = GAcquiringWordsReq();
   final client = ref.watch(gqlClientP);
   return client.request(articlesReq);
 });
 
+// https://github.com/hasura/graphql-engine/issues/1749
+// 无法在 upsert 中使用 _inc
+final upsertAcquiringWordsStreamP = Provider.family<
+    Stream<
+        OperationResponse<GupsertAcquiringWordsData,
+            GupsertAcquiringWordsVars>>,
+    GAcquiringWordsData_words>((ref, word) {
+  final req = GupsertAcquiringWordsReq(
+    (b) => b
+      ..vars.word = word.word
+      ..vars.times = word.times + 1
+      ..vars.is_done = word.is_done,
+  );
+  final client = ref.watch(gqlClientP);
+  return client.request(req);
+});
+
 //https://riverpod.dev/docs/concepts/modifiers/auto_dispose#refkeepalive
 class AcquiringWordsNotifier
-    extends StateNotifier<BuiltList<GAcquiringWordsData_words>> {
-  AcquiringWordsNotifier(this.ref)
-      : super(BuiltList(<GAcquiringWordsData_words>[])) {
+    extends StateNotifier<List<GAcquiringWordsData_words>> {
+  AcquiringWordsNotifier(this.ref) : super(<GAcquiringWordsData_words>[]) {
     fetch();
     //监听登录用户变化, 来决定重取数据
     /*
@@ -39,39 +57,37 @@ class AcquiringWordsNotifier
       final acquiringWordsStream = ref.watch(acquiringWordsStreamP);
       await for (final s in acquiringWordsStream) {
         if (s.data == null) return;
-        BuiltList<GAcquiringWordsData_words> words = s.data!.words;
+        final words = s.data!.words.toList();
         state = words;
         saveToLocal();
       }
     }
   }
 
-  BuiltList<GAcquiringWordsData_words> fromJson() {
+  List<GAcquiringWordsData_words> fromJson() {
     final acquiringWordJSON = box.get('data');
     if (acquiringWordJSON == null) {
-      return BuiltList(<GAcquiringWordsData_words>[]);
+      return <GAcquiringWordsData_words>[];
     }
 
 // json 转回 words
     return (acquiringWordJSON as List).map((e) {
       return GAcquiringWordsData_words.fromJson(e) ??
           GAcquiringWordsData_words();
-    }).toBuiltList();
+    }).toList();
   }
 
   add(String word) async {
     word = word.toLowerCase();
     int i = state.indexWhere((e) => e.word == word);
+    int times = 0;
+    // 已经设置过, 取值 times 并删除
     if (i != -1) {
-      state[i]['done'] = false; // 某种情况下会没有 done 属性
-      state[i].increment('count', 1);
-      state[i].save();
-      state[i] = clone(state[i]);
-      state = [...state];
-    } else {
-      AcquiringWordModel acquiringWord = await AcquiringWordService().add(word);
-      state = [acquiringWord, ...state];
+      times = state[i].times;
+      state.removeAt(i);
     }
+    GAcquiringWordsData_words wordObj = await upsert(word, times, false);
+    state = [...state, wordObj];
   }
 
   saveToLocal() {
@@ -82,22 +98,31 @@ class AcquiringWordsNotifier
     word = word.toLowerCase();
     int i = state.indexWhere((e) => e.word == word);
     if (i != -1) {
-      state[i].done = true;
-      state[i].save();
-      state[i] = clone(state[i]);
-      //不要真的移除, 只是打标记
-      //state.removeAt(i);
-      state = [...state];
+      state.removeAt(i);
+      int times = state[i].times;
+      upsert(word, times, false);
     }
   }
 
-  AcquiringWordModel clone(AcquiringWordModel acquiringWord) {
-    return LCObject.parseObject(acquiringWord.toString()) as AcquiringWordModel;
+  Future<GAcquiringWordsData_words> upsert(
+      String word, int times, bool isDone) async {
+    GAcquiringWordsData_words wordObj = GAcquiringWordsData_words(
+      (b) => b
+        ..word = word
+        ..times = times
+        ..is_done = isDone,
+    );
+
+    final stream = ref.watch(upsertAcquiringWordsStreamP(wordObj));
+    await for (final s in stream) {
+      wordObj.rebuild((b) => b..times = s.data!.insert_words_one!.times);
+    }
+    return wordObj;
   }
 }
 
-final acquiringWordsStateNotifierProvider = StateNotifierProvider.autoDispose<
-    AcquiringWordsNotifier, List<AcquiringWordModel>>((ref) {
+final acquiringWordsSNP = StateNotifierProvider.autoDispose<
+    AcquiringWordsNotifier, List<GAcquiringWordsData_words>>((ref) {
   AcquiringWordsNotifier acquiringWordsNotifier = AcquiringWordsNotifier(ref);
   ref.keepAlive();
   return acquiringWordsNotifier;

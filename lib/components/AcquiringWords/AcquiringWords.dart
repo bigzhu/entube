@@ -26,8 +26,7 @@ class AcquiringWords extends HookConsumerWidget {
     if (acquiringWords == null) {
       return const AlertDialog(
           title: Text('No Data'),
-          content:
-              Text('Please share some video from YouTube or add from Explore'));
+          content: Text('Tapping word to set/unset the acquiring word'));
     }
 
     return Column(

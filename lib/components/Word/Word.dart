@@ -65,14 +65,12 @@ class _StateWord extends ConsumerState<Word> {
     String word,
     bool done,
   ) async {
-    word = word.toLowerCase();
-    final acquiringWordsStateNotifierProviderNotifier =
-        ref.read(acquiringWordsStateNotifierProvider.notifier);
+    final acquiringWordsSNPN = ref.read(acquiringWordsSNP.notifier);
     if (done) {
-      await acquiringWordsStateNotifierProviderNotifier.remove(word);
+      await acquiringWordsSNPN.remove(word);
     }
     if (done == false) {
-      await acquiringWordsStateNotifierProviderNotifier.add(word);
+      await acquiringWordsSNPN.add(word);
     }
   }
 

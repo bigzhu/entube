@@ -6769,6 +6769,11 @@ enum words_constraint {
   unique or primary key constraint on columns "id"
   """
   words_pkey
+
+  """
+  unique or primary key constraint on columns "created_by", "word"
+  """
+  words_word_created_by_key
 }
 
 """

@@ -1714,11 +1714,15 @@ final BuiltSet<Gusers_update_column> _$gusersUpdateColumnValues =
 
 const Gwords_constraint _$gwordsConstraintwords_pkey =
     const Gwords_constraint._('words_pkey');
+const Gwords_constraint _$gwordsConstraintwords_word_created_by_key =
+    const Gwords_constraint._('words_word_created_by_key');
 
 Gwords_constraint _$gwordsConstraintValueOf(String name) {
   switch (name) {
     case 'words_pkey':
       return _$gwordsConstraintwords_pkey;
+    case 'words_word_created_by_key':
+      return _$gwordsConstraintwords_word_created_by_key;
     default:
       throw new ArgumentError(name);
   }
@@ -1727,6 +1731,7 @@ Gwords_constraint _$gwordsConstraintValueOf(String name) {
 final BuiltSet<Gwords_constraint> _$gwordsConstraintValues =
     new BuiltSet<Gwords_constraint>(const <Gwords_constraint>[
   _$gwordsConstraintwords_pkey,
+  _$gwordsConstraintwords_word_created_by_key,
 ]);
 
 const Gwords_select_column _$gwordsSelectColumncreated_at =

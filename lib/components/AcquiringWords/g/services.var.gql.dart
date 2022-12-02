@@ -27,3 +27,28 @@ abstract class GAcquiringWordsVars
         json,
       );
 }
+
+abstract class GupsertAcquiringWordsVars
+    implements
+        Built<GupsertAcquiringWordsVars, GupsertAcquiringWordsVarsBuilder> {
+  GupsertAcquiringWordsVars._();
+
+  factory GupsertAcquiringWordsVars(
+          [Function(GupsertAcquiringWordsVarsBuilder b) updates]) =
+      _$GupsertAcquiringWordsVars;
+
+  bool? get is_done;
+  int? get times;
+  String get word;
+  static Serializer<GupsertAcquiringWordsVars> get serializer =>
+      _$gupsertAcquiringWordsVarsSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GupsertAcquiringWordsVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GupsertAcquiringWordsVars? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GupsertAcquiringWordsVars.serializer,
+        json,
+      );
+}

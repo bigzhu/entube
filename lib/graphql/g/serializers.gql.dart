@@ -6,11 +6,15 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart' show StandardJsonPlugin;
 import 'package:entube/components/AcquiringWords/g/services.data.gql.dart'
-    show GAcquiringWordsData, GAcquiringWordsData_words;
+    show
+        GAcquiringWordsData,
+        GAcquiringWordsData_words,
+        GupsertAcquiringWordsData,
+        GupsertAcquiringWordsData_insert_words_one;
 import 'package:entube/components/AcquiringWords/g/services.req.gql.dart'
-    show GAcquiringWordsReq;
+    show GAcquiringWordsReq, GupsertAcquiringWordsReq;
 import 'package:entube/components/AcquiringWords/g/services.var.gql.dart'
-    show GAcquiringWordsVars;
+    show GAcquiringWordsVars, GupsertAcquiringWordsVars;
 import 'package:entube/components/Article/g/services.data.gql.dart'
     show GSentencesData, GSentencesData_articles;
 import 'package:entube/components/Article/g/services.req.gql.dart'
@@ -505,6 +509,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   Gorder_by,
   Gtimestamptz,
   Gtimestamptz_comparison_exp,
+  GupsertAcquiringWordsData,
+  GupsertAcquiringWordsData_insert_words_one,
+  GupsertAcquiringWordsReq,
+  GupsertAcquiringWordsVars,
   Guser_articles_bool_exp,
   Guser_articles_constraint,
   Guser_articles_inc_input,

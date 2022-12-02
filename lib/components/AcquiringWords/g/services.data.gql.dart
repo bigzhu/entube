@@ -66,3 +66,62 @@ abstract class GAcquiringWordsData_words
         json,
       );
 }
+
+abstract class GupsertAcquiringWordsData
+    implements
+        Built<GupsertAcquiringWordsData, GupsertAcquiringWordsDataBuilder> {
+  GupsertAcquiringWordsData._();
+
+  factory GupsertAcquiringWordsData(
+          [Function(GupsertAcquiringWordsDataBuilder b) updates]) =
+      _$GupsertAcquiringWordsData;
+
+  static void _initializeBuilder(GupsertAcquiringWordsDataBuilder b) =>
+      b..G__typename = 'mutation_root';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GupsertAcquiringWordsData_insert_words_one? get insert_words_one;
+  static Serializer<GupsertAcquiringWordsData> get serializer =>
+      _$gupsertAcquiringWordsDataSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GupsertAcquiringWordsData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GupsertAcquiringWordsData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GupsertAcquiringWordsData.serializer,
+        json,
+      );
+}
+
+abstract class GupsertAcquiringWordsData_insert_words_one
+    implements
+        Built<GupsertAcquiringWordsData_insert_words_one,
+            GupsertAcquiringWordsData_insert_words_oneBuilder> {
+  GupsertAcquiringWordsData_insert_words_one._();
+
+  factory GupsertAcquiringWordsData_insert_words_one(
+      [Function(GupsertAcquiringWordsData_insert_words_oneBuilder b)
+          updates]) = _$GupsertAcquiringWordsData_insert_words_one;
+
+  static void _initializeBuilder(
+          GupsertAcquiringWordsData_insert_words_oneBuilder b) =>
+      b..G__typename = 'words';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  String get word;
+  int get times;
+  bool get is_done;
+  static Serializer<GupsertAcquiringWordsData_insert_words_one>
+      get serializer => _$gupsertAcquiringWordsDataInsertWordsOneSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GupsertAcquiringWordsData_insert_words_one.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GupsertAcquiringWordsData_insert_words_one? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GupsertAcquiringWordsData_insert_words_one.serializer,
+        json,
+      );
+}

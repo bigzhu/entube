@@ -10,6 +10,11 @@ Serializer<GAcquiringWordsData> _$gAcquiringWordsDataSerializer =
     new _$GAcquiringWordsDataSerializer();
 Serializer<GAcquiringWordsData_words> _$gAcquiringWordsDataWordsSerializer =
     new _$GAcquiringWordsData_wordsSerializer();
+Serializer<GupsertAcquiringWordsData> _$gupsertAcquiringWordsDataSerializer =
+    new _$GupsertAcquiringWordsDataSerializer();
+Serializer<GupsertAcquiringWordsData_insert_words_one>
+    _$gupsertAcquiringWordsDataInsertWordsOneSerializer =
+    new _$GupsertAcquiringWordsData_insert_words_oneSerializer();
 
 class _$GAcquiringWordsDataSerializer
     implements StructuredSerializer<GAcquiringWordsData> {
@@ -147,6 +152,132 @@ class _$GAcquiringWordsData_wordsSerializer
           result.updated_at.replace(serializers.deserialize(value,
                   specifiedType: const FullType(_i2.Gtimestamptz))!
               as _i2.Gtimestamptz);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GupsertAcquiringWordsDataSerializer
+    implements StructuredSerializer<GupsertAcquiringWordsData> {
+  @override
+  final Iterable<Type> types = const [
+    GupsertAcquiringWordsData,
+    _$GupsertAcquiringWordsData
+  ];
+  @override
+  final String wireName = 'GupsertAcquiringWordsData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GupsertAcquiringWordsData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.insert_words_one;
+    if (value != null) {
+      result
+        ..add('insert_words_one')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GupsertAcquiringWordsData_insert_words_one)));
+    }
+    return result;
+  }
+
+  @override
+  GupsertAcquiringWordsData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GupsertAcquiringWordsDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'insert_words_one':
+          result.insert_words_one.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GupsertAcquiringWordsData_insert_words_one))!
+              as GupsertAcquiringWordsData_insert_words_one);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GupsertAcquiringWordsData_insert_words_oneSerializer
+    implements
+        StructuredSerializer<GupsertAcquiringWordsData_insert_words_one> {
+  @override
+  final Iterable<Type> types = const [
+    GupsertAcquiringWordsData_insert_words_one,
+    _$GupsertAcquiringWordsData_insert_words_one
+  ];
+  @override
+  final String wireName = 'GupsertAcquiringWordsData_insert_words_one';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GupsertAcquiringWordsData_insert_words_one object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'word',
+      serializers.serialize(object.word, specifiedType: const FullType(String)),
+      'times',
+      serializers.serialize(object.times, specifiedType: const FullType(int)),
+      'is_done',
+      serializers.serialize(object.is_done,
+          specifiedType: const FullType(bool)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GupsertAcquiringWordsData_insert_words_one deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GupsertAcquiringWordsData_insert_words_oneBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'word':
+          result.word = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'times':
+          result.times = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
+          break;
+        case 'is_done':
+          result.is_done = serializers.deserialize(value,
+              specifiedType: const FullType(bool))! as bool;
           break;
       }
     }
@@ -467,6 +598,266 @@ class GAcquiringWordsData_wordsBuilder
       }
       rethrow;
     }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GupsertAcquiringWordsData extends GupsertAcquiringWordsData {
+  @override
+  final String G__typename;
+  @override
+  final GupsertAcquiringWordsData_insert_words_one? insert_words_one;
+
+  factory _$GupsertAcquiringWordsData(
+          [void Function(GupsertAcquiringWordsDataBuilder)? updates]) =>
+      (new GupsertAcquiringWordsDataBuilder()..update(updates))._build();
+
+  _$GupsertAcquiringWordsData._(
+      {required this.G__typename, this.insert_words_one})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GupsertAcquiringWordsData', 'G__typename');
+  }
+
+  @override
+  GupsertAcquiringWordsData rebuild(
+          void Function(GupsertAcquiringWordsDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GupsertAcquiringWordsDataBuilder toBuilder() =>
+      new GupsertAcquiringWordsDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GupsertAcquiringWordsData &&
+        G__typename == other.G__typename &&
+        insert_words_one == other.insert_words_one;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, G__typename.hashCode), insert_words_one.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GupsertAcquiringWordsData')
+          ..add('G__typename', G__typename)
+          ..add('insert_words_one', insert_words_one))
+        .toString();
+  }
+}
+
+class GupsertAcquiringWordsDataBuilder
+    implements
+        Builder<GupsertAcquiringWordsData, GupsertAcquiringWordsDataBuilder> {
+  _$GupsertAcquiringWordsData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GupsertAcquiringWordsData_insert_words_oneBuilder? _insert_words_one;
+  GupsertAcquiringWordsData_insert_words_oneBuilder get insert_words_one =>
+      _$this._insert_words_one ??=
+          new GupsertAcquiringWordsData_insert_words_oneBuilder();
+  set insert_words_one(
+          GupsertAcquiringWordsData_insert_words_oneBuilder?
+              insert_words_one) =>
+      _$this._insert_words_one = insert_words_one;
+
+  GupsertAcquiringWordsDataBuilder() {
+    GupsertAcquiringWordsData._initializeBuilder(this);
+  }
+
+  GupsertAcquiringWordsDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _insert_words_one = $v.insert_words_one?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GupsertAcquiringWordsData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GupsertAcquiringWordsData;
+  }
+
+  @override
+  void update(void Function(GupsertAcquiringWordsDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GupsertAcquiringWordsData build() => _build();
+
+  _$GupsertAcquiringWordsData _build() {
+    _$GupsertAcquiringWordsData _$result;
+    try {
+      _$result = _$v ??
+          new _$GupsertAcquiringWordsData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GupsertAcquiringWordsData', 'G__typename'),
+              insert_words_one: _insert_words_one?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'insert_words_one';
+        _insert_words_one?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GupsertAcquiringWordsData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GupsertAcquiringWordsData_insert_words_one
+    extends GupsertAcquiringWordsData_insert_words_one {
+  @override
+  final String G__typename;
+  @override
+  final String word;
+  @override
+  final int times;
+  @override
+  final bool is_done;
+
+  factory _$GupsertAcquiringWordsData_insert_words_one(
+          [void Function(GupsertAcquiringWordsData_insert_words_oneBuilder)?
+              updates]) =>
+      (new GupsertAcquiringWordsData_insert_words_oneBuilder()..update(updates))
+          ._build();
+
+  _$GupsertAcquiringWordsData_insert_words_one._(
+      {required this.G__typename,
+      required this.word,
+      required this.times,
+      required this.is_done})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GupsertAcquiringWordsData_insert_words_one', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        word, r'GupsertAcquiringWordsData_insert_words_one', 'word');
+    BuiltValueNullFieldError.checkNotNull(
+        times, r'GupsertAcquiringWordsData_insert_words_one', 'times');
+    BuiltValueNullFieldError.checkNotNull(
+        is_done, r'GupsertAcquiringWordsData_insert_words_one', 'is_done');
+  }
+
+  @override
+  GupsertAcquiringWordsData_insert_words_one rebuild(
+          void Function(GupsertAcquiringWordsData_insert_words_oneBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GupsertAcquiringWordsData_insert_words_oneBuilder toBuilder() =>
+      new GupsertAcquiringWordsData_insert_words_oneBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GupsertAcquiringWordsData_insert_words_one &&
+        G__typename == other.G__typename &&
+        word == other.word &&
+        times == other.times &&
+        is_done == other.is_done;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc($jc($jc(0, G__typename.hashCode), word.hashCode), times.hashCode),
+        is_done.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GupsertAcquiringWordsData_insert_words_one')
+          ..add('G__typename', G__typename)
+          ..add('word', word)
+          ..add('times', times)
+          ..add('is_done', is_done))
+        .toString();
+  }
+}
+
+class GupsertAcquiringWordsData_insert_words_oneBuilder
+    implements
+        Builder<GupsertAcquiringWordsData_insert_words_one,
+            GupsertAcquiringWordsData_insert_words_oneBuilder> {
+  _$GupsertAcquiringWordsData_insert_words_one? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  String? _word;
+  String? get word => _$this._word;
+  set word(String? word) => _$this._word = word;
+
+  int? _times;
+  int? get times => _$this._times;
+  set times(int? times) => _$this._times = times;
+
+  bool? _is_done;
+  bool? get is_done => _$this._is_done;
+  set is_done(bool? is_done) => _$this._is_done = is_done;
+
+  GupsertAcquiringWordsData_insert_words_oneBuilder() {
+    GupsertAcquiringWordsData_insert_words_one._initializeBuilder(this);
+  }
+
+  GupsertAcquiringWordsData_insert_words_oneBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _word = $v.word;
+      _times = $v.times;
+      _is_done = $v.is_done;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GupsertAcquiringWordsData_insert_words_one other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GupsertAcquiringWordsData_insert_words_one;
+  }
+
+  @override
+  void update(
+      void Function(GupsertAcquiringWordsData_insert_words_oneBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GupsertAcquiringWordsData_insert_words_one build() => _build();
+
+  _$GupsertAcquiringWordsData_insert_words_one _build() {
+    final _$result = _$v ??
+        new _$GupsertAcquiringWordsData_insert_words_one._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GupsertAcquiringWordsData_insert_words_one', 'G__typename'),
+            word: BuiltValueNullFieldError.checkNotNull(
+                word, r'GupsertAcquiringWordsData_insert_words_one', 'word'),
+            times: BuiltValueNullFieldError.checkNotNull(
+                times, r'GupsertAcquiringWordsData_insert_words_one', 'times'),
+            is_done: BuiltValueNullFieldError.checkNotNull(is_done,
+                r'GupsertAcquiringWordsData_insert_words_one', 'is_done'));
     replace(_$result);
     return _$result;
   }

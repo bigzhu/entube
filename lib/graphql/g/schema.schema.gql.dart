@@ -6775,6 +6775,9 @@ class Gwords_constraint extends EnumClass {
 
   static const Gwords_constraint words_pkey = _$gwordsConstraintwords_pkey;
 
+  static const Gwords_constraint words_word_created_by_key =
+      _$gwordsConstraintwords_word_created_by_key;
+
   static Serializer<Gwords_constraint> get serializer =>
       _$gwordsConstraintSerializer;
   static BuiltSet<Gwords_constraint> get values => _$gwordsConstraintValues;
