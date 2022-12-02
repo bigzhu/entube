@@ -6705,12 +6705,12 @@ type words {
   created_at: timestamptz!
   created_by: uuid!
   deleted_at: timestamptz
-  done: Boolean!
   id: uuid!
+  is_done: Boolean!
   times: Int!
   updated_at: timestamptz!
   updated_by: uuid!
-  word: String
+  word: String!
 }
 
 """
@@ -6753,8 +6753,8 @@ input words_bool_exp {
   created_at: timestamptz_comparison_exp
   created_by: uuid_comparison_exp
   deleted_at: timestamptz_comparison_exp
-  done: Boolean_comparison_exp
   id: uuid_comparison_exp
+  is_done: Boolean_comparison_exp
   times: Int_comparison_exp
   updated_at: timestamptz_comparison_exp
   updated_by: uuid_comparison_exp
@@ -6785,8 +6785,8 @@ input words_insert_input {
   created_at: timestamptz
   created_by: uuid
   deleted_at: timestamptz
-  done: Boolean
   id: uuid
+  is_done: Boolean
   times: Int
   updated_at: timestamptz
   updated_by: uuid
@@ -6842,8 +6842,8 @@ input words_order_by {
   created_at: order_by
   created_by: order_by
   deleted_at: order_by
-  done: order_by
   id: order_by
+  is_done: order_by
   times: order_by
   updated_at: order_by
   updated_by: order_by
@@ -6869,10 +6869,10 @@ enum words_select_column {
   deleted_at
 
   """column name"""
-  done
+  id
 
   """column name"""
-  id
+  is_done
 
   """column name"""
   times
@@ -6894,8 +6894,8 @@ input words_set_input {
   created_at: timestamptz
   created_by: uuid
   deleted_at: timestamptz
-  done: Boolean
   id: uuid
+  is_done: Boolean
   times: Int
   updated_at: timestamptz
   updated_by: uuid
@@ -6933,8 +6933,8 @@ input words_stream_cursor_value_input {
   created_at: timestamptz
   created_by: uuid
   deleted_at: timestamptz
-  done: Boolean
   id: uuid
+  is_done: Boolean
   times: Int
   updated_at: timestamptz
   updated_by: uuid
@@ -6960,10 +6960,10 @@ enum words_update_column {
   deleted_at
 
   """column name"""
-  done
+  id
 
   """column name"""
-  id
+  is_done
 
   """column name"""
   times

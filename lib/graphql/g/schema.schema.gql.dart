@@ -6751,8 +6751,8 @@ abstract class Gwords_bool_exp
   Gtimestamptz_comparison_exp? get created_at;
   Guuid_comparison_exp? get created_by;
   Gtimestamptz_comparison_exp? get deleted_at;
-  GBoolean_comparison_exp? get done;
   Guuid_comparison_exp? get id;
+  GBoolean_comparison_exp? get is_done;
   GInt_comparison_exp? get times;
   Gtimestamptz_comparison_exp? get updated_at;
   Guuid_comparison_exp? get updated_by;
@@ -6813,8 +6813,8 @@ abstract class Gwords_insert_input
   Gtimestamptz? get created_at;
   Guuid? get created_by;
   Gtimestamptz? get deleted_at;
-  bool? get done;
   Guuid? get id;
+  bool? get is_done;
   int? get times;
   Gtimestamptz? get updated_at;
   Guuid? get updated_by;
@@ -6865,8 +6865,8 @@ abstract class Gwords_order_by
   Gorder_by? get created_at;
   Gorder_by? get created_by;
   Gorder_by? get deleted_at;
-  Gorder_by? get done;
   Gorder_by? get id;
+  Gorder_by? get is_done;
   Gorder_by? get times;
   Gorder_by? get updated_at;
   Gorder_by? get updated_by;
@@ -6915,9 +6915,9 @@ class Gwords_select_column extends EnumClass {
 
   static const Gwords_select_column deleted_at = _$gwordsSelectColumndeleted_at;
 
-  static const Gwords_select_column done = _$gwordsSelectColumndone;
-
   static const Gwords_select_column id = _$gwordsSelectColumnid;
+
+  static const Gwords_select_column is_done = _$gwordsSelectColumnis_done;
 
   static const Gwords_select_column times = _$gwordsSelectColumntimes;
 
@@ -6945,8 +6945,8 @@ abstract class Gwords_set_input
   Gtimestamptz? get created_at;
   Guuid? get created_by;
   Gtimestamptz? get deleted_at;
-  bool? get done;
   Guuid? get id;
+  bool? get is_done;
   int? get times;
   Gtimestamptz? get updated_at;
   Guuid? get updated_by;
@@ -7001,8 +7001,8 @@ abstract class Gwords_stream_cursor_value_input
   Gtimestamptz? get created_at;
   Guuid? get created_by;
   Gtimestamptz? get deleted_at;
-  bool? get done;
   Guuid? get id;
+  bool? get is_done;
   int? get times;
   Gtimestamptz? get updated_at;
   Guuid? get updated_by;
@@ -7030,9 +7030,9 @@ class Gwords_update_column extends EnumClass {
 
   static const Gwords_update_column deleted_at = _$gwordsUpdateColumndeleted_at;
 
-  static const Gwords_update_column done = _$gwordsUpdateColumndone;
-
   static const Gwords_update_column id = _$gwordsUpdateColumnid;
+
+  static const Gwords_update_column is_done = _$gwordsUpdateColumnis_done;
 
   static const Gwords_update_column times = _$gwordsUpdateColumntimes;
 

@@ -49,9 +49,11 @@ abstract class GAcquiringWordsData_words
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   _i2.Guuid get id;
-  bool get done;
+  bool get is_done;
+  String get word;
   int get times;
-  String? get word;
+  _i2.Gtimestamptz get created_at;
+  _i2.Gtimestamptz get updated_at;
   static Serializer<GAcquiringWordsData_words> get serializer =>
       _$gAcquiringWordsDataWordsSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(

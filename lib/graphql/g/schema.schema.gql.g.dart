@@ -1735,10 +1735,10 @@ const Gwords_select_column _$gwordsSelectColumncreated_by =
     const Gwords_select_column._('created_by');
 const Gwords_select_column _$gwordsSelectColumndeleted_at =
     const Gwords_select_column._('deleted_at');
-const Gwords_select_column _$gwordsSelectColumndone =
-    const Gwords_select_column._('done');
 const Gwords_select_column _$gwordsSelectColumnid =
     const Gwords_select_column._('id');
+const Gwords_select_column _$gwordsSelectColumnis_done =
+    const Gwords_select_column._('is_done');
 const Gwords_select_column _$gwordsSelectColumntimes =
     const Gwords_select_column._('times');
 const Gwords_select_column _$gwordsSelectColumnupdated_at =
@@ -1756,10 +1756,10 @@ Gwords_select_column _$gwordsSelectColumnValueOf(String name) {
       return _$gwordsSelectColumncreated_by;
     case 'deleted_at':
       return _$gwordsSelectColumndeleted_at;
-    case 'done':
-      return _$gwordsSelectColumndone;
     case 'id':
       return _$gwordsSelectColumnid;
+    case 'is_done':
+      return _$gwordsSelectColumnis_done;
     case 'times':
       return _$gwordsSelectColumntimes;
     case 'updated_at':
@@ -1778,8 +1778,8 @@ final BuiltSet<Gwords_select_column> _$gwordsSelectColumnValues =
   _$gwordsSelectColumncreated_at,
   _$gwordsSelectColumncreated_by,
   _$gwordsSelectColumndeleted_at,
-  _$gwordsSelectColumndone,
   _$gwordsSelectColumnid,
+  _$gwordsSelectColumnis_done,
   _$gwordsSelectColumntimes,
   _$gwordsSelectColumnupdated_at,
   _$gwordsSelectColumnupdated_by,
@@ -1792,10 +1792,10 @@ const Gwords_update_column _$gwordsUpdateColumncreated_by =
     const Gwords_update_column._('created_by');
 const Gwords_update_column _$gwordsUpdateColumndeleted_at =
     const Gwords_update_column._('deleted_at');
-const Gwords_update_column _$gwordsUpdateColumndone =
-    const Gwords_update_column._('done');
 const Gwords_update_column _$gwordsUpdateColumnid =
     const Gwords_update_column._('id');
+const Gwords_update_column _$gwordsUpdateColumnis_done =
+    const Gwords_update_column._('is_done');
 const Gwords_update_column _$gwordsUpdateColumntimes =
     const Gwords_update_column._('times');
 const Gwords_update_column _$gwordsUpdateColumnupdated_at =
@@ -1813,10 +1813,10 @@ Gwords_update_column _$gwordsUpdateColumnValueOf(String name) {
       return _$gwordsUpdateColumncreated_by;
     case 'deleted_at':
       return _$gwordsUpdateColumndeleted_at;
-    case 'done':
-      return _$gwordsUpdateColumndone;
     case 'id':
       return _$gwordsUpdateColumnid;
+    case 'is_done':
+      return _$gwordsUpdateColumnis_done;
     case 'times':
       return _$gwordsUpdateColumntimes;
     case 'updated_at':
@@ -1835,8 +1835,8 @@ final BuiltSet<Gwords_update_column> _$gwordsUpdateColumnValues =
   _$gwordsUpdateColumncreated_at,
   _$gwordsUpdateColumncreated_by,
   _$gwordsUpdateColumndeleted_at,
-  _$gwordsUpdateColumndone,
   _$gwordsUpdateColumnid,
+  _$gwordsUpdateColumnis_done,
   _$gwordsUpdateColumntimes,
   _$gwordsUpdateColumnupdated_at,
   _$gwordsUpdateColumnupdated_by,
@@ -22240,19 +22240,19 @@ class _$Gwords_bool_expSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Gtimestamptz_comparison_exp)));
     }
-    value = object.done;
-    if (value != null) {
-      result
-        ..add('done')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(GBoolean_comparison_exp)));
-    }
     value = object.id;
     if (value != null) {
       result
         ..add('id')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Guuid_comparison_exp)));
+    }
+    value = object.is_done;
+    if (value != null) {
+      result
+        ..add('is_done')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GBoolean_comparison_exp)));
     }
     value = object.times;
     if (value != null) {
@@ -22329,15 +22329,15 @@ class _$Gwords_bool_expSerializer
                   specifiedType: const FullType(Gtimestamptz_comparison_exp))!
               as Gtimestamptz_comparison_exp);
           break;
-        case 'done':
-          result.done.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(GBoolean_comparison_exp))!
-              as GBoolean_comparison_exp);
-          break;
         case 'id':
           result.id.replace(serializers.deserialize(value,
                   specifiedType: const FullType(Guuid_comparison_exp))!
               as Guuid_comparison_exp);
+          break;
+        case 'is_done':
+          result.is_done.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GBoolean_comparison_exp))!
+              as GBoolean_comparison_exp);
           break;
         case 'times':
           result.times.replace(serializers.deserialize(value,
@@ -22465,19 +22465,19 @@ class _$Gwords_insert_inputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Gtimestamptz)));
     }
-    value = object.done;
-    if (value != null) {
-      result
-        ..add('done')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(bool)));
-    }
     value = object.id;
     if (value != null) {
       result
         ..add('id')
         ..add(
             serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.is_done;
+    if (value != null) {
+      result
+        ..add('is_done')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     value = object.times;
     if (value != null) {
@@ -22533,13 +22533,13 @@ class _$Gwords_insert_inputSerializer
           result.deleted_at.replace(serializers.deserialize(value,
               specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
           break;
-        case 'done':
-          result.done = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
-          break;
         case 'id':
           result.id.replace(serializers.deserialize(value,
               specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'is_done':
+          result.is_done = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
         case 'times':
           result.times = serializers.deserialize(value,
@@ -22663,17 +22663,17 @@ class _$Gwords_order_bySerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Gorder_by)));
     }
-    value = object.done;
-    if (value != null) {
-      result
-        ..add('done')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gorder_by)));
-    }
     value = object.id;
     if (value != null) {
       result
         ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.is_done;
+    if (value != null) {
+      result
+        ..add('is_done')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Gorder_by)));
     }
@@ -22732,12 +22732,12 @@ class _$Gwords_order_bySerializer
           result.deleted_at = serializers.deserialize(value,
               specifiedType: const FullType(Gorder_by)) as Gorder_by?;
           break;
-        case 'done':
-          result.done = serializers.deserialize(value,
-              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
-          break;
         case 'id':
           result.id = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'is_done':
+          result.is_done = serializers.deserialize(value,
               specifiedType: const FullType(Gorder_by)) as Gorder_by?;
           break;
         case 'times':
@@ -22859,19 +22859,19 @@ class _$Gwords_set_inputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Gtimestamptz)));
     }
-    value = object.done;
-    if (value != null) {
-      result
-        ..add('done')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(bool)));
-    }
     value = object.id;
     if (value != null) {
       result
         ..add('id')
         ..add(
             serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.is_done;
+    if (value != null) {
+      result
+        ..add('is_done')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     value = object.times;
     if (value != null) {
@@ -22927,13 +22927,13 @@ class _$Gwords_set_inputSerializer
           result.deleted_at.replace(serializers.deserialize(value,
               specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
           break;
-        case 'done':
-          result.done = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
-          break;
         case 'id':
           result.id.replace(serializers.deserialize(value,
               specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'is_done':
+          result.is_done = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
         case 'times':
           result.times = serializers.deserialize(value,
@@ -23055,19 +23055,19 @@ class _$Gwords_stream_cursor_value_inputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Gtimestamptz)));
     }
-    value = object.done;
-    if (value != null) {
-      result
-        ..add('done')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(bool)));
-    }
     value = object.id;
     if (value != null) {
       result
         ..add('id')
         ..add(
             serializers.serialize(value, specifiedType: const FullType(Guuid)));
+    }
+    value = object.is_done;
+    if (value != null) {
+      result
+        ..add('is_done')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     value = object.times;
     if (value != null) {
@@ -23123,13 +23123,13 @@ class _$Gwords_stream_cursor_value_inputSerializer
           result.deleted_at.replace(serializers.deserialize(value,
               specifiedType: const FullType(Gtimestamptz))! as Gtimestamptz);
           break;
-        case 'done':
-          result.done = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
-          break;
         case 'id':
           result.id.replace(serializers.deserialize(value,
               specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'is_done':
+          result.is_done = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
         case 'times':
           result.times = serializers.deserialize(value,
@@ -54302,9 +54302,9 @@ class _$Gwords_bool_exp extends Gwords_bool_exp {
   @override
   final Gtimestamptz_comparison_exp? deleted_at;
   @override
-  final GBoolean_comparison_exp? done;
-  @override
   final Guuid_comparison_exp? id;
+  @override
+  final GBoolean_comparison_exp? is_done;
   @override
   final GInt_comparison_exp? times;
   @override
@@ -54324,8 +54324,8 @@ class _$Gwords_bool_exp extends Gwords_bool_exp {
       this.created_at,
       this.created_by,
       this.deleted_at,
-      this.done,
       this.id,
+      this.is_done,
       this.times,
       this.updated_at,
       this.updated_by,
@@ -54350,8 +54350,8 @@ class _$Gwords_bool_exp extends Gwords_bool_exp {
         created_at == other.created_at &&
         created_by == other.created_by &&
         deleted_at == other.deleted_at &&
-        done == other.done &&
         id == other.id &&
+        is_done == other.is_done &&
         times == other.times &&
         updated_at == other.updated_at &&
         updated_by == other.updated_by &&
@@ -54376,8 +54376,8 @@ class _$Gwords_bool_exp extends Gwords_bool_exp {
                                         created_at.hashCode),
                                     created_by.hashCode),
                                 deleted_at.hashCode),
-                            done.hashCode),
-                        id.hashCode),
+                            id.hashCode),
+                        is_done.hashCode),
                     times.hashCode),
                 updated_at.hashCode),
             updated_by.hashCode),
@@ -54393,8 +54393,8 @@ class _$Gwords_bool_exp extends Gwords_bool_exp {
           ..add('created_at', created_at)
           ..add('created_by', created_by)
           ..add('deleted_at', deleted_at)
-          ..add('done', done)
           ..add('id', id)
+          ..add('is_done', is_done)
           ..add('times', times)
           ..add('updated_at', updated_at)
           ..add('updated_by', updated_by)
@@ -54440,15 +54440,16 @@ class Gwords_bool_expBuilder
   set deleted_at(Gtimestamptz_comparison_expBuilder? deleted_at) =>
       _$this._deleted_at = deleted_at;
 
-  GBoolean_comparison_expBuilder? _done;
-  GBoolean_comparison_expBuilder get done =>
-      _$this._done ??= new GBoolean_comparison_expBuilder();
-  set done(GBoolean_comparison_expBuilder? done) => _$this._done = done;
-
   Guuid_comparison_expBuilder? _id;
   Guuid_comparison_expBuilder get id =>
       _$this._id ??= new Guuid_comparison_expBuilder();
   set id(Guuid_comparison_expBuilder? id) => _$this._id = id;
+
+  GBoolean_comparison_expBuilder? _is_done;
+  GBoolean_comparison_expBuilder get is_done =>
+      _$this._is_done ??= new GBoolean_comparison_expBuilder();
+  set is_done(GBoolean_comparison_expBuilder? is_done) =>
+      _$this._is_done = is_done;
 
   GInt_comparison_expBuilder? _times;
   GInt_comparison_expBuilder get times =>
@@ -54483,8 +54484,8 @@ class Gwords_bool_expBuilder
       _created_at = $v.created_at?.toBuilder();
       _created_by = $v.created_by?.toBuilder();
       _deleted_at = $v.deleted_at?.toBuilder();
-      _done = $v.done?.toBuilder();
       _id = $v.id?.toBuilder();
+      _is_done = $v.is_done?.toBuilder();
       _times = $v.times?.toBuilder();
       _updated_at = $v.updated_at?.toBuilder();
       _updated_by = $v.updated_by?.toBuilder();
@@ -54519,8 +54520,8 @@ class Gwords_bool_expBuilder
               created_at: _created_at?.build(),
               created_by: _created_by?.build(),
               deleted_at: _deleted_at?.build(),
-              done: _done?.build(),
               id: _id?.build(),
+              is_done: _is_done?.build(),
               times: _times?.build(),
               updated_at: _updated_at?.build(),
               updated_by: _updated_by?.build(),
@@ -54540,10 +54541,10 @@ class Gwords_bool_expBuilder
         _created_by?.build();
         _$failedField = 'deleted_at';
         _deleted_at?.build();
-        _$failedField = 'done';
-        _done?.build();
         _$failedField = 'id';
         _id?.build();
+        _$failedField = 'is_done';
+        _is_done?.build();
         _$failedField = 'times';
         _times?.build();
         _$failedField = 'updated_at';
@@ -54648,9 +54649,9 @@ class _$Gwords_insert_input extends Gwords_insert_input {
   @override
   final Gtimestamptz? deleted_at;
   @override
-  final bool? done;
-  @override
   final Guuid? id;
+  @override
+  final bool? is_done;
   @override
   final int? times;
   @override
@@ -54668,8 +54669,8 @@ class _$Gwords_insert_input extends Gwords_insert_input {
       {this.created_at,
       this.created_by,
       this.deleted_at,
-      this.done,
       this.id,
+      this.is_done,
       this.times,
       this.updated_at,
       this.updated_by,
@@ -54692,8 +54693,8 @@ class _$Gwords_insert_input extends Gwords_insert_input {
         created_at == other.created_at &&
         created_by == other.created_by &&
         deleted_at == other.deleted_at &&
-        done == other.done &&
         id == other.id &&
+        is_done == other.is_done &&
         times == other.times &&
         updated_at == other.updated_at &&
         updated_by == other.updated_by &&
@@ -54712,8 +54713,8 @@ class _$Gwords_insert_input extends Gwords_insert_input {
                                 $jc($jc(0, created_at.hashCode),
                                     created_by.hashCode),
                                 deleted_at.hashCode),
-                            done.hashCode),
-                        id.hashCode),
+                            id.hashCode),
+                        is_done.hashCode),
                     times.hashCode),
                 updated_at.hashCode),
             updated_by.hashCode),
@@ -54726,8 +54727,8 @@ class _$Gwords_insert_input extends Gwords_insert_input {
           ..add('created_at', created_at)
           ..add('created_by', created_by)
           ..add('deleted_at', deleted_at)
-          ..add('done', done)
           ..add('id', id)
+          ..add('is_done', is_done)
           ..add('times', times)
           ..add('updated_at', updated_at)
           ..add('updated_by', updated_by)
@@ -54756,13 +54757,13 @@ class Gwords_insert_inputBuilder
   set deleted_at(GtimestamptzBuilder? deleted_at) =>
       _$this._deleted_at = deleted_at;
 
-  bool? _done;
-  bool? get done => _$this._done;
-  set done(bool? done) => _$this._done = done;
-
   GuuidBuilder? _id;
   GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
   set id(GuuidBuilder? id) => _$this._id = id;
+
+  bool? _is_done;
+  bool? get is_done => _$this._is_done;
+  set is_done(bool? is_done) => _$this._is_done = is_done;
 
   int? _times;
   int? get times => _$this._times;
@@ -54790,8 +54791,8 @@ class Gwords_insert_inputBuilder
       _created_at = $v.created_at?.toBuilder();
       _created_by = $v.created_by?.toBuilder();
       _deleted_at = $v.deleted_at?.toBuilder();
-      _done = $v.done;
       _id = $v.id?.toBuilder();
+      _is_done = $v.is_done;
       _times = $v.times;
       _updated_at = $v.updated_at?.toBuilder();
       _updated_by = $v.updated_by?.toBuilder();
@@ -54823,8 +54824,8 @@ class Gwords_insert_inputBuilder
               created_at: _created_at?.build(),
               created_by: _created_by?.build(),
               deleted_at: _deleted_at?.build(),
-              done: done,
               id: _id?.build(),
+              is_done: is_done,
               times: times,
               updated_at: _updated_at?.build(),
               updated_by: _updated_by?.build(),
@@ -54838,7 +54839,6 @@ class Gwords_insert_inputBuilder
         _created_by?.build();
         _$failedField = 'deleted_at';
         _deleted_at?.build();
-
         _$failedField = 'id';
         _id?.build();
 
@@ -54994,9 +54994,9 @@ class _$Gwords_order_by extends Gwords_order_by {
   @override
   final Gorder_by? deleted_at;
   @override
-  final Gorder_by? done;
-  @override
   final Gorder_by? id;
+  @override
+  final Gorder_by? is_done;
   @override
   final Gorder_by? times;
   @override
@@ -55013,8 +55013,8 @@ class _$Gwords_order_by extends Gwords_order_by {
       {this.created_at,
       this.created_by,
       this.deleted_at,
-      this.done,
       this.id,
+      this.is_done,
       this.times,
       this.updated_at,
       this.updated_by,
@@ -55036,8 +55036,8 @@ class _$Gwords_order_by extends Gwords_order_by {
         created_at == other.created_at &&
         created_by == other.created_by &&
         deleted_at == other.deleted_at &&
-        done == other.done &&
         id == other.id &&
+        is_done == other.is_done &&
         times == other.times &&
         updated_at == other.updated_at &&
         updated_by == other.updated_by &&
@@ -55056,8 +55056,8 @@ class _$Gwords_order_by extends Gwords_order_by {
                                 $jc($jc(0, created_at.hashCode),
                                     created_by.hashCode),
                                 deleted_at.hashCode),
-                            done.hashCode),
-                        id.hashCode),
+                            id.hashCode),
+                        is_done.hashCode),
                     times.hashCode),
                 updated_at.hashCode),
             updated_by.hashCode),
@@ -55070,8 +55070,8 @@ class _$Gwords_order_by extends Gwords_order_by {
           ..add('created_at', created_at)
           ..add('created_by', created_by)
           ..add('deleted_at', deleted_at)
-          ..add('done', done)
           ..add('id', id)
+          ..add('is_done', is_done)
           ..add('times', times)
           ..add('updated_at', updated_at)
           ..add('updated_by', updated_by)
@@ -55096,13 +55096,13 @@ class Gwords_order_byBuilder
   Gorder_by? get deleted_at => _$this._deleted_at;
   set deleted_at(Gorder_by? deleted_at) => _$this._deleted_at = deleted_at;
 
-  Gorder_by? _done;
-  Gorder_by? get done => _$this._done;
-  set done(Gorder_by? done) => _$this._done = done;
-
   Gorder_by? _id;
   Gorder_by? get id => _$this._id;
   set id(Gorder_by? id) => _$this._id = id;
+
+  Gorder_by? _is_done;
+  Gorder_by? get is_done => _$this._is_done;
+  set is_done(Gorder_by? is_done) => _$this._is_done = is_done;
 
   Gorder_by? _times;
   Gorder_by? get times => _$this._times;
@@ -55128,8 +55128,8 @@ class Gwords_order_byBuilder
       _created_at = $v.created_at;
       _created_by = $v.created_by;
       _deleted_at = $v.deleted_at;
-      _done = $v.done;
       _id = $v.id;
+      _is_done = $v.is_done;
       _times = $v.times;
       _updated_at = $v.updated_at;
       _updated_by = $v.updated_by;
@@ -55159,8 +55159,8 @@ class Gwords_order_byBuilder
             created_at: created_at,
             created_by: created_by,
             deleted_at: deleted_at,
-            done: done,
             id: id,
+            is_done: is_done,
             times: times,
             updated_at: updated_at,
             updated_by: updated_by,
@@ -55272,9 +55272,9 @@ class _$Gwords_set_input extends Gwords_set_input {
   @override
   final Gtimestamptz? deleted_at;
   @override
-  final bool? done;
-  @override
   final Guuid? id;
+  @override
+  final bool? is_done;
   @override
   final int? times;
   @override
@@ -55292,8 +55292,8 @@ class _$Gwords_set_input extends Gwords_set_input {
       {this.created_at,
       this.created_by,
       this.deleted_at,
-      this.done,
       this.id,
+      this.is_done,
       this.times,
       this.updated_at,
       this.updated_by,
@@ -55315,8 +55315,8 @@ class _$Gwords_set_input extends Gwords_set_input {
         created_at == other.created_at &&
         created_by == other.created_by &&
         deleted_at == other.deleted_at &&
-        done == other.done &&
         id == other.id &&
+        is_done == other.is_done &&
         times == other.times &&
         updated_at == other.updated_at &&
         updated_by == other.updated_by &&
@@ -55335,8 +55335,8 @@ class _$Gwords_set_input extends Gwords_set_input {
                                 $jc($jc(0, created_at.hashCode),
                                     created_by.hashCode),
                                 deleted_at.hashCode),
-                            done.hashCode),
-                        id.hashCode),
+                            id.hashCode),
+                        is_done.hashCode),
                     times.hashCode),
                 updated_at.hashCode),
             updated_by.hashCode),
@@ -55349,8 +55349,8 @@ class _$Gwords_set_input extends Gwords_set_input {
           ..add('created_at', created_at)
           ..add('created_by', created_by)
           ..add('deleted_at', deleted_at)
-          ..add('done', done)
           ..add('id', id)
+          ..add('is_done', is_done)
           ..add('times', times)
           ..add('updated_at', updated_at)
           ..add('updated_by', updated_by)
@@ -55379,13 +55379,13 @@ class Gwords_set_inputBuilder
   set deleted_at(GtimestamptzBuilder? deleted_at) =>
       _$this._deleted_at = deleted_at;
 
-  bool? _done;
-  bool? get done => _$this._done;
-  set done(bool? done) => _$this._done = done;
-
   GuuidBuilder? _id;
   GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
   set id(GuuidBuilder? id) => _$this._id = id;
+
+  bool? _is_done;
+  bool? get is_done => _$this._is_done;
+  set is_done(bool? is_done) => _$this._is_done = is_done;
 
   int? _times;
   int? get times => _$this._times;
@@ -55413,8 +55413,8 @@ class Gwords_set_inputBuilder
       _created_at = $v.created_at?.toBuilder();
       _created_by = $v.created_by?.toBuilder();
       _deleted_at = $v.deleted_at?.toBuilder();
-      _done = $v.done;
       _id = $v.id?.toBuilder();
+      _is_done = $v.is_done;
       _times = $v.times;
       _updated_at = $v.updated_at?.toBuilder();
       _updated_by = $v.updated_by?.toBuilder();
@@ -55446,8 +55446,8 @@ class Gwords_set_inputBuilder
               created_at: _created_at?.build(),
               created_by: _created_by?.build(),
               deleted_at: _deleted_at?.build(),
-              done: done,
               id: _id?.build(),
+              is_done: is_done,
               times: times,
               updated_at: _updated_at?.build(),
               updated_by: _updated_by?.build(),
@@ -55461,7 +55461,6 @@ class Gwords_set_inputBuilder
         _created_by?.build();
         _$failedField = 'deleted_at';
         _deleted_at?.build();
-
         _$failedField = 'id';
         _id?.build();
 
@@ -55599,9 +55598,9 @@ class _$Gwords_stream_cursor_value_input
   @override
   final Gtimestamptz? deleted_at;
   @override
-  final bool? done;
-  @override
   final Guuid? id;
+  @override
+  final bool? is_done;
   @override
   final int? times;
   @override
@@ -55619,8 +55618,8 @@ class _$Gwords_stream_cursor_value_input
       {this.created_at,
       this.created_by,
       this.deleted_at,
-      this.done,
       this.id,
+      this.is_done,
       this.times,
       this.updated_at,
       this.updated_by,
@@ -55643,8 +55642,8 @@ class _$Gwords_stream_cursor_value_input
         created_at == other.created_at &&
         created_by == other.created_by &&
         deleted_at == other.deleted_at &&
-        done == other.done &&
         id == other.id &&
+        is_done == other.is_done &&
         times == other.times &&
         updated_at == other.updated_at &&
         updated_by == other.updated_by &&
@@ -55663,8 +55662,8 @@ class _$Gwords_stream_cursor_value_input
                                 $jc($jc(0, created_at.hashCode),
                                     created_by.hashCode),
                                 deleted_at.hashCode),
-                            done.hashCode),
-                        id.hashCode),
+                            id.hashCode),
+                        is_done.hashCode),
                     times.hashCode),
                 updated_at.hashCode),
             updated_by.hashCode),
@@ -55677,8 +55676,8 @@ class _$Gwords_stream_cursor_value_input
           ..add('created_at', created_at)
           ..add('created_by', created_by)
           ..add('deleted_at', deleted_at)
-          ..add('done', done)
           ..add('id', id)
+          ..add('is_done', is_done)
           ..add('times', times)
           ..add('updated_at', updated_at)
           ..add('updated_by', updated_by)
@@ -55709,13 +55708,13 @@ class Gwords_stream_cursor_value_inputBuilder
   set deleted_at(GtimestamptzBuilder? deleted_at) =>
       _$this._deleted_at = deleted_at;
 
-  bool? _done;
-  bool? get done => _$this._done;
-  set done(bool? done) => _$this._done = done;
-
   GuuidBuilder? _id;
   GuuidBuilder get id => _$this._id ??= new GuuidBuilder();
   set id(GuuidBuilder? id) => _$this._id = id;
+
+  bool? _is_done;
+  bool? get is_done => _$this._is_done;
+  set is_done(bool? is_done) => _$this._is_done = is_done;
 
   int? _times;
   int? get times => _$this._times;
@@ -55743,8 +55742,8 @@ class Gwords_stream_cursor_value_inputBuilder
       _created_at = $v.created_at?.toBuilder();
       _created_by = $v.created_by?.toBuilder();
       _deleted_at = $v.deleted_at?.toBuilder();
-      _done = $v.done;
       _id = $v.id?.toBuilder();
+      _is_done = $v.is_done;
       _times = $v.times;
       _updated_at = $v.updated_at?.toBuilder();
       _updated_by = $v.updated_by?.toBuilder();
@@ -55776,8 +55775,8 @@ class Gwords_stream_cursor_value_inputBuilder
               created_at: _created_at?.build(),
               created_by: _created_by?.build(),
               deleted_at: _deleted_at?.build(),
-              done: done,
               id: _id?.build(),
+              is_done: is_done,
               times: times,
               updated_at: _updated_at?.build(),
               updated_by: _updated_by?.build(),
@@ -55791,7 +55790,6 @@ class Gwords_stream_cursor_value_inputBuilder
         _created_by?.build();
         _$failedField = 'deleted_at';
         _deleted_at?.build();
-
         _$failedField = 'id';
         _id?.build();
 

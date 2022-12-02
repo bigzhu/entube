@@ -24641,20 +24641,20 @@ const words = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'done'),
-      directives: [],
-      args: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'Boolean'),
-        isNonNull: true,
-      ),
-    ),
-    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'id'),
       directives: [],
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'uuid'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'is_done'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: true,
       ),
     ),
@@ -24691,7 +24691,7 @@ const words = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
-        isNonNull: false,
+        isNonNull: true,
       ),
     ),
   ],
@@ -24933,19 +24933,19 @@ const words_bool_exp = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'done'),
+      name: _i1.NameNode(value: 'id'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'Boolean_comparison_exp'),
+        name: _i1.NameNode(value: 'uuid_comparison_exp'),
         isNonNull: false,
       ),
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'id'),
+      name: _i1.NameNode(value: 'is_done'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'uuid_comparison_exp'),
+        name: _i1.NameNode(value: 'Boolean_comparison_exp'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -25045,19 +25045,19 @@ const words_insert_input = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'done'),
+      name: _i1.NameNode(value: 'id'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'Boolean'),
+        name: _i1.NameNode(value: 'uuid'),
         isNonNull: false,
       ),
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'id'),
+      name: _i1.NameNode(value: 'is_done'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'uuid'),
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -25354,7 +25354,7 @@ const words_order_by = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'done'),
+      name: _i1.NameNode(value: 'id'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'order_by'),
@@ -25363,7 +25363,7 @@ const words_order_by = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'id'),
+      name: _i1.NameNode(value: 'is_done'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'order_by'),
@@ -25441,11 +25441,11 @@ const words_select_column = _i1.EnumTypeDefinitionNode(
       directives: [],
     ),
     _i1.EnumValueDefinitionNode(
-      name: _i1.NameNode(value: 'done'),
+      name: _i1.NameNode(value: 'id'),
       directives: [],
     ),
     _i1.EnumValueDefinitionNode(
-      name: _i1.NameNode(value: 'id'),
+      name: _i1.NameNode(value: 'is_done'),
       directives: [],
     ),
     _i1.EnumValueDefinitionNode(
@@ -25498,19 +25498,19 @@ const words_set_input = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'done'),
+      name: _i1.NameNode(value: 'id'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'Boolean'),
+        name: _i1.NameNode(value: 'uuid'),
         isNonNull: false,
       ),
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'id'),
+      name: _i1.NameNode(value: 'is_done'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'uuid'),
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -25657,19 +25657,19 @@ const words_stream_cursor_value_input = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'done'),
+      name: _i1.NameNode(value: 'id'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'Boolean'),
+        name: _i1.NameNode(value: 'uuid'),
         isNonNull: false,
       ),
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'id'),
+      name: _i1.NameNode(value: 'is_done'),
       directives: [],
       type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'uuid'),
+        name: _i1.NameNode(value: 'Boolean'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -25745,11 +25745,11 @@ const words_update_column = _i1.EnumTypeDefinitionNode(
       directives: [],
     ),
     _i1.EnumValueDefinitionNode(
-      name: _i1.NameNode(value: 'done'),
+      name: _i1.NameNode(value: 'id'),
       directives: [],
     ),
     _i1.EnumValueDefinitionNode(
-      name: _i1.NameNode(value: 'id'),
+      name: _i1.NameNode(value: 'is_done'),
       directives: [],
     ),
     _i1.EnumValueDefinitionNode(

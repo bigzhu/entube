@@ -57,7 +57,6 @@ final authBoxSP = StateProvider<Box?>(
 );
 
 final openHiveBoxP = Provider<Future<String>>((ref) async {
-  print('openHiveBoxP');
   await Hive.initFlutter();
   final graphqlBox = await Hive.openBox("graphql");
   ref.read(graphqlBoxSP.notifier).state = graphqlBox;

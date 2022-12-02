@@ -24,7 +24,14 @@ const AcquiringWords = _i1.OperationDefinitionNode(
           selectionSet: null,
         ),
         _i1.FieldNode(
-          name: _i1.NameNode(value: 'done'),
+          name: _i1.NameNode(value: 'is_done'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'word'),
           alias: null,
           arguments: [],
           directives: [],
@@ -38,7 +45,14 @@ const AcquiringWords = _i1.OperationDefinitionNode(
           selectionSet: null,
         ),
         _i1.FieldNode(
-          name: _i1.NameNode(value: 'word'),
+          name: _i1.NameNode(value: 'created_at'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'updated_at'),
           alias: null,
           arguments: [],
           directives: [],

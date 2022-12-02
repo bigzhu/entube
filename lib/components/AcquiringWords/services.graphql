@@ -1,8 +1,10 @@
 query AcquiringWords() {
   words {
     id
-    done
-    times
+    is_done
     word
+    times
+    created_at
+    updated_at
   }
 }

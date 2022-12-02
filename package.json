@@ -1,5 +1,6 @@
 {
-  "name": "GraphQL Code Generator Flutter Freezed",
+  "name": "codegen",
+  "private": true,
   "version": "1.0.0",
   "scripts": {
     "flutter-freezed": "graphql-codegen"

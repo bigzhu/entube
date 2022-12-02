@@ -88,19 +88,21 @@ class _$GAcquiringWordsData_wordsSerializer
       'id',
       serializers.serialize(object.id,
           specifiedType: const FullType(_i2.Guuid)),
-      'done',
-      serializers.serialize(object.done, specifiedType: const FullType(bool)),
+      'is_done',
+      serializers.serialize(object.is_done,
+          specifiedType: const FullType(bool)),
+      'word',
+      serializers.serialize(object.word, specifiedType: const FullType(String)),
       'times',
       serializers.serialize(object.times, specifiedType: const FullType(int)),
+      'created_at',
+      serializers.serialize(object.created_at,
+          specifiedType: const FullType(_i2.Gtimestamptz)),
+      'updated_at',
+      serializers.serialize(object.updated_at,
+          specifiedType: const FullType(_i2.Gtimestamptz)),
     ];
-    Object? value;
-    value = object.word;
-    if (value != null) {
-      result
-        ..add('word')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
+
     return result;
   }
 
@@ -124,17 +126,27 @@ class _$GAcquiringWordsData_wordsSerializer
           result.id.replace(serializers.deserialize(value,
               specifiedType: const FullType(_i2.Guuid))! as _i2.Guuid);
           break;
-        case 'done':
-          result.done = serializers.deserialize(value,
+        case 'is_done':
+          result.is_done = serializers.deserialize(value,
               specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'word':
+          result.word = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
           break;
         case 'times':
           result.times = serializers.deserialize(value,
               specifiedType: const FullType(int))! as int;
           break;
-        case 'word':
-          result.word = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+        case 'created_at':
+          result.created_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.Gtimestamptz))!
+              as _i2.Gtimestamptz);
+          break;
+        case 'updated_at':
+          result.updated_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.Gtimestamptz))!
+              as _i2.Gtimestamptz);
           break;
       }
     }
@@ -264,11 +276,15 @@ class _$GAcquiringWordsData_words extends GAcquiringWordsData_words {
   @override
   final _i2.Guuid id;
   @override
-  final bool done;
+  final bool is_done;
+  @override
+  final String word;
   @override
   final int times;
   @override
-  final String? word;
+  final _i2.Gtimestamptz created_at;
+  @override
+  final _i2.Gtimestamptz updated_at;
 
   factory _$GAcquiringWordsData_words(
           [void Function(GAcquiringWordsData_wordsBuilder)? updates]) =>
@@ -277,18 +293,26 @@ class _$GAcquiringWordsData_words extends GAcquiringWordsData_words {
   _$GAcquiringWordsData_words._(
       {required this.G__typename,
       required this.id,
-      required this.done,
+      required this.is_done,
+      required this.word,
       required this.times,
-      this.word})
+      required this.created_at,
+      required this.updated_at})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GAcquiringWordsData_words', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
         id, r'GAcquiringWordsData_words', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        done, r'GAcquiringWordsData_words', 'done');
+        is_done, r'GAcquiringWordsData_words', 'is_done');
+    BuiltValueNullFieldError.checkNotNull(
+        word, r'GAcquiringWordsData_words', 'word');
     BuiltValueNullFieldError.checkNotNull(
         times, r'GAcquiringWordsData_words', 'times');
+    BuiltValueNullFieldError.checkNotNull(
+        created_at, r'GAcquiringWordsData_words', 'created_at');
+    BuiltValueNullFieldError.checkNotNull(
+        updated_at, r'GAcquiringWordsData_words', 'updated_at');
   }
 
   @override
@@ -306,17 +330,25 @@ class _$GAcquiringWordsData_words extends GAcquiringWordsData_words {
     return other is GAcquiringWordsData_words &&
         G__typename == other.G__typename &&
         id == other.id &&
-        done == other.done &&
+        is_done == other.is_done &&
+        word == other.word &&
         times == other.times &&
-        word == other.word;
+        created_at == other.created_at &&
+        updated_at == other.updated_at;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc($jc(0, G__typename.hashCode), id.hashCode), done.hashCode),
-            times.hashCode),
-        word.hashCode));
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
+                        is_done.hashCode),
+                    word.hashCode),
+                times.hashCode),
+            created_at.hashCode),
+        updated_at.hashCode));
   }
 
   @override
@@ -324,9 +356,11 @@ class _$GAcquiringWordsData_words extends GAcquiringWordsData_words {
     return (newBuiltValueToStringHelper(r'GAcquiringWordsData_words')
           ..add('G__typename', G__typename)
           ..add('id', id)
-          ..add('done', done)
+          ..add('is_done', is_done)
+          ..add('word', word)
           ..add('times', times)
-          ..add('word', word))
+          ..add('created_at', created_at)
+          ..add('updated_at', updated_at))
         .toString();
   }
 }
@@ -344,17 +378,29 @@ class GAcquiringWordsData_wordsBuilder
   _i2.GuuidBuilder get id => _$this._id ??= new _i2.GuuidBuilder();
   set id(_i2.GuuidBuilder? id) => _$this._id = id;
 
-  bool? _done;
-  bool? get done => _$this._done;
-  set done(bool? done) => _$this._done = done;
+  bool? _is_done;
+  bool? get is_done => _$this._is_done;
+  set is_done(bool? is_done) => _$this._is_done = is_done;
+
+  String? _word;
+  String? get word => _$this._word;
+  set word(String? word) => _$this._word = word;
 
   int? _times;
   int? get times => _$this._times;
   set times(int? times) => _$this._times = times;
 
-  String? _word;
-  String? get word => _$this._word;
-  set word(String? word) => _$this._word = word;
+  _i2.GtimestamptzBuilder? _created_at;
+  _i2.GtimestamptzBuilder get created_at =>
+      _$this._created_at ??= new _i2.GtimestamptzBuilder();
+  set created_at(_i2.GtimestamptzBuilder? created_at) =>
+      _$this._created_at = created_at;
+
+  _i2.GtimestamptzBuilder? _updated_at;
+  _i2.GtimestamptzBuilder get updated_at =>
+      _$this._updated_at ??= new _i2.GtimestamptzBuilder();
+  set updated_at(_i2.GtimestamptzBuilder? updated_at) =>
+      _$this._updated_at = updated_at;
 
   GAcquiringWordsData_wordsBuilder() {
     GAcquiringWordsData_words._initializeBuilder(this);
@@ -365,9 +411,11 @@ class GAcquiringWordsData_wordsBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _id = $v.id.toBuilder();
-      _done = $v.done;
-      _times = $v.times;
+      _is_done = $v.is_done;
       _word = $v.word;
+      _times = $v.times;
+      _created_at = $v.created_at.toBuilder();
+      _updated_at = $v.updated_at.toBuilder();
       _$v = null;
     }
     return this;
@@ -395,16 +443,24 @@ class GAcquiringWordsData_wordsBuilder
               G__typename: BuiltValueNullFieldError.checkNotNull(
                   G__typename, r'GAcquiringWordsData_words', 'G__typename'),
               id: id.build(),
-              done: BuiltValueNullFieldError.checkNotNull(
-                  done, r'GAcquiringWordsData_words', 'done'),
+              is_done: BuiltValueNullFieldError.checkNotNull(
+                  is_done, r'GAcquiringWordsData_words', 'is_done'),
+              word: BuiltValueNullFieldError.checkNotNull(
+                  word, r'GAcquiringWordsData_words', 'word'),
               times: BuiltValueNullFieldError.checkNotNull(
                   times, r'GAcquiringWordsData_words', 'times'),
-              word: word);
+              created_at: created_at.build(),
+              updated_at: updated_at.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'id';
         id.build();
+
+        _$failedField = 'created_at';
+        created_at.build();
+        _$failedField = 'updated_at';
+        updated_at.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GAcquiringWordsData_words', _$failedField, e.toString());

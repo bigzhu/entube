@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:entube/utils/nhost/nhost_sdk/nhost_sdk.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -67,7 +66,8 @@ class MyApp extends HookConsumerWidget {
           redirect: (BuildContext context, GoRouterState state) {
             switch (authenticationState) {
               case AuthenticationState.signedIn:
-                return '/ArticleItems';
+                return '/AcquiringWords';
+              //return '/ArticleItems';
               //return '/LoggedInUserDetails';
               case AuthenticationState.inProgress:
                 return '/AuthLoading';
