@@ -1,3 +1,4 @@
+import 'package:entube/components/AcquiringWords/index.dart';
 import 'package:entube/components/Auth/index.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -52,6 +53,8 @@ class LoggedInUserDetails extends HookConsumerWidget {
             },
             child: const Text('Logout'),
           ),
+          rowSpacing,
+          const AcquiringWords(),
         ],
       ),
     ));

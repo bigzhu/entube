@@ -1,4 +1,4 @@
-query AcquiringWords() {
+query AcquiringWords {
   words {
     id
     is_done
@@ -9,9 +9,18 @@ query AcquiringWords() {
   }
 }
 
-
-mutation upsertAcquiringWords($is_done: Boolean = false, $times: Int = 0, $word: String!) {
-  insert_words_one(object: {is_done: $is_done, times: $times, word: $word}, on_conflict: {constraint: words_word_created_by_key, update_columns: [is_done, times]}) {
+mutation upsertAcquiringWords(
+  $is_done: Boolean = false
+  $times: Int = 0
+  $word: String!
+) {
+  insert_words_one(
+    object: { is_done: $is_done, times: $times, word: $word }
+    on_conflict: {
+      constraint: words_word_created_by_key
+      update_columns: [is_done, times]
+    }
+  ) {
     word
     times
     is_done

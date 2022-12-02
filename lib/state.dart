@@ -39,9 +39,9 @@ final gqlClientP = Provider<Client>((ref) {
 
   final nhostLink = combinedLinkForNhost(ref.watch(nhostClientP));
   final client = Client(
-    link: nhostLink,
-    cache: cache,
-  );
+      link: nhostLink,
+      cache: cache,
+      defaultFetchPolicies: {OperationType.query: FetchPolicy.NetworkOnly});
 
   return client;
 });

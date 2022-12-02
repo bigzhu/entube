@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import './http.dart';
 
@@ -17,6 +18,7 @@ class UserSession {
 
   /// The set of HTTP headers sent along with Nhost API calls.
   Map<String, String> get authenticationHeaders {
+    debugPrint('$authorizationHeader: Bearer $accessToken');
     return {
       if (accessToken != null) authorizationHeader: 'Bearer $accessToken',
     };

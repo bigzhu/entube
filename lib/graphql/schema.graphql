@@ -6709,7 +6709,7 @@ type words {
   is_done: Boolean!
   times: Int!
   updated_at: timestamptz!
-  updated_by: uuid!
+  updated_by: uuid
   word: String!
 }
 

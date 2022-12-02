@@ -86,10 +86,10 @@ class _StateWord extends ConsumerState<Word> {
         if (!regHasLetter.hasMatch(word)) return;
         longTap = true;
         setTapStyle(true);
-        if (isAcquiringWord()) {
-          await upsertAcquiringWord(word, true);
-        } else {
+        if (isDone()) {
           await upsertAcquiringWord(word, false);
+        } else {
+          await upsertAcquiringWord(word, true);
         }
         setTapStyle(false);
       }
@@ -135,20 +135,18 @@ class _StateWord extends ConsumerState<Word> {
     }
   }
 
-  bool isAcquiringWord() {
-    /*
-    final AcquiringWordModel? acquiringWord = ref.watch(
-        acquiringWordsMapStateProvider
-            .select((value) => value[word.toLowerCase()]));
-    if (acquiringWord?.done == false) return true;
-    */
+  bool isDone() {
+    final acquiringWord =
+        ref.watch(acquiringWordsSNP.select((value) => value[word]));
+    if (acquiringWord == null) return true;
+    if (acquiringWord.is_done == true) return true;
     return false;
   }
 
   // 定义应该的 style
   TextStyle defineStyle() {
     TextStyle wordTextStyle = articleTextStyle;
-    if (isAcquiringWord() || tapping) {
+    if (!isDone() || tapping) {
       // 是否3000常用
       wordTextStyle = wordTextStyle.merge(articleAcquiringCommonTextStyle);
       /*
@@ -171,7 +169,7 @@ class _StateWord extends ConsumerState<Word> {
 
   @override
   Widget build(BuildContext context) {
-    if (isAcquiringWord()) {
+    if (!isDone()) {
       setState(() {
         transWord = ref.watch(wordTransStateNotifierProvider(word));
       });
