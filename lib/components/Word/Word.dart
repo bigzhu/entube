@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart' as audio;
 import 'package:entube/components/AcquiringWords/index.dart';
+import 'package:entube/components/Error/state.dart';
 import 'package:entube/components/Settings/index.dart';
 import 'package:entube/themes.dart';
 import 'package:flutter/gestures.dart';
@@ -65,12 +66,16 @@ class _StateWord extends ConsumerState<Word> {
     String word,
     bool done,
   ) async {
-    final acquiringWordsSNPN = ref.read(acquiringWordsSNP.notifier);
-    if (done) {
-      await acquiringWordsSNPN.remove(word);
-    }
-    if (done == false) {
-      await acquiringWordsSNPN.add(word);
+    try {
+      final acquiringWordsSNPN = ref.read(acquiringWordsSNP.notifier);
+      if (done) {
+        await acquiringWordsSNPN.remove(word);
+      }
+      if (done == false) {
+        await acquiringWordsSNPN.add(word);
+      }
+    } on Exception catch (e) {
+      ref.watch(errorMeesageStateProvider.notifier).state = e.toString();
     }
   }
 

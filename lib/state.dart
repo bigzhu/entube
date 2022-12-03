@@ -30,9 +30,8 @@ final nhostGoogleSignInUrlP = Provider<String>((ref) {
   return "$backendUrl/v1/auth/signin/provider/google/";
 });
 
-final gqlClientP = Provider<Client>((ref) {
+final gqlClientP = Provider.family<Client, FetchPolicy>((ref, fetchPolicy) {
   final box = ref.watch(graphqlBoxSP);
-
   final store = HiveStore(box!);
 
   final cache = Cache(store: store, possibleTypes: possibleTypesMap);
@@ -41,7 +40,7 @@ final gqlClientP = Provider<Client>((ref) {
   final client = Client(
       link: nhostLink,
       cache: cache,
-      defaultFetchPolicies: {OperationType.query: FetchPolicy.NetworkOnly});
+      defaultFetchPolicies: {OperationType.query: fetchPolicy});
 
   return client;
 });
