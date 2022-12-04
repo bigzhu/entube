@@ -12,11 +12,9 @@ typedef OperationResponseBuilder<TData, TVars> = Widget Function(
 class DataWaiter<TData, TVars> extends HookConsumerWidget {
   final OperationRequest<TData, TVars> req;
   final OperationResponseBuilder<TData, TVars> builder;
-  const DataWaiter({
-    super.key,
-    required this.req,
-    required this.builder,
-  });
+  final Widget? loading;
+  const DataWaiter(
+      {super.key, required this.req, required this.builder, this.loading});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final client = ref.watch(gqlClientP(FetchPolicy.CacheAndNetwork));
@@ -32,7 +30,9 @@ class DataWaiter<TData, TVars> extends HookConsumerWidget {
       return AlertDialog(
           title: const Text('Error'), content: Text(rsp.error.toString()));
     }
-    if (rsp.data == null || rsp.data!.loading) return const LogoLoading();
+    if (rsp.data == null || rsp.data!.loading) {
+      return loading ?? const LogoLoading();
+    }
     return builder(
       rsp.data!,
     );

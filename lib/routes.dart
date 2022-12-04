@@ -1,5 +1,7 @@
 //import 'package:entube/components/Article/index.dart';
-import 'package:entube/components/Article/index.dart';
+// ignore_for_file: library_prefixes
+
+import 'package:entube/components/Article/index.dart' as Article;
 import 'package:entube/components/Auth/index.dart';
 import 'package:entube/components/LogoLoading.dart';
 import 'package:entube/components/ArticleItems/index.dart';
@@ -29,7 +31,7 @@ final routes = [
   ),
   GoRoute(
     path: '/Article/:articleId',
-    builder: (context, state) => Article(state.params['articleId']!),
+    builder: (context, state) => Article.Page(state.params['articleId']!),
   ),
   GoRoute(
     path: '/AcquiringWords',
