@@ -18,7 +18,7 @@ abstract class GAcquiringWordsData
       [Function(GAcquiringWordsDataBuilder b) updates]) = _$GAcquiringWordsData;
 
   static void _initializeBuilder(GAcquiringWordsDataBuilder b) =>
-      b..G__typename = 'query_root';
+      b..G__typename = 'subscription_root';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   BuiltList<GAcquiringWordsData_words> get words;

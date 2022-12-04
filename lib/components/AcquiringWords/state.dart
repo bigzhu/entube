@@ -46,7 +46,6 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
       result = AcquiringWordsResult();
       result.loading = s.loading;
       result.error = s.graphqlErrors;
-
       if (s.data != null) {
         final words = s.data!.words.toList();
         result.map = toMap(words);
