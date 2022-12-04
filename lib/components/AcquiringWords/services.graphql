@@ -1,11 +1,15 @@
+fragment WordFragment on words {
+  id
+  is_done
+  word
+  times
+  created_at
+  updated_at
+}
+
 query AcquiringWords {
   words {
-    id
-    is_done
-    word
-    times
-    created_at
-    updated_at
+    ...WordFragment
   }
 }
 
@@ -21,8 +25,6 @@ mutation upsertAcquiringWords(
       update_columns: [is_done, times]
     }
   ) {
-    word
-    times
-    is_done
+    ...WordFragment
   }
 }

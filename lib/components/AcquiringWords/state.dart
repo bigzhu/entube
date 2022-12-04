@@ -1,16 +1,24 @@
 import 'package:entube/components/AcquiringWords/g/services.req.gql.dart';
+import 'dart:async';
 import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:entube/state.dart';
 import 'package:ferry/ferry.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:gql_exec/gql_exec.dart';
 
 import 'g/services.data.gql.dart';
 
+class AcquiringWordsResult {
+  AcquiringWordsResult();
+  bool loading = true;
+  List<GraphQLError>? error;
+  Map<String, GAcquiringWordsData_words> map = {};
+}
+
 //https://riverpod.dev/docs/concepts/modifiers/auto_dispose#refkeepalive
-class AcquiringWordsNotifier
-    extends StateNotifier<Map<String, GAcquiringWordsData_words>> {
-  AcquiringWordsNotifier(this.ref) : super({}) {
+class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
+  AcquiringWordsNotifier(this.ref) : super(AcquiringWordsResult()) {
     client = ref.watch(gqlClientP(FetchPolicy.CacheAndNetwork));
     fetch();
     //监听登录用户变化, 来决定重取数据
@@ -25,16 +33,25 @@ class AcquiringWordsNotifier
     */
   }
 
+  AcquiringWordsResult result = AcquiringWordsResult();
   final Ref ref;
   late Box box;
   late Client client;
   fetch({bool force = false}) async {
+    if (state.map.isNotEmpty) {
+      return;
+    }
     final stream = client.request(GAcquiringWordsReq());
     await for (final s in stream) {
+      result = AcquiringWordsResult();
+      result.loading = s.loading;
+      result.error = s.graphqlErrors;
+
       if (s.data != null) {
         final words = s.data!.words.toList();
-        state = toMap(words);
+        result.map = toMap(words);
       }
+      state = result;
     }
   }
 
@@ -47,27 +64,24 @@ class AcquiringWordsNotifier
     return map;
   }
 
-  add(String word) async {
+  setDone(String word, bool isDone) async {
     word = word.toLowerCase();
     int times = 0;
-    GAcquiringWordsData_words? wordExist = state[word];
-    // 已经设置过, 取 times 并删除
+    GAcquiringWordsData_words? wordExist = state.map[word];
+    // 已经设置过, 取 times
     if (wordExist != null) {
       times = wordExist.times;
     }
-    GAcquiringWordsData_words wordObj = await upsert(word, times, false);
-    state[word] = wordObj;
-    state = {...state};
+    state.map[word] = await upsert(word, times, isDone);
+    print('fuck');
+    notifierMap();
   }
 
-  remove(String word) {
-    word = word.toLowerCase();
-    GAcquiringWordsData_words? wordExist = state[word];
-    if (wordExist != null) {
-      int times = wordExist.times;
-      upsert(word, times, true);
-      state.remove(word);
-    }
+  notifierMap() {
+    result = AcquiringWordsResult();
+    result.loading = false;
+    result.map = {...state.map};
+    state = result;
   }
 
   Future<GAcquiringWordsData_words> upsert(
@@ -81,26 +95,20 @@ class AcquiringWordsNotifier
         ..vars.is_done = isDone,
     );
     final stream = client.request(req);
-    int newTimes = 0;
-    await for (final s in stream) {
+    final result = await stream.firstWhere((s) {
       if (s.hasErrors) {
-        throw s.graphqlErrors!;
+        print(s.hasErrors);
       }
-      //newTimes = s.data!.insert_words_one!.times;
-    }
-    GAcquiringWordsData_words wordObj = GAcquiringWordsData_words(
-      (b) => b
-        ..id = GuuidBuilder()
-        ..word = word
-        ..times = newTimes
-        ..is_done = isDone,
-    );
-    return wordObj;
+      return s.data!.insert_words_one != null;
+    });
+
+    final json = result.data!.insert_words_one!.toJson();
+    return GAcquiringWordsData_words.fromJson(json)!;
   }
 }
 
 final acquiringWordsSNP = StateNotifierProvider.autoDispose<
-    AcquiringWordsNotifier, Map<String, GAcquiringWordsData_words>>((ref) {
+    AcquiringWordsNotifier, AcquiringWordsResult>((ref) {
   AcquiringWordsNotifier acquiringWordsNotifier = AcquiringWordsNotifier(ref);
   ref.keepAlive();
   return acquiringWordsNotifier;

@@ -12,6 +12,7 @@ import 'package:entube/components/AcquiringWords/g/services.var.gql.dart'
     as _i3;
 import 'package:entube/graphql/g/serializers.gql.dart' as _i6;
 import 'package:ferry_exec/ferry_exec.dart' as _i1;
+import 'package:gql/ast.dart' as _i7;
 import 'package:gql_exec/gql_exec.dart' as _i4;
 
 part 'services.req.gql.g.dart';
@@ -130,6 +131,42 @@ abstract class GupsertAcquiringWordsReq
   static GupsertAcquiringWordsReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GupsertAcquiringWordsReq.serializer,
+        json,
+      );
+}
+
+abstract class GWordFragmentReq
+    implements
+        Built<GWordFragmentReq, GWordFragmentReqBuilder>,
+        _i1.FragmentRequest<_i2.GWordFragmentData, _i3.GWordFragmentVars> {
+  GWordFragmentReq._();
+
+  factory GWordFragmentReq([Function(GWordFragmentReqBuilder b) updates]) =
+      _$GWordFragmentReq;
+
+  static void _initializeBuilder(GWordFragmentReqBuilder b) => b
+    ..document = _i5.document
+    ..fragmentName = 'WordFragment';
+  @override
+  _i3.GWordFragmentVars get vars;
+  @override
+  _i7.DocumentNode get document;
+  @override
+  String? get fragmentName;
+  @override
+  Map<String, dynamic> get idFields;
+  @override
+  _i2.GWordFragmentData? parseData(Map<String, dynamic> json) =>
+      _i2.GWordFragmentData.fromJson(json);
+  static Serializer<GWordFragmentReq> get serializer =>
+      _$gWordFragmentReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GWordFragmentReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GWordFragmentReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GWordFragmentReq.serializer,
         json,
       );
 }

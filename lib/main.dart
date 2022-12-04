@@ -37,7 +37,7 @@ class MyApp extends HookConsumerWidget {
           if (uri.host == signInSuccessHost) {
             ref.read(authSNP.notifier).completeOAuth(uri);
           }
-          // closeInAppWebView();
+          closeInAppWebView();
         });
 
         return () {

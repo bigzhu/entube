@@ -10,6 +10,8 @@ Serializer<GAcquiringWordsVars> _$gAcquiringWordsVarsSerializer =
     new _$GAcquiringWordsVarsSerializer();
 Serializer<GupsertAcquiringWordsVars> _$gupsertAcquiringWordsVarsSerializer =
     new _$GupsertAcquiringWordsVarsSerializer();
+Serializer<GWordFragmentVars> _$gWordFragmentVarsSerializer =
+    new _$GWordFragmentVarsSerializer();
 
 class _$GAcquiringWordsVarsSerializer
     implements StructuredSerializer<GAcquiringWordsVars> {
@@ -99,6 +101,27 @@ class _$GupsertAcquiringWordsVarsSerializer
     }
 
     return result.build();
+  }
+}
+
+class _$GWordFragmentVarsSerializer
+    implements StructuredSerializer<GWordFragmentVars> {
+  @override
+  final Iterable<Type> types = const [GWordFragmentVars, _$GWordFragmentVars];
+  @override
+  final String wireName = 'GWordFragmentVars';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GWordFragmentVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    return <Object?>[];
+  }
+
+  @override
+  GWordFragmentVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    return new GWordFragmentVarsBuilder().build();
   }
 }
 
@@ -265,6 +288,65 @@ class GupsertAcquiringWordsVarsBuilder
             times: times,
             word: BuiltValueNullFieldError.checkNotNull(
                 word, r'GupsertAcquiringWordsVars', 'word'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GWordFragmentVars extends GWordFragmentVars {
+  factory _$GWordFragmentVars(
+          [void Function(GWordFragmentVarsBuilder)? updates]) =>
+      (new GWordFragmentVarsBuilder()..update(updates))._build();
+
+  _$GWordFragmentVars._() : super._();
+
+  @override
+  GWordFragmentVars rebuild(void Function(GWordFragmentVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GWordFragmentVarsBuilder toBuilder() =>
+      new GWordFragmentVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GWordFragmentVars;
+  }
+
+  @override
+  int get hashCode {
+    return 783753793;
+  }
+
+  @override
+  String toString() {
+    return newBuiltValueToStringHelper(r'GWordFragmentVars').toString();
+  }
+}
+
+class GWordFragmentVarsBuilder
+    implements Builder<GWordFragmentVars, GWordFragmentVarsBuilder> {
+  _$GWordFragmentVars? _$v;
+
+  GWordFragmentVarsBuilder();
+
+  @override
+  void replace(GWordFragmentVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GWordFragmentVars;
+  }
+
+  @override
+  void update(void Function(GWordFragmentVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GWordFragmentVars build() => _build();
+
+  _$GWordFragmentVars _build() {
+    final _$result = _$v ?? new _$GWordFragmentVars._();
     replace(_$result);
     return _$result;
   }

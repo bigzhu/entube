@@ -9,12 +9,13 @@ import 'package:entube/components/AcquiringWords/g/services.data.gql.dart'
     show
         GAcquiringWordsData,
         GAcquiringWordsData_words,
+        GWordFragmentData,
         GupsertAcquiringWordsData,
         GupsertAcquiringWordsData_insert_words_one;
 import 'package:entube/components/AcquiringWords/g/services.req.gql.dart'
-    show GAcquiringWordsReq, GupsertAcquiringWordsReq;
+    show GAcquiringWordsReq, GWordFragmentReq, GupsertAcquiringWordsReq;
 import 'package:entube/components/AcquiringWords/g/services.var.gql.dart'
-    show GAcquiringWordsVars, GupsertAcquiringWordsVars;
+    show GAcquiringWordsVars, GWordFragmentVars, GupsertAcquiringWordsVars;
 import 'package:entube/components/Article/g/services.data.gql.dart'
     show GSentencesData, GSentencesData_articles;
 import 'package:entube/components/Article/g/services.req.gql.dart'
@@ -311,6 +312,9 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GSentencesReq,
   GSentencesVars,
   GString_comparison_exp,
+  GWordFragmentData,
+  GWordFragmentReq,
+  GWordFragmentVars,
   Garticles_append_input,
   Garticles_bool_exp,
   Garticles_constraint,

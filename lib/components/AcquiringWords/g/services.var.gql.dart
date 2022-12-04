@@ -52,3 +52,23 @@ abstract class GupsertAcquiringWordsVars
         json,
       );
 }
+
+abstract class GWordFragmentVars
+    implements Built<GWordFragmentVars, GWordFragmentVarsBuilder> {
+  GWordFragmentVars._();
+
+  factory GWordFragmentVars([Function(GWordFragmentVarsBuilder b) updates]) =
+      _$GWordFragmentVars;
+
+  static Serializer<GWordFragmentVars> get serializer =>
+      _$gWordFragmentVarsSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GWordFragmentVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GWordFragmentVars? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GWordFragmentVars.serializer,
+        json,
+      );
+}

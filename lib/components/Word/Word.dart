@@ -62,26 +62,10 @@ class _StateWord extends ConsumerState<Word> {
     lastWord = widget.lastWord ?? '';
   }
 
-  upsertAcquiringWord(
-    String word,
-    bool done,
-  ) async {
-    try {
-      final acquiringWordsSNPN = ref.read(acquiringWordsSNP.notifier);
-      if (done) {
-        await acquiringWordsSNPN.remove(word);
-      }
-      if (done == false) {
-        await acquiringWordsSNPN.add(word);
-      }
-    } on Exception catch (e) {
-      ref.watch(errorMeesageStateProvider.notifier).state = e.toString();
-    }
-  }
-
 // 定义各种 tap 后的处理
 // isNoNeed 是不需要学习的
   MultiTapGestureRecognizer getTapRecognizer() {
+    final acquiringWordsSNPN = ref.read(acquiringWordsSNP.notifier);
     // 标记是否长按, 长按不要触发单词查询
     bool longTap = false;
     return MultiTapGestureRecognizer()
@@ -91,11 +75,10 @@ class _StateWord extends ConsumerState<Word> {
         if (!regHasLetter.hasMatch(word)) return;
         longTap = true;
         setTapStyle(true);
-        if (isDone()) {
-          await upsertAcquiringWord(word, false);
-        } else {
-          await upsertAcquiringWord(word, true);
-        }
+        await acquiringWordsSNPN.setDone(word, true);
+        print(isDone());
+        print('fuck');
+
         setTapStyle(false);
       }
       ..onTap = (i) async {
@@ -115,7 +98,7 @@ class _StateWord extends ConsumerState<Word> {
               mode: audio.PlayerMode.lowLatency);
         }
         // 避免长按的同时触发
-        await upsertAcquiringWord(word, false);
+        await acquiringWordsSNPN.setDone(word, false);
         if (ref.watch(switchSettingsNotifierProvider
             .select((value) => value[IS_COPY_TO_CLIPBOARD] ?? false))) {
           Clipboard.setData(ClipboardData(text: word));
@@ -142,7 +125,7 @@ class _StateWord extends ConsumerState<Word> {
 
   bool isDone() {
     final acquiringWord =
-        ref.watch(acquiringWordsSNP.select((value) => value[word]));
+        ref.watch(acquiringWordsSNP.select((value) => value.map[word]));
     if (acquiringWord == null) return true;
     if (acquiringWord.is_done == true) return true;
     return false;

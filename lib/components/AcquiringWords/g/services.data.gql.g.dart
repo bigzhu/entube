@@ -15,6 +15,8 @@ Serializer<GupsertAcquiringWordsData> _$gupsertAcquiringWordsDataSerializer =
 Serializer<GupsertAcquiringWordsData_insert_words_one>
     _$gupsertAcquiringWordsDataInsertWordsOneSerializer =
     new _$GupsertAcquiringWordsData_insert_words_oneSerializer();
+Serializer<GWordFragmentData> _$gWordFragmentDataSerializer =
+    new _$GWordFragmentDataSerializer();
 
 class _$GAcquiringWordsDataSerializer
     implements StructuredSerializer<GAcquiringWordsData> {
@@ -239,13 +241,22 @@ class _$GupsertAcquiringWordsData_insert_words_oneSerializer
       '__typename',
       serializers.serialize(object.G__typename,
           specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id,
+          specifiedType: const FullType(_i2.Guuid)),
+      'is_done',
+      serializers.serialize(object.is_done,
+          specifiedType: const FullType(bool)),
       'word',
       serializers.serialize(object.word, specifiedType: const FullType(String)),
       'times',
       serializers.serialize(object.times, specifiedType: const FullType(int)),
-      'is_done',
-      serializers.serialize(object.is_done,
-          specifiedType: const FullType(bool)),
+      'created_at',
+      serializers.serialize(object.created_at,
+          specifiedType: const FullType(_i2.Gtimestamptz)),
+      'updated_at',
+      serializers.serialize(object.updated_at,
+          specifiedType: const FullType(_i2.Gtimestamptz)),
     ];
 
     return result;
@@ -267,6 +278,14 @@ class _$GupsertAcquiringWordsData_insert_words_oneSerializer
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i2.Guuid))! as _i2.Guuid);
+          break;
+        case 'is_done':
+          result.is_done = serializers.deserialize(value,
+              specifiedType: const FullType(bool))! as bool;
+          break;
         case 'word':
           result.word = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
@@ -275,9 +294,99 @@ class _$GupsertAcquiringWordsData_insert_words_oneSerializer
           result.times = serializers.deserialize(value,
               specifiedType: const FullType(int))! as int;
           break;
+        case 'created_at':
+          result.created_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.Gtimestamptz))!
+              as _i2.Gtimestamptz);
+          break;
+        case 'updated_at':
+          result.updated_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.Gtimestamptz))!
+              as _i2.Gtimestamptz);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GWordFragmentDataSerializer
+    implements StructuredSerializer<GWordFragmentData> {
+  @override
+  final Iterable<Type> types = const [GWordFragmentData, _$GWordFragmentData];
+  @override
+  final String wireName = 'GWordFragmentData';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GWordFragmentData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id,
+          specifiedType: const FullType(_i2.Guuid)),
+      'is_done',
+      serializers.serialize(object.is_done,
+          specifiedType: const FullType(bool)),
+      'word',
+      serializers.serialize(object.word, specifiedType: const FullType(String)),
+      'times',
+      serializers.serialize(object.times, specifiedType: const FullType(int)),
+      'created_at',
+      serializers.serialize(object.created_at,
+          specifiedType: const FullType(_i2.Gtimestamptz)),
+      'updated_at',
+      serializers.serialize(object.updated_at,
+          specifiedType: const FullType(_i2.Gtimestamptz)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GWordFragmentData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GWordFragmentDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i2.Guuid))! as _i2.Guuid);
+          break;
         case 'is_done':
           result.is_done = serializers.deserialize(value,
               specifiedType: const FullType(bool))! as bool;
+          break;
+        case 'word':
+          result.word = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'times':
+          result.times = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
+          break;
+        case 'created_at':
+          result.created_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.Gtimestamptz))!
+              as _i2.Gtimestamptz);
+          break;
+        case 'updated_at':
+          result.updated_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.Gtimestamptz))!
+              as _i2.Gtimestamptz);
           break;
       }
     }
@@ -726,11 +835,17 @@ class _$GupsertAcquiringWordsData_insert_words_one
   @override
   final String G__typename;
   @override
+  final _i2.Guuid id;
+  @override
+  final bool is_done;
+  @override
   final String word;
   @override
   final int times;
   @override
-  final bool is_done;
+  final _i2.Gtimestamptz created_at;
+  @override
+  final _i2.Gtimestamptz updated_at;
 
   factory _$GupsertAcquiringWordsData_insert_words_one(
           [void Function(GupsertAcquiringWordsData_insert_words_oneBuilder)?
@@ -740,18 +855,27 @@ class _$GupsertAcquiringWordsData_insert_words_one
 
   _$GupsertAcquiringWordsData_insert_words_one._(
       {required this.G__typename,
+      required this.id,
+      required this.is_done,
       required this.word,
       required this.times,
-      required this.is_done})
+      required this.created_at,
+      required this.updated_at})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
         r'GupsertAcquiringWordsData_insert_words_one', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
+        id, r'GupsertAcquiringWordsData_insert_words_one', 'id');
+    BuiltValueNullFieldError.checkNotNull(
+        is_done, r'GupsertAcquiringWordsData_insert_words_one', 'is_done');
+    BuiltValueNullFieldError.checkNotNull(
         word, r'GupsertAcquiringWordsData_insert_words_one', 'word');
     BuiltValueNullFieldError.checkNotNull(
         times, r'GupsertAcquiringWordsData_insert_words_one', 'times');
-    BuiltValueNullFieldError.checkNotNull(
-        is_done, r'GupsertAcquiringWordsData_insert_words_one', 'is_done');
+    BuiltValueNullFieldError.checkNotNull(created_at,
+        r'GupsertAcquiringWordsData_insert_words_one', 'created_at');
+    BuiltValueNullFieldError.checkNotNull(updated_at,
+        r'GupsertAcquiringWordsData_insert_words_one', 'updated_at');
   }
 
   @override
@@ -769,16 +893,26 @@ class _$GupsertAcquiringWordsData_insert_words_one
     if (identical(other, this)) return true;
     return other is GupsertAcquiringWordsData_insert_words_one &&
         G__typename == other.G__typename &&
+        id == other.id &&
+        is_done == other.is_done &&
         word == other.word &&
         times == other.times &&
-        is_done == other.is_done;
+        created_at == other.created_at &&
+        updated_at == other.updated_at;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, G__typename.hashCode), word.hashCode), times.hashCode),
-        is_done.hashCode));
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
+                        is_done.hashCode),
+                    word.hashCode),
+                times.hashCode),
+            created_at.hashCode),
+        updated_at.hashCode));
   }
 
   @override
@@ -786,9 +920,12 @@ class _$GupsertAcquiringWordsData_insert_words_one
     return (newBuiltValueToStringHelper(
             r'GupsertAcquiringWordsData_insert_words_one')
           ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('is_done', is_done)
           ..add('word', word)
           ..add('times', times)
-          ..add('is_done', is_done))
+          ..add('created_at', created_at)
+          ..add('updated_at', updated_at))
         .toString();
   }
 }
@@ -803,6 +940,14 @@ class GupsertAcquiringWordsData_insert_words_oneBuilder
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
+  _i2.GuuidBuilder? _id;
+  _i2.GuuidBuilder get id => _$this._id ??= new _i2.GuuidBuilder();
+  set id(_i2.GuuidBuilder? id) => _$this._id = id;
+
+  bool? _is_done;
+  bool? get is_done => _$this._is_done;
+  set is_done(bool? is_done) => _$this._is_done = is_done;
+
   String? _word;
   String? get word => _$this._word;
   set word(String? word) => _$this._word = word;
@@ -811,9 +956,17 @@ class GupsertAcquiringWordsData_insert_words_oneBuilder
   int? get times => _$this._times;
   set times(int? times) => _$this._times = times;
 
-  bool? _is_done;
-  bool? get is_done => _$this._is_done;
-  set is_done(bool? is_done) => _$this._is_done = is_done;
+  _i2.GtimestamptzBuilder? _created_at;
+  _i2.GtimestamptzBuilder get created_at =>
+      _$this._created_at ??= new _i2.GtimestamptzBuilder();
+  set created_at(_i2.GtimestamptzBuilder? created_at) =>
+      _$this._created_at = created_at;
+
+  _i2.GtimestamptzBuilder? _updated_at;
+  _i2.GtimestamptzBuilder get updated_at =>
+      _$this._updated_at ??= new _i2.GtimestamptzBuilder();
+  set updated_at(_i2.GtimestamptzBuilder? updated_at) =>
+      _$this._updated_at = updated_at;
 
   GupsertAcquiringWordsData_insert_words_oneBuilder() {
     GupsertAcquiringWordsData_insert_words_one._initializeBuilder(this);
@@ -823,9 +976,12 @@ class GupsertAcquiringWordsData_insert_words_oneBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
+      _id = $v.id.toBuilder();
+      _is_done = $v.is_done;
       _word = $v.word;
       _times = $v.times;
-      _is_done = $v.is_done;
+      _created_at = $v.created_at.toBuilder();
+      _updated_at = $v.updated_at.toBuilder();
       _$v = null;
     }
     return this;
@@ -848,16 +1004,236 @@ class GupsertAcquiringWordsData_insert_words_oneBuilder
   GupsertAcquiringWordsData_insert_words_one build() => _build();
 
   _$GupsertAcquiringWordsData_insert_words_one _build() {
-    final _$result = _$v ??
-        new _$GupsertAcquiringWordsData_insert_words_one._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                r'GupsertAcquiringWordsData_insert_words_one', 'G__typename'),
-            word: BuiltValueNullFieldError.checkNotNull(
-                word, r'GupsertAcquiringWordsData_insert_words_one', 'word'),
-            times: BuiltValueNullFieldError.checkNotNull(
-                times, r'GupsertAcquiringWordsData_insert_words_one', 'times'),
-            is_done: BuiltValueNullFieldError.checkNotNull(is_done,
-                r'GupsertAcquiringWordsData_insert_words_one', 'is_done'));
+    _$GupsertAcquiringWordsData_insert_words_one _$result;
+    try {
+      _$result = _$v ??
+          new _$GupsertAcquiringWordsData_insert_words_one._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GupsertAcquiringWordsData_insert_words_one', 'G__typename'),
+              id: id.build(),
+              is_done: BuiltValueNullFieldError.checkNotNull(is_done,
+                  r'GupsertAcquiringWordsData_insert_words_one', 'is_done'),
+              word: BuiltValueNullFieldError.checkNotNull(
+                  word, r'GupsertAcquiringWordsData_insert_words_one', 'word'),
+              times: BuiltValueNullFieldError.checkNotNull(times,
+                  r'GupsertAcquiringWordsData_insert_words_one', 'times'),
+              created_at: created_at.build(),
+              updated_at: updated_at.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'id';
+        id.build();
+
+        _$failedField = 'created_at';
+        created_at.build();
+        _$failedField = 'updated_at';
+        updated_at.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GupsertAcquiringWordsData_insert_words_one',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GWordFragmentData extends GWordFragmentData {
+  @override
+  final String G__typename;
+  @override
+  final _i2.Guuid id;
+  @override
+  final bool is_done;
+  @override
+  final String word;
+  @override
+  final int times;
+  @override
+  final _i2.Gtimestamptz created_at;
+  @override
+  final _i2.Gtimestamptz updated_at;
+
+  factory _$GWordFragmentData(
+          [void Function(GWordFragmentDataBuilder)? updates]) =>
+      (new GWordFragmentDataBuilder()..update(updates))._build();
+
+  _$GWordFragmentData._(
+      {required this.G__typename,
+      required this.id,
+      required this.is_done,
+      required this.word,
+      required this.times,
+      required this.created_at,
+      required this.updated_at})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GWordFragmentData', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(id, r'GWordFragmentData', 'id');
+    BuiltValueNullFieldError.checkNotNull(
+        is_done, r'GWordFragmentData', 'is_done');
+    BuiltValueNullFieldError.checkNotNull(word, r'GWordFragmentData', 'word');
+    BuiltValueNullFieldError.checkNotNull(times, r'GWordFragmentData', 'times');
+    BuiltValueNullFieldError.checkNotNull(
+        created_at, r'GWordFragmentData', 'created_at');
+    BuiltValueNullFieldError.checkNotNull(
+        updated_at, r'GWordFragmentData', 'updated_at');
+  }
+
+  @override
+  GWordFragmentData rebuild(void Function(GWordFragmentDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GWordFragmentDataBuilder toBuilder() =>
+      new GWordFragmentDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GWordFragmentData &&
+        G__typename == other.G__typename &&
+        id == other.id &&
+        is_done == other.is_done &&
+        word == other.word &&
+        times == other.times &&
+        created_at == other.created_at &&
+        updated_at == other.updated_at;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
+                        is_done.hashCode),
+                    word.hashCode),
+                times.hashCode),
+            created_at.hashCode),
+        updated_at.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GWordFragmentData')
+          ..add('G__typename', G__typename)
+          ..add('id', id)
+          ..add('is_done', is_done)
+          ..add('word', word)
+          ..add('times', times)
+          ..add('created_at', created_at)
+          ..add('updated_at', updated_at))
+        .toString();
+  }
+}
+
+class GWordFragmentDataBuilder
+    implements Builder<GWordFragmentData, GWordFragmentDataBuilder> {
+  _$GWordFragmentData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  _i2.GuuidBuilder? _id;
+  _i2.GuuidBuilder get id => _$this._id ??= new _i2.GuuidBuilder();
+  set id(_i2.GuuidBuilder? id) => _$this._id = id;
+
+  bool? _is_done;
+  bool? get is_done => _$this._is_done;
+  set is_done(bool? is_done) => _$this._is_done = is_done;
+
+  String? _word;
+  String? get word => _$this._word;
+  set word(String? word) => _$this._word = word;
+
+  int? _times;
+  int? get times => _$this._times;
+  set times(int? times) => _$this._times = times;
+
+  _i2.GtimestamptzBuilder? _created_at;
+  _i2.GtimestamptzBuilder get created_at =>
+      _$this._created_at ??= new _i2.GtimestamptzBuilder();
+  set created_at(_i2.GtimestamptzBuilder? created_at) =>
+      _$this._created_at = created_at;
+
+  _i2.GtimestamptzBuilder? _updated_at;
+  _i2.GtimestamptzBuilder get updated_at =>
+      _$this._updated_at ??= new _i2.GtimestamptzBuilder();
+  set updated_at(_i2.GtimestamptzBuilder? updated_at) =>
+      _$this._updated_at = updated_at;
+
+  GWordFragmentDataBuilder() {
+    GWordFragmentData._initializeBuilder(this);
+  }
+
+  GWordFragmentDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id.toBuilder();
+      _is_done = $v.is_done;
+      _word = $v.word;
+      _times = $v.times;
+      _created_at = $v.created_at.toBuilder();
+      _updated_at = $v.updated_at.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GWordFragmentData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GWordFragmentData;
+  }
+
+  @override
+  void update(void Function(GWordFragmentDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GWordFragmentData build() => _build();
+
+  _$GWordFragmentData _build() {
+    _$GWordFragmentData _$result;
+    try {
+      _$result = _$v ??
+          new _$GWordFragmentData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GWordFragmentData', 'G__typename'),
+              id: id.build(),
+              is_done: BuiltValueNullFieldError.checkNotNull(
+                  is_done, r'GWordFragmentData', 'is_done'),
+              word: BuiltValueNullFieldError.checkNotNull(
+                  word, r'GWordFragmentData', 'word'),
+              times: BuiltValueNullFieldError.checkNotNull(
+                  times, r'GWordFragmentData', 'times'),
+              created_at: created_at.build(),
+              updated_at: updated_at.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'id';
+        id.build();
+
+        _$failedField = 'created_at';
+        created_at.build();
+        _$failedField = 'updated_at';
+        updated_at.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GWordFragmentData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

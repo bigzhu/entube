@@ -1,5 +1,6 @@
 import 'package:entube/components/Word/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'state.dart';
@@ -8,18 +9,35 @@ class AcquiringWords extends HookConsumerWidget {
   const AcquiringWords({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final acquiringWords = ref.watch(acquiringWordsSNP);
-    if (acquiringWords.isEmpty) {
+    final rsp = ref.watch(acquiringWordsSNP);
+
+    if (rsp.loading) {
+      return Dialog(
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: const [
+            CircularProgressIndicator(),
+            Text("Loading"),
+          ],
+        ),
+      );
+    }
+    if (rsp.error != null) {
+      return AlertDialog(
+          title: const Text('Error'), content: Text(rsp.error.toString()));
+    }
+
+    if (rsp.map.isEmpty) {
       return const AlertDialog(
           title: Text('No Data'),
           content: Text('Tapping word to set/unset the acquiring word'));
     }
     var acquiringWordList = [];
-    acquiringWords.forEach((k, v) => acquiringWordList.add(v));
+    rsp.map.forEach((k, v) => acquiringWordList.add(v));
 
     return Column(
       children: [
-        Text("${acquiringWords.length}"),
+        Text("${acquiringWordList.length}"),
         Expanded(
             child: ListView.builder(
           //shrinkWrap: true,

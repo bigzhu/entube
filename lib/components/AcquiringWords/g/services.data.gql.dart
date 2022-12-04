@@ -37,7 +37,8 @@ abstract class GAcquiringWordsData
 
 abstract class GAcquiringWordsData_words
     implements
-        Built<GAcquiringWordsData_words, GAcquiringWordsData_wordsBuilder> {
+        Built<GAcquiringWordsData_words, GAcquiringWordsData_wordsBuilder>,
+        GWordFragment {
   GAcquiringWordsData_words._();
 
   factory GAcquiringWordsData_words(
@@ -46,16 +47,24 @@ abstract class GAcquiringWordsData_words
 
   static void _initializeBuilder(GAcquiringWordsData_wordsBuilder b) =>
       b..G__typename = 'words';
+  @override
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
+  @override
   _i2.Guuid get id;
+  @override
   bool get is_done;
+  @override
   String get word;
+  @override
   int get times;
+  @override
   _i2.Gtimestamptz get created_at;
+  @override
   _i2.Gtimestamptz get updated_at;
   static Serializer<GAcquiringWordsData_words> get serializer =>
       _$gAcquiringWordsDataWordsSerializer;
+  @override
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GAcquiringWordsData_words.serializer,
         this,
@@ -97,7 +106,8 @@ abstract class GupsertAcquiringWordsData
 abstract class GupsertAcquiringWordsData_insert_words_one
     implements
         Built<GupsertAcquiringWordsData_insert_words_one,
-            GupsertAcquiringWordsData_insert_words_oneBuilder> {
+            GupsertAcquiringWordsData_insert_words_oneBuilder>,
+        GWordFragment {
   GupsertAcquiringWordsData_insert_words_one._();
 
   factory GupsertAcquiringWordsData_insert_words_one(
@@ -107,13 +117,24 @@ abstract class GupsertAcquiringWordsData_insert_words_one
   static void _initializeBuilder(
           GupsertAcquiringWordsData_insert_words_oneBuilder b) =>
       b..G__typename = 'words';
+  @override
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  String get word;
-  int get times;
+  @override
+  _i2.Guuid get id;
+  @override
   bool get is_done;
+  @override
+  String get word;
+  @override
+  int get times;
+  @override
+  _i2.Gtimestamptz get created_at;
+  @override
+  _i2.Gtimestamptz get updated_at;
   static Serializer<GupsertAcquiringWordsData_insert_words_one>
       get serializer => _$gupsertAcquiringWordsDataInsertWordsOneSerializer;
+  @override
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GupsertAcquiringWordsData_insert_words_one.serializer,
         this,
@@ -122,6 +143,57 @@ abstract class GupsertAcquiringWordsData_insert_words_one
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GupsertAcquiringWordsData_insert_words_one.serializer,
+        json,
+      );
+}
+
+abstract class GWordFragment {
+  String get G__typename;
+  _i2.Guuid get id;
+  bool get is_done;
+  String get word;
+  int get times;
+  _i2.Gtimestamptz get created_at;
+  _i2.Gtimestamptz get updated_at;
+  Map<String, dynamic> toJson();
+}
+
+abstract class GWordFragmentData
+    implements
+        Built<GWordFragmentData, GWordFragmentDataBuilder>,
+        GWordFragment {
+  GWordFragmentData._();
+
+  factory GWordFragmentData([Function(GWordFragmentDataBuilder b) updates]) =
+      _$GWordFragmentData;
+
+  static void _initializeBuilder(GWordFragmentDataBuilder b) =>
+      b..G__typename = 'words';
+  @override
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  @override
+  _i2.Guuid get id;
+  @override
+  bool get is_done;
+  @override
+  String get word;
+  @override
+  int get times;
+  @override
+  _i2.Gtimestamptz get created_at;
+  @override
+  _i2.Gtimestamptz get updated_at;
+  static Serializer<GWordFragmentData> get serializer =>
+      _$gWordFragmentDataSerializer;
+  @override
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GWordFragmentData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GWordFragmentData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GWordFragmentData.serializer,
         json,
       );
 }
