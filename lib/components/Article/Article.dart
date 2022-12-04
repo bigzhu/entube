@@ -19,41 +19,48 @@ class Article extends HookConsumerWidget {
     final sentencesReq =
         GSentencesReq((b) => b..vars.id = Guuid(articleId).toBuilder());
 
-    return DataWaiter(
-      req: sentencesReq,
-      builder: (rsp) {
-        final articles = rsp.data?.articles;
-        if (articles == null) {
-          return const AlertDialog(
-              title: Text('No Data'), content: Text("Can't find this article"));
-        }
-        List<SentenceModel> sentences = articles[0].sentences.asList.map((e) {
-          return SentenceModel.fromJson(Map<String, dynamic>.from(e));
-        }).toList();
+    return WillPopScope(
+        onWillPop: () async {
+          //禁止返回按钮
+          return false;
+        },
+        child: DataWaiter(
+          req: sentencesReq,
+          builder: (rsp) {
+            final articles = rsp.data?.articles;
+            if (articles == null) {
+              return const AlertDialog(
+                  title: Text('No Data'),
+                  content: Text("Can't find this article"));
+            }
+            List<SentenceModel> sentences =
+                articles[0].sentences.asList.map((e) {
+              return SentenceModel.fromJson(Map<String, dynamic>.from(e));
+            }).toList();
 
-        ScrollablePositionedList scrollableSentences =
-            ScrollablePositionedList.builder(
-          padding:
-              EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.5),
-          //itemScrollController: ref.read(sentencesScrollControllerProvider),
-          itemCount: sentences.length,
-          itemBuilder: (context, index) {
-            return Sentence(
-              sentence: sentences[index],
-              index: index,
-              articleId: articleId,
+            ScrollablePositionedList scrollableSentences =
+                ScrollablePositionedList.builder(
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).size.height * 0.5),
+              //itemScrollController: ref.read(sentencesScrollControllerProvider),
+              itemCount: sentences.length,
+              itemBuilder: (context, index) {
+                return Sentence(
+                  sentence: sentences[index],
+                  index: index,
+                  articleId: articleId,
+                );
+              },
+              //itemPositionsListener: itemPositionsListener,
             );
-          },
-          //itemPositionsListener: itemPositionsListener,
-        );
 
-        return Container(
-            color: Colors.blueGrey[50],
-            child: Padding(
-                padding: const EdgeInsets.only(left: 4, right: 4),
-                child: scrollableSentences));
-      },
-    );
+            return Container(
+                color: Colors.blueGrey[50],
+                child: Padding(
+                    padding: const EdgeInsets.only(left: 4, right: 4),
+                    child: scrollableSentences));
+          },
+        ));
 
     // final article = ref.watch(articleItemsSP.select((value) =>
     //    value.firstWhere((element) => element.id == Guuid(articleId))));
