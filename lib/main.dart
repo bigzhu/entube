@@ -65,16 +65,16 @@ class MyApp extends HookConsumerWidget {
           routes: routes,
           redirect: (BuildContext context, GoRouterState state) {
             switch (authenticationState) {
-              case AuthenticationState.signedIn:
-                return '/AcquiringWords';
-              //return '/ArticleItems';
+              //case AuthenticationState.signedIn:
+              //return '/AcquiringWords';
+              //  return '/ArticleItems';
               //return '/LoggedInUserDetails';
               case AuthenticationState.inProgress:
                 return '/AuthLoading';
               case AuthenticationState.signedOut:
                 return '/SignIn';
               default:
-                return null;
+                return state.path;
             }
           }),
     );

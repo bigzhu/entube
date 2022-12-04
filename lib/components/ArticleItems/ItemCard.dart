@@ -1,5 +1,6 @@
 import 'package:entube/components/ArticleItems/g/services.data.gql.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'ItemBar.dart';
 import 'Thumbnail.dart';
 
@@ -14,7 +15,10 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => print('enter article'),
+      onTap: () {
+        print('/Article/${article.id.value}');
+        context.go('/Article/${article.id.value}');
+      },
       child: Stack(
         alignment: Alignment.bottomLeft,
         children: <Widget>[
@@ -33,7 +37,7 @@ class ItemCard extends StatelessWidget {
                 title: article.title,
                 avatar: article.favicon,
                 percent: percent,
-                onTap: () => print('enter article'),
+                onTap: () => context.go('/Article/${article.id.value}'),
                 loading: loading,
               ),
             ),

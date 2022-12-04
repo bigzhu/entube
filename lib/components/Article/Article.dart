@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-import './provider.dart';
+//import './provider.dart';
 import 'g/services.req.gql.dart';
 
 class Article extends HookConsumerWidget {
@@ -13,6 +13,7 @@ class Article extends HookConsumerWidget {
   final String articleId;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    print('Article build');
     final sentencesReq =
         GSentencesReq((b) => b..vars.id = Guuid(articleId).toBuilder());
 
@@ -30,7 +31,7 @@ class Article extends HookConsumerWidget {
             ScrollablePositionedList.builder(
           padding:
               EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.5),
-          itemScrollController: ref.read(sentencesScrollControllerProvider),
+          //itemScrollController: ref.read(sentencesScrollControllerProvider),
           itemCount: sentences.length,
           itemBuilder: (context, index) {
             return Sentence(
