@@ -6,6 +6,7 @@ import 'package:ferry/ferry.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:gql_exec/gql_exec.dart';
+import 'package:collection/collection.dart';
 
 import 'g/services.data.gql.dart';
 
@@ -13,7 +14,8 @@ class AcquiringWordsResult {
   AcquiringWordsResult();
   bool loading = true;
   List<GraphQLError>? error;
-  Map<String, GAcquiringWordsData_words> map = {};
+  //Map<String, GAcquiringWordsData_words> map = {};
+  List<GAcquiringWordsData_words> words = [];
 }
 
 //https://riverpod.dev/docs/concepts/modifiers/auto_dispose#refkeepalive
@@ -38,7 +40,7 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
   late Box box;
   late Client client;
   fetch({bool force = false}) async {
-    if (state.map.isNotEmpty) {
+    if (state.words.isNotEmpty) {
       return;
     }
     final stream = client.request(GAcquiringWordsReq());
@@ -47,8 +49,8 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
       result.loading = s.loading;
       result.error = s.graphqlErrors;
       if (s.data != null) {
-        final words = s.data!.words.toList();
-        result.map = toMap(words);
+        result.words = s.data!.words.toList();
+        //result.map = toMap(words);
       }
       state = result;
     }
@@ -66,20 +68,24 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
   setDone(String word, bool isDone) async {
     word = word.toLowerCase();
     int times = 0;
-    GAcquiringWordsData_words? wordExist = state.map[word];
+    int i = state.words.indexWhere((element) => element.word == word);
     // 已经设置过, 取 times
-    if (wordExist != null) {
-      times = wordExist.times;
+    if (i != -1) {
+      times = state.words[i].times;
     }
-    state.map[word] = await upsert(word, times, isDone);
-    print('fuck');
+    final newWordObj = await upsert(word, times, isDone);
+    if (i != -1) {
+      state.words[i] = newWordObj;
+    } else {
+      state.words.add(newWordObj);
+    }
     notifierMap();
   }
 
   notifierMap() {
     result = AcquiringWordsResult();
     result.loading = false;
-    result.map = {...state.map};
+    result.words = [...state.words];
     state = result;
   }
 

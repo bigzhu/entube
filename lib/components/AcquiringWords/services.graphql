@@ -8,7 +8,7 @@ fragment WordFragment on words {
 }
 
 subscription AcquiringWords {
-  words {
+  words(order_by: { created_at: desc }) {
     ...WordFragment
   }
 }

@@ -6,6 +6,7 @@ import 'package:entube/themes.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:collection/collection.dart';
 //import 'package:leancloud_storage/leancloud.dart';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -76,8 +77,6 @@ class _StateWord extends ConsumerState<Word> {
         longTap = true;
         setTapStyle(true);
         await acquiringWordsSNPN.setDone(word, true);
-        print(isDone());
-        print('fuck');
 
         setTapStyle(false);
       }
@@ -124,8 +123,11 @@ class _StateWord extends ConsumerState<Word> {
   }
 
   bool isDone() {
-    final acquiringWord =
-        ref.watch(acquiringWordsSNP.select((value) => value.map[word]));
+    final acquiringWord = ref.watch(acquiringWordsSNP.select((value) {
+      return value.words.firstWhereOrNull((element) {
+        return element.word == word;
+      });
+    }));
     if (acquiringWord == null) return true;
     if (acquiringWord.is_done == true) return true;
     return false;

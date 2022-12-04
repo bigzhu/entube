@@ -27,13 +27,12 @@ class AcquiringWords extends HookConsumerWidget {
           title: const Text('Error'), content: Text(rsp.error.toString()));
     }
 
-    if (rsp.map.isEmpty) {
+    if (rsp.words.isEmpty) {
       return const AlertDialog(
           title: Text('No Data'),
           content: Text('Tapping word to set/unset the acquiring word'));
     }
-    var acquiringWordList = [];
-    rsp.map.forEach((k, v) => acquiringWordList.add(v));
+    var acquiringWordList = rsp.words;
 
     return Column(
       children: [
