@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'Article.dart';
 import 'ItemBar.dart';
+import 'BackButton.dart';
 
 class Page extends HookConsumerWidget {
   const Page(this.articleId, {super.key});
@@ -19,6 +20,9 @@ class Page extends HookConsumerWidget {
           return false;
         },
         child: Scaffold(
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerDocked,
+            floatingActionButton: const BackBotton(),
             bottomNavigationBar: ItemBar(article: article),
             body: Article(articleId)));
   }

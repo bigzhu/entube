@@ -1,8 +1,12 @@
+// ignore_for_file: library_prefixes
+
 import 'package:entube/components/ArticleItems/index.dart';
 import 'package:flutter/material.dart';
 import 'package:entube/components/ArticleItems/index.dart' as ArticleItems;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'state.dart';
 
 //import 'provider.dart';
 
@@ -25,12 +29,13 @@ class ItemBar extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    //bool isToBottom = ref.watch(isToArticleBottomStateNotifierProvider(article.id));
+    final sentences = ref.watch(sentencesSP);
+    final index = ref.watch(indexSP);
+    bool isBottom = (sentences.length - 1 == index);
 
-    bool isToBottom = false;
     return BottomAppBar(
         color: Theme.of(context).primaryColorDark,
-        shape: isToBottom ? const CircularNotchedRectangle() : null,
+        shape: isBottom ? const CircularNotchedRectangle() : null,
         child: Hero(
             tag: "youtube_title_${article.id}",
             child: Material(
