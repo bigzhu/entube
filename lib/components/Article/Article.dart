@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:entube/components/Sentence/index.dart';
 import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:entube/utils/index.dart';
@@ -25,8 +27,10 @@ class Article extends HookConsumerWidget {
           return const AlertDialog(
               title: Text('No Data'), content: Text("Can't find this article"));
         }
-        List<SentenceModel> sentences =
-            articles[0].sentences.asList as List<SentenceModel>;
+        List<SentenceModel> sentences = articles[0].sentences.asList.map((e) {
+          return SentenceModel.fromJson(Map<String, dynamic>.from(e));
+        }).toList();
+
         ScrollablePositionedList scrollableSentences =
             ScrollablePositionedList.builder(
           padding:

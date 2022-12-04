@@ -20,7 +20,13 @@ class DataWaiter<TData, TVars> extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final client = ref.watch(gqlClientP(FetchPolicy.CacheAndNetwork));
-    final stream = client.request(req);
+    print('run DataWaiter');
+    Stream stream = const Stream.empty();
+    useEffect(() {
+      stream = client.request(req);
+      return null;
+    }, [req]);
+
     final rsp = useStream(stream);
     if (rsp.hasError) {
       return AlertDialog(
