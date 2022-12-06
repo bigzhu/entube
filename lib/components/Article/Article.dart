@@ -29,7 +29,6 @@ class Article extends HookConsumerWidget {
       //监听是否已经显示到最后一个句子
       itemPositionsListener.itemPositions.addListener(listener);
       return () => itemPositionsListener.itemPositions.removeListener(listener);
-      return null;
     }, []);
 
     final sentencesReq =
