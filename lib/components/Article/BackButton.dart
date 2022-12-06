@@ -7,9 +7,7 @@ class BackBotton extends HookConsumerWidget {
   const BackBotton({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final sentences = ref.watch(sentencesSP);
-    final index = ref.watch(indexSP);
-    bool isBottom = (sentences.length - 1 == index);
+    bool isBottom = ref.watch(isBottomP);
 
     return Visibility(
         visible: isBottom,

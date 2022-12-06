@@ -29,9 +29,7 @@ class ItemBar extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final sentences = ref.watch(sentencesSP);
-    final index = ref.watch(indexSP);
-    bool isBottom = (sentences.length - 1 == index);
+    bool isBottom = ref.watch(isBottomP);
 
     return BottomAppBar(
         color: Theme.of(context).primaryColorDark,
