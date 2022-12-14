@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import './AwesomeSnackbarContent.dart';
 
-final errorMeesageStateProvider = StateProvider<String?>((ref) {
+final errorMeesageSP = StateProvider<String?>((ref) {
   return null;
 });
 

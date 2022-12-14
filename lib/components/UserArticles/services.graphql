@@ -1,30 +1,13 @@
-fragment WordFragment on words {
-  id
-  is_done
-  word
-  times
-  created_at
-  updated_at
-}
-
-subscription AcquiringWords {
-  words(order_by: { created_at: desc }) {
-    ...WordFragment
-  }
-}
-
-mutation upsertAcquiringWords(
-  $is_done: Boolean = false
-  $times: Int = 0
-  $word: String!
-) {
-  insert_words_one(
-    object: { is_done: $is_done, times: $times, word: $word }
-    on_conflict: {
-      constraint: words_word_created_by_key
-      update_columns: [is_done, times]
+query UserArticleItems {
+  user_articles(order_by: { created_at: desc }) {
+    id
+    play_at
+    article {
+      id
+      favicon
+      thumbnail
+      title
+      url
     }
-  ) {
-    ...WordFragment
   }
 }

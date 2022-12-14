@@ -1,6 +1,7 @@
 import 'package:app_links/app_links.dart';
 import 'package:entube/components/Auth/index.dart';
-import 'package:entube/components_old/logo_loading.dart';
+import 'package:entube/components/Error/index.dart';
+import 'package:entube/components/LogoLoading.dart';
 import 'package:entube/configs.dart';
 import 'package:entube/routes.dart';
 import 'package:entube/state.dart';
@@ -52,7 +53,13 @@ class MyApp extends HookConsumerWidget {
     if (snapshot.data == null) return const LogoLoading();
 
     final authenticationState = ref.watch(authSNP);
-
+    //监听显示错误消息
+    ref.listen<String?>(errorMeesageSP, (String? previous, String? next) {
+      if (next != null) {
+        showErrorSnackbar(context, next);
+        ref.read(errorMeesageSP.notifier).update((state) => null);
+      }
+    });
     return MaterialApp.router(
       title: configTitle,
       // The Mandy red, light theme.

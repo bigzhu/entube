@@ -60,14 +60,6 @@ abstract class GArticleItemsData_articles
   String? get title;
   @override
   String get url;
-  @override
-  _i2.Guuid? get created_by;
-  @override
-  _i2.Gtimestamptz get created_at;
-  @override
-  _i2.Guuid? get updated_by;
-  @override
-  _i2.Gtimestamptz get updated_at;
   static Serializer<GArticleItemsData_articles> get serializer =>
       _$gArticleItemsDataArticlesSerializer;
   @override
@@ -82,119 +74,6 @@ abstract class GArticleItemsData_articles
       );
 }
 
-abstract class GUserArticleItemsData
-    implements Built<GUserArticleItemsData, GUserArticleItemsDataBuilder> {
-  GUserArticleItemsData._();
-
-  factory GUserArticleItemsData(
-          [Function(GUserArticleItemsDataBuilder b) updates]) =
-      _$GUserArticleItemsData;
-
-  static void _initializeBuilder(GUserArticleItemsDataBuilder b) =>
-      b..G__typename = 'query_root';
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  BuiltList<GUserArticleItemsData_user_articles> get user_articles;
-  static Serializer<GUserArticleItemsData> get serializer =>
-      _$gUserArticleItemsDataSerializer;
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GUserArticleItemsData.serializer,
-        this,
-      ) as Map<String, dynamic>);
-  static GUserArticleItemsData? fromJson(Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GUserArticleItemsData.serializer,
-        json,
-      );
-}
-
-abstract class GUserArticleItemsData_user_articles
-    implements
-        Built<GUserArticleItemsData_user_articles,
-            GUserArticleItemsData_user_articlesBuilder> {
-  GUserArticleItemsData_user_articles._();
-
-  factory GUserArticleItemsData_user_articles(
-          [Function(GUserArticleItemsData_user_articlesBuilder b) updates]) =
-      _$GUserArticleItemsData_user_articles;
-
-  static void _initializeBuilder(
-          GUserArticleItemsData_user_articlesBuilder b) =>
-      b..G__typename = 'user_articles';
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  _i2.Guuid get id;
-  int? get play_at;
-  _i2.Guuid? get user_id;
-  _i2.Guuid get created_by;
-  _i2.Gtimestamptz get created_at;
-  _i2.Gtimestamptz get updated_at;
-  _i2.Guuid get updated_by;
-  GUserArticleItemsData_user_articles_article get article;
-  static Serializer<GUserArticleItemsData_user_articles> get serializer =>
-      _$gUserArticleItemsDataUserArticlesSerializer;
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GUserArticleItemsData_user_articles.serializer,
-        this,
-      ) as Map<String, dynamic>);
-  static GUserArticleItemsData_user_articles? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GUserArticleItemsData_user_articles.serializer,
-        json,
-      );
-}
-
-abstract class GUserArticleItemsData_user_articles_article
-    implements
-        Built<GUserArticleItemsData_user_articles_article,
-            GUserArticleItemsData_user_articles_articleBuilder>,
-        GArticleFragment {
-  GUserArticleItemsData_user_articles_article._();
-
-  factory GUserArticleItemsData_user_articles_article(
-      [Function(GUserArticleItemsData_user_articles_articleBuilder b)
-          updates]) = _$GUserArticleItemsData_user_articles_article;
-
-  static void _initializeBuilder(
-          GUserArticleItemsData_user_articles_articleBuilder b) =>
-      b..G__typename = 'articles';
-  @override
-  @BuiltValueField(wireName: '__typename')
-  String get G__typename;
-  @override
-  _i2.Guuid get id;
-  @override
-  String? get favicon;
-  @override
-  String? get thumbnail;
-  @override
-  String? get title;
-  @override
-  String get url;
-  @override
-  _i2.Guuid? get created_by;
-  @override
-  _i2.Gtimestamptz get created_at;
-  @override
-  _i2.Guuid? get updated_by;
-  @override
-  _i2.Gtimestamptz get updated_at;
-  static Serializer<GUserArticleItemsData_user_articles_article>
-      get serializer => _$gUserArticleItemsDataUserArticlesArticleSerializer;
-  @override
-  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GUserArticleItemsData_user_articles_article.serializer,
-        this,
-      ) as Map<String, dynamic>);
-  static GUserArticleItemsData_user_articles_article? fromJson(
-          Map<String, dynamic> json) =>
-      _i1.serializers.deserializeWith(
-        GUserArticleItemsData_user_articles_article.serializer,
-        json,
-      );
-}
-
 abstract class GArticleFragment {
   String get G__typename;
   _i2.Guuid get id;
@@ -202,10 +81,6 @@ abstract class GArticleFragment {
   String? get thumbnail;
   String? get title;
   String get url;
-  _i2.Guuid? get created_by;
-  _i2.Gtimestamptz get created_at;
-  _i2.Guuid? get updated_by;
-  _i2.Gtimestamptz get updated_at;
   Map<String, dynamic> toJson();
 }
 
@@ -234,14 +109,6 @@ abstract class GArticleFragmentData
   String? get title;
   @override
   String get url;
-  @override
-  _i2.Guuid? get created_by;
-  @override
-  _i2.Gtimestamptz get created_at;
-  @override
-  _i2.Guuid? get updated_by;
-  @override
-  _i2.Gtimestamptz get updated_at;
   static Serializer<GArticleFragmentData> get serializer =>
       _$gArticleFragmentDataSerializer;
   @override

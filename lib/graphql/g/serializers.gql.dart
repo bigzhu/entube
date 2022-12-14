@@ -23,17 +23,20 @@ import 'package:entube/components/Article/g/services.req.gql.dart'
 import 'package:entube/components/Article/g/services.var.gql.dart'
     show GSentencesVars;
 import 'package:entube/components/ArticleItems/g/services.data.gql.dart'
+    show GArticleFragmentData, GArticleItemsData, GArticleItemsData_articles;
+import 'package:entube/components/ArticleItems/g/services.req.gql.dart'
+    show GArticleFragmentReq, GArticleItemsReq;
+import 'package:entube/components/ArticleItems/g/services.var.gql.dart'
+    show GArticleFragmentVars, GArticleItemsVars;
+import 'package:entube/components/UserArticles/g/services.data.gql.dart'
     show
-        GArticleFragmentData,
-        GArticleItemsData,
-        GArticleItemsData_articles,
         GUserArticleItemsData,
         GUserArticleItemsData_user_articles,
         GUserArticleItemsData_user_articles_article;
-import 'package:entube/components/ArticleItems/g/services.req.gql.dart'
-    show GArticleFragmentReq, GArticleItemsReq, GUserArticleItemsReq;
-import 'package:entube/components/ArticleItems/g/services.var.gql.dart'
-    show GArticleFragmentVars, GArticleItemsVars, GUserArticleItemsVars;
+import 'package:entube/components/UserArticles/g/services.req.gql.dart'
+    show GUserArticleItemsReq;
+import 'package:entube/components/UserArticles/g/services.var.gql.dart'
+    show GUserArticleItemsVars;
 import 'package:entube/graphql/g/schema.schema.gql.dart'
     show
         GBoolean_comparison_exp,
