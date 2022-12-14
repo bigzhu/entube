@@ -2,6 +2,7 @@
 
 //import 'package:entube/components/Youtube/index.dart';
 import 'package:entube/components/ArticleItems/index.dart' as ArticleItems;
+import 'package:entube/components/UserArticles/index.dart' as UserArticles;
 import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -14,8 +15,11 @@ class Page extends HookConsumerWidget {
   final String articleId;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final article = ref.watch(ArticleItems.articleItemsSP.select((value) =>
-        value.firstWhere((element) => element.id == Guuid(articleId))));
+    final userArticle = ref.watch(UserArticles.userArticlesSP.select((value) =>
+        value.firstWhere((element) => element.article.id == Guuid(articleId))));
+    final article = ArticleItems.GArticleItemsData_articles.fromJson(
+        userArticle.article.toJson());
+    if (article == null) {}
 
     return WillPopScope(
         onWillPop: () async {
@@ -26,7 +30,7 @@ class Page extends HookConsumerWidget {
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerDocked,
             floatingActionButton: const BackBotton(),
-            bottomNavigationBar: ItemBar(article: article),
+            bottomNavigationBar: ItemBar(article: article!),
             body: GestureDetector(
                 onHorizontalDragUpdate: (details) {
                   // Note: Sensitivity is integer used when you don't want to mess up vertical drag
