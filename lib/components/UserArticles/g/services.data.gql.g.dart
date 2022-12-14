@@ -6,28 +6,24 @@ part of 'services.data.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GUserArticleItemsData> _$gUserArticleItemsDataSerializer =
-    new _$GUserArticleItemsDataSerializer();
-Serializer<GUserArticleItemsData_user_articles>
-    _$gUserArticleItemsDataUserArticlesSerializer =
-    new _$GUserArticleItemsData_user_articlesSerializer();
-Serializer<GUserArticleItemsData_user_articles_article>
-    _$gUserArticleItemsDataUserArticlesArticleSerializer =
-    new _$GUserArticleItemsData_user_articles_articleSerializer();
+Serializer<GUserArticlesData> _$gUserArticlesDataSerializer =
+    new _$GUserArticlesDataSerializer();
+Serializer<GUserArticlesData_user_articles>
+    _$gUserArticlesDataUserArticlesSerializer =
+    new _$GUserArticlesData_user_articlesSerializer();
+Serializer<GUserArticlesData_user_articles_article>
+    _$gUserArticlesDataUserArticlesArticleSerializer =
+    new _$GUserArticlesData_user_articles_articleSerializer();
 
-class _$GUserArticleItemsDataSerializer
-    implements StructuredSerializer<GUserArticleItemsData> {
+class _$GUserArticlesDataSerializer
+    implements StructuredSerializer<GUserArticlesData> {
   @override
-  final Iterable<Type> types = const [
-    GUserArticleItemsData,
-    _$GUserArticleItemsData
-  ];
+  final Iterable<Type> types = const [GUserArticlesData, _$GUserArticlesData];
   @override
-  final String wireName = 'GUserArticleItemsData';
+  final String wireName = 'GUserArticlesData';
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, GUserArticleItemsData object,
+  Iterable<Object?> serialize(Serializers serializers, GUserArticlesData object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -36,17 +32,17 @@ class _$GUserArticleItemsDataSerializer
       'user_articles',
       serializers.serialize(object.user_articles,
           specifiedType: const FullType(BuiltList,
-              const [const FullType(GUserArticleItemsData_user_articles)])),
+              const [const FullType(GUserArticlesData_user_articles)])),
     ];
 
     return result;
   }
 
   @override
-  GUserArticleItemsData deserialize(
+  GUserArticlesData deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserArticleItemsDataBuilder();
+    final result = new GUserArticlesDataBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -61,7 +57,7 @@ class _$GUserArticleItemsDataSerializer
         case 'user_articles':
           result.user_articles.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
-                const FullType(GUserArticleItemsData_user_articles)
+                const FullType(GUserArticlesData_user_articles)
               ]))! as BuiltList<Object?>);
           break;
       }
@@ -71,19 +67,19 @@ class _$GUserArticleItemsDataSerializer
   }
 }
 
-class _$GUserArticleItemsData_user_articlesSerializer
-    implements StructuredSerializer<GUserArticleItemsData_user_articles> {
+class _$GUserArticlesData_user_articlesSerializer
+    implements StructuredSerializer<GUserArticlesData_user_articles> {
   @override
   final Iterable<Type> types = const [
-    GUserArticleItemsData_user_articles,
-    _$GUserArticleItemsData_user_articles
+    GUserArticlesData_user_articles,
+    _$GUserArticlesData_user_articles
   ];
   @override
-  final String wireName = 'GUserArticleItemsData_user_articles';
+  final String wireName = 'GUserArticlesData_user_articles';
 
   @override
   Iterable<Object?> serialize(
-      Serializers serializers, GUserArticleItemsData_user_articles object,
+      Serializers serializers, GUserArticlesData_user_articles object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -95,7 +91,7 @@ class _$GUserArticleItemsData_user_articlesSerializer
       'article',
       serializers.serialize(object.article,
           specifiedType:
-              const FullType(GUserArticleItemsData_user_articles_article)),
+              const FullType(GUserArticlesData_user_articles_article)),
     ];
     Object? value;
     value = object.play_at;
@@ -108,10 +104,10 @@ class _$GUserArticleItemsData_user_articlesSerializer
   }
 
   @override
-  GUserArticleItemsData_user_articles deserialize(
+  GUserArticlesData_user_articles deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserArticleItemsData_user_articlesBuilder();
+    final result = new GUserArticlesData_user_articlesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -133,9 +129,9 @@ class _$GUserArticleItemsData_user_articlesSerializer
           break;
         case 'article':
           result.article.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      GUserArticleItemsData_user_articles_article))!
-              as GUserArticleItemsData_user_articles_article);
+                  specifiedType:
+                      const FullType(GUserArticlesData_user_articles_article))!
+              as GUserArticlesData_user_articles_article);
           break;
       }
     }
@@ -144,20 +140,19 @@ class _$GUserArticleItemsData_user_articlesSerializer
   }
 }
 
-class _$GUserArticleItemsData_user_articles_articleSerializer
-    implements
-        StructuredSerializer<GUserArticleItemsData_user_articles_article> {
+class _$GUserArticlesData_user_articles_articleSerializer
+    implements StructuredSerializer<GUserArticlesData_user_articles_article> {
   @override
   final Iterable<Type> types = const [
-    GUserArticleItemsData_user_articles_article,
-    _$GUserArticleItemsData_user_articles_article
+    GUserArticlesData_user_articles_article,
+    _$GUserArticlesData_user_articles_article
   ];
   @override
-  final String wireName = 'GUserArticleItemsData_user_articles_article';
+  final String wireName = 'GUserArticlesData_user_articles_article';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers,
-      GUserArticleItemsData_user_articles_article object,
+  Iterable<Object?> serialize(
+      Serializers serializers, GUserArticlesData_user_articles_article object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       '__typename',
@@ -195,10 +190,10 @@ class _$GUserArticleItemsData_user_articles_articleSerializer
   }
 
   @override
-  GUserArticleItemsData_user_articles_article deserialize(
+  GUserArticlesData_user_articles_article deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserArticleItemsData_user_articles_articleBuilder();
+    final result = new GUserArticlesData_user_articles_articleBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -237,38 +232,37 @@ class _$GUserArticleItemsData_user_articles_articleSerializer
   }
 }
 
-class _$GUserArticleItemsData extends GUserArticleItemsData {
+class _$GUserArticlesData extends GUserArticlesData {
   @override
   final String G__typename;
   @override
-  final BuiltList<GUserArticleItemsData_user_articles> user_articles;
+  final BuiltList<GUserArticlesData_user_articles> user_articles;
 
-  factory _$GUserArticleItemsData(
-          [void Function(GUserArticleItemsDataBuilder)? updates]) =>
-      (new GUserArticleItemsDataBuilder()..update(updates))._build();
+  factory _$GUserArticlesData(
+          [void Function(GUserArticlesDataBuilder)? updates]) =>
+      (new GUserArticlesDataBuilder()..update(updates))._build();
 
-  _$GUserArticleItemsData._(
+  _$GUserArticlesData._(
       {required this.G__typename, required this.user_articles})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUserArticleItemsData', 'G__typename');
+        G__typename, r'GUserArticlesData', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
-        user_articles, r'GUserArticleItemsData', 'user_articles');
+        user_articles, r'GUserArticlesData', 'user_articles');
   }
 
   @override
-  GUserArticleItemsData rebuild(
-          void Function(GUserArticleItemsDataBuilder) updates) =>
+  GUserArticlesData rebuild(void Function(GUserArticlesDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GUserArticleItemsDataBuilder toBuilder() =>
-      new GUserArticleItemsDataBuilder()..replace(this);
+  GUserArticlesDataBuilder toBuilder() =>
+      new GUserArticlesDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GUserArticleItemsData &&
+    return other is GUserArticlesData &&
         G__typename == other.G__typename &&
         user_articles == other.user_articles;
   }
@@ -280,34 +274,34 @@ class _$GUserArticleItemsData extends GUserArticleItemsData {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GUserArticleItemsData')
+    return (newBuiltValueToStringHelper(r'GUserArticlesData')
           ..add('G__typename', G__typename)
           ..add('user_articles', user_articles))
         .toString();
   }
 }
 
-class GUserArticleItemsDataBuilder
-    implements Builder<GUserArticleItemsData, GUserArticleItemsDataBuilder> {
-  _$GUserArticleItemsData? _$v;
+class GUserArticlesDataBuilder
+    implements Builder<GUserArticlesData, GUserArticlesDataBuilder> {
+  _$GUserArticlesData? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  ListBuilder<GUserArticleItemsData_user_articles>? _user_articles;
-  ListBuilder<GUserArticleItemsData_user_articles> get user_articles =>
+  ListBuilder<GUserArticlesData_user_articles>? _user_articles;
+  ListBuilder<GUserArticlesData_user_articles> get user_articles =>
       _$this._user_articles ??=
-          new ListBuilder<GUserArticleItemsData_user_articles>();
+          new ListBuilder<GUserArticlesData_user_articles>();
   set user_articles(
-          ListBuilder<GUserArticleItemsData_user_articles>? user_articles) =>
+          ListBuilder<GUserArticlesData_user_articles>? user_articles) =>
       _$this._user_articles = user_articles;
 
-  GUserArticleItemsDataBuilder() {
-    GUserArticleItemsData._initializeBuilder(this);
+  GUserArticlesDataBuilder() {
+    GUserArticlesData._initializeBuilder(this);
   }
 
-  GUserArticleItemsDataBuilder get _$this {
+  GUserArticlesDataBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
@@ -318,26 +312,26 @@ class GUserArticleItemsDataBuilder
   }
 
   @override
-  void replace(GUserArticleItemsData other) {
+  void replace(GUserArticlesData other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GUserArticleItemsData;
+    _$v = other as _$GUserArticlesData;
   }
 
   @override
-  void update(void Function(GUserArticleItemsDataBuilder)? updates) {
+  void update(void Function(GUserArticlesDataBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GUserArticleItemsData build() => _build();
+  GUserArticlesData build() => _build();
 
-  _$GUserArticleItemsData _build() {
-    _$GUserArticleItemsData _$result;
+  _$GUserArticlesData _build() {
+    _$GUserArticlesData _$result;
     try {
       _$result = _$v ??
-          new _$GUserArticleItemsData._(
+          new _$GUserArticlesData._(
               G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename, r'GUserArticleItemsData', 'G__typename'),
+                  G__typename, r'GUserArticlesData', 'G__typename'),
               user_articles: user_articles.build());
     } catch (_) {
       late String _$failedField;
@@ -346,7 +340,7 @@ class GUserArticleItemsDataBuilder
         user_articles.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GUserArticleItemsData', _$failedField, e.toString());
+            r'GUserArticlesData', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -355,8 +349,8 @@ class GUserArticleItemsDataBuilder
   }
 }
 
-class _$GUserArticleItemsData_user_articles
-    extends GUserArticleItemsData_user_articles {
+class _$GUserArticlesData_user_articles
+    extends GUserArticlesData_user_articles {
   @override
   final String G__typename;
   @override
@@ -364,41 +358,39 @@ class _$GUserArticleItemsData_user_articles
   @override
   final int? play_at;
   @override
-  final GUserArticleItemsData_user_articles_article article;
+  final GUserArticlesData_user_articles_article article;
 
-  factory _$GUserArticleItemsData_user_articles(
-          [void Function(GUserArticleItemsData_user_articlesBuilder)?
-              updates]) =>
-      (new GUserArticleItemsData_user_articlesBuilder()..update(updates))
-          ._build();
+  factory _$GUserArticlesData_user_articles(
+          [void Function(GUserArticlesData_user_articlesBuilder)? updates]) =>
+      (new GUserArticlesData_user_articlesBuilder()..update(updates))._build();
 
-  _$GUserArticleItemsData_user_articles._(
+  _$GUserArticlesData_user_articles._(
       {required this.G__typename,
       required this.id,
       this.play_at,
       required this.article})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        G__typename, r'GUserArticleItemsData_user_articles', 'G__typename');
+        G__typename, r'GUserArticlesData_user_articles', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
-        id, r'GUserArticleItemsData_user_articles', 'id');
+        id, r'GUserArticlesData_user_articles', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        article, r'GUserArticleItemsData_user_articles', 'article');
+        article, r'GUserArticlesData_user_articles', 'article');
   }
 
   @override
-  GUserArticleItemsData_user_articles rebuild(
-          void Function(GUserArticleItemsData_user_articlesBuilder) updates) =>
+  GUserArticlesData_user_articles rebuild(
+          void Function(GUserArticlesData_user_articlesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GUserArticleItemsData_user_articlesBuilder toBuilder() =>
-      new GUserArticleItemsData_user_articlesBuilder()..replace(this);
+  GUserArticlesData_user_articlesBuilder toBuilder() =>
+      new GUserArticlesData_user_articlesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GUserArticleItemsData_user_articles &&
+    return other is GUserArticlesData_user_articles &&
         G__typename == other.G__typename &&
         id == other.id &&
         play_at == other.play_at &&
@@ -414,7 +406,7 @@ class _$GUserArticleItemsData_user_articles
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GUserArticleItemsData_user_articles')
+    return (newBuiltValueToStringHelper(r'GUserArticlesData_user_articles')
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('play_at', play_at)
@@ -423,11 +415,11 @@ class _$GUserArticleItemsData_user_articles
   }
 }
 
-class GUserArticleItemsData_user_articlesBuilder
+class GUserArticlesData_user_articlesBuilder
     implements
-        Builder<GUserArticleItemsData_user_articles,
-            GUserArticleItemsData_user_articlesBuilder> {
-  _$GUserArticleItemsData_user_articles? _$v;
+        Builder<GUserArticlesData_user_articles,
+            GUserArticlesData_user_articlesBuilder> {
+  _$GUserArticlesData_user_articles? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
@@ -441,18 +433,17 @@ class GUserArticleItemsData_user_articlesBuilder
   int? get play_at => _$this._play_at;
   set play_at(int? play_at) => _$this._play_at = play_at;
 
-  GUserArticleItemsData_user_articles_articleBuilder? _article;
-  GUserArticleItemsData_user_articles_articleBuilder get article =>
-      _$this._article ??=
-          new GUserArticleItemsData_user_articles_articleBuilder();
-  set article(GUserArticleItemsData_user_articles_articleBuilder? article) =>
+  GUserArticlesData_user_articles_articleBuilder? _article;
+  GUserArticlesData_user_articles_articleBuilder get article =>
+      _$this._article ??= new GUserArticlesData_user_articles_articleBuilder();
+  set article(GUserArticlesData_user_articles_articleBuilder? article) =>
       _$this._article = article;
 
-  GUserArticleItemsData_user_articlesBuilder() {
-    GUserArticleItemsData_user_articles._initializeBuilder(this);
+  GUserArticlesData_user_articlesBuilder() {
+    GUserArticlesData_user_articles._initializeBuilder(this);
   }
 
-  GUserArticleItemsData_user_articlesBuilder get _$this {
+  GUserArticlesData_user_articlesBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
@@ -465,27 +456,26 @@ class GUserArticleItemsData_user_articlesBuilder
   }
 
   @override
-  void replace(GUserArticleItemsData_user_articles other) {
+  void replace(GUserArticlesData_user_articles other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GUserArticleItemsData_user_articles;
+    _$v = other as _$GUserArticlesData_user_articles;
   }
 
   @override
-  void update(
-      void Function(GUserArticleItemsData_user_articlesBuilder)? updates) {
+  void update(void Function(GUserArticlesData_user_articlesBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GUserArticleItemsData_user_articles build() => _build();
+  GUserArticlesData_user_articles build() => _build();
 
-  _$GUserArticleItemsData_user_articles _build() {
-    _$GUserArticleItemsData_user_articles _$result;
+  _$GUserArticlesData_user_articles _build() {
+    _$GUserArticlesData_user_articles _$result;
     try {
       _$result = _$v ??
-          new _$GUserArticleItemsData_user_articles._(
+          new _$GUserArticlesData_user_articles._(
               G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
-                  r'GUserArticleItemsData_user_articles', 'G__typename'),
+                  r'GUserArticlesData_user_articles', 'G__typename'),
               id: id.build(),
               play_at: play_at,
               article: article.build());
@@ -499,9 +489,7 @@ class GUserArticleItemsData_user_articlesBuilder
         article.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GUserArticleItemsData_user_articles',
-            _$failedField,
-            e.toString());
+            r'GUserArticlesData_user_articles', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -510,8 +498,8 @@ class GUserArticleItemsData_user_articlesBuilder
   }
 }
 
-class _$GUserArticleItemsData_user_articles_article
-    extends GUserArticleItemsData_user_articles_article {
+class _$GUserArticlesData_user_articles_article
+    extends GUserArticlesData_user_articles_article {
   @override
   final String G__typename;
   @override
@@ -525,14 +513,13 @@ class _$GUserArticleItemsData_user_articles_article
   @override
   final String url;
 
-  factory _$GUserArticleItemsData_user_articles_article(
-          [void Function(GUserArticleItemsData_user_articles_articleBuilder)?
+  factory _$GUserArticlesData_user_articles_article(
+          [void Function(GUserArticlesData_user_articles_articleBuilder)?
               updates]) =>
-      (new GUserArticleItemsData_user_articles_articleBuilder()
-            ..update(updates))
+      (new GUserArticlesData_user_articles_articleBuilder()..update(updates))
           ._build();
 
-  _$GUserArticleItemsData_user_articles_article._(
+  _$GUserArticlesData_user_articles_article._(
       {required this.G__typename,
       required this.id,
       this.favicon,
@@ -540,28 +527,28 @@ class _$GUserArticleItemsData_user_articles_article
       this.title,
       required this.url})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(G__typename,
-        r'GUserArticleItemsData_user_articles_article', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
-        id, r'GUserArticleItemsData_user_articles_article', 'id');
+        G__typename, r'GUserArticlesData_user_articles_article', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
-        url, r'GUserArticleItemsData_user_articles_article', 'url');
+        id, r'GUserArticlesData_user_articles_article', 'id');
+    BuiltValueNullFieldError.checkNotNull(
+        url, r'GUserArticlesData_user_articles_article', 'url');
   }
 
   @override
-  GUserArticleItemsData_user_articles_article rebuild(
-          void Function(GUserArticleItemsData_user_articles_articleBuilder)
+  GUserArticlesData_user_articles_article rebuild(
+          void Function(GUserArticlesData_user_articles_articleBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GUserArticleItemsData_user_articles_articleBuilder toBuilder() =>
-      new GUserArticleItemsData_user_articles_articleBuilder()..replace(this);
+  GUserArticlesData_user_articles_articleBuilder toBuilder() =>
+      new GUserArticlesData_user_articles_articleBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GUserArticleItemsData_user_articles_article &&
+    return other is GUserArticlesData_user_articles_article &&
         G__typename == other.G__typename &&
         id == other.id &&
         favicon == other.favicon &&
@@ -585,7 +572,7 @@ class _$GUserArticleItemsData_user_articles_article
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'GUserArticleItemsData_user_articles_article')
+            r'GUserArticlesData_user_articles_article')
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('favicon', favicon)
@@ -596,11 +583,11 @@ class _$GUserArticleItemsData_user_articles_article
   }
 }
 
-class GUserArticleItemsData_user_articles_articleBuilder
+class GUserArticlesData_user_articles_articleBuilder
     implements
-        Builder<GUserArticleItemsData_user_articles_article,
-            GUserArticleItemsData_user_articles_articleBuilder> {
-  _$GUserArticleItemsData_user_articles_article? _$v;
+        Builder<GUserArticlesData_user_articles_article,
+            GUserArticlesData_user_articles_articleBuilder> {
+  _$GUserArticlesData_user_articles_article? _$v;
 
   String? _G__typename;
   String? get G__typename => _$this._G__typename;
@@ -626,11 +613,11 @@ class GUserArticleItemsData_user_articles_articleBuilder
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
-  GUserArticleItemsData_user_articles_articleBuilder() {
-    GUserArticleItemsData_user_articles_article._initializeBuilder(this);
+  GUserArticlesData_user_articles_articleBuilder() {
+    GUserArticlesData_user_articles_article._initializeBuilder(this);
   }
 
-  GUserArticleItemsData_user_articles_articleBuilder get _$this {
+  GUserArticlesData_user_articles_articleBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
@@ -645,36 +632,33 @@ class GUserArticleItemsData_user_articles_articleBuilder
   }
 
   @override
-  void replace(GUserArticleItemsData_user_articles_article other) {
+  void replace(GUserArticlesData_user_articles_article other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GUserArticleItemsData_user_articles_article;
+    _$v = other as _$GUserArticlesData_user_articles_article;
   }
 
   @override
   void update(
-      void Function(GUserArticleItemsData_user_articles_articleBuilder)?
-          updates) {
+      void Function(GUserArticlesData_user_articles_articleBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GUserArticleItemsData_user_articles_article build() => _build();
+  GUserArticlesData_user_articles_article build() => _build();
 
-  _$GUserArticleItemsData_user_articles_article _build() {
-    _$GUserArticleItemsData_user_articles_article _$result;
+  _$GUserArticlesData_user_articles_article _build() {
+    _$GUserArticlesData_user_articles_article _$result;
     try {
       _$result = _$v ??
-          new _$GUserArticleItemsData_user_articles_article._(
-              G__typename: BuiltValueNullFieldError.checkNotNull(
-                  G__typename,
-                  r'GUserArticleItemsData_user_articles_article',
-                  'G__typename'),
+          new _$GUserArticlesData_user_articles_article._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GUserArticlesData_user_articles_article', 'G__typename'),
               id: id.build(),
               favicon: favicon,
               thumbnail: thumbnail,
               title: title,
               url: BuiltValueNullFieldError.checkNotNull(
-                  url, r'GUserArticleItemsData_user_articles_article', 'url'));
+                  url, r'GUserArticlesData_user_articles_article', 'url'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -682,7 +666,7 @@ class GUserArticleItemsData_user_articles_articleBuilder
         id.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GUserArticleItemsData_user_articles_article',
+            r'GUserArticlesData_user_articles_article',
             _$failedField,
             e.toString());
       }

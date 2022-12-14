@@ -6,7 +6,7 @@ fragment ArticleFragment on articles {
   url
 }
 
-query ArticleItems($offset: Int = 0, $limit: Int = 10) {
+query Articles($offset: Int = 0, $limit: Int = 10) {
   articles(offset: $offset, limit: $limit) {
     ...ArticleFragment
   }

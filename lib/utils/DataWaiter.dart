@@ -1,4 +1,4 @@
-import 'package:entube/components_old/logo_loading.dart';
+import 'package:entube/components/LogoLoading.dart';
 import 'package:entube/state.dart';
 import 'package:ferry/ferry.dart';
 import 'package:ferry_exec/ferry_exec.dart';

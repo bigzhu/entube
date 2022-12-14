@@ -240,7 +240,7 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
           .updateUserAritcle(userArticle);
       userArticle.save();
     } catch (e) {
-      ref.read(errorMeesageStateProvider.notifier).update((state) => "$e");
+      ref.read(errorMeesageSP.notifier).state = "$e";
     } finally {}
   }
 }

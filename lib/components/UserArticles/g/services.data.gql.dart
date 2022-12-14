@@ -10,76 +10,73 @@ import 'package:entube/graphql/g/serializers.gql.dart' as _i1;
 
 part 'services.data.gql.g.dart';
 
-abstract class GUserArticleItemsData
-    implements Built<GUserArticleItemsData, GUserArticleItemsDataBuilder> {
-  GUserArticleItemsData._();
+abstract class GUserArticlesData
+    implements Built<GUserArticlesData, GUserArticlesDataBuilder> {
+  GUserArticlesData._();
 
-  factory GUserArticleItemsData(
-          [Function(GUserArticleItemsDataBuilder b) updates]) =
-      _$GUserArticleItemsData;
+  factory GUserArticlesData([Function(GUserArticlesDataBuilder b) updates]) =
+      _$GUserArticlesData;
 
-  static void _initializeBuilder(GUserArticleItemsDataBuilder b) =>
+  static void _initializeBuilder(GUserArticlesDataBuilder b) =>
       b..G__typename = 'query_root';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  BuiltList<GUserArticleItemsData_user_articles> get user_articles;
-  static Serializer<GUserArticleItemsData> get serializer =>
-      _$gUserArticleItemsDataSerializer;
+  BuiltList<GUserArticlesData_user_articles> get user_articles;
+  static Serializer<GUserArticlesData> get serializer =>
+      _$gUserArticlesDataSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GUserArticleItemsData.serializer,
+        GUserArticlesData.serializer,
         this,
       ) as Map<String, dynamic>);
-  static GUserArticleItemsData? fromJson(Map<String, dynamic> json) =>
+  static GUserArticlesData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        GUserArticleItemsData.serializer,
+        GUserArticlesData.serializer,
         json,
       );
 }
 
-abstract class GUserArticleItemsData_user_articles
+abstract class GUserArticlesData_user_articles
     implements
-        Built<GUserArticleItemsData_user_articles,
-            GUserArticleItemsData_user_articlesBuilder> {
-  GUserArticleItemsData_user_articles._();
+        Built<GUserArticlesData_user_articles,
+            GUserArticlesData_user_articlesBuilder> {
+  GUserArticlesData_user_articles._();
 
-  factory GUserArticleItemsData_user_articles(
-          [Function(GUserArticleItemsData_user_articlesBuilder b) updates]) =
-      _$GUserArticleItemsData_user_articles;
+  factory GUserArticlesData_user_articles(
+          [Function(GUserArticlesData_user_articlesBuilder b) updates]) =
+      _$GUserArticlesData_user_articles;
 
-  static void _initializeBuilder(
-          GUserArticleItemsData_user_articlesBuilder b) =>
+  static void _initializeBuilder(GUserArticlesData_user_articlesBuilder b) =>
       b..G__typename = 'user_articles';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   _i2.Guuid get id;
   int? get play_at;
-  GUserArticleItemsData_user_articles_article get article;
-  static Serializer<GUserArticleItemsData_user_articles> get serializer =>
-      _$gUserArticleItemsDataUserArticlesSerializer;
+  GUserArticlesData_user_articles_article get article;
+  static Serializer<GUserArticlesData_user_articles> get serializer =>
+      _$gUserArticlesDataUserArticlesSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GUserArticleItemsData_user_articles.serializer,
+        GUserArticlesData_user_articles.serializer,
         this,
       ) as Map<String, dynamic>);
-  static GUserArticleItemsData_user_articles? fromJson(
-          Map<String, dynamic> json) =>
+  static GUserArticlesData_user_articles? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        GUserArticleItemsData_user_articles.serializer,
+        GUserArticlesData_user_articles.serializer,
         json,
       );
 }
 
-abstract class GUserArticleItemsData_user_articles_article
+abstract class GUserArticlesData_user_articles_article
     implements
-        Built<GUserArticleItemsData_user_articles_article,
-            GUserArticleItemsData_user_articles_articleBuilder> {
-  GUserArticleItemsData_user_articles_article._();
+        Built<GUserArticlesData_user_articles_article,
+            GUserArticlesData_user_articles_articleBuilder> {
+  GUserArticlesData_user_articles_article._();
 
-  factory GUserArticleItemsData_user_articles_article(
-      [Function(GUserArticleItemsData_user_articles_articleBuilder b)
-          updates]) = _$GUserArticleItemsData_user_articles_article;
+  factory GUserArticlesData_user_articles_article(
+      [Function(GUserArticlesData_user_articles_articleBuilder b)
+          updates]) = _$GUserArticlesData_user_articles_article;
 
   static void _initializeBuilder(
-          GUserArticleItemsData_user_articles_articleBuilder b) =>
+          GUserArticlesData_user_articles_articleBuilder b) =>
       b..G__typename = 'articles';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
@@ -88,16 +85,16 @@ abstract class GUserArticleItemsData_user_articles_article
   String? get thumbnail;
   String? get title;
   String get url;
-  static Serializer<GUserArticleItemsData_user_articles_article>
-      get serializer => _$gUserArticleItemsDataUserArticlesArticleSerializer;
+  static Serializer<GUserArticlesData_user_articles_article> get serializer =>
+      _$gUserArticlesDataUserArticlesArticleSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GUserArticleItemsData_user_articles_article.serializer,
+        GUserArticlesData_user_articles_article.serializer,
         this,
       ) as Map<String, dynamic>);
-  static GUserArticleItemsData_user_articles_article? fromJson(
+  static GUserArticlesData_user_articles_article? fromJson(
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        GUserArticleItemsData_user_articles_article.serializer,
+        GUserArticlesData_user_articles_article.serializer,
         json,
       );
 }

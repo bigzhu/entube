@@ -13,25 +13,23 @@ import 'package:gql_exec/gql_exec.dart' as _i4;
 
 part 'services.req.gql.g.dart';
 
-abstract class GUserArticleItemsReq
+abstract class GUserArticlesReq
     implements
-        Built<GUserArticleItemsReq, GUserArticleItemsReqBuilder>,
-        _i1.OperationRequest<_i2.GUserArticleItemsData,
-            _i3.GUserArticleItemsVars> {
-  GUserArticleItemsReq._();
+        Built<GUserArticlesReq, GUserArticlesReqBuilder>,
+        _i1.OperationRequest<_i2.GUserArticlesData, _i3.GUserArticlesVars> {
+  GUserArticlesReq._();
 
-  factory GUserArticleItemsReq(
-          [Function(GUserArticleItemsReqBuilder b) updates]) =
-      _$GUserArticleItemsReq;
+  factory GUserArticlesReq([Function(GUserArticlesReqBuilder b) updates]) =
+      _$GUserArticlesReq;
 
-  static void _initializeBuilder(GUserArticleItemsReqBuilder b) => b
+  static void _initializeBuilder(GUserArticlesReqBuilder b) => b
     ..operation = _i4.Operation(
       document: _i5.document,
-      operationName: 'UserArticleItems',
+      operationName: 'UserArticles',
     )
     ..executeOnListen = true;
   @override
-  _i3.GUserArticleItemsVars get vars;
+  _i3.GUserArticlesVars get vars;
   @override
   _i4.Operation get operation;
   @override
@@ -43,12 +41,12 @@ abstract class GUserArticleItemsReq
   String? get requestId;
   @override
   @BuiltValueField(serialize: false)
-  _i2.GUserArticleItemsData? Function(
-    _i2.GUserArticleItemsData?,
-    _i2.GUserArticleItemsData?,
+  _i2.GUserArticlesData? Function(
+    _i2.GUserArticlesData?,
+    _i2.GUserArticlesData?,
   )? get updateResult;
   @override
-  _i2.GUserArticleItemsData? get optimisticResponse;
+  _i2.GUserArticlesData? get optimisticResponse;
   @override
   String? get updateCacheHandlerKey;
   @override
@@ -58,17 +56,17 @@ abstract class GUserArticleItemsReq
   @override
   bool get executeOnListen;
   @override
-  _i2.GUserArticleItemsData? parseData(Map<String, dynamic> json) =>
-      _i2.GUserArticleItemsData.fromJson(json);
-  static Serializer<GUserArticleItemsReq> get serializer =>
-      _$gUserArticleItemsReqSerializer;
+  _i2.GUserArticlesData? parseData(Map<String, dynamic> json) =>
+      _i2.GUserArticlesData.fromJson(json);
+  static Serializer<GUserArticlesReq> get serializer =>
+      _$gUserArticlesReqSerializer;
   Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
-        GUserArticleItemsReq.serializer,
+        GUserArticlesReq.serializer,
         this,
       ) as Map<String, dynamic>);
-  static GUserArticleItemsReq? fromJson(Map<String, dynamic> json) =>
+  static GUserArticlesReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
-        GUserArticleItemsReq.serializer,
+        GUserArticlesReq.serializer,
         json,
       );
 }

@@ -1,5 +1,5 @@
 import 'package:entube/components/Sentence/index.dart';
-import 'package:entube/components_old/Article/ArticleLoading.dart';
+import 'package:entube/components/Article/ArticleLoading.dart';
 import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:entube/utils/index.dart';
 import 'package:flutter/material.dart';

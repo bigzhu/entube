@@ -1,4 +1,4 @@
-query UserArticleItems {
+query UserArticles {
   user_articles(order_by: { created_at: desc }) {
     id
     play_at

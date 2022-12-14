@@ -26,11 +26,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GSentencesReq.serializer)
       ..add(GSentencesVars.serializer)
       ..add(GString_comparison_exp.serializer)
-      ..add(GUserArticleItemsData.serializer)
-      ..add(GUserArticleItemsData_user_articles.serializer)
-      ..add(GUserArticleItemsData_user_articles_article.serializer)
-      ..add(GUserArticleItemsReq.serializer)
-      ..add(GUserArticleItemsVars.serializer)
+      ..add(GUserArticlesData.serializer)
+      ..add(GUserArticlesData_user_articles.serializer)
+      ..add(GUserArticlesData_user_articles_article.serializer)
+      ..add(GUserArticlesReq.serializer)
+      ..add(GUserArticlesVars.serializer)
       ..add(GWordFragmentData.serializer)
       ..add(GWordFragmentReq.serializer)
       ..add(GWordFragmentVars.serializer)
@@ -329,8 +329,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<GSentencesData_articles>())
       ..addBuilderFactory(
           const FullType(BuiltList,
-              const [const FullType(GUserArticleItemsData_user_articles)]),
-          () => new ListBuilder<GUserArticleItemsData_user_articles>())
+              const [const FullType(GUserArticlesData_user_articles)]),
+          () => new ListBuilder<GUserArticlesData_user_articles>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Garticles_bool_exp)]),
           () => new ListBuilder<Garticles_bool_exp>())

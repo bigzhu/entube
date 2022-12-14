@@ -6,27 +6,23 @@ part of 'services.req.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GUserArticleItemsReq> _$gUserArticleItemsReqSerializer =
-    new _$GUserArticleItemsReqSerializer();
+Serializer<GUserArticlesReq> _$gUserArticlesReqSerializer =
+    new _$GUserArticlesReqSerializer();
 
-class _$GUserArticleItemsReqSerializer
-    implements StructuredSerializer<GUserArticleItemsReq> {
+class _$GUserArticlesReqSerializer
+    implements StructuredSerializer<GUserArticlesReq> {
   @override
-  final Iterable<Type> types = const [
-    GUserArticleItemsReq,
-    _$GUserArticleItemsReq
-  ];
+  final Iterable<Type> types = const [GUserArticlesReq, _$GUserArticlesReq];
   @override
-  final String wireName = 'GUserArticleItemsReq';
+  final String wireName = 'GUserArticlesReq';
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, GUserArticleItemsReq object,
+  Iterable<Object?> serialize(Serializers serializers, GUserArticlesReq object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'vars',
       serializers.serialize(object.vars,
-          specifiedType: const FullType(_i3.GUserArticleItemsVars)),
+          specifiedType: const FullType(_i3.GUserArticlesVars)),
       'operation',
       serializers.serialize(object.operation,
           specifiedType: const FullType(_i4.Operation)),
@@ -47,7 +43,7 @@ class _$GUserArticleItemsReqSerializer
       result
         ..add('optimisticResponse')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i2.GUserArticleItemsData)));
+            specifiedType: const FullType(_i2.GUserArticlesData)));
     }
     value = object.updateCacheHandlerKey;
     if (value != null) {
@@ -75,10 +71,10 @@ class _$GUserArticleItemsReqSerializer
   }
 
   @override
-  GUserArticleItemsReq deserialize(
+  GUserArticlesReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GUserArticleItemsReqBuilder();
+    final result = new GUserArticlesReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -88,8 +84,8 @@ class _$GUserArticleItemsReqSerializer
       switch (key) {
         case 'vars':
           result.vars.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(_i3.GUserArticleItemsVars))!
-              as _i3.GUserArticleItemsVars);
+                  specifiedType: const FullType(_i3.GUserArticlesVars))!
+              as _i3.GUserArticlesVars);
           break;
         case 'operation':
           result.operation = serializers.deserialize(value,
@@ -101,8 +97,8 @@ class _$GUserArticleItemsReqSerializer
           break;
         case 'optimisticResponse':
           result.optimisticResponse.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(_i2.GUserArticleItemsData))!
-              as _i2.GUserArticleItemsData);
+                  specifiedType: const FullType(_i2.GUserArticlesData))!
+              as _i2.GUserArticlesData);
           break;
         case 'updateCacheHandlerKey':
           result.updateCacheHandlerKey = serializers.deserialize(value,
@@ -131,18 +127,18 @@ class _$GUserArticleItemsReqSerializer
   }
 }
 
-class _$GUserArticleItemsReq extends GUserArticleItemsReq {
+class _$GUserArticlesReq extends GUserArticlesReq {
   @override
-  final _i3.GUserArticleItemsVars vars;
+  final _i3.GUserArticlesVars vars;
   @override
   final _i4.Operation operation;
   @override
   final String? requestId;
   @override
-  final _i2.GUserArticleItemsData? Function(
-      _i2.GUserArticleItemsData?, _i2.GUserArticleItemsData?)? updateResult;
+  final _i2.GUserArticlesData? Function(
+      _i2.GUserArticlesData?, _i2.GUserArticlesData?)? updateResult;
   @override
-  final _i2.GUserArticleItemsData? optimisticResponse;
+  final _i2.GUserArticlesData? optimisticResponse;
   @override
   final String? updateCacheHandlerKey;
   @override
@@ -152,11 +148,11 @@ class _$GUserArticleItemsReq extends GUserArticleItemsReq {
   @override
   final bool executeOnListen;
 
-  factory _$GUserArticleItemsReq(
-          [void Function(GUserArticleItemsReqBuilder)? updates]) =>
-      (new GUserArticleItemsReqBuilder()..update(updates))._build();
+  factory _$GUserArticlesReq(
+          [void Function(GUserArticlesReqBuilder)? updates]) =>
+      (new GUserArticlesReqBuilder()..update(updates))._build();
 
-  _$GUserArticleItemsReq._(
+  _$GUserArticlesReq._(
       {required this.vars,
       required this.operation,
       this.requestId,
@@ -167,28 +163,26 @@ class _$GUserArticleItemsReq extends GUserArticleItemsReq {
       this.fetchPolicy,
       required this.executeOnListen})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(vars, r'GUserArticlesReq', 'vars');
     BuiltValueNullFieldError.checkNotNull(
-        vars, r'GUserArticleItemsReq', 'vars');
+        operation, r'GUserArticlesReq', 'operation');
     BuiltValueNullFieldError.checkNotNull(
-        operation, r'GUserArticleItemsReq', 'operation');
-    BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GUserArticleItemsReq', 'executeOnListen');
+        executeOnListen, r'GUserArticlesReq', 'executeOnListen');
   }
 
   @override
-  GUserArticleItemsReq rebuild(
-          void Function(GUserArticleItemsReqBuilder) updates) =>
+  GUserArticlesReq rebuild(void Function(GUserArticlesReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GUserArticleItemsReqBuilder toBuilder() =>
-      new GUserArticleItemsReqBuilder()..replace(this);
+  GUserArticlesReqBuilder toBuilder() =>
+      new GUserArticlesReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     final dynamic _$dynamicOther = other;
-    return other is GUserArticleItemsReq &&
+    return other is GUserArticlesReq &&
         vars == other.vars &&
         operation == other.operation &&
         requestId == other.requestId &&
@@ -220,7 +214,7 @@ class _$GUserArticleItemsReq extends GUserArticleItemsReq {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GUserArticleItemsReq')
+    return (newBuiltValueToStringHelper(r'GUserArticlesReq')
           ..add('vars', vars)
           ..add('operation', operation)
           ..add('requestId', requestId)
@@ -234,14 +228,14 @@ class _$GUserArticleItemsReq extends GUserArticleItemsReq {
   }
 }
 
-class GUserArticleItemsReqBuilder
-    implements Builder<GUserArticleItemsReq, GUserArticleItemsReqBuilder> {
-  _$GUserArticleItemsReq? _$v;
+class GUserArticlesReqBuilder
+    implements Builder<GUserArticlesReq, GUserArticlesReqBuilder> {
+  _$GUserArticlesReq? _$v;
 
-  _i3.GUserArticleItemsVarsBuilder? _vars;
-  _i3.GUserArticleItemsVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GUserArticleItemsVarsBuilder();
-  set vars(_i3.GUserArticleItemsVarsBuilder? vars) => _$this._vars = vars;
+  _i3.GUserArticlesVarsBuilder? _vars;
+  _i3.GUserArticlesVarsBuilder get vars =>
+      _$this._vars ??= new _i3.GUserArticlesVarsBuilder();
+  set vars(_i3.GUserArticlesVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
   _i4.Operation? get operation => _$this._operation;
@@ -251,22 +245,21 @@ class GUserArticleItemsReqBuilder
   String? get requestId => _$this._requestId;
   set requestId(String? requestId) => _$this._requestId = requestId;
 
-  _i2.GUserArticleItemsData? Function(
-      _i2.GUserArticleItemsData?, _i2.GUserArticleItemsData?)? _updateResult;
-  _i2.GUserArticleItemsData? Function(
-          _i2.GUserArticleItemsData?, _i2.GUserArticleItemsData?)?
+  _i2.GUserArticlesData? Function(
+      _i2.GUserArticlesData?, _i2.GUserArticlesData?)? _updateResult;
+  _i2.GUserArticlesData? Function(
+          _i2.GUserArticlesData?, _i2.GUserArticlesData?)?
       get updateResult => _$this._updateResult;
   set updateResult(
-          _i2.GUserArticleItemsData? Function(
-                  _i2.GUserArticleItemsData?, _i2.GUserArticleItemsData?)?
+          _i2.GUserArticlesData? Function(
+                  _i2.GUserArticlesData?, _i2.GUserArticlesData?)?
               updateResult) =>
       _$this._updateResult = updateResult;
 
-  _i2.GUserArticleItemsDataBuilder? _optimisticResponse;
-  _i2.GUserArticleItemsDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GUserArticleItemsDataBuilder();
-  set optimisticResponse(
-          _i2.GUserArticleItemsDataBuilder? optimisticResponse) =>
+  _i2.GUserArticlesDataBuilder? _optimisticResponse;
+  _i2.GUserArticlesDataBuilder get optimisticResponse =>
+      _$this._optimisticResponse ??= new _i2.GUserArticlesDataBuilder();
+  set optimisticResponse(_i2.GUserArticlesDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
   String? _updateCacheHandlerKey;
@@ -291,11 +284,11 @@ class GUserArticleItemsReqBuilder
   set executeOnListen(bool? executeOnListen) =>
       _$this._executeOnListen = executeOnListen;
 
-  GUserArticleItemsReqBuilder() {
-    GUserArticleItemsReq._initializeBuilder(this);
+  GUserArticlesReqBuilder() {
+    GUserArticlesReq._initializeBuilder(this);
   }
 
-  GUserArticleItemsReqBuilder get _$this {
+  GUserArticlesReqBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _vars = $v.vars.toBuilder();
@@ -313,27 +306,27 @@ class GUserArticleItemsReqBuilder
   }
 
   @override
-  void replace(GUserArticleItemsReq other) {
+  void replace(GUserArticlesReq other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GUserArticleItemsReq;
+    _$v = other as _$GUserArticlesReq;
   }
 
   @override
-  void update(void Function(GUserArticleItemsReqBuilder)? updates) {
+  void update(void Function(GUserArticlesReqBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GUserArticleItemsReq build() => _build();
+  GUserArticlesReq build() => _build();
 
-  _$GUserArticleItemsReq _build() {
-    _$GUserArticleItemsReq _$result;
+  _$GUserArticlesReq _build() {
+    _$GUserArticlesReq _$result;
     try {
       _$result = _$v ??
-          new _$GUserArticleItemsReq._(
+          new _$GUserArticlesReq._(
               vars: vars.build(),
               operation: BuiltValueNullFieldError.checkNotNull(
-                  operation, r'GUserArticleItemsReq', 'operation'),
+                  operation, r'GUserArticlesReq', 'operation'),
               requestId: requestId,
               updateResult: updateResult,
               optimisticResponse: _optimisticResponse?.build(),
@@ -341,7 +334,7 @@ class GUserArticleItemsReqBuilder
               updateCacheHandlerContext: updateCacheHandlerContext,
               fetchPolicy: fetchPolicy,
               executeOnListen: BuiltValueNullFieldError.checkNotNull(
-                  executeOnListen, r'GUserArticleItemsReq', 'executeOnListen'));
+                  executeOnListen, r'GUserArticlesReq', 'executeOnListen'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -352,7 +345,7 @@ class GUserArticleItemsReqBuilder
         _optimisticResponse?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GUserArticleItemsReq', _$failedField, e.toString());
+            r'GUserArticlesReq', _$failedField, e.toString());
       }
       rethrow;
     }

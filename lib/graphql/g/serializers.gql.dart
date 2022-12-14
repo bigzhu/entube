@@ -30,13 +30,13 @@ import 'package:entube/components/ArticleItems/g/services.var.gql.dart'
     show GArticleFragmentVars, GArticleItemsVars;
 import 'package:entube/components/UserArticles/g/services.data.gql.dart'
     show
-        GUserArticleItemsData,
-        GUserArticleItemsData_user_articles,
-        GUserArticleItemsData_user_articles_article;
+        GUserArticlesData,
+        GUserArticlesData_user_articles,
+        GUserArticlesData_user_articles_article;
 import 'package:entube/components/UserArticles/g/services.req.gql.dart'
-    show GUserArticleItemsReq;
+    show GUserArticlesReq;
 import 'package:entube/components/UserArticles/g/services.var.gql.dart'
-    show GUserArticleItemsVars;
+    show GUserArticlesVars;
 import 'package:entube/graphql/g/schema.schema.gql.dart'
     show
         GBoolean_comparison_exp,
@@ -339,11 +339,11 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GSentencesReq,
   GSentencesVars,
   GString_comparison_exp,
-  GUserArticleItemsData,
-  GUserArticleItemsData_user_articles,
-  GUserArticleItemsData_user_articles_article,
-  GUserArticleItemsReq,
-  GUserArticleItemsVars,
+  GUserArticlesData,
+  GUserArticlesData_user_articles,
+  GUserArticlesData_user_articles_article,
+  GUserArticlesReq,
+  GUserArticlesVars,
   GWordFragmentData,
   GWordFragmentReq,
   GWordFragmentVars,

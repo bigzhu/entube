@@ -6,89 +6,84 @@ part of 'services.var.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GUserArticleItemsVars> _$gUserArticleItemsVarsSerializer =
-    new _$GUserArticleItemsVarsSerializer();
+Serializer<GUserArticlesVars> _$gUserArticlesVarsSerializer =
+    new _$GUserArticlesVarsSerializer();
 
-class _$GUserArticleItemsVarsSerializer
-    implements StructuredSerializer<GUserArticleItemsVars> {
+class _$GUserArticlesVarsSerializer
+    implements StructuredSerializer<GUserArticlesVars> {
   @override
-  final Iterable<Type> types = const [
-    GUserArticleItemsVars,
-    _$GUserArticleItemsVars
-  ];
+  final Iterable<Type> types = const [GUserArticlesVars, _$GUserArticlesVars];
   @override
-  final String wireName = 'GUserArticleItemsVars';
+  final String wireName = 'GUserArticlesVars';
 
   @override
-  Iterable<Object?> serialize(
-      Serializers serializers, GUserArticleItemsVars object,
+  Iterable<Object?> serialize(Serializers serializers, GUserArticlesVars object,
       {FullType specifiedType = FullType.unspecified}) {
     return <Object?>[];
   }
 
   @override
-  GUserArticleItemsVars deserialize(
+  GUserArticlesVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    return new GUserArticleItemsVarsBuilder().build();
+    return new GUserArticlesVarsBuilder().build();
   }
 }
 
-class _$GUserArticleItemsVars extends GUserArticleItemsVars {
-  factory _$GUserArticleItemsVars(
-          [void Function(GUserArticleItemsVarsBuilder)? updates]) =>
-      (new GUserArticleItemsVarsBuilder()..update(updates))._build();
+class _$GUserArticlesVars extends GUserArticlesVars {
+  factory _$GUserArticlesVars(
+          [void Function(GUserArticlesVarsBuilder)? updates]) =>
+      (new GUserArticlesVarsBuilder()..update(updates))._build();
 
-  _$GUserArticleItemsVars._() : super._();
+  _$GUserArticlesVars._() : super._();
 
   @override
-  GUserArticleItemsVars rebuild(
-          void Function(GUserArticleItemsVarsBuilder) updates) =>
+  GUserArticlesVars rebuild(void Function(GUserArticlesVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GUserArticleItemsVarsBuilder toBuilder() =>
-      new GUserArticleItemsVarsBuilder()..replace(this);
+  GUserArticlesVarsBuilder toBuilder() =>
+      new GUserArticlesVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GUserArticleItemsVars;
+    return other is GUserArticlesVars;
   }
 
   @override
   int get hashCode {
-    return 505389251;
+    return 525450252;
   }
 
   @override
   String toString() {
-    return newBuiltValueToStringHelper(r'GUserArticleItemsVars').toString();
+    return newBuiltValueToStringHelper(r'GUserArticlesVars').toString();
   }
 }
 
-class GUserArticleItemsVarsBuilder
-    implements Builder<GUserArticleItemsVars, GUserArticleItemsVarsBuilder> {
-  _$GUserArticleItemsVars? _$v;
+class GUserArticlesVarsBuilder
+    implements Builder<GUserArticlesVars, GUserArticlesVarsBuilder> {
+  _$GUserArticlesVars? _$v;
 
-  GUserArticleItemsVarsBuilder();
+  GUserArticlesVarsBuilder();
 
   @override
-  void replace(GUserArticleItemsVars other) {
+  void replace(GUserArticlesVars other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GUserArticleItemsVars;
+    _$v = other as _$GUserArticlesVars;
   }
 
   @override
-  void update(void Function(GUserArticleItemsVarsBuilder)? updates) {
+  void update(void Function(GUserArticlesVarsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GUserArticleItemsVars build() => _build();
+  GUserArticlesVars build() => _build();
 
-  _$GUserArticleItemsVars _build() {
-    final _$result = _$v ?? new _$GUserArticleItemsVars._();
+  _$GUserArticlesVars _build() {
+    final _$result = _$v ?? new _$GUserArticlesVars._();
     replace(_$result);
     return _$result;
   }

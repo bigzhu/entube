@@ -1,12 +1,13 @@
 // ignore_for_file: library_prefixes
 
-import 'package:entube/components/ArticleItems/index.dart' as ArticleItems;
 import 'package:entube/components/Auth/index.dart';
 import 'package:entube/components/BottomBar.dart';
 import 'package:entube/components/UserAvatar.dart';
 import 'package:entube/configs.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import 'Items.dart';
 
 class Page extends HookConsumerWidget {
   const Page({super.key});
@@ -33,7 +34,7 @@ class Page extends HookConsumerWidget {
           ),
         ],
       ),
-      body: const ArticleItems.Items(),
+      body: const Items(),
       bottomNavigationBar: const BottomBar(),
       /*
       floatingActionButton: FloatingActionButton(

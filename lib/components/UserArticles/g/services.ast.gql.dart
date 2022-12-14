@@ -4,9 +4,9 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:gql/ast.dart' as _i1;
 
-const UserArticleItems = _i1.OperationDefinitionNode(
+const UserArticles = _i1.OperationDefinitionNode(
   type: _i1.OperationType.query,
-  name: _i1.NameNode(value: 'UserArticleItems'),
+  name: _i1.NameNode(value: 'UserArticles'),
   variableDefinitions: [],
   directives: [],
   selectionSet: _i1.SelectionSetNode(selections: [
@@ -87,4 +87,4 @@ const UserArticleItems = _i1.OperationDefinitionNode(
     )
   ]),
 );
-const document = _i1.DocumentNode(definitions: [UserArticleItems]);
+const document = _i1.DocumentNode(definitions: [UserArticles]);
