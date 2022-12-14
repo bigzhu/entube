@@ -12,6 +12,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GAcquiringWordsData_words.serializer)
       ..add(GAcquiringWordsReq.serializer)
       ..add(GAcquiringWordsVars.serializer)
+      ..add(GArticleFragmentData.serializer)
+      ..add(GArticleFragmentReq.serializer)
+      ..add(GArticleFragmentVars.serializer)
       ..add(GArticleItemsData.serializer)
       ..add(GArticleItemsData_articles.serializer)
       ..add(GArticleItemsReq.serializer)
@@ -23,6 +26,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GSentencesReq.serializer)
       ..add(GSentencesVars.serializer)
       ..add(GString_comparison_exp.serializer)
+      ..add(GUserArticleItemsData.serializer)
+      ..add(GUserArticleItemsData_user_articles.serializer)
+      ..add(GUserArticleItemsData_user_articles_article.serializer)
+      ..add(GUserArticleItemsReq.serializer)
+      ..add(GUserArticleItemsVars.serializer)
       ..add(GWordFragmentData.serializer)
       ..add(GWordFragmentReq.serializer)
       ..add(GWordFragmentVars.serializer)
@@ -33,6 +41,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(Garticles_delete_elem_input.serializer)
       ..add(Garticles_delete_key_input.serializer)
       ..add(Garticles_insert_input.serializer)
+      ..add(Garticles_obj_rel_insert_input.serializer)
       ..add(Garticles_on_conflict.serializer)
       ..add(Garticles_order_by.serializer)
       ..add(Garticles_pk_columns_input.serializer)
@@ -232,19 +241,33 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GupsertAcquiringWordsData_insert_words_one.serializer)
       ..add(GupsertAcquiringWordsReq.serializer)
       ..add(GupsertAcquiringWordsVars.serializer)
+      ..add(Guser_articles_aggregate_bool_exp.serializer)
+      ..add(Guser_articles_aggregate_bool_exp_count.serializer)
+      ..add(Guser_articles_aggregate_order_by.serializer)
+      ..add(Guser_articles_arr_rel_insert_input.serializer)
+      ..add(Guser_articles_avg_order_by.serializer)
       ..add(Guser_articles_bool_exp.serializer)
       ..add(Guser_articles_constraint.serializer)
       ..add(Guser_articles_inc_input.serializer)
       ..add(Guser_articles_insert_input.serializer)
+      ..add(Guser_articles_max_order_by.serializer)
+      ..add(Guser_articles_min_order_by.serializer)
       ..add(Guser_articles_on_conflict.serializer)
       ..add(Guser_articles_order_by.serializer)
       ..add(Guser_articles_pk_columns_input.serializer)
       ..add(Guser_articles_select_column.serializer)
       ..add(Guser_articles_set_input.serializer)
+      ..add(Guser_articles_stddev_order_by.serializer)
+      ..add(Guser_articles_stddev_pop_order_by.serializer)
+      ..add(Guser_articles_stddev_samp_order_by.serializer)
       ..add(Guser_articles_stream_cursor_input.serializer)
       ..add(Guser_articles_stream_cursor_value_input.serializer)
+      ..add(Guser_articles_sum_order_by.serializer)
       ..add(Guser_articles_update_column.serializer)
       ..add(Guser_articles_updates.serializer)
+      ..add(Guser_articles_var_pop_order_by.serializer)
+      ..add(Guser_articles_var_samp_order_by.serializer)
+      ..add(Guser_articles_variance_order_by.serializer)
       ..add(Gusers_aggregate_bool_exp.serializer)
       ..add(Gusers_aggregate_bool_exp_bool_and.serializer)
       ..add(Gusers_aggregate_bool_exp_bool_or.serializer)
@@ -304,6 +327,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(GSentencesData_articles)]),
           () => new ListBuilder<GSentencesData_articles>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(GUserArticleItemsData_user_articles)]),
+          () => new ListBuilder<GUserArticleItemsData_user_articles>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Garticles_bool_exp)]),
           () => new ListBuilder<Garticles_bool_exp>())
@@ -490,6 +517,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(Guser_articles_bool_exp)]),
           () => new ListBuilder<Guser_articles_bool_exp>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(Guser_articles_insert_input)]),
+          () => new ListBuilder<Guser_articles_insert_input>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(Guser_articles_select_column)]),
+          () => new ListBuilder<Guser_articles_select_column>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(Guser_articles_update_column)]),

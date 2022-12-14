@@ -1869,6 +1869,9 @@ Serializer<Garticles_delete_key_input> _$garticlesDeleteKeyInputSerializer =
     new _$Garticles_delete_key_inputSerializer();
 Serializer<Garticles_insert_input> _$garticlesInsertInputSerializer =
     new _$Garticles_insert_inputSerializer();
+Serializer<Garticles_obj_rel_insert_input>
+    _$garticlesObjRelInsertInputSerializer =
+    new _$Garticles_obj_rel_insert_inputSerializer();
 Serializer<Garticles_on_conflict> _$garticlesOnConflictSerializer =
     new _$Garticles_on_conflictSerializer();
 Serializer<Garticles_order_by> _$garticlesOrderBySerializer =
@@ -2346,6 +2349,20 @@ Serializer<Gjsonb_comparison_exp> _$gjsonbComparisonExpSerializer =
 Serializer<Gorder_by> _$gorderBySerializer = new _$Gorder_bySerializer();
 Serializer<Gtimestamptz_comparison_exp> _$gtimestamptzComparisonExpSerializer =
     new _$Gtimestamptz_comparison_expSerializer();
+Serializer<Guser_articles_aggregate_bool_exp>
+    _$guserArticlesAggregateBoolExpSerializer =
+    new _$Guser_articles_aggregate_bool_expSerializer();
+Serializer<Guser_articles_aggregate_bool_exp_count>
+    _$guserArticlesAggregateBoolExpCountSerializer =
+    new _$Guser_articles_aggregate_bool_exp_countSerializer();
+Serializer<Guser_articles_aggregate_order_by>
+    _$guserArticlesAggregateOrderBySerializer =
+    new _$Guser_articles_aggregate_order_bySerializer();
+Serializer<Guser_articles_arr_rel_insert_input>
+    _$guserArticlesArrRelInsertInputSerializer =
+    new _$Guser_articles_arr_rel_insert_inputSerializer();
+Serializer<Guser_articles_avg_order_by> _$guserArticlesAvgOrderBySerializer =
+    new _$Guser_articles_avg_order_bySerializer();
 Serializer<Guser_articles_bool_exp> _$guserArticlesBoolExpSerializer =
     new _$Guser_articles_bool_expSerializer();
 Serializer<Guser_articles_constraint> _$guserArticlesConstraintSerializer =
@@ -2354,6 +2371,10 @@ Serializer<Guser_articles_inc_input> _$guserArticlesIncInputSerializer =
     new _$Guser_articles_inc_inputSerializer();
 Serializer<Guser_articles_insert_input> _$guserArticlesInsertInputSerializer =
     new _$Guser_articles_insert_inputSerializer();
+Serializer<Guser_articles_max_order_by> _$guserArticlesMaxOrderBySerializer =
+    new _$Guser_articles_max_order_bySerializer();
+Serializer<Guser_articles_min_order_by> _$guserArticlesMinOrderBySerializer =
+    new _$Guser_articles_min_order_bySerializer();
 Serializer<Guser_articles_on_conflict> _$guserArticlesOnConflictSerializer =
     new _$Guser_articles_on_conflictSerializer();
 Serializer<Guser_articles_order_by> _$guserArticlesOrderBySerializer =
@@ -2365,16 +2386,36 @@ Serializer<Guser_articles_select_column> _$guserArticlesSelectColumnSerializer =
     new _$Guser_articles_select_columnSerializer();
 Serializer<Guser_articles_set_input> _$guserArticlesSetInputSerializer =
     new _$Guser_articles_set_inputSerializer();
+Serializer<Guser_articles_stddev_order_by>
+    _$guserArticlesStddevOrderBySerializer =
+    new _$Guser_articles_stddev_order_bySerializer();
+Serializer<Guser_articles_stddev_pop_order_by>
+    _$guserArticlesStddevPopOrderBySerializer =
+    new _$Guser_articles_stddev_pop_order_bySerializer();
+Serializer<Guser_articles_stddev_samp_order_by>
+    _$guserArticlesStddevSampOrderBySerializer =
+    new _$Guser_articles_stddev_samp_order_bySerializer();
 Serializer<Guser_articles_stream_cursor_input>
     _$guserArticlesStreamCursorInputSerializer =
     new _$Guser_articles_stream_cursor_inputSerializer();
 Serializer<Guser_articles_stream_cursor_value_input>
     _$guserArticlesStreamCursorValueInputSerializer =
     new _$Guser_articles_stream_cursor_value_inputSerializer();
+Serializer<Guser_articles_sum_order_by> _$guserArticlesSumOrderBySerializer =
+    new _$Guser_articles_sum_order_bySerializer();
 Serializer<Guser_articles_update_column> _$guserArticlesUpdateColumnSerializer =
     new _$Guser_articles_update_columnSerializer();
 Serializer<Guser_articles_updates> _$guserArticlesUpdatesSerializer =
     new _$Guser_articles_updatesSerializer();
+Serializer<Guser_articles_var_pop_order_by>
+    _$guserArticlesVarPopOrderBySerializer =
+    new _$Guser_articles_var_pop_order_bySerializer();
+Serializer<Guser_articles_var_samp_order_by>
+    _$guserArticlesVarSampOrderBySerializer =
+    new _$Guser_articles_var_samp_order_bySerializer();
+Serializer<Guser_articles_variance_order_by>
+    _$guserArticlesVarianceOrderBySerializer =
+    new _$Guser_articles_variance_order_bySerializer();
 Serializer<Gusers_aggregate_bool_exp> _$gusersAggregateBoolExpSerializer =
     new _$Gusers_aggregate_bool_expSerializer();
 Serializer<Gusers_aggregate_bool_exp_bool_and>
@@ -3164,6 +3205,20 @@ class _$Garticles_bool_expSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(GString_comparison_exp)));
     }
+    value = object.user_articles;
+    if (value != null) {
+      result
+        ..add('user_articles')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_bool_exp)));
+    }
+    value = object.user_articles_aggregate;
+    if (value != null) {
+      result
+        ..add('user_articles_aggregate')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_aggregate_bool_exp)));
+    }
     return result;
   }
 
@@ -3250,6 +3305,17 @@ class _$Garticles_bool_expSerializer
           result.url.replace(serializers.deserialize(value,
                   specifiedType: const FullType(GString_comparison_exp))!
               as GString_comparison_exp);
+          break;
+        case 'user_articles':
+          result.user_articles.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guser_articles_bool_exp))!
+              as Guser_articles_bool_exp);
+          break;
+        case 'user_articles_aggregate':
+          result.user_articles_aggregate.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(Guser_articles_aggregate_bool_exp))!
+              as Guser_articles_aggregate_bool_exp);
           break;
       }
     }
@@ -3518,6 +3584,14 @@ class _$Garticles_insert_inputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.user_articles;
+    if (value != null) {
+      result
+        ..add('user_articles')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(Guser_articles_arr_rel_insert_input)));
+    }
     return result;
   }
 
@@ -3576,6 +3650,71 @@ class _$Garticles_insert_inputSerializer
         case 'url':
           result.url = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
+          break;
+        case 'user_articles':
+          result.user_articles.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(Guser_articles_arr_rel_insert_input))!
+              as Guser_articles_arr_rel_insert_input);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Garticles_obj_rel_insert_inputSerializer
+    implements StructuredSerializer<Garticles_obj_rel_insert_input> {
+  @override
+  final Iterable<Type> types = const [
+    Garticles_obj_rel_insert_input,
+    _$Garticles_obj_rel_insert_input
+  ];
+  @override
+  final String wireName = 'Garticles_obj_rel_insert_input';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Garticles_obj_rel_insert_input object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(Garticles_insert_input)),
+    ];
+    Object? value;
+    value = object.on_conflict;
+    if (value != null) {
+      result
+        ..add('on_conflict')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Garticles_on_conflict)));
+    }
+    return result;
+  }
+
+  @override
+  Garticles_obj_rel_insert_input deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Garticles_obj_rel_insert_inputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Garticles_insert_input))!
+              as Garticles_insert_input);
+          break;
+        case 'on_conflict':
+          result.on_conflict.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Garticles_on_conflict))!
+              as Garticles_on_conflict);
           break;
       }
     }
@@ -3743,6 +3882,13 @@ class _$Garticles_order_bySerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Gorder_by)));
     }
+    value = object.user_articles_aggregate;
+    if (value != null) {
+      result
+        ..add('user_articles_aggregate')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_aggregate_order_by)));
+    }
     return result;
   }
 
@@ -3801,6 +3947,12 @@ class _$Garticles_order_bySerializer
         case 'url':
           result.url = serializers.deserialize(value,
               specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'user_articles_aggregate':
+          result.user_articles_aggregate.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(Guser_articles_aggregate_order_by))!
+              as Guser_articles_aggregate_order_by);
           break;
       }
     }
@@ -17421,6 +17573,428 @@ class _$Gtimestamptz_comparison_expSerializer
   }
 }
 
+class _$Guser_articles_aggregate_bool_expSerializer
+    implements StructuredSerializer<Guser_articles_aggregate_bool_exp> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_aggregate_bool_exp,
+    _$Guser_articles_aggregate_bool_exp
+  ];
+  @override
+  final String wireName = 'Guser_articles_aggregate_bool_exp';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_aggregate_bool_exp object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.count;
+    if (value != null) {
+      result
+        ..add('count')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(Guser_articles_aggregate_bool_exp_count)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_aggregate_bool_exp deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_aggregate_bool_expBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'count':
+          result.count.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(Guser_articles_aggregate_bool_exp_count))!
+              as Guser_articles_aggregate_bool_exp_count);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_aggregate_bool_exp_countSerializer
+    implements StructuredSerializer<Guser_articles_aggregate_bool_exp_count> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_aggregate_bool_exp_count,
+    _$Guser_articles_aggregate_bool_exp_count
+  ];
+  @override
+  final String wireName = 'Guser_articles_aggregate_bool_exp_count';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_aggregate_bool_exp_count object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'predicate',
+      serializers.serialize(object.predicate,
+          specifiedType: const FullType(GInt_comparison_exp)),
+    ];
+    Object? value;
+    value = object.arguments;
+    if (value != null) {
+      result
+        ..add('arguments')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList,
+                const [const FullType(Guser_articles_select_column)])));
+    }
+    value = object.distinct;
+    if (value != null) {
+      result
+        ..add('distinct')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.filter;
+    if (value != null) {
+      result
+        ..add('filter')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_bool_exp)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_aggregate_bool_exp_count deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_aggregate_bool_exp_countBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'arguments':
+          result.arguments.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(Guser_articles_select_column)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'distinct':
+          result.distinct = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'filter':
+          result.filter.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guser_articles_bool_exp))!
+              as Guser_articles_bool_exp);
+          break;
+        case 'predicate':
+          result.predicate.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GInt_comparison_exp))!
+              as GInt_comparison_exp);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_aggregate_order_bySerializer
+    implements StructuredSerializer<Guser_articles_aggregate_order_by> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_aggregate_order_by,
+    _$Guser_articles_aggregate_order_by
+  ];
+  @override
+  final String wireName = 'Guser_articles_aggregate_order_by';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_aggregate_order_by object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.avg;
+    if (value != null) {
+      result
+        ..add('avg')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_avg_order_by)));
+    }
+    value = object.count;
+    if (value != null) {
+      result
+        ..add('count')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.max;
+    if (value != null) {
+      result
+        ..add('max')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_max_order_by)));
+    }
+    value = object.min;
+    if (value != null) {
+      result
+        ..add('min')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_min_order_by)));
+    }
+    value = object.stddev;
+    if (value != null) {
+      result
+        ..add('stddev')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_stddev_order_by)));
+    }
+    value = object.stddev_pop;
+    if (value != null) {
+      result
+        ..add('stddev_pop')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_stddev_pop_order_by)));
+    }
+    value = object.stddev_samp;
+    if (value != null) {
+      result
+        ..add('stddev_samp')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(Guser_articles_stddev_samp_order_by)));
+    }
+    value = object.sum;
+    if (value != null) {
+      result
+        ..add('sum')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_sum_order_by)));
+    }
+    value = object.var_pop;
+    if (value != null) {
+      result
+        ..add('var_pop')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_var_pop_order_by)));
+    }
+    value = object.var_samp;
+    if (value != null) {
+      result
+        ..add('var_samp')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_var_samp_order_by)));
+    }
+    value = object.variance;
+    if (value != null) {
+      result
+        ..add('variance')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_variance_order_by)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_aggregate_order_by deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_aggregate_order_byBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'avg':
+          result.avg.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guser_articles_avg_order_by))!
+              as Guser_articles_avg_order_by);
+          break;
+        case 'count':
+          result.count = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'max':
+          result.max.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guser_articles_max_order_by))!
+              as Guser_articles_max_order_by);
+          break;
+        case 'min':
+          result.min.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guser_articles_min_order_by))!
+              as Guser_articles_min_order_by);
+          break;
+        case 'stddev':
+          result.stddev.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(Guser_articles_stddev_order_by))!
+              as Guser_articles_stddev_order_by);
+          break;
+        case 'stddev_pop':
+          result.stddev_pop.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(Guser_articles_stddev_pop_order_by))!
+              as Guser_articles_stddev_pop_order_by);
+          break;
+        case 'stddev_samp':
+          result.stddev_samp.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(Guser_articles_stddev_samp_order_by))!
+              as Guser_articles_stddev_samp_order_by);
+          break;
+        case 'sum':
+          result.sum.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guser_articles_sum_order_by))!
+              as Guser_articles_sum_order_by);
+          break;
+        case 'var_pop':
+          result.var_pop.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(Guser_articles_var_pop_order_by))!
+              as Guser_articles_var_pop_order_by);
+          break;
+        case 'var_samp':
+          result.var_samp.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(Guser_articles_var_samp_order_by))!
+              as Guser_articles_var_samp_order_by);
+          break;
+        case 'variance':
+          result.variance.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(Guser_articles_variance_order_by))!
+              as Guser_articles_variance_order_by);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_arr_rel_insert_inputSerializer
+    implements StructuredSerializer<Guser_articles_arr_rel_insert_input> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_arr_rel_insert_input,
+    _$Guser_articles_arr_rel_insert_input
+  ];
+  @override
+  final String wireName = 'Guser_articles_arr_rel_insert_input';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_arr_rel_insert_input object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      'data',
+      serializers.serialize(object.data,
+          specifiedType: const FullType(
+              BuiltList, const [const FullType(Guser_articles_insert_input)])),
+    ];
+    Object? value;
+    value = object.on_conflict;
+    if (value != null) {
+      result
+        ..add('on_conflict')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Guser_articles_on_conflict)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_arr_rel_insert_input deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_arr_rel_insert_inputBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'data':
+          result.data.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(Guser_articles_insert_input)
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'on_conflict':
+          result.on_conflict.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Guser_articles_on_conflict))!
+              as Guser_articles_on_conflict);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_avg_order_bySerializer
+    implements StructuredSerializer<Guser_articles_avg_order_by> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_avg_order_by,
+    _$Guser_articles_avg_order_by
+  ];
+  @override
+  final String wireName = 'Guser_articles_avg_order_by';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_avg_order_by object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_avg_order_by deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_avg_order_byBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$Guser_articles_bool_expSerializer
     implements StructuredSerializer<Guser_articles_bool_exp> {
   @override
@@ -17459,6 +18033,13 @@ class _$Guser_articles_bool_expSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
                 BuiltList, const [const FullType(Guser_articles_bool_exp)])));
+    }
+    value = object.article;
+    if (value != null) {
+      result
+        ..add('article')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Garticles_bool_exp)));
     }
     value = object.article_id;
     if (value != null) {
@@ -17554,6 +18135,11 @@ class _$Guser_articles_bool_expSerializer
               specifiedType: const FullType(BuiltList, const [
                 const FullType(Guser_articles_bool_exp)
               ]))! as BuiltList<Object?>);
+          break;
+        case 'article':
+          result.article.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Garticles_bool_exp))!
+              as Garticles_bool_exp);
           break;
         case 'article_id':
           result.article_id.replace(serializers.deserialize(value,
@@ -17690,6 +18276,13 @@ class _$Guser_articles_insert_inputSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
+    value = object.article;
+    if (value != null) {
+      result
+        ..add('article')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Garticles_obj_rel_insert_input)));
+    }
     value = object.article_id;
     if (value != null) {
       result
@@ -17767,6 +18360,12 @@ class _$Guser_articles_insert_inputSerializer
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
+        case 'article':
+          result.article.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(Garticles_obj_rel_insert_input))!
+              as Garticles_obj_rel_insert_input);
+          break;
         case 'article_id':
           result.article_id.replace(serializers.deserialize(value,
               specifiedType: const FullType(Guuid))! as Guuid);
@@ -17802,6 +18401,280 @@ class _$Guser_articles_insert_inputSerializer
         case 'user_id':
           result.user_id.replace(serializers.deserialize(value,
               specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_max_order_bySerializer
+    implements StructuredSerializer<Guser_articles_max_order_by> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_max_order_by,
+    _$Guser_articles_max_order_by
+  ];
+  @override
+  final String wireName = 'Guser_articles_max_order_by';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_max_order_by object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.article_id;
+    if (value != null) {
+      result
+        ..add('article_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.created_at;
+    if (value != null) {
+      result
+        ..add('created_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.created_by;
+    if (value != null) {
+      result
+        ..add('created_by')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.deleted_at;
+    if (value != null) {
+      result
+        ..add('deleted_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.updated_at;
+    if (value != null) {
+      result
+        ..add('updated_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.updated_by;
+    if (value != null) {
+      result
+        ..add('updated_by')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.user_id;
+    if (value != null) {
+      result
+        ..add('user_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_max_order_by deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_max_order_byBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'article_id':
+          result.article_id = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'created_at':
+          result.created_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'created_by':
+          result.created_by = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'deleted_at':
+          result.deleted_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'updated_at':
+          result.updated_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'updated_by':
+          result.updated_by = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'user_id':
+          result.user_id = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_min_order_bySerializer
+    implements StructuredSerializer<Guser_articles_min_order_by> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_min_order_by,
+    _$Guser_articles_min_order_by
+  ];
+  @override
+  final String wireName = 'Guser_articles_min_order_by';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_min_order_by object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.article_id;
+    if (value != null) {
+      result
+        ..add('article_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.created_at;
+    if (value != null) {
+      result
+        ..add('created_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.created_by;
+    if (value != null) {
+      result
+        ..add('created_by')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.deleted_at;
+    if (value != null) {
+      result
+        ..add('deleted_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.updated_at;
+    if (value != null) {
+      result
+        ..add('updated_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.updated_by;
+    if (value != null) {
+      result
+        ..add('updated_by')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    value = object.user_id;
+    if (value != null) {
+      result
+        ..add('user_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_min_order_by deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_min_order_byBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'article_id':
+          result.article_id = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'created_at':
+          result.created_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'created_by':
+          result.created_by = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'deleted_at':
+          result.deleted_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'updated_at':
+          result.updated_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'updated_by':
+          result.updated_by = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'user_id':
+          result.user_id = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
           break;
       }
     }
@@ -17895,6 +18768,13 @@ class _$Guser_articles_order_bySerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
+    value = object.article;
+    if (value != null) {
+      result
+        ..add('article')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Garticles_order_by)));
+    }
     value = object.article_id;
     if (value != null) {
       result
@@ -17973,6 +18853,11 @@ class _$Guser_articles_order_bySerializer
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
+        case 'article':
+          result.article.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Garticles_order_by))!
+              as Garticles_order_by);
+          break;
         case 'article_id':
           result.article_id = serializers.deserialize(value,
               specifiedType: const FullType(Gorder_by)) as Gorder_by?;
@@ -18216,6 +19101,153 @@ class _$Guser_articles_set_inputSerializer
   }
 }
 
+class _$Guser_articles_stddev_order_bySerializer
+    implements StructuredSerializer<Guser_articles_stddev_order_by> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_stddev_order_by,
+    _$Guser_articles_stddev_order_by
+  ];
+  @override
+  final String wireName = 'Guser_articles_stddev_order_by';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_stddev_order_by object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_stddev_order_by deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_stddev_order_byBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_stddev_pop_order_bySerializer
+    implements StructuredSerializer<Guser_articles_stddev_pop_order_by> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_stddev_pop_order_by,
+    _$Guser_articles_stddev_pop_order_by
+  ];
+  @override
+  final String wireName = 'Guser_articles_stddev_pop_order_by';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_stddev_pop_order_by object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_stddev_pop_order_by deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_stddev_pop_order_byBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_stddev_samp_order_bySerializer
+    implements StructuredSerializer<Guser_articles_stddev_samp_order_by> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_stddev_samp_order_by,
+    _$Guser_articles_stddev_samp_order_by
+  ];
+  @override
+  final String wireName = 'Guser_articles_stddev_samp_order_by';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_stddev_samp_order_by object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_stddev_samp_order_by deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_stddev_samp_order_byBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$Guser_articles_stream_cursor_inputSerializer
     implements StructuredSerializer<Guser_articles_stream_cursor_input> {
   @override
@@ -18413,6 +19445,55 @@ class _$Guser_articles_stream_cursor_value_inputSerializer
   }
 }
 
+class _$Guser_articles_sum_order_bySerializer
+    implements StructuredSerializer<Guser_articles_sum_order_by> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_sum_order_by,
+    _$Guser_articles_sum_order_by
+  ];
+  @override
+  final String wireName = 'Guser_articles_sum_order_by';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_sum_order_by object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_sum_order_by deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_sum_order_byBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
 class _$Guser_articles_update_columnSerializer
     implements PrimitiveSerializer<Guser_articles_update_column> {
   @override
@@ -18495,6 +19576,153 @@ class _$Guser_articles_updatesSerializer
           result.where.replace(serializers.deserialize(value,
                   specifiedType: const FullType(Guser_articles_bool_exp))!
               as Guser_articles_bool_exp);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_var_pop_order_bySerializer
+    implements StructuredSerializer<Guser_articles_var_pop_order_by> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_var_pop_order_by,
+    _$Guser_articles_var_pop_order_by
+  ];
+  @override
+  final String wireName = 'Guser_articles_var_pop_order_by';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_var_pop_order_by object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_var_pop_order_by deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_var_pop_order_byBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_var_samp_order_bySerializer
+    implements StructuredSerializer<Guser_articles_var_samp_order_by> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_var_samp_order_by,
+    _$Guser_articles_var_samp_order_by
+  ];
+  @override
+  final String wireName = 'Guser_articles_var_samp_order_by';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_var_samp_order_by object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_var_samp_order_by deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_var_samp_order_byBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$Guser_articles_variance_order_bySerializer
+    implements StructuredSerializer<Guser_articles_variance_order_by> {
+  @override
+  final Iterable<Type> types = const [
+    Guser_articles_variance_order_by,
+    _$Guser_articles_variance_order_by
+  ];
+  @override
+  final String wireName = 'Guser_articles_variance_order_by';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, Guser_articles_variance_order_by object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
+    return result;
+  }
+
+  @override
+  Guser_articles_variance_order_by deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new Guser_articles_variance_order_byBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
           break;
       }
     }
@@ -22280,6 +23508,13 @@ class _$Gwords_bool_expSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Guuid_comparison_exp)));
     }
+    value = object.user;
+    if (value != null) {
+      result
+        ..add('user')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gusers_bool_exp)));
+    }
     value = object.word;
     if (value != null) {
       result
@@ -22358,6 +23593,11 @@ class _$Gwords_bool_expSerializer
           result.updated_by.replace(serializers.deserialize(value,
                   specifiedType: const FullType(Guuid_comparison_exp))!
               as Guuid_comparison_exp);
+          break;
+        case 'user':
+          result.user.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Gusers_bool_exp))!
+              as Gusers_bool_exp);
           break;
         case 'word':
           result.word.replace(serializers.deserialize(value,
@@ -22504,6 +23744,13 @@ class _$Gwords_insert_inputSerializer
         ..add(
             serializers.serialize(value, specifiedType: const FullType(Guuid)));
     }
+    value = object.user;
+    if (value != null) {
+      result
+        ..add('user')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gusers_obj_rel_insert_input)));
+    }
     value = object.word;
     if (value != null) {
       result
@@ -22557,6 +23804,11 @@ class _$Gwords_insert_inputSerializer
         case 'updated_by':
           result.updated_by.replace(serializers.deserialize(value,
               specifiedType: const FullType(Guuid))! as Guuid);
+          break;
+        case 'user':
+          result.user.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Gusers_obj_rel_insert_input))!
+              as Gusers_obj_rel_insert_input);
           break;
         case 'word':
           result.word = serializers.deserialize(value,
@@ -22703,6 +23955,13 @@ class _$Gwords_order_bySerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Gorder_by)));
     }
+    value = object.user;
+    if (value != null) {
+      result
+        ..add('user')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gusers_order_by)));
+    }
     value = object.word;
     if (value != null) {
       result
@@ -22756,6 +24015,11 @@ class _$Gwords_order_bySerializer
         case 'updated_by':
           result.updated_by = serializers.deserialize(value,
               specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'user':
+          result.user.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(Gusers_order_by))!
+              as Gusers_order_by);
           break;
         case 'word':
           result.word = serializers.deserialize(value,
@@ -24087,6 +25351,10 @@ class _$Garticles_bool_exp extends Garticles_bool_exp {
   final Guuid_comparison_exp? updated_by;
   @override
   final GString_comparison_exp? url;
+  @override
+  final Guser_articles_bool_exp? user_articles;
+  @override
+  final Guser_articles_aggregate_bool_exp? user_articles_aggregate;
 
   factory _$Garticles_bool_exp(
           [void Function(Garticles_bool_expBuilder)? updates]) =>
@@ -24106,7 +25374,9 @@ class _$Garticles_bool_exp extends Garticles_bool_exp {
       this.title,
       this.updated_at,
       this.updated_by,
-      this.url})
+      this.url,
+      this.user_articles,
+      this.user_articles_aggregate})
       : super._();
 
   @override
@@ -24135,7 +25405,9 @@ class _$Garticles_bool_exp extends Garticles_bool_exp {
         title == other.title &&
         updated_at == other.updated_at &&
         updated_by == other.updated_by &&
-        url == other.url;
+        url == other.url &&
+        user_articles == other.user_articles &&
+        user_articles_aggregate == other.user_articles_aggregate;
   }
 
   @override
@@ -24152,20 +25424,28 @@ class _$Garticles_bool_exp extends Garticles_bool_exp {
                                         $jc(
                                             $jc(
                                                 $jc(
-                                                    $jc($jc(0, G_and.hashCode),
-                                                        G_not.hashCode),
-                                                    G_or.hashCode),
-                                                created_at.hashCode),
-                                            created_by.hashCode),
-                                        deleted_at.hashCode),
-                                    favicon.hashCode),
-                                id.hashCode),
-                            sentences.hashCode),
-                        thumbnail.hashCode),
-                    title.hashCode),
-                updated_at.hashCode),
-            updated_by.hashCode),
-        url.hashCode));
+                                                    $jc(
+                                                        $jc(
+                                                            $jc(
+                                                                $jc(
+                                                                    0,
+                                                                    G_and
+                                                                        .hashCode),
+                                                                G_not.hashCode),
+                                                            G_or.hashCode),
+                                                        created_at.hashCode),
+                                                    created_by.hashCode),
+                                                deleted_at.hashCode),
+                                            favicon.hashCode),
+                                        id.hashCode),
+                                    sentences.hashCode),
+                                thumbnail.hashCode),
+                            title.hashCode),
+                        updated_at.hashCode),
+                    updated_by.hashCode),
+                url.hashCode),
+            user_articles.hashCode),
+        user_articles_aggregate.hashCode));
   }
 
   @override
@@ -24184,7 +25464,9 @@ class _$Garticles_bool_exp extends Garticles_bool_exp {
           ..add('title', title)
           ..add('updated_at', updated_at)
           ..add('updated_by', updated_by)
-          ..add('url', url))
+          ..add('url', url)
+          ..add('user_articles', user_articles)
+          ..add('user_articles_aggregate', user_articles_aggregate))
         .toString();
   }
 }
@@ -24271,6 +25553,20 @@ class Garticles_bool_expBuilder
       _$this._url ??= new GString_comparison_expBuilder();
   set url(GString_comparison_expBuilder? url) => _$this._url = url;
 
+  Guser_articles_bool_expBuilder? _user_articles;
+  Guser_articles_bool_expBuilder get user_articles =>
+      _$this._user_articles ??= new Guser_articles_bool_expBuilder();
+  set user_articles(Guser_articles_bool_expBuilder? user_articles) =>
+      _$this._user_articles = user_articles;
+
+  Guser_articles_aggregate_bool_expBuilder? _user_articles_aggregate;
+  Guser_articles_aggregate_bool_expBuilder get user_articles_aggregate =>
+      _$this._user_articles_aggregate ??=
+          new Guser_articles_aggregate_bool_expBuilder();
+  set user_articles_aggregate(
+          Guser_articles_aggregate_bool_expBuilder? user_articles_aggregate) =>
+      _$this._user_articles_aggregate = user_articles_aggregate;
+
   Garticles_bool_expBuilder();
 
   Garticles_bool_expBuilder get _$this {
@@ -24290,6 +25586,8 @@ class Garticles_bool_expBuilder
       _updated_at = $v.updated_at?.toBuilder();
       _updated_by = $v.updated_by?.toBuilder();
       _url = $v.url?.toBuilder();
+      _user_articles = $v.user_articles?.toBuilder();
+      _user_articles_aggregate = $v.user_articles_aggregate?.toBuilder();
       _$v = null;
     }
     return this;
@@ -24327,7 +25625,9 @@ class Garticles_bool_expBuilder
               title: _title?.build(),
               updated_at: _updated_at?.build(),
               updated_by: _updated_by?.build(),
-              url: _url?.build());
+              url: _url?.build(),
+              user_articles: _user_articles?.build(),
+              user_articles_aggregate: _user_articles_aggregate?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -24359,6 +25659,10 @@ class Garticles_bool_expBuilder
         _updated_by?.build();
         _$failedField = 'url';
         _url?.build();
+        _$failedField = 'user_articles';
+        _user_articles?.build();
+        _$failedField = 'user_articles_aggregate';
+        _user_articles_aggregate?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'Garticles_bool_exp', _$failedField, e.toString());
@@ -24652,6 +25956,8 @@ class _$Garticles_insert_input extends Garticles_insert_input {
   final Guuid? updated_by;
   @override
   final String? url;
+  @override
+  final Guser_articles_arr_rel_insert_input? user_articles;
 
   factory _$Garticles_insert_input(
           [void Function(Garticles_insert_inputBuilder)? updates]) =>
@@ -24668,7 +25974,8 @@ class _$Garticles_insert_input extends Garticles_insert_input {
       this.title,
       this.updated_at,
       this.updated_by,
-      this.url})
+      this.url,
+      this.user_articles})
       : super._();
 
   @override
@@ -24694,7 +26001,8 @@ class _$Garticles_insert_input extends Garticles_insert_input {
         title == other.title &&
         updated_at == other.updated_at &&
         updated_by == other.updated_by &&
-        url == other.url;
+        url == other.url &&
+        user_articles == other.user_articles;
   }
 
   @override
@@ -24708,17 +26016,19 @@ class _$Garticles_insert_input extends Garticles_insert_input {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, created_at.hashCode),
-                                            created_by.hashCode),
-                                        deleted_at.hashCode),
-                                    favicon.hashCode),
-                                id.hashCode),
-                            sentences.hashCode),
-                        thumbnail.hashCode),
-                    title.hashCode),
-                updated_at.hashCode),
-            updated_by.hashCode),
-        url.hashCode));
+                                        $jc(
+                                            $jc($jc(0, created_at.hashCode),
+                                                created_by.hashCode),
+                                            deleted_at.hashCode),
+                                        favicon.hashCode),
+                                    id.hashCode),
+                                sentences.hashCode),
+                            thumbnail.hashCode),
+                        title.hashCode),
+                    updated_at.hashCode),
+                updated_by.hashCode),
+            url.hashCode),
+        user_articles.hashCode));
   }
 
   @override
@@ -24734,7 +26044,8 @@ class _$Garticles_insert_input extends Garticles_insert_input {
           ..add('title', title)
           ..add('updated_at', updated_at)
           ..add('updated_by', updated_by)
-          ..add('url', url))
+          ..add('url', url)
+          ..add('user_articles', user_articles))
         .toString();
   }
 }
@@ -24793,6 +26104,14 @@ class Garticles_insert_inputBuilder
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
+  Guser_articles_arr_rel_insert_inputBuilder? _user_articles;
+  Guser_articles_arr_rel_insert_inputBuilder get user_articles =>
+      _$this._user_articles ??=
+          new Guser_articles_arr_rel_insert_inputBuilder();
+  set user_articles(
+          Guser_articles_arr_rel_insert_inputBuilder? user_articles) =>
+      _$this._user_articles = user_articles;
+
   Garticles_insert_inputBuilder();
 
   Garticles_insert_inputBuilder get _$this {
@@ -24809,6 +26128,7 @@ class Garticles_insert_inputBuilder
       _updated_at = $v.updated_at?.toBuilder();
       _updated_by = $v.updated_by?.toBuilder();
       _url = $v.url;
+      _user_articles = $v.user_articles?.toBuilder();
       _$v = null;
     }
     return this;
@@ -24843,7 +26163,8 @@ class Garticles_insert_inputBuilder
               title: title,
               updated_at: _updated_at?.build(),
               updated_by: _updated_by?.build(),
-              url: url);
+              url: url,
+              user_articles: _user_articles?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -24861,9 +26182,126 @@ class Garticles_insert_inputBuilder
         _updated_at?.build();
         _$failedField = 'updated_by';
         _updated_by?.build();
+
+        _$failedField = 'user_articles';
+        _user_articles?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'Garticles_insert_input', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Garticles_obj_rel_insert_input extends Garticles_obj_rel_insert_input {
+  @override
+  final Garticles_insert_input data;
+  @override
+  final Garticles_on_conflict? on_conflict;
+
+  factory _$Garticles_obj_rel_insert_input(
+          [void Function(Garticles_obj_rel_insert_inputBuilder)? updates]) =>
+      (new Garticles_obj_rel_insert_inputBuilder()..update(updates))._build();
+
+  _$Garticles_obj_rel_insert_input._({required this.data, this.on_conflict})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'Garticles_obj_rel_insert_input', 'data');
+  }
+
+  @override
+  Garticles_obj_rel_insert_input rebuild(
+          void Function(Garticles_obj_rel_insert_inputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Garticles_obj_rel_insert_inputBuilder toBuilder() =>
+      new Garticles_obj_rel_insert_inputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Garticles_obj_rel_insert_input &&
+        data == other.data &&
+        on_conflict == other.on_conflict;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, data.hashCode), on_conflict.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Garticles_obj_rel_insert_input')
+          ..add('data', data)
+          ..add('on_conflict', on_conflict))
+        .toString();
+  }
+}
+
+class Garticles_obj_rel_insert_inputBuilder
+    implements
+        Builder<Garticles_obj_rel_insert_input,
+            Garticles_obj_rel_insert_inputBuilder> {
+  _$Garticles_obj_rel_insert_input? _$v;
+
+  Garticles_insert_inputBuilder? _data;
+  Garticles_insert_inputBuilder get data =>
+      _$this._data ??= new Garticles_insert_inputBuilder();
+  set data(Garticles_insert_inputBuilder? data) => _$this._data = data;
+
+  Garticles_on_conflictBuilder? _on_conflict;
+  Garticles_on_conflictBuilder get on_conflict =>
+      _$this._on_conflict ??= new Garticles_on_conflictBuilder();
+  set on_conflict(Garticles_on_conflictBuilder? on_conflict) =>
+      _$this._on_conflict = on_conflict;
+
+  Garticles_obj_rel_insert_inputBuilder();
+
+  Garticles_obj_rel_insert_inputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _data = $v.data.toBuilder();
+      _on_conflict = $v.on_conflict?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Garticles_obj_rel_insert_input other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Garticles_obj_rel_insert_input;
+  }
+
+  @override
+  void update(void Function(Garticles_obj_rel_insert_inputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Garticles_obj_rel_insert_input build() => _build();
+
+  _$Garticles_obj_rel_insert_input _build() {
+    _$Garticles_obj_rel_insert_input _$result;
+    try {
+      _$result = _$v ??
+          new _$Garticles_obj_rel_insert_input._(
+              data: data.build(), on_conflict: _on_conflict?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'data';
+        data.build();
+        _$failedField = 'on_conflict';
+        _on_conflict?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Garticles_obj_rel_insert_input', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -25024,6 +26462,8 @@ class _$Garticles_order_by extends Garticles_order_by {
   final Gorder_by? updated_by;
   @override
   final Gorder_by? url;
+  @override
+  final Guser_articles_aggregate_order_by? user_articles_aggregate;
 
   factory _$Garticles_order_by(
           [void Function(Garticles_order_byBuilder)? updates]) =>
@@ -25040,7 +26480,8 @@ class _$Garticles_order_by extends Garticles_order_by {
       this.title,
       this.updated_at,
       this.updated_by,
-      this.url})
+      this.url,
+      this.user_articles_aggregate})
       : super._();
 
   @override
@@ -25066,7 +26507,8 @@ class _$Garticles_order_by extends Garticles_order_by {
         title == other.title &&
         updated_at == other.updated_at &&
         updated_by == other.updated_by &&
-        url == other.url;
+        url == other.url &&
+        user_articles_aggregate == other.user_articles_aggregate;
   }
 
   @override
@@ -25080,17 +26522,19 @@ class _$Garticles_order_by extends Garticles_order_by {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, created_at.hashCode),
-                                            created_by.hashCode),
-                                        deleted_at.hashCode),
-                                    favicon.hashCode),
-                                id.hashCode),
-                            sentences.hashCode),
-                        thumbnail.hashCode),
-                    title.hashCode),
-                updated_at.hashCode),
-            updated_by.hashCode),
-        url.hashCode));
+                                        $jc(
+                                            $jc($jc(0, created_at.hashCode),
+                                                created_by.hashCode),
+                                            deleted_at.hashCode),
+                                        favicon.hashCode),
+                                    id.hashCode),
+                                sentences.hashCode),
+                            thumbnail.hashCode),
+                        title.hashCode),
+                    updated_at.hashCode),
+                updated_by.hashCode),
+            url.hashCode),
+        user_articles_aggregate.hashCode));
   }
 
   @override
@@ -25106,7 +26550,8 @@ class _$Garticles_order_by extends Garticles_order_by {
           ..add('title', title)
           ..add('updated_at', updated_at)
           ..add('updated_by', updated_by)
-          ..add('url', url))
+          ..add('url', url)
+          ..add('user_articles_aggregate', user_articles_aggregate))
         .toString();
   }
 }
@@ -25159,6 +26604,14 @@ class Garticles_order_byBuilder
   Gorder_by? get url => _$this._url;
   set url(Gorder_by? url) => _$this._url = url;
 
+  Guser_articles_aggregate_order_byBuilder? _user_articles_aggregate;
+  Guser_articles_aggregate_order_byBuilder get user_articles_aggregate =>
+      _$this._user_articles_aggregate ??=
+          new Guser_articles_aggregate_order_byBuilder();
+  set user_articles_aggregate(
+          Guser_articles_aggregate_order_byBuilder? user_articles_aggregate) =>
+      _$this._user_articles_aggregate = user_articles_aggregate;
+
   Garticles_order_byBuilder();
 
   Garticles_order_byBuilder get _$this {
@@ -25175,6 +26628,7 @@ class Garticles_order_byBuilder
       _updated_at = $v.updated_at;
       _updated_by = $v.updated_by;
       _url = $v.url;
+      _user_articles_aggregate = $v.user_articles_aggregate?.toBuilder();
       _$v = null;
     }
     return this;
@@ -25195,19 +26649,33 @@ class Garticles_order_byBuilder
   Garticles_order_by build() => _build();
 
   _$Garticles_order_by _build() {
-    final _$result = _$v ??
-        new _$Garticles_order_by._(
-            created_at: created_at,
-            created_by: created_by,
-            deleted_at: deleted_at,
-            favicon: favicon,
-            id: id,
-            sentences: sentences,
-            thumbnail: thumbnail,
-            title: title,
-            updated_at: updated_at,
-            updated_by: updated_by,
-            url: url);
+    _$Garticles_order_by _$result;
+    try {
+      _$result = _$v ??
+          new _$Garticles_order_by._(
+              created_at: created_at,
+              created_by: created_by,
+              deleted_at: deleted_at,
+              favicon: favicon,
+              id: id,
+              sentences: sentences,
+              thumbnail: thumbnail,
+              title: title,
+              updated_at: updated_at,
+              updated_by: updated_by,
+              url: url,
+              user_articles_aggregate: _user_articles_aggregate?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'user_articles_aggregate';
+        _user_articles_aggregate?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Garticles_order_by', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }
@@ -47225,6 +48693,725 @@ class Gtimestamptz_comparison_expBuilder
   }
 }
 
+class _$Guser_articles_aggregate_bool_exp
+    extends Guser_articles_aggregate_bool_exp {
+  @override
+  final Guser_articles_aggregate_bool_exp_count? count;
+
+  factory _$Guser_articles_aggregate_bool_exp(
+          [void Function(Guser_articles_aggregate_bool_expBuilder)? updates]) =>
+      (new Guser_articles_aggregate_bool_expBuilder()..update(updates))
+          ._build();
+
+  _$Guser_articles_aggregate_bool_exp._({this.count}) : super._();
+
+  @override
+  Guser_articles_aggregate_bool_exp rebuild(
+          void Function(Guser_articles_aggregate_bool_expBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_aggregate_bool_expBuilder toBuilder() =>
+      new Guser_articles_aggregate_bool_expBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_aggregate_bool_exp && count == other.count;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, count.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_aggregate_bool_exp')
+          ..add('count', count))
+        .toString();
+  }
+}
+
+class Guser_articles_aggregate_bool_expBuilder
+    implements
+        Builder<Guser_articles_aggregate_bool_exp,
+            Guser_articles_aggregate_bool_expBuilder> {
+  _$Guser_articles_aggregate_bool_exp? _$v;
+
+  Guser_articles_aggregate_bool_exp_countBuilder? _count;
+  Guser_articles_aggregate_bool_exp_countBuilder get count =>
+      _$this._count ??= new Guser_articles_aggregate_bool_exp_countBuilder();
+  set count(Guser_articles_aggregate_bool_exp_countBuilder? count) =>
+      _$this._count = count;
+
+  Guser_articles_aggregate_bool_expBuilder();
+
+  Guser_articles_aggregate_bool_expBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _count = $v.count?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_aggregate_bool_exp other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_aggregate_bool_exp;
+  }
+
+  @override
+  void update(
+      void Function(Guser_articles_aggregate_bool_expBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_aggregate_bool_exp build() => _build();
+
+  _$Guser_articles_aggregate_bool_exp _build() {
+    _$Guser_articles_aggregate_bool_exp _$result;
+    try {
+      _$result = _$v ??
+          new _$Guser_articles_aggregate_bool_exp._(count: _count?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'count';
+        _count?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Guser_articles_aggregate_bool_exp', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_aggregate_bool_exp_count
+    extends Guser_articles_aggregate_bool_exp_count {
+  @override
+  final BuiltList<Guser_articles_select_column>? arguments;
+  @override
+  final bool? distinct;
+  @override
+  final Guser_articles_bool_exp? filter;
+  @override
+  final GInt_comparison_exp predicate;
+
+  factory _$Guser_articles_aggregate_bool_exp_count(
+          [void Function(Guser_articles_aggregate_bool_exp_countBuilder)?
+              updates]) =>
+      (new Guser_articles_aggregate_bool_exp_countBuilder()..update(updates))
+          ._build();
+
+  _$Guser_articles_aggregate_bool_exp_count._(
+      {this.arguments, this.distinct, this.filter, required this.predicate})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        predicate, r'Guser_articles_aggregate_bool_exp_count', 'predicate');
+  }
+
+  @override
+  Guser_articles_aggregate_bool_exp_count rebuild(
+          void Function(Guser_articles_aggregate_bool_exp_countBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_aggregate_bool_exp_countBuilder toBuilder() =>
+      new Guser_articles_aggregate_bool_exp_countBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_aggregate_bool_exp_count &&
+        arguments == other.arguments &&
+        distinct == other.distinct &&
+        filter == other.filter &&
+        predicate == other.predicate;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc($jc($jc(0, arguments.hashCode), distinct.hashCode),
+            filter.hashCode),
+        predicate.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'Guser_articles_aggregate_bool_exp_count')
+          ..add('arguments', arguments)
+          ..add('distinct', distinct)
+          ..add('filter', filter)
+          ..add('predicate', predicate))
+        .toString();
+  }
+}
+
+class Guser_articles_aggregate_bool_exp_countBuilder
+    implements
+        Builder<Guser_articles_aggregate_bool_exp_count,
+            Guser_articles_aggregate_bool_exp_countBuilder> {
+  _$Guser_articles_aggregate_bool_exp_count? _$v;
+
+  ListBuilder<Guser_articles_select_column>? _arguments;
+  ListBuilder<Guser_articles_select_column> get arguments =>
+      _$this._arguments ??= new ListBuilder<Guser_articles_select_column>();
+  set arguments(ListBuilder<Guser_articles_select_column>? arguments) =>
+      _$this._arguments = arguments;
+
+  bool? _distinct;
+  bool? get distinct => _$this._distinct;
+  set distinct(bool? distinct) => _$this._distinct = distinct;
+
+  Guser_articles_bool_expBuilder? _filter;
+  Guser_articles_bool_expBuilder get filter =>
+      _$this._filter ??= new Guser_articles_bool_expBuilder();
+  set filter(Guser_articles_bool_expBuilder? filter) => _$this._filter = filter;
+
+  GInt_comparison_expBuilder? _predicate;
+  GInt_comparison_expBuilder get predicate =>
+      _$this._predicate ??= new GInt_comparison_expBuilder();
+  set predicate(GInt_comparison_expBuilder? predicate) =>
+      _$this._predicate = predicate;
+
+  Guser_articles_aggregate_bool_exp_countBuilder();
+
+  Guser_articles_aggregate_bool_exp_countBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _arguments = $v.arguments?.toBuilder();
+      _distinct = $v.distinct;
+      _filter = $v.filter?.toBuilder();
+      _predicate = $v.predicate.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_aggregate_bool_exp_count other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_aggregate_bool_exp_count;
+  }
+
+  @override
+  void update(
+      void Function(Guser_articles_aggregate_bool_exp_countBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_aggregate_bool_exp_count build() => _build();
+
+  _$Guser_articles_aggregate_bool_exp_count _build() {
+    _$Guser_articles_aggregate_bool_exp_count _$result;
+    try {
+      _$result = _$v ??
+          new _$Guser_articles_aggregate_bool_exp_count._(
+              arguments: _arguments?.build(),
+              distinct: distinct,
+              filter: _filter?.build(),
+              predicate: predicate.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'arguments';
+        _arguments?.build();
+
+        _$failedField = 'filter';
+        _filter?.build();
+        _$failedField = 'predicate';
+        predicate.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Guser_articles_aggregate_bool_exp_count',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_aggregate_order_by
+    extends Guser_articles_aggregate_order_by {
+  @override
+  final Guser_articles_avg_order_by? avg;
+  @override
+  final Gorder_by? count;
+  @override
+  final Guser_articles_max_order_by? max;
+  @override
+  final Guser_articles_min_order_by? min;
+  @override
+  final Guser_articles_stddev_order_by? stddev;
+  @override
+  final Guser_articles_stddev_pop_order_by? stddev_pop;
+  @override
+  final Guser_articles_stddev_samp_order_by? stddev_samp;
+  @override
+  final Guser_articles_sum_order_by? sum;
+  @override
+  final Guser_articles_var_pop_order_by? var_pop;
+  @override
+  final Guser_articles_var_samp_order_by? var_samp;
+  @override
+  final Guser_articles_variance_order_by? variance;
+
+  factory _$Guser_articles_aggregate_order_by(
+          [void Function(Guser_articles_aggregate_order_byBuilder)? updates]) =>
+      (new Guser_articles_aggregate_order_byBuilder()..update(updates))
+          ._build();
+
+  _$Guser_articles_aggregate_order_by._(
+      {this.avg,
+      this.count,
+      this.max,
+      this.min,
+      this.stddev,
+      this.stddev_pop,
+      this.stddev_samp,
+      this.sum,
+      this.var_pop,
+      this.var_samp,
+      this.variance})
+      : super._();
+
+  @override
+  Guser_articles_aggregate_order_by rebuild(
+          void Function(Guser_articles_aggregate_order_byBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_aggregate_order_byBuilder toBuilder() =>
+      new Guser_articles_aggregate_order_byBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_aggregate_order_by &&
+        avg == other.avg &&
+        count == other.count &&
+        max == other.max &&
+        min == other.min &&
+        stddev == other.stddev &&
+        stddev_pop == other.stddev_pop &&
+        stddev_samp == other.stddev_samp &&
+        sum == other.sum &&
+        var_pop == other.var_pop &&
+        var_samp == other.var_samp &&
+        variance == other.variance;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, avg.hashCode),
+                                            count.hashCode),
+                                        max.hashCode),
+                                    min.hashCode),
+                                stddev.hashCode),
+                            stddev_pop.hashCode),
+                        stddev_samp.hashCode),
+                    sum.hashCode),
+                var_pop.hashCode),
+            var_samp.hashCode),
+        variance.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_aggregate_order_by')
+          ..add('avg', avg)
+          ..add('count', count)
+          ..add('max', max)
+          ..add('min', min)
+          ..add('stddev', stddev)
+          ..add('stddev_pop', stddev_pop)
+          ..add('stddev_samp', stddev_samp)
+          ..add('sum', sum)
+          ..add('var_pop', var_pop)
+          ..add('var_samp', var_samp)
+          ..add('variance', variance))
+        .toString();
+  }
+}
+
+class Guser_articles_aggregate_order_byBuilder
+    implements
+        Builder<Guser_articles_aggregate_order_by,
+            Guser_articles_aggregate_order_byBuilder> {
+  _$Guser_articles_aggregate_order_by? _$v;
+
+  Guser_articles_avg_order_byBuilder? _avg;
+  Guser_articles_avg_order_byBuilder get avg =>
+      _$this._avg ??= new Guser_articles_avg_order_byBuilder();
+  set avg(Guser_articles_avg_order_byBuilder? avg) => _$this._avg = avg;
+
+  Gorder_by? _count;
+  Gorder_by? get count => _$this._count;
+  set count(Gorder_by? count) => _$this._count = count;
+
+  Guser_articles_max_order_byBuilder? _max;
+  Guser_articles_max_order_byBuilder get max =>
+      _$this._max ??= new Guser_articles_max_order_byBuilder();
+  set max(Guser_articles_max_order_byBuilder? max) => _$this._max = max;
+
+  Guser_articles_min_order_byBuilder? _min;
+  Guser_articles_min_order_byBuilder get min =>
+      _$this._min ??= new Guser_articles_min_order_byBuilder();
+  set min(Guser_articles_min_order_byBuilder? min) => _$this._min = min;
+
+  Guser_articles_stddev_order_byBuilder? _stddev;
+  Guser_articles_stddev_order_byBuilder get stddev =>
+      _$this._stddev ??= new Guser_articles_stddev_order_byBuilder();
+  set stddev(Guser_articles_stddev_order_byBuilder? stddev) =>
+      _$this._stddev = stddev;
+
+  Guser_articles_stddev_pop_order_byBuilder? _stddev_pop;
+  Guser_articles_stddev_pop_order_byBuilder get stddev_pop =>
+      _$this._stddev_pop ??= new Guser_articles_stddev_pop_order_byBuilder();
+  set stddev_pop(Guser_articles_stddev_pop_order_byBuilder? stddev_pop) =>
+      _$this._stddev_pop = stddev_pop;
+
+  Guser_articles_stddev_samp_order_byBuilder? _stddev_samp;
+  Guser_articles_stddev_samp_order_byBuilder get stddev_samp =>
+      _$this._stddev_samp ??= new Guser_articles_stddev_samp_order_byBuilder();
+  set stddev_samp(Guser_articles_stddev_samp_order_byBuilder? stddev_samp) =>
+      _$this._stddev_samp = stddev_samp;
+
+  Guser_articles_sum_order_byBuilder? _sum;
+  Guser_articles_sum_order_byBuilder get sum =>
+      _$this._sum ??= new Guser_articles_sum_order_byBuilder();
+  set sum(Guser_articles_sum_order_byBuilder? sum) => _$this._sum = sum;
+
+  Guser_articles_var_pop_order_byBuilder? _var_pop;
+  Guser_articles_var_pop_order_byBuilder get var_pop =>
+      _$this._var_pop ??= new Guser_articles_var_pop_order_byBuilder();
+  set var_pop(Guser_articles_var_pop_order_byBuilder? var_pop) =>
+      _$this._var_pop = var_pop;
+
+  Guser_articles_var_samp_order_byBuilder? _var_samp;
+  Guser_articles_var_samp_order_byBuilder get var_samp =>
+      _$this._var_samp ??= new Guser_articles_var_samp_order_byBuilder();
+  set var_samp(Guser_articles_var_samp_order_byBuilder? var_samp) =>
+      _$this._var_samp = var_samp;
+
+  Guser_articles_variance_order_byBuilder? _variance;
+  Guser_articles_variance_order_byBuilder get variance =>
+      _$this._variance ??= new Guser_articles_variance_order_byBuilder();
+  set variance(Guser_articles_variance_order_byBuilder? variance) =>
+      _$this._variance = variance;
+
+  Guser_articles_aggregate_order_byBuilder();
+
+  Guser_articles_aggregate_order_byBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _avg = $v.avg?.toBuilder();
+      _count = $v.count;
+      _max = $v.max?.toBuilder();
+      _min = $v.min?.toBuilder();
+      _stddev = $v.stddev?.toBuilder();
+      _stddev_pop = $v.stddev_pop?.toBuilder();
+      _stddev_samp = $v.stddev_samp?.toBuilder();
+      _sum = $v.sum?.toBuilder();
+      _var_pop = $v.var_pop?.toBuilder();
+      _var_samp = $v.var_samp?.toBuilder();
+      _variance = $v.variance?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_aggregate_order_by other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_aggregate_order_by;
+  }
+
+  @override
+  void update(
+      void Function(Guser_articles_aggregate_order_byBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_aggregate_order_by build() => _build();
+
+  _$Guser_articles_aggregate_order_by _build() {
+    _$Guser_articles_aggregate_order_by _$result;
+    try {
+      _$result = _$v ??
+          new _$Guser_articles_aggregate_order_by._(
+              avg: _avg?.build(),
+              count: count,
+              max: _max?.build(),
+              min: _min?.build(),
+              stddev: _stddev?.build(),
+              stddev_pop: _stddev_pop?.build(),
+              stddev_samp: _stddev_samp?.build(),
+              sum: _sum?.build(),
+              var_pop: _var_pop?.build(),
+              var_samp: _var_samp?.build(),
+              variance: _variance?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'avg';
+        _avg?.build();
+
+        _$failedField = 'max';
+        _max?.build();
+        _$failedField = 'min';
+        _min?.build();
+        _$failedField = 'stddev';
+        _stddev?.build();
+        _$failedField = 'stddev_pop';
+        _stddev_pop?.build();
+        _$failedField = 'stddev_samp';
+        _stddev_samp?.build();
+        _$failedField = 'sum';
+        _sum?.build();
+        _$failedField = 'var_pop';
+        _var_pop?.build();
+        _$failedField = 'var_samp';
+        _var_samp?.build();
+        _$failedField = 'variance';
+        _variance?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Guser_articles_aggregate_order_by', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_arr_rel_insert_input
+    extends Guser_articles_arr_rel_insert_input {
+  @override
+  final BuiltList<Guser_articles_insert_input> data;
+  @override
+  final Guser_articles_on_conflict? on_conflict;
+
+  factory _$Guser_articles_arr_rel_insert_input(
+          [void Function(Guser_articles_arr_rel_insert_inputBuilder)?
+              updates]) =>
+      (new Guser_articles_arr_rel_insert_inputBuilder()..update(updates))
+          ._build();
+
+  _$Guser_articles_arr_rel_insert_input._(
+      {required this.data, this.on_conflict})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        data, r'Guser_articles_arr_rel_insert_input', 'data');
+  }
+
+  @override
+  Guser_articles_arr_rel_insert_input rebuild(
+          void Function(Guser_articles_arr_rel_insert_inputBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_arr_rel_insert_inputBuilder toBuilder() =>
+      new Guser_articles_arr_rel_insert_inputBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_arr_rel_insert_input &&
+        data == other.data &&
+        on_conflict == other.on_conflict;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, data.hashCode), on_conflict.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_arr_rel_insert_input')
+          ..add('data', data)
+          ..add('on_conflict', on_conflict))
+        .toString();
+  }
+}
+
+class Guser_articles_arr_rel_insert_inputBuilder
+    implements
+        Builder<Guser_articles_arr_rel_insert_input,
+            Guser_articles_arr_rel_insert_inputBuilder> {
+  _$Guser_articles_arr_rel_insert_input? _$v;
+
+  ListBuilder<Guser_articles_insert_input>? _data;
+  ListBuilder<Guser_articles_insert_input> get data =>
+      _$this._data ??= new ListBuilder<Guser_articles_insert_input>();
+  set data(ListBuilder<Guser_articles_insert_input>? data) =>
+      _$this._data = data;
+
+  Guser_articles_on_conflictBuilder? _on_conflict;
+  Guser_articles_on_conflictBuilder get on_conflict =>
+      _$this._on_conflict ??= new Guser_articles_on_conflictBuilder();
+  set on_conflict(Guser_articles_on_conflictBuilder? on_conflict) =>
+      _$this._on_conflict = on_conflict;
+
+  Guser_articles_arr_rel_insert_inputBuilder();
+
+  Guser_articles_arr_rel_insert_inputBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _data = $v.data.toBuilder();
+      _on_conflict = $v.on_conflict?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_arr_rel_insert_input other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_arr_rel_insert_input;
+  }
+
+  @override
+  void update(
+      void Function(Guser_articles_arr_rel_insert_inputBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_arr_rel_insert_input build() => _build();
+
+  _$Guser_articles_arr_rel_insert_input _build() {
+    _$Guser_articles_arr_rel_insert_input _$result;
+    try {
+      _$result = _$v ??
+          new _$Guser_articles_arr_rel_insert_input._(
+              data: data.build(), on_conflict: _on_conflict?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'data';
+        data.build();
+        _$failedField = 'on_conflict';
+        _on_conflict?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Guser_articles_arr_rel_insert_input',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_avg_order_by extends Guser_articles_avg_order_by {
+  @override
+  final Gorder_by? play_at;
+
+  factory _$Guser_articles_avg_order_by(
+          [void Function(Guser_articles_avg_order_byBuilder)? updates]) =>
+      (new Guser_articles_avg_order_byBuilder()..update(updates))._build();
+
+  _$Guser_articles_avg_order_by._({this.play_at}) : super._();
+
+  @override
+  Guser_articles_avg_order_by rebuild(
+          void Function(Guser_articles_avg_order_byBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_avg_order_byBuilder toBuilder() =>
+      new Guser_articles_avg_order_byBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_avg_order_by && play_at == other.play_at;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, play_at.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_avg_order_by')
+          ..add('play_at', play_at))
+        .toString();
+  }
+}
+
+class Guser_articles_avg_order_byBuilder
+    implements
+        Builder<Guser_articles_avg_order_by,
+            Guser_articles_avg_order_byBuilder> {
+  _$Guser_articles_avg_order_by? _$v;
+
+  Gorder_by? _play_at;
+  Gorder_by? get play_at => _$this._play_at;
+  set play_at(Gorder_by? play_at) => _$this._play_at = play_at;
+
+  Guser_articles_avg_order_byBuilder();
+
+  Guser_articles_avg_order_byBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _play_at = $v.play_at;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_avg_order_by other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_avg_order_by;
+  }
+
+  @override
+  void update(void Function(Guser_articles_avg_order_byBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_avg_order_by build() => _build();
+
+  _$Guser_articles_avg_order_by _build() {
+    final _$result =
+        _$v ?? new _$Guser_articles_avg_order_by._(play_at: play_at);
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$Guser_articles_bool_exp extends Guser_articles_bool_exp {
   @override
   final BuiltList<Guser_articles_bool_exp>? G_and;
@@ -47232,6 +49419,8 @@ class _$Guser_articles_bool_exp extends Guser_articles_bool_exp {
   final Guser_articles_bool_exp? G_not;
   @override
   final BuiltList<Guser_articles_bool_exp>? G_or;
+  @override
+  final Garticles_bool_exp? article;
   @override
   final Guuid_comparison_exp? article_id;
   @override
@@ -47259,6 +49448,7 @@ class _$Guser_articles_bool_exp extends Guser_articles_bool_exp {
       {this.G_and,
       this.G_not,
       this.G_or,
+      this.article,
       this.article_id,
       this.created_at,
       this.created_by,
@@ -47286,6 +49476,7 @@ class _$Guser_articles_bool_exp extends Guser_articles_bool_exp {
         G_and == other.G_and &&
         G_not == other.G_not &&
         G_or == other.G_or &&
+        article == other.article &&
         article_id == other.article_id &&
         created_at == other.created_at &&
         created_by == other.created_by &&
@@ -47309,9 +49500,11 @@ class _$Guser_articles_bool_exp extends Guser_articles_bool_exp {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, G_and.hashCode),
-                                                G_not.hashCode),
-                                            G_or.hashCode),
+                                            $jc(
+                                                $jc($jc(0, G_and.hashCode),
+                                                    G_not.hashCode),
+                                                G_or.hashCode),
+                                            article.hashCode),
                                         article_id.hashCode),
                                     created_at.hashCode),
                                 created_by.hashCode),
@@ -47329,6 +49522,7 @@ class _$Guser_articles_bool_exp extends Guser_articles_bool_exp {
           ..add('G_and', G_and)
           ..add('G_not', G_not)
           ..add('G_or', G_or)
+          ..add('article', article)
           ..add('article_id', article_id)
           ..add('created_at', created_at)
           ..add('created_by', created_by)
@@ -47362,6 +49556,11 @@ class Guser_articles_bool_expBuilder
   ListBuilder<Guser_articles_bool_exp> get G_or =>
       _$this._G_or ??= new ListBuilder<Guser_articles_bool_exp>();
   set G_or(ListBuilder<Guser_articles_bool_exp>? G_or) => _$this._G_or = G_or;
+
+  Garticles_bool_expBuilder? _article;
+  Garticles_bool_expBuilder get article =>
+      _$this._article ??= new Garticles_bool_expBuilder();
+  set article(Garticles_bool_expBuilder? article) => _$this._article = article;
 
   Guuid_comparison_expBuilder? _article_id;
   Guuid_comparison_expBuilder get article_id =>
@@ -47423,6 +49622,7 @@ class Guser_articles_bool_expBuilder
       _G_and = $v.G_and?.toBuilder();
       _G_not = $v.G_not?.toBuilder();
       _G_or = $v.G_or?.toBuilder();
+      _article = $v.article?.toBuilder();
       _article_id = $v.article_id?.toBuilder();
       _created_at = $v.created_at?.toBuilder();
       _created_by = $v.created_by?.toBuilder();
@@ -47459,6 +49659,7 @@ class Guser_articles_bool_expBuilder
               G_and: _G_and?.build(),
               G_not: _G_not?.build(),
               G_or: _G_or?.build(),
+              article: _article?.build(),
               article_id: _article_id?.build(),
               created_at: _created_at?.build(),
               created_by: _created_by?.build(),
@@ -47477,6 +49678,8 @@ class Guser_articles_bool_expBuilder
         _G_not?.build();
         _$failedField = 'G_or';
         _G_or?.build();
+        _$failedField = 'article';
+        _article?.build();
         _$failedField = 'article_id';
         _article_id?.build();
         _$failedField = 'created_at';
@@ -47587,6 +49790,8 @@ class Guser_articles_inc_inputBuilder
 
 class _$Guser_articles_insert_input extends Guser_articles_insert_input {
   @override
+  final Garticles_obj_rel_insert_input? article;
+  @override
   final Guuid? article_id;
   @override
   final Gtimestamptz? created_at;
@@ -47610,7 +49815,8 @@ class _$Guser_articles_insert_input extends Guser_articles_insert_input {
       (new Guser_articles_insert_inputBuilder()..update(updates))._build();
 
   _$Guser_articles_insert_input._(
-      {this.article_id,
+      {this.article,
+      this.article_id,
       this.created_at,
       this.created_by,
       this.deleted_at,
@@ -47634,6 +49840,7 @@ class _$Guser_articles_insert_input extends Guser_articles_insert_input {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Guser_articles_insert_input &&
+        article == other.article &&
         article_id == other.article_id &&
         created_at == other.created_at &&
         created_by == other.created_by &&
@@ -47654,7 +49861,9 @@ class _$Guser_articles_insert_input extends Guser_articles_insert_input {
                     $jc(
                         $jc(
                             $jc(
-                                $jc($jc(0, article_id.hashCode),
+                                $jc(
+                                    $jc($jc(0, article.hashCode),
+                                        article_id.hashCode),
                                     created_at.hashCode),
                                 created_by.hashCode),
                             deleted_at.hashCode),
@@ -47668,6 +49877,7 @@ class _$Guser_articles_insert_input extends Guser_articles_insert_input {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Guser_articles_insert_input')
+          ..add('article', article)
           ..add('article_id', article_id)
           ..add('created_at', created_at)
           ..add('created_by', created_by)
@@ -47686,6 +49896,12 @@ class Guser_articles_insert_inputBuilder
         Builder<Guser_articles_insert_input,
             Guser_articles_insert_inputBuilder> {
   _$Guser_articles_insert_input? _$v;
+
+  Garticles_obj_rel_insert_inputBuilder? _article;
+  Garticles_obj_rel_insert_inputBuilder get article =>
+      _$this._article ??= new Garticles_obj_rel_insert_inputBuilder();
+  set article(Garticles_obj_rel_insert_inputBuilder? article) =>
+      _$this._article = article;
 
   GuuidBuilder? _article_id;
   GuuidBuilder get article_id => _$this._article_id ??= new GuuidBuilder();
@@ -47734,6 +49950,7 @@ class Guser_articles_insert_inputBuilder
   Guser_articles_insert_inputBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _article = $v.article?.toBuilder();
       _article_id = $v.article_id?.toBuilder();
       _created_at = $v.created_at?.toBuilder();
       _created_by = $v.created_by?.toBuilder();
@@ -47767,6 +49984,7 @@ class Guser_articles_insert_inputBuilder
     try {
       _$result = _$v ??
           new _$Guser_articles_insert_input._(
+              article: _article?.build(),
               article_id: _article_id?.build(),
               created_at: _created_at?.build(),
               created_by: _created_by?.build(),
@@ -47779,6 +49997,8 @@ class Guser_articles_insert_inputBuilder
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'article';
+        _article?.build();
         _$failedField = 'article_id';
         _article_id?.build();
         _$failedField = 'created_at';
@@ -47802,6 +50022,382 @@ class Guser_articles_insert_inputBuilder
       }
       rethrow;
     }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_max_order_by extends Guser_articles_max_order_by {
+  @override
+  final Gorder_by? article_id;
+  @override
+  final Gorder_by? created_at;
+  @override
+  final Gorder_by? created_by;
+  @override
+  final Gorder_by? deleted_at;
+  @override
+  final Gorder_by? id;
+  @override
+  final Gorder_by? play_at;
+  @override
+  final Gorder_by? updated_at;
+  @override
+  final Gorder_by? updated_by;
+  @override
+  final Gorder_by? user_id;
+
+  factory _$Guser_articles_max_order_by(
+          [void Function(Guser_articles_max_order_byBuilder)? updates]) =>
+      (new Guser_articles_max_order_byBuilder()..update(updates))._build();
+
+  _$Guser_articles_max_order_by._(
+      {this.article_id,
+      this.created_at,
+      this.created_by,
+      this.deleted_at,
+      this.id,
+      this.play_at,
+      this.updated_at,
+      this.updated_by,
+      this.user_id})
+      : super._();
+
+  @override
+  Guser_articles_max_order_by rebuild(
+          void Function(Guser_articles_max_order_byBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_max_order_byBuilder toBuilder() =>
+      new Guser_articles_max_order_byBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_max_order_by &&
+        article_id == other.article_id &&
+        created_at == other.created_at &&
+        created_by == other.created_by &&
+        deleted_at == other.deleted_at &&
+        id == other.id &&
+        play_at == other.play_at &&
+        updated_at == other.updated_at &&
+        updated_by == other.updated_by &&
+        user_id == other.user_id;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc($jc(0, article_id.hashCode),
+                                    created_at.hashCode),
+                                created_by.hashCode),
+                            deleted_at.hashCode),
+                        id.hashCode),
+                    play_at.hashCode),
+                updated_at.hashCode),
+            updated_by.hashCode),
+        user_id.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_max_order_by')
+          ..add('article_id', article_id)
+          ..add('created_at', created_at)
+          ..add('created_by', created_by)
+          ..add('deleted_at', deleted_at)
+          ..add('id', id)
+          ..add('play_at', play_at)
+          ..add('updated_at', updated_at)
+          ..add('updated_by', updated_by)
+          ..add('user_id', user_id))
+        .toString();
+  }
+}
+
+class Guser_articles_max_order_byBuilder
+    implements
+        Builder<Guser_articles_max_order_by,
+            Guser_articles_max_order_byBuilder> {
+  _$Guser_articles_max_order_by? _$v;
+
+  Gorder_by? _article_id;
+  Gorder_by? get article_id => _$this._article_id;
+  set article_id(Gorder_by? article_id) => _$this._article_id = article_id;
+
+  Gorder_by? _created_at;
+  Gorder_by? get created_at => _$this._created_at;
+  set created_at(Gorder_by? created_at) => _$this._created_at = created_at;
+
+  Gorder_by? _created_by;
+  Gorder_by? get created_by => _$this._created_by;
+  set created_by(Gorder_by? created_by) => _$this._created_by = created_by;
+
+  Gorder_by? _deleted_at;
+  Gorder_by? get deleted_at => _$this._deleted_at;
+  set deleted_at(Gorder_by? deleted_at) => _$this._deleted_at = deleted_at;
+
+  Gorder_by? _id;
+  Gorder_by? get id => _$this._id;
+  set id(Gorder_by? id) => _$this._id = id;
+
+  Gorder_by? _play_at;
+  Gorder_by? get play_at => _$this._play_at;
+  set play_at(Gorder_by? play_at) => _$this._play_at = play_at;
+
+  Gorder_by? _updated_at;
+  Gorder_by? get updated_at => _$this._updated_at;
+  set updated_at(Gorder_by? updated_at) => _$this._updated_at = updated_at;
+
+  Gorder_by? _updated_by;
+  Gorder_by? get updated_by => _$this._updated_by;
+  set updated_by(Gorder_by? updated_by) => _$this._updated_by = updated_by;
+
+  Gorder_by? _user_id;
+  Gorder_by? get user_id => _$this._user_id;
+  set user_id(Gorder_by? user_id) => _$this._user_id = user_id;
+
+  Guser_articles_max_order_byBuilder();
+
+  Guser_articles_max_order_byBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _article_id = $v.article_id;
+      _created_at = $v.created_at;
+      _created_by = $v.created_by;
+      _deleted_at = $v.deleted_at;
+      _id = $v.id;
+      _play_at = $v.play_at;
+      _updated_at = $v.updated_at;
+      _updated_by = $v.updated_by;
+      _user_id = $v.user_id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_max_order_by other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_max_order_by;
+  }
+
+  @override
+  void update(void Function(Guser_articles_max_order_byBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_max_order_by build() => _build();
+
+  _$Guser_articles_max_order_by _build() {
+    final _$result = _$v ??
+        new _$Guser_articles_max_order_by._(
+            article_id: article_id,
+            created_at: created_at,
+            created_by: created_by,
+            deleted_at: deleted_at,
+            id: id,
+            play_at: play_at,
+            updated_at: updated_at,
+            updated_by: updated_by,
+            user_id: user_id);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_min_order_by extends Guser_articles_min_order_by {
+  @override
+  final Gorder_by? article_id;
+  @override
+  final Gorder_by? created_at;
+  @override
+  final Gorder_by? created_by;
+  @override
+  final Gorder_by? deleted_at;
+  @override
+  final Gorder_by? id;
+  @override
+  final Gorder_by? play_at;
+  @override
+  final Gorder_by? updated_at;
+  @override
+  final Gorder_by? updated_by;
+  @override
+  final Gorder_by? user_id;
+
+  factory _$Guser_articles_min_order_by(
+          [void Function(Guser_articles_min_order_byBuilder)? updates]) =>
+      (new Guser_articles_min_order_byBuilder()..update(updates))._build();
+
+  _$Guser_articles_min_order_by._(
+      {this.article_id,
+      this.created_at,
+      this.created_by,
+      this.deleted_at,
+      this.id,
+      this.play_at,
+      this.updated_at,
+      this.updated_by,
+      this.user_id})
+      : super._();
+
+  @override
+  Guser_articles_min_order_by rebuild(
+          void Function(Guser_articles_min_order_byBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_min_order_byBuilder toBuilder() =>
+      new Guser_articles_min_order_byBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_min_order_by &&
+        article_id == other.article_id &&
+        created_at == other.created_at &&
+        created_by == other.created_by &&
+        deleted_at == other.deleted_at &&
+        id == other.id &&
+        play_at == other.play_at &&
+        updated_at == other.updated_at &&
+        updated_by == other.updated_by &&
+        user_id == other.user_id;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc($jc(0, article_id.hashCode),
+                                    created_at.hashCode),
+                                created_by.hashCode),
+                            deleted_at.hashCode),
+                        id.hashCode),
+                    play_at.hashCode),
+                updated_at.hashCode),
+            updated_by.hashCode),
+        user_id.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_min_order_by')
+          ..add('article_id', article_id)
+          ..add('created_at', created_at)
+          ..add('created_by', created_by)
+          ..add('deleted_at', deleted_at)
+          ..add('id', id)
+          ..add('play_at', play_at)
+          ..add('updated_at', updated_at)
+          ..add('updated_by', updated_by)
+          ..add('user_id', user_id))
+        .toString();
+  }
+}
+
+class Guser_articles_min_order_byBuilder
+    implements
+        Builder<Guser_articles_min_order_by,
+            Guser_articles_min_order_byBuilder> {
+  _$Guser_articles_min_order_by? _$v;
+
+  Gorder_by? _article_id;
+  Gorder_by? get article_id => _$this._article_id;
+  set article_id(Gorder_by? article_id) => _$this._article_id = article_id;
+
+  Gorder_by? _created_at;
+  Gorder_by? get created_at => _$this._created_at;
+  set created_at(Gorder_by? created_at) => _$this._created_at = created_at;
+
+  Gorder_by? _created_by;
+  Gorder_by? get created_by => _$this._created_by;
+  set created_by(Gorder_by? created_by) => _$this._created_by = created_by;
+
+  Gorder_by? _deleted_at;
+  Gorder_by? get deleted_at => _$this._deleted_at;
+  set deleted_at(Gorder_by? deleted_at) => _$this._deleted_at = deleted_at;
+
+  Gorder_by? _id;
+  Gorder_by? get id => _$this._id;
+  set id(Gorder_by? id) => _$this._id = id;
+
+  Gorder_by? _play_at;
+  Gorder_by? get play_at => _$this._play_at;
+  set play_at(Gorder_by? play_at) => _$this._play_at = play_at;
+
+  Gorder_by? _updated_at;
+  Gorder_by? get updated_at => _$this._updated_at;
+  set updated_at(Gorder_by? updated_at) => _$this._updated_at = updated_at;
+
+  Gorder_by? _updated_by;
+  Gorder_by? get updated_by => _$this._updated_by;
+  set updated_by(Gorder_by? updated_by) => _$this._updated_by = updated_by;
+
+  Gorder_by? _user_id;
+  Gorder_by? get user_id => _$this._user_id;
+  set user_id(Gorder_by? user_id) => _$this._user_id = user_id;
+
+  Guser_articles_min_order_byBuilder();
+
+  Guser_articles_min_order_byBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _article_id = $v.article_id;
+      _created_at = $v.created_at;
+      _created_by = $v.created_by;
+      _deleted_at = $v.deleted_at;
+      _id = $v.id;
+      _play_at = $v.play_at;
+      _updated_at = $v.updated_at;
+      _updated_by = $v.updated_by;
+      _user_id = $v.user_id;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_min_order_by other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_min_order_by;
+  }
+
+  @override
+  void update(void Function(Guser_articles_min_order_byBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_min_order_by build() => _build();
+
+  _$Guser_articles_min_order_by _build() {
+    final _$result = _$v ??
+        new _$Guser_articles_min_order_by._(
+            article_id: article_id,
+            created_at: created_at,
+            created_by: created_by,
+            deleted_at: deleted_at,
+            id: id,
+            play_at: play_at,
+            updated_at: updated_at,
+            updated_by: updated_by,
+            user_id: user_id);
     replace(_$result);
     return _$result;
   }
@@ -47941,6 +50537,8 @@ class Guser_articles_on_conflictBuilder
 
 class _$Guser_articles_order_by extends Guser_articles_order_by {
   @override
+  final Garticles_order_by? article;
+  @override
   final Gorder_by? article_id;
   @override
   final Gorder_by? created_at;
@@ -47964,7 +50562,8 @@ class _$Guser_articles_order_by extends Guser_articles_order_by {
       (new Guser_articles_order_byBuilder()..update(updates))._build();
 
   _$Guser_articles_order_by._(
-      {this.article_id,
+      {this.article,
+      this.article_id,
       this.created_at,
       this.created_by,
       this.deleted_at,
@@ -47988,6 +50587,7 @@ class _$Guser_articles_order_by extends Guser_articles_order_by {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Guser_articles_order_by &&
+        article == other.article &&
         article_id == other.article_id &&
         created_at == other.created_at &&
         created_by == other.created_by &&
@@ -48008,7 +50608,9 @@ class _$Guser_articles_order_by extends Guser_articles_order_by {
                     $jc(
                         $jc(
                             $jc(
-                                $jc($jc(0, article_id.hashCode),
+                                $jc(
+                                    $jc($jc(0, article.hashCode),
+                                        article_id.hashCode),
                                     created_at.hashCode),
                                 created_by.hashCode),
                             deleted_at.hashCode),
@@ -48022,6 +50624,7 @@ class _$Guser_articles_order_by extends Guser_articles_order_by {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Guser_articles_order_by')
+          ..add('article', article)
           ..add('article_id', article_id)
           ..add('created_at', created_at)
           ..add('created_by', created_by)
@@ -48039,6 +50642,11 @@ class Guser_articles_order_byBuilder
     implements
         Builder<Guser_articles_order_by, Guser_articles_order_byBuilder> {
   _$Guser_articles_order_by? _$v;
+
+  Garticles_order_byBuilder? _article;
+  Garticles_order_byBuilder get article =>
+      _$this._article ??= new Garticles_order_byBuilder();
+  set article(Garticles_order_byBuilder? article) => _$this._article = article;
 
   Gorder_by? _article_id;
   Gorder_by? get article_id => _$this._article_id;
@@ -48081,6 +50689,7 @@ class Guser_articles_order_byBuilder
   Guser_articles_order_byBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _article = $v.article?.toBuilder();
       _article_id = $v.article_id;
       _created_at = $v.created_at;
       _created_by = $v.created_by;
@@ -48110,17 +50719,31 @@ class Guser_articles_order_byBuilder
   Guser_articles_order_by build() => _build();
 
   _$Guser_articles_order_by _build() {
-    final _$result = _$v ??
-        new _$Guser_articles_order_by._(
-            article_id: article_id,
-            created_at: created_at,
-            created_by: created_by,
-            deleted_at: deleted_at,
-            id: id,
-            play_at: play_at,
-            updated_at: updated_at,
-            updated_by: updated_by,
-            user_id: user_id);
+    _$Guser_articles_order_by _$result;
+    try {
+      _$result = _$v ??
+          new _$Guser_articles_order_by._(
+              article: _article?.build(),
+              article_id: article_id,
+              created_at: created_at,
+              created_by: created_by,
+              deleted_at: deleted_at,
+              id: id,
+              play_at: play_at,
+              updated_at: updated_at,
+              updated_by: updated_by,
+              user_id: user_id);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'article';
+        _article?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Guser_articles_order_by', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }
@@ -48439,6 +51062,259 @@ class Guser_articles_set_inputBuilder
       }
       rethrow;
     }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_stddev_order_by extends Guser_articles_stddev_order_by {
+  @override
+  final Gorder_by? play_at;
+
+  factory _$Guser_articles_stddev_order_by(
+          [void Function(Guser_articles_stddev_order_byBuilder)? updates]) =>
+      (new Guser_articles_stddev_order_byBuilder()..update(updates))._build();
+
+  _$Guser_articles_stddev_order_by._({this.play_at}) : super._();
+
+  @override
+  Guser_articles_stddev_order_by rebuild(
+          void Function(Guser_articles_stddev_order_byBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_stddev_order_byBuilder toBuilder() =>
+      new Guser_articles_stddev_order_byBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_stddev_order_by && play_at == other.play_at;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, play_at.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_stddev_order_by')
+          ..add('play_at', play_at))
+        .toString();
+  }
+}
+
+class Guser_articles_stddev_order_byBuilder
+    implements
+        Builder<Guser_articles_stddev_order_by,
+            Guser_articles_stddev_order_byBuilder> {
+  _$Guser_articles_stddev_order_by? _$v;
+
+  Gorder_by? _play_at;
+  Gorder_by? get play_at => _$this._play_at;
+  set play_at(Gorder_by? play_at) => _$this._play_at = play_at;
+
+  Guser_articles_stddev_order_byBuilder();
+
+  Guser_articles_stddev_order_byBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _play_at = $v.play_at;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_stddev_order_by other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_stddev_order_by;
+  }
+
+  @override
+  void update(void Function(Guser_articles_stddev_order_byBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_stddev_order_by build() => _build();
+
+  _$Guser_articles_stddev_order_by _build() {
+    final _$result =
+        _$v ?? new _$Guser_articles_stddev_order_by._(play_at: play_at);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_stddev_pop_order_by
+    extends Guser_articles_stddev_pop_order_by {
+  @override
+  final Gorder_by? play_at;
+
+  factory _$Guser_articles_stddev_pop_order_by(
+          [void Function(Guser_articles_stddev_pop_order_byBuilder)?
+              updates]) =>
+      (new Guser_articles_stddev_pop_order_byBuilder()..update(updates))
+          ._build();
+
+  _$Guser_articles_stddev_pop_order_by._({this.play_at}) : super._();
+
+  @override
+  Guser_articles_stddev_pop_order_by rebuild(
+          void Function(Guser_articles_stddev_pop_order_byBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_stddev_pop_order_byBuilder toBuilder() =>
+      new Guser_articles_stddev_pop_order_byBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_stddev_pop_order_by &&
+        play_at == other.play_at;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, play_at.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_stddev_pop_order_by')
+          ..add('play_at', play_at))
+        .toString();
+  }
+}
+
+class Guser_articles_stddev_pop_order_byBuilder
+    implements
+        Builder<Guser_articles_stddev_pop_order_by,
+            Guser_articles_stddev_pop_order_byBuilder> {
+  _$Guser_articles_stddev_pop_order_by? _$v;
+
+  Gorder_by? _play_at;
+  Gorder_by? get play_at => _$this._play_at;
+  set play_at(Gorder_by? play_at) => _$this._play_at = play_at;
+
+  Guser_articles_stddev_pop_order_byBuilder();
+
+  Guser_articles_stddev_pop_order_byBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _play_at = $v.play_at;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_stddev_pop_order_by other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_stddev_pop_order_by;
+  }
+
+  @override
+  void update(
+      void Function(Guser_articles_stddev_pop_order_byBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_stddev_pop_order_by build() => _build();
+
+  _$Guser_articles_stddev_pop_order_by _build() {
+    final _$result =
+        _$v ?? new _$Guser_articles_stddev_pop_order_by._(play_at: play_at);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_stddev_samp_order_by
+    extends Guser_articles_stddev_samp_order_by {
+  @override
+  final Gorder_by? play_at;
+
+  factory _$Guser_articles_stddev_samp_order_by(
+          [void Function(Guser_articles_stddev_samp_order_byBuilder)?
+              updates]) =>
+      (new Guser_articles_stddev_samp_order_byBuilder()..update(updates))
+          ._build();
+
+  _$Guser_articles_stddev_samp_order_by._({this.play_at}) : super._();
+
+  @override
+  Guser_articles_stddev_samp_order_by rebuild(
+          void Function(Guser_articles_stddev_samp_order_byBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_stddev_samp_order_byBuilder toBuilder() =>
+      new Guser_articles_stddev_samp_order_byBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_stddev_samp_order_by &&
+        play_at == other.play_at;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, play_at.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_stddev_samp_order_by')
+          ..add('play_at', play_at))
+        .toString();
+  }
+}
+
+class Guser_articles_stddev_samp_order_byBuilder
+    implements
+        Builder<Guser_articles_stddev_samp_order_by,
+            Guser_articles_stddev_samp_order_byBuilder> {
+  _$Guser_articles_stddev_samp_order_by? _$v;
+
+  Gorder_by? _play_at;
+  Gorder_by? get play_at => _$this._play_at;
+  set play_at(Gorder_by? play_at) => _$this._play_at = play_at;
+
+  Guser_articles_stddev_samp_order_byBuilder();
+
+  Guser_articles_stddev_samp_order_byBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _play_at = $v.play_at;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_stddev_samp_order_by other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_stddev_samp_order_by;
+  }
+
+  @override
+  void update(
+      void Function(Guser_articles_stddev_samp_order_byBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_stddev_samp_order_by build() => _build();
+
+  _$Guser_articles_stddev_samp_order_by _build() {
+    final _$result =
+        _$v ?? new _$Guser_articles_stddev_samp_order_by._(play_at: play_at);
     replace(_$result);
     return _$result;
   }
@@ -48792,6 +51668,87 @@ class Guser_articles_stream_cursor_value_inputBuilder
   }
 }
 
+class _$Guser_articles_sum_order_by extends Guser_articles_sum_order_by {
+  @override
+  final Gorder_by? play_at;
+
+  factory _$Guser_articles_sum_order_by(
+          [void Function(Guser_articles_sum_order_byBuilder)? updates]) =>
+      (new Guser_articles_sum_order_byBuilder()..update(updates))._build();
+
+  _$Guser_articles_sum_order_by._({this.play_at}) : super._();
+
+  @override
+  Guser_articles_sum_order_by rebuild(
+          void Function(Guser_articles_sum_order_byBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_sum_order_byBuilder toBuilder() =>
+      new Guser_articles_sum_order_byBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_sum_order_by && play_at == other.play_at;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, play_at.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_sum_order_by')
+          ..add('play_at', play_at))
+        .toString();
+  }
+}
+
+class Guser_articles_sum_order_byBuilder
+    implements
+        Builder<Guser_articles_sum_order_by,
+            Guser_articles_sum_order_byBuilder> {
+  _$Guser_articles_sum_order_by? _$v;
+
+  Gorder_by? _play_at;
+  Gorder_by? get play_at => _$this._play_at;
+  set play_at(Gorder_by? play_at) => _$this._play_at = play_at;
+
+  Guser_articles_sum_order_byBuilder();
+
+  Guser_articles_sum_order_byBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _play_at = $v.play_at;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_sum_order_by other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_sum_order_by;
+  }
+
+  @override
+  void update(void Function(Guser_articles_sum_order_byBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_sum_order_by build() => _build();
+
+  _$Guser_articles_sum_order_by _build() {
+    final _$result =
+        _$v ?? new _$Guser_articles_sum_order_by._(play_at: play_at);
+    replace(_$result);
+    return _$result;
+  }
+}
+
 class _$Guser_articles_updates extends Guser_articles_updates {
   @override
   final Guser_articles_inc_input? G_inc;
@@ -48913,6 +51870,254 @@ class Guser_articles_updatesBuilder
       }
       rethrow;
     }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_var_pop_order_by
+    extends Guser_articles_var_pop_order_by {
+  @override
+  final Gorder_by? play_at;
+
+  factory _$Guser_articles_var_pop_order_by(
+          [void Function(Guser_articles_var_pop_order_byBuilder)? updates]) =>
+      (new Guser_articles_var_pop_order_byBuilder()..update(updates))._build();
+
+  _$Guser_articles_var_pop_order_by._({this.play_at}) : super._();
+
+  @override
+  Guser_articles_var_pop_order_by rebuild(
+          void Function(Guser_articles_var_pop_order_byBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_var_pop_order_byBuilder toBuilder() =>
+      new Guser_articles_var_pop_order_byBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_var_pop_order_by && play_at == other.play_at;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, play_at.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_var_pop_order_by')
+          ..add('play_at', play_at))
+        .toString();
+  }
+}
+
+class Guser_articles_var_pop_order_byBuilder
+    implements
+        Builder<Guser_articles_var_pop_order_by,
+            Guser_articles_var_pop_order_byBuilder> {
+  _$Guser_articles_var_pop_order_by? _$v;
+
+  Gorder_by? _play_at;
+  Gorder_by? get play_at => _$this._play_at;
+  set play_at(Gorder_by? play_at) => _$this._play_at = play_at;
+
+  Guser_articles_var_pop_order_byBuilder();
+
+  Guser_articles_var_pop_order_byBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _play_at = $v.play_at;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_var_pop_order_by other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_var_pop_order_by;
+  }
+
+  @override
+  void update(void Function(Guser_articles_var_pop_order_byBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_var_pop_order_by build() => _build();
+
+  _$Guser_articles_var_pop_order_by _build() {
+    final _$result =
+        _$v ?? new _$Guser_articles_var_pop_order_by._(play_at: play_at);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_var_samp_order_by
+    extends Guser_articles_var_samp_order_by {
+  @override
+  final Gorder_by? play_at;
+
+  factory _$Guser_articles_var_samp_order_by(
+          [void Function(Guser_articles_var_samp_order_byBuilder)? updates]) =>
+      (new Guser_articles_var_samp_order_byBuilder()..update(updates))._build();
+
+  _$Guser_articles_var_samp_order_by._({this.play_at}) : super._();
+
+  @override
+  Guser_articles_var_samp_order_by rebuild(
+          void Function(Guser_articles_var_samp_order_byBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_var_samp_order_byBuilder toBuilder() =>
+      new Guser_articles_var_samp_order_byBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_var_samp_order_by &&
+        play_at == other.play_at;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, play_at.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_var_samp_order_by')
+          ..add('play_at', play_at))
+        .toString();
+  }
+}
+
+class Guser_articles_var_samp_order_byBuilder
+    implements
+        Builder<Guser_articles_var_samp_order_by,
+            Guser_articles_var_samp_order_byBuilder> {
+  _$Guser_articles_var_samp_order_by? _$v;
+
+  Gorder_by? _play_at;
+  Gorder_by? get play_at => _$this._play_at;
+  set play_at(Gorder_by? play_at) => _$this._play_at = play_at;
+
+  Guser_articles_var_samp_order_byBuilder();
+
+  Guser_articles_var_samp_order_byBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _play_at = $v.play_at;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_var_samp_order_by other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_var_samp_order_by;
+  }
+
+  @override
+  void update(void Function(Guser_articles_var_samp_order_byBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_var_samp_order_by build() => _build();
+
+  _$Guser_articles_var_samp_order_by _build() {
+    final _$result =
+        _$v ?? new _$Guser_articles_var_samp_order_by._(play_at: play_at);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$Guser_articles_variance_order_by
+    extends Guser_articles_variance_order_by {
+  @override
+  final Gorder_by? play_at;
+
+  factory _$Guser_articles_variance_order_by(
+          [void Function(Guser_articles_variance_order_byBuilder)? updates]) =>
+      (new Guser_articles_variance_order_byBuilder()..update(updates))._build();
+
+  _$Guser_articles_variance_order_by._({this.play_at}) : super._();
+
+  @override
+  Guser_articles_variance_order_by rebuild(
+          void Function(Guser_articles_variance_order_byBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Guser_articles_variance_order_byBuilder toBuilder() =>
+      new Guser_articles_variance_order_byBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Guser_articles_variance_order_by &&
+        play_at == other.play_at;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, play_at.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Guser_articles_variance_order_by')
+          ..add('play_at', play_at))
+        .toString();
+  }
+}
+
+class Guser_articles_variance_order_byBuilder
+    implements
+        Builder<Guser_articles_variance_order_by,
+            Guser_articles_variance_order_byBuilder> {
+  _$Guser_articles_variance_order_by? _$v;
+
+  Gorder_by? _play_at;
+  Gorder_by? get play_at => _$this._play_at;
+  set play_at(Gorder_by? play_at) => _$this._play_at = play_at;
+
+  Guser_articles_variance_order_byBuilder();
+
+  Guser_articles_variance_order_byBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _play_at = $v.play_at;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Guser_articles_variance_order_by other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Guser_articles_variance_order_by;
+  }
+
+  @override
+  void update(void Function(Guser_articles_variance_order_byBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Guser_articles_variance_order_by build() => _build();
+
+  _$Guser_articles_variance_order_by _build() {
+    final _$result =
+        _$v ?? new _$Guser_articles_variance_order_by._(play_at: play_at);
     replace(_$result);
     return _$result;
   }
@@ -54317,6 +57522,8 @@ class _$Gwords_bool_exp extends Gwords_bool_exp {
   @override
   final Guuid_comparison_exp? updated_by;
   @override
+  final Gusers_bool_exp? user;
+  @override
   final GString_comparison_exp? word;
 
   factory _$Gwords_bool_exp([void Function(Gwords_bool_expBuilder)? updates]) =>
@@ -54334,6 +57541,7 @@ class _$Gwords_bool_exp extends Gwords_bool_exp {
       this.times,
       this.updated_at,
       this.updated_by,
+      this.user,
       this.word})
       : super._();
 
@@ -54360,6 +57568,7 @@ class _$Gwords_bool_exp extends Gwords_bool_exp {
         times == other.times &&
         updated_at == other.updated_at &&
         updated_by == other.updated_by &&
+        user == other.user &&
         word == other.word;
   }
 
@@ -54375,17 +57584,19 @@ class _$Gwords_bool_exp extends Gwords_bool_exp {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, G_and.hashCode),
-                                                G_not.hashCode),
-                                            G_or.hashCode),
-                                        created_at.hashCode),
-                                    created_by.hashCode),
-                                deleted_at.hashCode),
-                            id.hashCode),
-                        is_done.hashCode),
-                    times.hashCode),
-                updated_at.hashCode),
-            updated_by.hashCode),
+                                            $jc(
+                                                $jc($jc(0, G_and.hashCode),
+                                                    G_not.hashCode),
+                                                G_or.hashCode),
+                                            created_at.hashCode),
+                                        created_by.hashCode),
+                                    deleted_at.hashCode),
+                                id.hashCode),
+                            is_done.hashCode),
+                        times.hashCode),
+                    updated_at.hashCode),
+                updated_by.hashCode),
+            user.hashCode),
         word.hashCode));
   }
 
@@ -54403,6 +57614,7 @@ class _$Gwords_bool_exp extends Gwords_bool_exp {
           ..add('times', times)
           ..add('updated_at', updated_at)
           ..add('updated_by', updated_by)
+          ..add('user', user)
           ..add('word', word))
         .toString();
   }
@@ -54473,6 +57685,11 @@ class Gwords_bool_expBuilder
   set updated_by(Guuid_comparison_expBuilder? updated_by) =>
       _$this._updated_by = updated_by;
 
+  Gusers_bool_expBuilder? _user;
+  Gusers_bool_expBuilder get user =>
+      _$this._user ??= new Gusers_bool_expBuilder();
+  set user(Gusers_bool_expBuilder? user) => _$this._user = user;
+
   GString_comparison_expBuilder? _word;
   GString_comparison_expBuilder get word =>
       _$this._word ??= new GString_comparison_expBuilder();
@@ -54494,6 +57711,7 @@ class Gwords_bool_expBuilder
       _times = $v.times?.toBuilder();
       _updated_at = $v.updated_at?.toBuilder();
       _updated_by = $v.updated_by?.toBuilder();
+      _user = $v.user?.toBuilder();
       _word = $v.word?.toBuilder();
       _$v = null;
     }
@@ -54530,6 +57748,7 @@ class Gwords_bool_expBuilder
               times: _times?.build(),
               updated_at: _updated_at?.build(),
               updated_by: _updated_by?.build(),
+              user: _user?.build(),
               word: _word?.build());
     } catch (_) {
       late String _$failedField;
@@ -54556,6 +57775,8 @@ class Gwords_bool_expBuilder
         _updated_at?.build();
         _$failedField = 'updated_by';
         _updated_by?.build();
+        _$failedField = 'user';
+        _user?.build();
         _$failedField = 'word';
         _word?.build();
       } catch (e) {
@@ -54664,6 +57885,8 @@ class _$Gwords_insert_input extends Gwords_insert_input {
   @override
   final Guuid? updated_by;
   @override
+  final Gusers_obj_rel_insert_input? user;
+  @override
   final String? word;
 
   factory _$Gwords_insert_input(
@@ -54679,6 +57902,7 @@ class _$Gwords_insert_input extends Gwords_insert_input {
       this.times,
       this.updated_at,
       this.updated_by,
+      this.user,
       this.word})
       : super._();
 
@@ -54703,6 +57927,7 @@ class _$Gwords_insert_input extends Gwords_insert_input {
         times == other.times &&
         updated_at == other.updated_at &&
         updated_by == other.updated_by &&
+        user == other.user &&
         word == other.word;
   }
 
@@ -54715,14 +57940,16 @@ class _$Gwords_insert_input extends Gwords_insert_input {
                     $jc(
                         $jc(
                             $jc(
-                                $jc($jc(0, created_at.hashCode),
-                                    created_by.hashCode),
-                                deleted_at.hashCode),
-                            id.hashCode),
-                        is_done.hashCode),
-                    times.hashCode),
-                updated_at.hashCode),
-            updated_by.hashCode),
+                                $jc(
+                                    $jc($jc(0, created_at.hashCode),
+                                        created_by.hashCode),
+                                    deleted_at.hashCode),
+                                id.hashCode),
+                            is_done.hashCode),
+                        times.hashCode),
+                    updated_at.hashCode),
+                updated_by.hashCode),
+            user.hashCode),
         word.hashCode));
   }
 
@@ -54737,6 +57964,7 @@ class _$Gwords_insert_input extends Gwords_insert_input {
           ..add('times', times)
           ..add('updated_at', updated_at)
           ..add('updated_by', updated_by)
+          ..add('user', user)
           ..add('word', word))
         .toString();
   }
@@ -54784,6 +58012,11 @@ class Gwords_insert_inputBuilder
   GuuidBuilder get updated_by => _$this._updated_by ??= new GuuidBuilder();
   set updated_by(GuuidBuilder? updated_by) => _$this._updated_by = updated_by;
 
+  Gusers_obj_rel_insert_inputBuilder? _user;
+  Gusers_obj_rel_insert_inputBuilder get user =>
+      _$this._user ??= new Gusers_obj_rel_insert_inputBuilder();
+  set user(Gusers_obj_rel_insert_inputBuilder? user) => _$this._user = user;
+
   String? _word;
   String? get word => _$this._word;
   set word(String? word) => _$this._word = word;
@@ -54801,6 +58034,7 @@ class Gwords_insert_inputBuilder
       _times = $v.times;
       _updated_at = $v.updated_at?.toBuilder();
       _updated_by = $v.updated_by?.toBuilder();
+      _user = $v.user?.toBuilder();
       _word = $v.word;
       _$v = null;
     }
@@ -54834,6 +58068,7 @@ class Gwords_insert_inputBuilder
               times: times,
               updated_at: _updated_at?.build(),
               updated_by: _updated_by?.build(),
+              user: _user?.build(),
               word: word);
     } catch (_) {
       late String _$failedField;
@@ -54851,6 +58086,8 @@ class Gwords_insert_inputBuilder
         _updated_at?.build();
         _$failedField = 'updated_by';
         _updated_by?.build();
+        _$failedField = 'user';
+        _user?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'Gwords_insert_input', _$failedField, e.toString());
@@ -55009,6 +58246,8 @@ class _$Gwords_order_by extends Gwords_order_by {
   @override
   final Gorder_by? updated_by;
   @override
+  final Gusers_order_by? user;
+  @override
   final Gorder_by? word;
 
   factory _$Gwords_order_by([void Function(Gwords_order_byBuilder)? updates]) =>
@@ -55023,6 +58262,7 @@ class _$Gwords_order_by extends Gwords_order_by {
       this.times,
       this.updated_at,
       this.updated_by,
+      this.user,
       this.word})
       : super._();
 
@@ -55046,6 +58286,7 @@ class _$Gwords_order_by extends Gwords_order_by {
         times == other.times &&
         updated_at == other.updated_at &&
         updated_by == other.updated_by &&
+        user == other.user &&
         word == other.word;
   }
 
@@ -55058,14 +58299,16 @@ class _$Gwords_order_by extends Gwords_order_by {
                     $jc(
                         $jc(
                             $jc(
-                                $jc($jc(0, created_at.hashCode),
-                                    created_by.hashCode),
-                                deleted_at.hashCode),
-                            id.hashCode),
-                        is_done.hashCode),
-                    times.hashCode),
-                updated_at.hashCode),
-            updated_by.hashCode),
+                                $jc(
+                                    $jc($jc(0, created_at.hashCode),
+                                        created_by.hashCode),
+                                    deleted_at.hashCode),
+                                id.hashCode),
+                            is_done.hashCode),
+                        times.hashCode),
+                    updated_at.hashCode),
+                updated_by.hashCode),
+            user.hashCode),
         word.hashCode));
   }
 
@@ -55080,6 +58323,7 @@ class _$Gwords_order_by extends Gwords_order_by {
           ..add('times', times)
           ..add('updated_at', updated_at)
           ..add('updated_by', updated_by)
+          ..add('user', user)
           ..add('word', word))
         .toString();
   }
@@ -55121,6 +58365,11 @@ class Gwords_order_byBuilder
   Gorder_by? get updated_by => _$this._updated_by;
   set updated_by(Gorder_by? updated_by) => _$this._updated_by = updated_by;
 
+  Gusers_order_byBuilder? _user;
+  Gusers_order_byBuilder get user =>
+      _$this._user ??= new Gusers_order_byBuilder();
+  set user(Gusers_order_byBuilder? user) => _$this._user = user;
+
   Gorder_by? _word;
   Gorder_by? get word => _$this._word;
   set word(Gorder_by? word) => _$this._word = word;
@@ -55138,6 +58387,7 @@ class Gwords_order_byBuilder
       _times = $v.times;
       _updated_at = $v.updated_at;
       _updated_by = $v.updated_by;
+      _user = $v.user?.toBuilder();
       _word = $v.word;
       _$v = null;
     }
@@ -55159,17 +58409,31 @@ class Gwords_order_byBuilder
   Gwords_order_by build() => _build();
 
   _$Gwords_order_by _build() {
-    final _$result = _$v ??
-        new _$Gwords_order_by._(
-            created_at: created_at,
-            created_by: created_by,
-            deleted_at: deleted_at,
-            id: id,
-            is_done: is_done,
-            times: times,
-            updated_at: updated_at,
-            updated_by: updated_by,
-            word: word);
+    _$Gwords_order_by _$result;
+    try {
+      _$result = _$v ??
+          new _$Gwords_order_by._(
+              created_at: created_at,
+              created_by: created_by,
+              deleted_at: deleted_at,
+              id: id,
+              is_done: is_done,
+              times: times,
+              updated_at: updated_at,
+              updated_by: updated_by,
+              user: _user?.build(),
+              word: word);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'user';
+        _user?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Gwords_order_by', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

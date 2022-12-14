@@ -2,6 +2,7 @@
 // ignore_for_file: library_prefixes
 
 import 'package:entube/components/Article/index.dart' as Article;
+import 'package:entube/components/UserArticles/index.dart' as UserArticles;
 import 'package:entube/components/Auth/index.dart';
 import 'package:entube/components/LogoLoading.dart';
 import 'package:entube/components/ArticleItems/index.dart';
@@ -11,7 +12,7 @@ import 'package:go_router/go_router.dart';
 final routes = [
   GoRoute(
     path: '/',
-    builder: (context, state) => const Items(),
+    builder: (context, state) => const UserArticles.Page(),
   ),
   GoRoute(
     path: '/SignIn',

@@ -29,3 +29,47 @@ abstract class GArticleItemsVars
         json,
       );
 }
+
+abstract class GUserArticleItemsVars
+    implements Built<GUserArticleItemsVars, GUserArticleItemsVarsBuilder> {
+  GUserArticleItemsVars._();
+
+  factory GUserArticleItemsVars(
+          [Function(GUserArticleItemsVarsBuilder b) updates]) =
+      _$GUserArticleItemsVars;
+
+  int? get offset;
+  int? get limit;
+  static Serializer<GUserArticleItemsVars> get serializer =>
+      _$gUserArticleItemsVarsSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUserArticleItemsVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GUserArticleItemsVars? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUserArticleItemsVars.serializer,
+        json,
+      );
+}
+
+abstract class GArticleFragmentVars
+    implements Built<GArticleFragmentVars, GArticleFragmentVarsBuilder> {
+  GArticleFragmentVars._();
+
+  factory GArticleFragmentVars(
+          [Function(GArticleFragmentVarsBuilder b) updates]) =
+      _$GArticleFragmentVars;
+
+  static Serializer<GArticleFragmentVars> get serializer =>
+      _$gArticleFragmentVarsSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GArticleFragmentVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GArticleFragmentVars? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GArticleFragmentVars.serializer,
+        json,
+      );
+}

@@ -538,6 +538,131 @@ const articles = _i1.ObjectTypeDefinitionNode(
         isNonNull: true,
       ),
     ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'user_articles'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'distinct_on'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'user_articles_select_column'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'limit'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'offset'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'order_by'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'user_articles_order_by'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'user_articles_bool_exp'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'user_articles'),
+          isNonNull: true,
+        ),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'user_articles_aggregate'),
+      directives: [],
+      args: [
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'distinct_on'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'user_articles_select_column'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'limit'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'offset'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'Int'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'order_by'),
+          directives: [],
+          type: _i1.ListTypeNode(
+            type: _i1.NamedTypeNode(
+              name: _i1.NameNode(value: 'user_articles_order_by'),
+              isNonNull: true,
+            ),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+        _i1.InputValueDefinitionNode(
+          name: _i1.NameNode(value: 'where'),
+          directives: [],
+          type: _i1.NamedTypeNode(
+            name: _i1.NameNode(value: 'user_articles_bool_exp'),
+            isNonNull: false,
+          ),
+          defaultValue: null,
+        ),
+      ],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_aggregate'),
+        isNonNull: true,
+      ),
+    ),
   ],
 );
 const articles_aggregate = _i1.ObjectTypeDefinitionNode(
@@ -775,6 +900,24 @@ const articles_bool_exp = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'user_articles'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_bool_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'user_articles_aggregate'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_aggregate_bool_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
   ],
 );
 const articles_constraint = _i1.EnumTypeDefinitionNode(
@@ -934,6 +1077,15 @@ const articles_insert_input = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'user_articles'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_arr_rel_insert_input'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -1162,6 +1314,30 @@ const articles_mutation_response = _i1.ObjectTypeDefinitionNode(
     ),
   ],
 );
+const articles_obj_rel_insert_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'articles_obj_rel_insert_input'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'data'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'articles_insert_input'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'on_conflict'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'articles_on_conflict'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
 const articles_on_conflict = _i1.InputObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'articles_on_conflict'),
   directives: [],
@@ -1297,6 +1473,15 @@ const articles_order_by = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'user_articles_aggregate'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_aggregate_order_by'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -19535,6 +19720,15 @@ const user_articles = _i1.ObjectTypeDefinitionNode(
   interfaces: [],
   fields: [
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'article'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'articles'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'article_id'),
       directives: [],
       args: [],
@@ -19642,6 +19836,67 @@ const user_articles_aggregate = _i1.ObjectTypeDefinitionNode(
         ),
         isNonNull: true,
       ),
+    ),
+  ],
+);
+const user_articles_aggregate_bool_exp = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'user_articles_aggregate_bool_exp'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'count'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_aggregate_bool_exp_count'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    )
+  ],
+);
+const user_articles_aggregate_bool_exp_count =
+    _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'user_articles_aggregate_bool_exp_count'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'arguments'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'user_articles_select_column'),
+          isNonNull: true,
+        ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'distinct'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Boolean'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'filter'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_bool_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'predicate'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int_comparison_exp'),
+        isNonNull: true,
+      ),
+      defaultValue: null,
     ),
   ],
 );
@@ -19773,6 +20028,138 @@ const user_articles_aggregate_fields = _i1.ObjectTypeDefinitionNode(
     ),
   ],
 );
+const user_articles_aggregate_order_by = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'user_articles_aggregate_order_by'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'avg'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_avg_order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'count'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'max'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_max_order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'min'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_min_order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'stddev'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_stddev_order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'stddev_pop'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_stddev_pop_order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'stddev_samp'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_stddev_samp_order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'sum'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_sum_order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'var_pop'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_var_pop_order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'var_samp'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_var_samp_order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'variance'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_variance_order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
+const user_articles_arr_rel_insert_input = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'user_articles_arr_rel_insert_input'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'data'),
+      directives: [],
+      type: _i1.ListTypeNode(
+        type: _i1.NamedTypeNode(
+          name: _i1.NameNode(value: 'user_articles_insert_input'),
+          isNonNull: true,
+        ),
+        isNonNull: true,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'on_conflict'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'user_articles_on_conflict'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
 const user_articles_avg_fields = _i1.ObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'user_articles_avg_fields'),
   directives: [],
@@ -19786,6 +20173,21 @@ const user_articles_avg_fields = _i1.ObjectTypeDefinitionNode(
         name: _i1.NameNode(value: 'Float'),
         isNonNull: false,
       ),
+    )
+  ],
+);
+const user_articles_avg_order_by = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'user_articles_avg_order_by'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'play_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
     )
   ],
 );
@@ -19822,6 +20224,15 @@ const user_articles_bool_exp = _i1.InputObjectTypeDefinitionNode(
           name: _i1.NameNode(value: 'user_articles_bool_exp'),
           isNonNull: true,
         ),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'article'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'articles_bool_exp'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -19938,6 +20349,15 @@ const user_articles_insert_input = _i1.InputObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'user_articles_insert_input'),
   directives: [],
   fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'article'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'articles_obj_rel_insert_input'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'article_id'),
       directives: [],
@@ -20109,6 +20529,93 @@ const user_articles_max_fields = _i1.ObjectTypeDefinitionNode(
     ),
   ],
 );
+const user_articles_max_order_by = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'user_articles_max_order_by'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'article_id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_by'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'deleted_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'play_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_by'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'user_id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
 const user_articles_min_fields = _i1.ObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'user_articles_min_fields'),
   directives: [],
@@ -20197,6 +20704,93 @@ const user_articles_min_fields = _i1.ObjectTypeDefinitionNode(
     ),
   ],
 );
+const user_articles_min_order_by = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'user_articles_min_order_by'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'article_id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'created_by'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'deleted_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'play_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'updated_by'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'user_id'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+  ],
+);
 const user_articles_mutation_response = _i1.ObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'user_articles_mutation_response'),
   directives: [],
@@ -20265,6 +20859,15 @@ const user_articles_order_by = _i1.InputObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'user_articles_order_by'),
   directives: [],
   fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'article'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'articles_order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'article_id'),
       directives: [],
@@ -20508,6 +21111,21 @@ const user_articles_stddev_fields = _i1.ObjectTypeDefinitionNode(
     )
   ],
 );
+const user_articles_stddev_order_by = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'user_articles_stddev_order_by'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'play_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    )
+  ],
+);
 const user_articles_stddev_pop_fields = _i1.ObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'user_articles_stddev_pop_fields'),
   directives: [],
@@ -20524,6 +21142,21 @@ const user_articles_stddev_pop_fields = _i1.ObjectTypeDefinitionNode(
     )
   ],
 );
+const user_articles_stddev_pop_order_by = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'user_articles_stddev_pop_order_by'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'play_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    )
+  ],
+);
 const user_articles_stddev_samp_fields = _i1.ObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'user_articles_stddev_samp_fields'),
   directives: [],
@@ -20537,6 +21170,21 @@ const user_articles_stddev_samp_fields = _i1.ObjectTypeDefinitionNode(
         name: _i1.NameNode(value: 'Float'),
         isNonNull: false,
       ),
+    )
+  ],
+);
+const user_articles_stddev_samp_order_by = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'user_articles_stddev_samp_order_by'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'play_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
     )
   ],
 );
@@ -20668,6 +21316,21 @@ const user_articles_sum_fields = _i1.ObjectTypeDefinitionNode(
     )
   ],
 );
+const user_articles_sum_order_by = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'user_articles_sum_order_by'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'play_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    )
+  ],
+);
 const user_articles_update_column = _i1.EnumTypeDefinitionNode(
   name: _i1.NameNode(value: 'user_articles_update_column'),
   directives: [],
@@ -20759,6 +21422,21 @@ const user_articles_var_pop_fields = _i1.ObjectTypeDefinitionNode(
     )
   ],
 );
+const user_articles_var_pop_order_by = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'user_articles_var_pop_order_by'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'play_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    )
+  ],
+);
 const user_articles_var_samp_fields = _i1.ObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'user_articles_var_samp_fields'),
   directives: [],
@@ -20775,6 +21453,21 @@ const user_articles_var_samp_fields = _i1.ObjectTypeDefinitionNode(
     )
   ],
 );
+const user_articles_var_samp_order_by = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'user_articles_var_samp_order_by'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'play_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    )
+  ],
+);
 const user_articles_variance_fields = _i1.ObjectTypeDefinitionNode(
   name: _i1.NameNode(value: 'user_articles_variance_fields'),
   directives: [],
@@ -20788,6 +21481,21 @@ const user_articles_variance_fields = _i1.ObjectTypeDefinitionNode(
         name: _i1.NameNode(value: 'Float'),
         isNonNull: false,
       ),
+    )
+  ],
+);
+const user_articles_variance_order_by = _i1.InputObjectTypeDefinitionNode(
+  name: _i1.NameNode(value: 'user_articles_variance_order_by'),
+  directives: [],
+  fields: [
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'play_at'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
     )
   ],
 );
@@ -24686,6 +25394,15 @@ const words = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'user'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'users'),
+        isNonNull: true,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'word'),
       directives: [],
       args: [],
@@ -24978,6 +25695,15 @@ const words_bool_exp = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'user'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'users_bool_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'word'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -25089,6 +25815,15 @@ const words_insert_input = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'user'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'users_obj_rel_insert_input'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -25398,6 +26133,15 @@ const words_order_by = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'user'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'users_order_by'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -25874,6 +26618,7 @@ const document = _i1.DocumentNode(definitions: [
   articles_max_fields,
   articles_min_fields,
   articles_mutation_response,
+  articles_obj_rel_insert_input,
   articles_on_conflict,
   articles_order_by,
   articles_pk_columns_input,
@@ -26149,14 +26894,21 @@ const document = _i1.DocumentNode(definitions: [
   timestamptz_comparison_exp,
   user_articles,
   user_articles_aggregate,
+  user_articles_aggregate_bool_exp,
+  user_articles_aggregate_bool_exp_count,
   user_articles_aggregate_fields,
+  user_articles_aggregate_order_by,
+  user_articles_arr_rel_insert_input,
   user_articles_avg_fields,
+  user_articles_avg_order_by,
   user_articles_bool_exp,
   user_articles_constraint,
   user_articles_inc_input,
   user_articles_insert_input,
   user_articles_max_fields,
+  user_articles_max_order_by,
   user_articles_min_fields,
+  user_articles_min_order_by,
   user_articles_mutation_response,
   user_articles_on_conflict,
   user_articles_order_by,
@@ -26164,16 +26916,23 @@ const document = _i1.DocumentNode(definitions: [
   user_articles_select_column,
   user_articles_set_input,
   user_articles_stddev_fields,
+  user_articles_stddev_order_by,
   user_articles_stddev_pop_fields,
+  user_articles_stddev_pop_order_by,
   user_articles_stddev_samp_fields,
+  user_articles_stddev_samp_order_by,
   user_articles_stream_cursor_input,
   user_articles_stream_cursor_value_input,
   user_articles_sum_fields,
+  user_articles_sum_order_by,
   user_articles_update_column,
   user_articles_updates,
   user_articles_var_pop_fields,
+  user_articles_var_pop_order_by,
   user_articles_var_samp_fields,
+  user_articles_var_samp_order_by,
   user_articles_variance_fields,
+  user_articles_variance_order_by,
   users,
   users_aggregate,
   users_aggregate_bool_exp,

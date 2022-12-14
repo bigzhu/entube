@@ -194,6 +194,8 @@ abstract class Garticles_bool_exp
   Gtimestamptz_comparison_exp? get updated_at;
   Guuid_comparison_exp? get updated_by;
   GString_comparison_exp? get url;
+  Guser_articles_bool_exp? get user_articles;
+  Guser_articles_aggregate_bool_exp? get user_articles_aggregate;
   static Serializer<Garticles_bool_exp> get serializer =>
       _$garticlesBoolExpSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -310,6 +312,7 @@ abstract class Garticles_insert_input
   Gtimestamptz? get updated_at;
   Guuid? get updated_by;
   String? get url;
+  Guser_articles_arr_rel_insert_input? get user_articles;
   static Serializer<Garticles_insert_input> get serializer =>
       _$garticlesInsertInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -319,6 +322,31 @@ abstract class Garticles_insert_input
   static Garticles_insert_input? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         Garticles_insert_input.serializer,
+        json,
+      );
+}
+
+abstract class Garticles_obj_rel_insert_input
+    implements
+        Built<Garticles_obj_rel_insert_input,
+            Garticles_obj_rel_insert_inputBuilder> {
+  Garticles_obj_rel_insert_input._();
+
+  factory Garticles_obj_rel_insert_input(
+          [Function(Garticles_obj_rel_insert_inputBuilder b) updates]) =
+      _$Garticles_obj_rel_insert_input;
+
+  Garticles_insert_input get data;
+  Garticles_on_conflict? get on_conflict;
+  static Serializer<Garticles_obj_rel_insert_input> get serializer =>
+      _$garticlesObjRelInsertInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Garticles_obj_rel_insert_input.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Garticles_obj_rel_insert_input? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Garticles_obj_rel_insert_input.serializer,
         json,
       );
 }
@@ -365,6 +393,7 @@ abstract class Garticles_order_by
   Gorder_by? get updated_at;
   Gorder_by? get updated_by;
   Gorder_by? get url;
+  Guser_articles_aggregate_order_by? get user_articles_aggregate;
   static Serializer<Garticles_order_by> get serializer =>
       _$garticlesOrderBySerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -5346,6 +5375,143 @@ abstract class Gtimestamptz_comparison_exp
       );
 }
 
+abstract class Guser_articles_aggregate_bool_exp
+    implements
+        Built<Guser_articles_aggregate_bool_exp,
+            Guser_articles_aggregate_bool_expBuilder> {
+  Guser_articles_aggregate_bool_exp._();
+
+  factory Guser_articles_aggregate_bool_exp(
+          [Function(Guser_articles_aggregate_bool_expBuilder b) updates]) =
+      _$Guser_articles_aggregate_bool_exp;
+
+  Guser_articles_aggregate_bool_exp_count? get count;
+  static Serializer<Guser_articles_aggregate_bool_exp> get serializer =>
+      _$guserArticlesAggregateBoolExpSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_aggregate_bool_exp.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_aggregate_bool_exp? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_aggregate_bool_exp.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_aggregate_bool_exp_count
+    implements
+        Built<Guser_articles_aggregate_bool_exp_count,
+            Guser_articles_aggregate_bool_exp_countBuilder> {
+  Guser_articles_aggregate_bool_exp_count._();
+
+  factory Guser_articles_aggregate_bool_exp_count(
+      [Function(Guser_articles_aggregate_bool_exp_countBuilder b)
+          updates]) = _$Guser_articles_aggregate_bool_exp_count;
+
+  BuiltList<Guser_articles_select_column>? get arguments;
+  bool? get distinct;
+  Guser_articles_bool_exp? get filter;
+  GInt_comparison_exp get predicate;
+  static Serializer<Guser_articles_aggregate_bool_exp_count> get serializer =>
+      _$guserArticlesAggregateBoolExpCountSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_aggregate_bool_exp_count.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_aggregate_bool_exp_count? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_aggregate_bool_exp_count.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_aggregate_order_by
+    implements
+        Built<Guser_articles_aggregate_order_by,
+            Guser_articles_aggregate_order_byBuilder> {
+  Guser_articles_aggregate_order_by._();
+
+  factory Guser_articles_aggregate_order_by(
+          [Function(Guser_articles_aggregate_order_byBuilder b) updates]) =
+      _$Guser_articles_aggregate_order_by;
+
+  Guser_articles_avg_order_by? get avg;
+  Gorder_by? get count;
+  Guser_articles_max_order_by? get max;
+  Guser_articles_min_order_by? get min;
+  Guser_articles_stddev_order_by? get stddev;
+  Guser_articles_stddev_pop_order_by? get stddev_pop;
+  Guser_articles_stddev_samp_order_by? get stddev_samp;
+  Guser_articles_sum_order_by? get sum;
+  Guser_articles_var_pop_order_by? get var_pop;
+  Guser_articles_var_samp_order_by? get var_samp;
+  Guser_articles_variance_order_by? get variance;
+  static Serializer<Guser_articles_aggregate_order_by> get serializer =>
+      _$guserArticlesAggregateOrderBySerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_aggregate_order_by.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_aggregate_order_by? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_aggregate_order_by.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_arr_rel_insert_input
+    implements
+        Built<Guser_articles_arr_rel_insert_input,
+            Guser_articles_arr_rel_insert_inputBuilder> {
+  Guser_articles_arr_rel_insert_input._();
+
+  factory Guser_articles_arr_rel_insert_input(
+          [Function(Guser_articles_arr_rel_insert_inputBuilder b) updates]) =
+      _$Guser_articles_arr_rel_insert_input;
+
+  BuiltList<Guser_articles_insert_input> get data;
+  Guser_articles_on_conflict? get on_conflict;
+  static Serializer<Guser_articles_arr_rel_insert_input> get serializer =>
+      _$guserArticlesArrRelInsertInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_arr_rel_insert_input.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_arr_rel_insert_input? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_arr_rel_insert_input.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_avg_order_by
+    implements
+        Built<Guser_articles_avg_order_by, Guser_articles_avg_order_byBuilder> {
+  Guser_articles_avg_order_by._();
+
+  factory Guser_articles_avg_order_by(
+          [Function(Guser_articles_avg_order_byBuilder b) updates]) =
+      _$Guser_articles_avg_order_by;
+
+  Gorder_by? get play_at;
+  static Serializer<Guser_articles_avg_order_by> get serializer =>
+      _$guserArticlesAvgOrderBySerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_avg_order_by.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_avg_order_by? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_avg_order_by.serializer,
+        json,
+      );
+}
+
 abstract class Guser_articles_bool_exp
     implements Built<Guser_articles_bool_exp, Guser_articles_bool_expBuilder> {
   Guser_articles_bool_exp._();
@@ -5360,6 +5526,7 @@ abstract class Guser_articles_bool_exp
   Guser_articles_bool_exp? get G_not;
   @BuiltValueField(wireName: '_or')
   BuiltList<Guser_articles_bool_exp>? get G_or;
+  Garticles_bool_exp? get article;
   Guuid_comparison_exp? get article_id;
   Gtimestamptz_comparison_exp? get created_at;
   Guuid_comparison_exp? get created_by;
@@ -5428,6 +5595,7 @@ abstract class Guser_articles_insert_input
           [Function(Guser_articles_insert_inputBuilder b) updates]) =
       _$Guser_articles_insert_input;
 
+  Garticles_obj_rel_insert_input? get article;
   Guuid? get article_id;
   Gtimestamptz? get created_at;
   Guuid? get created_by;
@@ -5446,6 +5614,68 @@ abstract class Guser_articles_insert_input
   static Guser_articles_insert_input? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         Guser_articles_insert_input.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_max_order_by
+    implements
+        Built<Guser_articles_max_order_by, Guser_articles_max_order_byBuilder> {
+  Guser_articles_max_order_by._();
+
+  factory Guser_articles_max_order_by(
+          [Function(Guser_articles_max_order_byBuilder b) updates]) =
+      _$Guser_articles_max_order_by;
+
+  Gorder_by? get article_id;
+  Gorder_by? get created_at;
+  Gorder_by? get created_by;
+  Gorder_by? get deleted_at;
+  Gorder_by? get id;
+  Gorder_by? get play_at;
+  Gorder_by? get updated_at;
+  Gorder_by? get updated_by;
+  Gorder_by? get user_id;
+  static Serializer<Guser_articles_max_order_by> get serializer =>
+      _$guserArticlesMaxOrderBySerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_max_order_by.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_max_order_by? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_max_order_by.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_min_order_by
+    implements
+        Built<Guser_articles_min_order_by, Guser_articles_min_order_byBuilder> {
+  Guser_articles_min_order_by._();
+
+  factory Guser_articles_min_order_by(
+          [Function(Guser_articles_min_order_byBuilder b) updates]) =
+      _$Guser_articles_min_order_by;
+
+  Gorder_by? get article_id;
+  Gorder_by? get created_at;
+  Gorder_by? get created_by;
+  Gorder_by? get deleted_at;
+  Gorder_by? get id;
+  Gorder_by? get play_at;
+  Gorder_by? get updated_at;
+  Gorder_by? get updated_by;
+  Gorder_by? get user_id;
+  static Serializer<Guser_articles_min_order_by> get serializer =>
+      _$guserArticlesMinOrderBySerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_min_order_by.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_min_order_by? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_min_order_by.serializer,
         json,
       );
 }
@@ -5483,6 +5713,7 @@ abstract class Guser_articles_order_by
           [Function(Guser_articles_order_byBuilder b) updates]) =
       _$Guser_articles_order_by;
 
+  Garticles_order_by? get article;
   Gorder_by? get article_id;
   Gorder_by? get created_at;
   Gorder_by? get created_by;
@@ -5597,6 +5828,80 @@ abstract class Guser_articles_set_input
       );
 }
 
+abstract class Guser_articles_stddev_order_by
+    implements
+        Built<Guser_articles_stddev_order_by,
+            Guser_articles_stddev_order_byBuilder> {
+  Guser_articles_stddev_order_by._();
+
+  factory Guser_articles_stddev_order_by(
+          [Function(Guser_articles_stddev_order_byBuilder b) updates]) =
+      _$Guser_articles_stddev_order_by;
+
+  Gorder_by? get play_at;
+  static Serializer<Guser_articles_stddev_order_by> get serializer =>
+      _$guserArticlesStddevOrderBySerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_stddev_order_by.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_stddev_order_by? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_stddev_order_by.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_stddev_pop_order_by
+    implements
+        Built<Guser_articles_stddev_pop_order_by,
+            Guser_articles_stddev_pop_order_byBuilder> {
+  Guser_articles_stddev_pop_order_by._();
+
+  factory Guser_articles_stddev_pop_order_by(
+          [Function(Guser_articles_stddev_pop_order_byBuilder b) updates]) =
+      _$Guser_articles_stddev_pop_order_by;
+
+  Gorder_by? get play_at;
+  static Serializer<Guser_articles_stddev_pop_order_by> get serializer =>
+      _$guserArticlesStddevPopOrderBySerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_stddev_pop_order_by.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_stddev_pop_order_by? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_stddev_pop_order_by.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_stddev_samp_order_by
+    implements
+        Built<Guser_articles_stddev_samp_order_by,
+            Guser_articles_stddev_samp_order_byBuilder> {
+  Guser_articles_stddev_samp_order_by._();
+
+  factory Guser_articles_stddev_samp_order_by(
+          [Function(Guser_articles_stddev_samp_order_byBuilder b) updates]) =
+      _$Guser_articles_stddev_samp_order_by;
+
+  Gorder_by? get play_at;
+  static Serializer<Guser_articles_stddev_samp_order_by> get serializer =>
+      _$guserArticlesStddevSampOrderBySerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_stddev_samp_order_by.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_stddev_samp_order_by? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_stddev_samp_order_by.serializer,
+        json,
+      );
+}
+
 abstract class Guser_articles_stream_cursor_input
     implements
         Built<Guser_articles_stream_cursor_input,
@@ -5652,6 +5957,29 @@ abstract class Guser_articles_stream_cursor_value_input
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         Guser_articles_stream_cursor_value_input.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_sum_order_by
+    implements
+        Built<Guser_articles_sum_order_by, Guser_articles_sum_order_byBuilder> {
+  Guser_articles_sum_order_by._();
+
+  factory Guser_articles_sum_order_by(
+          [Function(Guser_articles_sum_order_byBuilder b) updates]) =
+      _$Guser_articles_sum_order_by;
+
+  Gorder_by? get play_at;
+  static Serializer<Guser_articles_sum_order_by> get serializer =>
+      _$guserArticlesSumOrderBySerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_sum_order_by.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_sum_order_by? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_sum_order_by.serializer,
         json,
       );
 }
@@ -5715,6 +6043,80 @@ abstract class Guser_articles_updates
   static Guser_articles_updates? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         Guser_articles_updates.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_var_pop_order_by
+    implements
+        Built<Guser_articles_var_pop_order_by,
+            Guser_articles_var_pop_order_byBuilder> {
+  Guser_articles_var_pop_order_by._();
+
+  factory Guser_articles_var_pop_order_by(
+          [Function(Guser_articles_var_pop_order_byBuilder b) updates]) =
+      _$Guser_articles_var_pop_order_by;
+
+  Gorder_by? get play_at;
+  static Serializer<Guser_articles_var_pop_order_by> get serializer =>
+      _$guserArticlesVarPopOrderBySerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_var_pop_order_by.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_var_pop_order_by? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_var_pop_order_by.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_var_samp_order_by
+    implements
+        Built<Guser_articles_var_samp_order_by,
+            Guser_articles_var_samp_order_byBuilder> {
+  Guser_articles_var_samp_order_by._();
+
+  factory Guser_articles_var_samp_order_by(
+          [Function(Guser_articles_var_samp_order_byBuilder b) updates]) =
+      _$Guser_articles_var_samp_order_by;
+
+  Gorder_by? get play_at;
+  static Serializer<Guser_articles_var_samp_order_by> get serializer =>
+      _$guserArticlesVarSampOrderBySerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_var_samp_order_by.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_var_samp_order_by? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_var_samp_order_by.serializer,
+        json,
+      );
+}
+
+abstract class Guser_articles_variance_order_by
+    implements
+        Built<Guser_articles_variance_order_by,
+            Guser_articles_variance_order_byBuilder> {
+  Guser_articles_variance_order_by._();
+
+  factory Guser_articles_variance_order_by(
+          [Function(Guser_articles_variance_order_byBuilder b) updates]) =
+      _$Guser_articles_variance_order_by;
+
+  Gorder_by? get play_at;
+  static Serializer<Guser_articles_variance_order_by> get serializer =>
+      _$guserArticlesVarianceOrderBySerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        Guser_articles_variance_order_by.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static Guser_articles_variance_order_by? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        Guser_articles_variance_order_by.serializer,
         json,
       );
 }
@@ -6756,6 +7158,7 @@ abstract class Gwords_bool_exp
   GInt_comparison_exp? get times;
   Gtimestamptz_comparison_exp? get updated_at;
   Guuid_comparison_exp? get updated_by;
+  Gusers_bool_exp? get user;
   GString_comparison_exp? get word;
   static Serializer<Gwords_bool_exp> get serializer =>
       _$gwordsBoolExpSerializer;
@@ -6821,6 +7224,7 @@ abstract class Gwords_insert_input
   int? get times;
   Gtimestamptz? get updated_at;
   Guuid? get updated_by;
+  Gusers_obj_rel_insert_input? get user;
   String? get word;
   static Serializer<Gwords_insert_input> get serializer =>
       _$gwordsInsertInputSerializer;
@@ -6873,6 +7277,7 @@ abstract class Gwords_order_by
   Gorder_by? get times;
   Gorder_by? get updated_at;
   Gorder_by? get updated_by;
+  Gusers_order_by? get user;
   Gorder_by? get word;
   static Serializer<Gwords_order_by> get serializer =>
       _$gwordsOrderBySerializer;

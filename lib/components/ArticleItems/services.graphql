@@ -1,13 +1,33 @@
+fragment ArticleFragment on articles {
+  id
+  favicon
+
+  thumbnail
+  title
+  url
+  created_by
+  created_at
+  updated_by
+  updated_at
+}
+
 query ArticleItems($offset: Int = 0, $limit: Int = 10) {
   articles(offset: $offset, limit: $limit) {
+    ...ArticleFragment
+  }
+}
+
+query UserArticleItems($offset: Int = 0, $limit: Int = 10) {
+  user_articles(offset: $offset, limit: $limit) {
     id
-    favicon
+    play_at
+    user_id
     created_by
     created_at
-    thumbnail
-    title
     updated_at
-    url
     updated_by
+    article {
+      ...ArticleFragment
+    }
   }
 }

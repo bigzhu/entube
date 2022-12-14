@@ -114,6 +114,42 @@ type articles {
   updated_at: timestamptz!
   updated_by: uuid
   url: String!
+
+  """An array relationship"""
+  user_articles(
+    """distinct select on columns"""
+    distinct_on: [user_articles_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_articles_order_by!]
+
+    """filter the rows returned"""
+    where: user_articles_bool_exp
+  ): [user_articles!]!
+
+  """An aggregate relationship"""
+  user_articles_aggregate(
+    """distinct select on columns"""
+    distinct_on: [user_articles_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [user_articles_order_by!]
+
+    """filter the rows returned"""
+    where: user_articles_bool_exp
+  ): user_articles_aggregate!
 }
 
 """
@@ -156,6 +192,8 @@ input articles_bool_exp {
   updated_at: timestamptz_comparison_exp
   updated_by: uuid_comparison_exp
   url: String_comparison_exp
+  user_articles: user_articles_bool_exp
+  user_articles_aggregate: user_articles_aggregate_bool_exp
 }
 
 """
@@ -204,6 +242,7 @@ input articles_insert_input {
   updated_at: timestamptz
   updated_by: uuid
   url: String
+  user_articles: user_articles_arr_rel_insert_input
 }
 
 """aggregate max on columns"""
@@ -246,6 +285,16 @@ type articles_mutation_response {
 }
 
 """
+input type for inserting object relation for remote table "articles"
+"""
+input articles_obj_rel_insert_input {
+  data: articles_insert_input!
+
+  """upsert condition"""
+  on_conflict: articles_on_conflict
+}
+
+"""
 on_conflict condition type for table "articles"
 """
 input articles_on_conflict {
@@ -267,6 +316,7 @@ input articles_order_by {
   updated_at: order_by
   updated_by: order_by
   url: order_by
+  user_articles_aggregate: user_articles_aggregate_order_by
 }
 
 """primary key columns input for table: articles"""
@@ -4649,9 +4699,7 @@ type query_root {
   """fetch data from the table: "auth.users" using primary key columns"""
   user(id: uuid!): users
 
-  """
-  fetch data from the table: "user_articles"
-  """
+  """An array relationship"""
   user_articles(
     """distinct select on columns"""
     distinct_on: [user_articles_select_column!]
@@ -4669,9 +4717,7 @@ type query_root {
     where: user_articles_bool_exp
   ): [user_articles!]!
 
-  """
-  fetch aggregated fields from the table: "user_articles"
-  """
+  """An aggregate relationship"""
   user_articles_aggregate(
     """distinct select on columns"""
     distinct_on: [user_articles_select_column!]
@@ -5356,9 +5402,7 @@ type subscription_root {
   """fetch data from the table: "auth.users" using primary key columns"""
   user(id: uuid!): users
 
-  """
-  fetch data from the table: "user_articles"
-  """
+  """An array relationship"""
   user_articles(
     """distinct select on columns"""
     distinct_on: [user_articles_select_column!]
@@ -5376,9 +5420,7 @@ type subscription_root {
     where: user_articles_bool_exp
   ): [user_articles!]!
 
-  """
-  fetch aggregated fields from the table: "user_articles"
-  """
+  """An aggregate relationship"""
   user_articles_aggregate(
     """distinct select on columns"""
     distinct_on: [user_articles_select_column!]
@@ -5546,6 +5588,8 @@ input timestamptz_comparison_exp {
 columns and relationships of "user_articles"
 """
 type user_articles {
+  """An object relationship"""
+  article: articles!
   article_id: uuid!
   created_at: timestamptz!
   created_by: uuid!
@@ -5565,6 +5609,17 @@ type user_articles_aggregate {
   nodes: [user_articles!]!
 }
 
+input user_articles_aggregate_bool_exp {
+  count: user_articles_aggregate_bool_exp_count
+}
+
+input user_articles_aggregate_bool_exp_count {
+  arguments: [user_articles_select_column!]
+  distinct: Boolean
+  filter: user_articles_bool_exp
+  predicate: Int_comparison_exp!
+}
+
 """
 aggregate fields of "user_articles"
 """
@@ -5582,9 +5637,43 @@ type user_articles_aggregate_fields {
   variance: user_articles_variance_fields
 }
 
+"""
+order by aggregate values of table "user_articles"
+"""
+input user_articles_aggregate_order_by {
+  avg: user_articles_avg_order_by
+  count: order_by
+  max: user_articles_max_order_by
+  min: user_articles_min_order_by
+  stddev: user_articles_stddev_order_by
+  stddev_pop: user_articles_stddev_pop_order_by
+  stddev_samp: user_articles_stddev_samp_order_by
+  sum: user_articles_sum_order_by
+  var_pop: user_articles_var_pop_order_by
+  var_samp: user_articles_var_samp_order_by
+  variance: user_articles_variance_order_by
+}
+
+"""
+input type for inserting array relation for remote table "user_articles"
+"""
+input user_articles_arr_rel_insert_input {
+  data: [user_articles_insert_input!]!
+
+  """upsert condition"""
+  on_conflict: user_articles_on_conflict
+}
+
 """aggregate avg on columns"""
 type user_articles_avg_fields {
   play_at: Float
+}
+
+"""
+order by avg() on columns of table "user_articles"
+"""
+input user_articles_avg_order_by {
+  play_at: order_by
 }
 
 """
@@ -5594,6 +5683,7 @@ input user_articles_bool_exp {
   _and: [user_articles_bool_exp!]
   _not: user_articles_bool_exp
   _or: [user_articles_bool_exp!]
+  article: articles_bool_exp
   article_id: uuid_comparison_exp
   created_at: timestamptz_comparison_exp
   created_by: uuid_comparison_exp
@@ -5626,6 +5716,7 @@ input user_articles_inc_input {
 input type for inserting data into table "user_articles"
 """
 input user_articles_insert_input {
+  article: articles_obj_rel_insert_input
   article_id: uuid
   created_at: timestamptz
   created_by: uuid
@@ -5650,6 +5741,21 @@ type user_articles_max_fields {
   user_id: uuid
 }
 
+"""
+order by max() on columns of table "user_articles"
+"""
+input user_articles_max_order_by {
+  article_id: order_by
+  created_at: order_by
+  created_by: order_by
+  deleted_at: order_by
+  id: order_by
+  play_at: order_by
+  updated_at: order_by
+  updated_by: order_by
+  user_id: order_by
+}
+
 """aggregate min on columns"""
 type user_articles_min_fields {
   article_id: uuid
@@ -5661,6 +5767,21 @@ type user_articles_min_fields {
   updated_at: timestamptz
   updated_by: uuid
   user_id: uuid
+}
+
+"""
+order by min() on columns of table "user_articles"
+"""
+input user_articles_min_order_by {
+  article_id: order_by
+  created_at: order_by
+  created_by: order_by
+  deleted_at: order_by
+  id: order_by
+  play_at: order_by
+  updated_at: order_by
+  updated_by: order_by
+  user_id: order_by
 }
 
 """
@@ -5685,6 +5806,7 @@ input user_articles_on_conflict {
 
 """Ordering options when selecting data from "user_articles"."""
 input user_articles_order_by {
+  article: articles_order_by
   article_id: order_by
   created_at: order_by
   created_by: order_by
@@ -5753,14 +5875,35 @@ type user_articles_stddev_fields {
   play_at: Float
 }
 
+"""
+order by stddev() on columns of table "user_articles"
+"""
+input user_articles_stddev_order_by {
+  play_at: order_by
+}
+
 """aggregate stddev_pop on columns"""
 type user_articles_stddev_pop_fields {
   play_at: Float
 }
 
+"""
+order by stddev_pop() on columns of table "user_articles"
+"""
+input user_articles_stddev_pop_order_by {
+  play_at: order_by
+}
+
 """aggregate stddev_samp on columns"""
 type user_articles_stddev_samp_fields {
   play_at: Float
+}
+
+"""
+order by stddev_samp() on columns of table "user_articles"
+"""
+input user_articles_stddev_samp_order_by {
+  play_at: order_by
 }
 
 """
@@ -5790,6 +5933,13 @@ input user_articles_stream_cursor_value_input {
 """aggregate sum on columns"""
 type user_articles_sum_fields {
   play_at: Int
+}
+
+"""
+order by sum() on columns of table "user_articles"
+"""
+input user_articles_sum_order_by {
+  play_at: order_by
 }
 
 """
@@ -5838,14 +5988,35 @@ type user_articles_var_pop_fields {
   play_at: Float
 }
 
+"""
+order by var_pop() on columns of table "user_articles"
+"""
+input user_articles_var_pop_order_by {
+  play_at: order_by
+}
+
 """aggregate var_samp on columns"""
 type user_articles_var_samp_fields {
   play_at: Float
 }
 
+"""
+order by var_samp() on columns of table "user_articles"
+"""
+input user_articles_var_samp_order_by {
+  play_at: order_by
+}
+
 """aggregate variance on columns"""
 type user_articles_variance_fields {
   play_at: Float
+}
+
+"""
+order by variance() on columns of table "user_articles"
+"""
+input user_articles_variance_order_by {
+  play_at: order_by
 }
 
 """
@@ -6710,6 +6881,9 @@ type words {
   times: Int!
   updated_at: timestamptz!
   updated_by: uuid
+
+  """An object relationship"""
+  user: users!
   word: String!
 }
 
@@ -6758,6 +6932,7 @@ input words_bool_exp {
   times: Int_comparison_exp
   updated_at: timestamptz_comparison_exp
   updated_by: uuid_comparison_exp
+  user: users_bool_exp
   word: String_comparison_exp
 }
 
@@ -6795,6 +6970,7 @@ input words_insert_input {
   times: Int
   updated_at: timestamptz
   updated_by: uuid
+  user: users_obj_rel_insert_input
   word: String
 }
 
@@ -6852,6 +7028,7 @@ input words_order_by {
   times: order_by
   updated_at: order_by
   updated_by: order_by
+  user: users_order_by
   word: order_by
 }
 
