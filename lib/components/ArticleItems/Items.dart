@@ -23,7 +23,7 @@ class Items extends HookConsumerWidget {
     return DataWaiter(
       req: req,
       builder: (rsp) {
-        BuiltList<GArticleItemsData_articles>? articles = rsp.data?.articles;
+        final articles = rsp.data?.articles.toList();
         if (articles == null) {
           return const AlertDialog(
               title: Text('No Data'),

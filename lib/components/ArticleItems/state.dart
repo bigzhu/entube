@@ -9,5 +9,5 @@ final articleItemsScrollControllerProvider =
     Provider<ItemScrollController>((ref) => ItemScrollController());
 
 final articleItemsSP = StateProvider((ref) {
-  return BuiltList(<GArticleItemsData_articles>[]);
+  return <GArticleItemsData_articles>[];
 });

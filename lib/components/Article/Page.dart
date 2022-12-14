@@ -1,5 +1,6 @@
 // ignore_for_file: library_prefixes
 
+import 'package:entube/components/Youtube/index.dart';
 import 'package:entube/components/ArticleItems/index.dart' as ArticleItems;
 import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,36 @@ class Page extends HookConsumerWidget {
                 FloatingActionButtonLocation.centerDocked,
             floatingActionButton: const BackBotton(),
             bottomNavigationBar: ItemBar(article: article),
-            body: Article(articleId)));
+            body: GestureDetector(
+                onHorizontalDragUpdate: (details) {
+                  // Note: Sensitivity is integer used when you don't want to mess up vertical drag
+                  int sensitivity = 8;
+                  if (details.delta.dx > sensitivity) {
+                    // Right Swipe
+                    Navigator.of(context).pop();
+                    /*
+                    ref
+                        .read(acquiringWordsStateNotifierProvider.notifier)
+                        .saveToLocal();
+                        */
+                  } else if (details.delta.dx < -sensitivity) {
+                    //Left Swipe
+                    Navigator.of(context).pop();
+                    /*
+                    ref
+                        .read(acquiringWordsStateNotifierProvider.notifier)
+                        .saveToLocal();
+                        */
+                  }
+                },
+                child: Material(
+                    color: Theme.of(context).primaryColorDark,
+                    child: SafeArea(
+                        child: Column(
+                      children: [
+                        YoutubePlayer(articleId),
+                        Expanded(child: Article(articleId)),
+                      ],
+                    ))))));
   }
 }
