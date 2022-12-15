@@ -5595,10 +5595,9 @@ type user_articles {
   created_by: uuid!
   deleted_at: timestamptz
   id: uuid!
-  play_at: Int
+  play_at: Int!
   updated_at: timestamptz!
   updated_by: uuid!
-  user_id: uuid
 }
 
 """
@@ -5692,7 +5691,6 @@ input user_articles_bool_exp {
   play_at: Int_comparison_exp
   updated_at: timestamptz_comparison_exp
   updated_by: uuid_comparison_exp
-  user_id: uuid_comparison_exp
 }
 
 """
@@ -5725,7 +5723,6 @@ input user_articles_insert_input {
   play_at: Int
   updated_at: timestamptz
   updated_by: uuid
-  user_id: uuid
 }
 
 """aggregate max on columns"""
@@ -5738,7 +5735,6 @@ type user_articles_max_fields {
   play_at: Int
   updated_at: timestamptz
   updated_by: uuid
-  user_id: uuid
 }
 
 """
@@ -5753,7 +5749,6 @@ input user_articles_max_order_by {
   play_at: order_by
   updated_at: order_by
   updated_by: order_by
-  user_id: order_by
 }
 
 """aggregate min on columns"""
@@ -5766,7 +5761,6 @@ type user_articles_min_fields {
   play_at: Int
   updated_at: timestamptz
   updated_by: uuid
-  user_id: uuid
 }
 
 """
@@ -5781,7 +5775,6 @@ input user_articles_min_order_by {
   play_at: order_by
   updated_at: order_by
   updated_by: order_by
-  user_id: order_by
 }
 
 """
@@ -5815,7 +5808,6 @@ input user_articles_order_by {
   play_at: order_by
   updated_at: order_by
   updated_by: order_by
-  user_id: order_by
 }
 
 """primary key columns input for table: user_articles"""
@@ -5850,9 +5842,6 @@ enum user_articles_select_column {
 
   """column name"""
   updated_by
-
-  """column name"""
-  user_id
 }
 
 """
@@ -5867,7 +5856,6 @@ input user_articles_set_input {
   play_at: Int
   updated_at: timestamptz
   updated_by: uuid
-  user_id: uuid
 }
 
 """aggregate stddev on columns"""
@@ -5927,7 +5915,6 @@ input user_articles_stream_cursor_value_input {
   play_at: Int
   updated_at: timestamptz
   updated_by: uuid
-  user_id: uuid
 }
 
 """aggregate sum on columns"""
@@ -5969,9 +5956,6 @@ enum user_articles_update_column {
 
   """column name"""
   updated_by
-
-  """column name"""
-  user_id
 }
 
 input user_articles_updates {

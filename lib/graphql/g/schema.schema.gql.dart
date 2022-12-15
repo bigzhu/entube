@@ -5535,7 +5535,6 @@ abstract class Guser_articles_bool_exp
   GInt_comparison_exp? get play_at;
   Gtimestamptz_comparison_exp? get updated_at;
   Guuid_comparison_exp? get updated_by;
-  Guuid_comparison_exp? get user_id;
   static Serializer<Guser_articles_bool_exp> get serializer =>
       _$guserArticlesBoolExpSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -5604,7 +5603,6 @@ abstract class Guser_articles_insert_input
   int? get play_at;
   Gtimestamptz? get updated_at;
   Guuid? get updated_by;
-  Guuid? get user_id;
   static Serializer<Guser_articles_insert_input> get serializer =>
       _$guserArticlesInsertInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -5635,7 +5633,6 @@ abstract class Guser_articles_max_order_by
   Gorder_by? get play_at;
   Gorder_by? get updated_at;
   Gorder_by? get updated_by;
-  Gorder_by? get user_id;
   static Serializer<Guser_articles_max_order_by> get serializer =>
       _$guserArticlesMaxOrderBySerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -5666,7 +5663,6 @@ abstract class Guser_articles_min_order_by
   Gorder_by? get play_at;
   Gorder_by? get updated_at;
   Gorder_by? get updated_by;
-  Gorder_by? get user_id;
   static Serializer<Guser_articles_min_order_by> get serializer =>
       _$guserArticlesMinOrderBySerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -5722,7 +5718,6 @@ abstract class Guser_articles_order_by
   Gorder_by? get play_at;
   Gorder_by? get updated_at;
   Gorder_by? get updated_by;
-  Gorder_by? get user_id;
   static Serializer<Guser_articles_order_by> get serializer =>
       _$guserArticlesOrderBySerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -5786,9 +5781,6 @@ class Guser_articles_select_column extends EnumClass {
   static const Guser_articles_select_column updated_by =
       _$guserArticlesSelectColumnupdated_by;
 
-  static const Guser_articles_select_column user_id =
-      _$guserArticlesSelectColumnuser_id;
-
   static Serializer<Guser_articles_select_column> get serializer =>
       _$guserArticlesSelectColumnSerializer;
   static BuiltSet<Guser_articles_select_column> get values =>
@@ -5814,7 +5806,6 @@ abstract class Guser_articles_set_input
   int? get play_at;
   Gtimestamptz? get updated_at;
   Guuid? get updated_by;
-  Guuid? get user_id;
   static Serializer<Guser_articles_set_input> get serializer =>
       _$guserArticlesSetInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -5946,7 +5937,6 @@ abstract class Guser_articles_stream_cursor_value_input
   int? get play_at;
   Gtimestamptz? get updated_at;
   Guuid? get updated_by;
-  Guuid? get user_id;
   static Serializer<Guser_articles_stream_cursor_value_input> get serializer =>
       _$guserArticlesStreamCursorValueInputSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
@@ -6009,9 +5999,6 @@ class Guser_articles_update_column extends EnumClass {
 
   static const Guser_articles_update_column updated_by =
       _$guserArticlesUpdateColumnupdated_by;
-
-  static const Guser_articles_update_column user_id =
-      _$guserArticlesUpdateColumnuser_id;
 
   static Serializer<Guser_articles_update_column> get serializer =>
       _$guserArticlesUpdateColumnSerializer;

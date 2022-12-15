@@ -18,7 +18,7 @@ class Sentence extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    bool isPlaying = ref.watch(playingSentencesIndexStateProvider(articleId)
+    bool isPlaying = ref.watch(playingSentencesIndexSP(articleId)
         .select((value) => value.contains(index)));
 
     return DecoratedBox(

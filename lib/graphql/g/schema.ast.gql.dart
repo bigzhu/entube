@@ -19779,7 +19779,7 @@ const user_articles = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Int'),
-        isNonNull: false,
+        isNonNull: true,
       ),
     ),
     _i1.FieldDefinitionNode(
@@ -19798,15 +19798,6 @@ const user_articles = _i1.ObjectTypeDefinitionNode(
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'uuid'),
         isNonNull: true,
-      ),
-    ),
-    _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'user_id'),
-      directives: [],
-      args: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'uuid'),
-        isNonNull: false,
       ),
     ),
   ],
@@ -20309,15 +20300,6 @@ const user_articles_bool_exp = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'user_id'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'uuid_comparison_exp'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
   ],
 );
 const user_articles_constraint = _i1.EnumTypeDefinitionNode(
@@ -20430,15 +20412,6 @@ const user_articles_insert_input = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'user_id'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'uuid'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
   ],
 );
 const user_articles_max_fields = _i1.ObjectTypeDefinitionNode(
@@ -20518,15 +20491,6 @@ const user_articles_max_fields = _i1.ObjectTypeDefinitionNode(
         isNonNull: false,
       ),
     ),
-    _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'user_id'),
-      directives: [],
-      args: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'uuid'),
-        isNonNull: false,
-      ),
-    ),
   ],
 );
 const user_articles_max_order_by = _i1.InputObjectTypeDefinitionNode(
@@ -20598,15 +20562,6 @@ const user_articles_max_order_by = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'updated_by'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'order_by'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'user_id'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'order_by'),
@@ -20693,15 +20648,6 @@ const user_articles_min_fields = _i1.ObjectTypeDefinitionNode(
         isNonNull: false,
       ),
     ),
-    _i1.FieldDefinitionNode(
-      name: _i1.NameNode(value: 'user_id'),
-      directives: [],
-      args: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'uuid'),
-        isNonNull: false,
-      ),
-    ),
   ],
 );
 const user_articles_min_order_by = _i1.InputObjectTypeDefinitionNode(
@@ -20773,15 +20719,6 @@ const user_articles_min_order_by = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'updated_by'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'order_by'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'user_id'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'order_by'),
@@ -20940,15 +20877,6 @@ const user_articles_order_by = _i1.InputObjectTypeDefinitionNode(
       ),
       defaultValue: null,
     ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'user_id'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'order_by'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
   ],
 );
 const user_articles_pk_columns_input = _i1.InputObjectTypeDefinitionNode(
@@ -21000,10 +20928,6 @@ const user_articles_select_column = _i1.EnumTypeDefinitionNode(
     ),
     _i1.EnumValueDefinitionNode(
       name: _i1.NameNode(value: 'updated_by'),
-      directives: [],
-    ),
-    _i1.EnumValueDefinitionNode(
-      name: _i1.NameNode(value: 'user_id'),
       directives: [],
     ),
   ],
@@ -21077,15 +21001,6 @@ const user_articles_set_input = _i1.InputObjectTypeDefinitionNode(
     ),
     _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'updated_by'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'uuid'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'user_id'),
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'uuid'),
@@ -21289,15 +21204,6 @@ const user_articles_stream_cursor_value_input =
       ),
       defaultValue: null,
     ),
-    _i1.InputValueDefinitionNode(
-      name: _i1.NameNode(value: 'user_id'),
-      directives: [],
-      type: _i1.NamedTypeNode(
-        name: _i1.NameNode(value: 'uuid'),
-        isNonNull: false,
-      ),
-      defaultValue: null,
-    ),
   ],
 );
 const user_articles_sum_fields = _i1.ObjectTypeDefinitionNode(
@@ -21365,10 +21271,6 @@ const user_articles_update_column = _i1.EnumTypeDefinitionNode(
     ),
     _i1.EnumValueDefinitionNode(
       name: _i1.NameNode(value: 'updated_by'),
-      directives: [],
-    ),
-    _i1.EnumValueDefinitionNode(
-      name: _i1.NameNode(value: 'user_id'),
       directives: [],
     ),
   ],

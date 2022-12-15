@@ -1221,8 +1221,6 @@ const Guser_articles_select_column _$guserArticlesSelectColumnupdated_at =
     const Guser_articles_select_column._('updated_at');
 const Guser_articles_select_column _$guserArticlesSelectColumnupdated_by =
     const Guser_articles_select_column._('updated_by');
-const Guser_articles_select_column _$guserArticlesSelectColumnuser_id =
-    const Guser_articles_select_column._('user_id');
 
 Guser_articles_select_column _$guserArticlesSelectColumnValueOf(String name) {
   switch (name) {
@@ -1242,8 +1240,6 @@ Guser_articles_select_column _$guserArticlesSelectColumnValueOf(String name) {
       return _$guserArticlesSelectColumnupdated_at;
     case 'updated_by':
       return _$guserArticlesSelectColumnupdated_by;
-    case 'user_id':
-      return _$guserArticlesSelectColumnuser_id;
     default:
       throw new ArgumentError(name);
   }
@@ -1260,7 +1256,6 @@ final BuiltSet<Guser_articles_select_column> _$guserArticlesSelectColumnValues =
   _$guserArticlesSelectColumnplay_at,
   _$guserArticlesSelectColumnupdated_at,
   _$guserArticlesSelectColumnupdated_by,
-  _$guserArticlesSelectColumnuser_id,
 ]);
 
 const Guser_articles_update_column _$guserArticlesUpdateColumnarticle_id =
@@ -1279,8 +1274,6 @@ const Guser_articles_update_column _$guserArticlesUpdateColumnupdated_at =
     const Guser_articles_update_column._('updated_at');
 const Guser_articles_update_column _$guserArticlesUpdateColumnupdated_by =
     const Guser_articles_update_column._('updated_by');
-const Guser_articles_update_column _$guserArticlesUpdateColumnuser_id =
-    const Guser_articles_update_column._('user_id');
 
 Guser_articles_update_column _$guserArticlesUpdateColumnValueOf(String name) {
   switch (name) {
@@ -1300,8 +1293,6 @@ Guser_articles_update_column _$guserArticlesUpdateColumnValueOf(String name) {
       return _$guserArticlesUpdateColumnupdated_at;
     case 'updated_by':
       return _$guserArticlesUpdateColumnupdated_by;
-    case 'user_id':
-      return _$guserArticlesUpdateColumnuser_id;
     default:
       throw new ArgumentError(name);
   }
@@ -1318,7 +1309,6 @@ final BuiltSet<Guser_articles_update_column> _$guserArticlesUpdateColumnValues =
   _$guserArticlesUpdateColumnplay_at,
   _$guserArticlesUpdateColumnupdated_at,
   _$guserArticlesUpdateColumnupdated_by,
-  _$guserArticlesUpdateColumnuser_id,
 ]);
 
 const Gusers_constraint _$gusersConstraintusers_email_key =
@@ -18097,13 +18087,6 @@ class _$Guser_articles_bool_expSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Guuid_comparison_exp)));
     }
-    value = object.user_id;
-    if (value != null) {
-      result
-        ..add('user_id')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(Guuid_comparison_exp)));
-    }
     return result;
   }
 
@@ -18178,11 +18161,6 @@ class _$Guser_articles_bool_expSerializer
           break;
         case 'updated_by':
           result.updated_by.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(Guuid_comparison_exp))!
-              as Guuid_comparison_exp);
-          break;
-        case 'user_id':
-          result.user_id.replace(serializers.deserialize(value,
                   specifiedType: const FullType(Guuid_comparison_exp))!
               as Guuid_comparison_exp);
           break;
@@ -18338,13 +18316,6 @@ class _$Guser_articles_insert_inputSerializer
         ..add(
             serializers.serialize(value, specifiedType: const FullType(Guuid)));
     }
-    value = object.user_id;
-    if (value != null) {
-      result
-        ..add('user_id')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(Guuid)));
-    }
     return result;
   }
 
@@ -18396,10 +18367,6 @@ class _$Guser_articles_insert_inputSerializer
           break;
         case 'updated_by':
           result.updated_by.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Guuid))! as Guuid);
-          break;
-        case 'user_id':
-          result.user_id.replace(serializers.deserialize(value,
               specifiedType: const FullType(Guuid))! as Guuid);
           break;
       }
@@ -18481,13 +18448,6 @@ class _$Guser_articles_max_order_bySerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Gorder_by)));
     }
-    value = object.user_id;
-    if (value != null) {
-      result
-        ..add('user_id')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gorder_by)));
-    }
     return result;
   }
 
@@ -18533,10 +18493,6 @@ class _$Guser_articles_max_order_bySerializer
           break;
         case 'updated_by':
           result.updated_by = serializers.deserialize(value,
-              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
-          break;
-        case 'user_id':
-          result.user_id = serializers.deserialize(value,
               specifiedType: const FullType(Gorder_by)) as Gorder_by?;
           break;
       }
@@ -18618,13 +18574,6 @@ class _$Guser_articles_min_order_bySerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Gorder_by)));
     }
-    value = object.user_id;
-    if (value != null) {
-      result
-        ..add('user_id')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gorder_by)));
-    }
     return result;
   }
 
@@ -18670,10 +18619,6 @@ class _$Guser_articles_min_order_bySerializer
           break;
         case 'updated_by':
           result.updated_by = serializers.deserialize(value,
-              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
-          break;
-        case 'user_id':
-          result.user_id = serializers.deserialize(value,
               specifiedType: const FullType(Gorder_by)) as Gorder_by?;
           break;
       }
@@ -18831,13 +18776,6 @@ class _$Guser_articles_order_bySerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Gorder_by)));
     }
-    value = object.user_id;
-    if (value != null) {
-      result
-        ..add('user_id')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(Gorder_by)));
-    }
     return result;
   }
 
@@ -18888,10 +18826,6 @@ class _$Guser_articles_order_bySerializer
           break;
         case 'updated_by':
           result.updated_by = serializers.deserialize(value,
-              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
-          break;
-        case 'user_id':
-          result.user_id = serializers.deserialize(value,
               specifiedType: const FullType(Gorder_by)) as Gorder_by?;
           break;
       }
@@ -19036,13 +18970,6 @@ class _$Guser_articles_set_inputSerializer
         ..add(
             serializers.serialize(value, specifiedType: const FullType(Guuid)));
     }
-    value = object.user_id;
-    if (value != null) {
-      result
-        ..add('user_id')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(Guuid)));
-    }
     return result;
   }
 
@@ -19088,10 +19015,6 @@ class _$Guser_articles_set_inputSerializer
           break;
         case 'updated_by':
           result.updated_by.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Guuid))! as Guuid);
-          break;
-        case 'user_id':
-          result.user_id.replace(serializers.deserialize(value,
               specifiedType: const FullType(Guuid))! as Guuid);
           break;
       }
@@ -19380,13 +19303,6 @@ class _$Guser_articles_stream_cursor_value_inputSerializer
         ..add(
             serializers.serialize(value, specifiedType: const FullType(Guuid)));
     }
-    value = object.user_id;
-    if (value != null) {
-      result
-        ..add('user_id')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(Guuid)));
-    }
     return result;
   }
 
@@ -19432,10 +19348,6 @@ class _$Guser_articles_stream_cursor_value_inputSerializer
           break;
         case 'updated_by':
           result.updated_by.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Guuid))! as Guuid);
-          break;
-        case 'user_id':
-          result.user_id.replace(serializers.deserialize(value,
               specifiedType: const FullType(Guuid))! as Guuid);
           break;
       }
@@ -49437,8 +49349,6 @@ class _$Guser_articles_bool_exp extends Guser_articles_bool_exp {
   final Gtimestamptz_comparison_exp? updated_at;
   @override
   final Guuid_comparison_exp? updated_by;
-  @override
-  final Guuid_comparison_exp? user_id;
 
   factory _$Guser_articles_bool_exp(
           [void Function(Guser_articles_bool_expBuilder)? updates]) =>
@@ -49456,8 +49366,7 @@ class _$Guser_articles_bool_exp extends Guser_articles_bool_exp {
       this.id,
       this.play_at,
       this.updated_at,
-      this.updated_by,
-      this.user_id})
+      this.updated_by})
       : super._();
 
   @override
@@ -49484,8 +49393,7 @@ class _$Guser_articles_bool_exp extends Guser_articles_bool_exp {
         id == other.id &&
         play_at == other.play_at &&
         updated_at == other.updated_at &&
-        updated_by == other.updated_by &&
-        user_id == other.user_id;
+        updated_by == other.updated_by;
   }
 
   @override
@@ -49500,20 +49408,18 @@ class _$Guser_articles_bool_exp extends Guser_articles_bool_exp {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc(
-                                                $jc($jc(0, G_and.hashCode),
-                                                    G_not.hashCode),
-                                                G_or.hashCode),
-                                            article.hashCode),
-                                        article_id.hashCode),
-                                    created_at.hashCode),
-                                created_by.hashCode),
-                            deleted_at.hashCode),
-                        id.hashCode),
-                    play_at.hashCode),
-                updated_at.hashCode),
-            updated_by.hashCode),
-        user_id.hashCode));
+                                            $jc($jc(0, G_and.hashCode),
+                                                G_not.hashCode),
+                                            G_or.hashCode),
+                                        article.hashCode),
+                                    article_id.hashCode),
+                                created_at.hashCode),
+                            created_by.hashCode),
+                        deleted_at.hashCode),
+                    id.hashCode),
+                play_at.hashCode),
+            updated_at.hashCode),
+        updated_by.hashCode));
   }
 
   @override
@@ -49530,8 +49436,7 @@ class _$Guser_articles_bool_exp extends Guser_articles_bool_exp {
           ..add('id', id)
           ..add('play_at', play_at)
           ..add('updated_at', updated_at)
-          ..add('updated_by', updated_by)
-          ..add('user_id', user_id))
+          ..add('updated_by', updated_by))
         .toString();
   }
 }
@@ -49608,12 +49513,6 @@ class Guser_articles_bool_expBuilder
   set updated_by(Guuid_comparison_expBuilder? updated_by) =>
       _$this._updated_by = updated_by;
 
-  Guuid_comparison_expBuilder? _user_id;
-  Guuid_comparison_expBuilder get user_id =>
-      _$this._user_id ??= new Guuid_comparison_expBuilder();
-  set user_id(Guuid_comparison_expBuilder? user_id) =>
-      _$this._user_id = user_id;
-
   Guser_articles_bool_expBuilder();
 
   Guser_articles_bool_expBuilder get _$this {
@@ -49631,7 +49530,6 @@ class Guser_articles_bool_expBuilder
       _play_at = $v.play_at?.toBuilder();
       _updated_at = $v.updated_at?.toBuilder();
       _updated_by = $v.updated_by?.toBuilder();
-      _user_id = $v.user_id?.toBuilder();
       _$v = null;
     }
     return this;
@@ -49667,8 +49565,7 @@ class Guser_articles_bool_expBuilder
               id: _id?.build(),
               play_at: _play_at?.build(),
               updated_at: _updated_at?.build(),
-              updated_by: _updated_by?.build(),
-              user_id: _user_id?.build());
+              updated_by: _updated_by?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -49696,8 +49593,6 @@ class Guser_articles_bool_expBuilder
         _updated_at?.build();
         _$failedField = 'updated_by';
         _updated_by?.build();
-        _$failedField = 'user_id';
-        _user_id?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'Guser_articles_bool_exp', _$failedField, e.toString());
@@ -49807,8 +49702,6 @@ class _$Guser_articles_insert_input extends Guser_articles_insert_input {
   final Gtimestamptz? updated_at;
   @override
   final Guuid? updated_by;
-  @override
-  final Guuid? user_id;
 
   factory _$Guser_articles_insert_input(
           [void Function(Guser_articles_insert_inputBuilder)? updates]) =>
@@ -49823,8 +49716,7 @@ class _$Guser_articles_insert_input extends Guser_articles_insert_input {
       this.id,
       this.play_at,
       this.updated_at,
-      this.updated_by,
-      this.user_id})
+      this.updated_by})
       : super._();
 
   @override
@@ -49848,8 +49740,7 @@ class _$Guser_articles_insert_input extends Guser_articles_insert_input {
         id == other.id &&
         play_at == other.play_at &&
         updated_at == other.updated_at &&
-        updated_by == other.updated_by &&
-        user_id == other.user_id;
+        updated_by == other.updated_by;
   }
 
   @override
@@ -49861,17 +49752,15 @@ class _$Guser_articles_insert_input extends Guser_articles_insert_input {
                     $jc(
                         $jc(
                             $jc(
-                                $jc(
-                                    $jc($jc(0, article.hashCode),
-                                        article_id.hashCode),
-                                    created_at.hashCode),
-                                created_by.hashCode),
-                            deleted_at.hashCode),
-                        id.hashCode),
-                    play_at.hashCode),
-                updated_at.hashCode),
-            updated_by.hashCode),
-        user_id.hashCode));
+                                $jc($jc(0, article.hashCode),
+                                    article_id.hashCode),
+                                created_at.hashCode),
+                            created_by.hashCode),
+                        deleted_at.hashCode),
+                    id.hashCode),
+                play_at.hashCode),
+            updated_at.hashCode),
+        updated_by.hashCode));
   }
 
   @override
@@ -49885,8 +49774,7 @@ class _$Guser_articles_insert_input extends Guser_articles_insert_input {
           ..add('id', id)
           ..add('play_at', play_at)
           ..add('updated_at', updated_at)
-          ..add('updated_by', updated_by)
-          ..add('user_id', user_id))
+          ..add('updated_by', updated_by))
         .toString();
   }
 }
@@ -49941,10 +49829,6 @@ class Guser_articles_insert_inputBuilder
   GuuidBuilder get updated_by => _$this._updated_by ??= new GuuidBuilder();
   set updated_by(GuuidBuilder? updated_by) => _$this._updated_by = updated_by;
 
-  GuuidBuilder? _user_id;
-  GuuidBuilder get user_id => _$this._user_id ??= new GuuidBuilder();
-  set user_id(GuuidBuilder? user_id) => _$this._user_id = user_id;
-
   Guser_articles_insert_inputBuilder();
 
   Guser_articles_insert_inputBuilder get _$this {
@@ -49959,7 +49843,6 @@ class Guser_articles_insert_inputBuilder
       _play_at = $v.play_at;
       _updated_at = $v.updated_at?.toBuilder();
       _updated_by = $v.updated_by?.toBuilder();
-      _user_id = $v.user_id?.toBuilder();
       _$v = null;
     }
     return this;
@@ -49992,8 +49875,7 @@ class Guser_articles_insert_inputBuilder
               id: _id?.build(),
               play_at: play_at,
               updated_at: _updated_at?.build(),
-              updated_by: _updated_by?.build(),
-              user_id: _user_id?.build());
+              updated_by: _updated_by?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -50014,8 +49896,6 @@ class Guser_articles_insert_inputBuilder
         _updated_at?.build();
         _$failedField = 'updated_by';
         _updated_by?.build();
-        _$failedField = 'user_id';
-        _user_id?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'Guser_articles_insert_input', _$failedField, e.toString());
@@ -50044,8 +49924,6 @@ class _$Guser_articles_max_order_by extends Guser_articles_max_order_by {
   final Gorder_by? updated_at;
   @override
   final Gorder_by? updated_by;
-  @override
-  final Gorder_by? user_id;
 
   factory _$Guser_articles_max_order_by(
           [void Function(Guser_articles_max_order_byBuilder)? updates]) =>
@@ -50059,8 +49937,7 @@ class _$Guser_articles_max_order_by extends Guser_articles_max_order_by {
       this.id,
       this.play_at,
       this.updated_at,
-      this.updated_by,
-      this.user_id})
+      this.updated_by})
       : super._();
 
   @override
@@ -50083,8 +49960,7 @@ class _$Guser_articles_max_order_by extends Guser_articles_max_order_by {
         id == other.id &&
         play_at == other.play_at &&
         updated_at == other.updated_at &&
-        updated_by == other.updated_by &&
-        user_id == other.user_id;
+        updated_by == other.updated_by;
   }
 
   @override
@@ -50095,16 +49971,14 @@ class _$Guser_articles_max_order_by extends Guser_articles_max_order_by {
                 $jc(
                     $jc(
                         $jc(
-                            $jc(
-                                $jc($jc(0, article_id.hashCode),
-                                    created_at.hashCode),
-                                created_by.hashCode),
-                            deleted_at.hashCode),
-                        id.hashCode),
-                    play_at.hashCode),
-                updated_at.hashCode),
-            updated_by.hashCode),
-        user_id.hashCode));
+                            $jc($jc(0, article_id.hashCode),
+                                created_at.hashCode),
+                            created_by.hashCode),
+                        deleted_at.hashCode),
+                    id.hashCode),
+                play_at.hashCode),
+            updated_at.hashCode),
+        updated_by.hashCode));
   }
 
   @override
@@ -50117,8 +49991,7 @@ class _$Guser_articles_max_order_by extends Guser_articles_max_order_by {
           ..add('id', id)
           ..add('play_at', play_at)
           ..add('updated_at', updated_at)
-          ..add('updated_by', updated_by)
-          ..add('user_id', user_id))
+          ..add('updated_by', updated_by))
         .toString();
   }
 }
@@ -50161,10 +50034,6 @@ class Guser_articles_max_order_byBuilder
   Gorder_by? get updated_by => _$this._updated_by;
   set updated_by(Gorder_by? updated_by) => _$this._updated_by = updated_by;
 
-  Gorder_by? _user_id;
-  Gorder_by? get user_id => _$this._user_id;
-  set user_id(Gorder_by? user_id) => _$this._user_id = user_id;
-
   Guser_articles_max_order_byBuilder();
 
   Guser_articles_max_order_byBuilder get _$this {
@@ -50178,7 +50047,6 @@ class Guser_articles_max_order_byBuilder
       _play_at = $v.play_at;
       _updated_at = $v.updated_at;
       _updated_by = $v.updated_by;
-      _user_id = $v.user_id;
       _$v = null;
     }
     return this;
@@ -50208,8 +50076,7 @@ class Guser_articles_max_order_byBuilder
             id: id,
             play_at: play_at,
             updated_at: updated_at,
-            updated_by: updated_by,
-            user_id: user_id);
+            updated_by: updated_by);
     replace(_$result);
     return _$result;
   }
@@ -50232,8 +50099,6 @@ class _$Guser_articles_min_order_by extends Guser_articles_min_order_by {
   final Gorder_by? updated_at;
   @override
   final Gorder_by? updated_by;
-  @override
-  final Gorder_by? user_id;
 
   factory _$Guser_articles_min_order_by(
           [void Function(Guser_articles_min_order_byBuilder)? updates]) =>
@@ -50247,8 +50112,7 @@ class _$Guser_articles_min_order_by extends Guser_articles_min_order_by {
       this.id,
       this.play_at,
       this.updated_at,
-      this.updated_by,
-      this.user_id})
+      this.updated_by})
       : super._();
 
   @override
@@ -50271,8 +50135,7 @@ class _$Guser_articles_min_order_by extends Guser_articles_min_order_by {
         id == other.id &&
         play_at == other.play_at &&
         updated_at == other.updated_at &&
-        updated_by == other.updated_by &&
-        user_id == other.user_id;
+        updated_by == other.updated_by;
   }
 
   @override
@@ -50283,16 +50146,14 @@ class _$Guser_articles_min_order_by extends Guser_articles_min_order_by {
                 $jc(
                     $jc(
                         $jc(
-                            $jc(
-                                $jc($jc(0, article_id.hashCode),
-                                    created_at.hashCode),
-                                created_by.hashCode),
-                            deleted_at.hashCode),
-                        id.hashCode),
-                    play_at.hashCode),
-                updated_at.hashCode),
-            updated_by.hashCode),
-        user_id.hashCode));
+                            $jc($jc(0, article_id.hashCode),
+                                created_at.hashCode),
+                            created_by.hashCode),
+                        deleted_at.hashCode),
+                    id.hashCode),
+                play_at.hashCode),
+            updated_at.hashCode),
+        updated_by.hashCode));
   }
 
   @override
@@ -50305,8 +50166,7 @@ class _$Guser_articles_min_order_by extends Guser_articles_min_order_by {
           ..add('id', id)
           ..add('play_at', play_at)
           ..add('updated_at', updated_at)
-          ..add('updated_by', updated_by)
-          ..add('user_id', user_id))
+          ..add('updated_by', updated_by))
         .toString();
   }
 }
@@ -50349,10 +50209,6 @@ class Guser_articles_min_order_byBuilder
   Gorder_by? get updated_by => _$this._updated_by;
   set updated_by(Gorder_by? updated_by) => _$this._updated_by = updated_by;
 
-  Gorder_by? _user_id;
-  Gorder_by? get user_id => _$this._user_id;
-  set user_id(Gorder_by? user_id) => _$this._user_id = user_id;
-
   Guser_articles_min_order_byBuilder();
 
   Guser_articles_min_order_byBuilder get _$this {
@@ -50366,7 +50222,6 @@ class Guser_articles_min_order_byBuilder
       _play_at = $v.play_at;
       _updated_at = $v.updated_at;
       _updated_by = $v.updated_by;
-      _user_id = $v.user_id;
       _$v = null;
     }
     return this;
@@ -50396,8 +50251,7 @@ class Guser_articles_min_order_byBuilder
             id: id,
             play_at: play_at,
             updated_at: updated_at,
-            updated_by: updated_by,
-            user_id: user_id);
+            updated_by: updated_by);
     replace(_$result);
     return _$result;
   }
@@ -50554,8 +50408,6 @@ class _$Guser_articles_order_by extends Guser_articles_order_by {
   final Gorder_by? updated_at;
   @override
   final Gorder_by? updated_by;
-  @override
-  final Gorder_by? user_id;
 
   factory _$Guser_articles_order_by(
           [void Function(Guser_articles_order_byBuilder)? updates]) =>
@@ -50570,8 +50422,7 @@ class _$Guser_articles_order_by extends Guser_articles_order_by {
       this.id,
       this.play_at,
       this.updated_at,
-      this.updated_by,
-      this.user_id})
+      this.updated_by})
       : super._();
 
   @override
@@ -50595,8 +50446,7 @@ class _$Guser_articles_order_by extends Guser_articles_order_by {
         id == other.id &&
         play_at == other.play_at &&
         updated_at == other.updated_at &&
-        updated_by == other.updated_by &&
-        user_id == other.user_id;
+        updated_by == other.updated_by;
   }
 
   @override
@@ -50608,17 +50458,15 @@ class _$Guser_articles_order_by extends Guser_articles_order_by {
                     $jc(
                         $jc(
                             $jc(
-                                $jc(
-                                    $jc($jc(0, article.hashCode),
-                                        article_id.hashCode),
-                                    created_at.hashCode),
-                                created_by.hashCode),
-                            deleted_at.hashCode),
-                        id.hashCode),
-                    play_at.hashCode),
-                updated_at.hashCode),
-            updated_by.hashCode),
-        user_id.hashCode));
+                                $jc($jc(0, article.hashCode),
+                                    article_id.hashCode),
+                                created_at.hashCode),
+                            created_by.hashCode),
+                        deleted_at.hashCode),
+                    id.hashCode),
+                play_at.hashCode),
+            updated_at.hashCode),
+        updated_by.hashCode));
   }
 
   @override
@@ -50632,8 +50480,7 @@ class _$Guser_articles_order_by extends Guser_articles_order_by {
           ..add('id', id)
           ..add('play_at', play_at)
           ..add('updated_at', updated_at)
-          ..add('updated_by', updated_by)
-          ..add('user_id', user_id))
+          ..add('updated_by', updated_by))
         .toString();
   }
 }
@@ -50680,10 +50527,6 @@ class Guser_articles_order_byBuilder
   Gorder_by? get updated_by => _$this._updated_by;
   set updated_by(Gorder_by? updated_by) => _$this._updated_by = updated_by;
 
-  Gorder_by? _user_id;
-  Gorder_by? get user_id => _$this._user_id;
-  set user_id(Gorder_by? user_id) => _$this._user_id = user_id;
-
   Guser_articles_order_byBuilder();
 
   Guser_articles_order_byBuilder get _$this {
@@ -50698,7 +50541,6 @@ class Guser_articles_order_byBuilder
       _play_at = $v.play_at;
       _updated_at = $v.updated_at;
       _updated_by = $v.updated_by;
-      _user_id = $v.user_id;
       _$v = null;
     }
     return this;
@@ -50731,8 +50573,7 @@ class Guser_articles_order_byBuilder
               id: id,
               play_at: play_at,
               updated_at: updated_at,
-              updated_by: updated_by,
-              user_id: user_id);
+              updated_by: updated_by);
     } catch (_) {
       late String _$failedField;
       try {
@@ -50863,8 +50704,6 @@ class _$Guser_articles_set_input extends Guser_articles_set_input {
   final Gtimestamptz? updated_at;
   @override
   final Guuid? updated_by;
-  @override
-  final Guuid? user_id;
 
   factory _$Guser_articles_set_input(
           [void Function(Guser_articles_set_inputBuilder)? updates]) =>
@@ -50878,8 +50717,7 @@ class _$Guser_articles_set_input extends Guser_articles_set_input {
       this.id,
       this.play_at,
       this.updated_at,
-      this.updated_by,
-      this.user_id})
+      this.updated_by})
       : super._();
 
   @override
@@ -50902,8 +50740,7 @@ class _$Guser_articles_set_input extends Guser_articles_set_input {
         id == other.id &&
         play_at == other.play_at &&
         updated_at == other.updated_at &&
-        updated_by == other.updated_by &&
-        user_id == other.user_id;
+        updated_by == other.updated_by;
   }
 
   @override
@@ -50914,16 +50751,14 @@ class _$Guser_articles_set_input extends Guser_articles_set_input {
                 $jc(
                     $jc(
                         $jc(
-                            $jc(
-                                $jc($jc(0, article_id.hashCode),
-                                    created_at.hashCode),
-                                created_by.hashCode),
-                            deleted_at.hashCode),
-                        id.hashCode),
-                    play_at.hashCode),
-                updated_at.hashCode),
-            updated_by.hashCode),
-        user_id.hashCode));
+                            $jc($jc(0, article_id.hashCode),
+                                created_at.hashCode),
+                            created_by.hashCode),
+                        deleted_at.hashCode),
+                    id.hashCode),
+                play_at.hashCode),
+            updated_at.hashCode),
+        updated_by.hashCode));
   }
 
   @override
@@ -50936,8 +50771,7 @@ class _$Guser_articles_set_input extends Guser_articles_set_input {
           ..add('id', id)
           ..add('play_at', play_at)
           ..add('updated_at', updated_at)
-          ..add('updated_by', updated_by)
-          ..add('user_id', user_id))
+          ..add('updated_by', updated_by))
         .toString();
   }
 }
@@ -50985,10 +50819,6 @@ class Guser_articles_set_inputBuilder
   GuuidBuilder get updated_by => _$this._updated_by ??= new GuuidBuilder();
   set updated_by(GuuidBuilder? updated_by) => _$this._updated_by = updated_by;
 
-  GuuidBuilder? _user_id;
-  GuuidBuilder get user_id => _$this._user_id ??= new GuuidBuilder();
-  set user_id(GuuidBuilder? user_id) => _$this._user_id = user_id;
-
   Guser_articles_set_inputBuilder();
 
   Guser_articles_set_inputBuilder get _$this {
@@ -51002,7 +50832,6 @@ class Guser_articles_set_inputBuilder
       _play_at = $v.play_at;
       _updated_at = $v.updated_at?.toBuilder();
       _updated_by = $v.updated_by?.toBuilder();
-      _user_id = $v.user_id?.toBuilder();
       _$v = null;
     }
     return this;
@@ -51034,8 +50863,7 @@ class Guser_articles_set_inputBuilder
               id: _id?.build(),
               play_at: play_at,
               updated_at: _updated_at?.build(),
-              updated_by: _updated_by?.build(),
-              user_id: _user_id?.build());
+              updated_by: _updated_by?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -51054,8 +50882,6 @@ class Guser_articles_set_inputBuilder
         _updated_at?.build();
         _$failedField = 'updated_by';
         _updated_by?.build();
-        _$failedField = 'user_id';
-        _user_id?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'Guser_articles_set_input', _$failedField, e.toString());
@@ -51456,8 +51282,6 @@ class _$Guser_articles_stream_cursor_value_input
   final Gtimestamptz? updated_at;
   @override
   final Guuid? updated_by;
-  @override
-  final Guuid? user_id;
 
   factory _$Guser_articles_stream_cursor_value_input(
           [void Function(Guser_articles_stream_cursor_value_inputBuilder)?
@@ -51473,8 +51297,7 @@ class _$Guser_articles_stream_cursor_value_input
       this.id,
       this.play_at,
       this.updated_at,
-      this.updated_by,
-      this.user_id})
+      this.updated_by})
       : super._();
 
   @override
@@ -51498,8 +51321,7 @@ class _$Guser_articles_stream_cursor_value_input
         id == other.id &&
         play_at == other.play_at &&
         updated_at == other.updated_at &&
-        updated_by == other.updated_by &&
-        user_id == other.user_id;
+        updated_by == other.updated_by;
   }
 
   @override
@@ -51510,16 +51332,14 @@ class _$Guser_articles_stream_cursor_value_input
                 $jc(
                     $jc(
                         $jc(
-                            $jc(
-                                $jc($jc(0, article_id.hashCode),
-                                    created_at.hashCode),
-                                created_by.hashCode),
-                            deleted_at.hashCode),
-                        id.hashCode),
-                    play_at.hashCode),
-                updated_at.hashCode),
-            updated_by.hashCode),
-        user_id.hashCode));
+                            $jc($jc(0, article_id.hashCode),
+                                created_at.hashCode),
+                            created_by.hashCode),
+                        deleted_at.hashCode),
+                    id.hashCode),
+                play_at.hashCode),
+            updated_at.hashCode),
+        updated_by.hashCode));
   }
 
   @override
@@ -51533,8 +51353,7 @@ class _$Guser_articles_stream_cursor_value_input
           ..add('id', id)
           ..add('play_at', play_at)
           ..add('updated_at', updated_at)
-          ..add('updated_by', updated_by)
-          ..add('user_id', user_id))
+          ..add('updated_by', updated_by))
         .toString();
   }
 }
@@ -51583,10 +51402,6 @@ class Guser_articles_stream_cursor_value_inputBuilder
   GuuidBuilder get updated_by => _$this._updated_by ??= new GuuidBuilder();
   set updated_by(GuuidBuilder? updated_by) => _$this._updated_by = updated_by;
 
-  GuuidBuilder? _user_id;
-  GuuidBuilder get user_id => _$this._user_id ??= new GuuidBuilder();
-  set user_id(GuuidBuilder? user_id) => _$this._user_id = user_id;
-
   Guser_articles_stream_cursor_value_inputBuilder();
 
   Guser_articles_stream_cursor_value_inputBuilder get _$this {
@@ -51600,7 +51415,6 @@ class Guser_articles_stream_cursor_value_inputBuilder
       _play_at = $v.play_at;
       _updated_at = $v.updated_at?.toBuilder();
       _updated_by = $v.updated_by?.toBuilder();
-      _user_id = $v.user_id?.toBuilder();
       _$v = null;
     }
     return this;
@@ -51633,8 +51447,7 @@ class Guser_articles_stream_cursor_value_inputBuilder
               id: _id?.build(),
               play_at: play_at,
               updated_at: _updated_at?.build(),
-              updated_by: _updated_by?.build(),
-              user_id: _user_id?.build());
+              updated_by: _updated_by?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -51653,8 +51466,6 @@ class Guser_articles_stream_cursor_value_inputBuilder
         _updated_at?.build();
         _$failedField = 'updated_by';
         _updated_by?.build();
-        _$failedField = 'user_id';
-        _user_id?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'Guser_articles_stream_cursor_value_input',

@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+import 'package:entube/components/Sentence/index.dart';
 /*
 import 'package:entube/components/AcquiringWords/index.dart';
 import 'package:entube/components/UserArticles/index.dart';
@@ -60,6 +62,8 @@ class YoutubePlayer extends HookConsumerWidget {
 }
 */
 
+import 'package:entube/components/UserArticles/g/services.data.gql.dart';
+import 'package:entube/utils/compute.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:entube/components/AcquiringWords/index.dart';
@@ -82,7 +86,7 @@ class YoutubePlayer extends StatefulHookConsumerWidget {
 class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
     with WidgetsBindingObserver {
   late String articleId;
-  late UserArticleModel userArticle;
+  late GUserArticlesData_user_articles userArticle;
   late YoutubePlayerController _controller;
   List<int> playingSentencesIndex = [];
   List<SentenceModel>? sentences;
@@ -93,7 +97,7 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
     super.initState();
     articleId = widget.articleId;
     WidgetsBinding.instance.addObserver(this);
-    getUserArticle();
+    findUserArticle();
     initYouTubeControler();
   }
 
@@ -121,15 +125,34 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
     }
   }
 
+// 算出哪些句子需要高亮, 返回句子的 index 列表
+  List<int> findCurrentPlaying(
+      List<SentenceModel> sentences, int currentSeconds) {
+    List<int> playingSentencesIndex = <int>[];
+    for (int i = 0; i < sentences.length; i++) {
+      if (sentences[i].seekTo == '') {
+        playingSentencesIndex.add(i);
+        continue;
+      }
+      int starTime = toDuration(sentences[i].seekTo).inSeconds;
+      if (starTime <= currentSeconds) {
+        playingSentencesIndex = <int>[i];
+      }
+      if (starTime > currentSeconds) {
+        break;
+      }
+    }
+    return playingSentencesIndex;
+  }
+
   //找到正在播放的句子
   definePlaydingSentence() {
-    List<int> tmp = findCurrentPlaying(sentences!, userArticle.playAt!);
+    List<int> tmp = findCurrentPlaying(sentences!, userArticle.play_at);
     if (tmp.isNotEmpty &&
         (playingSentencesIndex.isEmpty || playingSentencesIndex[0] != tmp[0])) {
       playingSentencesIndex = tmp;
-      ref
-          .read(playingSentencesIndexStateProvider(articleId).notifier)
-          .update((state) => playingSentencesIndex);
+      ref.read(playingSentencesIndexSP(articleId).notifier).state =
+          playingSentencesIndex;
       // scroll sentences
       debugPrint("scroll to ${playingSentencesIndex[0]}");
       ref.watch(sentencesScrollControllerProvider).scrollTo(
@@ -143,62 +166,59 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
 
   initYouTubeControler() {
     String initialVideoId =
-        YoutubePlayerController.convertUrlToId(articleNoSe.youtube) ?? '';
+        YoutubePlayerController.convertUrlToId(userArticle.article.url) ?? '';
 
-    final _controller = YoutubePlayerController(
-      params: YoutubePlayerParams(
+    final controller = YoutubePlayerController(
+      params: const YoutubePlayerParams(
         enableCaption: false,
-        startAt: Duration(seconds: userArticle.playAt ?? 0),
+        //startAt: Duration(seconds: userArticle.play_at ?? 0),
         showControls: true,
         showFullscreenButton: true,
       ),
     );
-    _controller
-      ..onInit = () {
-        _controller.cueVideoById(
-            videoId: initialVideoId,
-            startSeconds: userArticle.playAt?.toDouble());
-      };
+    controller.onInit = () {
+      controller.cueVideoById(
+          videoId: initialVideoId,
+          startSeconds: userArticle.play_at?.toDouble());
+    };
 
-    _controller.listen((event) {
+    controller.listen((event) {
       //必须要把对Stream的监听放在 listen 里才能有用
-      _controller.getCurrentPositionStream().listen((Duration currentTime) {
+      controller.getCurrentPositionStream().listen((Duration currentTime) {
         int seconds = currentTime.inSeconds;
         //开始播放有那么一下会是 0, 会把 文章又滚回去
         if (seconds != 0) {
-          userArticle.playAt = seconds;
+          userArticle.play_at = seconds;
           definePlaydingSentence();
         }
       });
     });
 
-    Future.delayed(Duration.zero, () {
-      ref.read(youtubePlayerControllerStateProvider.notifier).state =
-          _controller;
+    Future(() {
+      ref.read(youtubePlayerControllerSP.notifier).state = controller;
     });
   }
 
-  getUserArticle() {
-    List<UserArticleModel> userArticles =
-        ref.read(userArticlesStateNotifierProvider);
-    int index = userArticles
-        .indexWhere((element) => element.article.objectId == articleId);
+  findUserArticle() {
+    final userArticleFind = ref.read(userArticlesSP.select((values) {
+      return values
+          .firstWhereOrNull((value) => value.article.id.value == articleId);
+    }));
 
-    if (index == -1) {
+    if (userArticleFind == null) {
       String errorInfo =
           "can't found correct user article user article id: $articleId";
       ref.read(errorMeesageSP.notifier).state = errorInfo;
       throw errorInfo;
     }
-    userArticle = userArticles[index];
+    userArticle = userArticleFind;
   }
 
   @override
   Widget build(BuildContext context) {
     debugPrint("build NewYouTubePlayer");
     //make sure PlayAt not null
-    userArticle.playAt ??= 0;
-    debugPrint("userArticle.playAt=${userArticle.playAt}");
+    debugPrint("userArticle.playAt=${userArticle.play_at}");
     //获取 sentences
     ArticleModel? article = ref.watch(articleStateNotifierProvider(articleId));
     if (article != null) {
