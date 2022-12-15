@@ -6,20 +6,19 @@ part of 'services.var.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GArticleItemsVars> _$gArticleItemsVarsSerializer =
-    new _$GArticleItemsVarsSerializer();
+Serializer<GArticlesVars> _$gArticlesVarsSerializer =
+    new _$GArticlesVarsSerializer();
 Serializer<GArticleFragmentVars> _$gArticleFragmentVarsSerializer =
     new _$GArticleFragmentVarsSerializer();
 
-class _$GArticleItemsVarsSerializer
-    implements StructuredSerializer<GArticleItemsVars> {
+class _$GArticlesVarsSerializer implements StructuredSerializer<GArticlesVars> {
   @override
-  final Iterable<Type> types = const [GArticleItemsVars, _$GArticleItemsVars];
+  final Iterable<Type> types = const [GArticlesVars, _$GArticlesVars];
   @override
-  final String wireName = 'GArticleItemsVars';
+  final String wireName = 'GArticlesVars';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GArticleItemsVars object,
+  Iterable<Object?> serialize(Serializers serializers, GArticlesVars object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
@@ -39,10 +38,10 @@ class _$GArticleItemsVarsSerializer
   }
 
   @override
-  GArticleItemsVars deserialize(
+  GArticlesVars deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GArticleItemsVarsBuilder();
+    final result = new GArticlesVarsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -90,30 +89,28 @@ class _$GArticleFragmentVarsSerializer
   }
 }
 
-class _$GArticleItemsVars extends GArticleItemsVars {
+class _$GArticlesVars extends GArticlesVars {
   @override
   final int? offset;
   @override
   final int? limit;
 
-  factory _$GArticleItemsVars(
-          [void Function(GArticleItemsVarsBuilder)? updates]) =>
-      (new GArticleItemsVarsBuilder()..update(updates))._build();
+  factory _$GArticlesVars([void Function(GArticlesVarsBuilder)? updates]) =>
+      (new GArticlesVarsBuilder()..update(updates))._build();
 
-  _$GArticleItemsVars._({this.offset, this.limit}) : super._();
+  _$GArticlesVars._({this.offset, this.limit}) : super._();
 
   @override
-  GArticleItemsVars rebuild(void Function(GArticleItemsVarsBuilder) updates) =>
+  GArticlesVars rebuild(void Function(GArticlesVarsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GArticleItemsVarsBuilder toBuilder() =>
-      new GArticleItemsVarsBuilder()..replace(this);
+  GArticlesVarsBuilder toBuilder() => new GArticlesVarsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is GArticleItemsVars &&
+    return other is GArticlesVars &&
         offset == other.offset &&
         limit == other.limit;
   }
@@ -125,16 +122,16 @@ class _$GArticleItemsVars extends GArticleItemsVars {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GArticleItemsVars')
+    return (newBuiltValueToStringHelper(r'GArticlesVars')
           ..add('offset', offset)
           ..add('limit', limit))
         .toString();
   }
 }
 
-class GArticleItemsVarsBuilder
-    implements Builder<GArticleItemsVars, GArticleItemsVarsBuilder> {
-  _$GArticleItemsVars? _$v;
+class GArticlesVarsBuilder
+    implements Builder<GArticlesVars, GArticlesVarsBuilder> {
+  _$GArticlesVars? _$v;
 
   int? _offset;
   int? get offset => _$this._offset;
@@ -144,9 +141,9 @@ class GArticleItemsVarsBuilder
   int? get limit => _$this._limit;
   set limit(int? limit) => _$this._limit = limit;
 
-  GArticleItemsVarsBuilder();
+  GArticlesVarsBuilder();
 
-  GArticleItemsVarsBuilder get _$this {
+  GArticlesVarsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _offset = $v.offset;
@@ -157,22 +154,21 @@ class GArticleItemsVarsBuilder
   }
 
   @override
-  void replace(GArticleItemsVars other) {
+  void replace(GArticlesVars other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GArticleItemsVars;
+    _$v = other as _$GArticlesVars;
   }
 
   @override
-  void update(void Function(GArticleItemsVarsBuilder)? updates) {
+  void update(void Function(GArticlesVarsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GArticleItemsVars build() => _build();
+  GArticlesVars build() => _build();
 
-  _$GArticleItemsVars _build() {
-    final _$result =
-        _$v ?? new _$GArticleItemsVars._(offset: offset, limit: limit);
+  _$GArticlesVars _build() {
+    final _$result = _$v ?? new _$GArticlesVars._(offset: offset, limit: limit);
     replace(_$result);
     return _$result;
   }

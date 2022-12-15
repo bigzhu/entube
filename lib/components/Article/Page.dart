@@ -17,7 +17,7 @@ class Page extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final userArticle = ref.watch(UserArticles.userArticlesSP.select((value) =>
         value.firstWhere((element) => element.article.id == Guuid(articleId))));
-    final article = ArticleItems.GArticleItemsData_articles.fromJson(
+    final article = ArticleItems.GArticlesData_articles.fromJson(
         userArticle.article.toJson());
     if (article == null) {}
 

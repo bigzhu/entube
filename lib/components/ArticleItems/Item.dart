@@ -10,7 +10,7 @@ import 'g/services.data.gql.dart';
 class Item extends HookConsumerWidget {
   const Item({Key? key, required this.article, this.loading}) : super(key: key);
 
-  final GArticleItemsData_articles article;
+  final GArticlesData_articles article;
   final bool? loading;
 
   @override

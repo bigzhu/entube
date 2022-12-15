@@ -6,25 +6,24 @@ part of 'services.req.gql.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<GArticleItemsReq> _$gArticleItemsReqSerializer =
-    new _$GArticleItemsReqSerializer();
+Serializer<GArticlesReq> _$gArticlesReqSerializer =
+    new _$GArticlesReqSerializer();
 Serializer<GArticleFragmentReq> _$gArticleFragmentReqSerializer =
     new _$GArticleFragmentReqSerializer();
 
-class _$GArticleItemsReqSerializer
-    implements StructuredSerializer<GArticleItemsReq> {
+class _$GArticlesReqSerializer implements StructuredSerializer<GArticlesReq> {
   @override
-  final Iterable<Type> types = const [GArticleItemsReq, _$GArticleItemsReq];
+  final Iterable<Type> types = const [GArticlesReq, _$GArticlesReq];
   @override
-  final String wireName = 'GArticleItemsReq';
+  final String wireName = 'GArticlesReq';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, GArticleItemsReq object,
+  Iterable<Object?> serialize(Serializers serializers, GArticlesReq object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'vars',
       serializers.serialize(object.vars,
-          specifiedType: const FullType(_i3.GArticleItemsVars)),
+          specifiedType: const FullType(_i3.GArticlesVars)),
       'operation',
       serializers.serialize(object.operation,
           specifiedType: const FullType(_i4.Operation)),
@@ -45,7 +44,7 @@ class _$GArticleItemsReqSerializer
       result
         ..add('optimisticResponse')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i2.GArticleItemsData)));
+            specifiedType: const FullType(_i2.GArticlesData)));
     }
     value = object.updateCacheHandlerKey;
     if (value != null) {
@@ -73,10 +72,10 @@ class _$GArticleItemsReqSerializer
   }
 
   @override
-  GArticleItemsReq deserialize(
+  GArticlesReq deserialize(
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = new GArticleItemsReqBuilder();
+    final result = new GArticlesReqBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -86,8 +85,8 @@ class _$GArticleItemsReqSerializer
       switch (key) {
         case 'vars':
           result.vars.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(_i3.GArticleItemsVars))!
-              as _i3.GArticleItemsVars);
+                  specifiedType: const FullType(_i3.GArticlesVars))!
+              as _i3.GArticlesVars);
           break;
         case 'operation':
           result.operation = serializers.deserialize(value,
@@ -99,8 +98,8 @@ class _$GArticleItemsReqSerializer
           break;
         case 'optimisticResponse':
           result.optimisticResponse.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(_i2.GArticleItemsData))!
-              as _i2.GArticleItemsData);
+                  specifiedType: const FullType(_i2.GArticlesData))!
+              as _i2.GArticlesData);
           break;
         case 'updateCacheHandlerKey':
           result.updateCacheHandlerKey = serializers.deserialize(value,
@@ -206,18 +205,18 @@ class _$GArticleFragmentReqSerializer
   }
 }
 
-class _$GArticleItemsReq extends GArticleItemsReq {
+class _$GArticlesReq extends GArticlesReq {
   @override
-  final _i3.GArticleItemsVars vars;
+  final _i3.GArticlesVars vars;
   @override
   final _i4.Operation operation;
   @override
   final String? requestId;
   @override
-  final _i2.GArticleItemsData? Function(
-      _i2.GArticleItemsData?, _i2.GArticleItemsData?)? updateResult;
+  final _i2.GArticlesData? Function(_i2.GArticlesData?, _i2.GArticlesData?)?
+      updateResult;
   @override
-  final _i2.GArticleItemsData? optimisticResponse;
+  final _i2.GArticlesData? optimisticResponse;
   @override
   final String? updateCacheHandlerKey;
   @override
@@ -227,11 +226,10 @@ class _$GArticleItemsReq extends GArticleItemsReq {
   @override
   final bool executeOnListen;
 
-  factory _$GArticleItemsReq(
-          [void Function(GArticleItemsReqBuilder)? updates]) =>
-      (new GArticleItemsReqBuilder()..update(updates))._build();
+  factory _$GArticlesReq([void Function(GArticlesReqBuilder)? updates]) =>
+      (new GArticlesReqBuilder()..update(updates))._build();
 
-  _$GArticleItemsReq._(
+  _$GArticlesReq._(
       {required this.vars,
       required this.operation,
       this.requestId,
@@ -242,26 +240,25 @@ class _$GArticleItemsReq extends GArticleItemsReq {
       this.fetchPolicy,
       required this.executeOnListen})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(vars, r'GArticleItemsReq', 'vars');
+    BuiltValueNullFieldError.checkNotNull(vars, r'GArticlesReq', 'vars');
     BuiltValueNullFieldError.checkNotNull(
-        operation, r'GArticleItemsReq', 'operation');
+        operation, r'GArticlesReq', 'operation');
     BuiltValueNullFieldError.checkNotNull(
-        executeOnListen, r'GArticleItemsReq', 'executeOnListen');
+        executeOnListen, r'GArticlesReq', 'executeOnListen');
   }
 
   @override
-  GArticleItemsReq rebuild(void Function(GArticleItemsReqBuilder) updates) =>
+  GArticlesReq rebuild(void Function(GArticlesReqBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  GArticleItemsReqBuilder toBuilder() =>
-      new GArticleItemsReqBuilder()..replace(this);
+  GArticlesReqBuilder toBuilder() => new GArticlesReqBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     final dynamic _$dynamicOther = other;
-    return other is GArticleItemsReq &&
+    return other is GArticlesReq &&
         vars == other.vars &&
         operation == other.operation &&
         requestId == other.requestId &&
@@ -293,7 +290,7 @@ class _$GArticleItemsReq extends GArticleItemsReq {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'GArticleItemsReq')
+    return (newBuiltValueToStringHelper(r'GArticlesReq')
           ..add('vars', vars)
           ..add('operation', operation)
           ..add('requestId', requestId)
@@ -307,14 +304,14 @@ class _$GArticleItemsReq extends GArticleItemsReq {
   }
 }
 
-class GArticleItemsReqBuilder
-    implements Builder<GArticleItemsReq, GArticleItemsReqBuilder> {
-  _$GArticleItemsReq? _$v;
+class GArticlesReqBuilder
+    implements Builder<GArticlesReq, GArticlesReqBuilder> {
+  _$GArticlesReq? _$v;
 
-  _i3.GArticleItemsVarsBuilder? _vars;
-  _i3.GArticleItemsVarsBuilder get vars =>
-      _$this._vars ??= new _i3.GArticleItemsVarsBuilder();
-  set vars(_i3.GArticleItemsVarsBuilder? vars) => _$this._vars = vars;
+  _i3.GArticlesVarsBuilder? _vars;
+  _i3.GArticlesVarsBuilder get vars =>
+      _$this._vars ??= new _i3.GArticlesVarsBuilder();
+  set vars(_i3.GArticlesVarsBuilder? vars) => _$this._vars = vars;
 
   _i4.Operation? _operation;
   _i4.Operation? get operation => _$this._operation;
@@ -324,21 +321,19 @@ class GArticleItemsReqBuilder
   String? get requestId => _$this._requestId;
   set requestId(String? requestId) => _$this._requestId = requestId;
 
-  _i2.GArticleItemsData? Function(
-      _i2.GArticleItemsData?, _i2.GArticleItemsData?)? _updateResult;
-  _i2.GArticleItemsData? Function(
-          _i2.GArticleItemsData?, _i2.GArticleItemsData?)?
+  _i2.GArticlesData? Function(_i2.GArticlesData?, _i2.GArticlesData?)?
+      _updateResult;
+  _i2.GArticlesData? Function(_i2.GArticlesData?, _i2.GArticlesData?)?
       get updateResult => _$this._updateResult;
   set updateResult(
-          _i2.GArticleItemsData? Function(
-                  _i2.GArticleItemsData?, _i2.GArticleItemsData?)?
+          _i2.GArticlesData? Function(_i2.GArticlesData?, _i2.GArticlesData?)?
               updateResult) =>
       _$this._updateResult = updateResult;
 
-  _i2.GArticleItemsDataBuilder? _optimisticResponse;
-  _i2.GArticleItemsDataBuilder get optimisticResponse =>
-      _$this._optimisticResponse ??= new _i2.GArticleItemsDataBuilder();
-  set optimisticResponse(_i2.GArticleItemsDataBuilder? optimisticResponse) =>
+  _i2.GArticlesDataBuilder? _optimisticResponse;
+  _i2.GArticlesDataBuilder get optimisticResponse =>
+      _$this._optimisticResponse ??= new _i2.GArticlesDataBuilder();
+  set optimisticResponse(_i2.GArticlesDataBuilder? optimisticResponse) =>
       _$this._optimisticResponse = optimisticResponse;
 
   String? _updateCacheHandlerKey;
@@ -363,11 +358,11 @@ class GArticleItemsReqBuilder
   set executeOnListen(bool? executeOnListen) =>
       _$this._executeOnListen = executeOnListen;
 
-  GArticleItemsReqBuilder() {
-    GArticleItemsReq._initializeBuilder(this);
+  GArticlesReqBuilder() {
+    GArticlesReq._initializeBuilder(this);
   }
 
-  GArticleItemsReqBuilder get _$this {
+  GArticlesReqBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _vars = $v.vars.toBuilder();
@@ -385,27 +380,27 @@ class GArticleItemsReqBuilder
   }
 
   @override
-  void replace(GArticleItemsReq other) {
+  void replace(GArticlesReq other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GArticleItemsReq;
+    _$v = other as _$GArticlesReq;
   }
 
   @override
-  void update(void Function(GArticleItemsReqBuilder)? updates) {
+  void update(void Function(GArticlesReqBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  GArticleItemsReq build() => _build();
+  GArticlesReq build() => _build();
 
-  _$GArticleItemsReq _build() {
-    _$GArticleItemsReq _$result;
+  _$GArticlesReq _build() {
+    _$GArticlesReq _$result;
     try {
       _$result = _$v ??
-          new _$GArticleItemsReq._(
+          new _$GArticlesReq._(
               vars: vars.build(),
               operation: BuiltValueNullFieldError.checkNotNull(
-                  operation, r'GArticleItemsReq', 'operation'),
+                  operation, r'GArticlesReq', 'operation'),
               requestId: requestId,
               updateResult: updateResult,
               optimisticResponse: _optimisticResponse?.build(),
@@ -413,7 +408,7 @@ class GArticleItemsReqBuilder
               updateCacheHandlerContext: updateCacheHandlerContext,
               fetchPolicy: fetchPolicy,
               executeOnListen: BuiltValueNullFieldError.checkNotNull(
-                  executeOnListen, r'GArticleItemsReq', 'executeOnListen'));
+                  executeOnListen, r'GArticlesReq', 'executeOnListen'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -424,7 +419,7 @@ class GArticleItemsReqBuilder
         _optimisticResponse?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GArticleItemsReq', _$failedField, e.toString());
+            r'GArticlesReq', _$failedField, e.toString());
       }
       rethrow;
     }

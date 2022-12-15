@@ -8,24 +8,23 @@ import 'package:entube/graphql/g/serializers.gql.dart' as _i1;
 
 part 'services.var.gql.g.dart';
 
-abstract class GArticleItemsVars
-    implements Built<GArticleItemsVars, GArticleItemsVarsBuilder> {
-  GArticleItemsVars._();
+abstract class GArticlesVars
+    implements Built<GArticlesVars, GArticlesVarsBuilder> {
+  GArticlesVars._();
 
-  factory GArticleItemsVars([Function(GArticleItemsVarsBuilder b) updates]) =
-      _$GArticleItemsVars;
+  factory GArticlesVars([Function(GArticlesVarsBuilder b) updates]) =
+      _$GArticlesVars;
 
   int? get offset;
   int? get limit;
-  static Serializer<GArticleItemsVars> get serializer =>
-      _$gArticleItemsVarsSerializer;
+  static Serializer<GArticlesVars> get serializer => _$gArticlesVarsSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GArticleItemsVars.serializer,
+        GArticlesVars.serializer,
         this,
       ) as Map<String, dynamic>);
-  static GArticleItemsVars? fromJson(Map<String, dynamic> json) =>
+  static GArticlesVars? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        GArticleItemsVars.serializer,
+        GArticlesVars.serializer,
         json,
       );
 }

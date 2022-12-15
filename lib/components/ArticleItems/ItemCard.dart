@@ -8,7 +8,7 @@ class ItemCard extends StatelessWidget {
   const ItemCard({Key? key, required this.article, this.percent, this.loading})
       : super(key: key);
 
-  final GArticleItemsData_articles article;
+  final GArticlesData_articles article;
   final double? percent;
   final bool? loading;
 

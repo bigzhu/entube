@@ -12,7 +12,7 @@ class Items extends HookConsumerWidget {
   const Items({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final req = GArticleItemsReq(
+    final req = GArticlesReq(
       (b) => b
         ..vars.limit = 10
         ..vars.offset = 0,

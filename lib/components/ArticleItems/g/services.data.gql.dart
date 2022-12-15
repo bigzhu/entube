@@ -10,42 +10,41 @@ import 'package:entube/graphql/g/serializers.gql.dart' as _i1;
 
 part 'services.data.gql.g.dart';
 
-abstract class GArticleItemsData
-    implements Built<GArticleItemsData, GArticleItemsDataBuilder> {
-  GArticleItemsData._();
+abstract class GArticlesData
+    implements Built<GArticlesData, GArticlesDataBuilder> {
+  GArticlesData._();
 
-  factory GArticleItemsData([Function(GArticleItemsDataBuilder b) updates]) =
-      _$GArticleItemsData;
+  factory GArticlesData([Function(GArticlesDataBuilder b) updates]) =
+      _$GArticlesData;
 
-  static void _initializeBuilder(GArticleItemsDataBuilder b) =>
+  static void _initializeBuilder(GArticlesDataBuilder b) =>
       b..G__typename = 'query_root';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  BuiltList<GArticleItemsData_articles> get articles;
-  static Serializer<GArticleItemsData> get serializer =>
-      _$gArticleItemsDataSerializer;
+  BuiltList<GArticlesData_articles> get articles;
+  static Serializer<GArticlesData> get serializer => _$gArticlesDataSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GArticleItemsData.serializer,
+        GArticlesData.serializer,
         this,
       ) as Map<String, dynamic>);
-  static GArticleItemsData? fromJson(Map<String, dynamic> json) =>
+  static GArticlesData? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        GArticleItemsData.serializer,
+        GArticlesData.serializer,
         json,
       );
 }
 
-abstract class GArticleItemsData_articles
+abstract class GArticlesData_articles
     implements
-        Built<GArticleItemsData_articles, GArticleItemsData_articlesBuilder>,
+        Built<GArticlesData_articles, GArticlesData_articlesBuilder>,
         GArticleFragment {
-  GArticleItemsData_articles._();
+  GArticlesData_articles._();
 
-  factory GArticleItemsData_articles(
-          [Function(GArticleItemsData_articlesBuilder b) updates]) =
-      _$GArticleItemsData_articles;
+  factory GArticlesData_articles(
+          [Function(GArticlesData_articlesBuilder b) updates]) =
+      _$GArticlesData_articles;
 
-  static void _initializeBuilder(GArticleItemsData_articlesBuilder b) =>
+  static void _initializeBuilder(GArticlesData_articlesBuilder b) =>
       b..G__typename = 'articles';
   @override
   @BuiltValueField(wireName: '__typename')
@@ -60,16 +59,16 @@ abstract class GArticleItemsData_articles
   String? get title;
   @override
   String get url;
-  static Serializer<GArticleItemsData_articles> get serializer =>
-      _$gArticleItemsDataArticlesSerializer;
+  static Serializer<GArticlesData_articles> get serializer =>
+      _$gArticlesDataArticlesSerializer;
   @override
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
-        GArticleItemsData_articles.serializer,
+        GArticlesData_articles.serializer,
         this,
       ) as Map<String, dynamic>);
-  static GArticleItemsData_articles? fromJson(Map<String, dynamic> json) =>
+  static GArticlesData_articles? fromJson(Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
-        GArticleItemsData_articles.serializer,
+        GArticlesData_articles.serializer,
         json,
       );
 }

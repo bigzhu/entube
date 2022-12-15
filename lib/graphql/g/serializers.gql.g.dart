@@ -15,10 +15,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GArticleFragmentData.serializer)
       ..add(GArticleFragmentReq.serializer)
       ..add(GArticleFragmentVars.serializer)
-      ..add(GArticleItemsData.serializer)
-      ..add(GArticleItemsData_articles.serializer)
-      ..add(GArticleItemsReq.serializer)
-      ..add(GArticleItemsVars.serializer)
+      ..add(GArticlesData.serializer)
+      ..add(GArticlesData_articles.serializer)
+      ..add(GArticlesReq.serializer)
+      ..add(GArticlesVars.serializer)
       ..add(GBoolean_comparison_exp.serializer)
       ..add(GInt_comparison_exp.serializer)
       ..add(GSentencesData.serializer)
@@ -321,8 +321,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<GAcquiringWordsData_words>())
       ..addBuilderFactory(
           const FullType(
-              BuiltList, const [const FullType(GArticleItemsData_articles)]),
-          () => new ListBuilder<GArticleItemsData_articles>())
+              BuiltList, const [const FullType(GArticlesData_articles)]),
+          () => new ListBuilder<GArticlesData_articles>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(GSentencesData_articles)]),

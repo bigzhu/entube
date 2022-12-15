@@ -50,9 +50,9 @@ const ArticleFragment = _i1.FragmentDefinitionNode(
     ),
   ]),
 );
-const ArticleItems = _i1.OperationDefinitionNode(
+const Articles = _i1.OperationDefinitionNode(
   type: _i1.OperationType.query,
-  name: _i1.NameNode(value: 'ArticleItems'),
+  name: _i1.NameNode(value: 'Articles'),
   variableDefinitions: [
     _i1.VariableDefinitionNode(
       variable: _i1.VariableNode(name: _i1.NameNode(value: 'offset')),
@@ -100,5 +100,5 @@ const ArticleItems = _i1.OperationDefinitionNode(
 );
 const document = _i1.DocumentNode(definitions: [
   ArticleFragment,
-  ArticleItems,
+  Articles,
 ]);

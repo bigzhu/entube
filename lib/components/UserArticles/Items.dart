@@ -32,7 +32,7 @@ class Items extends HookConsumerWidget {
           itemScrollController: ref.read(articleItemsScrollControllerProvider),
           itemCount: userArticles.length,
           itemBuilder: (context, index) {
-            final article = GArticleItemsData_articles.fromJson(
+            final article = GArticlesData_articles.fromJson(
                 userArticles[index].article.toJson());
             if (article == null) {}
             return Item(

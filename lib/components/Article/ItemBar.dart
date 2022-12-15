@@ -13,7 +13,7 @@ import 'state.dart';
 class ItemBar extends HookConsumerWidget {
   const ItemBar({Key? key, required this.article}) : super(key: key);
 
-  final GArticleItemsData_articles article;
+  final GArticlesData_articles article;
   Future<void> launchUniversalLinkIos(Uri url) async {
     final bool nativeAppLaunchSucceeded = await launchUrl(
       url,
