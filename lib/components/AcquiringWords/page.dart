@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'Items.dart';
+import 'AcquiringWords.dart';
 
 class Page extends HookConsumerWidget {
   const Page({super.key});
@@ -37,7 +37,7 @@ class Page extends HookConsumerWidget {
           ),
         ],
       ),
-      body: const Items(),
+      body: const AcquiringWords(),
       bottomNavigationBar: const BottomBar(),
       /*
       floatingActionButton: FloatingActionButton(

@@ -6,7 +6,7 @@ import 'package:entube/components/UserArticles/index.dart' as UserArticles;
 import 'package:entube/components/Auth/index.dart';
 import 'package:entube/components/LogoLoading.dart';
 import 'package:entube/components/ArticleItems/index.dart';
-import 'package:entube/components/AcquiringWords/index.dart';
+import 'package:entube/components/AcquiringWords/index.dart' as AcquiringWords;
 import 'package:go_router/go_router.dart';
 
 final routes = [
@@ -36,6 +36,6 @@ final routes = [
   ),
   GoRoute(
     path: '/AcquiringWords',
-    builder: (context, state) => const AcquiringWords(),
+    builder: (context, state) => const AcquiringWords.Page(),
   ),
 ];

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'state.dart';
 
 //import 'package:flutter_hooks/flutter_hooks.dart';
 //import '../ArticleItems/provider.dart';
@@ -15,21 +17,34 @@ class BottomBar extends HookConsumerWidget {
     const items = [
       BottomNavigationBarItem(
         icon: Icon(
-          Icons.home,
+          Icons.video_library,
         ),
-        label: "Home",
+        label: "Tube",
       ),
       BottomNavigationBarItem(
         icon: Icon(
-          Icons.explore,
+          Icons.local_library,
         ),
-        label: "Explore",
+        label: "Words",
       ),
     ];
+    final navigationBarIndex = ref.watch(navigationBarIndexSP);
 
     return BottomNavigationBar(
-      currentIndex: 0,
-      onTap: (i) {},
+      currentIndex: navigationBarIndex,
+      onTap: (i) {
+        if (i == 0 && navigationBarIndex != i) {
+          ref.read(navigationBarIndexSP.notifier).state = i;
+          if (context.canPop()) context.pop();
+        }
+        if (i == 1 && navigationBarIndex != i) {
+          ref.read(navigationBarIndexSP.notifier).state = i;
+          context.push('/AcquiringWords');
+        }
+        if (i == 2 && navigationBarIndex != i) {
+          Navigator.of(context).pushReplacementNamed('/words');
+        }
+      },
       items: items,
     );
   }
