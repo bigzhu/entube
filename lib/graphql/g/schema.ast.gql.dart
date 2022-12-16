@@ -19779,7 +19779,7 @@ const user_articles = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'Int'),
-        isNonNull: false,
+        isNonNull: true,
       ),
     ),
     _i1.FieldDefinitionNode(

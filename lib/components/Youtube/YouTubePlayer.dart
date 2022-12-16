@@ -117,7 +117,7 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
     controller.onInit = () {
       controller.cueVideoById(
           videoId: initialVideoId,
-          startSeconds: userArticle.play_at?.toDouble());
+          startSeconds: userArticle.play_at.toDouble());
     };
 
     controller.listen((event) {
@@ -156,7 +156,8 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
   Widget build(BuildContext context) {
     debugPrint("build NewYouTubePlayer");
     //make sure PlayAt not null
-    debugPrint("userArticle.playAt=${userArticle.play_at}");
+
+    debugPrint("userArticle.play_at=${userArticle.play_at}");
     //获取 sentences
     sentences = ref.watch(sentencesSP);
     Future(() {

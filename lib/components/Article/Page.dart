@@ -1,6 +1,6 @@
 // ignore_for_file: library_prefixes
 
-//import 'package:entube/components/Youtube/index.dart';
+import 'package:entube/components/Youtube/index.dart';
 import 'package:entube/components/ArticleItems/index.dart' as ArticleItems;
 import 'package:entube/components/UserArticles/index.dart' as UserArticles;
 import 'package:entube/graphql/g/schema.schema.gql.dart';
@@ -58,7 +58,7 @@ class Page extends HookConsumerWidget {
                     child: SafeArea(
                         child: Column(
                       children: [
-                        //YoutubePlayer(articleId),
+                        YoutubePlayer(articleId),
                         Expanded(child: Article(articleId)),
                       ],
                     ))))));
