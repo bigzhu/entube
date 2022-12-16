@@ -50,7 +50,7 @@ abstract class GUserArticlesData_user_articles
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   _i2.Guuid get id;
-  int get play_at;
+  int? get play_at;
   GUserArticlesData_user_articles_article get article;
   static Serializer<GUserArticlesData_user_articles> get serializer =>
       _$gUserArticlesDataUserArticlesSerializer;

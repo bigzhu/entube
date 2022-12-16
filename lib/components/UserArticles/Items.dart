@@ -16,6 +16,9 @@ class Items extends HookConsumerWidget {
     return DataWaiter(
       req: req,
       builder: (rsp) {
+        if (rsp.hasErrors) {
+          debugPrint('${rsp.linkException}');
+        }
         final userArticles = rsp.data?.user_articles.toList();
         if (userArticles == null) {
           return const AlertDialog(

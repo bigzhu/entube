@@ -5,6 +5,7 @@ import 'package:entube/components/BottomBar.dart';
 import 'package:entube/components/UserAvatar.dart';
 import 'package:entube/configs.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'Items.dart';
@@ -21,7 +22,9 @@ class Page extends HookConsumerWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        leading: UserAvatar(avatar: avatar),
+        leading: GestureDetector(
+            onTap: () => context.go('/LoggedInUserDetails'),
+            child: UserAvatar(avatar: avatar)),
         title: const Text(configTitle),
         actions: [
           IconButton(

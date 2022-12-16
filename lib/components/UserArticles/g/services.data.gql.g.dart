@@ -88,14 +88,18 @@ class _$GUserArticlesData_user_articlesSerializer
       'id',
       serializers.serialize(object.id,
           specifiedType: const FullType(_i2.Guuid)),
-      'play_at',
-      serializers.serialize(object.play_at, specifiedType: const FullType(int)),
       'article',
       serializers.serialize(object.article,
           specifiedType:
               const FullType(GUserArticlesData_user_articles_article)),
     ];
-
+    Object? value;
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     return result;
   }
 
@@ -121,7 +125,7 @@ class _$GUserArticlesData_user_articlesSerializer
           break;
         case 'play_at':
           result.play_at = serializers.deserialize(value,
-              specifiedType: const FullType(int))! as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'article':
           result.article.replace(serializers.deserialize(value,
@@ -352,7 +356,7 @@ class _$GUserArticlesData_user_articles
   @override
   final _i2.Guuid id;
   @override
-  final int play_at;
+  final int? play_at;
   @override
   final GUserArticlesData_user_articles_article article;
 
@@ -363,15 +367,13 @@ class _$GUserArticlesData_user_articles
   _$GUserArticlesData_user_articles._(
       {required this.G__typename,
       required this.id,
-      required this.play_at,
+      this.play_at,
       required this.article})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GUserArticlesData_user_articles', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
         id, r'GUserArticlesData_user_articles', 'id');
-    BuiltValueNullFieldError.checkNotNull(
-        play_at, r'GUserArticlesData_user_articles', 'play_at');
     BuiltValueNullFieldError.checkNotNull(
         article, r'GUserArticlesData_user_articles', 'article');
   }
@@ -475,8 +477,7 @@ class GUserArticlesData_user_articlesBuilder
               G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
                   r'GUserArticlesData_user_articles', 'G__typename'),
               id: id.build(),
-              play_at: BuiltValueNullFieldError.checkNotNull(
-                  play_at, r'GUserArticlesData_user_articles', 'play_at'),
+              play_at: play_at,
               article: article.build());
     } catch (_) {
       late String _$failedField;

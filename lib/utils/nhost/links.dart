@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:gql/ast.dart';
 import 'package:gql_exec/gql_exec.dart' as ge;
 import 'package:gql_http_link/gql_http_link.dart' as ghl;
@@ -108,6 +109,7 @@ Link httpLinkForNhost(
   // Introduce an Authorization header
   final addAuthenticationLink = Link.function((request, [forward]) {
     if (nhostAuth.authenticationState == AuthenticationState.signedIn) {
+      debugPrint("'Authorization': 'Bearer ${nhostAuth.accessToken}'");
       request = request.updateContextEntry<ghl.HttpLinkHeaders>(
         (entry) => ghl.HttpLinkHeaders(
           headers: {

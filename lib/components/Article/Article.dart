@@ -57,7 +57,6 @@ class Article extends HookConsumerWidget {
                 child: ScrollablePositionedList.builder(
                   padding: EdgeInsets.only(
                       bottom: MediaQuery.of(context).size.height * 0.5),
-                  //itemScrollController: ref.read(sentencesScrollControllerProvider),
                   itemCount: sentences.length,
                   itemBuilder: (context, index) {
                     return Sentence(
