@@ -1,3 +1,4 @@
+import 'package:entube/components/Youtube/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -22,7 +23,7 @@ class Seek extends HookConsumerWidget {
       ..onTap = (i) {
         isTapping.value = true;
         debugPrint('click $seekTime');
-        //ref.read(seekStateProvider.notifier).state = seekTime;
+        ref.read(seekSP.notifier).state = seekTime;
 
         Future.delayed(const Duration(milliseconds: 800), () {
           isTapping.value = false;

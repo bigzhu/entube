@@ -1,11 +1,13 @@
+import 'package:entube/components/Settings/index.dart';
+import 'package:entube/components/Word/index.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 //import '../Settings/provider.dart';
-import '../word/word.dart';
 import 'Seek.dart';
 //import './sentence_trans.dart';
 import 'SentenceModel.dart';
+import 'Trans.dart';
 
 class Words extends ConsumerWidget {
   const Words({Key? key, required this.sentence, required this.isPlaying})
@@ -39,7 +41,6 @@ class Words extends ConsumerWidget {
       words = [blankSpan, ...words];
     }
 
-/*
     if (ref.watch(switchSettingsNotifierProvider
         .select((value) => value[IS_SHOW_SENTENCE_TRANS] ?? false))) {
       //add word trans
@@ -47,7 +48,6 @@ class Words extends ConsumerWidget {
       WidgetSpan sentenceSpan = WidgetSpan(child: sentenceTrans);
       words = [...words, sentenceSpan];
     }
-    */
 
     return RichText(text: TextSpan(text: '', children: words));
   }

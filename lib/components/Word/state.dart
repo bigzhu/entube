@@ -1,3 +1,5 @@
+import 'package:entube/components/AcquiringWords/index.dart';
+import 'package:collection/collection.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:language_picker/languages.dart';
@@ -18,7 +20,7 @@ class WordTransStateNotifier extends StateNotifier<String?> {
   }
   final Ref ref;
   final String word;
-  final isAcquiringWord;
+  final bool isAcquiringWord;
   final translator = GoogleTranslator();
 
   void fetch() async {
@@ -42,12 +44,15 @@ class WordTransStateNotifier extends StateNotifier<String?> {
 final wordTransStateNotifierProvider = StateNotifierProvider.autoDispose
     .family<WordTransStateNotifier, String?, String>((ref, word) {
   bool isAcquiringWord = false;
-  /*
-  final AcquiringWordModel? acquiringWord = ref.watch(
-      acquiringWordsMapStateProvider
-          .select((value) => value[word.toLowerCase()]));
-  if (acquiringWord?.done == false) isAcquiringWord = true;
-  */
+
+  final acquiringWord = ref.watch(acquiringWordsSNP.select((value) {
+    return value.words.firstWhereOrNull((element) {
+      return element.word == word.toLowerCase();
+    });
+  }));
+  if (acquiringWord != null && acquiringWord.is_done == false) {
+    isAcquiringWord = true;
+  }
 
   WordTransStateNotifier wordTransStateNotifier =
       WordTransStateNotifier(ref, word, isAcquiringWord);

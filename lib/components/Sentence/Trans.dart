@@ -1,22 +1,12 @@
-import 'package:AcquireEnglish/components/AcquiringWords/index.dart';
-import 'package:AcquireEnglish/components/Youtube/index.dart';
+import 'package:entube/components/Settings/index.dart';
+import 'package:entube/themes.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:hive_flutter/hive_flutter.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:language_picker/languages.dart';
-import 'package:language_picker/languages.dart';
 import 'package:translator/translator.dart';
-import 'package:translator/translator.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
-import './sentence_model.dart';
-import '../../themes.dart';
-import '../../themes.dart';
-import '../../utils/compute.dart';
-import '../Settings/provider.dart';
+import 'SentenceModel.dart';
 
 class SentenceTrans extends StatefulHookConsumerWidget {
   const SentenceTrans(this.sentence, {Key? key}) : super(key: key);
@@ -37,9 +27,9 @@ class _SentenceTransState extends ConsumerState<SentenceTrans> {
   @override
   Widget build(BuildContext context) {
     String sentenceStr = '';
-    widget.sentence.words.forEach((e) {
+    for (var e in widget.sentence.words) {
       sentenceStr += ' $e';
-    });
+    }
     Language? wordWiseLanguages =
         ref.watch(wordWiseLanguageStateNotifierProvider);
     if (wordWiseLanguages == null) {
@@ -59,7 +49,7 @@ class _SentenceTransState extends ConsumerState<SentenceTrans> {
         trans = result.text;
       }
       TextSpan subWord = TextSpan(
-          text: '       ' + "$trans",
+          text: '       $trans',
           //style: articleTextStyle.copyWith(fontSize: 10),
           style: articleTextStyle,
           recognizer: recognizer);

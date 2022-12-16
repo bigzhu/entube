@@ -1,12 +1,11 @@
 import 'package:audioplayers/audioplayers.dart' as audio;
+import 'package:collection/collection.dart';
 import 'package:entube/components/AcquiringWords/index.dart';
-import 'package:entube/components/Error/state.dart';
 import 'package:entube/components/Settings/index.dart';
 import 'package:entube/themes.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:collection/collection.dart';
 //import 'package:leancloud_storage/leancloud.dart';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';
