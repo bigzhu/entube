@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:app_links/app_links.dart';
 import 'package:entube/components/Auth/index.dart';
 import 'package:entube/components/Error/index.dart';
@@ -12,6 +14,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:entube/utils/nhost/nhost_sdk/nhost_sdk.dart';
+import 'package:receive_sharing_intent/receive_sharing_intent.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 //import './article_items_page.dart';
@@ -30,9 +33,21 @@ class MyApp extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     AppLinks appLinks = AppLinks();
-
     useEffect(
       () {
+        // For sharing or opening urls/text coming from outside the app while the app is in the memory
+        StreamSubscription intentDataStreamSubscription =
+            ReceiveSharingIntent.getTextStream().listen((String value) {
+          print(value);
+        }, onError: (err) {
+          print("getLinkStream error: $err");
+        });
+
+        // For sharing or opening urls/text coming from outside the app while the app is closed
+        ReceiveSharingIntent.getInitialText().then((String? value) {
+          print(value);
+        });
+
         //register the app link handler
         final linkSubscription = appLinks.uriLinkStream.listen((uri) {
           if (uri.host == signInSuccessHost) {
@@ -42,6 +57,7 @@ class MyApp extends HookConsumerWidget {
         });
 
         return () {
+          intentDataStreamSubscription.cancel();
           linkSubscription.cancel();
         };
       },
