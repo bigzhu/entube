@@ -5,6 +5,7 @@ import 'package:entube/components/ArticleItems/index.dart' as ArticleItems;
 import 'package:entube/components/UserArticles/index.dart' as UserArticles;
 import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'Article.dart';
 import 'ItemBar.dart';
@@ -37,7 +38,8 @@ class Page extends HookConsumerWidget {
                   int sensitivity = 8;
                   if (details.delta.dx > sensitivity) {
                     // Right Swipe
-                    Navigator.of(context).pop();
+                    //Navigator.of(context).pop();
+                    if (context.canPop()) context.pop();
                     /*
                     ref
                         .read(acquiringWordsStateNotifierProvider.notifier)
@@ -45,7 +47,9 @@ class Page extends HookConsumerWidget {
                         */
                   } else if (details.delta.dx < -sensitivity) {
                     //Left Swipe
-                    Navigator.of(context).pop();
+                    // Navigator.of(context).pop();
+                    if (context.canPop()) context.pop();
+                    //context.pop();
                     /*
                     ref
                         .read(acquiringWordsStateNotifierProvider.notifier)

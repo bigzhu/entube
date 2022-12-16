@@ -15,10 +15,7 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        print('/Article/${article.id.value}');
-        context.go('/Article/${article.id.value}');
-      },
+      onTap: () => context.push('/Article/${article.id.value}'),
       child: Stack(
         alignment: Alignment.bottomLeft,
         children: <Widget>[
@@ -37,7 +34,7 @@ class ItemCard extends StatelessWidget {
                 title: article.title,
                 avatar: article.favicon,
                 percent: percent,
-                onTap: () => context.go('/Article/${article.id.value}'),
+                onTap: () => context.push('/Article/${article.id.value}'),
                 loading: loading,
               ),
             ),
