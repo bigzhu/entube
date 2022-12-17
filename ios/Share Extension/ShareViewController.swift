@@ -4,7 +4,7 @@ import MobileCoreServices
 import Photos
 
 class ShareViewController: SLComposeServiceViewController {
-    var hostAppBundleIdentifier = "app.entube"
+    var hostAppBundleIdentifier = ""
     var appGroupId = ""
     let sharedKey = "ShareKey"
     var sharedMedia: [SharedMediaFile] = []
