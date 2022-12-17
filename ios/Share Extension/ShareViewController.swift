@@ -4,7 +4,7 @@ import MobileCoreServices
 import Photos
 
 class ShareViewController: SLComposeServiceViewController {
-    var hostAppBundleIdentifier = ""
+    var hostAppBundleIdentifier = "net.bigzhu.acquireEnglish"
     var appGroupId = ""
     let sharedKey = "ShareKey"
     var sharedMedia: [SharedMediaFile] = []
