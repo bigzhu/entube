@@ -11,8 +11,22 @@ class Items extends HookConsumerWidget {
   const Items({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final req = GUserArticlesReq();
+    final userArticles = ref.watch(userArticlesSNP);
+    return ScrollablePositionedList.builder(
+      itemScrollController: ref.read(articleItemsScrollControllerProvider),
+      itemCount: userArticles.length,
+      itemBuilder: (context, index) {
+        final article = GArticlesData_articles.fromJson(
+            userArticles[index].article.toJson());
+        if (article == null) {}
+        return Item(
+            article: article!,
+            loading: userArticles[index].article.title == loadingTitle);
+      },
+    );
 
+/*
+    final req = GUserArticlesReq();
     return DataWaiter(
       req: req,
       builder: (rsp) {
@@ -45,5 +59,7 @@ class Items extends HookConsumerWidget {
         );
       },
     );
+
+*/
   }
 }

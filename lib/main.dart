@@ -4,6 +4,7 @@ import 'package:app_links/app_links.dart';
 import 'package:entube/components/Auth/index.dart';
 import 'package:entube/components/Error/index.dart';
 import 'package:entube/components/LogoLoading.dart';
+import 'package:entube/components/UserArticles/index.dart';
 import 'package:entube/configs.dart';
 import 'package:entube/routes.dart';
 import 'package:entube/state.dart';
@@ -38,6 +39,7 @@ class MyApp extends HookConsumerWidget {
         // For sharing or opening urls/text coming from outside the app while the app is in the memory
         StreamSubscription intentDataStreamSubscription =
             ReceiveSharingIntent.getTextStream().listen((String value) {
+          ref.read(userArticlesSNP.notifier).addLoading(value);
           print(value);
         }, onError: (err) {
           print("getLinkStream error: $err");
