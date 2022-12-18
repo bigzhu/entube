@@ -29,6 +29,27 @@ abstract class GArticlesVars
       );
 }
 
+abstract class GArticleByUrlVars
+    implements Built<GArticleByUrlVars, GArticleByUrlVarsBuilder> {
+  GArticleByUrlVars._();
+
+  factory GArticleByUrlVars([Function(GArticleByUrlVarsBuilder b) updates]) =
+      _$GArticleByUrlVars;
+
+  String? get url;
+  static Serializer<GArticleByUrlVars> get serializer =>
+      _$gArticleByUrlVarsSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GArticleByUrlVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GArticleByUrlVars? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GArticleByUrlVars.serializer,
+        json,
+      );
+}
+
 abstract class GArticleFragmentVars
     implements Built<GArticleFragmentVars, GArticleFragmentVarsBuilder> {
   GArticleFragmentVars._();

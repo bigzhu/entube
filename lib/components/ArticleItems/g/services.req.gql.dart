@@ -71,6 +71,64 @@ abstract class GArticlesReq
       );
 }
 
+abstract class GArticleByUrlReq
+    implements
+        Built<GArticleByUrlReq, GArticleByUrlReqBuilder>,
+        _i1.OperationRequest<_i2.GArticleByUrlData, _i3.GArticleByUrlVars> {
+  GArticleByUrlReq._();
+
+  factory GArticleByUrlReq([Function(GArticleByUrlReqBuilder b) updates]) =
+      _$GArticleByUrlReq;
+
+  static void _initializeBuilder(GArticleByUrlReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'ArticleByUrl',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GArticleByUrlVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GArticleByUrlData? Function(
+    _i2.GArticleByUrlData?,
+    _i2.GArticleByUrlData?,
+  )? get updateResult;
+  @override
+  _i2.GArticleByUrlData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GArticleByUrlData? parseData(Map<String, dynamic> json) =>
+      _i2.GArticleByUrlData.fromJson(json);
+  static Serializer<GArticleByUrlReq> get serializer =>
+      _$gArticleByUrlReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GArticleByUrlReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GArticleByUrlReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GArticleByUrlReq.serializer,
+        json,
+      );
+}
+
 abstract class GArticleFragmentReq
     implements
         Built<GArticleFragmentReq, GArticleFragmentReqBuilder>,

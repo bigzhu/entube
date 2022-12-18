@@ -8,6 +8,8 @@ part of 'services.var.gql.dart';
 
 Serializer<GArticlesVars> _$gArticlesVarsSerializer =
     new _$GArticlesVarsSerializer();
+Serializer<GArticleByUrlVars> _$gArticleByUrlVarsSerializer =
+    new _$GArticleByUrlVarsSerializer();
 Serializer<GArticleFragmentVars> _$gArticleFragmentVarsSerializer =
     new _$GArticleFragmentVarsSerializer();
 
@@ -56,6 +58,51 @@ class _$GArticlesVarsSerializer implements StructuredSerializer<GArticlesVars> {
         case 'limit':
           result.limit = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GArticleByUrlVarsSerializer
+    implements StructuredSerializer<GArticleByUrlVars> {
+  @override
+  final Iterable<Type> types = const [GArticleByUrlVars, _$GArticleByUrlVars];
+  @override
+  final String wireName = 'GArticleByUrlVars';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GArticleByUrlVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.url;
+    if (value != null) {
+      result
+        ..add('url')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  GArticleByUrlVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GArticleByUrlVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'url':
+          result.url = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -169,6 +216,82 @@ class GArticlesVarsBuilder
 
   _$GArticlesVars _build() {
     final _$result = _$v ?? new _$GArticlesVars._(offset: offset, limit: limit);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GArticleByUrlVars extends GArticleByUrlVars {
+  @override
+  final String? url;
+
+  factory _$GArticleByUrlVars(
+          [void Function(GArticleByUrlVarsBuilder)? updates]) =>
+      (new GArticleByUrlVarsBuilder()..update(updates))._build();
+
+  _$GArticleByUrlVars._({this.url}) : super._();
+
+  @override
+  GArticleByUrlVars rebuild(void Function(GArticleByUrlVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GArticleByUrlVarsBuilder toBuilder() =>
+      new GArticleByUrlVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GArticleByUrlVars && url == other.url;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, url.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GArticleByUrlVars')..add('url', url))
+        .toString();
+  }
+}
+
+class GArticleByUrlVarsBuilder
+    implements Builder<GArticleByUrlVars, GArticleByUrlVarsBuilder> {
+  _$GArticleByUrlVars? _$v;
+
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
+
+  GArticleByUrlVarsBuilder();
+
+  GArticleByUrlVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _url = $v.url;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GArticleByUrlVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GArticleByUrlVars;
+  }
+
+  @override
+  void update(void Function(GArticleByUrlVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GArticleByUrlVars build() => _build();
+
+  _$GArticleByUrlVars _build() {
+    final _$result = _$v ?? new _$GArticleByUrlVars._(url: url);
     replace(_$result);
     return _$result;
   }

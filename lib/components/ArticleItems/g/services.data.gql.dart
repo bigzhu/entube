@@ -73,6 +73,70 @@ abstract class GArticlesData_articles
       );
 }
 
+abstract class GArticleByUrlData
+    implements Built<GArticleByUrlData, GArticleByUrlDataBuilder> {
+  GArticleByUrlData._();
+
+  factory GArticleByUrlData([Function(GArticleByUrlDataBuilder b) updates]) =
+      _$GArticleByUrlData;
+
+  static void _initializeBuilder(GArticleByUrlDataBuilder b) =>
+      b..G__typename = 'query_root';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  BuiltList<GArticleByUrlData_articles> get articles;
+  static Serializer<GArticleByUrlData> get serializer =>
+      _$gArticleByUrlDataSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GArticleByUrlData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GArticleByUrlData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GArticleByUrlData.serializer,
+        json,
+      );
+}
+
+abstract class GArticleByUrlData_articles
+    implements
+        Built<GArticleByUrlData_articles, GArticleByUrlData_articlesBuilder>,
+        GArticleFragment {
+  GArticleByUrlData_articles._();
+
+  factory GArticleByUrlData_articles(
+          [Function(GArticleByUrlData_articlesBuilder b) updates]) =
+      _$GArticleByUrlData_articles;
+
+  static void _initializeBuilder(GArticleByUrlData_articlesBuilder b) =>
+      b..G__typename = 'articles';
+  @override
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  @override
+  _i2.Guuid get id;
+  @override
+  String? get favicon;
+  @override
+  String? get thumbnail;
+  @override
+  String? get title;
+  @override
+  String get url;
+  static Serializer<GArticleByUrlData_articles> get serializer =>
+      _$gArticleByUrlDataArticlesSerializer;
+  @override
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GArticleByUrlData_articles.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GArticleByUrlData_articles? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GArticleByUrlData_articles.serializer,
+        json,
+      );
+}
+
 abstract class GArticleFragment {
   String get G__typename;
   _i2.Guuid get id;

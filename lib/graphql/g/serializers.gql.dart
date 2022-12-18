@@ -23,11 +23,16 @@ import 'package:entube/components/Article/g/services.req.gql.dart'
 import 'package:entube/components/Article/g/services.var.gql.dart'
     show GSentencesVars;
 import 'package:entube/components/ArticleItems/g/services.data.gql.dart'
-    show GArticleFragmentData, GArticlesData, GArticlesData_articles;
+    show
+        GArticleByUrlData,
+        GArticleByUrlData_articles,
+        GArticleFragmentData,
+        GArticlesData,
+        GArticlesData_articles;
 import 'package:entube/components/ArticleItems/g/services.req.gql.dart'
-    show GArticleFragmentReq, GArticlesReq;
+    show GArticleByUrlReq, GArticleFragmentReq, GArticlesReq;
 import 'package:entube/components/ArticleItems/g/services.var.gql.dart'
-    show GArticleFragmentVars, GArticlesVars;
+    show GArticleByUrlVars, GArticleFragmentVars, GArticlesVars;
 import 'package:entube/components/UserArticles/g/services.data.gql.dart'
     show
         GUserArticlesData,
@@ -325,6 +330,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GAcquiringWordsData_words,
   GAcquiringWordsReq,
   GAcquiringWordsVars,
+  GArticleByUrlData,
+  GArticleByUrlData_articles,
+  GArticleByUrlReq,
+  GArticleByUrlVars,
   GArticleFragmentData,
   GArticleFragmentReq,
   GArticleFragmentVars,
