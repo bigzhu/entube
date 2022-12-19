@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:entube/components/LogoLoading.dart';
 import 'package:entube/state.dart';
 import 'package:ferry/ferry.dart';

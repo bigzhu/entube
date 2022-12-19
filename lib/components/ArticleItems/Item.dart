@@ -21,7 +21,7 @@ class Item extends HookConsumerWidget {
           SlidableAction(
             // An action can be bigger than the others.
             //flex: 2,
-            onPressed: (context) => print("delete ${article.id}"),
+            onPressed: (context) => debugPrint("delete ${article.id}"),
             backgroundColor: Theme.of(context).primaryColor,
             foregroundColor: Colors.white,
             icon: Icons.delete,

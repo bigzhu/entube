@@ -1,10 +1,8 @@
 import 'package:entube/components/ArticleItems/index.dart';
-import 'package:entube/utils/index.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-import 'g/services.req.gql.dart';
 import 'state.dart';
 
 class Items extends HookConsumerWidget {

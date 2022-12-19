@@ -1,6 +1,4 @@
 import 'package:entube/components/ArticleItems/index.dart';
-import 'package:entube/graphql/g/schema.ast.gql.dart';
-import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:entube/state.dart';
 import 'package:ferry/ferry.dart';
 import 'package:flutter/material.dart';
@@ -77,7 +75,6 @@ class UserArticlesSN
         "url": uri
       }
     };
-    print(json);
     final loadingUserArticle = GUserArticlesData_user_articles.fromJson(json);
     if (loadingUserArticle != null) {
       state = [loadingUserArticle, ...state];
