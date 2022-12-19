@@ -39,6 +39,7 @@ class UserArticlesSN
   void sharedNew(String url) async {
     final index = findInLocal(url);
     if (index != -1) return;
+    addLoading(url);
     String? artilceId = await findInRemote(url);
     print('find article_id=$artilceId');
     if (artilceId != null) {
@@ -47,7 +48,11 @@ class UserArticlesSN
       final upsertReq = GupsertUserArticlesReq((b) => b..vars.object = object);
       final stream = client.request(upsertReq);
       await for (final value in stream) {
-        print(value.data?.insert_user_articles_one);
+        final json = value.data?.insert_user_articles_one!.toJson();
+        if (json != null) {
+          final userArticle = GUserArticlesData_user_articles.fromJson(json);
+          if (userArticle != null) replaceLoading(userArticle);
+        }
         /*
         print("value.hasErrors=${value.hasErrors}");
         print(value.graphqlErrors);
