@@ -1,3 +1,7 @@
+import 'dart:convert';
+
+import 'package:entube/components/Article/g/services.req.gql.dart';
+import 'package:entube/components/Article/g/services.var.gql.dart';
 import 'package:entube/components/ArticleItems/g/services.req.gql.dart';
 import 'package:entube/components/ArticleItems/index.dart';
 import 'package:entube/graphql/g/schema.schema.gql.dart';
@@ -9,7 +13,7 @@ import 'package:uuid/uuid.dart';
 
 import 'g/services.data.gql.dart';
 import 'g/services.req.gql.dart';
-
+import 'package:http/http.dart' as http;
 /*
 final userArticlesSP = StateProvider((ref) {
   return <GUserArticlesData_user_articles>[];
@@ -17,8 +21,8 @@ final userArticlesSP = StateProvider((ref) {
 */
 
 class UserArticlesSN
-    extends StateNotifier<List<GUserArticlesData_user_articles>> {
-  UserArticlesSN(this.ref) : super([]) {
+    extends StateNotifier<List<GUserArticlesData_user_articles>?> {
+  UserArticlesSN(this.ref) : super(null) {
     client = ref.watch(gqlClientP(FetchPolicy.NetworkOnly));
     fetch();
     //监听登录用户变化, 来决定重取数据
@@ -40,26 +44,77 @@ class UserArticlesSN
     final index = findInLocal(url);
     if (index != -1) return;
     addLoading(url);
-    String? artilceId = await findInRemote(url);
-    print('find article_id=$artilceId');
-    if (artilceId != null) {
-      //Map<String, dynamic> json = {"article_id": artilceId, "deleted_at": null};
-      //final object = Guser_articles_insert_input.fromJson(json)?.toBuilder();
-      final object = Guser_articles_insert_inputBuilder();
-      object.article_id = Guuid(artilceId).toBuilder();
-      final upsertReq = GupsertUserArticlesReq((b) => b..vars.object = object);
-      final stream = client.request(upsertReq);
-      await for (final value in stream) {
-        final json = value.data?.insert_user_articles_one!.toJson();
-        if (json != null) {
-          final userArticle = GUserArticlesData_user_articles.fromJson(json);
-          if (userArticle != null) replaceLoading(userArticle);
-        }
-        if (value.hasErrors) {
-          debugPrint("${value.graphqlErrors}");
-          debugPrint("${value.linkException}");
-        }
+    print(url);
+    String? articleId = await findInRemote(url);
+    // exists in remote
+    if (articleId != null) {
+      print(articleId);
+      await bindUserArticles(articleId);
+      return;
+    }
+    final articleJson = await fetchYouTube(url);
+    articleId = await insertArticles(articleJson);
+    if (articleId != null) {
+      await bindUserArticles(articleId);
+    }
+  }
+
+  Future<void> bindUserArticles(String articleId) async {
+    //Map<String, dynamic> json = {"article_id": artilceId, "deleted_at": null};
+    //final object = Guser_articles_insert_input.fromJson(json)?.toBuilder();
+    final object = Guser_articles_insert_inputBuilder();
+    object.article_id = Guuid(articleId).toBuilder();
+    final upsertReq = GupsertUserArticlesReq((b) => b..vars.object = object);
+    final stream = client.request(upsertReq);
+    await for (final value in stream) {
+      final json = value.data?.insert_user_articles_one!.toJson();
+      if (json != null) {
+        final userArticle = GUserArticlesData_user_articles.fromJson(json);
+        if (userArticle != null) replaceLoading(userArticle);
       }
+      if (value.hasErrors) {
+        debugPrint("${value.graphqlErrors}");
+        debugPrint("${value.linkException}");
+      }
+    }
+  }
+
+  Future<String?> insertArticles(Map<String, dynamic> articleJson) async {
+    final object = Garticles_insert_input.fromJson(articleJson);
+    if (object == null) {
+      throw Exception('Build from json failed: $articleJson');
+    }
+    final req = GinsertArticlesReq((b) => b..vars.object = object.toBuilder());
+    final stream = client.request(req);
+    await for (final value in stream) {
+      if (value.data?.insert_articles_one != null) {
+        return value.data!.insert_articles_one!.id.value;
+      }
+    }
+    return null;
+  }
+
+  Future<Map<String, dynamic>> fetchYouTube(String url) async {
+    final response = await http
+        .get(Uri.parse('https://entube-uzv2eu4hta-de.a.run.app/?uri=$url'));
+
+    if (response.statusCode == 200) {
+      // If the server did return a 200 OK response,
+      // then parse the JSON.
+      var json = jsonDecode(response.body);
+      //makesure url don't change
+      json['url'] = url;
+      if (json['sentences'] == '') {
+        throw Exception("The article ${json['title']} don't have Captions");
+      }
+
+      return json;
+    } else {
+      // If the server did not return a 200 OK response,
+      // then throw an exception.
+      print(response.statusCode);
+      print(response.body);
+      throw Exception('Failed to load album');
     }
   }
 
@@ -79,9 +134,9 @@ class UserArticlesSN
     return null;
   }
 
-  int findInLocal(String uri) {
-    final index = state.indexWhere((v) => v.article.url == uri);
-    if (index != -1) {
+  int? findInLocal(String uri) {
+    final index = state?.indexWhere((v) => v.article.url == uri);
+    if (index != -1 && index != null) {
       //滚动到那一条记录
       ref.watch(articleItemsScrollCP).scrollTo(
           index: index,
@@ -101,26 +156,26 @@ class UserArticlesSN
   }
 
   void updateUserAritcle(GUserArticlesData_user_articles userArticle) {
-    int index = state.indexWhere((element) => element.id == userArticle.id);
+    int? index = state?.indexWhere((element) => element.id == userArticle.id);
     if (index == -1) {
       throw Exception("updateUserAritcle failure, can't find userAritcle");
     }
-    state[index] = userArticle;
+    if (index != null && state != null) state![index] = userArticle;
     //state = [...state];
   }
 
   void add(GUserArticlesData_user_articles userArticle) {
-    state = [userArticle, ...state];
+    state = [userArticle, ...?state];
     // Your update logic. You have access to the use with 'state' variable
   }
 
   void remove(GUserArticlesData_user_articles userArticle) {
-    bool isOk = state.remove(userArticle);
-    if (!isOk) {
+    bool? isOk = state?.remove(userArticle);
+    if (!isOk!) {
       debugPrint('remove userArticle failure!!');
       return;
     }
-    state = [...state];
+    state = [...?state];
   }
 
   void addLoading(String uri) {
@@ -138,32 +193,32 @@ class UserArticlesSN
     };
     final loadingUserArticle = GUserArticlesData_user_articles.fromJson(json);
     if (loadingUserArticle != null) {
-      state = [loadingUserArticle, ...state];
+      state = [loadingUserArticle, ...?state];
     }
   }
 
   void removeLoading(String uri) {
-    final index = state.indexWhere((element) =>
+    final index = state?.indexWhere((element) =>
         element.article.url == uri && element.article.title == loadingTitle);
-    if (index != -1) {
-      state.removeAt(index);
-      state = [...state];
+    if (index != -1 && index != null) {
+      state?.removeAt(index);
+      state = [...?state];
     }
   }
 
   void replaceLoading(GUserArticlesData_user_articles userArticle) {
     String uri = userArticle.article.url;
-    final index = state.indexWhere((element) =>
+    final index = state?.indexWhere((element) =>
         element.article.url == uri && element.article.title == loadingTitle);
-    if (index != -1) {
-      state[index] = userArticle;
-      state = [...state];
+    if (index != -1 && index != null && state != null) {
+      state![index] = userArticle;
+      state = [...?state];
     }
   }
 }
 
 final userArticlesSNP = StateNotifierProvider.autoDispose<UserArticlesSN,
-    List<GUserArticlesData_user_articles>>((ref) {
+    List<GUserArticlesData_user_articles>?>((ref) {
   UserArticlesSN userArticlesSN = UserArticlesSN(ref);
   ref.keepAlive();
   return userArticlesSN;

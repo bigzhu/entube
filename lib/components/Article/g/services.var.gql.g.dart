@@ -8,6 +8,8 @@ part of 'services.var.gql.dart';
 
 Serializer<GSentencesVars> _$gSentencesVarsSerializer =
     new _$GSentencesVarsSerializer();
+Serializer<GinsertArticlesVars> _$ginsertArticlesVarsSerializer =
+    new _$GinsertArticlesVarsSerializer();
 
 class _$GSentencesVarsSerializer
     implements StructuredSerializer<GSentencesVars> {
@@ -43,6 +45,56 @@ class _$GSentencesVarsSerializer
         case 'id':
           result.id.replace(serializers.deserialize(value,
               specifiedType: const FullType(_i1.Guuid))! as _i1.Guuid);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GinsertArticlesVarsSerializer
+    implements StructuredSerializer<GinsertArticlesVars> {
+  @override
+  final Iterable<Type> types = const [
+    GinsertArticlesVars,
+    _$GinsertArticlesVars
+  ];
+  @override
+  final String wireName = 'GinsertArticlesVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GinsertArticlesVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.object;
+    if (value != null) {
+      result
+        ..add('object')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i1.Garticles_insert_input)));
+    }
+    return result;
+  }
+
+  @override
+  GinsertArticlesVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GinsertArticlesVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'object':
+          result.object.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i1.Garticles_insert_input))!
+              as _i1.Garticles_insert_input);
           break;
       }
     }
@@ -133,6 +185,99 @@ class GSentencesVarsBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GSentencesVars', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GinsertArticlesVars extends GinsertArticlesVars {
+  @override
+  final _i1.Garticles_insert_input? object;
+
+  factory _$GinsertArticlesVars(
+          [void Function(GinsertArticlesVarsBuilder)? updates]) =>
+      (new GinsertArticlesVarsBuilder()..update(updates))._build();
+
+  _$GinsertArticlesVars._({this.object}) : super._();
+
+  @override
+  GinsertArticlesVars rebuild(
+          void Function(GinsertArticlesVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GinsertArticlesVarsBuilder toBuilder() =>
+      new GinsertArticlesVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GinsertArticlesVars && object == other.object;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, object.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GinsertArticlesVars')
+          ..add('object', object))
+        .toString();
+  }
+}
+
+class GinsertArticlesVarsBuilder
+    implements Builder<GinsertArticlesVars, GinsertArticlesVarsBuilder> {
+  _$GinsertArticlesVars? _$v;
+
+  _i1.Garticles_insert_inputBuilder? _object;
+  _i1.Garticles_insert_inputBuilder get object =>
+      _$this._object ??= new _i1.Garticles_insert_inputBuilder();
+  set object(_i1.Garticles_insert_inputBuilder? object) =>
+      _$this._object = object;
+
+  GinsertArticlesVarsBuilder();
+
+  GinsertArticlesVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _object = $v.object?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GinsertArticlesVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GinsertArticlesVars;
+  }
+
+  @override
+  void update(void Function(GinsertArticlesVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GinsertArticlesVars build() => _build();
+
+  _$GinsertArticlesVars _build() {
+    _$GinsertArticlesVars _$result;
+    try {
+      _$result = _$v ?? new _$GinsertArticlesVars._(object: _object?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'object';
+        _object?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GinsertArticlesVars', _$failedField, e.toString());
       }
       rethrow;
     }

@@ -3,3 +3,8 @@ query Sentences($id: uuid!) {
     sentences
   }
 }
+mutation insertArticles($object: articles_insert_input = {}) {
+  insert_articles_one(object: $object) {
+    id
+  }
+}

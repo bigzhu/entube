@@ -1,5 +1,5 @@
 import 'package:entube/components/Auth/state.dart';
-import 'package:entube/components/LogoLoading.dart';
+import 'package:entube/components/Loading.dart';
 import 'package:entube/state.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -15,7 +15,7 @@ class SignIn extends HookConsumerWidget {
     final nhostGoogleSignInUrl = ref.watch(nhostGoogleSignInUrlP);
     final authenticationState = ref.watch(authSNP);
     if (authenticationState == AuthenticationState.inProgress) {
-      return const LogoLoading();
+      return const Loading("User login in progress ...");
     }
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       ElevatedButton.icon(

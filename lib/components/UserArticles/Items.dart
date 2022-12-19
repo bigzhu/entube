@@ -1,4 +1,5 @@
 import 'package:entube/components/ArticleItems/index.dart';
+import 'package:entube/components/Loading.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
@@ -10,6 +11,7 @@ class Items extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final userArticles = ref.watch(userArticlesSNP);
+    if (userArticles == null) return const Loading('Loading user articles ...');
     if (userArticles.isEmpty) {
       return const AlertDialog(
           title: Text('No Data'),

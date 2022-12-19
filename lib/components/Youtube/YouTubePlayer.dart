@@ -140,7 +140,7 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
   findUserArticle() {
     final userArticleFind = ref.read(userArticlesSNP.select((values) {
       return values
-          .firstWhereOrNull((value) => value.article.id.value == articleId);
+          ?.firstWhereOrNull((value) => value.article.id.value == articleId);
     }));
 
     if (userArticleFind == null) {

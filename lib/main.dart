@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:app_links/app_links.dart';
 import 'package:entube/components/Auth/index.dart';
 import 'package:entube/components/Error/index.dart';
+import 'package:entube/components/Loading.dart';
 import 'package:entube/components/LogoLoading.dart';
 import 'package:entube/components/UserArticles/index.dart';
 import 'package:entube/configs.dart';

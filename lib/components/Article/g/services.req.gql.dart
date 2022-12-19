@@ -69,3 +69,61 @@ abstract class GSentencesReq
         json,
       );
 }
+
+abstract class GinsertArticlesReq
+    implements
+        Built<GinsertArticlesReq, GinsertArticlesReqBuilder>,
+        _i1.OperationRequest<_i2.GinsertArticlesData, _i3.GinsertArticlesVars> {
+  GinsertArticlesReq._();
+
+  factory GinsertArticlesReq([Function(GinsertArticlesReqBuilder b) updates]) =
+      _$GinsertArticlesReq;
+
+  static void _initializeBuilder(GinsertArticlesReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'insertArticles',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GinsertArticlesVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GinsertArticlesData? Function(
+    _i2.GinsertArticlesData?,
+    _i2.GinsertArticlesData?,
+  )? get updateResult;
+  @override
+  _i2.GinsertArticlesData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GinsertArticlesData? parseData(Map<String, dynamic> json) =>
+      _i2.GinsertArticlesData.fromJson(json);
+  static Serializer<GinsertArticlesReq> get serializer =>
+      _$ginsertArticlesReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GinsertArticlesReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GinsertArticlesReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GinsertArticlesReq.serializer,
+        json,
+      );
+}

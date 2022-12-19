@@ -68,6 +68,7 @@ dependencies:
   flutter_svg: ^1.1.6
   receive_sharing_intent: ^1.4.5
   uuid: ^3.0.7
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:

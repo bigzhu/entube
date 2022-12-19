@@ -17,11 +17,15 @@ import 'package:entube/components/AcquiringWords/g/services.req.gql.dart'
 import 'package:entube/components/AcquiringWords/g/services.var.gql.dart'
     show GAcquiringWordsVars, GWordFragmentVars, GupsertAcquiringWordsVars;
 import 'package:entube/components/Article/g/services.data.gql.dart'
-    show GSentencesData, GSentencesData_articles;
+    show
+        GSentencesData,
+        GSentencesData_articles,
+        GinsertArticlesData,
+        GinsertArticlesData_insert_articles_one;
 import 'package:entube/components/Article/g/services.req.gql.dart'
-    show GSentencesReq;
+    show GSentencesReq, GinsertArticlesReq;
 import 'package:entube/components/Article/g/services.var.gql.dart'
-    show GSentencesVars;
+    show GSentencesVars, GinsertArticlesVars;
 import 'package:entube/components/ArticleItems/g/services.data.gql.dart'
     show
         GArticleByUrlData,
@@ -559,6 +563,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   Gfiles_var_pop_order_by,
   Gfiles_var_samp_order_by,
   Gfiles_variance_order_by,
+  GinsertArticlesData,
+  GinsertArticlesData_insert_articles_one,
+  GinsertArticlesReq,
+  GinsertArticlesVars,
   Gjsonb_cast_exp,
   Gjsonb_comparison_exp,
   Gorder_by,

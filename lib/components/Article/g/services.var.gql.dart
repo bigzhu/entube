@@ -29,3 +29,24 @@ abstract class GSentencesVars
         json,
       );
 }
+
+abstract class GinsertArticlesVars
+    implements Built<GinsertArticlesVars, GinsertArticlesVarsBuilder> {
+  GinsertArticlesVars._();
+
+  factory GinsertArticlesVars(
+      [Function(GinsertArticlesVarsBuilder b) updates]) = _$GinsertArticlesVars;
+
+  _i1.Garticles_insert_input? get object;
+  static Serializer<GinsertArticlesVars> get serializer =>
+      _$ginsertArticlesVarsSerializer;
+  Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(
+        GinsertArticlesVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GinsertArticlesVars? fromJson(Map<String, dynamic> json) =>
+      _i2.serializers.deserializeWith(
+        GinsertArticlesVars.serializer,
+        json,
+      );
+}
