@@ -43,8 +43,10 @@ class UserArticlesSN
     String? artilceId = await findInRemote(url);
     print('find article_id=$artilceId');
     if (artilceId != null) {
-      Map<String, dynamic> json = {"article_id": artilceId, "deleted_at": null};
-      final object = Guser_articles_insert_input.fromJson(json)?.toBuilder();
+      //Map<String, dynamic> json = {"article_id": artilceId, "deleted_at": null};
+      //final object = Guser_articles_insert_input.fromJson(json)?.toBuilder();
+      final object = Guser_articles_insert_inputBuilder();
+      object.article_id = Guuid(artilceId).toBuilder();
       final upsertReq = GupsertUserArticlesReq((b) => b..vars.object = object);
       final stream = client.request(upsertReq);
       await for (final value in stream) {
