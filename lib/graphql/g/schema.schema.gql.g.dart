@@ -1188,11 +1188,17 @@ final BuiltSet<Gorder_by> _$gorderByValues =
   _$gorderBydesc_nulls_last,
 ]);
 
+const Guser_articles_constraint
+    _$guserArticlesConstraintuser_articles_article_id_created_by_key =
+    const Guser_articles_constraint._(
+        'user_articles_article_id_created_by_key');
 const Guser_articles_constraint _$guserArticlesConstraintuser_articles_pkey =
     const Guser_articles_constraint._('user_articles_pkey');
 
 Guser_articles_constraint _$guserArticlesConstraintValueOf(String name) {
   switch (name) {
+    case 'user_articles_article_id_created_by_key':
+      return _$guserArticlesConstraintuser_articles_article_id_created_by_key;
     case 'user_articles_pkey':
       return _$guserArticlesConstraintuser_articles_pkey;
     default:
@@ -1202,6 +1208,7 @@ Guser_articles_constraint _$guserArticlesConstraintValueOf(String name) {
 
 final BuiltSet<Guser_articles_constraint> _$guserArticlesConstraintValues =
     new BuiltSet<Guser_articles_constraint>(const <Guser_articles_constraint>[
+  _$guserArticlesConstraintuser_articles_article_id_created_by_key,
   _$guserArticlesConstraintuser_articles_pkey,
 ]);
 

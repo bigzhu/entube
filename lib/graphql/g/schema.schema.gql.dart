@@ -5551,6 +5551,10 @@ abstract class Guser_articles_bool_exp
 class Guser_articles_constraint extends EnumClass {
   const Guser_articles_constraint._(String name) : super(name);
 
+  static const Guser_articles_constraint
+      user_articles_article_id_created_by_key =
+      _$guserArticlesConstraintuser_articles_article_id_created_by_key;
+
   static const Guser_articles_constraint user_articles_pkey =
       _$guserArticlesConstraintuser_articles_pkey;
 

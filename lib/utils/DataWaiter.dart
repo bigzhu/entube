@@ -19,7 +19,7 @@ class DataWaiter<TData, TVars> extends HookConsumerWidget {
       {super.key, required this.req, required this.builder, this.loading});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final client = ref.watch(gqlClientP(FetchPolicy.NetworkOnly));
+    final client = ref.watch(gqlClientP(FetchPolicy.CacheAndNetwork));
     //final client = ref.watch(gqlClientP(FetchPolicy.NetworkOnly));
     debugPrint('run DataWaiter');
     Stream stream = const Stream.empty();

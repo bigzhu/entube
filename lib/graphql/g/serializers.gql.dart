@@ -37,11 +37,13 @@ import 'package:entube/components/UserArticles/g/services.data.gql.dart'
     show
         GUserArticlesData,
         GUserArticlesData_user_articles,
-        GUserArticlesData_user_articles_article;
+        GUserArticlesData_user_articles_article,
+        GupsertUserArticlesData,
+        GupsertUserArticlesData_insert_user_articles_one;
 import 'package:entube/components/UserArticles/g/services.req.gql.dart'
-    show GUserArticlesReq;
+    show GUserArticlesReq, GupsertUserArticlesReq;
 import 'package:entube/components/UserArticles/g/services.var.gql.dart'
-    show GUserArticlesVars;
+    show GUserArticlesVars, GupsertUserArticlesVars;
 import 'package:entube/graphql/g/schema.schema.gql.dart'
     show
         GBoolean_comparison_exp,
@@ -559,6 +561,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GupsertAcquiringWordsData_insert_words_one,
   GupsertAcquiringWordsReq,
   GupsertAcquiringWordsVars,
+  GupsertUserArticlesData,
+  GupsertUserArticlesData_insert_user_articles_one,
+  GupsertUserArticlesReq,
+  GupsertUserArticlesVars,
   Guser_articles_aggregate_bool_exp,
   Guser_articles_aggregate_bool_exp_count,
   Guser_articles_aggregate_order_by,

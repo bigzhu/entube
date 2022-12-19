@@ -14,6 +14,11 @@ Serializer<GUserArticlesData_user_articles>
 Serializer<GUserArticlesData_user_articles_article>
     _$gUserArticlesDataUserArticlesArticleSerializer =
     new _$GUserArticlesData_user_articles_articleSerializer();
+Serializer<GupsertUserArticlesData> _$gupsertUserArticlesDataSerializer =
+    new _$GupsertUserArticlesDataSerializer();
+Serializer<GupsertUserArticlesData_insert_user_articles_one>
+    _$gupsertUserArticlesDataInsertUserArticlesOneSerializer =
+    new _$GupsertUserArticlesData_insert_user_articles_oneSerializer();
 
 class _$GUserArticlesDataSerializer
     implements StructuredSerializer<GUserArticlesData> {
@@ -220,6 +225,121 @@ class _$GUserArticlesData_user_articles_articleSerializer
         case 'url':
           result.url = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GupsertUserArticlesDataSerializer
+    implements StructuredSerializer<GupsertUserArticlesData> {
+  @override
+  final Iterable<Type> types = const [
+    GupsertUserArticlesData,
+    _$GupsertUserArticlesData
+  ];
+  @override
+  final String wireName = 'GupsertUserArticlesData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GupsertUserArticlesData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.insert_user_articles_one;
+    if (value != null) {
+      result
+        ..add('insert_user_articles_one')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                GupsertUserArticlesData_insert_user_articles_one)));
+    }
+    return result;
+  }
+
+  @override
+  GupsertUserArticlesData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GupsertUserArticlesDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'insert_user_articles_one':
+          result.insert_user_articles_one.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GupsertUserArticlesData_insert_user_articles_one))!
+              as GupsertUserArticlesData_insert_user_articles_one);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GupsertUserArticlesData_insert_user_articles_oneSerializer
+    implements
+        StructuredSerializer<GupsertUserArticlesData_insert_user_articles_one> {
+  @override
+  final Iterable<Type> types = const [
+    GupsertUserArticlesData_insert_user_articles_one,
+    _$GupsertUserArticlesData_insert_user_articles_one
+  ];
+  @override
+  final String wireName = 'GupsertUserArticlesData_insert_user_articles_one';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GupsertUserArticlesData_insert_user_articles_one object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id,
+          specifiedType: const FullType(_i2.Guuid)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GupsertUserArticlesData_insert_user_articles_one deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result =
+        new GupsertUserArticlesData_insert_user_articles_oneBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i2.Guuid))! as _i2.Guuid);
           break;
       }
     }
@@ -666,6 +786,257 @@ class GUserArticlesData_user_articles_articleBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GUserArticlesData_user_articles_article',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GupsertUserArticlesData extends GupsertUserArticlesData {
+  @override
+  final String G__typename;
+  @override
+  final GupsertUserArticlesData_insert_user_articles_one?
+      insert_user_articles_one;
+
+  factory _$GupsertUserArticlesData(
+          [void Function(GupsertUserArticlesDataBuilder)? updates]) =>
+      (new GupsertUserArticlesDataBuilder()..update(updates))._build();
+
+  _$GupsertUserArticlesData._(
+      {required this.G__typename, this.insert_user_articles_one})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GupsertUserArticlesData', 'G__typename');
+  }
+
+  @override
+  GupsertUserArticlesData rebuild(
+          void Function(GupsertUserArticlesDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GupsertUserArticlesDataBuilder toBuilder() =>
+      new GupsertUserArticlesDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GupsertUserArticlesData &&
+        G__typename == other.G__typename &&
+        insert_user_articles_one == other.insert_user_articles_one;
+  }
+
+  @override
+  int get hashCode {
+    return $jf(
+        $jc($jc(0, G__typename.hashCode), insert_user_articles_one.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GupsertUserArticlesData')
+          ..add('G__typename', G__typename)
+          ..add('insert_user_articles_one', insert_user_articles_one))
+        .toString();
+  }
+}
+
+class GupsertUserArticlesDataBuilder
+    implements
+        Builder<GupsertUserArticlesData, GupsertUserArticlesDataBuilder> {
+  _$GupsertUserArticlesData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GupsertUserArticlesData_insert_user_articles_oneBuilder?
+      _insert_user_articles_one;
+  GupsertUserArticlesData_insert_user_articles_oneBuilder
+      get insert_user_articles_one => _$this._insert_user_articles_one ??=
+          new GupsertUserArticlesData_insert_user_articles_oneBuilder();
+  set insert_user_articles_one(
+          GupsertUserArticlesData_insert_user_articles_oneBuilder?
+              insert_user_articles_one) =>
+      _$this._insert_user_articles_one = insert_user_articles_one;
+
+  GupsertUserArticlesDataBuilder() {
+    GupsertUserArticlesData._initializeBuilder(this);
+  }
+
+  GupsertUserArticlesDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _insert_user_articles_one = $v.insert_user_articles_one?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GupsertUserArticlesData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GupsertUserArticlesData;
+  }
+
+  @override
+  void update(void Function(GupsertUserArticlesDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GupsertUserArticlesData build() => _build();
+
+  _$GupsertUserArticlesData _build() {
+    _$GupsertUserArticlesData _$result;
+    try {
+      _$result = _$v ??
+          new _$GupsertUserArticlesData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GupsertUserArticlesData', 'G__typename'),
+              insert_user_articles_one: _insert_user_articles_one?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'insert_user_articles_one';
+        _insert_user_articles_one?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GupsertUserArticlesData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GupsertUserArticlesData_insert_user_articles_one
+    extends GupsertUserArticlesData_insert_user_articles_one {
+  @override
+  final String G__typename;
+  @override
+  final _i2.Guuid id;
+
+  factory _$GupsertUserArticlesData_insert_user_articles_one(
+          [void Function(
+                  GupsertUserArticlesData_insert_user_articles_oneBuilder)?
+              updates]) =>
+      (new GupsertUserArticlesData_insert_user_articles_oneBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GupsertUserArticlesData_insert_user_articles_one._(
+      {required this.G__typename, required this.id})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GupsertUserArticlesData_insert_user_articles_one', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GupsertUserArticlesData_insert_user_articles_one', 'id');
+  }
+
+  @override
+  GupsertUserArticlesData_insert_user_articles_one rebuild(
+          void Function(GupsertUserArticlesData_insert_user_articles_oneBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GupsertUserArticlesData_insert_user_articles_oneBuilder toBuilder() =>
+      new GupsertUserArticlesData_insert_user_articles_oneBuilder()
+        ..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GupsertUserArticlesData_insert_user_articles_one &&
+        G__typename == other.G__typename &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, G__typename.hashCode), id.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GupsertUserArticlesData_insert_user_articles_one')
+          ..add('G__typename', G__typename)
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GupsertUserArticlesData_insert_user_articles_oneBuilder
+    implements
+        Builder<GupsertUserArticlesData_insert_user_articles_one,
+            GupsertUserArticlesData_insert_user_articles_oneBuilder> {
+  _$GupsertUserArticlesData_insert_user_articles_one? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  _i2.GuuidBuilder? _id;
+  _i2.GuuidBuilder get id => _$this._id ??= new _i2.GuuidBuilder();
+  set id(_i2.GuuidBuilder? id) => _$this._id = id;
+
+  GupsertUserArticlesData_insert_user_articles_oneBuilder() {
+    GupsertUserArticlesData_insert_user_articles_one._initializeBuilder(this);
+  }
+
+  GupsertUserArticlesData_insert_user_articles_oneBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GupsertUserArticlesData_insert_user_articles_one other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GupsertUserArticlesData_insert_user_articles_one;
+  }
+
+  @override
+  void update(
+      void Function(GupsertUserArticlesData_insert_user_articles_oneBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GupsertUserArticlesData_insert_user_articles_one build() => _build();
+
+  _$GupsertUserArticlesData_insert_user_articles_one _build() {
+    _$GupsertUserArticlesData_insert_user_articles_one _$result;
+    try {
+      _$result = _$v ??
+          new _$GupsertUserArticlesData_insert_user_articles_one._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename,
+                  r'GupsertUserArticlesData_insert_user_articles_one',
+                  'G__typename'),
+              id: id.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'id';
+        id.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GupsertUserArticlesData_insert_user_articles_one',
             _$failedField,
             e.toString());
       }

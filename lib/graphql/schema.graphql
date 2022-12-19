@@ -5698,6 +5698,11 @@ unique or primary key constraints on table "user_articles"
 """
 enum user_articles_constraint {
   """
+  unique or primary key constraint on columns "created_by", "article_id"
+  """
+  user_articles_article_id_created_by_key
+
+  """
   unique or primary key constraint on columns "id"
   """
   user_articles_pkey

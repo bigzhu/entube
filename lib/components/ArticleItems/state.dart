@@ -4,7 +4,7 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'g/services.data.gql.dart';
 
 const String loadingTitle = '☕ 🍕 loading new YouTube ......';
-final articleItemsScrollControllerProvider =
+final articleItemsScrollCP =
     Provider<ItemScrollController>((ref) => ItemScrollController());
 
 final articleItemsSP = StateProvider((ref) {

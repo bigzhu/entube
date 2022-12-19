@@ -1,3 +1,4 @@
+import 'package:entube/components/ArticleItems/g/services.req.gql.dart';
 import 'package:entube/components/ArticleItems/index.dart';
 import 'package:entube/state.dart';
 import 'package:ferry/ferry.dart';
@@ -17,6 +18,7 @@ final userArticlesSP = StateProvider((ref) {
 class UserArticlesSN
     extends StateNotifier<List<GUserArticlesData_user_articles>> {
   UserArticlesSN(this.ref) : super([]) {
+    client = ref.watch(gqlClientP(FetchPolicy.CacheAndNetwork));
     fetch();
     //监听登录用户变化, 来决定重取数据
     /*
@@ -28,17 +30,49 @@ class UserArticlesSN
     });
     */
   }
+  late Client client;
   final Ref ref;
+  // 查询 user_articles
   final req = GUserArticlesReq();
+  // 查询 articles
+  final articlesReq = GArticleByUrlReq();
+
+  void sharedNew(String uri) async {
+    final index = findInLocal(uri);
+    if (index != -1) return;
+    final artilceJson = await findInRemote(uri);
+    if (artilceJson != null) {}
+  }
+
+  Future<Map<String, dynamic>?> findInRemote(String uri) async {
+    final stream = client.request(articlesReq);
+    await for (final value in stream) {
+      if (value.data?.articles != null && value.data!.articles.isNotEmpty) {
+        return value.data!.articles[0].toJson();
+      }
+    }
+    return null;
+  }
+
+  int findInLocal(String uri) {
+    final index = state.indexWhere((v) => v.article.url == uri);
+    if (index != -1) {
+      //滚动到那一条记录
+      ref.watch(articleItemsScrollCP).scrollTo(
+          index: index,
+          duration: const Duration(milliseconds: 1400),
+          curve: Curves.linear);
+    }
+    return index;
+  }
 
   void fetch() async {
-    final client = ref.watch(gqlClientP(FetchPolicy.CacheAndNetwork));
     final stream = client.request(req);
-    stream.listen((event) {
-      if (event.data?.user_articles != null) {
-        state = event.data!.user_articles.toList();
+    await for (final value in stream) {
+      if (value.data?.user_articles != null) {
+        state = value.data!.user_articles.toList();
       }
-    });
+    }
   }
 
   void updateUserAritcle(GUserArticlesData_user_articles userArticle) {

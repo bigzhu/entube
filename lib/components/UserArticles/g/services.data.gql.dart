@@ -98,3 +98,61 @@ abstract class GUserArticlesData_user_articles_article
         json,
       );
 }
+
+abstract class GupsertUserArticlesData
+    implements Built<GupsertUserArticlesData, GupsertUserArticlesDataBuilder> {
+  GupsertUserArticlesData._();
+
+  factory GupsertUserArticlesData(
+          [Function(GupsertUserArticlesDataBuilder b) updates]) =
+      _$GupsertUserArticlesData;
+
+  static void _initializeBuilder(GupsertUserArticlesDataBuilder b) =>
+      b..G__typename = 'mutation_root';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GupsertUserArticlesData_insert_user_articles_one?
+      get insert_user_articles_one;
+  static Serializer<GupsertUserArticlesData> get serializer =>
+      _$gupsertUserArticlesDataSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GupsertUserArticlesData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GupsertUserArticlesData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GupsertUserArticlesData.serializer,
+        json,
+      );
+}
+
+abstract class GupsertUserArticlesData_insert_user_articles_one
+    implements
+        Built<GupsertUserArticlesData_insert_user_articles_one,
+            GupsertUserArticlesData_insert_user_articles_oneBuilder> {
+  GupsertUserArticlesData_insert_user_articles_one._();
+
+  factory GupsertUserArticlesData_insert_user_articles_one(
+      [Function(GupsertUserArticlesData_insert_user_articles_oneBuilder b)
+          updates]) = _$GupsertUserArticlesData_insert_user_articles_one;
+
+  static void _initializeBuilder(
+          GupsertUserArticlesData_insert_user_articles_oneBuilder b) =>
+      b..G__typename = 'user_articles';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  _i2.Guuid get id;
+  static Serializer<GupsertUserArticlesData_insert_user_articles_one>
+      get serializer =>
+          _$gupsertUserArticlesDataInsertUserArticlesOneSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GupsertUserArticlesData_insert_user_articles_one.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GupsertUserArticlesData_insert_user_articles_one? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GupsertUserArticlesData_insert_user_articles_one.serializer,
+        json,
+      );
+}

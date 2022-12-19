@@ -20307,9 +20307,13 @@ const user_articles_constraint = _i1.EnumTypeDefinitionNode(
   directives: [],
   values: [
     _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'user_articles_article_id_created_by_key'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
       name: _i1.NameNode(value: 'user_articles_pkey'),
       directives: [],
-    )
+    ),
   ],
 );
 const user_articles_inc_input = _i1.InputObjectTypeDefinitionNode(
