@@ -16,7 +16,7 @@ class Page extends HookConsumerWidget {
   final String articleId;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final userArticle = ref.watch(UserArticles.userArticlesSP.select((value) =>
+    final userArticle = ref.watch(UserArticles.userArticlesSNP.select((value) =>
         value.firstWhere((element) => element.article.id == Guuid(articleId))));
     final article = ArticleItems.GArticlesData_articles.fromJson(
         userArticle.article.toJson());
