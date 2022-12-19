@@ -67,6 +67,7 @@ dependencies:
   audioplayers: ^1.1.1
   flutter_svg: ^1.1.6
   receive_sharing_intent: ^1.4.5
+  uuid: ^3.0.7
 
 dev_dependencies:
   flutter_test:

@@ -5,6 +5,7 @@ import 'package:entube/state.dart';
 import 'package:ferry/ferry.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:uuid/uuid.dart';
 
 import 'g/services.data.gql.dart';
 import 'g/services.req.gql.dart';
@@ -66,16 +67,17 @@ class UserArticlesSN
   void addLoading(String uri) {
     //UserArticleModel loadingUserArticle = ref.read(loadingUserArticleProvider);
     Map<String, dynamic> json = {
-      "id": "138d7b22-60a2-4970-af45-9e869ab11acc",
+      "id": const Uuid().v4(),
       "play_at": 0,
       "article": {
-        "id": "4f75a183-081e-41b0-b061-0aa592947323",
+        "id": const Uuid().v4(),
         "favicon": "",
         "thumbnail": "",
         "title": loadingTitle,
         "url": uri
       }
     };
+    print(json);
     final loadingUserArticle = GUserArticlesData_user_articles.fromJson(json);
     if (loadingUserArticle != null) {
       state = [loadingUserArticle, ...state];
