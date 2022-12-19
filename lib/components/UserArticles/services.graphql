@@ -22,9 +22,29 @@ mutation upsertUserArticles($object: user_articles_insert_input = {}) {
     object: $object
     on_conflict: {
       constraint: user_articles_article_id_created_by_key
-      update_columns: [deleted_at]
+      update_columns: [deleted_at, created_at]
     }
   ) {
     ...UserArticleFragment
   }
 }
+
+## 建立触发器, upsert reuse 时候更新 created_at
+# CREATE
+# 	OR REPLACE FUNCTION set_created_at_when_reuse ( ) RETURNS TRIGGER AS $$ BEGIN
+# 	IF
+# 		( OLD.deleted_at IS NOT NULL )
+# 		AND ( NEW.deleted_at IS NULL ) THEN
+# 			NEW.created_at = NOW( );
+#
+# 	END IF;
+# 	RETURN NEW;
+#
+# END;
+# $$ LANGUAGE plpgsql;
+#
+#
+#
+# CREATE or replace TRIGGER reuse_user_articles
+# before  UPDATE  ON user_articles
+#     FOR EACH ROW EXECUTE PROCEDURE set_created_at_when_reuse();

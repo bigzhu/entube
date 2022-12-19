@@ -43,7 +43,10 @@ class UserArticlesSN
     String? artilceId = await findInRemote(url);
     print('find article_id=$artilceId');
     if (artilceId != null) {
-      Map<String, dynamic> json = {"article_id": artilceId, "deleted_at": null};
+      Map<String, dynamic> json = {
+        "article_id": artilceId,
+        "created_at": "now()"
+      };
       final object = Guser_articles_insert_input.fromJson(json)?.toBuilder();
       final upsertReq = GupsertUserArticlesReq((b) => b..vars.object = object);
       final stream = client.request(upsertReq);
@@ -53,11 +56,10 @@ class UserArticlesSN
           final userArticle = GUserArticlesData_user_articles.fromJson(json);
           if (userArticle != null) replaceLoading(userArticle);
         }
-        /*
-        print("value.hasErrors=${value.hasErrors}");
-        print(value.graphqlErrors);
-        print(value.linkException);
-        */
+        if (value.hasErrors) {
+          debugPrint("${value.graphqlErrors}");
+          debugPrint("${value.linkException}");
+        }
       }
     }
   }

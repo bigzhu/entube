@@ -139,7 +139,8 @@ const upsertUserArticles = _i1.OperationDefinitionNode(
             _i1.ObjectFieldNode(
               name: _i1.NameNode(value: 'update_columns'),
               value: _i1.ListValueNode(values: [
-                _i1.EnumValueNode(name: _i1.NameNode(value: 'deleted_at'))
+                _i1.EnumValueNode(name: _i1.NameNode(value: 'deleted_at')),
+                _i1.EnumValueNode(name: _i1.NameNode(value: 'created_at')),
               ]),
             ),
           ]),
