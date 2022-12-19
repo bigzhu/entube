@@ -1,14 +1,18 @@
+fragment UserArticleFragment on user_articles {
+  id
+  play_at
+  article {
+    id
+    favicon
+    thumbnail
+    title
+    url
+  }
+}
+
 query UserArticles {
   user_articles(order_by: { created_at: desc }) {
-    id
-    play_at
-    article {
-      id
-      favicon
-      thumbnail
-      title
-      url
-    }
+    ...UserArticleFragment
   }
 }
 
@@ -18,9 +22,9 @@ mutation upsertUserArticles($object: user_articles_insert_input = {}) {
     object: $object
     on_conflict: {
       constraint: user_articles_article_id_created_by_key
-      update_columns: deleted_at
+      update_columns: [deleted_at]
     }
   ) {
-    id
+    ...UserArticleFragment
   }
 }

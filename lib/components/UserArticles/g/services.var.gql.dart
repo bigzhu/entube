@@ -50,3 +50,25 @@ abstract class GupsertUserArticlesVars
         json,
       );
 }
+
+abstract class GUserArticleFragmentVars
+    implements
+        Built<GUserArticleFragmentVars, GUserArticleFragmentVarsBuilder> {
+  GUserArticleFragmentVars._();
+
+  factory GUserArticleFragmentVars(
+          [Function(GUserArticleFragmentVarsBuilder b) updates]) =
+      _$GUserArticleFragmentVars;
+
+  static Serializer<GUserArticleFragmentVars> get serializer =>
+      _$gUserArticleFragmentVarsSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUserArticleFragmentVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GUserArticleFragmentVars? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUserArticleFragmentVars.serializer,
+        json,
+      );
+}

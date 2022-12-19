@@ -9,6 +9,7 @@ import 'package:entube/components/UserArticles/g/services.data.gql.dart' as _i2;
 import 'package:entube/components/UserArticles/g/services.var.gql.dart' as _i3;
 import 'package:entube/graphql/g/serializers.gql.dart' as _i6;
 import 'package:ferry_exec/ferry_exec.dart' as _i1;
+import 'package:gql/ast.dart' as _i7;
 import 'package:gql_exec/gql_exec.dart' as _i4;
 
 part 'services.req.gql.g.dart';
@@ -127,6 +128,44 @@ abstract class GupsertUserArticlesReq
   static GupsertUserArticlesReq? fromJson(Map<String, dynamic> json) =>
       _i6.serializers.deserializeWith(
         GupsertUserArticlesReq.serializer,
+        json,
+      );
+}
+
+abstract class GUserArticleFragmentReq
+    implements
+        Built<GUserArticleFragmentReq, GUserArticleFragmentReqBuilder>,
+        _i1.FragmentRequest<_i2.GUserArticleFragmentData,
+            _i3.GUserArticleFragmentVars> {
+  GUserArticleFragmentReq._();
+
+  factory GUserArticleFragmentReq(
+          [Function(GUserArticleFragmentReqBuilder b) updates]) =
+      _$GUserArticleFragmentReq;
+
+  static void _initializeBuilder(GUserArticleFragmentReqBuilder b) => b
+    ..document = _i5.document
+    ..fragmentName = 'UserArticleFragment';
+  @override
+  _i3.GUserArticleFragmentVars get vars;
+  @override
+  _i7.DocumentNode get document;
+  @override
+  String? get fragmentName;
+  @override
+  Map<String, dynamic> get idFields;
+  @override
+  _i2.GUserArticleFragmentData? parseData(Map<String, dynamic> json) =>
+      _i2.GUserArticleFragmentData.fromJson(json);
+  static Serializer<GUserArticleFragmentReq> get serializer =>
+      _$gUserArticleFragmentReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GUserArticleFragmentReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GUserArticleFragmentReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GUserArticleFragmentReq.serializer,
         json,
       );
 }

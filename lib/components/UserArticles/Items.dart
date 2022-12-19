@@ -11,7 +11,7 @@ class Items extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final userArticles = ref.watch(userArticlesSNP);
     return ScrollablePositionedList.builder(
-      itemScrollController: ref.read(articleItemsScrollControllerProvider),
+      itemScrollController: ref.read(articleItemsScrollCP),
       itemCount: userArticles.length,
       itemBuilder: (context, index) {
         final article = GArticlesData_articles.fromJson(

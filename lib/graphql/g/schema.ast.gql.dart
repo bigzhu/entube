@@ -19797,7 +19797,7 @@ const user_articles = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'uuid'),
-        isNonNull: true,
+        isNonNull: false,
       ),
     ),
   ],

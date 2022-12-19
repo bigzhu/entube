@@ -34,7 +34,7 @@ class Items extends HookConsumerWidget {
         });
 
         return ScrollablePositionedList.builder(
-          itemScrollController: ref.read(articleItemsScrollControllerProvider),
+          itemScrollController: ref.read(articleItemsScrollCP),
           itemCount: articles.length,
           itemBuilder: (context, index) {
             return Item(

@@ -35,15 +35,18 @@ import 'package:entube/components/ArticleItems/g/services.var.gql.dart'
     show GArticleByUrlVars, GArticleFragmentVars, GArticlesVars;
 import 'package:entube/components/UserArticles/g/services.data.gql.dart'
     show
+        GUserArticleFragmentData,
+        GUserArticleFragmentData_article,
         GUserArticlesData,
         GUserArticlesData_user_articles,
         GUserArticlesData_user_articles_article,
         GupsertUserArticlesData,
-        GupsertUserArticlesData_insert_user_articles_one;
+        GupsertUserArticlesData_insert_user_articles_one,
+        GupsertUserArticlesData_insert_user_articles_one_article;
 import 'package:entube/components/UserArticles/g/services.req.gql.dart'
-    show GUserArticlesReq, GupsertUserArticlesReq;
+    show GUserArticleFragmentReq, GUserArticlesReq, GupsertUserArticlesReq;
 import 'package:entube/components/UserArticles/g/services.var.gql.dart'
-    show GUserArticlesVars, GupsertUserArticlesVars;
+    show GUserArticleFragmentVars, GUserArticlesVars, GupsertUserArticlesVars;
 import 'package:entube/graphql/g/schema.schema.gql.dart'
     show
         GBoolean_comparison_exp,
@@ -350,6 +353,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GSentencesReq,
   GSentencesVars,
   GString_comparison_exp,
+  GUserArticleFragmentData,
+  GUserArticleFragmentData_article,
+  GUserArticleFragmentReq,
+  GUserArticleFragmentVars,
   GUserArticlesData,
   GUserArticlesData_user_articles,
   GUserArticlesData_user_articles_article,
@@ -563,6 +570,7 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GupsertAcquiringWordsVars,
   GupsertUserArticlesData,
   GupsertUserArticlesData_insert_user_articles_one,
+  GupsertUserArticlesData_insert_user_articles_one_article,
   GupsertUserArticlesReq,
   GupsertUserArticlesVars,
   Guser_articles_aggregate_bool_exp,

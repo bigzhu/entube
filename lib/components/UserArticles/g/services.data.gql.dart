@@ -38,7 +38,8 @@ abstract class GUserArticlesData
 abstract class GUserArticlesData_user_articles
     implements
         Built<GUserArticlesData_user_articles,
-            GUserArticlesData_user_articlesBuilder> {
+            GUserArticlesData_user_articlesBuilder>,
+        GUserArticleFragment {
   GUserArticlesData_user_articles._();
 
   factory GUserArticlesData_user_articles(
@@ -47,13 +48,18 @@ abstract class GUserArticlesData_user_articles
 
   static void _initializeBuilder(GUserArticlesData_user_articlesBuilder b) =>
       b..G__typename = 'user_articles';
+  @override
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
+  @override
   _i2.Guuid get id;
+  @override
   int get play_at;
+  @override
   GUserArticlesData_user_articles_article get article;
   static Serializer<GUserArticlesData_user_articles> get serializer =>
       _$gUserArticlesDataUserArticlesSerializer;
+  @override
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GUserArticlesData_user_articles.serializer,
         this,
@@ -68,7 +74,8 @@ abstract class GUserArticlesData_user_articles
 abstract class GUserArticlesData_user_articles_article
     implements
         Built<GUserArticlesData_user_articles_article,
-            GUserArticlesData_user_articles_articleBuilder> {
+            GUserArticlesData_user_articles_articleBuilder>,
+        GUserArticleFragment_article {
   GUserArticlesData_user_articles_article._();
 
   factory GUserArticlesData_user_articles_article(
@@ -78,15 +85,22 @@ abstract class GUserArticlesData_user_articles_article
   static void _initializeBuilder(
           GUserArticlesData_user_articles_articleBuilder b) =>
       b..G__typename = 'articles';
+  @override
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
+  @override
   _i2.Guuid get id;
+  @override
   String? get favicon;
+  @override
   String? get thumbnail;
+  @override
   String? get title;
+  @override
   String get url;
   static Serializer<GUserArticlesData_user_articles_article> get serializer =>
       _$gUserArticlesDataUserArticlesArticleSerializer;
+  @override
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GUserArticlesData_user_articles_article.serializer,
         this,
@@ -129,7 +143,8 @@ abstract class GupsertUserArticlesData
 abstract class GupsertUserArticlesData_insert_user_articles_one
     implements
         Built<GupsertUserArticlesData_insert_user_articles_one,
-            GupsertUserArticlesData_insert_user_articles_oneBuilder> {
+            GupsertUserArticlesData_insert_user_articles_oneBuilder>,
+        GUserArticleFragment {
   GupsertUserArticlesData_insert_user_articles_one._();
 
   factory GupsertUserArticlesData_insert_user_articles_one(
@@ -139,12 +154,19 @@ abstract class GupsertUserArticlesData_insert_user_articles_one
   static void _initializeBuilder(
           GupsertUserArticlesData_insert_user_articles_oneBuilder b) =>
       b..G__typename = 'user_articles';
+  @override
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
+  @override
   _i2.Guuid get id;
+  @override
+  int get play_at;
+  @override
+  GupsertUserArticlesData_insert_user_articles_one_article get article;
   static Serializer<GupsertUserArticlesData_insert_user_articles_one>
       get serializer =>
           _$gupsertUserArticlesDataInsertUserArticlesOneSerializer;
+  @override
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GupsertUserArticlesData_insert_user_articles_one.serializer,
         this,
@@ -153,6 +175,144 @@ abstract class GupsertUserArticlesData_insert_user_articles_one
           Map<String, dynamic> json) =>
       _i1.serializers.deserializeWith(
         GupsertUserArticlesData_insert_user_articles_one.serializer,
+        json,
+      );
+}
+
+abstract class GupsertUserArticlesData_insert_user_articles_one_article
+    implements
+        Built<GupsertUserArticlesData_insert_user_articles_one_article,
+            GupsertUserArticlesData_insert_user_articles_one_articleBuilder>,
+        GUserArticleFragment_article {
+  GupsertUserArticlesData_insert_user_articles_one_article._();
+
+  factory GupsertUserArticlesData_insert_user_articles_one_article(
+      [Function(
+              GupsertUserArticlesData_insert_user_articles_one_articleBuilder b)
+          updates]) = _$GupsertUserArticlesData_insert_user_articles_one_article;
+
+  static void _initializeBuilder(
+          GupsertUserArticlesData_insert_user_articles_one_articleBuilder b) =>
+      b..G__typename = 'articles';
+  @override
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  @override
+  _i2.Guuid get id;
+  @override
+  String? get favicon;
+  @override
+  String? get thumbnail;
+  @override
+  String? get title;
+  @override
+  String get url;
+  static Serializer<GupsertUserArticlesData_insert_user_articles_one_article>
+      get serializer =>
+          _$gupsertUserArticlesDataInsertUserArticlesOneArticleSerializer;
+  @override
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GupsertUserArticlesData_insert_user_articles_one_article.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GupsertUserArticlesData_insert_user_articles_one_article? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GupsertUserArticlesData_insert_user_articles_one_article.serializer,
+        json,
+      );
+}
+
+abstract class GUserArticleFragment {
+  String get G__typename;
+  _i2.Guuid get id;
+  int get play_at;
+  GUserArticleFragment_article get article;
+  Map<String, dynamic> toJson();
+}
+
+abstract class GUserArticleFragment_article {
+  String get G__typename;
+  _i2.Guuid get id;
+  String? get favicon;
+  String? get thumbnail;
+  String? get title;
+  String get url;
+  Map<String, dynamic> toJson();
+}
+
+abstract class GUserArticleFragmentData
+    implements
+        Built<GUserArticleFragmentData, GUserArticleFragmentDataBuilder>,
+        GUserArticleFragment {
+  GUserArticleFragmentData._();
+
+  factory GUserArticleFragmentData(
+          [Function(GUserArticleFragmentDataBuilder b) updates]) =
+      _$GUserArticleFragmentData;
+
+  static void _initializeBuilder(GUserArticleFragmentDataBuilder b) =>
+      b..G__typename = 'user_articles';
+  @override
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  @override
+  _i2.Guuid get id;
+  @override
+  int get play_at;
+  @override
+  GUserArticleFragmentData_article get article;
+  static Serializer<GUserArticleFragmentData> get serializer =>
+      _$gUserArticleFragmentDataSerializer;
+  @override
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUserArticleFragmentData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GUserArticleFragmentData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUserArticleFragmentData.serializer,
+        json,
+      );
+}
+
+abstract class GUserArticleFragmentData_article
+    implements
+        Built<GUserArticleFragmentData_article,
+            GUserArticleFragmentData_articleBuilder>,
+        GUserArticleFragment_article {
+  GUserArticleFragmentData_article._();
+
+  factory GUserArticleFragmentData_article(
+          [Function(GUserArticleFragmentData_articleBuilder b) updates]) =
+      _$GUserArticleFragmentData_article;
+
+  static void _initializeBuilder(GUserArticleFragmentData_articleBuilder b) =>
+      b..G__typename = 'articles';
+  @override
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  @override
+  _i2.Guuid get id;
+  @override
+  String? get favicon;
+  @override
+  String? get thumbnail;
+  @override
+  String? get title;
+  @override
+  String get url;
+  static Serializer<GUserArticleFragmentData_article> get serializer =>
+      _$gUserArticleFragmentDataArticleSerializer;
+  @override
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GUserArticleFragmentData_article.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GUserArticleFragmentData_article? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GUserArticleFragmentData_article.serializer,
         json,
       );
 }

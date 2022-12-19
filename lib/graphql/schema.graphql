@@ -5597,7 +5597,7 @@ type user_articles {
   id: uuid!
   play_at: Int!
   updated_at: timestamptz!
-  updated_by: uuid!
+  updated_by: uuid
 }
 
 """

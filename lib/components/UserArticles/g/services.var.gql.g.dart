@@ -10,6 +10,8 @@ Serializer<GUserArticlesVars> _$gUserArticlesVarsSerializer =
     new _$GUserArticlesVarsSerializer();
 Serializer<GupsertUserArticlesVars> _$gupsertUserArticlesVarsSerializer =
     new _$GupsertUserArticlesVarsSerializer();
+Serializer<GUserArticleFragmentVars> _$gUserArticleFragmentVarsSerializer =
+    new _$GUserArticleFragmentVarsSerializer();
 
 class _$GUserArticlesVarsSerializer
     implements StructuredSerializer<GUserArticlesVars> {
@@ -80,6 +82,31 @@ class _$GupsertUserArticlesVarsSerializer
     }
 
     return result.build();
+  }
+}
+
+class _$GUserArticleFragmentVarsSerializer
+    implements StructuredSerializer<GUserArticleFragmentVars> {
+  @override
+  final Iterable<Type> types = const [
+    GUserArticleFragmentVars,
+    _$GUserArticleFragmentVars
+  ];
+  @override
+  final String wireName = 'GUserArticleFragmentVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GUserArticleFragmentVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    return <Object?>[];
+  }
+
+  @override
+  GUserArticleFragmentVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    return new GUserArticleFragmentVarsBuilder().build();
   }
 }
 
@@ -232,6 +259,67 @@ class GupsertUserArticlesVarsBuilder
       }
       rethrow;
     }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GUserArticleFragmentVars extends GUserArticleFragmentVars {
+  factory _$GUserArticleFragmentVars(
+          [void Function(GUserArticleFragmentVarsBuilder)? updates]) =>
+      (new GUserArticleFragmentVarsBuilder()..update(updates))._build();
+
+  _$GUserArticleFragmentVars._() : super._();
+
+  @override
+  GUserArticleFragmentVars rebuild(
+          void Function(GUserArticleFragmentVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GUserArticleFragmentVarsBuilder toBuilder() =>
+      new GUserArticleFragmentVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GUserArticleFragmentVars;
+  }
+
+  @override
+  int get hashCode {
+    return 620465798;
+  }
+
+  @override
+  String toString() {
+    return newBuiltValueToStringHelper(r'GUserArticleFragmentVars').toString();
+  }
+}
+
+class GUserArticleFragmentVarsBuilder
+    implements
+        Builder<GUserArticleFragmentVars, GUserArticleFragmentVarsBuilder> {
+  _$GUserArticleFragmentVars? _$v;
+
+  GUserArticleFragmentVarsBuilder();
+
+  @override
+  void replace(GUserArticleFragmentVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GUserArticleFragmentVars;
+  }
+
+  @override
+  void update(void Function(GUserArticleFragmentVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GUserArticleFragmentVars build() => _build();
+
+  _$GUserArticleFragmentVars _build() {
+    final _$result = _$v ?? new _$GUserArticleFragmentVars._();
     replace(_$result);
     return _$result;
   }

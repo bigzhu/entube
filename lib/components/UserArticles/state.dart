@@ -1,5 +1,6 @@
 import 'package:entube/components/ArticleItems/g/services.req.gql.dart';
 import 'package:entube/components/ArticleItems/index.dart';
+import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:entube/state.dart';
 import 'package:ferry/ferry.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ final userArticlesSP = StateProvider((ref) {
 class UserArticlesSN
     extends StateNotifier<List<GUserArticlesData_user_articles>> {
   UserArticlesSN(this.ref) : super([]) {
-    client = ref.watch(gqlClientP(FetchPolicy.CacheAndNetwork));
+    client = ref.watch(gqlClientP(FetchPolicy.NetworkOnly));
     fetch();
     //监听登录用户变化, 来决定重取数据
     /*
@@ -34,21 +35,39 @@ class UserArticlesSN
   final Ref ref;
   // 查询 user_articles
   final req = GUserArticlesReq();
-  // 查询 articles
-  final articlesReq = GArticleByUrlReq();
 
-  void sharedNew(String uri) async {
-    final index = findInLocal(uri);
+  void sharedNew(String url) async {
+    final index = findInLocal(url);
     if (index != -1) return;
-    final artilceJson = await findInRemote(uri);
-    if (artilceJson != null) {}
+    String? artilceId = await findInRemote(url);
+    print('find article_id=$artilceId');
+    if (artilceId != null) {
+      Map<String, dynamic> json = {"article_id": artilceId, "deleted_at": null};
+      final object = Guser_articles_insert_input.fromJson(json)?.toBuilder();
+      final upsertReq = GupsertUserArticlesReq((b) => b..vars.object = object);
+      final stream = client.request(upsertReq);
+      await for (final value in stream) {
+        print(value.data?.insert_user_articles_one);
+        /*
+        print("value.hasErrors=${value.hasErrors}");
+        print(value.graphqlErrors);
+        print(value.linkException);
+        */
+      }
+    }
   }
 
-  Future<Map<String, dynamic>?> findInRemote(String uri) async {
+  Future<String?> findInRemote(String url) async {
+    // 查询 articles
+    final articlesReq = GArticleByUrlReq((b) => b..vars.url = url);
     final stream = client.request(articlesReq);
     await for (final value in stream) {
-      if (value.data?.articles != null && value.data!.articles.isNotEmpty) {
-        return value.data!.articles[0].toJson();
+      if (value.data?.articles != null) {
+        if (value.data!.articles.isNotEmpty) {
+          return value.data!.articles[0].id.value;
+        } else {
+          return null;
+        }
       }
     }
     return null;
