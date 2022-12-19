@@ -31,7 +31,7 @@ class Item extends HookConsumerWidget {
         child: ItemCard(
           article: article,
           loading: loading,
-          percent: 0,
+          percent: null,
         ));
     return slidable;
   }
