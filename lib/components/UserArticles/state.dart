@@ -4,6 +4,7 @@ import 'package:entube/components/Article/g/services.req.gql.dart';
 import 'package:entube/components/Article/g/services.var.gql.dart';
 import 'package:entube/components/ArticleItems/g/services.req.gql.dart';
 import 'package:entube/components/ArticleItems/index.dart';
+import 'package:entube/components/Error/index.dart';
 import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:entube/state.dart';
 import 'package:ferry/ferry.dart';
@@ -44,11 +45,9 @@ class UserArticlesSN
     final index = findInLocal(url);
     if (index != -1) return;
     addLoading(url);
-    print(url);
     String? articleId = await findInRemote(url);
     // exists in remote
     if (articleId != null) {
-      print(articleId);
       await bindUserArticles(articleId);
       return;
     }
@@ -104,10 +103,14 @@ class UserArticlesSN
       var json = jsonDecode(response.body);
       //makesure url don't change
       json['url'] = url;
-      if (json['sentences'] == '') {
+      // check is get sentences
+      if ((json['sentences'] as List).isEmpty) {
+        ref.watch(errorMeesageSP.notifier).state =
+            "The article ${json['title']} don't have Captions";
+        removeLoading(url);
+
         throw Exception("The article ${json['title']} don't have Captions");
       }
-
       return json;
     } else {
       // If the server did not return a 200 OK response,
