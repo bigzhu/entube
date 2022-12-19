@@ -10,6 +10,12 @@ class Items extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final userArticles = ref.watch(userArticlesSNP);
+    if (userArticles.isEmpty) {
+      return const AlertDialog(
+          title: Text('No Data'),
+          content:
+              Text('Please share some video from YouTube or add from Explore'));
+    }
     return ScrollablePositionedList.builder(
       itemScrollController: ref.read(articleItemsScrollCP),
       itemCount: userArticles.length,
