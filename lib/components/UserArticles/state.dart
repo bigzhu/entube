@@ -1,20 +1,18 @@
 import 'dart:convert';
 
 import 'package:entube/components/Article/g/services.req.gql.dart';
-import 'package:entube/components/Article/g/services.var.gql.dart';
 import 'package:entube/components/ArticleItems/g/services.req.gql.dart';
 import 'package:entube/components/ArticleItems/index.dart';
-import 'package:entube/components/Error/index.dart';
 import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:entube/state.dart';
 import 'package:ferry/ferry.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:http/http.dart' as http;
 import 'package:uuid/uuid.dart';
 
 import 'g/services.data.gql.dart';
 import 'g/services.req.gql.dart';
-import 'package:http/http.dart' as http;
 /*
 final userArticlesSP = StateProvider((ref) {
   return <GUserArticlesData_user_articles>[];
@@ -36,6 +34,7 @@ class UserArticlesSN
     });
     */
   }
+  bool loading = false;
   late Client client;
   final Ref ref;
   // 查询 user_articles
@@ -43,18 +42,41 @@ class UserArticlesSN
 
   void sharedNew(String url) async {
     final index = findInLocal(url);
-    if (index != -1) return;
-    addLoading(url);
+    if (index != -1) {
+      return;
+    }
+    setLoadingTitle(url, 'Finding in server ...');
     String? articleId = await findInRemote(url);
     // exists in remote
     if (articleId != null) {
+      setLoadingTitle(url, 'Binding to my article ...');
       await bindUserArticles(articleId);
+      setLoadingTitle(url, '');
       return;
     }
-    final articleJson = await fetchYouTube(url);
+    setLoadingTitle(url, 'Fetching YouTube Info ...');
+    final articleJson = await fetchYouTubeInfo(url);
+    setLoadingTitle(url, 'Saving to server ...');
     articleId = await insertArticles(articleJson);
     if (articleId != null) {
+      setLoadingTitle(url, 'Binding to my article ...');
       await bindUserArticles(articleId);
+      loading = false;
+    }
+  }
+
+  void setLoadingTitle(String url, String title) {
+    if (title == '') {
+      loading = false;
+      removeLoading(url);
+      return;
+    }
+    final loadingUserArticle = createLoadingUserArticle(url, title);
+    if (loading) {
+      replaceLoading(loadingUserArticle);
+    } else {
+      state = [loadingUserArticle, ...?state];
+      loading = true;
     }
   }
 
@@ -69,7 +91,10 @@ class UserArticlesSN
       final json = value.data?.insert_user_articles_one!.toJson();
       if (json != null) {
         final userArticle = GUserArticlesData_user_articles.fromJson(json);
-        if (userArticle != null) replaceLoading(userArticle);
+        if (userArticle != null) {
+          replaceLoading(userArticle);
+          return;
+        }
       }
       if (value.hasErrors) {
         debugPrint("${value.graphqlErrors}");
@@ -89,13 +114,17 @@ class UserArticlesSN
       if (value.data?.insert_articles_one != null) {
         return value.data!.insert_articles_one!.id.value;
       }
+      if (value.hasErrors) {
+        debugPrint("${value.graphqlErrors}");
+        debugPrint("${value.linkException}");
+      }
     }
     return null;
   }
 
-  Future<Map<String, dynamic>> fetchYouTube(String url) async {
-    final response = await http
-        .get(Uri.parse('https://entube-uzv2eu4hta-de.a.run.app/?uri=$url'));
+  Future<Map<String, dynamic>> fetchYouTubeInfo(String url) async {
+    final response = await http.get(Uri.parse(
+        'https://entube-uzv2eu4hta-de.a.run.app/?what=info&uri=$url'));
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
@@ -104,6 +133,7 @@ class UserArticlesSN
       //makesure url don't change
       json['url'] = url;
       // check is get sentences
+      /*
       if ((json['sentences'] as List).isEmpty) {
         ref.watch(errorMeesageSP.notifier).state =
             "The article ${json['title']} don't have Captions";
@@ -111,6 +141,7 @@ class UserArticlesSN
 
         throw Exception("The article ${json['title']} don't have Captions");
       }
+      */
       return json;
     } else {
       // If the server did not return a 200 OK response,
@@ -154,6 +185,7 @@ class UserArticlesSN
     await for (final value in stream) {
       if (value.data?.user_articles != null) {
         state = value.data!.user_articles.toList();
+        return;
       }
     }
   }
@@ -181,8 +213,8 @@ class UserArticlesSN
     state = [...?state];
   }
 
-  void addLoading(String uri) {
-    //UserArticleModel loadingUserArticle = ref.read(loadingUserArticleProvider);
+  GUserArticlesData_user_articles createLoadingUserArticle(
+      String url, String title) {
     Map<String, dynamic> json = {
       "id": const Uuid().v4(),
       "play_at": 0,
@@ -190,14 +222,11 @@ class UserArticlesSN
         "id": const Uuid().v4(),
         "favicon": "",
         "thumbnail": "",
-        "title": loadingTitle,
-        "url": uri
+        "title": title,
+        "url": url
       }
     };
-    final loadingUserArticle = GUserArticlesData_user_articles.fromJson(json);
-    if (loadingUserArticle != null) {
-      state = [loadingUserArticle, ...?state];
-    }
+    return GUserArticlesData_user_articles.fromJson(json)!;
   }
 
   void removeLoading(String uri) {
@@ -210,9 +239,8 @@ class UserArticlesSN
   }
 
   void replaceLoading(GUserArticlesData_user_articles userArticle) {
-    String uri = userArticle.article.url;
-    final index = state?.indexWhere((element) =>
-        element.article.url == uri && element.article.title == loadingTitle);
+    String url = userArticle.article.url;
+    final index = state?.indexWhere((element) => element.article.url == url);
     if (index != -1 && index != null && state != null) {
       state![index] = userArticle;
       state = [...?state];

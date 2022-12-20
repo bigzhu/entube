@@ -27,7 +27,8 @@ class Items extends HookConsumerWidget {
         if (article == null) {}
         return Item(
             article: article!,
-            loading: userArticles[index].article.title == loadingTitle);
+            loading: userArticles[index].article.title!.contains('ing') &&
+                userArticles[index].article.title!.contains(' ...'));
       },
     );
 
