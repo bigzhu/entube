@@ -37,7 +37,6 @@ class Items extends HookConsumerWidget {
           itemScrollController: ref.read(articleItemsScrollCP),
           itemCount: articles.length,
           itemBuilder: (context, index) {
-            if (index == 0) print(articles[index].title);
             return Item(
                 article: articles[index],
                 loading: articles[index].title!.contains('ing') &&

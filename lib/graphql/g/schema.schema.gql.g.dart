@@ -8,11 +8,15 @@ part of 'schema.schema.gql.dart';
 
 const Garticles_constraint _$garticlesConstraintarticle_pkey =
     const Garticles_constraint._('article_pkey');
+const Garticles_constraint _$garticlesConstraintarticles_url_key =
+    const Garticles_constraint._('articles_url_key');
 
 Garticles_constraint _$garticlesConstraintValueOf(String name) {
   switch (name) {
     case 'article_pkey':
       return _$garticlesConstraintarticle_pkey;
+    case 'articles_url_key':
+      return _$garticlesConstraintarticles_url_key;
     default:
       throw new ArgumentError(name);
   }
@@ -21,6 +25,7 @@ Garticles_constraint _$garticlesConstraintValueOf(String name) {
 final BuiltSet<Garticles_constraint> _$garticlesConstraintValues =
     new BuiltSet<Garticles_constraint>(const <Garticles_constraint>[
   _$garticlesConstraintarticle_pkey,
+  _$garticlesConstraintarticles_url_key,
 ]);
 
 const Garticles_select_column _$garticlesSelectColumncreated_at =

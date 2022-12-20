@@ -215,6 +215,9 @@ class Garticles_constraint extends EnumClass {
   static const Garticles_constraint article_pkey =
       _$garticlesConstraintarticle_pkey;
 
+  static const Garticles_constraint articles_url_key =
+      _$garticlesConstraintarticles_url_key;
+
   static Serializer<Garticles_constraint> get serializer =>
       _$garticlesConstraintSerializer;
   static BuiltSet<Garticles_constraint> get values =>

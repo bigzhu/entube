@@ -1,6 +1,14 @@
+import 'dart:convert';
+
 import 'package:entube/components/Sentence/index.dart';
+import 'package:entube/graphql/g/schema.schema.gql.dart';
+import 'package:entube/state.dart';
+import 'package:ferry/ferry.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+
+import 'package:http/http.dart' as http;
+import 'g/services.req.gql.dart';
 
 // 存储当前文章的句子
 final sentencesSP = StateProvider((ref) {
@@ -19,4 +27,74 @@ final isBottomP = Provider<bool>((ref) {
   final index = ref.watch(indexSP);
   bool isBottom = (sentences.length - 1 == index);
   return isBottom;
+});
+
+class ArticleModel {
+  String? info;
+  bool? loading;
+  List<SentenceModel>? sentences;
+  ArticleModel([this.info, this.loading, this.sentences]);
+}
+
+class SentencesSN extends StateNotifier<ArticleModel> {
+  SentencesSN(this.ref, this.articleId) : super(ArticleModel()) {
+    client = ref.watch(gqlClientP(FetchPolicy.CacheAndNetwork));
+    fetch();
+  }
+  String articleId;
+  bool loading = false;
+  late Client client;
+  final Ref ref;
+
+  void fetch() async {
+    final sentencesReq =
+        GSentencesReq((b) => b..vars.id = Guuid(articleId).toBuilder());
+    final stream = client.request(sentencesReq);
+    state = ArticleModel('main loading', true);
+    await for (final value in stream) {
+      final article = value.data?.articles[0];
+      if (article != null) {
+        var sentencesJson = article.sentences?.asList;
+        final url = article.url;
+        if (sentencesJson == null) {
+          state = ArticleModel('Syncing captions from YouTube', true);
+          sentencesJson = await fetchYouTubeCaptions(url);
+          if (sentencesJson.isEmpty) {
+            state = ArticleModel(
+                "This Vedio don't have any English captions", false);
+            return;
+          }
+        }
+        List<SentenceModel> sentences = sentencesJson.map((e) {
+          return SentenceModel.fromJson(Map<String, dynamic>.from(e));
+        }).toList();
+        ref.read(sentencesSP.notifier).state = sentences;
+        state = ArticleModel('', false, sentences);
+        return;
+      }
+    }
+  }
+
+  Future<List<dynamic>> fetchYouTubeCaptions(String url) async {
+    final response = await http.get(Uri.parse(
+        'https://entube-uzv2eu4hta-de.a.run.app/?what=sentences&uri=$url'));
+
+    if (response.statusCode == 200) {
+      var json = jsonDecode(response.body);
+      return json;
+    } else {
+      // If the server did not return a 200 OK response,
+      // then throw an exception.
+      state =
+          ArticleModel('Error: ${response.statusCode} ${response.body}', null);
+      throw Exception('Failed to load YouTube captions');
+    }
+  }
+}
+
+final sentencesSNP = StateNotifierProvider.autoDispose
+    .family<SentencesSN, ArticleModel, String>((ref, articleId) {
+  SentencesSN sentencesSN = SentencesSN(ref, articleId);
+  ref.keepAlive();
+  return sentencesSN;
 });

@@ -86,11 +86,17 @@ class _$GSentencesData_articlesSerializer
       '__typename',
       serializers.serialize(object.G__typename,
           specifiedType: const FullType(String)),
-      'sentences',
-      serializers.serialize(object.sentences,
-          specifiedType: const FullType(_i2.JsonObject)),
+      'url',
+      serializers.serialize(object.url, specifiedType: const FullType(String)),
     ];
-
+    Object? value;
+    value = object.sentences;
+    if (value != null) {
+      result
+        ..add('sentences')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.JsonObject)));
+    }
     return result;
   }
 
@@ -112,7 +118,11 @@ class _$GSentencesData_articlesSerializer
           break;
         case 'sentences':
           result.sentences = serializers.deserialize(value,
-              specifiedType: const FullType(_i2.JsonObject))! as _i2.JsonObject;
+              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
+          break;
+        case 'url':
+          result.url = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -351,19 +361,21 @@ class _$GSentencesData_articles extends GSentencesData_articles {
   @override
   final String G__typename;
   @override
-  final _i2.JsonObject sentences;
+  final _i2.JsonObject? sentences;
+  @override
+  final String url;
 
   factory _$GSentencesData_articles(
           [void Function(GSentencesData_articlesBuilder)? updates]) =>
       (new GSentencesData_articlesBuilder()..update(updates))._build();
 
   _$GSentencesData_articles._(
-      {required this.G__typename, required this.sentences})
+      {required this.G__typename, this.sentences, required this.url})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GSentencesData_articles', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
-        sentences, r'GSentencesData_articles', 'sentences');
+        url, r'GSentencesData_articles', 'url');
   }
 
   @override
@@ -380,19 +392,22 @@ class _$GSentencesData_articles extends GSentencesData_articles {
     if (identical(other, this)) return true;
     return other is GSentencesData_articles &&
         G__typename == other.G__typename &&
-        sentences == other.sentences;
+        sentences == other.sentences &&
+        url == other.url;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, G__typename.hashCode), sentences.hashCode));
+    return $jf($jc(
+        $jc($jc(0, G__typename.hashCode), sentences.hashCode), url.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GSentencesData_articles')
           ..add('G__typename', G__typename)
-          ..add('sentences', sentences))
+          ..add('sentences', sentences)
+          ..add('url', url))
         .toString();
   }
 }
@@ -410,6 +425,10 @@ class GSentencesData_articlesBuilder
   _i2.JsonObject? get sentences => _$this._sentences;
   set sentences(_i2.JsonObject? sentences) => _$this._sentences = sentences;
 
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
+
   GSentencesData_articlesBuilder() {
     GSentencesData_articles._initializeBuilder(this);
   }
@@ -419,6 +438,7 @@ class GSentencesData_articlesBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _sentences = $v.sentences;
+      _url = $v.url;
       _$v = null;
     }
     return this;
@@ -443,8 +463,9 @@ class GSentencesData_articlesBuilder
         new _$GSentencesData_articles._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GSentencesData_articles', 'G__typename'),
-            sentences: BuiltValueNullFieldError.checkNotNull(
-                sentences, r'GSentencesData_articles', 'sentences'));
+            sentences: sentences,
+            url: BuiltValueNullFieldError.checkNotNull(
+                url, r'GSentencesData_articles', 'url'));
     replace(_$result);
     return _$result;
   }

@@ -1,6 +1,7 @@
 query Sentences($id: uuid!) {
   articles(where: { id: { _eq: $id } }) {
     sentences
+    url
   }
 }
 mutation insertArticles($object: articles_insert_input = {}) {

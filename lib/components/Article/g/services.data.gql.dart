@@ -48,7 +48,8 @@ abstract class GSentencesData_articles
       b..G__typename = 'articles';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  _i2.JsonObject get sentences;
+  _i2.JsonObject? get sentences;
+  String get url;
   static Serializer<GSentencesData_articles> get serializer =>
       _$gSentencesDataArticlesSerializer;
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(

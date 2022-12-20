@@ -490,7 +490,7 @@ const articles = _i1.ObjectTypeDefinitionNode(
       ],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'jsonb'),
-        isNonNull: true,
+        isNonNull: false,
       ),
     ),
     _i1.FieldDefinitionNode(
@@ -927,7 +927,11 @@ const articles_constraint = _i1.EnumTypeDefinitionNode(
     _i1.EnumValueDefinitionNode(
       name: _i1.NameNode(value: 'article_pkey'),
       directives: [],
-    )
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'articles_url_key'),
+      directives: [],
+    ),
   ],
 );
 const articles_delete_at_path_input = _i1.InputObjectTypeDefinitionNode(

@@ -37,6 +37,12 @@ class DataWaiter<TData, TVars> extends HookConsumerWidget {
     if (rsp.data == null || rsp.data!.loading) {
       return loading ?? const LogoLoading();
     }
+    if (rsp.data.hasErrors) {
+      return AlertDialog(
+          title: const Text('Error'),
+          content:
+              Text("${rsp.data.graphqlErrors} \n ${rsp.data.linkException}"));
+    }
     return builder(
       rsp.data!,
     );
