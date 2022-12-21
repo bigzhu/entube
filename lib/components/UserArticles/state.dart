@@ -22,7 +22,7 @@ final userArticlesSP = StateProvider((ref) {
 class UserArticlesSN
     extends StateNotifier<List<GUserArticlesData_user_articles>?> {
   UserArticlesSN(this.ref) : super(null) {
-    client = ref.watch(gqlClientP(FetchPolicy.CacheAndNetwork));
+    client = ref.watch(gqlClientP(FetchPolicy.NetworkOnly));
     fetch();
     //监听登录用户变化, 来决定重取数据
     /*
@@ -117,6 +117,7 @@ class UserArticlesSN
       if (value.hasErrors) {
         debugPrint("${value.graphqlErrors}");
         debugPrint("${value.linkException}");
+        return null;
       }
     }
     return null;
