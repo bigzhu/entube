@@ -22,6 +22,11 @@ Serializer<GupsertUserArticlesData_insert_user_articles_one>
 Serializer<GupsertUserArticlesData_insert_user_articles_one_article>
     _$gupsertUserArticlesDataInsertUserArticlesOneArticleSerializer =
     new _$GupsertUserArticlesData_insert_user_articles_one_articleSerializer();
+Serializer<GdeleteUserArticleData> _$gdeleteUserArticleDataSerializer =
+    new _$GdeleteUserArticleDataSerializer();
+Serializer<GdeleteUserArticleData_update_user_articles>
+    _$gdeleteUserArticleDataUpdateUserArticlesSerializer =
+    new _$GdeleteUserArticleData_update_user_articlesSerializer();
 Serializer<GUserArticleFragmentData> _$gUserArticleFragmentDataSerializer =
     new _$GUserArticleFragmentDataSerializer();
 Serializer<GUserArticleFragmentData_article>
@@ -460,6 +465,120 @@ class _$GupsertUserArticlesData_insert_user_articles_one_articleSerializer
         case 'url':
           result.url = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GdeleteUserArticleDataSerializer
+    implements StructuredSerializer<GdeleteUserArticleData> {
+  @override
+  final Iterable<Type> types = const [
+    GdeleteUserArticleData,
+    _$GdeleteUserArticleData
+  ];
+  @override
+  final String wireName = 'GdeleteUserArticleData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GdeleteUserArticleData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.update_user_articles;
+    if (value != null) {
+      result
+        ..add('update_user_articles')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GdeleteUserArticleData_update_user_articles)));
+    }
+    return result;
+  }
+
+  @override
+  GdeleteUserArticleData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GdeleteUserArticleDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'update_user_articles':
+          result.update_user_articles.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GdeleteUserArticleData_update_user_articles))!
+              as GdeleteUserArticleData_update_user_articles);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GdeleteUserArticleData_update_user_articlesSerializer
+    implements
+        StructuredSerializer<GdeleteUserArticleData_update_user_articles> {
+  @override
+  final Iterable<Type> types = const [
+    GdeleteUserArticleData_update_user_articles,
+    _$GdeleteUserArticleData_update_user_articles
+  ];
+  @override
+  final String wireName = 'GdeleteUserArticleData_update_user_articles';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GdeleteUserArticleData_update_user_articles object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'affected_rows',
+      serializers.serialize(object.affected_rows,
+          specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GdeleteUserArticleData_update_user_articles deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GdeleteUserArticleData_update_user_articlesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'affected_rows':
+          result.affected_rows = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
           break;
       }
     }
@@ -1554,6 +1673,239 @@ class GupsertUserArticlesData_insert_user_articles_one_articleBuilder
       }
       rethrow;
     }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GdeleteUserArticleData extends GdeleteUserArticleData {
+  @override
+  final String G__typename;
+  @override
+  final GdeleteUserArticleData_update_user_articles? update_user_articles;
+
+  factory _$GdeleteUserArticleData(
+          [void Function(GdeleteUserArticleDataBuilder)? updates]) =>
+      (new GdeleteUserArticleDataBuilder()..update(updates))._build();
+
+  _$GdeleteUserArticleData._(
+      {required this.G__typename, this.update_user_articles})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GdeleteUserArticleData', 'G__typename');
+  }
+
+  @override
+  GdeleteUserArticleData rebuild(
+          void Function(GdeleteUserArticleDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GdeleteUserArticleDataBuilder toBuilder() =>
+      new GdeleteUserArticleDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GdeleteUserArticleData &&
+        G__typename == other.G__typename &&
+        update_user_articles == other.update_user_articles;
+  }
+
+  @override
+  int get hashCode {
+    return $jf(
+        $jc($jc(0, G__typename.hashCode), update_user_articles.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GdeleteUserArticleData')
+          ..add('G__typename', G__typename)
+          ..add('update_user_articles', update_user_articles))
+        .toString();
+  }
+}
+
+class GdeleteUserArticleDataBuilder
+    implements Builder<GdeleteUserArticleData, GdeleteUserArticleDataBuilder> {
+  _$GdeleteUserArticleData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GdeleteUserArticleData_update_user_articlesBuilder? _update_user_articles;
+  GdeleteUserArticleData_update_user_articlesBuilder get update_user_articles =>
+      _$this._update_user_articles ??=
+          new GdeleteUserArticleData_update_user_articlesBuilder();
+  set update_user_articles(
+          GdeleteUserArticleData_update_user_articlesBuilder?
+              update_user_articles) =>
+      _$this._update_user_articles = update_user_articles;
+
+  GdeleteUserArticleDataBuilder() {
+    GdeleteUserArticleData._initializeBuilder(this);
+  }
+
+  GdeleteUserArticleDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _update_user_articles = $v.update_user_articles?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GdeleteUserArticleData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GdeleteUserArticleData;
+  }
+
+  @override
+  void update(void Function(GdeleteUserArticleDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GdeleteUserArticleData build() => _build();
+
+  _$GdeleteUserArticleData _build() {
+    _$GdeleteUserArticleData _$result;
+    try {
+      _$result = _$v ??
+          new _$GdeleteUserArticleData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GdeleteUserArticleData', 'G__typename'),
+              update_user_articles: _update_user_articles?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'update_user_articles';
+        _update_user_articles?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GdeleteUserArticleData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GdeleteUserArticleData_update_user_articles
+    extends GdeleteUserArticleData_update_user_articles {
+  @override
+  final String G__typename;
+  @override
+  final int affected_rows;
+
+  factory _$GdeleteUserArticleData_update_user_articles(
+          [void Function(GdeleteUserArticleData_update_user_articlesBuilder)?
+              updates]) =>
+      (new GdeleteUserArticleData_update_user_articlesBuilder()
+            ..update(updates))
+          ._build();
+
+  _$GdeleteUserArticleData_update_user_articles._(
+      {required this.G__typename, required this.affected_rows})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GdeleteUserArticleData_update_user_articles', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(affected_rows,
+        r'GdeleteUserArticleData_update_user_articles', 'affected_rows');
+  }
+
+  @override
+  GdeleteUserArticleData_update_user_articles rebuild(
+          void Function(GdeleteUserArticleData_update_user_articlesBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GdeleteUserArticleData_update_user_articlesBuilder toBuilder() =>
+      new GdeleteUserArticleData_update_user_articlesBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GdeleteUserArticleData_update_user_articles &&
+        G__typename == other.G__typename &&
+        affected_rows == other.affected_rows;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, G__typename.hashCode), affected_rows.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GdeleteUserArticleData_update_user_articles')
+          ..add('G__typename', G__typename)
+          ..add('affected_rows', affected_rows))
+        .toString();
+  }
+}
+
+class GdeleteUserArticleData_update_user_articlesBuilder
+    implements
+        Builder<GdeleteUserArticleData_update_user_articles,
+            GdeleteUserArticleData_update_user_articlesBuilder> {
+  _$GdeleteUserArticleData_update_user_articles? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _affected_rows;
+  int? get affected_rows => _$this._affected_rows;
+  set affected_rows(int? affected_rows) =>
+      _$this._affected_rows = affected_rows;
+
+  GdeleteUserArticleData_update_user_articlesBuilder() {
+    GdeleteUserArticleData_update_user_articles._initializeBuilder(this);
+  }
+
+  GdeleteUserArticleData_update_user_articlesBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _affected_rows = $v.affected_rows;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GdeleteUserArticleData_update_user_articles other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GdeleteUserArticleData_update_user_articles;
+  }
+
+  @override
+  void update(
+      void Function(GdeleteUserArticleData_update_user_articlesBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GdeleteUserArticleData_update_user_articles build() => _build();
+
+  _$GdeleteUserArticleData_update_user_articles _build() {
+    final _$result = _$v ??
+        new _$GdeleteUserArticleData_update_user_articles._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GdeleteUserArticleData_update_user_articles', 'G__typename'),
+            affected_rows: BuiltValueNullFieldError.checkNotNull(
+                affected_rows,
+                r'GdeleteUserArticleData_update_user_articles',
+                'affected_rows'));
     replace(_$result);
     return _$result;
   }

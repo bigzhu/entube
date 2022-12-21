@@ -10,6 +10,8 @@ Serializer<GUserArticlesVars> _$gUserArticlesVarsSerializer =
     new _$GUserArticlesVarsSerializer();
 Serializer<GupsertUserArticlesVars> _$gupsertUserArticlesVarsSerializer =
     new _$GupsertUserArticlesVarsSerializer();
+Serializer<GdeleteUserArticleVars> _$gdeleteUserArticleVarsSerializer =
+    new _$GdeleteUserArticleVarsSerializer();
 Serializer<GUserArticleFragmentVars> _$gUserArticleFragmentVarsSerializer =
     new _$GUserArticleFragmentVarsSerializer();
 
@@ -77,6 +79,55 @@ class _$GupsertUserArticlesVarsSerializer
                   specifiedType:
                       const FullType(_i2.Guser_articles_insert_input))!
               as _i2.Guser_articles_insert_input);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GdeleteUserArticleVarsSerializer
+    implements StructuredSerializer<GdeleteUserArticleVars> {
+  @override
+  final Iterable<Type> types = const [
+    GdeleteUserArticleVars,
+    _$GdeleteUserArticleVars
+  ];
+  @override
+  final String wireName = 'GdeleteUserArticleVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GdeleteUserArticleVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.article_id;
+    if (value != null) {
+      result
+        ..add('article_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.Guuid)));
+    }
+    return result;
+  }
+
+  @override
+  GdeleteUserArticleVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GdeleteUserArticleVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'article_id':
+          result.article_id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i2.Guuid))! as _i2.Guuid);
           break;
       }
     }
@@ -256,6 +307,100 @@ class GupsertUserArticlesVarsBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GupsertUserArticlesVars', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GdeleteUserArticleVars extends GdeleteUserArticleVars {
+  @override
+  final _i2.Guuid? article_id;
+
+  factory _$GdeleteUserArticleVars(
+          [void Function(GdeleteUserArticleVarsBuilder)? updates]) =>
+      (new GdeleteUserArticleVarsBuilder()..update(updates))._build();
+
+  _$GdeleteUserArticleVars._({this.article_id}) : super._();
+
+  @override
+  GdeleteUserArticleVars rebuild(
+          void Function(GdeleteUserArticleVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GdeleteUserArticleVarsBuilder toBuilder() =>
+      new GdeleteUserArticleVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GdeleteUserArticleVars && article_id == other.article_id;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(0, article_id.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GdeleteUserArticleVars')
+          ..add('article_id', article_id))
+        .toString();
+  }
+}
+
+class GdeleteUserArticleVarsBuilder
+    implements Builder<GdeleteUserArticleVars, GdeleteUserArticleVarsBuilder> {
+  _$GdeleteUserArticleVars? _$v;
+
+  _i2.GuuidBuilder? _article_id;
+  _i2.GuuidBuilder get article_id =>
+      _$this._article_id ??= new _i2.GuuidBuilder();
+  set article_id(_i2.GuuidBuilder? article_id) =>
+      _$this._article_id = article_id;
+
+  GdeleteUserArticleVarsBuilder();
+
+  GdeleteUserArticleVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _article_id = $v.article_id?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GdeleteUserArticleVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GdeleteUserArticleVars;
+  }
+
+  @override
+  void update(void Function(GdeleteUserArticleVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GdeleteUserArticleVars build() => _build();
+
+  _$GdeleteUserArticleVars _build() {
+    _$GdeleteUserArticleVars _$result;
+    try {
+      _$result = _$v ??
+          new _$GdeleteUserArticleVars._(article_id: _article_id?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'article_id';
+        _article_id?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GdeleteUserArticleVars', _$failedField, e.toString());
       }
       rethrow;
     }

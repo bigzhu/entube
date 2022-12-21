@@ -223,6 +223,62 @@ abstract class GupsertUserArticlesData_insert_user_articles_one_article
       );
 }
 
+abstract class GdeleteUserArticleData
+    implements Built<GdeleteUserArticleData, GdeleteUserArticleDataBuilder> {
+  GdeleteUserArticleData._();
+
+  factory GdeleteUserArticleData(
+          [Function(GdeleteUserArticleDataBuilder b) updates]) =
+      _$GdeleteUserArticleData;
+
+  static void _initializeBuilder(GdeleteUserArticleDataBuilder b) =>
+      b..G__typename = 'mutation_root';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GdeleteUserArticleData_update_user_articles? get update_user_articles;
+  static Serializer<GdeleteUserArticleData> get serializer =>
+      _$gdeleteUserArticleDataSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GdeleteUserArticleData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GdeleteUserArticleData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GdeleteUserArticleData.serializer,
+        json,
+      );
+}
+
+abstract class GdeleteUserArticleData_update_user_articles
+    implements
+        Built<GdeleteUserArticleData_update_user_articles,
+            GdeleteUserArticleData_update_user_articlesBuilder> {
+  GdeleteUserArticleData_update_user_articles._();
+
+  factory GdeleteUserArticleData_update_user_articles(
+      [Function(GdeleteUserArticleData_update_user_articlesBuilder b)
+          updates]) = _$GdeleteUserArticleData_update_user_articles;
+
+  static void _initializeBuilder(
+          GdeleteUserArticleData_update_user_articlesBuilder b) =>
+      b..G__typename = 'user_articles_mutation_response';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int get affected_rows;
+  static Serializer<GdeleteUserArticleData_update_user_articles>
+      get serializer => _$gdeleteUserArticleDataUpdateUserArticlesSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GdeleteUserArticleData_update_user_articles.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GdeleteUserArticleData_update_user_articles? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GdeleteUserArticleData_update_user_articles.serializer,
+        json,
+      );
+}
+
 abstract class GUserArticleFragment {
   String get G__typename;
   _i2.Guuid get id;

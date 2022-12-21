@@ -51,6 +51,28 @@ abstract class GupsertUserArticlesVars
       );
 }
 
+abstract class GdeleteUserArticleVars
+    implements Built<GdeleteUserArticleVars, GdeleteUserArticleVarsBuilder> {
+  GdeleteUserArticleVars._();
+
+  factory GdeleteUserArticleVars(
+          [Function(GdeleteUserArticleVarsBuilder b) updates]) =
+      _$GdeleteUserArticleVars;
+
+  _i2.Guuid? get article_id;
+  static Serializer<GdeleteUserArticleVars> get serializer =>
+      _$gdeleteUserArticleVarsSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GdeleteUserArticleVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GdeleteUserArticleVars? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GdeleteUserArticleVars.serializer,
+        json,
+      );
+}
+
 abstract class GUserArticleFragmentVars
     implements
         Built<GUserArticleFragmentVars, GUserArticleFragmentVarsBuilder> {

@@ -132,6 +132,66 @@ abstract class GupsertUserArticlesReq
       );
 }
 
+abstract class GdeleteUserArticleReq
+    implements
+        Built<GdeleteUserArticleReq, GdeleteUserArticleReqBuilder>,
+        _i1.OperationRequest<_i2.GdeleteUserArticleData,
+            _i3.GdeleteUserArticleVars> {
+  GdeleteUserArticleReq._();
+
+  factory GdeleteUserArticleReq(
+          [Function(GdeleteUserArticleReqBuilder b) updates]) =
+      _$GdeleteUserArticleReq;
+
+  static void _initializeBuilder(GdeleteUserArticleReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'deleteUserArticle',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GdeleteUserArticleVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GdeleteUserArticleData? Function(
+    _i2.GdeleteUserArticleData?,
+    _i2.GdeleteUserArticleData?,
+  )? get updateResult;
+  @override
+  _i2.GdeleteUserArticleData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GdeleteUserArticleData? parseData(Map<String, dynamic> json) =>
+      _i2.GdeleteUserArticleData.fromJson(json);
+  static Serializer<GdeleteUserArticleReq> get serializer =>
+      _$gdeleteUserArticleReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GdeleteUserArticleReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GdeleteUserArticleReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GdeleteUserArticleReq.serializer,
+        json,
+      );
+}
+
 abstract class GUserArticleFragmentReq
     implements
         Built<GUserArticleFragmentReq, GUserArticleFragmentReqBuilder>,

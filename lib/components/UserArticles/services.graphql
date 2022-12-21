@@ -48,3 +48,12 @@ mutation upsertUserArticles($object: user_articles_insert_input = {}) {
 # CREATE or replace TRIGGER reuse_user_articles
 # before  UPDATE  ON user_articles
 #     FOR EACH ROW EXECUTE PROCEDURE set_created_at_when_reuse();
+
+mutation deleteUserArticle($article_id: uuid = "") {
+  update_user_articles(
+    where: { article_id: { _eq: $article_id } }
+    _set: { deleted_at: "now()" }
+  ) {
+    affected_rows
+  }
+}

@@ -46,13 +46,23 @@ import 'package:entube/components/UserArticles/g/services.data.gql.dart'
         GUserArticlesData,
         GUserArticlesData_user_articles,
         GUserArticlesData_user_articles_article,
+        GdeleteUserArticleData,
+        GdeleteUserArticleData_update_user_articles,
         GupsertUserArticlesData,
         GupsertUserArticlesData_insert_user_articles_one,
         GupsertUserArticlesData_insert_user_articles_one_article;
 import 'package:entube/components/UserArticles/g/services.req.gql.dart'
-    show GUserArticleFragmentReq, GUserArticlesReq, GupsertUserArticlesReq;
+    show
+        GUserArticleFragmentReq,
+        GUserArticlesReq,
+        GdeleteUserArticleReq,
+        GupsertUserArticlesReq;
 import 'package:entube/components/UserArticles/g/services.var.gql.dart'
-    show GUserArticleFragmentVars, GUserArticlesVars, GupsertUserArticlesVars;
+    show
+        GUserArticleFragmentVars,
+        GUserArticlesVars,
+        GdeleteUserArticleVars,
+        GupsertUserArticlesVars;
 import 'package:entube/graphql/g/schema.schema.gql.dart'
     show
         GBoolean_comparison_exp,
@@ -534,6 +544,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   Gcitext,
   Gcitext_comparison_exp,
   Gcursor_ordering,
+  GdeleteUserArticleData,
+  GdeleteUserArticleData_update_user_articles,
+  GdeleteUserArticleReq,
+  GdeleteUserArticleVars,
   Gfiles_aggregate_bool_exp,
   Gfiles_aggregate_bool_exp_bool_and,
   Gfiles_aggregate_bool_exp_bool_or,
