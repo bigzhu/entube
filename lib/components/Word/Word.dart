@@ -127,8 +127,8 @@ class _StateWord extends ConsumerState<Word> {
       return value.mapWords[word]; });
     }));
     */
-    final acquiringWord =
-        ref.watch(acquiringWordsSNP.select((value) => value.mapWords[word]));
+    final acquiringWord = ref.watch(acquiringWordsSNP
+        .select((value) => value.mapWords[word.toLowerCase()]));
 
     if (acquiringWord == null) return true;
     if (acquiringWord.is_done == true) return true;

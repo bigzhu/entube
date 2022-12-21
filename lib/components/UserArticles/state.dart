@@ -90,6 +90,7 @@ class UserArticlesSN
       if (value.hasErrors) {
         debugPrint("${value.graphqlErrors}");
         debugPrint("${value.linkException}");
+        return;
       }
     }
   }
@@ -156,6 +157,11 @@ class UserArticlesSN
           return null;
         }
       }
+      if (value.hasErrors) {
+        debugPrint("${value.graphqlErrors}");
+        debugPrint("${value.linkException}");
+        return null;
+      }
     }
     return null;
   }
@@ -177,6 +183,11 @@ class UserArticlesSN
     await for (final value in stream) {
       if (value.data?.user_articles != null) {
         state = value.data!.user_articles.toList();
+      }
+      if (value.hasErrors) {
+        debugPrint("${value.graphqlErrors}");
+        debugPrint("${value.linkException}");
+        return null;
       }
     }
   }

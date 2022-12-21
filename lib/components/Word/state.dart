@@ -44,18 +44,23 @@ class WordTransStateNotifier extends StateNotifier<String?> {
 final wordTransStateNotifierProvider = StateNotifierProvider.autoDispose
     .family<WordTransStateNotifier, String?, String>((ref, word) {
   bool isAcquiringWord = false;
+  word = word.toLowerCase();
 
-  final acquiringWord = ref.watch(acquiringWordsSNP.select((value) {
-    return value.words.firstWhereOrNull((element) {
-      return element.word == word.toLowerCase();
-    });
-  }));
+  //final acquiringWord = ref.watch(acquiringWordsSNP.select((value) {
+  //  return value.words.firstWhereOrNull((element) {
+  //    return element.word == word.toLowerCase();
+  //  });
+  //}));
+  final acquiringWord =
+      ref.watch(acquiringWordsSNP.select((value) => value.mapWords[word]));
+
   if (acquiringWord != null && acquiringWord.is_done == false) {
     isAcquiringWord = true;
   }
 
   WordTransStateNotifier wordTransStateNotifier =
       WordTransStateNotifier(ref, word, isAcquiringWord);
+
   ref.keepAlive();
   return wordTransStateNotifier;
 });

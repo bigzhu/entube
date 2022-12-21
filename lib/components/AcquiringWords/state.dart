@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:entube/components/AcquiringWords/g/services.req.gql.dart';
 import 'package:entube/state.dart';
 import 'package:ferry/ferry.dart';
+import 'package:flutter/material.dart';
 import 'package:gql_exec/gql_exec.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -67,6 +68,7 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
 
   setDone(String word, bool isDone) async {
     word = word.toLowerCase();
+    print(word);
     int times = 0;
     int i = state.words.indexWhere((element) => element.word == word);
     // 已经设置过, 取 times
@@ -101,15 +103,19 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
         ..vars.is_done = isDone,
     );
     final stream = client.request(req);
-    final result = await stream.firstWhere((s) {
-      if (s.hasErrors) {
-        print(s.hasErrors);
+    GupsertAcquiringWordsData_insert_words_one? result;
+    await for (final value in stream) {
+      result = value.data?.insert_words_one;
+      if (result != null) break;
+      if (value.hasErrors) {
+        debugPrint("${value.graphqlErrors}");
+        debugPrint("${value.linkException}");
+        break;
       }
-      return s.data!.insert_words_one != null;
-    });
+    }
 
-    final json = result.data!.insert_words_one!.toJson();
-    return GAcquiringWordsData_words.fromJson(json)!;
+    final json = result?.toJson();
+    return GAcquiringWordsData_words.fromJson(json!)!;
   }
 }
 
