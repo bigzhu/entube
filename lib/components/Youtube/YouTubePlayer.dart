@@ -119,7 +119,6 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
           videoId: initialVideoId,
           startSeconds: userArticle.play_at.toDouble());
     };
-
     controller.listen((event) {
       //必须要把对Stream的监听放在 listen 里才能有用
       controller.getCurrentPositionStream().listen((Duration currentTime) {

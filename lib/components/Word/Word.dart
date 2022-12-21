@@ -122,11 +122,14 @@ class _StateWord extends ConsumerState<Word> {
   }
 
   bool isDone() {
+    /*
     final acquiringWord = ref.watch(acquiringWordsSNP.select((value) {
-      return value.words.firstWhereOrNull((element) {
-        return element.word == word;
-      });
+      return value.mapWords[word]; });
     }));
+    */
+    final acquiringWord =
+        ref.watch(acquiringWordsSNP.select((value) => value.mapWords[word]));
+
     if (acquiringWord == null) return true;
     if (acquiringWord.is_done == true) return true;
     return false;

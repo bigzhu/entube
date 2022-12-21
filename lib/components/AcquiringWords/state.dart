@@ -15,6 +15,7 @@ class AcquiringWordsResult {
   List<GraphQLError>? error;
   //Map<String, GAcquiringWordsData_words> map = {};
   List<GAcquiringWordsData_words> words = [];
+  Map<String, GAcquiringWordsData_words> mapWords = {};
 }
 
 //https://riverpod.dev/docs/concepts/modifiers/auto_dispose#refkeepalive
@@ -49,7 +50,7 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
       result.error = s.graphqlErrors;
       if (s.data != null) {
         result.words = s.data!.words.toList();
-        //result.map = toMap(words);
+        result.mapWords = toMap(result.words);
       }
       state = result;
     }
@@ -85,6 +86,7 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
     result = AcquiringWordsResult();
     result.loading = false;
     result.words = [...state.words];
+    result.mapWords = toMap(result.words);
     state = result;
   }
 
