@@ -20,7 +20,7 @@ class AcquiringWordsResult {
 //https://riverpod.dev/docs/concepts/modifiers/auto_dispose#refkeepalive
 class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
   AcquiringWordsNotifier(this.ref) : super(AcquiringWordsResult()) {
-    client = ref.watch(gqlClientP(FetchPolicy.CacheAndNetwork));
+    client = ref.watch(gqlClientP);
     fetch();
     //监听登录用户变化, 来决定重取数据
     /*

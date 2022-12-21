@@ -40,7 +40,7 @@ class ArticleModel {
 
 class SentencesSN extends StateNotifier<ArticleModel> {
   SentencesSN(this.ref, this.articleId) : super(ArticleModel()) {
-    client = ref.watch(gqlClientP(FetchPolicy.CacheFirst));
+    client = ref.watch(gqlClientP);
     fetch();
   }
   String articleId;
