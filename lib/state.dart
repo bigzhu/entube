@@ -33,7 +33,6 @@ final nhostGoogleSignInUrlP = Provider<String>((ref) {
 final gqlClientP = Provider.family<Client, FetchPolicy>((ref, fetchPolicy) {
   final box = ref.watch(graphqlBoxSP);
   final store = HiveStore(box!);
-
   final cache = Cache(store: store, possibleTypes: possibleTypesMap);
 
   final nhostLink = combinedLinkForNhost(ref.watch(nhostClientP));

@@ -42,6 +42,13 @@ const Sentences = _i1.OperationDefinitionNode(
       directives: [],
       selectionSet: _i1.SelectionSetNode(selections: [
         _i1.FieldNode(
+          name: _i1.NameNode(value: 'id'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        ),
+        _i1.FieldNode(
           name: _i1.NameNode(value: 'sentences'),
           alias: null,
           arguments: [],
@@ -98,7 +105,77 @@ const insertArticles = _i1.OperationDefinitionNode(
     )
   ]),
 );
+const updateSentences = _i1.OperationDefinitionNode(
+  type: _i1.OperationType.mutation,
+  name: _i1.NameNode(value: 'updateSentences'),
+  variableDefinitions: [
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'id')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+      defaultValue: _i1.DefaultValueNode(
+          value: _i1.StringValueNode(
+        value: '',
+        isBlock: false,
+      )),
+      directives: [],
+    ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'sentences')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'jsonb'),
+        isNonNull: false,
+      ),
+      defaultValue: _i1.DefaultValueNode(
+          value: _i1.StringValueNode(
+        value: '',
+        isBlock: false,
+      )),
+      directives: [],
+    ),
+  ],
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'update_articles_by_pk'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'pk_columns'),
+          value: _i1.ObjectValueNode(fields: [
+            _i1.ObjectFieldNode(
+              name: _i1.NameNode(value: 'id'),
+              value: _i1.VariableNode(name: _i1.NameNode(value: 'id')),
+            )
+          ]),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: '_set'),
+          value: _i1.ObjectValueNode(fields: [
+            _i1.ObjectFieldNode(
+              name: _i1.NameNode(value: 'sentences'),
+              value: _i1.VariableNode(name: _i1.NameNode(value: 'sentences')),
+            )
+          ]),
+        ),
+      ],
+      directives: [],
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'id'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        )
+      ]),
+    )
+  ]),
+);
 const document = _i1.DocumentNode(definitions: [
   Sentences,
   insertArticles,
+  updateSentences,
 ]);

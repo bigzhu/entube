@@ -1,11 +1,20 @@
 query Sentences($id: uuid!) {
   articles(where: { id: { _eq: $id } }) {
+    id
     sentences
     url
   }
 }
 mutation insertArticles($object: articles_insert_input = {}) {
   insert_articles_one(object: $object) {
+    id
+  }
+}
+mutation updateSentences($id: uuid = "", $sentences: jsonb = "") {
+  update_articles_by_pk(
+    pk_columns: { id: $id }
+    _set: { sentences: $sentences }
+  ) {
     id
   }
 }

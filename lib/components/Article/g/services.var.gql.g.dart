@@ -10,6 +10,8 @@ Serializer<GSentencesVars> _$gSentencesVarsSerializer =
     new _$GSentencesVarsSerializer();
 Serializer<GinsertArticlesVars> _$ginsertArticlesVarsSerializer =
     new _$GinsertArticlesVarsSerializer();
+Serializer<GupdateSentencesVars> _$gupdateSentencesVarsSerializer =
+    new _$GupdateSentencesVarsSerializer();
 
 class _$GSentencesVarsSerializer
     implements StructuredSerializer<GSentencesVars> {
@@ -95,6 +97,66 @@ class _$GinsertArticlesVarsSerializer
           result.object.replace(serializers.deserialize(value,
                   specifiedType: const FullType(_i1.Garticles_insert_input))!
               as _i1.Garticles_insert_input);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GupdateSentencesVarsSerializer
+    implements StructuredSerializer<GupdateSentencesVars> {
+  @override
+  final Iterable<Type> types = const [
+    GupdateSentencesVars,
+    _$GupdateSentencesVars
+  ];
+  @override
+  final String wireName = 'GupdateSentencesVars';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GupdateSentencesVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i1.Guuid)));
+    }
+    value = object.sentences;
+    if (value != null) {
+      result
+        ..add('sentences')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i3.JsonObject)));
+    }
+    return result;
+  }
+
+  @override
+  GupdateSentencesVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GupdateSentencesVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i1.Guuid))! as _i1.Guuid);
+          break;
+        case 'sentences':
+          result.sentences = serializers.deserialize(value,
+              specifiedType: const FullType(_i3.JsonObject)) as _i3.JsonObject?;
           break;
       }
     }
@@ -278,6 +340,108 @@ class GinsertArticlesVarsBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GinsertArticlesVars', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GupdateSentencesVars extends GupdateSentencesVars {
+  @override
+  final _i1.Guuid? id;
+  @override
+  final _i3.JsonObject? sentences;
+
+  factory _$GupdateSentencesVars(
+          [void Function(GupdateSentencesVarsBuilder)? updates]) =>
+      (new GupdateSentencesVarsBuilder()..update(updates))._build();
+
+  _$GupdateSentencesVars._({this.id, this.sentences}) : super._();
+
+  @override
+  GupdateSentencesVars rebuild(
+          void Function(GupdateSentencesVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GupdateSentencesVarsBuilder toBuilder() =>
+      new GupdateSentencesVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GupdateSentencesVars &&
+        id == other.id &&
+        sentences == other.sentences;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, id.hashCode), sentences.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GupdateSentencesVars')
+          ..add('id', id)
+          ..add('sentences', sentences))
+        .toString();
+  }
+}
+
+class GupdateSentencesVarsBuilder
+    implements Builder<GupdateSentencesVars, GupdateSentencesVarsBuilder> {
+  _$GupdateSentencesVars? _$v;
+
+  _i1.GuuidBuilder? _id;
+  _i1.GuuidBuilder get id => _$this._id ??= new _i1.GuuidBuilder();
+  set id(_i1.GuuidBuilder? id) => _$this._id = id;
+
+  _i3.JsonObject? _sentences;
+  _i3.JsonObject? get sentences => _$this._sentences;
+  set sentences(_i3.JsonObject? sentences) => _$this._sentences = sentences;
+
+  GupdateSentencesVarsBuilder();
+
+  GupdateSentencesVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id?.toBuilder();
+      _sentences = $v.sentences;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GupdateSentencesVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GupdateSentencesVars;
+  }
+
+  @override
+  void update(void Function(GupdateSentencesVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GupdateSentencesVars build() => _build();
+
+  _$GupdateSentencesVars _build() {
+    _$GupdateSentencesVars _$result;
+    try {
+      _$result = _$v ??
+          new _$GupdateSentencesVars._(id: _id?.build(), sentences: sentences);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'id';
+        _id?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GupdateSentencesVars', _$failedField, e.toString());
       }
       rethrow;
     }

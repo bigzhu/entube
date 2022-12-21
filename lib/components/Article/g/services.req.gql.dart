@@ -127,3 +127,62 @@ abstract class GinsertArticlesReq
         json,
       );
 }
+
+abstract class GupdateSentencesReq
+    implements
+        Built<GupdateSentencesReq, GupdateSentencesReqBuilder>,
+        _i1.OperationRequest<_i2.GupdateSentencesData,
+            _i3.GupdateSentencesVars> {
+  GupdateSentencesReq._();
+
+  factory GupdateSentencesReq(
+      [Function(GupdateSentencesReqBuilder b) updates]) = _$GupdateSentencesReq;
+
+  static void _initializeBuilder(GupdateSentencesReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'updateSentences',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GupdateSentencesVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GupdateSentencesData? Function(
+    _i2.GupdateSentencesData?,
+    _i2.GupdateSentencesData?,
+  )? get updateResult;
+  @override
+  _i2.GupdateSentencesData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GupdateSentencesData? parseData(Map<String, dynamic> json) =>
+      _i2.GupdateSentencesData.fromJson(json);
+  static Serializer<GupdateSentencesReq> get serializer =>
+      _$gupdateSentencesReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GupdateSentencesReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GupdateSentencesReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GupdateSentencesReq.serializer,
+        json,
+      );
+}

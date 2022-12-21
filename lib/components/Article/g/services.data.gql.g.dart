@@ -15,6 +15,11 @@ Serializer<GinsertArticlesData> _$ginsertArticlesDataSerializer =
 Serializer<GinsertArticlesData_insert_articles_one>
     _$ginsertArticlesDataInsertArticlesOneSerializer =
     new _$GinsertArticlesData_insert_articles_oneSerializer();
+Serializer<GupdateSentencesData> _$gupdateSentencesDataSerializer =
+    new _$GupdateSentencesDataSerializer();
+Serializer<GupdateSentencesData_update_articles_by_pk>
+    _$gupdateSentencesDataUpdateArticlesByPkSerializer =
+    new _$GupdateSentencesData_update_articles_by_pkSerializer();
 
 class _$GSentencesDataSerializer
     implements StructuredSerializer<GSentencesData> {
@@ -86,6 +91,9 @@ class _$GSentencesData_articlesSerializer
       '__typename',
       serializers.serialize(object.G__typename,
           specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id,
+          specifiedType: const FullType(_i2.Guuid)),
       'url',
       serializers.serialize(object.url, specifiedType: const FullType(String)),
     ];
@@ -95,7 +103,7 @@ class _$GSentencesData_articlesSerializer
       result
         ..add('sentences')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(_i2.JsonObject)));
+            specifiedType: const FullType(_i3.JsonObject)));
     }
     return result;
   }
@@ -116,9 +124,13 @@ class _$GSentencesData_articlesSerializer
           result.G__typename = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i2.Guuid))! as _i2.Guuid);
+          break;
         case 'sentences':
           result.sentences = serializers.deserialize(value,
-              specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
+              specifiedType: const FullType(_i3.JsonObject)) as _i3.JsonObject?;
           break;
         case 'url':
           result.url = serializers.deserialize(value,
@@ -211,7 +223,7 @@ class _$GinsertArticlesData_insert_articles_oneSerializer
           specifiedType: const FullType(String)),
       'id',
       serializers.serialize(object.id,
-          specifiedType: const FullType(_i3.Guuid)),
+          specifiedType: const FullType(_i2.Guuid)),
     ];
 
     return result;
@@ -235,7 +247,121 @@ class _$GinsertArticlesData_insert_articles_oneSerializer
           break;
         case 'id':
           result.id.replace(serializers.deserialize(value,
-              specifiedType: const FullType(_i3.Guuid))! as _i3.Guuid);
+              specifiedType: const FullType(_i2.Guuid))! as _i2.Guuid);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GupdateSentencesDataSerializer
+    implements StructuredSerializer<GupdateSentencesData> {
+  @override
+  final Iterable<Type> types = const [
+    GupdateSentencesData,
+    _$GupdateSentencesData
+  ];
+  @override
+  final String wireName = 'GupdateSentencesData';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GupdateSentencesData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.update_articles_by_pk;
+    if (value != null) {
+      result
+        ..add('update_articles_by_pk')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GupdateSentencesData_update_articles_by_pk)));
+    }
+    return result;
+  }
+
+  @override
+  GupdateSentencesData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GupdateSentencesDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'update_articles_by_pk':
+          result.update_articles_by_pk.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      GupdateSentencesData_update_articles_by_pk))!
+              as GupdateSentencesData_update_articles_by_pk);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GupdateSentencesData_update_articles_by_pkSerializer
+    implements
+        StructuredSerializer<GupdateSentencesData_update_articles_by_pk> {
+  @override
+  final Iterable<Type> types = const [
+    GupdateSentencesData_update_articles_by_pk,
+    _$GupdateSentencesData_update_articles_by_pk
+  ];
+  @override
+  final String wireName = 'GupdateSentencesData_update_articles_by_pk';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers,
+      GupdateSentencesData_update_articles_by_pk object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id,
+          specifiedType: const FullType(_i2.Guuid)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GupdateSentencesData_update_articles_by_pk deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GupdateSentencesData_update_articles_by_pkBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i2.Guuid))! as _i2.Guuid);
           break;
       }
     }
@@ -361,7 +487,9 @@ class _$GSentencesData_articles extends GSentencesData_articles {
   @override
   final String G__typename;
   @override
-  final _i2.JsonObject? sentences;
+  final _i2.Guuid id;
+  @override
+  final _i3.JsonObject? sentences;
   @override
   final String url;
 
@@ -370,10 +498,14 @@ class _$GSentencesData_articles extends GSentencesData_articles {
       (new GSentencesData_articlesBuilder()..update(updates))._build();
 
   _$GSentencesData_articles._(
-      {required this.G__typename, this.sentences, required this.url})
+      {required this.G__typename,
+      required this.id,
+      this.sentences,
+      required this.url})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GSentencesData_articles', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(id, r'GSentencesData_articles', 'id');
     BuiltValueNullFieldError.checkNotNull(
         url, r'GSentencesData_articles', 'url');
   }
@@ -392,6 +524,7 @@ class _$GSentencesData_articles extends GSentencesData_articles {
     if (identical(other, this)) return true;
     return other is GSentencesData_articles &&
         G__typename == other.G__typename &&
+        id == other.id &&
         sentences == other.sentences &&
         url == other.url;
   }
@@ -399,13 +532,15 @@ class _$GSentencesData_articles extends GSentencesData_articles {
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc(0, G__typename.hashCode), sentences.hashCode), url.hashCode));
+        $jc($jc($jc(0, G__typename.hashCode), id.hashCode), sentences.hashCode),
+        url.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GSentencesData_articles')
           ..add('G__typename', G__typename)
+          ..add('id', id)
           ..add('sentences', sentences)
           ..add('url', url))
         .toString();
@@ -421,9 +556,13 @@ class GSentencesData_articlesBuilder
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  _i2.JsonObject? _sentences;
-  _i2.JsonObject? get sentences => _$this._sentences;
-  set sentences(_i2.JsonObject? sentences) => _$this._sentences = sentences;
+  _i2.GuuidBuilder? _id;
+  _i2.GuuidBuilder get id => _$this._id ??= new _i2.GuuidBuilder();
+  set id(_i2.GuuidBuilder? id) => _$this._id = id;
+
+  _i3.JsonObject? _sentences;
+  _i3.JsonObject? get sentences => _$this._sentences;
+  set sentences(_i3.JsonObject? sentences) => _$this._sentences = sentences;
 
   String? _url;
   String? get url => _$this._url;
@@ -437,6 +576,7 @@ class GSentencesData_articlesBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
+      _id = $v.id.toBuilder();
       _sentences = $v.sentences;
       _url = $v.url;
       _$v = null;
@@ -459,13 +599,27 @@ class GSentencesData_articlesBuilder
   GSentencesData_articles build() => _build();
 
   _$GSentencesData_articles _build() {
-    final _$result = _$v ??
-        new _$GSentencesData_articles._(
-            G__typename: BuiltValueNullFieldError.checkNotNull(
-                G__typename, r'GSentencesData_articles', 'G__typename'),
-            sentences: sentences,
-            url: BuiltValueNullFieldError.checkNotNull(
-                url, r'GSentencesData_articles', 'url'));
+    _$GSentencesData_articles _$result;
+    try {
+      _$result = _$v ??
+          new _$GSentencesData_articles._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GSentencesData_articles', 'G__typename'),
+              id: id.build(),
+              sentences: sentences,
+              url: BuiltValueNullFieldError.checkNotNull(
+                  url, r'GSentencesData_articles', 'url'));
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'id';
+        id.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GSentencesData_articles', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }
@@ -592,7 +746,7 @@ class _$GinsertArticlesData_insert_articles_one
   @override
   final String G__typename;
   @override
-  final _i3.Guuid id;
+  final _i2.Guuid id;
 
   factory _$GinsertArticlesData_insert_articles_one(
           [void Function(GinsertArticlesData_insert_articles_oneBuilder)?
@@ -652,9 +806,9 @@ class GinsertArticlesData_insert_articles_oneBuilder
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
-  _i3.GuuidBuilder? _id;
-  _i3.GuuidBuilder get id => _$this._id ??= new _i3.GuuidBuilder();
-  set id(_i3.GuuidBuilder? id) => _$this._id = id;
+  _i2.GuuidBuilder? _id;
+  _i2.GuuidBuilder get id => _$this._id ??= new _i2.GuuidBuilder();
+  set id(_i2.GuuidBuilder? id) => _$this._id = id;
 
   GinsertArticlesData_insert_articles_oneBuilder() {
     GinsertArticlesData_insert_articles_one._initializeBuilder(this);
@@ -701,6 +855,249 @@ class GinsertArticlesData_insert_articles_oneBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GinsertArticlesData_insert_articles_one',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GupdateSentencesData extends GupdateSentencesData {
+  @override
+  final String G__typename;
+  @override
+  final GupdateSentencesData_update_articles_by_pk? update_articles_by_pk;
+
+  factory _$GupdateSentencesData(
+          [void Function(GupdateSentencesDataBuilder)? updates]) =>
+      (new GupdateSentencesDataBuilder()..update(updates))._build();
+
+  _$GupdateSentencesData._(
+      {required this.G__typename, this.update_articles_by_pk})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GupdateSentencesData', 'G__typename');
+  }
+
+  @override
+  GupdateSentencesData rebuild(
+          void Function(GupdateSentencesDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GupdateSentencesDataBuilder toBuilder() =>
+      new GupdateSentencesDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GupdateSentencesData &&
+        G__typename == other.G__typename &&
+        update_articles_by_pk == other.update_articles_by_pk;
+  }
+
+  @override
+  int get hashCode {
+    return $jf(
+        $jc($jc(0, G__typename.hashCode), update_articles_by_pk.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GupdateSentencesData')
+          ..add('G__typename', G__typename)
+          ..add('update_articles_by_pk', update_articles_by_pk))
+        .toString();
+  }
+}
+
+class GupdateSentencesDataBuilder
+    implements Builder<GupdateSentencesData, GupdateSentencesDataBuilder> {
+  _$GupdateSentencesData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GupdateSentencesData_update_articles_by_pkBuilder? _update_articles_by_pk;
+  GupdateSentencesData_update_articles_by_pkBuilder get update_articles_by_pk =>
+      _$this._update_articles_by_pk ??=
+          new GupdateSentencesData_update_articles_by_pkBuilder();
+  set update_articles_by_pk(
+          GupdateSentencesData_update_articles_by_pkBuilder?
+              update_articles_by_pk) =>
+      _$this._update_articles_by_pk = update_articles_by_pk;
+
+  GupdateSentencesDataBuilder() {
+    GupdateSentencesData._initializeBuilder(this);
+  }
+
+  GupdateSentencesDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _update_articles_by_pk = $v.update_articles_by_pk?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GupdateSentencesData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GupdateSentencesData;
+  }
+
+  @override
+  void update(void Function(GupdateSentencesDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GupdateSentencesData build() => _build();
+
+  _$GupdateSentencesData _build() {
+    _$GupdateSentencesData _$result;
+    try {
+      _$result = _$v ??
+          new _$GupdateSentencesData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GupdateSentencesData', 'G__typename'),
+              update_articles_by_pk: _update_articles_by_pk?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'update_articles_by_pk';
+        _update_articles_by_pk?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GupdateSentencesData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GupdateSentencesData_update_articles_by_pk
+    extends GupdateSentencesData_update_articles_by_pk {
+  @override
+  final String G__typename;
+  @override
+  final _i2.Guuid id;
+
+  factory _$GupdateSentencesData_update_articles_by_pk(
+          [void Function(GupdateSentencesData_update_articles_by_pkBuilder)?
+              updates]) =>
+      (new GupdateSentencesData_update_articles_by_pkBuilder()..update(updates))
+          ._build();
+
+  _$GupdateSentencesData_update_articles_by_pk._(
+      {required this.G__typename, required this.id})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(G__typename,
+        r'GupdateSentencesData_update_articles_by_pk', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GupdateSentencesData_update_articles_by_pk', 'id');
+  }
+
+  @override
+  GupdateSentencesData_update_articles_by_pk rebuild(
+          void Function(GupdateSentencesData_update_articles_by_pkBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GupdateSentencesData_update_articles_by_pkBuilder toBuilder() =>
+      new GupdateSentencesData_update_articles_by_pkBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GupdateSentencesData_update_articles_by_pk &&
+        G__typename == other.G__typename &&
+        id == other.id;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, G__typename.hashCode), id.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GupdateSentencesData_update_articles_by_pk')
+          ..add('G__typename', G__typename)
+          ..add('id', id))
+        .toString();
+  }
+}
+
+class GupdateSentencesData_update_articles_by_pkBuilder
+    implements
+        Builder<GupdateSentencesData_update_articles_by_pk,
+            GupdateSentencesData_update_articles_by_pkBuilder> {
+  _$GupdateSentencesData_update_articles_by_pk? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  _i2.GuuidBuilder? _id;
+  _i2.GuuidBuilder get id => _$this._id ??= new _i2.GuuidBuilder();
+  set id(_i2.GuuidBuilder? id) => _$this._id = id;
+
+  GupdateSentencesData_update_articles_by_pkBuilder() {
+    GupdateSentencesData_update_articles_by_pk._initializeBuilder(this);
+  }
+
+  GupdateSentencesData_update_articles_by_pkBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _id = $v.id.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GupdateSentencesData_update_articles_by_pk other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GupdateSentencesData_update_articles_by_pk;
+  }
+
+  @override
+  void update(
+      void Function(GupdateSentencesData_update_articles_by_pkBuilder)?
+          updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GupdateSentencesData_update_articles_by_pk build() => _build();
+
+  _$GupdateSentencesData_update_articles_by_pk _build() {
+    _$GupdateSentencesData_update_articles_by_pk _$result;
+    try {
+      _$result = _$v ??
+          new _$GupdateSentencesData_update_articles_by_pk._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                  r'GupdateSentencesData_update_articles_by_pk', 'G__typename'),
+              id: id.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'id';
+        id.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GupdateSentencesData_update_articles_by_pk',
             _$failedField,
             e.toString());
       }

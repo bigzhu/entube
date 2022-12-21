@@ -21,11 +21,13 @@ import 'package:entube/components/Article/g/services.data.gql.dart'
         GSentencesData,
         GSentencesData_articles,
         GinsertArticlesData,
-        GinsertArticlesData_insert_articles_one;
+        GinsertArticlesData_insert_articles_one,
+        GupdateSentencesData,
+        GupdateSentencesData_update_articles_by_pk;
 import 'package:entube/components/Article/g/services.req.gql.dart'
-    show GSentencesReq, GinsertArticlesReq;
+    show GSentencesReq, GinsertArticlesReq, GupdateSentencesReq;
 import 'package:entube/components/Article/g/services.var.gql.dart'
-    show GSentencesVars, GinsertArticlesVars;
+    show GSentencesVars, GinsertArticlesVars, GupdateSentencesVars;
 import 'package:entube/components/ArticleItems/g/services.data.gql.dart'
     show
         GArticleByUrlData,
@@ -572,6 +574,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   Gorder_by,
   Gtimestamptz,
   Gtimestamptz_comparison_exp,
+  GupdateSentencesData,
+  GupdateSentencesData_update_articles_by_pk,
+  GupdateSentencesReq,
+  GupdateSentencesVars,
   GupsertAcquiringWordsData,
   GupsertAcquiringWordsData_insert_words_one,
   GupsertAcquiringWordsReq,

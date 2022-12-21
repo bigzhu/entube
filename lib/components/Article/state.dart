@@ -4,10 +4,12 @@ import 'package:entube/components/Sentence/index.dart';
 import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:entube/state.dart';
 import 'package:ferry/ferry.dart';
+import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import 'package:http/http.dart' as http;
+import 'package:built_value/json_object.dart';
 import 'g/services.req.gql.dart';
 
 // 存储当前文章的句子
@@ -38,7 +40,7 @@ class ArticleModel {
 
 class SentencesSN extends StateNotifier<ArticleModel> {
   SentencesSN(this.ref, this.articleId) : super(ArticleModel()) {
-    client = ref.watch(gqlClientP(FetchPolicy.CacheAndNetwork));
+    client = ref.watch(gqlClientP(FetchPolicy.CacheFirst));
     fetch();
   }
   String articleId;
@@ -54,7 +56,12 @@ class SentencesSN extends StateNotifier<ArticleModel> {
     await for (final value in stream) {
       final article = value.data?.articles[0];
       if (article != null) {
-        var sentencesJson = article.sentences?.asList;
+        //final box = ref.watch(graphqlBoxSP);
+        //print(box?.toMap().keys.toList());
+
+        print(
+            "client.cache.identify(value.data): ${client.cache.identify(value.data?.articles[0])}");
+        List<dynamic>? sentencesJson = article.sentences?.asList;
         final url = article.url;
         if (sentencesJson == null) {
           state = ArticleModel('Syncing captions from YouTube', true);
@@ -64,13 +71,39 @@ class SentencesSN extends StateNotifier<ArticleModel> {
                 "This Vedio don't have any English captions", false);
             return;
           }
+          saveSentences(sentencesJson);
+          client.cache.evict(client.cache.identify(article)!);
         }
         List<SentenceModel> sentences = sentencesJson.map((e) {
           return SentenceModel.fromJson(Map<String, dynamic>.from(e));
         }).toList();
+
         ref.read(sentencesSP.notifier).state = sentences;
         state = ArticleModel('', false, sentences);
         return;
+      }
+    }
+  }
+
+  void cleanCache() {}
+
+  Future<void> saveSentences(List<dynamic> sentences) async {
+    final req = GupdateSentencesReq(
+      (b) => b
+        ..vars.id = Guuid(articleId).toBuilder()
+        ..vars.sentences = JsonObject(sentences),
+    );
+    final stream = client.request(req);
+    await for (final value in stream) {
+      final id = value.data?.update_articles_by_pk?.id;
+      if (id != null) {
+        cleanCache();
+        //cache.evict(id.value);
+        return;
+      }
+      if (value.hasErrors) {
+        debugPrint("${value.graphqlErrors}");
+        debugPrint("${value.linkException}");
       }
     }
   }

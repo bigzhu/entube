@@ -22,7 +22,7 @@ final userArticlesSP = StateProvider((ref) {
 class UserArticlesSN
     extends StateNotifier<List<GUserArticlesData_user_articles>?> {
   UserArticlesSN(this.ref) : super(null) {
-    client = ref.watch(gqlClientP(FetchPolicy.NetworkOnly));
+    client = ref.watch(gqlClientP(FetchPolicy.CacheFirst));
     fetch();
     //监听登录用户变化, 来决定重取数据
     /*
@@ -184,6 +184,7 @@ class UserArticlesSN
   void fetch() async {
     final stream = client.request(req);
     await for (final value in stream) {
+      // print( "client.cache.identify(value.data): ${client.cache.identify(value.data?.user_articles[0])}");
       if (value.data?.user_articles != null) {
         state = value.data!.user_articles.toList();
         return;
