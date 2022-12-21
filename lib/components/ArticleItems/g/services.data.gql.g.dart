@@ -233,31 +233,8 @@ class _$GArticleByUrlData_articlesSerializer
       'id',
       serializers.serialize(object.id,
           specifiedType: const FullType(_i2.Guuid)),
-      'url',
-      serializers.serialize(object.url, specifiedType: const FullType(String)),
     ];
-    Object? value;
-    value = object.favicon;
-    if (value != null) {
-      result
-        ..add('favicon')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.thumbnail;
-    if (value != null) {
-      result
-        ..add('thumbnail')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.title;
-    if (value != null) {
-      result
-        ..add('title')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
+
     return result;
   }
 
@@ -280,22 +257,6 @@ class _$GArticleByUrlData_articlesSerializer
         case 'id':
           result.id.replace(serializers.deserialize(value,
               specifiedType: const FullType(_i2.Guuid))! as _i2.Guuid);
-          break;
-        case 'favicon':
-          result.favicon = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'thumbnail':
-          result.thumbnail = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'title':
-          result.title = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'url':
-          result.url = serializers.deserialize(value,
-              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -795,33 +756,17 @@ class _$GArticleByUrlData_articles extends GArticleByUrlData_articles {
   final String G__typename;
   @override
   final _i2.Guuid id;
-  @override
-  final String? favicon;
-  @override
-  final String? thumbnail;
-  @override
-  final String? title;
-  @override
-  final String url;
 
   factory _$GArticleByUrlData_articles(
           [void Function(GArticleByUrlData_articlesBuilder)? updates]) =>
       (new GArticleByUrlData_articlesBuilder()..update(updates))._build();
 
-  _$GArticleByUrlData_articles._(
-      {required this.G__typename,
-      required this.id,
-      this.favicon,
-      this.thumbnail,
-      this.title,
-      required this.url})
+  _$GArticleByUrlData_articles._({required this.G__typename, required this.id})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GArticleByUrlData_articles', 'G__typename');
     BuiltValueNullFieldError.checkNotNull(
         id, r'GArticleByUrlData_articles', 'id');
-    BuiltValueNullFieldError.checkNotNull(
-        url, r'GArticleByUrlData_articles', 'url');
   }
 
   @override
@@ -838,34 +783,19 @@ class _$GArticleByUrlData_articles extends GArticleByUrlData_articles {
     if (identical(other, this)) return true;
     return other is GArticleByUrlData_articles &&
         G__typename == other.G__typename &&
-        id == other.id &&
-        favicon == other.favicon &&
-        thumbnail == other.thumbnail &&
-        title == other.title &&
-        url == other.url;
+        id == other.id;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
-                    favicon.hashCode),
-                thumbnail.hashCode),
-            title.hashCode),
-        url.hashCode));
+    return $jf($jc($jc(0, G__typename.hashCode), id.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GArticleByUrlData_articles')
           ..add('G__typename', G__typename)
-          ..add('id', id)
-          ..add('favicon', favicon)
-          ..add('thumbnail', thumbnail)
-          ..add('title', title)
-          ..add('url', url))
+          ..add('id', id))
         .toString();
   }
 }
@@ -883,22 +813,6 @@ class GArticleByUrlData_articlesBuilder
   _i2.GuuidBuilder get id => _$this._id ??= new _i2.GuuidBuilder();
   set id(_i2.GuuidBuilder? id) => _$this._id = id;
 
-  String? _favicon;
-  String? get favicon => _$this._favicon;
-  set favicon(String? favicon) => _$this._favicon = favicon;
-
-  String? _thumbnail;
-  String? get thumbnail => _$this._thumbnail;
-  set thumbnail(String? thumbnail) => _$this._thumbnail = thumbnail;
-
-  String? _title;
-  String? get title => _$this._title;
-  set title(String? title) => _$this._title = title;
-
-  String? _url;
-  String? get url => _$this._url;
-  set url(String? url) => _$this._url = url;
-
   GArticleByUrlData_articlesBuilder() {
     GArticleByUrlData_articles._initializeBuilder(this);
   }
@@ -908,10 +822,6 @@ class GArticleByUrlData_articlesBuilder
     if ($v != null) {
       _G__typename = $v.G__typename;
       _id = $v.id.toBuilder();
-      _favicon = $v.favicon;
-      _thumbnail = $v.thumbnail;
-      _title = $v.title;
-      _url = $v.url;
       _$v = null;
     }
     return this;
@@ -938,12 +848,7 @@ class GArticleByUrlData_articlesBuilder
           new _$GArticleByUrlData_articles._(
               G__typename: BuiltValueNullFieldError.checkNotNull(
                   G__typename, r'GArticleByUrlData_articles', 'G__typename'),
-              id: id.build(),
-              favicon: favicon,
-              thumbnail: thumbnail,
-              title: title,
-              url: BuiltValueNullFieldError.checkNotNull(
-                  url, r'GArticleByUrlData_articles', 'url'));
+              id: id.build());
     } catch (_) {
       late String _$failedField;
       try {

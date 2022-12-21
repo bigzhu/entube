@@ -37,12 +37,14 @@ class UserArticlesSN
       return;
     }
     setLoadingTitle(url, 'Finding in server ...');
+    print(url);
     String? articleId = await findInRemote(url);
+    print(articleId);
     // exists in remote
     if (articleId != null) {
       setLoadingTitle(url, 'Binding to my article ...');
       await bindUserArticles(articleId);
-      setLoadingTitle(url, '');
+      loading = false;
       return;
     }
     setLoadingTitle(url, 'Fetching YouTube Info ...');
@@ -147,12 +149,15 @@ class UserArticlesSN
 
   Future<String?> findInRemote(String url) async {
     // 查询 articles
-    final articlesReq = GArticleByUrlReq((b) => b..vars.url = url);
+    final articlesReq = GArticleByUrlReq((b) => b
+      ..fetchPolicy = FetchPolicy.NetworkOnly
+      ..vars.url = url);
     final stream = client.request(articlesReq);
     await for (final value in stream) {
-      if (value.data?.articles != null) {
-        if (value.data!.articles.isNotEmpty) {
-          return value.data!.articles[0].id.value;
+      final articles = value.data?.articles;
+      if (articles != null) {
+        if (articles.isNotEmpty) {
+          return articles[0].id.value;
         } else {
           return null;
         }

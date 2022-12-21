@@ -108,11 +108,7 @@ const ArticleByUrl = _i1.OperationDefinitionNode(
         name: _i1.NameNode(value: 'String'),
         isNonNull: false,
       ),
-      defaultValue: _i1.DefaultValueNode(
-          value: _i1.StringValueNode(
-        value: '',
-        isBlock: false,
-      )),
+      defaultValue: _i1.DefaultValueNode(value: null),
       directives: [],
     )
   ],
@@ -139,9 +135,12 @@ const ArticleByUrl = _i1.OperationDefinitionNode(
       ],
       directives: [],
       selectionSet: _i1.SelectionSetNode(selections: [
-        _i1.FragmentSpreadNode(
-          name: _i1.NameNode(value: 'ArticleFragment'),
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'id'),
+          alias: null,
+          arguments: [],
           directives: [],
+          selectionSet: null,
         )
       ]),
     )

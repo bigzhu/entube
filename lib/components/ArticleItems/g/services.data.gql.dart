@@ -100,8 +100,7 @@ abstract class GArticleByUrlData
 
 abstract class GArticleByUrlData_articles
     implements
-        Built<GArticleByUrlData_articles, GArticleByUrlData_articlesBuilder>,
-        GArticleFragment {
+        Built<GArticleByUrlData_articles, GArticleByUrlData_articlesBuilder> {
   GArticleByUrlData_articles._();
 
   factory GArticleByUrlData_articles(
@@ -110,22 +109,11 @@ abstract class GArticleByUrlData_articles
 
   static void _initializeBuilder(GArticleByUrlData_articlesBuilder b) =>
       b..G__typename = 'articles';
-  @override
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
-  @override
   _i2.Guuid get id;
-  @override
-  String? get favicon;
-  @override
-  String? get thumbnail;
-  @override
-  String? get title;
-  @override
-  String get url;
   static Serializer<GArticleByUrlData_articles> get serializer =>
       _$gArticleByUrlDataArticlesSerializer;
-  @override
   Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
         GArticleByUrlData_articles.serializer,
         this,

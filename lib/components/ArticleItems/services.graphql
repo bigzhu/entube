@@ -12,8 +12,8 @@ query Articles($offset: Int = 0, $limit: Int = 10) {
   }
 }
 
-query ArticleByUrl($url: String = "") {
+query ArticleByUrl($url: String) {
   articles(where: { url: { _eq: $url } }) {
-    ...ArticleFragment
+    id
   }
 }
