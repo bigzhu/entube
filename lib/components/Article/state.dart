@@ -56,11 +56,7 @@ class SentencesSN extends StateNotifier<ArticleModel> {
     await for (final value in stream) {
       final article = value.data?.articles[0];
       if (article != null) {
-        //final box = ref.watch(graphqlBoxSP);
-        //print(box?.toMap().keys.toList());
-
-        print(
-            "client.cache.identify(value.data): ${client.cache.identify(value.data?.articles[0])}");
+        //print( "client.cache.identify(value.data): ${client.cache.identify(value.data?.articles[0])}");
         List<dynamic>? sentencesJson = article.sentences?.asList;
         final url = article.url;
         if (sentencesJson == null) {

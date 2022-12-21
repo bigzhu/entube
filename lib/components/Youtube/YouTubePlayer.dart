@@ -124,6 +124,7 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
       //必须要把对Stream的监听放在 listen 里才能有用
       controller.getCurrentPositionStream().listen((Duration currentTime) {
         int seconds = currentTime.inSeconds;
+        print('playing seconds: $seconds');
         //开始播放有那么一下会是 0, 会把 文章又滚回去
         if (seconds != 0) {
           userArticle = userArticle.rebuild((b) => b..play_at = seconds);

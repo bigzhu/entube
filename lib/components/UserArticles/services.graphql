@@ -10,7 +10,7 @@ fragment UserArticleFragment on user_articles {
   }
 }
 
-query UserArticles {
+subscription UserArticles {
   user_articles(order_by: { created_at: desc }) {
     ...UserArticleFragment
   }

@@ -18,7 +18,7 @@ abstract class GUserArticlesData
       _$GUserArticlesData;
 
   static void _initializeBuilder(GUserArticlesDataBuilder b) =>
-      b..G__typename = 'query_root';
+      b..G__typename = 'subscription_root';
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
   BuiltList<GUserArticlesData_user_articles> get user_articles;

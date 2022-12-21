@@ -73,7 +73,7 @@ const UserArticleFragment = _i1.FragmentDefinitionNode(
   ]),
 );
 const UserArticles = _i1.OperationDefinitionNode(
-  type: _i1.OperationType.query,
+  type: _i1.OperationType.subscription,
   name: _i1.NameNode(value: 'UserArticles'),
   variableDefinitions: [],
   directives: [],

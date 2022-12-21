@@ -24,15 +24,6 @@ class UserArticlesSN
   UserArticlesSN(this.ref) : super(null) {
     client = ref.watch(gqlClientP);
     fetch();
-    //监听登录用户变化, 来决定重取数据
-    /*
-    ref.listen<LCUser?>(userStateNotifierProvider,
-        (LCUser? previous, LCUser? next) {
-      if (next != null) {
-        fetch();
-      }
-    });
-    */
   }
   bool loading = false;
   late Client client;
@@ -184,10 +175,8 @@ class UserArticlesSN
   void fetch() async {
     final stream = client.request(req);
     await for (final value in stream) {
-      // print( "client.cache.identify(value.data): ${client.cache.identify(value.data?.user_articles[0])}");
       if (value.data?.user_articles != null) {
         state = value.data!.user_articles.toList();
-        return;
       }
     }
   }
