@@ -127,16 +127,6 @@ class UserArticlesSN
       var json = jsonDecode(response.body);
       //makesure url don't change
       json['url'] = url;
-      // check is get sentences
-      /*
-      if ((json['sentences'] as List).isEmpty) {
-        ref.watch(errorMeesageSP.notifier).state =
-            "The article ${json['title']} don't have Captions";
-        removeLoading(url);
-
-        throw Exception("The article ${json['title']} don't have Captions");
-      }
-      */
       return json;
     } else {
       // If the server did not return a 200 OK response,

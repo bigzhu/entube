@@ -46,8 +46,10 @@ class MyApp extends HookConsumerWidget {
         });
 
         // For sharing or opening urls/text coming from outside the app while the app is closed
-        ReceiveSharingIntent.getInitialText().then((String? value) {
-          print(value);
+        ReceiveSharingIntent.getInitialText().then((String? url) {
+          if (url != null) {
+            ref.read(userArticlesSNP.notifier).sharedNew(url);
+          }
         });
 
         //register the app link handler
