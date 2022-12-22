@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:collection/collection.dart';
 import 'package:entube/components/Sentence/index.dart';
 
@@ -6,6 +8,7 @@ import 'package:entube/components/UserArticles/g/services.req.gql.dart';
 import 'package:entube/state.dart';
 import 'package:entube/utils/compute.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
@@ -32,6 +35,8 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
   List<SentenceModel>? sentences;
   // is paused by suspending
   bool isSuspendingPaused = false;
+  late StreamSubscription streamSubscription;
+  bool isListening = false;
   @override
   void initState() {
     super.initState();
@@ -122,8 +127,12 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
           startSeconds: userArticle.play_at.toDouble());
     };
     controller.listen((event) {
+      // 会调用两次, 用这个标记来避免重复的 listen
+      if (isListening) return;
+      isListening = true;
       //必须要把对Stream的监听放在 listen 里才能有用
-      controller.getCurrentPositionStream().listen((Duration currentTime) {
+      streamSubscription =
+          controller.getCurrentPositionStream().listen((Duration currentTime) {
         int seconds = currentTime.inSeconds;
         print('playing seconds: $seconds');
         //开始播放有那么一下会是 0, 会把 文章又滚回去
@@ -176,21 +185,32 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
     );
   }
 
+  Future<void> updatePlayAt() async {
+    // 这里要更新 userArticle.play_at
+    final req = GupdatePlayAtReq(
+      (b) => b
+        ..vars.article_id = userArticle.article.id.toBuilder()
+        ..vars.play_at = userArticle.play_at,
+    );
+    final client = ref.watch(gqlClientP);
+    final stream = client.request(req);
+    await for (final value in stream) {
+      debugPrint(
+          "update user_articles play_at affected_rows: ${value.data?.update_user_articles?.affected_rows}");
+      if (value.hasErrors) {
+        debugPrint("${value.graphqlErrors}");
+        debugPrint("${value.linkException}");
+        return;
+      }
+    }
+  }
+
   @override
   void dispose() {
+    streamSubscription.cancel();
+    controller.close();
+    updatePlayAt();
     super.dispose();
     WidgetsBinding.instance.removeObserver(this);
-    try {
-      // 这里要更新 userArticle.play_at
-      final req = GupdatePlayAtReq(
-        (b) => b
-          ..vars.article_id = userArticle.article.id.toBuilder()
-          ..vars.play_at = userArticle.play_at,
-      );
-      final client = ref.watch(gqlClientP);
-      client.request(req);
-    } catch (e) {
-      ref.read(errorMeesageSP.notifier).state = "$e";
-    } finally {}
   }
 }
