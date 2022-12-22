@@ -18,6 +18,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:entube/utils/nhost/nhost_sdk/nhost_sdk.dart';
 import 'package:receive_sharing_intent/receive_sharing_intent.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:http/http.dart' as http;
 
 //import './article_items_page.dart';
 //import './acquiring_words_page.dart';
@@ -37,6 +38,9 @@ class MyApp extends HookConsumerWidget {
     AppLinks appLinks = AppLinks();
     useEffect(
       () {
+        // use this trigger iOS net promission
+        http.get(Uri.parse(
+            'https://entube-uzv2eu4hta-de.a.run.app/?what=info&uri=https://www.youtube.com/watch?v=QmOF0crdyRU'));
         // For sharing or opening urls/text coming from outside the app while the app is in the memory
         StreamSubscription intentDataStreamSubscription =
             ReceiveSharingIntent.getTextStream().listen((String url) {
@@ -55,14 +59,7 @@ class MyApp extends HookConsumerWidget {
         //register the app link handler
         final linkSubscription = appLinks.uriLinkStream.listen((uri) {
           if (uri.host == signInSuccessHost) {
-            try {
-              ref.read(authSNP.notifier).completeOAuth(uri);
-            } on Exception catch (e) {
-              Future.delayed(const Duration(seconds: 2), () {
-                debugPrint("$e");
-                ref.read(authSNP.notifier).completeOAuth(uri);
-              });
-            }
+            ref.read(authSNP.notifier).completeOAuth(uri);
           }
           closeInAppWebView();
         });

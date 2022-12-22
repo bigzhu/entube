@@ -68,7 +68,6 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
 
   setDone(String word, bool isDone) async {
     word = word.toLowerCase();
-    print(word);
     int times = 0;
     int i = state.words.indexWhere((element) => element.word == word);
     // 已经设置过, 取 times
