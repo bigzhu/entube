@@ -55,7 +55,14 @@ class MyApp extends HookConsumerWidget {
         //register the app link handler
         final linkSubscription = appLinks.uriLinkStream.listen((uri) {
           if (uri.host == signInSuccessHost) {
-            ref.read(authSNP.notifier).completeOAuth(uri);
+            try {
+              ref.read(authSNP.notifier).completeOAuth(uri);
+            } on Exception catch (e) {
+              Future.delayed(const Duration(seconds: 2), () {
+                debugPrint("$e");
+                ref.read(authSNP.notifier).completeOAuth(uri);
+              });
+            }
           }
           closeInAppWebView();
         });
