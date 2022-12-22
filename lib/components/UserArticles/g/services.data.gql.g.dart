@@ -27,6 +27,11 @@ Serializer<GdeleteUserArticleData> _$gdeleteUserArticleDataSerializer =
 Serializer<GdeleteUserArticleData_update_user_articles>
     _$gdeleteUserArticleDataUpdateUserArticlesSerializer =
     new _$GdeleteUserArticleData_update_user_articlesSerializer();
+Serializer<GupdatePlayAtData> _$gupdatePlayAtDataSerializer =
+    new _$GupdatePlayAtDataSerializer();
+Serializer<GupdatePlayAtData_update_user_articles>
+    _$gupdatePlayAtDataUpdateUserArticlesSerializer =
+    new _$GupdatePlayAtData_update_user_articlesSerializer();
 Serializer<GUserArticleFragmentData> _$gUserArticleFragmentDataSerializer =
     new _$GUserArticleFragmentDataSerializer();
 Serializer<GUserArticleFragmentData_article>
@@ -565,6 +570,115 @@ class _$GdeleteUserArticleData_update_user_articlesSerializer
       Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new GdeleteUserArticleData_update_user_articlesBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'affected_rows':
+          result.affected_rows = serializers.deserialize(value,
+              specifiedType: const FullType(int))! as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GupdatePlayAtDataSerializer
+    implements StructuredSerializer<GupdatePlayAtData> {
+  @override
+  final Iterable<Type> types = const [GupdatePlayAtData, _$GupdatePlayAtData];
+  @override
+  final String wireName = 'GupdatePlayAtData';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GupdatePlayAtData object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+    ];
+    Object? value;
+    value = object.update_user_articles;
+    if (value != null) {
+      result
+        ..add('update_user_articles')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(GupdatePlayAtData_update_user_articles)));
+    }
+    return result;
+  }
+
+  @override
+  GupdatePlayAtData deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GupdatePlayAtDataBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case '__typename':
+          result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'update_user_articles':
+          result.update_user_articles.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(GupdatePlayAtData_update_user_articles))!
+              as GupdatePlayAtData_update_user_articles);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GupdatePlayAtData_update_user_articlesSerializer
+    implements StructuredSerializer<GupdatePlayAtData_update_user_articles> {
+  @override
+  final Iterable<Type> types = const [
+    GupdatePlayAtData_update_user_articles,
+    _$GupdatePlayAtData_update_user_articles
+  ];
+  @override
+  final String wireName = 'GupdatePlayAtData_update_user_articles';
+
+  @override
+  Iterable<Object?> serialize(
+      Serializers serializers, GupdatePlayAtData_update_user_articles object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[
+      '__typename',
+      serializers.serialize(object.G__typename,
+          specifiedType: const FullType(String)),
+      'affected_rows',
+      serializers.serialize(object.affected_rows,
+          specifiedType: const FullType(int)),
+    ];
+
+    return result;
+  }
+
+  @override
+  GupdatePlayAtData_update_user_articles deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GupdatePlayAtData_update_user_articlesBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
@@ -1906,6 +2020,233 @@ class GdeleteUserArticleData_update_user_articlesBuilder
                 affected_rows,
                 r'GdeleteUserArticleData_update_user_articles',
                 'affected_rows'));
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GupdatePlayAtData extends GupdatePlayAtData {
+  @override
+  final String G__typename;
+  @override
+  final GupdatePlayAtData_update_user_articles? update_user_articles;
+
+  factory _$GupdatePlayAtData(
+          [void Function(GupdatePlayAtDataBuilder)? updates]) =>
+      (new GupdatePlayAtDataBuilder()..update(updates))._build();
+
+  _$GupdatePlayAtData._({required this.G__typename, this.update_user_articles})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GupdatePlayAtData', 'G__typename');
+  }
+
+  @override
+  GupdatePlayAtData rebuild(void Function(GupdatePlayAtDataBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GupdatePlayAtDataBuilder toBuilder() =>
+      new GupdatePlayAtDataBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GupdatePlayAtData &&
+        G__typename == other.G__typename &&
+        update_user_articles == other.update_user_articles;
+  }
+
+  @override
+  int get hashCode {
+    return $jf(
+        $jc($jc(0, G__typename.hashCode), update_user_articles.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GupdatePlayAtData')
+          ..add('G__typename', G__typename)
+          ..add('update_user_articles', update_user_articles))
+        .toString();
+  }
+}
+
+class GupdatePlayAtDataBuilder
+    implements Builder<GupdatePlayAtData, GupdatePlayAtDataBuilder> {
+  _$GupdatePlayAtData? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  GupdatePlayAtData_update_user_articlesBuilder? _update_user_articles;
+  GupdatePlayAtData_update_user_articlesBuilder get update_user_articles =>
+      _$this._update_user_articles ??=
+          new GupdatePlayAtData_update_user_articlesBuilder();
+  set update_user_articles(
+          GupdatePlayAtData_update_user_articlesBuilder?
+              update_user_articles) =>
+      _$this._update_user_articles = update_user_articles;
+
+  GupdatePlayAtDataBuilder() {
+    GupdatePlayAtData._initializeBuilder(this);
+  }
+
+  GupdatePlayAtDataBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _update_user_articles = $v.update_user_articles?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GupdatePlayAtData other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GupdatePlayAtData;
+  }
+
+  @override
+  void update(void Function(GupdatePlayAtDataBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GupdatePlayAtData build() => _build();
+
+  _$GupdatePlayAtData _build() {
+    _$GupdatePlayAtData _$result;
+    try {
+      _$result = _$v ??
+          new _$GupdatePlayAtData._(
+              G__typename: BuiltValueNullFieldError.checkNotNull(
+                  G__typename, r'GupdatePlayAtData', 'G__typename'),
+              update_user_articles: _update_user_articles?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'update_user_articles';
+        _update_user_articles?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GupdatePlayAtData', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GupdatePlayAtData_update_user_articles
+    extends GupdatePlayAtData_update_user_articles {
+  @override
+  final String G__typename;
+  @override
+  final int affected_rows;
+
+  factory _$GupdatePlayAtData_update_user_articles(
+          [void Function(GupdatePlayAtData_update_user_articlesBuilder)?
+              updates]) =>
+      (new GupdatePlayAtData_update_user_articlesBuilder()..update(updates))
+          ._build();
+
+  _$GupdatePlayAtData_update_user_articles._(
+      {required this.G__typename, required this.affected_rows})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        G__typename, r'GupdatePlayAtData_update_user_articles', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(affected_rows,
+        r'GupdatePlayAtData_update_user_articles', 'affected_rows');
+  }
+
+  @override
+  GupdatePlayAtData_update_user_articles rebuild(
+          void Function(GupdatePlayAtData_update_user_articlesBuilder)
+              updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GupdatePlayAtData_update_user_articlesBuilder toBuilder() =>
+      new GupdatePlayAtData_update_user_articlesBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GupdatePlayAtData_update_user_articles &&
+        G__typename == other.G__typename &&
+        affected_rows == other.affected_rows;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, G__typename.hashCode), affected_rows.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(
+            r'GupdatePlayAtData_update_user_articles')
+          ..add('G__typename', G__typename)
+          ..add('affected_rows', affected_rows))
+        .toString();
+  }
+}
+
+class GupdatePlayAtData_update_user_articlesBuilder
+    implements
+        Builder<GupdatePlayAtData_update_user_articles,
+            GupdatePlayAtData_update_user_articlesBuilder> {
+  _$GupdatePlayAtData_update_user_articles? _$v;
+
+  String? _G__typename;
+  String? get G__typename => _$this._G__typename;
+  set G__typename(String? G__typename) => _$this._G__typename = G__typename;
+
+  int? _affected_rows;
+  int? get affected_rows => _$this._affected_rows;
+  set affected_rows(int? affected_rows) =>
+      _$this._affected_rows = affected_rows;
+
+  GupdatePlayAtData_update_user_articlesBuilder() {
+    GupdatePlayAtData_update_user_articles._initializeBuilder(this);
+  }
+
+  GupdatePlayAtData_update_user_articlesBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _G__typename = $v.G__typename;
+      _affected_rows = $v.affected_rows;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GupdatePlayAtData_update_user_articles other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GupdatePlayAtData_update_user_articles;
+  }
+
+  @override
+  void update(
+      void Function(GupdatePlayAtData_update_user_articlesBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GupdatePlayAtData_update_user_articles build() => _build();
+
+  _$GupdatePlayAtData_update_user_articles _build() {
+    final _$result = _$v ??
+        new _$GupdatePlayAtData_update_user_articles._(
+            G__typename: BuiltValueNullFieldError.checkNotNull(G__typename,
+                r'GupdatePlayAtData_update_user_articles', 'G__typename'),
+            affected_rows: BuiltValueNullFieldError.checkNotNull(affected_rows,
+                r'GupdatePlayAtData_update_user_articles', 'affected_rows'));
     replace(_$result);
     return _$result;
   }

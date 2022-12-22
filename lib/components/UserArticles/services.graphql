@@ -57,3 +57,12 @@ mutation deleteUserArticle($article_id: uuid = "") {
     affected_rows
   }
 }
+
+mutation updatePlayAt($article_id: uuid, $play_at: Int) {
+  update_user_articles(
+    where: { article_id: { _eq: $article_id } }
+    _set: { play_at: $play_at }
+  ) {
+    affected_rows
+  }
+}

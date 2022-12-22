@@ -18,16 +18,16 @@ class ItemCard extends StatelessWidget {
       onTap: () => context.push('/Article/${article.id.value}'),
       child: Stack(
         alignment: Alignment.bottomLeft,
-        children: <Widget>[
+        children: [
           Hero(
-            tag: 'youtube_thumbnail_${article.id}',
+            tag: 'youtube_thumbnail_${article.id.value}',
             child: AspectRatio(
               aspectRatio: 16 / 9,
               child: Thumbnail(thumbnail: article.thumbnail),
             ),
           ),
           Hero(
-            tag: 'youtube_title_${article.id}',
+            tag: 'youtube_title_${article.id.value}',
             child: Material(
               color: Colors.black.withOpacity(0.5),
               child: ItemBar(

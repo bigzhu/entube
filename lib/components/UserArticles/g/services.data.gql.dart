@@ -279,6 +279,61 @@ abstract class GdeleteUserArticleData_update_user_articles
       );
 }
 
+abstract class GupdatePlayAtData
+    implements Built<GupdatePlayAtData, GupdatePlayAtDataBuilder> {
+  GupdatePlayAtData._();
+
+  factory GupdatePlayAtData([Function(GupdatePlayAtDataBuilder b) updates]) =
+      _$GupdatePlayAtData;
+
+  static void _initializeBuilder(GupdatePlayAtDataBuilder b) =>
+      b..G__typename = 'mutation_root';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  GupdatePlayAtData_update_user_articles? get update_user_articles;
+  static Serializer<GupdatePlayAtData> get serializer =>
+      _$gupdatePlayAtDataSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GupdatePlayAtData.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GupdatePlayAtData? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GupdatePlayAtData.serializer,
+        json,
+      );
+}
+
+abstract class GupdatePlayAtData_update_user_articles
+    implements
+        Built<GupdatePlayAtData_update_user_articles,
+            GupdatePlayAtData_update_user_articlesBuilder> {
+  GupdatePlayAtData_update_user_articles._();
+
+  factory GupdatePlayAtData_update_user_articles(
+          [Function(GupdatePlayAtData_update_user_articlesBuilder b) updates]) =
+      _$GupdatePlayAtData_update_user_articles;
+
+  static void _initializeBuilder(
+          GupdatePlayAtData_update_user_articlesBuilder b) =>
+      b..G__typename = 'user_articles_mutation_response';
+  @BuiltValueField(wireName: '__typename')
+  String get G__typename;
+  int get affected_rows;
+  static Serializer<GupdatePlayAtData_update_user_articles> get serializer =>
+      _$gupdatePlayAtDataUpdateUserArticlesSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GupdatePlayAtData_update_user_articles.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GupdatePlayAtData_update_user_articles? fromJson(
+          Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GupdatePlayAtData_update_user_articles.serializer,
+        json,
+      );
+}
+
 abstract class GUserArticleFragment {
   String get G__typename;
   _i2.Guuid get id;

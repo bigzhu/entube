@@ -48,6 +48,8 @@ import 'package:entube/components/UserArticles/g/services.data.gql.dart'
         GUserArticlesData_user_articles_article,
         GdeleteUserArticleData,
         GdeleteUserArticleData_update_user_articles,
+        GupdatePlayAtData,
+        GupdatePlayAtData_update_user_articles,
         GupsertUserArticlesData,
         GupsertUserArticlesData_insert_user_articles_one,
         GupsertUserArticlesData_insert_user_articles_one_article;
@@ -56,12 +58,14 @@ import 'package:entube/components/UserArticles/g/services.req.gql.dart'
         GUserArticleFragmentReq,
         GUserArticlesReq,
         GdeleteUserArticleReq,
+        GupdatePlayAtReq,
         GupsertUserArticlesReq;
 import 'package:entube/components/UserArticles/g/services.var.gql.dart'
     show
         GUserArticleFragmentVars,
         GUserArticlesVars,
         GdeleteUserArticleVars,
+        GupdatePlayAtVars,
         GupsertUserArticlesVars;
 import 'package:entube/graphql/g/schema.schema.gql.dart'
     show
@@ -588,6 +592,10 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   Gorder_by,
   Gtimestamptz,
   Gtimestamptz_comparison_exp,
+  GupdatePlayAtData,
+  GupdatePlayAtData_update_user_articles,
+  GupdatePlayAtReq,
+  GupdatePlayAtVars,
   GupdateSentencesData,
   GupdateSentencesData_update_articles_by_pk,
   GupdateSentencesReq,

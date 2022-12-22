@@ -12,6 +12,8 @@ Serializer<GupsertUserArticlesVars> _$gupsertUserArticlesVarsSerializer =
     new _$GupsertUserArticlesVarsSerializer();
 Serializer<GdeleteUserArticleVars> _$gdeleteUserArticleVarsSerializer =
     new _$GdeleteUserArticleVarsSerializer();
+Serializer<GupdatePlayAtVars> _$gupdatePlayAtVarsSerializer =
+    new _$GupdatePlayAtVarsSerializer();
 Serializer<GUserArticleFragmentVars> _$gUserArticleFragmentVarsSerializer =
     new _$GUserArticleFragmentVarsSerializer();
 
@@ -128,6 +130,61 @@ class _$GdeleteUserArticleVarsSerializer
         case 'article_id':
           result.article_id.replace(serializers.deserialize(value,
               specifiedType: const FullType(_i2.Guuid))! as _i2.Guuid);
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$GupdatePlayAtVarsSerializer
+    implements StructuredSerializer<GupdatePlayAtVars> {
+  @override
+  final Iterable<Type> types = const [GupdatePlayAtVars, _$GupdatePlayAtVars];
+  @override
+  final String wireName = 'GupdatePlayAtVars';
+
+  @override
+  Iterable<Object?> serialize(Serializers serializers, GupdatePlayAtVars object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.article_id;
+    if (value != null) {
+      result
+        ..add('article_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.Guuid)));
+    }
+    value = object.play_at;
+    if (value != null) {
+      result
+        ..add('play_at')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  GupdatePlayAtVars deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new GupdatePlayAtVarsBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current! as String;
+      iterator.moveNext();
+      final Object? value = iterator.current;
+      switch (key) {
+        case 'article_id':
+          result.article_id.replace(serializers.deserialize(value,
+              specifiedType: const FullType(_i2.Guuid))! as _i2.Guuid);
+          break;
+        case 'play_at':
+          result.play_at = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -401,6 +458,110 @@ class GdeleteUserArticleVarsBuilder
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GdeleteUserArticleVars', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+class _$GupdatePlayAtVars extends GupdatePlayAtVars {
+  @override
+  final _i2.Guuid? article_id;
+  @override
+  final int? play_at;
+
+  factory _$GupdatePlayAtVars(
+          [void Function(GupdatePlayAtVarsBuilder)? updates]) =>
+      (new GupdatePlayAtVarsBuilder()..update(updates))._build();
+
+  _$GupdatePlayAtVars._({this.article_id, this.play_at}) : super._();
+
+  @override
+  GupdatePlayAtVars rebuild(void Function(GupdatePlayAtVarsBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  GupdatePlayAtVarsBuilder toBuilder() =>
+      new GupdatePlayAtVarsBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is GupdatePlayAtVars &&
+        article_id == other.article_id &&
+        play_at == other.play_at;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, article_id.hashCode), play_at.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'GupdatePlayAtVars')
+          ..add('article_id', article_id)
+          ..add('play_at', play_at))
+        .toString();
+  }
+}
+
+class GupdatePlayAtVarsBuilder
+    implements Builder<GupdatePlayAtVars, GupdatePlayAtVarsBuilder> {
+  _$GupdatePlayAtVars? _$v;
+
+  _i2.GuuidBuilder? _article_id;
+  _i2.GuuidBuilder get article_id =>
+      _$this._article_id ??= new _i2.GuuidBuilder();
+  set article_id(_i2.GuuidBuilder? article_id) =>
+      _$this._article_id = article_id;
+
+  int? _play_at;
+  int? get play_at => _$this._play_at;
+  set play_at(int? play_at) => _$this._play_at = play_at;
+
+  GupdatePlayAtVarsBuilder();
+
+  GupdatePlayAtVarsBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _article_id = $v.article_id?.toBuilder();
+      _play_at = $v.play_at;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(GupdatePlayAtVars other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$GupdatePlayAtVars;
+  }
+
+  @override
+  void update(void Function(GupdatePlayAtVarsBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  GupdatePlayAtVars build() => _build();
+
+  _$GupdatePlayAtVars _build() {
+    _$GupdatePlayAtVars _$result;
+    try {
+      _$result = _$v ??
+          new _$GupdatePlayAtVars._(
+              article_id: _article_id?.build(), play_at: play_at);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'article_id';
+        _article_id?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'GupdatePlayAtVars', _$failedField, e.toString());
       }
       rethrow;
     }

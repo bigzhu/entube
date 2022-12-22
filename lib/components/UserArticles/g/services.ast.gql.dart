@@ -220,9 +220,77 @@ const deleteUserArticle = _i1.OperationDefinitionNode(
     )
   ]),
 );
+const updatePlayAt = _i1.OperationDefinitionNode(
+  type: _i1.OperationType.mutation,
+  name: _i1.NameNode(value: 'updatePlayAt'),
+  variableDefinitions: [
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'article_id')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'play_at')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'Int'),
+        isNonNull: false,
+      ),
+      defaultValue: _i1.DefaultValueNode(value: null),
+      directives: [],
+    ),
+  ],
+  directives: [],
+  selectionSet: _i1.SelectionSetNode(selections: [
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'update_user_articles'),
+      alias: null,
+      arguments: [
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: 'where'),
+          value: _i1.ObjectValueNode(fields: [
+            _i1.ObjectFieldNode(
+              name: _i1.NameNode(value: 'article_id'),
+              value: _i1.ObjectValueNode(fields: [
+                _i1.ObjectFieldNode(
+                  name: _i1.NameNode(value: '_eq'),
+                  value:
+                      _i1.VariableNode(name: _i1.NameNode(value: 'article_id')),
+                )
+              ]),
+            )
+          ]),
+        ),
+        _i1.ArgumentNode(
+          name: _i1.NameNode(value: '_set'),
+          value: _i1.ObjectValueNode(fields: [
+            _i1.ObjectFieldNode(
+              name: _i1.NameNode(value: 'play_at'),
+              value: _i1.VariableNode(name: _i1.NameNode(value: 'play_at')),
+            )
+          ]),
+        ),
+      ],
+      directives: [],
+      selectionSet: _i1.SelectionSetNode(selections: [
+        _i1.FieldNode(
+          name: _i1.NameNode(value: 'affected_rows'),
+          alias: null,
+          arguments: [],
+          directives: [],
+          selectionSet: null,
+        )
+      ]),
+    )
+  ]),
+);
 const document = _i1.DocumentNode(definitions: [
   UserArticleFragment,
   UserArticles,
   upsertUserArticles,
   deleteUserArticle,
+  updatePlayAt,
 ]);

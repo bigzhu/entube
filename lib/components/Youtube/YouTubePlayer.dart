@@ -2,6 +2,8 @@ import 'package:collection/collection.dart';
 import 'package:entube/components/Sentence/index.dart';
 
 import 'package:entube/components/UserArticles/g/services.data.gql.dart';
+import 'package:entube/components/UserArticles/g/services.req.gql.dart';
+import 'package:entube/state.dart';
 import 'package:entube/utils/compute.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -180,6 +182,13 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
     WidgetsBinding.instance.removeObserver(this);
     try {
       // 这里要更新 userArticle.play_at
+      final req = GupdatePlayAtReq(
+        (b) => b
+          ..vars.article_id = userArticle.article.id.toBuilder()
+          ..vars.play_at = userArticle.play_at,
+      );
+      final client = ref.watch(gqlClientP);
+      client.request(req);
     } catch (e) {
       ref.read(errorMeesageSP.notifier).state = "$e";
     } finally {}

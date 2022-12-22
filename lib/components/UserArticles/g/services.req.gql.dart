@@ -192,6 +192,64 @@ abstract class GdeleteUserArticleReq
       );
 }
 
+abstract class GupdatePlayAtReq
+    implements
+        Built<GupdatePlayAtReq, GupdatePlayAtReqBuilder>,
+        _i1.OperationRequest<_i2.GupdatePlayAtData, _i3.GupdatePlayAtVars> {
+  GupdatePlayAtReq._();
+
+  factory GupdatePlayAtReq([Function(GupdatePlayAtReqBuilder b) updates]) =
+      _$GupdatePlayAtReq;
+
+  static void _initializeBuilder(GupdatePlayAtReqBuilder b) => b
+    ..operation = _i4.Operation(
+      document: _i5.document,
+      operationName: 'updatePlayAt',
+    )
+    ..executeOnListen = true;
+  @override
+  _i3.GupdatePlayAtVars get vars;
+  @override
+  _i4.Operation get operation;
+  @override
+  _i4.Request get execRequest => _i4.Request(
+        operation: operation,
+        variables: vars.toJson(),
+      );
+  @override
+  String? get requestId;
+  @override
+  @BuiltValueField(serialize: false)
+  _i2.GupdatePlayAtData? Function(
+    _i2.GupdatePlayAtData?,
+    _i2.GupdatePlayAtData?,
+  )? get updateResult;
+  @override
+  _i2.GupdatePlayAtData? get optimisticResponse;
+  @override
+  String? get updateCacheHandlerKey;
+  @override
+  Map<String, dynamic>? get updateCacheHandlerContext;
+  @override
+  _i1.FetchPolicy? get fetchPolicy;
+  @override
+  bool get executeOnListen;
+  @override
+  _i2.GupdatePlayAtData? parseData(Map<String, dynamic> json) =>
+      _i2.GupdatePlayAtData.fromJson(json);
+  static Serializer<GupdatePlayAtReq> get serializer =>
+      _$gupdatePlayAtReqSerializer;
+  Map<String, dynamic> toJson() => (_i6.serializers.serializeWith(
+        GupdatePlayAtReq.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GupdatePlayAtReq? fromJson(Map<String, dynamic> json) =>
+      _i6.serializers.deserializeWith(
+        GupdatePlayAtReq.serializer,
+        json,
+      );
+}
+
 abstract class GUserArticleFragmentReq
     implements
         Built<GUserArticleFragmentReq, GUserArticleFragmentReqBuilder>,

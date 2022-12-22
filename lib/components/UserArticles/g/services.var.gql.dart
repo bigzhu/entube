@@ -73,6 +73,28 @@ abstract class GdeleteUserArticleVars
       );
 }
 
+abstract class GupdatePlayAtVars
+    implements Built<GupdatePlayAtVars, GupdatePlayAtVarsBuilder> {
+  GupdatePlayAtVars._();
+
+  factory GupdatePlayAtVars([Function(GupdatePlayAtVarsBuilder b) updates]) =
+      _$GupdatePlayAtVars;
+
+  _i2.Guuid? get article_id;
+  int? get play_at;
+  static Serializer<GupdatePlayAtVars> get serializer =>
+      _$gupdatePlayAtVarsSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GupdatePlayAtVars.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GupdatePlayAtVars? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GupdatePlayAtVars.serializer,
+        json,
+      );
+}
+
 abstract class GUserArticleFragmentVars
     implements
         Built<GUserArticleFragmentVars, GUserArticleFragmentVarsBuilder> {
