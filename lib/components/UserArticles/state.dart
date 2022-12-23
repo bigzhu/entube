@@ -37,9 +37,7 @@ class UserArticlesSN
       return;
     }
     setLoadingTitle(url, 'Finding in server ...');
-    print(url);
     String? articleId = await findInRemote(url);
-    print(articleId);
     // exists in remote
     if (articleId != null) {
       setLoadingTitle(url, 'Binding to my article ...');
@@ -52,7 +50,7 @@ class UserArticlesSN
     setLoadingTitle(url, 'Saving to server ...');
     articleId = await insertArticles(articleJson);
     if (articleId != null) {
-      setLoadingTitle(url, 'Binding to my article ...');
+      setLoadingTitle(url, 'Binding to user articles ...');
       await bindUserArticles(articleId);
       loading = false;
     }

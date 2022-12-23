@@ -27,8 +27,7 @@ final routes = [
   ),
   GoRoute(
       path: '/AuthLoading',
-      builder: (context, state) =>
-          const Loading("Auto user login in progress ...")),
+      builder: (context, state) => const Loading("login in progress ...")),
   GoRoute(
     path: '/ArticleItems',
     builder: (context, state) => const Items(),
