@@ -161,22 +161,19 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("build NewYouTubePlayer");
-    //make sure PlayAt not null
-
     debugPrint("userArticle.play_at=${userArticle.play_at}");
     //获取 sentences
     sentences = ref.watch(sentencesSP);
     Future(() {
       definePlaydingSentence();
     });
-
     ref.watch(listenSeekProvider);
+
     return Hero(
       tag: "youtube_thumbnail_$articleId",
       child: YoutubePlayerIFrame(
         controller: controller,
-        aspectRatio: 16 / 9,
+        //aspectRatio: 16 / 9,
       ),
     );
   }

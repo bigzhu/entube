@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './ItemAvatar.dart';
-import './IncreasePercentNumber.dart';
+import 'ItemAvatar.dart';
+import 'IncreasePercentNumber.dart';
 
 // if percent is 0, hide itself
 class ItemBar extends StatelessWidget {

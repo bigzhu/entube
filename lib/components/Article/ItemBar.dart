@@ -1,8 +1,10 @@
 // ignore_for_file: library_prefixes
 
+import 'package:entube/components/ArticleItems/ItemAvatar.dart';
 import 'package:entube/components/ArticleItems/index.dart';
 import 'package:flutter/material.dart';
 import 'package:entube/components/ArticleItems/index.dart' as ArticleItems;
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -40,11 +42,27 @@ class ItemBar extends HookConsumerWidget {
                 //这里必须用 ,不然会报错
                 color: Colors
                     .transparent, //透明色, 以利用父组件的颜色实现 CircularNotchedRectangle 否则是白色
+                child: ListTile(
+                    leading: BackButton(
+                        color: Colors.white,
+                        onPressed: () {
+                          if (context.canPop()) context.pop();
+                        }),
+                    dense: false,
+                    trailing: InkWell(
+                        child: ItemAvatar(avatar: article.favicon),
+                        onTap: () =>
+                            launchUniversalLinkIos(Uri.parse(article.url))),
+                    title: Text(article.title ?? '',
+                        style: const TextStyle(color: Colors.white)))
+/*
                 child: ArticleItems.ItemBar(
                   title: article.title,
                   avatar: article.favicon,
                   //onTap: () => launch(article.youtube),
                   onTap: () => launchUniversalLinkIos(Uri.parse(article.url)),
-                ))));
+                )
+                */
+                )));
   }
 }
