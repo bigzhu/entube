@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:gql_exec/gql_exec.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:uuid/uuid.dart';
 
 import 'g/services.data.gql.dart';
 
@@ -68,19 +69,34 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
 
   setDone(String word, bool isDone) async {
     word = word.toLowerCase();
-    int times = 0;
+    int times = isDone ? 0 : 1;
     int i = state.words.indexWhere((element) => element.word == word);
+    GAcquiringWordsData_words? wordObj = state.mapWords[word];
     // 已经设置过, 取 times
-    if (i != -1) {
-      times = state.words[i].times;
-    }
-    final newWordObj = await upsert(word, times, isDone);
-    if (i != -1) {
-      state.words[i] = newWordObj;
+    if (wordObj != null) {
+      times = isDone ? wordObj.times : wordObj.times + 1;
+      wordObj.rebuild(
+        (b) => b
+          ..is_done = isDone
+          ..times = times,
+      );
+      state.words[i] = wordObj;
     } else {
-      state.words.add(newWordObj);
+      Map<String, dynamic> json = {
+        "id": const Uuid().v4(),
+        "word": word,
+        "is_done": isDone,
+        "times": times
+      };
+      wordObj = GAcquiringWordsData_words.fromJson(json);
+      if (wordObj == null) {
+        throw Exception("create word is null: $json");
+      } else {
+        state.words.add(wordObj);
+      }
     }
     notifierMap();
+    upsert(word, times, isDone);
   }
 
   notifierMap() {
@@ -98,7 +114,7 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
     final req = GupsertAcquiringWordsReq(
       (b) => b
         ..vars.word = word
-        ..vars.times = times + 1
+        ..vars.times = times
         ..vars.is_done = isDone,
     );
     final stream = client.request(req);
