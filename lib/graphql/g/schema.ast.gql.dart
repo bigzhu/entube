@@ -25237,7 +25237,7 @@ const words = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'timestamptz'),
-        isNonNull: true,
+        isNonNull: false,
       ),
     ),
     _i1.FieldDefinitionNode(
@@ -25246,7 +25246,7 @@ const words = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'uuid'),
-        isNonNull: true,
+        isNonNull: false,
       ),
     ),
     _i1.FieldDefinitionNode(
@@ -25291,7 +25291,7 @@ const words = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'timestamptz'),
-        isNonNull: true,
+        isNonNull: false,
       ),
     ),
     _i1.FieldDefinitionNode(
@@ -25309,7 +25309,7 @@ const words = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'users'),
-        isNonNull: true,
+        isNonNull: false,
       ),
     ),
     _i1.FieldDefinitionNode(

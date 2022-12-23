@@ -59,9 +59,9 @@ abstract class GAcquiringWordsData_words
   @override
   int get times;
   @override
-  _i2.Gtimestamptz get created_at;
+  _i2.Gtimestamptz? get created_at;
   @override
-  _i2.Gtimestamptz get updated_at;
+  _i2.Gtimestamptz? get updated_at;
   static Serializer<GAcquiringWordsData_words> get serializer =>
       _$gAcquiringWordsDataWordsSerializer;
   @override
@@ -129,9 +129,9 @@ abstract class GupsertAcquiringWordsData_insert_words_one
   @override
   int get times;
   @override
-  _i2.Gtimestamptz get created_at;
+  _i2.Gtimestamptz? get created_at;
   @override
-  _i2.Gtimestamptz get updated_at;
+  _i2.Gtimestamptz? get updated_at;
   static Serializer<GupsertAcquiringWordsData_insert_words_one>
       get serializer => _$gupsertAcquiringWordsDataInsertWordsOneSerializer;
   @override
@@ -153,8 +153,8 @@ abstract class GWordFragment {
   bool get is_done;
   String get word;
   int get times;
-  _i2.Gtimestamptz get created_at;
-  _i2.Gtimestamptz get updated_at;
+  _i2.Gtimestamptz? get created_at;
+  _i2.Gtimestamptz? get updated_at;
   Map<String, dynamic> toJson();
 }
 
@@ -181,9 +181,9 @@ abstract class GWordFragmentData
   @override
   int get times;
   @override
-  _i2.Gtimestamptz get created_at;
+  _i2.Gtimestamptz? get created_at;
   @override
-  _i2.Gtimestamptz get updated_at;
+  _i2.Gtimestamptz? get updated_at;
   static Serializer<GWordFragmentData> get serializer =>
       _$gWordFragmentDataSerializer;
   @override

@@ -67,20 +67,18 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
     return map;
   }
 
-  setDone(String word, bool isDone) async {
-    word = word.toLowerCase();
+  setDone(String word, bool isDone) {
     int times = isDone ? 0 : 1;
-    int i = state.words.indexWhere((element) => element.word == word);
+    word = word.toLowerCase();
     GAcquiringWordsData_words? wordObj = state.mapWords[word];
     // 已经设置过, 取 times
     if (wordObj != null) {
       times = isDone ? wordObj.times : wordObj.times + 1;
-      wordObj.rebuild(
+      wordObj = wordObj.rebuild(
         (b) => b
           ..is_done = isDone
           ..times = times,
       );
-      state.words[i] = wordObj;
     } else {
       Map<String, dynamic> json = {
         "id": const Uuid().v4(),
@@ -91,15 +89,23 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
       wordObj = GAcquiringWordsData_words.fromJson(json);
       if (wordObj == null) {
         throw Exception("create word is null: $json");
-      } else {
-        state.words.add(wordObj);
       }
     }
-    notifierMap();
+    state.mapWords[word] = wordObj;
+    notifierByMap();
     upsert(word, times, isDone);
   }
 
-  notifierMap() {
+  //仅仅是 map 修改
+  notifierByMap() {
+    result = AcquiringWordsResult();
+    result.loading = false;
+    result.words = state.words;
+    result.mapWords = {...state.mapWords};
+    state = result;
+  }
+
+  notifierList() {
     result = AcquiringWordsResult();
     result.loading = false;
     result.words = [...state.words];

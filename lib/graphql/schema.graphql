@@ -6867,17 +6867,17 @@ input uuid_comparison_exp {
 
 """待学习的单词"""
 type words {
-  created_at: timestamptz!
-  created_by: uuid!
+  created_at: timestamptz
+  created_by: uuid
   deleted_at: timestamptz
   id: uuid!
   is_done: Boolean!
   times: Int!
-  updated_at: timestamptz!
+  updated_at: timestamptz
   updated_by: uuid
 
   """An object relationship"""
-  user: users!
+  user: users
   word: String!
 }
 

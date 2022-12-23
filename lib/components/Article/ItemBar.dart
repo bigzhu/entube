@@ -43,13 +43,13 @@ class ItemBar extends HookConsumerWidget {
                 color: Colors
                     .transparent, //透明色, 以利用父组件的颜色实现 CircularNotchedRectangle 否则是白色
                 child: ListTile(
-                    leading: BackButton(
+                    trailing: BackButton(
                         color: Colors.white,
                         onPressed: () {
                           if (context.canPop()) context.pop();
                         }),
                     dense: false,
-                    trailing: InkWell(
+                    leading: InkWell(
                         child: ItemAvatar(avatar: article.favicon),
                         onTap: () =>
                             launchUniversalLinkIos(Uri.parse(article.url))),

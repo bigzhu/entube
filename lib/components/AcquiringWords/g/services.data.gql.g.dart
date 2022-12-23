@@ -102,14 +102,22 @@ class _$GAcquiringWordsData_wordsSerializer
       serializers.serialize(object.word, specifiedType: const FullType(String)),
       'times',
       serializers.serialize(object.times, specifiedType: const FullType(int)),
-      'created_at',
-      serializers.serialize(object.created_at,
-          specifiedType: const FullType(_i2.Gtimestamptz)),
-      'updated_at',
-      serializers.serialize(object.updated_at,
-          specifiedType: const FullType(_i2.Gtimestamptz)),
     ];
-
+    Object? value;
+    value = object.created_at;
+    if (value != null) {
+      result
+        ..add('created_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.Gtimestamptz)));
+    }
+    value = object.updated_at;
+    if (value != null) {
+      result
+        ..add('updated_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.Gtimestamptz)));
+    }
     return result;
   }
 
@@ -251,14 +259,22 @@ class _$GupsertAcquiringWordsData_insert_words_oneSerializer
       serializers.serialize(object.word, specifiedType: const FullType(String)),
       'times',
       serializers.serialize(object.times, specifiedType: const FullType(int)),
-      'created_at',
-      serializers.serialize(object.created_at,
-          specifiedType: const FullType(_i2.Gtimestamptz)),
-      'updated_at',
-      serializers.serialize(object.updated_at,
-          specifiedType: const FullType(_i2.Gtimestamptz)),
     ];
-
+    Object? value;
+    value = object.created_at;
+    if (value != null) {
+      result
+        ..add('created_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.Gtimestamptz)));
+    }
+    value = object.updated_at;
+    if (value != null) {
+      result
+        ..add('updated_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.Gtimestamptz)));
+    }
     return result;
   }
 
@@ -335,14 +351,22 @@ class _$GWordFragmentDataSerializer
       serializers.serialize(object.word, specifiedType: const FullType(String)),
       'times',
       serializers.serialize(object.times, specifiedType: const FullType(int)),
-      'created_at',
-      serializers.serialize(object.created_at,
-          specifiedType: const FullType(_i2.Gtimestamptz)),
-      'updated_at',
-      serializers.serialize(object.updated_at,
-          specifiedType: const FullType(_i2.Gtimestamptz)),
     ];
-
+    Object? value;
+    value = object.created_at;
+    if (value != null) {
+      result
+        ..add('created_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.Gtimestamptz)));
+    }
+    value = object.updated_at;
+    if (value != null) {
+      result
+        ..add('updated_at')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(_i2.Gtimestamptz)));
+    }
     return result;
   }
 
@@ -522,9 +546,9 @@ class _$GAcquiringWordsData_words extends GAcquiringWordsData_words {
   @override
   final int times;
   @override
-  final _i2.Gtimestamptz created_at;
+  final _i2.Gtimestamptz? created_at;
   @override
-  final _i2.Gtimestamptz updated_at;
+  final _i2.Gtimestamptz? updated_at;
 
   factory _$GAcquiringWordsData_words(
           [void Function(GAcquiringWordsData_wordsBuilder)? updates]) =>
@@ -536,8 +560,8 @@ class _$GAcquiringWordsData_words extends GAcquiringWordsData_words {
       required this.is_done,
       required this.word,
       required this.times,
-      required this.created_at,
-      required this.updated_at})
+      this.created_at,
+      this.updated_at})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GAcquiringWordsData_words', 'G__typename');
@@ -549,10 +573,6 @@ class _$GAcquiringWordsData_words extends GAcquiringWordsData_words {
         word, r'GAcquiringWordsData_words', 'word');
     BuiltValueNullFieldError.checkNotNull(
         times, r'GAcquiringWordsData_words', 'times');
-    BuiltValueNullFieldError.checkNotNull(
-        created_at, r'GAcquiringWordsData_words', 'created_at');
-    BuiltValueNullFieldError.checkNotNull(
-        updated_at, r'GAcquiringWordsData_words', 'updated_at');
   }
 
   @override
@@ -654,8 +674,8 @@ class GAcquiringWordsData_wordsBuilder
       _is_done = $v.is_done;
       _word = $v.word;
       _times = $v.times;
-      _created_at = $v.created_at.toBuilder();
-      _updated_at = $v.updated_at.toBuilder();
+      _created_at = $v.created_at?.toBuilder();
+      _updated_at = $v.updated_at?.toBuilder();
       _$v = null;
     }
     return this;
@@ -689,8 +709,8 @@ class GAcquiringWordsData_wordsBuilder
                   word, r'GAcquiringWordsData_words', 'word'),
               times: BuiltValueNullFieldError.checkNotNull(
                   times, r'GAcquiringWordsData_words', 'times'),
-              created_at: created_at.build(),
-              updated_at: updated_at.build());
+              created_at: _created_at?.build(),
+              updated_at: _updated_at?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -698,9 +718,9 @@ class GAcquiringWordsData_wordsBuilder
         id.build();
 
         _$failedField = 'created_at';
-        created_at.build();
+        _created_at?.build();
         _$failedField = 'updated_at';
-        updated_at.build();
+        _updated_at?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GAcquiringWordsData_words', _$failedField, e.toString());
@@ -843,9 +863,9 @@ class _$GupsertAcquiringWordsData_insert_words_one
   @override
   final int times;
   @override
-  final _i2.Gtimestamptz created_at;
+  final _i2.Gtimestamptz? created_at;
   @override
-  final _i2.Gtimestamptz updated_at;
+  final _i2.Gtimestamptz? updated_at;
 
   factory _$GupsertAcquiringWordsData_insert_words_one(
           [void Function(GupsertAcquiringWordsData_insert_words_oneBuilder)?
@@ -859,8 +879,8 @@ class _$GupsertAcquiringWordsData_insert_words_one
       required this.is_done,
       required this.word,
       required this.times,
-      required this.created_at,
-      required this.updated_at})
+      this.created_at,
+      this.updated_at})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
         r'GupsertAcquiringWordsData_insert_words_one', 'G__typename');
@@ -872,10 +892,6 @@ class _$GupsertAcquiringWordsData_insert_words_one
         word, r'GupsertAcquiringWordsData_insert_words_one', 'word');
     BuiltValueNullFieldError.checkNotNull(
         times, r'GupsertAcquiringWordsData_insert_words_one', 'times');
-    BuiltValueNullFieldError.checkNotNull(created_at,
-        r'GupsertAcquiringWordsData_insert_words_one', 'created_at');
-    BuiltValueNullFieldError.checkNotNull(updated_at,
-        r'GupsertAcquiringWordsData_insert_words_one', 'updated_at');
   }
 
   @override
@@ -980,8 +996,8 @@ class GupsertAcquiringWordsData_insert_words_oneBuilder
       _is_done = $v.is_done;
       _word = $v.word;
       _times = $v.times;
-      _created_at = $v.created_at.toBuilder();
-      _updated_at = $v.updated_at.toBuilder();
+      _created_at = $v.created_at?.toBuilder();
+      _updated_at = $v.updated_at?.toBuilder();
       _$v = null;
     }
     return this;
@@ -1017,8 +1033,8 @@ class GupsertAcquiringWordsData_insert_words_oneBuilder
                   word, r'GupsertAcquiringWordsData_insert_words_one', 'word'),
               times: BuiltValueNullFieldError.checkNotNull(times,
                   r'GupsertAcquiringWordsData_insert_words_one', 'times'),
-              created_at: created_at.build(),
-              updated_at: updated_at.build());
+              created_at: _created_at?.build(),
+              updated_at: _updated_at?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -1026,9 +1042,9 @@ class GupsertAcquiringWordsData_insert_words_oneBuilder
         id.build();
 
         _$failedField = 'created_at';
-        created_at.build();
+        _created_at?.build();
         _$failedField = 'updated_at';
-        updated_at.build();
+        _updated_at?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GupsertAcquiringWordsData_insert_words_one',
@@ -1054,9 +1070,9 @@ class _$GWordFragmentData extends GWordFragmentData {
   @override
   final int times;
   @override
-  final _i2.Gtimestamptz created_at;
+  final _i2.Gtimestamptz? created_at;
   @override
-  final _i2.Gtimestamptz updated_at;
+  final _i2.Gtimestamptz? updated_at;
 
   factory _$GWordFragmentData(
           [void Function(GWordFragmentDataBuilder)? updates]) =>
@@ -1068,8 +1084,8 @@ class _$GWordFragmentData extends GWordFragmentData {
       required this.is_done,
       required this.word,
       required this.times,
-      required this.created_at,
-      required this.updated_at})
+      this.created_at,
+      this.updated_at})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GWordFragmentData', 'G__typename');
@@ -1078,10 +1094,6 @@ class _$GWordFragmentData extends GWordFragmentData {
         is_done, r'GWordFragmentData', 'is_done');
     BuiltValueNullFieldError.checkNotNull(word, r'GWordFragmentData', 'word');
     BuiltValueNullFieldError.checkNotNull(times, r'GWordFragmentData', 'times');
-    BuiltValueNullFieldError.checkNotNull(
-        created_at, r'GWordFragmentData', 'created_at');
-    BuiltValueNullFieldError.checkNotNull(
-        updated_at, r'GWordFragmentData', 'updated_at');
   }
 
   @override
@@ -1181,8 +1193,8 @@ class GWordFragmentDataBuilder
       _is_done = $v.is_done;
       _word = $v.word;
       _times = $v.times;
-      _created_at = $v.created_at.toBuilder();
-      _updated_at = $v.updated_at.toBuilder();
+      _created_at = $v.created_at?.toBuilder();
+      _updated_at = $v.updated_at?.toBuilder();
       _$v = null;
     }
     return this;
@@ -1216,8 +1228,8 @@ class GWordFragmentDataBuilder
                   word, r'GWordFragmentData', 'word'),
               times: BuiltValueNullFieldError.checkNotNull(
                   times, r'GWordFragmentData', 'times'),
-              created_at: created_at.build(),
-              updated_at: updated_at.build());
+              created_at: _created_at?.build(),
+              updated_at: _updated_at?.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -1225,9 +1237,9 @@ class GWordFragmentDataBuilder
         id.build();
 
         _$failedField = 'created_at';
-        created_at.build();
+        _created_at?.build();
         _$failedField = 'updated_at';
-        updated_at.build();
+        _updated_at?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'GWordFragmentData', _$failedField, e.toString());
