@@ -1,23 +1,19 @@
 import 'dart:async';
 
 import 'package:collection/collection.dart';
+import 'package:entube/components/Article/index.dart';
+import 'package:entube/components/Error/index.dart';
 import 'package:entube/components/Sentence/index.dart';
-
 import 'package:entube/components/UserArticles/g/services.data.gql.dart';
 import 'package:entube/components/UserArticles/g/services.req.gql.dart';
+import 'package:entube/components/UserArticles/index.dart';
 import 'package:entube/state.dart';
 import 'package:entube/utils/compute.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 import './state.dart';
-
-import 'package:entube/components/UserArticles/index.dart';
-import 'package:entube/components/Error/index.dart';
-import 'package:entube/components/Article/index.dart';
 
 class YoutubePlayer extends StatefulHookConsumerWidget {
   const YoutubePlayer(this.articleId, {super.key});

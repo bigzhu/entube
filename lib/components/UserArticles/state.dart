@@ -25,7 +25,6 @@ class UserArticlesSN
     client = ref.watch(gqlClientP);
     fetch();
   }
-  bool loading = false;
   late Client client;
   final Ref ref;
   // 查询 user_articles
@@ -40,9 +39,8 @@ class UserArticlesSN
     String? articleId = await findInRemote(url);
     // exists in remote
     if (articleId != null) {
-      setLoadingTitle(url, 'Binding to my article ...');
+      setLoadingTitle(url, 'Binding to user article ...');
       await bindUserArticles(articleId);
-      loading = false;
       return;
     }
     setLoadingTitle(url, 'Fetching YouTube Info ...');
@@ -52,23 +50,12 @@ class UserArticlesSN
     if (articleId != null) {
       setLoadingTitle(url, 'Binding to user articles ...');
       await bindUserArticles(articleId);
-      loading = false;
     }
   }
 
   void setLoadingTitle(String url, String title) {
-    if (title == '') {
-      loading = false;
-      removeLoading(url);
-      return;
-    }
     final loadingUserArticle = createLoadingUserArticle(url, title);
-    if (loading) {
-      replaceLoading(loadingUserArticle);
-    } else {
-      state = [loadingUserArticle, ...?state];
-      loading = true;
-    }
+    replaceLoading(loadingUserArticle);
   }
 
   Future<void> bindUserArticles(String articleId) async {
@@ -236,6 +223,10 @@ class UserArticlesSN
   void replaceLoading(GUserArticlesData_user_articles userArticle) {
     String url = userArticle.article.url;
     final index = state?.indexWhere((element) => element.article.url == url);
+    if (index == -1) {
+      state = [userArticle, ...?state];
+      return;
+    }
     if (index != -1 && index != null && state != null) {
       state![index] = userArticle;
       state = [...?state];
