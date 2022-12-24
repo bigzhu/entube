@@ -28,6 +28,20 @@ const UserArticleFragment = _i1.FragmentDefinitionNode(
       selectionSet: null,
     ),
     _i1.FieldNode(
+      name: _i1.NameNode(value: 'created_at'),
+      alias: null,
+      arguments: [],
+      directives: [],
+      selectionSet: null,
+    ),
+    _i1.FieldNode(
+      name: _i1.NameNode(value: 'updated_at'),
+      alias: null,
+      arguments: [],
+      directives: [],
+      selectionSet: null,
+    ),
+    _i1.FieldNode(
       name: _i1.NameNode(value: 'article'),
       alias: null,
       arguments: [],

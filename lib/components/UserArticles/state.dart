@@ -13,11 +13,10 @@ import 'package:uuid/uuid.dart';
 
 import 'g/services.data.gql.dart';
 import 'g/services.req.gql.dart';
-/*
-final userArticlesSP = StateProvider((ref) {
-  return <GUserArticlesData_user_articles>[];
+
+final toggleSP = StateProvider<void Function()>((ref) {
+  return () => {};
 });
-*/
 
 class UserArticlesSN
     extends StateNotifier<List<GUserArticlesData_user_articles>?> {
@@ -29,6 +28,16 @@ class UserArticlesSN
   final Ref ref;
   // 查询 user_articles
   final req = GUserArticlesReq();
+
+  void sortByLatestAdd() {
+    state!.sort((a, b) => b.created_at.value.compareTo(a.created_at.value));
+    state = [...?state];
+  }
+
+  void sortByEarliestRead() {
+    state!.sort((a, b) => a.updated_at.value.compareTo(b.updated_at.value));
+    state = [...?state];
+  }
 
   void sharedNew(String url) async {
     final index = findInLocal(url);

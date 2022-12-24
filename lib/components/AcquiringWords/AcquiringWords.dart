@@ -47,9 +47,9 @@ class AcquiringWords extends HookConsumerWidget {
                   ? const Icon(Icons.warning, color: Colors.red)
                   : const Icon(Icons.gpp_good_sharp),
               title: Word(acquiringWordList[index].word),
-              subtitle: Text('${acquiringWordList[index].created_at}'),
+              //subtitle: Word(acquiringWordList[index].word),
               trailing: Text('${acquiringWordList[index].times}'),
-              isThreeLine: true,
+              //isThreeLine: true,
             ),
           ),
         ))

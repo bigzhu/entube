@@ -113,6 +113,12 @@ class _$GUserArticlesData_user_articlesSerializer
           specifiedType: const FullType(_i2.Guuid)),
       'play_at',
       serializers.serialize(object.play_at, specifiedType: const FullType(int)),
+      'created_at',
+      serializers.serialize(object.created_at,
+          specifiedType: const FullType(_i2.Gtimestamptz)),
+      'updated_at',
+      serializers.serialize(object.updated_at,
+          specifiedType: const FullType(_i2.Gtimestamptz)),
       'article',
       serializers.serialize(object.article,
           specifiedType:
@@ -145,6 +151,16 @@ class _$GUserArticlesData_user_articlesSerializer
         case 'play_at':
           result.play_at = serializers.deserialize(value,
               specifiedType: const FullType(int))! as int;
+          break;
+        case 'created_at':
+          result.created_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.Gtimestamptz))!
+              as _i2.Gtimestamptz);
+          break;
+        case 'updated_at':
+          result.updated_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.Gtimestamptz))!
+              as _i2.Gtimestamptz);
           break;
         case 'article':
           result.article.replace(serializers.deserialize(value,
@@ -335,6 +351,12 @@ class _$GupsertUserArticlesData_insert_user_articles_oneSerializer
           specifiedType: const FullType(_i2.Guuid)),
       'play_at',
       serializers.serialize(object.play_at, specifiedType: const FullType(int)),
+      'created_at',
+      serializers.serialize(object.created_at,
+          specifiedType: const FullType(_i2.Gtimestamptz)),
+      'updated_at',
+      serializers.serialize(object.updated_at,
+          specifiedType: const FullType(_i2.Gtimestamptz)),
       'article',
       serializers.serialize(object.article,
           specifiedType: const FullType(
@@ -368,6 +390,16 @@ class _$GupsertUserArticlesData_insert_user_articles_oneSerializer
         case 'play_at':
           result.play_at = serializers.deserialize(value,
               specifiedType: const FullType(int))! as int;
+          break;
+        case 'created_at':
+          result.created_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.Gtimestamptz))!
+              as _i2.Gtimestamptz);
+          break;
+        case 'updated_at':
+          result.updated_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.Gtimestamptz))!
+              as _i2.Gtimestamptz);
           break;
         case 'article':
           result.article.replace(serializers.deserialize(value,
@@ -724,6 +756,12 @@ class _$GUserArticleFragmentDataSerializer
           specifiedType: const FullType(_i2.Guuid)),
       'play_at',
       serializers.serialize(object.play_at, specifiedType: const FullType(int)),
+      'created_at',
+      serializers.serialize(object.created_at,
+          specifiedType: const FullType(_i2.Gtimestamptz)),
+      'updated_at',
+      serializers.serialize(object.updated_at,
+          specifiedType: const FullType(_i2.Gtimestamptz)),
       'article',
       serializers.serialize(object.article,
           specifiedType: const FullType(GUserArticleFragmentData_article)),
@@ -755,6 +793,16 @@ class _$GUserArticleFragmentDataSerializer
         case 'play_at':
           result.play_at = serializers.deserialize(value,
               specifiedType: const FullType(int))! as int;
+          break;
+        case 'created_at':
+          result.created_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.Gtimestamptz))!
+              as _i2.Gtimestamptz);
+          break;
+        case 'updated_at':
+          result.updated_at.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(_i2.Gtimestamptz))!
+              as _i2.Gtimestamptz);
           break;
         case 'article':
           result.article.replace(serializers.deserialize(value,
@@ -987,6 +1035,10 @@ class _$GUserArticlesData_user_articles
   @override
   final int play_at;
   @override
+  final _i2.Gtimestamptz created_at;
+  @override
+  final _i2.Gtimestamptz updated_at;
+  @override
   final GUserArticlesData_user_articles_article article;
 
   factory _$GUserArticlesData_user_articles(
@@ -997,6 +1049,8 @@ class _$GUserArticlesData_user_articles
       {required this.G__typename,
       required this.id,
       required this.play_at,
+      required this.created_at,
+      required this.updated_at,
       required this.article})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
@@ -1005,6 +1059,10 @@ class _$GUserArticlesData_user_articles
         id, r'GUserArticlesData_user_articles', 'id');
     BuiltValueNullFieldError.checkNotNull(
         play_at, r'GUserArticlesData_user_articles', 'play_at');
+    BuiltValueNullFieldError.checkNotNull(
+        created_at, r'GUserArticlesData_user_articles', 'created_at');
+    BuiltValueNullFieldError.checkNotNull(
+        updated_at, r'GUserArticlesData_user_articles', 'updated_at');
     BuiltValueNullFieldError.checkNotNull(
         article, r'GUserArticlesData_user_articles', 'article');
   }
@@ -1025,13 +1083,20 @@ class _$GUserArticlesData_user_articles
         G__typename == other.G__typename &&
         id == other.id &&
         play_at == other.play_at &&
+        created_at == other.created_at &&
+        updated_at == other.updated_at &&
         article == other.article;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, G__typename.hashCode), id.hashCode), play_at.hashCode),
+        $jc(
+            $jc(
+                $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
+                    play_at.hashCode),
+                created_at.hashCode),
+            updated_at.hashCode),
         article.hashCode));
   }
 
@@ -1041,6 +1106,8 @@ class _$GUserArticlesData_user_articles
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('play_at', play_at)
+          ..add('created_at', created_at)
+          ..add('updated_at', updated_at)
           ..add('article', article))
         .toString();
   }
@@ -1064,6 +1131,18 @@ class GUserArticlesData_user_articlesBuilder
   int? get play_at => _$this._play_at;
   set play_at(int? play_at) => _$this._play_at = play_at;
 
+  _i2.GtimestamptzBuilder? _created_at;
+  _i2.GtimestamptzBuilder get created_at =>
+      _$this._created_at ??= new _i2.GtimestamptzBuilder();
+  set created_at(_i2.GtimestamptzBuilder? created_at) =>
+      _$this._created_at = created_at;
+
+  _i2.GtimestamptzBuilder? _updated_at;
+  _i2.GtimestamptzBuilder get updated_at =>
+      _$this._updated_at ??= new _i2.GtimestamptzBuilder();
+  set updated_at(_i2.GtimestamptzBuilder? updated_at) =>
+      _$this._updated_at = updated_at;
+
   GUserArticlesData_user_articles_articleBuilder? _article;
   GUserArticlesData_user_articles_articleBuilder get article =>
       _$this._article ??= new GUserArticlesData_user_articles_articleBuilder();
@@ -1080,6 +1159,8 @@ class GUserArticlesData_user_articlesBuilder
       _G__typename = $v.G__typename;
       _id = $v.id.toBuilder();
       _play_at = $v.play_at;
+      _created_at = $v.created_at.toBuilder();
+      _updated_at = $v.updated_at.toBuilder();
       _article = $v.article.toBuilder();
       _$v = null;
     }
@@ -1110,6 +1191,8 @@ class GUserArticlesData_user_articlesBuilder
               id: id.build(),
               play_at: BuiltValueNullFieldError.checkNotNull(
                   play_at, r'GUserArticlesData_user_articles', 'play_at'),
+              created_at: created_at.build(),
+              updated_at: updated_at.build(),
               article: article.build());
     } catch (_) {
       late String _$failedField;
@@ -1117,6 +1200,10 @@ class GUserArticlesData_user_articlesBuilder
         _$failedField = 'id';
         id.build();
 
+        _$failedField = 'created_at';
+        created_at.build();
+        _$failedField = 'updated_at';
+        updated_at.build();
         _$failedField = 'article';
         article.build();
       } catch (e) {
@@ -1439,6 +1526,10 @@ class _$GupsertUserArticlesData_insert_user_articles_one
   @override
   final int play_at;
   @override
+  final _i2.Gtimestamptz created_at;
+  @override
+  final _i2.Gtimestamptz updated_at;
+  @override
   final GupsertUserArticlesData_insert_user_articles_one_article article;
 
   factory _$GupsertUserArticlesData_insert_user_articles_one(
@@ -1453,6 +1544,8 @@ class _$GupsertUserArticlesData_insert_user_articles_one
       {required this.G__typename,
       required this.id,
       required this.play_at,
+      required this.created_at,
+      required this.updated_at,
       required this.article})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(G__typename,
@@ -1461,6 +1554,10 @@ class _$GupsertUserArticlesData_insert_user_articles_one
         id, r'GupsertUserArticlesData_insert_user_articles_one', 'id');
     BuiltValueNullFieldError.checkNotNull(play_at,
         r'GupsertUserArticlesData_insert_user_articles_one', 'play_at');
+    BuiltValueNullFieldError.checkNotNull(created_at,
+        r'GupsertUserArticlesData_insert_user_articles_one', 'created_at');
+    BuiltValueNullFieldError.checkNotNull(updated_at,
+        r'GupsertUserArticlesData_insert_user_articles_one', 'updated_at');
     BuiltValueNullFieldError.checkNotNull(article,
         r'GupsertUserArticlesData_insert_user_articles_one', 'article');
   }
@@ -1483,13 +1580,20 @@ class _$GupsertUserArticlesData_insert_user_articles_one
         G__typename == other.G__typename &&
         id == other.id &&
         play_at == other.play_at &&
+        created_at == other.created_at &&
+        updated_at == other.updated_at &&
         article == other.article;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, G__typename.hashCode), id.hashCode), play_at.hashCode),
+        $jc(
+            $jc(
+                $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
+                    play_at.hashCode),
+                created_at.hashCode),
+            updated_at.hashCode),
         article.hashCode));
   }
 
@@ -1500,6 +1604,8 @@ class _$GupsertUserArticlesData_insert_user_articles_one
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('play_at', play_at)
+          ..add('created_at', created_at)
+          ..add('updated_at', updated_at)
           ..add('article', article))
         .toString();
   }
@@ -1523,6 +1629,18 @@ class GupsertUserArticlesData_insert_user_articles_oneBuilder
   int? get play_at => _$this._play_at;
   set play_at(int? play_at) => _$this._play_at = play_at;
 
+  _i2.GtimestamptzBuilder? _created_at;
+  _i2.GtimestamptzBuilder get created_at =>
+      _$this._created_at ??= new _i2.GtimestamptzBuilder();
+  set created_at(_i2.GtimestamptzBuilder? created_at) =>
+      _$this._created_at = created_at;
+
+  _i2.GtimestamptzBuilder? _updated_at;
+  _i2.GtimestamptzBuilder get updated_at =>
+      _$this._updated_at ??= new _i2.GtimestamptzBuilder();
+  set updated_at(_i2.GtimestamptzBuilder? updated_at) =>
+      _$this._updated_at = updated_at;
+
   GupsertUserArticlesData_insert_user_articles_one_articleBuilder? _article;
   GupsertUserArticlesData_insert_user_articles_one_articleBuilder get article =>
       _$this._article ??=
@@ -1542,6 +1660,8 @@ class GupsertUserArticlesData_insert_user_articles_oneBuilder
       _G__typename = $v.G__typename;
       _id = $v.id.toBuilder();
       _play_at = $v.play_at;
+      _created_at = $v.created_at.toBuilder();
+      _updated_at = $v.updated_at.toBuilder();
       _article = $v.article.toBuilder();
       _$v = null;
     }
@@ -1578,6 +1698,8 @@ class GupsertUserArticlesData_insert_user_articles_oneBuilder
                   play_at,
                   r'GupsertUserArticlesData_insert_user_articles_one',
                   'play_at'),
+              created_at: created_at.build(),
+              updated_at: updated_at.build(),
               article: article.build());
     } catch (_) {
       late String _$failedField;
@@ -1585,6 +1707,10 @@ class GupsertUserArticlesData_insert_user_articles_oneBuilder
         _$failedField = 'id';
         id.build();
 
+        _$failedField = 'created_at';
+        created_at.build();
+        _$failedField = 'updated_at';
+        updated_at.build();
         _$failedField = 'article';
         article.build();
       } catch (e) {
@@ -2260,6 +2386,10 @@ class _$GUserArticleFragmentData extends GUserArticleFragmentData {
   @override
   final int play_at;
   @override
+  final _i2.Gtimestamptz created_at;
+  @override
+  final _i2.Gtimestamptz updated_at;
+  @override
   final GUserArticleFragmentData_article article;
 
   factory _$GUserArticleFragmentData(
@@ -2270,6 +2400,8 @@ class _$GUserArticleFragmentData extends GUserArticleFragmentData {
       {required this.G__typename,
       required this.id,
       required this.play_at,
+      required this.created_at,
+      required this.updated_at,
       required this.article})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
@@ -2278,6 +2410,10 @@ class _$GUserArticleFragmentData extends GUserArticleFragmentData {
         id, r'GUserArticleFragmentData', 'id');
     BuiltValueNullFieldError.checkNotNull(
         play_at, r'GUserArticleFragmentData', 'play_at');
+    BuiltValueNullFieldError.checkNotNull(
+        created_at, r'GUserArticleFragmentData', 'created_at');
+    BuiltValueNullFieldError.checkNotNull(
+        updated_at, r'GUserArticleFragmentData', 'updated_at');
     BuiltValueNullFieldError.checkNotNull(
         article, r'GUserArticleFragmentData', 'article');
   }
@@ -2298,13 +2434,20 @@ class _$GUserArticleFragmentData extends GUserArticleFragmentData {
         G__typename == other.G__typename &&
         id == other.id &&
         play_at == other.play_at &&
+        created_at == other.created_at &&
+        updated_at == other.updated_at &&
         article == other.article;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, G__typename.hashCode), id.hashCode), play_at.hashCode),
+        $jc(
+            $jc(
+                $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
+                    play_at.hashCode),
+                created_at.hashCode),
+            updated_at.hashCode),
         article.hashCode));
   }
 
@@ -2314,6 +2457,8 @@ class _$GUserArticleFragmentData extends GUserArticleFragmentData {
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('play_at', play_at)
+          ..add('created_at', created_at)
+          ..add('updated_at', updated_at)
           ..add('article', article))
         .toString();
   }
@@ -2336,6 +2481,18 @@ class GUserArticleFragmentDataBuilder
   int? get play_at => _$this._play_at;
   set play_at(int? play_at) => _$this._play_at = play_at;
 
+  _i2.GtimestamptzBuilder? _created_at;
+  _i2.GtimestamptzBuilder get created_at =>
+      _$this._created_at ??= new _i2.GtimestamptzBuilder();
+  set created_at(_i2.GtimestamptzBuilder? created_at) =>
+      _$this._created_at = created_at;
+
+  _i2.GtimestamptzBuilder? _updated_at;
+  _i2.GtimestamptzBuilder get updated_at =>
+      _$this._updated_at ??= new _i2.GtimestamptzBuilder();
+  set updated_at(_i2.GtimestamptzBuilder? updated_at) =>
+      _$this._updated_at = updated_at;
+
   GUserArticleFragmentData_articleBuilder? _article;
   GUserArticleFragmentData_articleBuilder get article =>
       _$this._article ??= new GUserArticleFragmentData_articleBuilder();
@@ -2352,6 +2509,8 @@ class GUserArticleFragmentDataBuilder
       _G__typename = $v.G__typename;
       _id = $v.id.toBuilder();
       _play_at = $v.play_at;
+      _created_at = $v.created_at.toBuilder();
+      _updated_at = $v.updated_at.toBuilder();
       _article = $v.article.toBuilder();
       _$v = null;
     }
@@ -2382,6 +2541,8 @@ class GUserArticleFragmentDataBuilder
               id: id.build(),
               play_at: BuiltValueNullFieldError.checkNotNull(
                   play_at, r'GUserArticleFragmentData', 'play_at'),
+              created_at: created_at.build(),
+              updated_at: updated_at.build(),
               article: article.build());
     } catch (_) {
       late String _$failedField;
@@ -2389,6 +2550,10 @@ class GUserArticleFragmentDataBuilder
         _$failedField = 'id';
         id.build();
 
+        _$failedField = 'created_at';
+        created_at.build();
+        _$failedField = 'updated_at';
+        updated_at.build();
         _$failedField = 'article';
         article.build();
       } catch (e) {
