@@ -34,35 +34,34 @@ class ItemBar extends HookConsumerWidget {
     bool isBottom = ref.watch(isBottomP);
 
     return BottomAppBar(
-        color: Theme.of(context).primaryColorDark,
-        shape: isBottom ? const CircularNotchedRectangle() : null,
-        child: Hero(
-            tag: "youtube_title_${article.id}",
-            child: Material(
-                //这里必须用 ,不然会报错
-                color: Colors
-                    .transparent, //透明色, 以利用父组件的颜色实现 CircularNotchedRectangle 否则是白色
-                child: ListTile(
-                    trailing: BackButton(
-                        color: Colors.white,
-                        onPressed: () {
-                          if (context.canPop()) context.pop();
-                        }),
-                    dense: false,
-                    leading: InkWell(
-                        child: ItemAvatar(avatar: article.favicon),
-                        onTap: () =>
-                            launchUniversalLinkIos(Uri.parse(article.url))),
-                    title: Text(article.title ?? '',
-                        style: const TextStyle(color: Colors.white)))
-/*
-                child: ArticleItems.ItemBar(
-                  title: article.title,
-                  avatar: article.favicon,
-                  //onTap: () => launch(article.youtube),
-                  onTap: () => launchUniversalLinkIos(Uri.parse(article.url)),
-                )
-                */
-                )));
+      color: Theme.of(context).primaryColorDark,
+      shape: isBottom ? const CircularNotchedRectangle() : null,
+      child: Hero(
+        tag: "youtube_title_${article.id}",
+        child: Material(
+          //这里必须用 ,不然会报错
+          color: Colors
+              .transparent, //透明色, 以利用父组件的颜色实现 CircularNotchedRectangle 否则是白色
+          child: ListTile(
+            dense: false,
+            leading: Row(mainAxisSize: MainAxisSize.min, children: [
+              BackButton(
+                  color: Colors.white,
+                  onPressed: () {
+                    if (context.canPop()) context.pop();
+                  }),
+              InkWell(
+                onTap: () => launchUniversalLinkIos(Uri.parse(article.url)),
+                child: ItemAvatar(avatar: article.favicon),
+              )
+            ]),
+            title: InkWell(
+                onTap: () => launchUniversalLinkIos(Uri.parse(article.url)),
+                child: Text(article.title ?? '',
+                    style: const TextStyle(color: Colors.white))),
+          ),
+        ),
+      ),
+    );
   }
 }
