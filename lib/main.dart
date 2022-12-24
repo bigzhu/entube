@@ -87,9 +87,9 @@ class MyApp extends HookConsumerWidget {
     return MaterialApp.router(
       title: configTitle,
       // The Mandy red, light theme.
-      theme: FlexThemeData.light(scheme: FlexScheme.mango),
+      theme: FlexThemeData.light(scheme: FlexScheme.mallardGreen),
       // The Mandy red, dark theme.
-      darkTheme: FlexThemeData.dark(scheme: FlexScheme.mango),
+      darkTheme: FlexThemeData.dark(scheme: FlexScheme.sanJuanBlue),
       // Use dark or light theme based on system setting.
       themeMode: ThemeMode.system,
       routerConfig: GoRouter(

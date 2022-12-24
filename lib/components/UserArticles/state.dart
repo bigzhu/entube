@@ -14,8 +14,8 @@ import 'package:uuid/uuid.dart';
 import 'g/services.data.gql.dart';
 import 'g/services.req.gql.dart';
 
-final toggleSP = StateProvider<void Function()>((ref) {
-  return () => {};
+final isEarliestReadSP = StateProvider<bool>((ref) {
+  return false;
 });
 
 class UserArticlesSN
@@ -172,6 +172,8 @@ class UserArticlesSN
     await for (final value in stream) {
       if (value.data?.user_articles != null) {
         state = value.data!.user_articles.toList();
+        // 数据变化则排序改回来
+        ref.read(isEarliestReadSP.notifier).state = false;
       }
       if (value.hasErrors) {
         debugPrint("${value.graphqlErrors}");

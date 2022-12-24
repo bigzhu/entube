@@ -16,7 +16,8 @@ class Page extends HookConsumerWidget {
   const Page({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isEarliestRead = useState(false);
+    final isEarliestRead = ref.watch(isEarliestReadSP);
+
     String avatar = '';
     final auth = ref.watch(authP);
     final currentUser = auth.currentUser;
@@ -26,18 +27,18 @@ class Page extends HookConsumerWidget {
     return Scaffold(
       floatingActionButton: ElevatedButton.icon(
         onPressed: () {
-          if (isEarliestRead.value) {
+          if (isEarliestRead) {
             ref.read(userArticlesSNP.notifier).sortByLatestAdd();
-            isEarliestRead.value = !isEarliestRead.value;
+            ref.read(isEarliestReadSP.notifier).state = false;
           } else {
             ref.read(userArticlesSNP.notifier).sortByEarliestRead();
-            isEarliestRead.value = !isEarliestRead.value;
+            ref.read(isEarliestReadSP.notifier).state = true;
           }
         },
-        icon: isEarliestRead.value
+        icon: isEarliestRead
             ? const Icon(Icons.history)
             : const Icon(Icons.format_list_numbered),
-        label: isEarliestRead.value
+        label: isEarliestRead
             ? const Text('Earliest read')
             : const Text('Latest add'),
       ),
