@@ -30,12 +30,14 @@ class UserArticlesSN
   final req = GUserArticlesReq();
 
   void sortByLatestAdd() {
-    state!.sort((a, b) => b.created_at.value.compareTo(a.created_at.value));
+    state!.sort((a, b) =>
+        (b.created_at?.value ?? '').compareTo(a.created_at?.value ?? ''));
     state = [...?state];
   }
 
   void sortByEarliestRead() {
-    state!.sort((a, b) => a.updated_at.value.compareTo(b.updated_at.value));
+    state!.sort((a, b) =>
+        (a.updated_at?.value ?? '').compareTo(b.updated_at?.value ?? ''));
     state = [...?state];
   }
 

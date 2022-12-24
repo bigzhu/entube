@@ -3,8 +3,6 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'state.dart';
-
 @immutable
 class ExpandableFab extends StatefulHookConsumerWidget {
   const ExpandableFab({
@@ -42,7 +40,6 @@ class _ExpandableFabState extends ConsumerState<ExpandableFab>
       reverseCurve: Curves.easeOutQuad,
       parent: _controller,
     );
-    Future(() => ref.read(toggleSP.notifier).state = _toggle);
   }
 
   @override

@@ -5596,12 +5596,12 @@ type user_articles {
   """An object relationship"""
   article: articles!
   article_id: uuid!
-  created_at: timestamptz!
+  created_at: timestamptz
   created_by: uuid!
   deleted_at: timestamptz
   id: uuid!
   play_at: Int!
-  updated_at: timestamptz!
+  updated_at: timestamptz
   updated_by: uuid
 }
 

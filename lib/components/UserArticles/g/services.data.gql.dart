@@ -56,9 +56,9 @@ abstract class GUserArticlesData_user_articles
   @override
   int get play_at;
   @override
-  _i2.Gtimestamptz get created_at;
+  _i2.Gtimestamptz? get created_at;
   @override
-  _i2.Gtimestamptz get updated_at;
+  _i2.Gtimestamptz? get updated_at;
   @override
   GUserArticlesData_user_articles_article get article;
   static Serializer<GUserArticlesData_user_articles> get serializer =>
@@ -166,9 +166,9 @@ abstract class GupsertUserArticlesData_insert_user_articles_one
   @override
   int get play_at;
   @override
-  _i2.Gtimestamptz get created_at;
+  _i2.Gtimestamptz? get created_at;
   @override
-  _i2.Gtimestamptz get updated_at;
+  _i2.Gtimestamptz? get updated_at;
   @override
   GupsertUserArticlesData_insert_user_articles_one_article get article;
   static Serializer<GupsertUserArticlesData_insert_user_articles_one>
@@ -346,8 +346,8 @@ abstract class GUserArticleFragment {
   String get G__typename;
   _i2.Guuid get id;
   int get play_at;
-  _i2.Gtimestamptz get created_at;
-  _i2.Gtimestamptz get updated_at;
+  _i2.Gtimestamptz? get created_at;
+  _i2.Gtimestamptz? get updated_at;
   GUserArticleFragment_article get article;
   Map<String, dynamic> toJson();
 }
@@ -382,9 +382,9 @@ abstract class GUserArticleFragmentData
   @override
   int get play_at;
   @override
-  _i2.Gtimestamptz get created_at;
+  _i2.Gtimestamptz? get created_at;
   @override
-  _i2.Gtimestamptz get updated_at;
+  _i2.Gtimestamptz? get updated_at;
   @override
   GUserArticleFragmentData_article get article;
   static Serializer<GUserArticleFragmentData> get serializer =>
