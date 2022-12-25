@@ -22,6 +22,7 @@ class AcquiringWordsResult {
 
 //https://riverpod.dev/docs/concepts/modifiers/auto_dispose#refkeepalive
 class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
+  AcquiringWordsResult tmpState = AcquiringWordsResult();
   AcquiringWordsNotifier(this.ref) : super(AcquiringWordsResult()) {
     client = ref.watch(gqlClientP);
     fetch();
@@ -54,8 +55,16 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
         result.words = s.data!.words.toList();
         result.mapWords = toMap(result.words);
       }
-      state = result;
+      tmpState = result;
+      // 只有初始时候才更新, 避免标记单词过程中数据变动
+      if (state.mapWords.isEmpty) {
+        refreshState();
+      }
     }
+  }
+
+  void refreshState() {
+    state = tmpState;
   }
 
   Map<String, GAcquiringWordsData_words> toMap(

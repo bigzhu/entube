@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:collection/collection.dart';
+import 'package:entube/components/AcquiringWords/index.dart';
 import 'package:entube/components/Article/index.dart';
 import 'package:entube/components/Error/index.dart';
 import 'package:entube/components/Sentence/index.dart';
@@ -200,9 +201,13 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
 
   @override
   void dispose() {
+    //取消监听
     streamSubscription.cancel();
     controller.close();
+    // 更新阅读位置
     updatePlayAt();
+    // 让 acquiring words 生效
+    ref.read(acquiringWordsSNP.notifier).refreshState();
     super.dispose();
     WidgetsBinding.instance.removeObserver(this);
   }
