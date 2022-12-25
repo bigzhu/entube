@@ -36,7 +36,7 @@ class Page extends HookConsumerWidget {
             child: SafeArea(
                 child: Column(
               children: [
-                YoutubePlayer(articleId),
+                MyYoutubePlayer(articleId),
                 Expanded(child: Article(articleId)),
               ],
             ))));

@@ -12,18 +12,19 @@ import 'package:entube/state.dart';
 import 'package:entube/utils/compute.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+//import 'package:youtube_player_iframe/youtube_player_iframe.dart' as iframe;
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import './state.dart';
 
-class YoutubePlayer extends StatefulHookConsumerWidget {
-  const YoutubePlayer(this.articleId, {super.key});
+class MyYoutubePlayer extends StatefulHookConsumerWidget {
+  const MyYoutubePlayer(this.articleId, {super.key});
   final String articleId;
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _YouTubePlayerState();
 }
 
-class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
+class _YouTubePlayerState extends ConsumerState<MyYoutubePlayer>
     with WidgetsBindingObserver {
   late String articleId;
   late GUserArticlesData_user_articles userArticle;
@@ -32,7 +33,7 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
   List<SentenceModel>? sentences;
   // is paused by suspending
   bool isSuspendingPaused = false;
-  late StreamSubscription streamSubscription;
+  //late StreamSubscription streamSubscription;
   bool isListening = false;
   @override
   void initState() {
@@ -49,10 +50,10 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
     switch (state) {
       case AppLifecycleState.resumed:
         if (isSuspendingPaused) {
-          controller.playVideo();
+          controller.play();
           isSuspendingPaused = false;
         } else {
-          controller.pauseVideo();
+          controller.pause();
         }
         break;
       case AppLifecycleState.inactive:
@@ -60,7 +61,7 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
       //case AppLifecycleState.suspending:
       case AppLifecycleState.detached:
         if (controller.value.playerState == PlayerState.playing) {
-          controller.pauseVideo();
+          controller.pause();
           isSuspendingPaused = true;
         }
         break;
@@ -108,8 +109,9 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
 
   initYouTubeControler() {
     String initialVideoId =
-        YoutubePlayerController.convertUrlToId(userArticle.article.url) ?? '';
+        YoutubePlayer.convertUrlToId(userArticle.article.url) ?? '';
 
+/*
     controller = YoutubePlayerController(
       params: const YoutubePlayerParams(
         enableCaption: false,
@@ -123,6 +125,17 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
           videoId: initialVideoId,
           startSeconds: userArticle.play_at.toDouble());
     };
+    */
+    controller = YoutubePlayerController(
+      initialVideoId: initialVideoId,
+      flags: YoutubePlayerFlags(
+        enableCaption: false,
+        autoPlay: false,
+        startAt: userArticle.play_at,
+      ),
+    );
+
+/*
     controller.listen((event) {
       // 会调用两次, 用这个标记来避免重复的 listen
       if (isListening) return;
@@ -139,6 +152,7 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
         }
       });
     });
+    */
 
     Future(() {
       ref.read(youtubePlayerControllerSP.notifier).state = controller;
@@ -172,9 +186,17 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
 
     return Hero(
       tag: "youtube_thumbnail_$articleId",
-      child: YoutubePlayerIFrame(
+      child: YoutubePlayer(
         controller: controller,
-        //aspectRatio: 16 / 9,
+        onReady: () {
+          controller.addListener(() {
+            int seconds = controller.value.position.inSeconds;
+            if (seconds != 0) {
+              userArticle = userArticle.rebuild((b) => b..play_at = seconds);
+              definePlaydingSentence();
+            }
+          });
+        },
       ),
     );
   }
@@ -205,7 +227,7 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
     // 更新阅读位置
     updatePlayAt();
     //取消监听
-    streamSubscription.cancel();
+    //streamSubscription.cancel();
     super.dispose();
     WidgetsBinding.instance.removeObserver(this);
   }

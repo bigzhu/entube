@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+//import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 final youtubePlayerControllerSP =
     StateProvider<YoutubePlayerController?>((ref) {
@@ -16,7 +17,8 @@ final listenSeekProvider = Provider((ref) {
   ref.listen<double>(seekSP, (double? previous, double next) {
     debugPrint('listenSeekProvider work to $next');
     if (youtubePlayerController != null) {
-      youtubePlayerController.seekTo(seconds: next, allowSeekAhead: true);
+      //youtubePlayerController.seekTo(seconds: next, allowSeekAhead: true);
+      youtubePlayerController.seekTo(Duration(seconds: next.toInt()));
     }
   });
   return;
