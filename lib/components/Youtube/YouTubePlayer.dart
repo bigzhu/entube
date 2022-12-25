@@ -180,6 +180,7 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
   }
 
   Future<void> updatePlayAt() async {
+    debugPrint("userArticle.play_at: ${userArticle.play_at}");
     // 这里要更新 userArticle.play_at
     final req = GupdatePlayAtReq(
       (b) => b
@@ -201,13 +202,10 @@ class _YouTubePlayerState extends ConsumerState<YoutubePlayer>
 
   @override
   void dispose() {
-    //取消监听
-    streamSubscription.cancel();
-    controller.close();
     // 更新阅读位置
     updatePlayAt();
-    // 让 acquiring words 生效
-    ref.read(acquiringWordsSNP.notifier).refreshState();
+    //取消监听
+    streamSubscription.cancel();
     super.dispose();
     WidgetsBinding.instance.removeObserver(this);
   }

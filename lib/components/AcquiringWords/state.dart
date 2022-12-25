@@ -99,26 +99,20 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
       if (wordObj == null) {
         throw Exception("create word is null: $json");
       }
+      // 新增, 添加到list 中
+      state.words = [wordObj, ...state.words];
     }
     state.mapWords[word] = wordObj;
-    notifierByMap();
+    notifier();
     upsert(word, times, isDone);
   }
 
   //仅仅是 map 修改
-  notifierByMap() {
-    result = AcquiringWordsResult();
-    result.loading = false;
-    result.words = state.words;
-    result.mapWords = {...state.mapWords};
-    state = result;
-  }
-
-  notifierList() {
+  notifier() {
     result = AcquiringWordsResult();
     result.loading = false;
     result.words = [...state.words];
-    result.mapWords = toMap(result.words);
+    result.mapWords = {...state.mapWords};
     state = result;
   }
 
