@@ -3,22 +3,21 @@ import 'dart:async';
 import 'package:app_links/app_links.dart';
 import 'package:entube/components/Auth/index.dart';
 import 'package:entube/components/Error/index.dart';
-import 'package:entube/components/Loading.dart';
 import 'package:entube/components/LogoLoading.dart';
 import 'package:entube/components/UserArticles/index.dart';
 import 'package:entube/configs.dart';
 import 'package:entube/routes.dart';
 import 'package:entube/state.dart';
+import 'package:entube/utils/nhost/nhost_sdk/nhost_sdk.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:entube/utils/nhost/nhost_sdk/nhost_sdk.dart';
+import 'package:http/http.dart' as http;
 import 'package:receive_sharing_intent/receive_sharing_intent.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:http/http.dart' as http;
 
 //import './article_items_page.dart';
 //import './acquiring_words_page.dart';
