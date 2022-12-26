@@ -130,7 +130,7 @@ class _YouTubePlayerState extends ConsumerState<MyYoutubePlayer>
       initialVideoId: initialVideoId,
       flags: YoutubePlayerFlags(
         enableCaption: false,
-        autoPlay: false,
+        autoPlay: true,
         startAt: userArticle.play_at,
       ),
     );
@@ -187,6 +187,8 @@ class _YouTubePlayerState extends ConsumerState<MyYoutubePlayer>
     return Hero(
       tag: "youtube_thumbnail_$articleId",
       child: YoutubePlayer(
+        progressIndicatorColor: Theme.of(context).primaryColor,
+        //progressColors:
         controller: controller,
         onReady: () {
           controller.addListener(() {
