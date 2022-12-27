@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="entube.bigzhu.net.entube">
+  package="app.entube">
   <application
-    android:label="entube"
+    android:label="EnTube"
     android:name="${applicationName}"
     android:icon="@mipmap/launcher_icon">
     <activity
