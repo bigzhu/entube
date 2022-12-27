@@ -1,4 +1,6 @@
+import 'package:entube/components/LogoLoading.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class Loading extends StatelessWidget {
   const Loading(this.content, {Key? key}) : super(key: key);
@@ -6,8 +8,7 @@ class Loading extends StatelessWidget {
   final String content;
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-        title: const Center(child: CircularProgressIndicator()),
-        content: Text(content));
+    EasyLoading.show(status: content);
+    return const LogoLoading();
   }
 }

@@ -5,6 +5,7 @@ import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:entube/state.dart';
 import 'package:ferry/ferry.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -32,10 +33,10 @@ final isBottomP = Provider<bool>((ref) {
 });
 
 class ArticleModel {
-  String? info;
-  bool? loading;
+  //String? info;
+  //bool? loading;
   List<SentenceModel>? sentences;
-  ArticleModel([this.info, this.loading, this.sentences]);
+  ArticleModel([this.sentences]);
 }
 
 class SentencesSN extends StateNotifier<ArticleModel> {
@@ -49,10 +50,11 @@ class SentencesSN extends StateNotifier<ArticleModel> {
   final Ref ref;
 
   void fetch() async {
+    print('fetch');
     final sentencesReq =
         GSentencesReq((b) => b..vars.id = Guuid(articleId).toBuilder());
     final stream = client.request(sentencesReq);
-    state = ArticleModel('main loading', true);
+    //state = ArticleModel('main loading', true);
     await for (final value in stream) {
       final article = value.data?.articles[0];
       if (article != null) {
@@ -60,22 +62,24 @@ class SentencesSN extends StateNotifier<ArticleModel> {
         List<dynamic>? sentencesJson = article.sentences?.asList;
         final url = article.url;
         if (sentencesJson == null) {
-          state = ArticleModel('Syncing captions from YouTube', true);
+          EasyLoading.show(status: 'Syncing captions from YouTube...');
           sentencesJson = await fetchYouTubeCaptions(url);
           if (sentencesJson.isEmpty) {
-            state = ArticleModel(
-                "This Vedio don't have any English captions", false);
+            EasyLoading.showInfo("This video don't have any English captions.",
+                duration: const Duration(minutes: 5), dismissOnTap: true);
             return;
           }
+          EasyLoading.showInfo("Saving video captions...");
           saveSentences(sentencesJson);
+          // 删除缓存
           client.cache.evict(client.cache.identify(article)!);
         }
         List<SentenceModel> sentences = sentencesJson.map((e) {
           return SentenceModel.fromJson(Map<String, dynamic>.from(e));
         }).toList();
-
         ref.read(sentencesSP.notifier).state = sentences;
-        state = ArticleModel('', false, sentences);
+        EasyLoading.dismiss();
+        state = ArticleModel(sentences);
         return;
       }
     }
@@ -114,8 +118,8 @@ class SentencesSN extends StateNotifier<ArticleModel> {
     } else {
       // If the server did not return a 200 OK response,
       // then throw an exception.
-      state =
-          ArticleModel('Error: ${response.statusCode} ${response.body}', null);
+      EasyLoading.showError('Error: ${response.statusCode} ${response.body}');
+
       throw Exception('Failed to load YouTube captions');
     }
   }

@@ -1,11 +1,13 @@
 // ignore_for_file: library_prefixes
 
 import 'package:entube/components/Error/index.dart';
+import 'package:entube/components/LogoLoading.dart';
 import 'package:entube/components/Youtube/index.dart';
 import 'package:entube/components/ArticleItems/index.dart' as ArticleItems;
 import 'package:entube/components/UserArticles/index.dart' as UserArticles;
 import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'Article.dart';
 import 'ItemBar.dart';
@@ -20,8 +22,8 @@ class Page extends HookConsumerWidget {
         value
             ?.firstWhere((element) => element.article.id == Guuid(articleId))));
     if (userArticle == null) {
-      ref.watch(errorMeesageSP.notifier).state = 'userArticle is null, why?';
-      return Container();
+      EasyLoading.showError('userArticle is null, why?');
+      return const LogoLoading();
     }
     final article = ArticleItems.GArticlesData_articles.fromJson(
         userArticle.article.toJson());

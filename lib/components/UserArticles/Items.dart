@@ -1,6 +1,8 @@
 import 'package:entube/components/ArticleItems/index.dart';
 import 'package:entube/components/Loading.dart';
+import 'package:entube/components/LogoLoading.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -13,11 +15,11 @@ class Items extends HookConsumerWidget {
     final userArticles = ref.watch(userArticlesSNP);
     if (userArticles == null) return const Loading('Loading user articles ...');
     if (userArticles.isEmpty) {
-      return const AlertDialog(
-          title: Text('No Data'),
-          content:
-              Text('Please share some video from YouTube or add from Explore'));
+      EasyLoading.showInfo(
+          'Please share some video from YouTube or add from Explore');
+      return const LogoLoading();
     }
+    EasyLoading.dismiss();
     return ScrollablePositionedList.builder(
       itemScrollController: ref.read(articleItemsScrollCP),
       itemCount: userArticles.length,
@@ -31,42 +33,5 @@ class Items extends HookConsumerWidget {
                 userArticles[index].article.title!.contains(' ...'));
       },
     );
-
-/*
-    final req = GUserArticlesReq();
-    return DataWaiter(
-      req: req,
-      builder: (rsp) {
-        if (rsp.hasErrors) {
-          debugPrint('${rsp.linkException}');
-        }
-        final userArticles = rsp.data?.user_articles.toList();
-        if (userArticles == null) {
-          return const AlertDialog(
-              title: Text('No Data'),
-              content: Text(
-                  'Please share some video from YouTube or add from Explore'));
-        }
-        // Add articles to state
-        Future(() {
-          ref.read(userArticlesSP.notifier).state = userArticles;
-        });
-
-        return ScrollablePositionedList.builder(
-          itemScrollController: ref.read(articleItemsScrollControllerProvider),
-          itemCount: userArticles.length,
-          itemBuilder: (context, index) {
-            final article = GArticlesData_articles.fromJson(
-                userArticles[index].article.toJson());
-            if (article == null) {}
-            return Item(
-                article: article!,
-                loading: userArticles[index].article.title == loadingTitle);
-          },
-        );
-      },
-    );
-
-*/
   }
 }

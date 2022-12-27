@@ -1,5 +1,7 @@
+import 'package:entube/components/LogoLoading.dart';
 import 'package:entube/utils/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -23,11 +25,11 @@ class Items extends HookConsumerWidget {
       builder: (rsp) {
         final articles = rsp.data?.articles.toList();
         if (articles == null) {
-          return const AlertDialog(
-              title: Text('No Data'),
-              content: Text(
-                  'Please share some video from YouTube or add from Explore'));
+          EasyLoading.showInfo(
+              'Please share some video from YouTube or add from Explore');
+          return const LogoLoading();
         }
+        EasyLoading.dismiss();
 // Add articles to state
         Future(() {
           ref.read(articleItemsSP.notifier).state = articles;
