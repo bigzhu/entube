@@ -18,6 +18,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:http/http.dart' as http;
 import 'package:receive_sharing_intent/receive_sharing_intent.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 //import './article_items_page.dart';
 //import './acquiring_words_page.dart';
@@ -84,6 +85,7 @@ class MyApp extends HookConsumerWidget {
       }
     });
     return MaterialApp.router(
+      builder: EasyLoading.init(),
       title: configTitle,
       // The Mandy red, light theme.
       theme: FlexThemeData.light(scheme: FlexScheme.mallardGreen),
