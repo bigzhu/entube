@@ -15,18 +15,18 @@ class Article extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     ItemPositionsListener itemPositionsListener =
         ItemPositionsListener.create();
-    listener() {
-      int showedIndex = itemPositionsListener.itemPositions.value
-          .toList()[itemPositionsListener.itemPositions.value.length - 1]
-          .index;
-      ref.read(indexSP.notifier).state = showedIndex;
-    }
-
     useEffect(() {
+      listener() {
+        int showedIndex = itemPositionsListener.itemPositions.value
+            .toList()[itemPositionsListener.itemPositions.value.length - 1]
+            .index;
+        ref.read(indexSP.notifier).state = showedIndex;
+      }
+
       //监听是否已经显示到最后一个句子
       itemPositionsListener.itemPositions.addListener(listener);
       return () => itemPositionsListener.itemPositions.removeListener(listener);
-    }, []);
+    }, [itemPositionsListener]);
 
     final article = ref.watch(sentencesSNP(articleId));
     if (article.info == 'main loading') return const ArticleLoading();
