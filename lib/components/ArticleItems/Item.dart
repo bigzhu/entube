@@ -4,6 +4,7 @@ import 'package:entube/components/UserArticles/g/services.req.gql.dart';
 import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:entube/state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -31,10 +32,12 @@ class Item extends HookConsumerWidget {
             onPressed: (context) async {
               final stream = client.request(req);
 
+              EasyLoading.show(
+                  status: 'deleting article: ${article.title} ....');
               await for (final value in stream) {
                 if (value.hasErrors) {
-                  debugPrint("${value.graphqlErrors}");
-                  debugPrint("${value.linkException}");
+                  EasyLoading.showError(
+                      "${value.graphqlErrors}\n${value.linkException}");
                 }
                 if (value.data?.update_user_articles?.affected_rows == 1) {
                   return;
