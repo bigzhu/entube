@@ -1,9 +1,7 @@
 import 'dart:async';
 
 import 'package:collection/collection.dart';
-import 'package:entube/components/AcquiringWords/index.dart';
 import 'package:entube/components/Article/index.dart';
-import 'package:entube/components/Error/index.dart';
 import 'package:entube/components/Sentence/index.dart';
 import 'package:entube/components/UserArticles/g/services.data.gql.dart';
 import 'package:entube/components/UserArticles/g/services.req.gql.dart';
@@ -13,7 +11,6 @@ import 'package:entube/utils/compute.dart';
 import 'package:entube/utils/index.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-//import 'package:youtube_player_iframe/youtube_player_iframe.dart' as iframe;
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import './state.dart';
@@ -112,21 +109,6 @@ class _YouTubePlayerState extends ConsumerState<MyYoutubePlayer>
     String initialVideoId =
         YoutubePlayer.convertUrlToId(userArticle.article.url) ?? '';
 
-/*
-    controller = YoutubePlayerController(
-      params: const YoutubePlayerParams(
-        enableCaption: false,
-        //startAt: Duration(seconds: userArticle.play_at ?? 0),
-        showControls: true,
-        showFullscreenButton: true,
-      ),
-    );
-    controller.onInit = () {
-      controller.cueVideoById(
-          videoId: initialVideoId,
-          startSeconds: userArticle.play_at.toDouble());
-    };
-    */
     controller = YoutubePlayerController(
       initialVideoId: initialVideoId,
       flags: YoutubePlayerFlags(
@@ -135,25 +117,6 @@ class _YouTubePlayerState extends ConsumerState<MyYoutubePlayer>
         startAt: userArticle.play_at,
       ),
     );
-
-/*
-    controller.listen((event) {
-      // 会调用两次, 用这个标记来避免重复的 listen
-      if (isListening) return;
-      isListening = true;
-      //必须要把对Stream的监听放在 listen 里才能有用
-      streamSubscription =
-          controller.getCurrentPositionStream().listen((Duration currentTime) {
-        int seconds = currentTime.inSeconds;
-        //print('playing seconds: $seconds');
-        //开始播放有那么一下会是 0, 会把 文章又滚回去
-        if (seconds != 0) {
-          userArticle = userArticle.rebuild((b) => b..play_at = seconds);
-          definePlaydingSentence();
-        }
-      });
-    });
-    */
 
     Future(() {
       ref.read(youtubePlayerControllerSP.notifier).state = controller;
@@ -169,7 +132,7 @@ class _YouTubePlayerState extends ConsumerState<MyYoutubePlayer>
     if (userArticleFind == null) {
       String errorInfo =
           "can't found correct user article user article id: $articleId";
-      ref.read(errorMeesageSP.notifier).state = errorInfo;
+      showError(errorInfo);
       throw errorInfo;
     }
     userArticle = userArticleFind;
