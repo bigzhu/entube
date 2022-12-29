@@ -177,6 +177,6 @@ Link webSocketLinkForNhost(
     inactivityTimeout: testInactivityTimeout,
     reconnectInterval: testReconnectTimeout,
   );
-
+  debugPrint("'Authorization': 'Bearer ${nhostAuth.accessToken}'");
   return webSocketLink;
 }
