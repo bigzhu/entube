@@ -6,11 +6,6 @@ final authP = Provider<AuthClient>((ref) {
   return ref.watch(nhostClientP).auth;
 });
 
-final authSNP =
-    StateNotifierProvider<AuthStateNotifier, AuthenticationState>((ref) {
-  return AuthStateNotifier(ref);
-});
-
 class AuthStateNotifier extends StateNotifier<AuthenticationState> {
   final Ref ref;
   late AuthClient auth;
@@ -44,3 +39,8 @@ class AuthStateNotifier extends StateNotifier<AuthenticationState> {
     ref.watch(nhostClientP).close();
   }
 }
+
+final authSNP =
+    StateNotifierProvider<AuthStateNotifier, AuthenticationState>((ref) {
+  return AuthStateNotifier(ref);
+});

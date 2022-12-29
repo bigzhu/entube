@@ -44,6 +44,7 @@ class MyApp extends HookConsumerWidget {
         // For sharing or opening urls/text coming from outside the app while the app is in the memory
         StreamSubscription intentDataStreamSubscription =
             ReceiveSharingIntent.getTextStream().listen((String url) {
+          if (ref.watch(authSNP) != AuthenticationState.signedIn) return;
           ref.read(userArticlesSNP.notifier).sharedNew(url);
         }, onError: (err) {
           print("getLinkStream error: $err");
