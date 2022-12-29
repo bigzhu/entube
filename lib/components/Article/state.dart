@@ -107,8 +107,11 @@ class SentencesSN extends StateNotifier<ArticleModel> {
   }
 
   Future<List<dynamic>> fetchYouTubeCaptions(String url) async {
-    final response = await http.get(Uri.parse(
-        'https://entube-uzv2eu4hta-de.a.run.app/?what=sentences&uri=$url'));
+    final nhostClient = ref.watch(nhostClientP);
+    final response = await http.get(
+        Uri.parse(
+            'https://entube-uzv2eu4hta-de.a.run.app/?what=sentences&uri=$url'),
+        headers: {'Authorization': 'Bearer ${nhostClient.auth.accessToken}'});
 
     if (response.statusCode == 200) {
       var json = jsonDecode(response.body);
