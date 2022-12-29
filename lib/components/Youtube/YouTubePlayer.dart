@@ -158,7 +158,10 @@ class _YouTubePlayerState extends ConsumerState<MyYoutubePlayer>
           controller.addListener(() {
             int seconds = controller.value.position.inSeconds;
             if (seconds != 0) {
-              userArticle = userArticle.rebuild((b) => b..play_at = seconds);
+              if (seconds != userArticle.play_at) {
+                userArticle = userArticle.rebuild((b) => b..play_at = seconds);
+                updatePlayAt();
+              }
               definePlaydingSentence();
             }
           });
@@ -189,7 +192,7 @@ class _YouTubePlayerState extends ConsumerState<MyYoutubePlayer>
   @override
   void dispose() {
     // 更新阅读位置
-    updatePlayAt();
+    //updatePlayAt();
     //取消监听
     //streamSubscription.cancel();
     super.dispose();
