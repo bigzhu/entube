@@ -10,6 +10,7 @@ import 'package:entube/components/UserArticles/g/services.req.gql.dart';
 import 'package:entube/components/UserArticles/index.dart';
 import 'package:entube/state.dart';
 import 'package:entube/utils/compute.dart';
+import 'package:entube/utils/index.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 //import 'package:youtube_player_iframe/youtube_player_iframe.dart' as iframe;
@@ -214,11 +215,9 @@ class _YouTubePlayerState extends ConsumerState<MyYoutubePlayer>
     final client = ref.watch(gqlClientP);
     final stream = client.request(req);
     await for (final value in stream) {
-      debugPrint(
-          "update user_articles play_at affected_rows: ${value.data?.update_user_articles?.affected_rows}");
+      if (value.data?.update_user_articles?.affected_rows == 1) return;
       if (value.hasErrors) {
-        debugPrint("${value.graphqlErrors}");
-        debugPrint("${value.linkException}");
+        showError("${value.graphqlErrors ?? value.linkException}");
         return;
       }
     }

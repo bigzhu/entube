@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:entube/components/Sentence/index.dart';
 import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:entube/state.dart';
+import 'package:entube/utils/index.dart';
 import 'package:ferry/ferry.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -50,7 +51,6 @@ class SentencesSN extends StateNotifier<ArticleModel> {
   final Ref ref;
 
   void fetch() async {
-    print('fetch');
     final sentencesReq =
         GSentencesReq((b) => b..vars.id = Guuid(articleId).toBuilder());
     final stream = client.request(sentencesReq);
@@ -58,7 +58,6 @@ class SentencesSN extends StateNotifier<ArticleModel> {
     await for (final value in stream) {
       final article = value.data?.articles[0];
       if (article != null) {
-        //print( "client.cache.identify(value.data): ${client.cache.identify(value.data?.articles[0])}");
         List<dynamic>? sentencesJson = article.sentences?.asList;
         final url = article.url;
         if (sentencesJson == null) {
@@ -102,8 +101,7 @@ class SentencesSN extends StateNotifier<ArticleModel> {
         return;
       }
       if (value.hasErrors) {
-        debugPrint("${value.graphqlErrors}");
-        debugPrint("${value.linkException}");
+        showError("${value.graphqlErrors ?? value.linkException}");
       }
     }
   }
@@ -118,7 +116,7 @@ class SentencesSN extends StateNotifier<ArticleModel> {
     } else {
       // If the server did not return a 200 OK response,
       // then throw an exception.
-      EasyLoading.showError('Error: ${response.statusCode} ${response.body}');
+      showError('Error: ${response.statusCode} ${response.body}');
 
       throw Exception('Failed to load YouTube captions');
     }

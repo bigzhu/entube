@@ -2,6 +2,7 @@
 
 import 'package:entube/components/LogoLoading.dart';
 import 'package:entube/state.dart';
+import 'package:entube/utils/index.dart';
 import 'package:ferry/ferry.dart';
 import 'package:ferry_exec/ferry_exec.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,7 @@ class DataWaiter<TData, TVars> extends HookConsumerWidget {
 
     final rsp = useStream(stream);
     if (rsp.hasError) {
-      EasyLoading.showError(rsp.error.toString());
+      showError(rsp.error.toString());
       return Container();
     }
 
@@ -40,11 +41,9 @@ class DataWaiter<TData, TVars> extends HookConsumerWidget {
       return loading ?? const LogoLoading();
     }
     if (rsp.data.hasErrors) {
-      EasyLoading.showError(
-          "${rsp.data.graphqlErrors} \n ${rsp.data.linkException}");
+      showError("${rsp.data.graphqlErrors ?? rsp.data.linkException} ");
       return Container();
     }
-    EasyLoading.dismiss();
     return builder(
       rsp.data!,
     );

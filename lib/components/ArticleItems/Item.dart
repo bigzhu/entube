@@ -1,8 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:entube/components/UserArticles/g/services.req.gql.dart';
-import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:entube/state.dart';
+import 'package:entube/utils/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -36,8 +36,7 @@ class Item extends HookConsumerWidget {
                   status: 'deleting article: ${article.title} ....');
               await for (final value in stream) {
                 if (value.hasErrors) {
-                  EasyLoading.showError(
-                      "${value.graphqlErrors}\n${value.linkException}");
+                  showError("${value.graphqlErrors ?? value.linkException}");
                 }
                 if (value.data?.update_user_articles?.affected_rows == 1) {
                   return;

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:entube/components/AcquiringWords/g/services.req.gql.dart';
 import 'package:entube/state.dart';
+import 'package:entube/utils/index.dart';
 import 'package:ferry/ferry.dart';
 import 'package:flutter/material.dart';
 import 'package:gql_exec/gql_exec.dart';
@@ -132,8 +133,7 @@ class AcquiringWordsNotifier extends StateNotifier<AcquiringWordsResult> {
       result = value.data?.insert_words_one;
       if (result != null) break;
       if (value.hasErrors) {
-        debugPrint("${value.graphqlErrors}");
-        debugPrint("${value.linkException}");
+        showError("${value.graphqlErrors ?? value.linkException}");
         break;
       }
     }

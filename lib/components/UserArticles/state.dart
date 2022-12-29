@@ -5,6 +5,7 @@ import 'package:entube/components/ArticleItems/g/services.req.gql.dart';
 import 'package:entube/components/ArticleItems/index.dart';
 import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:entube/state.dart';
+import 'package:entube/utils/index.dart';
 import 'package:ferry/ferry.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -86,8 +87,7 @@ class UserArticlesSN
         }
       }
       if (value.hasErrors) {
-        debugPrint("${value.graphqlErrors}");
-        debugPrint("${value.linkException}");
+        showError("${value.graphqlErrors ?? value.linkException}");
         return;
       }
     }
@@ -105,8 +105,7 @@ class UserArticlesSN
         return value.data!.insert_articles_one!.id.value;
       }
       if (value.hasErrors) {
-        debugPrint("${value.graphqlErrors}");
-        debugPrint("${value.linkException}");
+        showError("${value.graphqlErrors ?? value.linkException}");
         return null;
       }
     }
@@ -125,11 +124,9 @@ class UserArticlesSN
       json['url'] = url;
       return json;
     } else {
-      // If the server did not return a 200 OK response,
-      // then throw an exception.
-      print(response.statusCode);
-      print(response.body);
-      throw Exception('Failed to load album');
+      showError(
+          "Failed to load YouTube info: ${response.statusCode} ${response.body}");
+      throw Exception('Failed to load YouTube info');
     }
   }
 
@@ -149,8 +146,8 @@ class UserArticlesSN
         }
       }
       if (value.hasErrors) {
-        debugPrint("${value.graphqlErrors}");
-        debugPrint("${value.linkException}");
+        if (value.graphqlErrors != null) {}
+        showError("${value.graphqlErrors ?? value.linkException}");
         return null;
       }
     }
@@ -178,8 +175,7 @@ class UserArticlesSN
         ref.read(isEarliestReadSP.notifier).state = false;
       }
       if (value.hasErrors) {
-        debugPrint("${value.graphqlErrors}");
-        debugPrint("${value.linkException}");
+        showError("${value.graphqlErrors ?? value.linkException}");
         return null;
       }
     }
@@ -202,7 +198,7 @@ class UserArticlesSN
   void remove(GUserArticlesData_user_articles userArticle) {
     bool? isOk = state?.remove(userArticle);
     if (!isOk!) {
-      debugPrint('remove userArticle failure!!');
+      showError("Remove userArticle failure!!");
       return;
     }
     state = [...?state];

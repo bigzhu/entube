@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:app_links/app_links.dart';
 import 'package:entube/components/Auth/index.dart';
-import 'package:entube/components/Error/index.dart';
 import 'package:entube/components/LogoLoading.dart';
 import 'package:entube/components/UserArticles/index.dart';
 import 'package:entube/configs.dart';
@@ -76,15 +75,7 @@ class MyApp extends HookConsumerWidget {
     final snapshot = useFuture(openHiveBox, initialData: null);
 
     if (snapshot.data == null) return const LogoLoading();
-
     final authenticationState = ref.watch(authSNP);
-    //监听显示错误消息
-    ref.listen<String?>(errorMeesageSP, (String? previous, String? next) {
-      if (next != null) {
-        showErrorSnackbar(context, next);
-        ref.read(errorMeesageSP.notifier).update((state) => null);
-      }
-    });
     return MaterialApp.router(
       builder: EasyLoading.init(),
       title: configTitle,
