@@ -1,5 +1,4 @@
 import 'package:audioplayers/audioplayers.dart' as audio;
-import 'package:collection/collection.dart';
 import 'package:entube/components/AcquiringWords/index.dart';
 import 'package:entube/components/Settings/index.dart';
 import 'package:entube/themes.dart';

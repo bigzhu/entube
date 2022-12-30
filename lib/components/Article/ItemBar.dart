@@ -3,7 +3,6 @@
 import 'package:entube/components/ArticleItems/ItemAvatar.dart';
 import 'package:entube/components/ArticleItems/index.dart';
 import 'package:flutter/material.dart';
-import 'package:entube/components/ArticleItems/index.dart' as ArticleItems;
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';

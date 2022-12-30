@@ -5,7 +5,6 @@ import 'package:entube/components/BottomBar.dart';
 import 'package:entube/components/UserAvatar.dart';
 import 'package:entube/configs.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -42,29 +41,6 @@ class Page extends HookConsumerWidget {
             ? const Text('Earliest read')
             : const Text('Latest add'),
       ),
-      /*
-      floatingActionButton: ExpandableFab(
-        distance: 80.0,
-        children: [
-          ElevatedButton.icon(
-            onPressed: () {
-              ref.read(userArticlesSNP.notifier).sortByLatestAdd();
-              ref.read(toggleSP)();
-            },
-            icon: const Icon(Icons.new_releases),
-            label: const Text('Latest add'),
-          ),
-          ElevatedButton.icon(
-            onPressed: () {
-              ref.read(userArticlesSNP.notifier).sortByEarliestRead();
-              ref.read(toggleSP)();
-            },
-            icon: const Icon(Icons.history),
-            label: const Text('Earliest read'),
-          ),
-        ],
-      ),
-      */
       appBar: AppBar(
         leading: GestureDetector(
             onTap: () => context.push('/LoggedInUserDetails'),
@@ -83,19 +59,6 @@ class Page extends HookConsumerWidget {
       ),
       body: const Items(),
       bottomNavigationBar: const BottomBar(),
-      /*
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          //ref.read(wordWiseLanguagesStateProvider.notifier).state++;
-        },
-        backgroundColor: Colors.green,
-        child: const Icon(Icons.navigation),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => ArticleItemService().getArticleItems(),
-        child: const Icon(Icons.add),
-      ),
-      */
     );
   }
 }

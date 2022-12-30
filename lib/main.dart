@@ -7,6 +7,7 @@ import 'package:entube/components/UserArticles/index.dart';
 import 'package:entube/configs.dart';
 import 'package:entube/routes.dart';
 import 'package:entube/state.dart';
+import 'package:entube/utils/index.dart';
 import 'package:entube/utils/nhost/nhost_sdk/nhost_sdk.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +47,7 @@ class MyApp extends HookConsumerWidget {
           if (ref.watch(authSNP) != AuthenticationState.signedIn) return;
           ref.read(userArticlesSNP.notifier).sharedNew(url);
         }, onError: (err) {
-          print("getLinkStream error: $err");
+          showError("getLinkStream error: $err");
         });
 
         // For sharing or opening urls/text coming from outside the app while the app is closed

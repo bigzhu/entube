@@ -21,7 +21,7 @@ ThemeData brightTheme = ThemeData(
   primaryColor: mainColor,
   primaryColorLight: mainColor[700],
   primaryColorDark: Colors.black,
-  accentColor: mainColor, // loading 动画的颜色
+  //accentColor: mainColor, // loading 动画的颜色
   //brightness: Brightness.light,
   fontFamily: "NotoSans-Medium",
   scaffoldBackgroundColor: Colors.blueGrey[50], // 阅读背景色

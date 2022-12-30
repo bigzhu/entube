@@ -1,4 +1,5 @@
 import 'package:entube/state.dart';
+import 'package:entube/utils/index.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:entube/utils/nhost/nhost_sdk/nhost_sdk.dart';
 
@@ -19,7 +20,7 @@ class AuthStateNotifier extends StateNotifier<AuthenticationState> {
       state = auth.authenticationState;
       return;
     } on Exception catch (e) {
-      print('$e');
+      showError('$e');
     }
     state = AuthenticationState.signedOut;
   }

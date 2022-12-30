@@ -5,7 +5,6 @@ import 'package:entube/graphql/g/schema.schema.gql.dart';
 import 'package:entube/state.dart';
 import 'package:entube/utils/index.dart';
 import 'package:ferry/ferry.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
@@ -34,8 +33,6 @@ final isBottomP = Provider<bool>((ref) {
 });
 
 class ArticleModel {
-  //String? info;
-  //bool? loading;
   List<SentenceModel>? sentences;
   ArticleModel([this.sentences]);
 }
@@ -64,11 +61,10 @@ class SentencesSN extends StateNotifier<ArticleModel> {
           EasyLoading.show(status: 'Syncing captions from YouTube...');
           sentencesJson = await fetchYouTubeCaptions(url);
           if (sentencesJson.isEmpty) {
-            EasyLoading.showInfo("This video don't have any English captions.",
-                duration: const Duration(minutes: 5), dismissOnTap: true);
+            showError("This video don't have any English captions.");
             return;
           }
-          EasyLoading.showInfo("Saving video captions...");
+          EasyLoading.show(status: "Saving video captions...");
           saveSentences(sentencesJson);
           // 删除缓存
           client.cache.evict(client.cache.identify(article)!);

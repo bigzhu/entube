@@ -1,11 +1,9 @@
 import 'package:entube/components/AcquiringWords/index.dart';
-import 'package:collection/collection.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:entube/components/Settings/index.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:language_picker/languages.dart';
 import 'package:translator/translator.dart';
-//import 'package:entube/components/AcquiringWords/index.dart';
-import 'package:entube/components/Settings/index.dart';
 
 class WordTransStateNotifier extends StateNotifier<String?> {
   WordTransStateNotifier(this.ref, this.word, this.isAcquiringWord)
