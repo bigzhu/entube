@@ -65,7 +65,8 @@ class SentencesSN extends StateNotifier<ArticleModel> {
             return;
           }
           EasyLoading.show(status: "Saving video captions...");
-          saveSentences(sentencesJson);
+          await saveSentences(sentencesJson);
+          EasyLoading.dismiss();
           // 删除缓存
           client.cache.evict(client.cache.identify(article)!);
         }
