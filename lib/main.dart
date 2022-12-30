@@ -81,9 +81,9 @@ class MyApp extends HookConsumerWidget {
       builder: EasyLoading.init(),
       title: configTitle,
       // The Mandy red, light theme.
-      theme: FlexThemeData.light(scheme: FlexScheme.mallardGreen),
+      theme: FlexThemeData.light(scheme: FlexScheme.ebonyClay),
       // The Mandy red, dark theme.
-      darkTheme: FlexThemeData.dark(scheme: FlexScheme.sanJuanBlue),
+      darkTheme: FlexThemeData.dark(scheme: FlexScheme.ebonyClay),
       // Use dark or light theme based on system setting.
       themeMode: ThemeMode.system,
       routerConfig: GoRouter(

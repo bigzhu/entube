@@ -27,6 +27,12 @@ class BottomBar extends HookConsumerWidget {
         ),
         label: "Words",
       ),
+      BottomNavigationBarItem(
+        icon: Icon(
+          Icons.explore,
+        ),
+        label: "Explore",
+      ),
     ];
     final navigationBarIndex = ref.watch(navigationBarIndexSP);
 
@@ -40,9 +46,6 @@ class BottomBar extends HookConsumerWidget {
         if (i == 1 && navigationBarIndex != i) {
           ref.read(navigationBarIndexSP.notifier).state = i;
           context.push('/AcquiringWords');
-        }
-        if (i == 2 && navigationBarIndex != i) {
-          Navigator.of(context).pushReplacementNamed('/words');
         }
       },
       items: items,
