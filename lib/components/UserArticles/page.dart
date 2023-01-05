@@ -16,7 +16,6 @@ class Page extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isEarliestRead = ref.watch(isEarliestReadSP);
-
     String avatar = '';
     final auth = ref.watch(authP);
     final currentUser = auth.currentUser;

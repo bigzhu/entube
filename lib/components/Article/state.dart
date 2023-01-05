@@ -78,6 +78,10 @@ class SentencesSN extends StateNotifier<ArticleModel> {
         state = ArticleModel(sentences);
         return;
       }
+      if (value.hasErrors) {
+        showError("${value.graphqlErrors ?? value.linkException}");
+        return null;
+      }
     }
   }
 

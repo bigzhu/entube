@@ -64,7 +64,14 @@ class MyApp extends HookConsumerWidget {
           }
           closeInAppWebView();
         });
-
+        // set EasyLoading style
+        EasyLoading.instance
+          ..boxShadow = <
+              BoxShadow>[] //see https://github.com/nslogx/flutter_easyloading/issues/135
+          ..loadingStyle = EasyLoadingStyle.custom
+          ..textColor = Colors.white
+          ..indicatorColor = Colors.white
+          ..backgroundColor = Colors.black.withOpacity(0.3);
         return () {
           intentDataStreamSubscription.cancel();
           linkSubscription.cancel();
@@ -72,6 +79,7 @@ class MyApp extends HookConsumerWidget {
       },
       [],
     );
+
     final openHiveBox = ref.watch(openHiveBoxP);
     final snapshot = useFuture(openHiveBox, initialData: null);
 
