@@ -117,7 +117,6 @@ class UserArticlesSN
     final response = await http.get(
         Uri.parse('https://entube-uzv2eu4hta-de.a.run.app/?what=info&uri=$url'),
         headers: {'Authorization': 'Bearer ${nhostClient.auth.accessToken}'});
-
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
       // then parse the JSON.

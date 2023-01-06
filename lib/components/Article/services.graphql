@@ -2,6 +2,7 @@ query Sentences($id: uuid!) {
   articles(where: { id: { _eq: $id } }) {
     id
     sentences
+    sentences_type
     url
   }
 }

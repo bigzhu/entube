@@ -9,6 +9,7 @@ fragment UserArticleFragment on user_articles {
     thumbnail
     title
     url
+    sentences_type
   }
 }
 

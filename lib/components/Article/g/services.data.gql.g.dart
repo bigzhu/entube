@@ -105,6 +105,13 @@ class _$GSentencesData_articlesSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(_i3.JsonObject)));
     }
+    value = object.sentences_type;
+    if (value != null) {
+      result
+        ..add('sentences_type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -131,6 +138,10 @@ class _$GSentencesData_articlesSerializer
         case 'sentences':
           result.sentences = serializers.deserialize(value,
               specifiedType: const FullType(_i3.JsonObject)) as _i3.JsonObject?;
+          break;
+        case 'sentences_type':
+          result.sentences_type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'url':
           result.url = serializers.deserialize(value,
@@ -491,6 +502,8 @@ class _$GSentencesData_articles extends GSentencesData_articles {
   @override
   final _i3.JsonObject? sentences;
   @override
+  final String? sentences_type;
+  @override
   final String url;
 
   factory _$GSentencesData_articles(
@@ -501,6 +514,7 @@ class _$GSentencesData_articles extends GSentencesData_articles {
       {required this.G__typename,
       required this.id,
       this.sentences,
+      this.sentences_type,
       required this.url})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
@@ -526,13 +540,17 @@ class _$GSentencesData_articles extends GSentencesData_articles {
         G__typename == other.G__typename &&
         id == other.id &&
         sentences == other.sentences &&
+        sentences_type == other.sentences_type &&
         url == other.url;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, G__typename.hashCode), id.hashCode), sentences.hashCode),
+        $jc(
+            $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
+                sentences.hashCode),
+            sentences_type.hashCode),
         url.hashCode));
   }
 
@@ -542,6 +560,7 @@ class _$GSentencesData_articles extends GSentencesData_articles {
           ..add('G__typename', G__typename)
           ..add('id', id)
           ..add('sentences', sentences)
+          ..add('sentences_type', sentences_type)
           ..add('url', url))
         .toString();
   }
@@ -564,6 +583,11 @@ class GSentencesData_articlesBuilder
   _i3.JsonObject? get sentences => _$this._sentences;
   set sentences(_i3.JsonObject? sentences) => _$this._sentences = sentences;
 
+  String? _sentences_type;
+  String? get sentences_type => _$this._sentences_type;
+  set sentences_type(String? sentences_type) =>
+      _$this._sentences_type = sentences_type;
+
   String? _url;
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
@@ -578,6 +602,7 @@ class GSentencesData_articlesBuilder
       _G__typename = $v.G__typename;
       _id = $v.id.toBuilder();
       _sentences = $v.sentences;
+      _sentences_type = $v.sentences_type;
       _url = $v.url;
       _$v = null;
     }
@@ -607,6 +632,7 @@ class GSentencesData_articlesBuilder
                   G__typename, r'GSentencesData_articles', 'G__typename'),
               id: id.build(),
               sentences: sentences,
+              sentences_type: sentences_type,
               url: BuiltValueNullFieldError.checkNotNull(
                   url, r'GSentencesData_articles', 'url'));
     } catch (_) {

@@ -114,6 +114,13 @@ class _$GArticlesData_articlesSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.sentences_type;
+    if (value != null) {
+      result
+        ..add('sentences_type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -152,6 +159,10 @@ class _$GArticlesData_articlesSerializer
         case 'url':
           result.url = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+        case 'sentences_type':
+          result.sentences_type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -311,6 +322,13 @@ class _$GArticleFragmentDataSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.sentences_type;
+    if (value != null) {
+      result
+        ..add('sentences_type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -349,6 +367,10 @@ class _$GArticleFragmentDataSerializer
         case 'url':
           result.url = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+        case 'sentences_type':
+          result.sentences_type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -482,6 +504,8 @@ class _$GArticlesData_articles extends GArticlesData_articles {
   final String? title;
   @override
   final String url;
+  @override
+  final String? sentences_type;
 
   factory _$GArticlesData_articles(
           [void Function(GArticlesData_articlesBuilder)? updates]) =>
@@ -493,7 +517,8 @@ class _$GArticlesData_articles extends GArticlesData_articles {
       this.favicon,
       this.thumbnail,
       this.title,
-      required this.url})
+      required this.url,
+      this.sentences_type})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GArticlesData_articles', 'G__typename');
@@ -520,7 +545,8 @@ class _$GArticlesData_articles extends GArticlesData_articles {
         favicon == other.favicon &&
         thumbnail == other.thumbnail &&
         title == other.title &&
-        url == other.url;
+        url == other.url &&
+        sentences_type == other.sentences_type;
   }
 
   @override
@@ -528,11 +554,13 @@ class _$GArticlesData_articles extends GArticlesData_articles {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
-                    favicon.hashCode),
-                thumbnail.hashCode),
-            title.hashCode),
-        url.hashCode));
+                $jc(
+                    $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
+                        favicon.hashCode),
+                    thumbnail.hashCode),
+                title.hashCode),
+            url.hashCode),
+        sentences_type.hashCode));
   }
 
   @override
@@ -543,7 +571,8 @@ class _$GArticlesData_articles extends GArticlesData_articles {
           ..add('favicon', favicon)
           ..add('thumbnail', thumbnail)
           ..add('title', title)
-          ..add('url', url))
+          ..add('url', url)
+          ..add('sentences_type', sentences_type))
         .toString();
   }
 }
@@ -576,6 +605,11 @@ class GArticlesData_articlesBuilder
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
+  String? _sentences_type;
+  String? get sentences_type => _$this._sentences_type;
+  set sentences_type(String? sentences_type) =>
+      _$this._sentences_type = sentences_type;
+
   GArticlesData_articlesBuilder() {
     GArticlesData_articles._initializeBuilder(this);
   }
@@ -589,6 +623,7 @@ class GArticlesData_articlesBuilder
       _thumbnail = $v.thumbnail;
       _title = $v.title;
       _url = $v.url;
+      _sentences_type = $v.sentences_type;
       _$v = null;
     }
     return this;
@@ -620,7 +655,8 @@ class GArticlesData_articlesBuilder
               thumbnail: thumbnail,
               title: title,
               url: BuiltValueNullFieldError.checkNotNull(
-                  url, r'GArticlesData_articles', 'url'));
+                  url, r'GArticlesData_articles', 'url'),
+              sentences_type: sentences_type);
     } catch (_) {
       late String _$failedField;
       try {
@@ -878,6 +914,8 @@ class _$GArticleFragmentData extends GArticleFragmentData {
   final String? title;
   @override
   final String url;
+  @override
+  final String? sentences_type;
 
   factory _$GArticleFragmentData(
           [void Function(GArticleFragmentDataBuilder)? updates]) =>
@@ -889,7 +927,8 @@ class _$GArticleFragmentData extends GArticleFragmentData {
       this.favicon,
       this.thumbnail,
       this.title,
-      required this.url})
+      required this.url,
+      this.sentences_type})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GArticleFragmentData', 'G__typename');
@@ -915,7 +954,8 @@ class _$GArticleFragmentData extends GArticleFragmentData {
         favicon == other.favicon &&
         thumbnail == other.thumbnail &&
         title == other.title &&
-        url == other.url;
+        url == other.url &&
+        sentences_type == other.sentences_type;
   }
 
   @override
@@ -923,11 +963,13 @@ class _$GArticleFragmentData extends GArticleFragmentData {
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
-                    favicon.hashCode),
-                thumbnail.hashCode),
-            title.hashCode),
-        url.hashCode));
+                $jc(
+                    $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
+                        favicon.hashCode),
+                    thumbnail.hashCode),
+                title.hashCode),
+            url.hashCode),
+        sentences_type.hashCode));
   }
 
   @override
@@ -938,7 +980,8 @@ class _$GArticleFragmentData extends GArticleFragmentData {
           ..add('favicon', favicon)
           ..add('thumbnail', thumbnail)
           ..add('title', title)
-          ..add('url', url))
+          ..add('url', url)
+          ..add('sentences_type', sentences_type))
         .toString();
   }
 }
@@ -971,6 +1014,11 @@ class GArticleFragmentDataBuilder
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
+  String? _sentences_type;
+  String? get sentences_type => _$this._sentences_type;
+  set sentences_type(String? sentences_type) =>
+      _$this._sentences_type = sentences_type;
+
   GArticleFragmentDataBuilder() {
     GArticleFragmentData._initializeBuilder(this);
   }
@@ -984,6 +1032,7 @@ class GArticleFragmentDataBuilder
       _thumbnail = $v.thumbnail;
       _title = $v.title;
       _url = $v.url;
+      _sentences_type = $v.sentences_type;
       _$v = null;
     }
     return this;
@@ -1015,7 +1064,8 @@ class GArticleFragmentDataBuilder
               thumbnail: thumbnail,
               title: title,
               url: BuiltValueNullFieldError.checkNotNull(
-                  url, r'GArticleFragmentData', 'url'));
+                  url, r'GArticleFragmentData', 'url'),
+              sentences_type: sentences_type);
     } catch (_) {
       late String _$failedField;
       try {

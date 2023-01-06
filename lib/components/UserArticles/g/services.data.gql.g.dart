@@ -229,6 +229,13 @@ class _$GUserArticlesData_user_articles_articleSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.sentences_type;
+    if (value != null) {
+      result
+        ..add('sentences_type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -267,6 +274,10 @@ class _$GUserArticlesData_user_articles_articleSerializer
         case 'url':
           result.url = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+        case 'sentences_type':
+          result.sentences_type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -479,6 +490,13 @@ class _$GupsertUserArticlesData_insert_user_articles_one_articleSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.sentences_type;
+    if (value != null) {
+      result
+        ..add('sentences_type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -518,6 +536,10 @@ class _$GupsertUserArticlesData_insert_user_articles_one_articleSerializer
         case 'url':
           result.url = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+        case 'sentences_type':
+          result.sentences_type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -887,6 +909,13 @@ class _$GUserArticleFragmentData_articleSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.sentences_type;
+    if (value != null) {
+      result
+        ..add('sentences_type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -925,6 +954,10 @@ class _$GUserArticleFragmentData_articleSerializer
         case 'url':
           result.url = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
+          break;
+        case 'sentences_type':
+          result.sentences_type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -1251,6 +1284,8 @@ class _$GUserArticlesData_user_articles_article
   final String? title;
   @override
   final String url;
+  @override
+  final String? sentences_type;
 
   factory _$GUserArticlesData_user_articles_article(
           [void Function(GUserArticlesData_user_articles_articleBuilder)?
@@ -1264,7 +1299,8 @@ class _$GUserArticlesData_user_articles_article
       this.favicon,
       this.thumbnail,
       this.title,
-      required this.url})
+      required this.url,
+      this.sentences_type})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GUserArticlesData_user_articles_article', 'G__typename');
@@ -1293,7 +1329,8 @@ class _$GUserArticlesData_user_articles_article
         favicon == other.favicon &&
         thumbnail == other.thumbnail &&
         title == other.title &&
-        url == other.url;
+        url == other.url &&
+        sentences_type == other.sentences_type;
   }
 
   @override
@@ -1301,11 +1338,13 @@ class _$GUserArticlesData_user_articles_article
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
-                    favicon.hashCode),
-                thumbnail.hashCode),
-            title.hashCode),
-        url.hashCode));
+                $jc(
+                    $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
+                        favicon.hashCode),
+                    thumbnail.hashCode),
+                title.hashCode),
+            url.hashCode),
+        sentences_type.hashCode));
   }
 
   @override
@@ -1317,7 +1356,8 @@ class _$GUserArticlesData_user_articles_article
           ..add('favicon', favicon)
           ..add('thumbnail', thumbnail)
           ..add('title', title)
-          ..add('url', url))
+          ..add('url', url)
+          ..add('sentences_type', sentences_type))
         .toString();
   }
 }
@@ -1352,6 +1392,11 @@ class GUserArticlesData_user_articles_articleBuilder
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
+  String? _sentences_type;
+  String? get sentences_type => _$this._sentences_type;
+  set sentences_type(String? sentences_type) =>
+      _$this._sentences_type = sentences_type;
+
   GUserArticlesData_user_articles_articleBuilder() {
     GUserArticlesData_user_articles_article._initializeBuilder(this);
   }
@@ -1365,6 +1410,7 @@ class GUserArticlesData_user_articles_articleBuilder
       _thumbnail = $v.thumbnail;
       _title = $v.title;
       _url = $v.url;
+      _sentences_type = $v.sentences_type;
       _$v = null;
     }
     return this;
@@ -1397,7 +1443,8 @@ class GUserArticlesData_user_articles_articleBuilder
               thumbnail: thumbnail,
               title: title,
               url: BuiltValueNullFieldError.checkNotNull(
-                  url, r'GUserArticlesData_user_articles_article', 'url'));
+                  url, r'GUserArticlesData_user_articles_article', 'url'),
+              sentences_type: sentences_type);
     } catch (_) {
       late String _$failedField;
       try {
@@ -1756,6 +1803,8 @@ class _$GupsertUserArticlesData_insert_user_articles_one_article
   final String? title;
   @override
   final String url;
+  @override
+  final String? sentences_type;
 
   factory _$GupsertUserArticlesData_insert_user_articles_one_article(
           [void Function(
@@ -1771,7 +1820,8 @@ class _$GupsertUserArticlesData_insert_user_articles_one_article
       this.favicon,
       this.thumbnail,
       this.title,
-      required this.url})
+      required this.url,
+      this.sentences_type})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename,
@@ -1804,7 +1854,8 @@ class _$GupsertUserArticlesData_insert_user_articles_one_article
         favicon == other.favicon &&
         thumbnail == other.thumbnail &&
         title == other.title &&
-        url == other.url;
+        url == other.url &&
+        sentences_type == other.sentences_type;
   }
 
   @override
@@ -1812,11 +1863,13 @@ class _$GupsertUserArticlesData_insert_user_articles_one_article
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
-                    favicon.hashCode),
-                thumbnail.hashCode),
-            title.hashCode),
-        url.hashCode));
+                $jc(
+                    $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
+                        favicon.hashCode),
+                    thumbnail.hashCode),
+                title.hashCode),
+            url.hashCode),
+        sentences_type.hashCode));
   }
 
   @override
@@ -1828,7 +1881,8 @@ class _$GupsertUserArticlesData_insert_user_articles_one_article
           ..add('favicon', favicon)
           ..add('thumbnail', thumbnail)
           ..add('title', title)
-          ..add('url', url))
+          ..add('url', url)
+          ..add('sentences_type', sentences_type))
         .toString();
   }
 }
@@ -1863,6 +1917,11 @@ class GupsertUserArticlesData_insert_user_articles_one_articleBuilder
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
+  String? _sentences_type;
+  String? get sentences_type => _$this._sentences_type;
+  set sentences_type(String? sentences_type) =>
+      _$this._sentences_type = sentences_type;
+
   GupsertUserArticlesData_insert_user_articles_one_articleBuilder() {
     GupsertUserArticlesData_insert_user_articles_one_article._initializeBuilder(
         this);
@@ -1877,6 +1936,7 @@ class GupsertUserArticlesData_insert_user_articles_one_articleBuilder
       _thumbnail = $v.thumbnail;
       _title = $v.title;
       _url = $v.url;
+      _sentences_type = $v.sentences_type;
       _$v = null;
     }
     return this;
@@ -1915,7 +1975,8 @@ class GupsertUserArticlesData_insert_user_articles_one_articleBuilder
               url: BuiltValueNullFieldError.checkNotNull(
                   url,
                   r'GupsertUserArticlesData_insert_user_articles_one_article',
-                  'url'));
+                  'url'),
+              sentences_type: sentences_type);
     } catch (_) {
       late String _$failedField;
       try {
@@ -2593,6 +2654,8 @@ class _$GUserArticleFragmentData_article
   final String? title;
   @override
   final String url;
+  @override
+  final String? sentences_type;
 
   factory _$GUserArticleFragmentData_article(
           [void Function(GUserArticleFragmentData_articleBuilder)? updates]) =>
@@ -2604,7 +2667,8 @@ class _$GUserArticleFragmentData_article
       this.favicon,
       this.thumbnail,
       this.title,
-      required this.url})
+      required this.url,
+      this.sentences_type})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GUserArticleFragmentData_article', 'G__typename');
@@ -2632,7 +2696,8 @@ class _$GUserArticleFragmentData_article
         favicon == other.favicon &&
         thumbnail == other.thumbnail &&
         title == other.title &&
-        url == other.url;
+        url == other.url &&
+        sentences_type == other.sentences_type;
   }
 
   @override
@@ -2640,11 +2705,13 @@ class _$GUserArticleFragmentData_article
     return $jf($jc(
         $jc(
             $jc(
-                $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
-                    favicon.hashCode),
-                thumbnail.hashCode),
-            title.hashCode),
-        url.hashCode));
+                $jc(
+                    $jc($jc($jc(0, G__typename.hashCode), id.hashCode),
+                        favicon.hashCode),
+                    thumbnail.hashCode),
+                title.hashCode),
+            url.hashCode),
+        sentences_type.hashCode));
   }
 
   @override
@@ -2655,7 +2722,8 @@ class _$GUserArticleFragmentData_article
           ..add('favicon', favicon)
           ..add('thumbnail', thumbnail)
           ..add('title', title)
-          ..add('url', url))
+          ..add('url', url)
+          ..add('sentences_type', sentences_type))
         .toString();
   }
 }
@@ -2690,6 +2758,11 @@ class GUserArticleFragmentData_articleBuilder
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
+  String? _sentences_type;
+  String? get sentences_type => _$this._sentences_type;
+  set sentences_type(String? sentences_type) =>
+      _$this._sentences_type = sentences_type;
+
   GUserArticleFragmentData_articleBuilder() {
     GUserArticleFragmentData_article._initializeBuilder(this);
   }
@@ -2703,6 +2776,7 @@ class GUserArticleFragmentData_articleBuilder
       _thumbnail = $v.thumbnail;
       _title = $v.title;
       _url = $v.url;
+      _sentences_type = $v.sentences_type;
       _$v = null;
     }
     return this;
@@ -2734,7 +2808,8 @@ class GUserArticleFragmentData_articleBuilder
               thumbnail: thumbnail,
               title: title,
               url: BuiltValueNullFieldError.checkNotNull(
-                  url, r'GUserArticleFragmentData_article', 'url'));
+                  url, r'GUserArticleFragmentData_article', 'url'),
+              sentences_type: sentences_type);
     } catch (_) {
       late String _$failedField;
       try {

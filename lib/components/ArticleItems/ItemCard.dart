@@ -29,7 +29,7 @@ class ItemCard extends StatelessWidget {
           Hero(
             tag: 'youtube_title_${article.id.value}',
             child: Material(
-              color: Colors.black.withOpacity(0.5),
+              color: Colors.black.withOpacity(0.4),
               child: ItemBar(
                 title: article.title,
                 avatar: article.favicon,

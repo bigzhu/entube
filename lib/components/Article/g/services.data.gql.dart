@@ -50,6 +50,7 @@ abstract class GSentencesData_articles
   String get G__typename;
   _i2.Guuid get id;
   _i3.JsonObject? get sentences;
+  String? get sentences_type;
   String get url;
   static Serializer<GSentencesData_articles> get serializer =>
       _$gSentencesDataArticlesSerializer;

@@ -4,6 +4,7 @@ fragment ArticleFragment on articles {
   thumbnail
   title
   url
+  sentences_type
 }
 
 query Articles($offset: Int = 0, $limit: Int = 10) {

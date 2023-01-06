@@ -102,6 +102,8 @@ abstract class GUserArticlesData_user_articles_article
   String? get title;
   @override
   String get url;
+  @override
+  String? get sentences_type;
   static Serializer<GUserArticlesData_user_articles_article> get serializer =>
       _$gUserArticlesDataUserArticlesArticleSerializer;
   @override
@@ -215,6 +217,8 @@ abstract class GupsertUserArticlesData_insert_user_articles_one_article
   String? get title;
   @override
   String get url;
+  @override
+  String? get sentences_type;
   static Serializer<GupsertUserArticlesData_insert_user_articles_one_article>
       get serializer =>
           _$gupsertUserArticlesDataInsertUserArticlesOneArticleSerializer;
@@ -359,6 +363,7 @@ abstract class GUserArticleFragment_article {
   String? get thumbnail;
   String? get title;
   String get url;
+  String? get sentences_type;
   Map<String, dynamic> toJson();
 }
 
@@ -427,6 +432,8 @@ abstract class GUserArticleFragmentData_article
   String? get title;
   @override
   String get url;
+  @override
+  String? get sentences_type;
   static Serializer<GUserArticleFragmentData_article> get serializer =>
       _$gUserArticleFragmentDataArticleSerializer;
   @override

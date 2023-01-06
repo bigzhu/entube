@@ -59,6 +59,8 @@ abstract class GArticlesData_articles
   String? get title;
   @override
   String get url;
+  @override
+  String? get sentences_type;
   static Serializer<GArticlesData_articles> get serializer =>
       _$gArticlesDataArticlesSerializer;
   @override
@@ -132,6 +134,7 @@ abstract class GArticleFragment {
   String? get thumbnail;
   String? get title;
   String get url;
+  String? get sentences_type;
   Map<String, dynamic> toJson();
 }
 
@@ -160,6 +163,8 @@ abstract class GArticleFragmentData
   String? get title;
   @override
   String get url;
+  @override
+  String? get sentences_type;
   static Serializer<GArticleFragmentData> get serializer =>
       _$gArticleFragmentDataSerializer;
   @override
