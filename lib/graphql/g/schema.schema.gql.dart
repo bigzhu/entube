@@ -189,6 +189,7 @@ abstract class Garticles_bool_exp
   GString_comparison_exp? get favicon;
   Guuid_comparison_exp? get id;
   Gjsonb_comparison_exp? get sentences;
+  GString_comparison_exp? get sentences_type;
   GString_comparison_exp? get thumbnail;
   GString_comparison_exp? get title;
   Gtimestamptz_comparison_exp? get updated_at;
@@ -310,6 +311,7 @@ abstract class Garticles_insert_input
   String? get favicon;
   Guuid? get id;
   _i2.JsonObject? get sentences;
+  String? get sentences_type;
   String? get thumbnail;
   String? get title;
   Gtimestamptz? get updated_at;
@@ -391,6 +393,7 @@ abstract class Garticles_order_by
   Gorder_by? get favicon;
   Gorder_by? get id;
   Gorder_by? get sentences;
+  Gorder_by? get sentences_type;
   Gorder_by? get thumbnail;
   Gorder_by? get title;
   Gorder_by? get updated_at;
@@ -474,6 +477,9 @@ class Garticles_select_column extends EnumClass {
   static const Garticles_select_column sentences =
       _$garticlesSelectColumnsentences;
 
+  static const Garticles_select_column sentences_type =
+      _$garticlesSelectColumnsentences_type;
+
   static const Garticles_select_column thumbnail =
       _$garticlesSelectColumnthumbnail;
 
@@ -508,6 +514,7 @@ abstract class Garticles_set_input
   String? get favicon;
   Guuid? get id;
   _i2.JsonObject? get sentences;
+  String? get sentences_type;
   String? get thumbnail;
   String? get title;
   Gtimestamptz? get updated_at;
@@ -567,6 +574,7 @@ abstract class Garticles_stream_cursor_value_input
   String? get favicon;
   Guuid? get id;
   _i2.JsonObject? get sentences;
+  String? get sentences_type;
   String? get thumbnail;
   String? get title;
   Gtimestamptz? get updated_at;
@@ -604,6 +612,9 @@ class Garticles_update_column extends EnumClass {
 
   static const Garticles_update_column sentences =
       _$garticlesUpdateColumnsentences;
+
+  static const Garticles_update_column sentences_type =
+      _$garticlesUpdateColumnsentences_type;
 
   static const Garticles_update_column thumbnail =
       _$garticlesUpdateColumnthumbnail;

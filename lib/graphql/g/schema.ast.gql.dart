@@ -494,6 +494,15 @@ const articles = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'sentences_type'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'thumbnail'),
       directives: [],
       args: [],
@@ -856,6 +865,15 @@ const articles_bool_exp = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'sentences_type'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String_comparison_exp'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'thumbnail'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -1041,6 +1059,15 @@ const articles_insert_input = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'sentences_type'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'thumbnail'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -1147,6 +1174,15 @@ const articles_max_fields = _i1.ObjectTypeDefinitionNode(
       ),
     ),
     _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'sentences_type'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
       name: _i1.NameNode(value: 'thumbnail'),
       directives: [],
       args: [],
@@ -1240,6 +1276,15 @@ const articles_min_fields = _i1.ObjectTypeDefinitionNode(
       args: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'uuid'),
+        isNonNull: false,
+      ),
+    ),
+    _i1.FieldDefinitionNode(
+      name: _i1.NameNode(value: 'sentences_type'),
+      directives: [],
+      args: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
         isNonNull: false,
       ),
     ),
@@ -1437,6 +1482,15 @@ const articles_order_by = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'sentences_type'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'order_by'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'thumbnail'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -1551,6 +1605,10 @@ const articles_select_column = _i1.EnumTypeDefinitionNode(
       directives: [],
     ),
     _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'sentences_type'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
       name: _i1.NameNode(value: 'thumbnail'),
       directives: [],
     ),
@@ -1626,6 +1684,15 @@ const articles_set_input = _i1.InputObjectTypeDefinitionNode(
       directives: [],
       type: _i1.NamedTypeNode(
         name: _i1.NameNode(value: 'jsonb'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'sentences_type'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
         isNonNull: false,
       ),
       defaultValue: null,
@@ -1760,6 +1827,15 @@ const articles_stream_cursor_value_input = _i1.InputObjectTypeDefinitionNode(
       defaultValue: null,
     ),
     _i1.InputValueDefinitionNode(
+      name: _i1.NameNode(value: 'sentences_type'),
+      directives: [],
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: null,
+    ),
+    _i1.InputValueDefinitionNode(
       name: _i1.NameNode(value: 'thumbnail'),
       directives: [],
       type: _i1.NamedTypeNode(
@@ -1832,6 +1908,10 @@ const articles_update_column = _i1.EnumTypeDefinitionNode(
     ),
     _i1.EnumValueDefinitionNode(
       name: _i1.NameNode(value: 'sentences'),
+      directives: [],
+    ),
+    _i1.EnumValueDefinitionNode(
+      name: _i1.NameNode(value: 'sentences_type'),
       directives: [],
     ),
     _i1.EnumValueDefinitionNode(

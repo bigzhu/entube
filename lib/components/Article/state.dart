@@ -59,18 +59,20 @@ class SentencesSN extends StateNotifier<ArticleModel> {
         final url = article.url;
         if (sentencesJson == null) {
           EasyLoading.show(status: 'Syncing captions from YouTube...');
-          sentencesJson = await fetchYouTubeCaptions(url);
-          if (sentencesJson.isEmpty) {
+          final captions = await fetchYouTubeCaptions(url);
+          if (captions['sentences'].isEmpty) {
             showError("This video don't have any English captions.");
             return;
+          } else {
+            sentencesJson = captions['sentences'];
           }
           EasyLoading.show(status: "Saving video captions...");
-          await saveSentences(sentencesJson);
+          await saveSentences(captions);
           EasyLoading.dismiss();
           // 删除缓存
           client.cache.evict(client.cache.identify(article)!);
         }
-        List<SentenceModel> sentences = sentencesJson.map((e) {
+        List<SentenceModel> sentences = sentencesJson!.map((e) {
           return SentenceModel.fromJson(Map<String, dynamic>.from(e));
         }).toList();
         ref.read(sentencesSP.notifier).state = sentences;
@@ -87,11 +89,12 @@ class SentencesSN extends StateNotifier<ArticleModel> {
 
   void cleanCache() {}
 
-  Future<void> saveSentences(List<dynamic> sentences) async {
+  Future<void> saveSentences(Map<String, dynamic> captions) async {
     final req = GupdateSentencesReq(
       (b) => b
         ..vars.id = Guuid(articleId).toBuilder()
-        ..vars.sentences = JsonObject(sentences),
+        ..vars.sentences_type = captions['sentences_type']
+        ..vars.sentences = JsonObject(captions['sentences']),
     );
     final stream = client.request(req);
     await for (final value in stream) {
@@ -107,7 +110,7 @@ class SentencesSN extends StateNotifier<ArticleModel> {
     }
   }
 
-  Future<List<dynamic>> fetchYouTubeCaptions(String url) async {
+  Future<Map<String, dynamic>> fetchYouTubeCaptions(String url) async {
     final nhostClient = ref.watch(nhostClientP);
     final response = await http.get(
         Uri.parse(

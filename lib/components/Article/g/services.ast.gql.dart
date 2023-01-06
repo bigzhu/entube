@@ -135,6 +135,19 @@ const updateSentences = _i1.OperationDefinitionNode(
       )),
       directives: [],
     ),
+    _i1.VariableDefinitionNode(
+      variable: _i1.VariableNode(name: _i1.NameNode(value: 'sentences_type')),
+      type: _i1.NamedTypeNode(
+        name: _i1.NameNode(value: 'String'),
+        isNonNull: false,
+      ),
+      defaultValue: _i1.DefaultValueNode(
+          value: _i1.StringValueNode(
+        value: '',
+        isBlock: false,
+      )),
+      directives: [],
+    ),
   ],
   directives: [],
   selectionSet: _i1.SelectionSetNode(selections: [
@@ -157,7 +170,12 @@ const updateSentences = _i1.OperationDefinitionNode(
             _i1.ObjectFieldNode(
               name: _i1.NameNode(value: 'sentences'),
               value: _i1.VariableNode(name: _i1.NameNode(value: 'sentences')),
-            )
+            ),
+            _i1.ObjectFieldNode(
+              name: _i1.NameNode(value: 'sentences_type'),
+              value:
+                  _i1.VariableNode(name: _i1.NameNode(value: 'sentences_type')),
+            ),
           ]),
         ),
       ],

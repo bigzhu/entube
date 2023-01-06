@@ -135,6 +135,13 @@ class _$GupdateSentencesVarsSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(_i3.JsonObject)));
     }
+    value = object.sentences_type;
+    if (value != null) {
+      result
+        ..add('sentences_type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -157,6 +164,10 @@ class _$GupdateSentencesVarsSerializer
         case 'sentences':
           result.sentences = serializers.deserialize(value,
               specifiedType: const FullType(_i3.JsonObject)) as _i3.JsonObject?;
+          break;
+        case 'sentences_type':
+          result.sentences_type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -353,12 +364,15 @@ class _$GupdateSentencesVars extends GupdateSentencesVars {
   final _i1.Guuid? id;
   @override
   final _i3.JsonObject? sentences;
+  @override
+  final String? sentences_type;
 
   factory _$GupdateSentencesVars(
           [void Function(GupdateSentencesVarsBuilder)? updates]) =>
       (new GupdateSentencesVarsBuilder()..update(updates))._build();
 
-  _$GupdateSentencesVars._({this.id, this.sentences}) : super._();
+  _$GupdateSentencesVars._({this.id, this.sentences, this.sentences_type})
+      : super._();
 
   @override
   GupdateSentencesVars rebuild(
@@ -374,19 +388,22 @@ class _$GupdateSentencesVars extends GupdateSentencesVars {
     if (identical(other, this)) return true;
     return other is GupdateSentencesVars &&
         id == other.id &&
-        sentences == other.sentences;
+        sentences == other.sentences &&
+        sentences_type == other.sentences_type;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, id.hashCode), sentences.hashCode));
+    return $jf($jc(
+        $jc($jc(0, id.hashCode), sentences.hashCode), sentences_type.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'GupdateSentencesVars')
           ..add('id', id)
-          ..add('sentences', sentences))
+          ..add('sentences', sentences)
+          ..add('sentences_type', sentences_type))
         .toString();
   }
 }
@@ -403,6 +420,11 @@ class GupdateSentencesVarsBuilder
   _i3.JsonObject? get sentences => _$this._sentences;
   set sentences(_i3.JsonObject? sentences) => _$this._sentences = sentences;
 
+  String? _sentences_type;
+  String? get sentences_type => _$this._sentences_type;
+  set sentences_type(String? sentences_type) =>
+      _$this._sentences_type = sentences_type;
+
   GupdateSentencesVarsBuilder();
 
   GupdateSentencesVarsBuilder get _$this {
@@ -410,6 +432,7 @@ class GupdateSentencesVarsBuilder
     if ($v != null) {
       _id = $v.id?.toBuilder();
       _sentences = $v.sentences;
+      _sentences_type = $v.sentences_type;
       _$v = null;
     }
     return this;
@@ -433,7 +456,10 @@ class GupdateSentencesVarsBuilder
     _$GupdateSentencesVars _$result;
     try {
       _$result = _$v ??
-          new _$GupdateSentencesVars._(id: _id?.build(), sentences: sentences);
+          new _$GupdateSentencesVars._(
+              id: _id?.build(),
+              sentences: sentences,
+              sentences_type: sentences_type);
     } catch (_) {
       late String _$failedField;
       try {

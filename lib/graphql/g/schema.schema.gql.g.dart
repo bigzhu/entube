@@ -40,6 +40,8 @@ const Garticles_select_column _$garticlesSelectColumnid =
     const Garticles_select_column._('id');
 const Garticles_select_column _$garticlesSelectColumnsentences =
     const Garticles_select_column._('sentences');
+const Garticles_select_column _$garticlesSelectColumnsentences_type =
+    const Garticles_select_column._('sentences_type');
 const Garticles_select_column _$garticlesSelectColumnthumbnail =
     const Garticles_select_column._('thumbnail');
 const Garticles_select_column _$garticlesSelectColumntitle =
@@ -65,6 +67,8 @@ Garticles_select_column _$garticlesSelectColumnValueOf(String name) {
       return _$garticlesSelectColumnid;
     case 'sentences':
       return _$garticlesSelectColumnsentences;
+    case 'sentences_type':
+      return _$garticlesSelectColumnsentences_type;
     case 'thumbnail':
       return _$garticlesSelectColumnthumbnail;
     case 'title':
@@ -88,6 +92,7 @@ final BuiltSet<Garticles_select_column> _$garticlesSelectColumnValues =
   _$garticlesSelectColumnfavicon,
   _$garticlesSelectColumnid,
   _$garticlesSelectColumnsentences,
+  _$garticlesSelectColumnsentences_type,
   _$garticlesSelectColumnthumbnail,
   _$garticlesSelectColumntitle,
   _$garticlesSelectColumnupdated_at,
@@ -107,6 +112,8 @@ const Garticles_update_column _$garticlesUpdateColumnid =
     const Garticles_update_column._('id');
 const Garticles_update_column _$garticlesUpdateColumnsentences =
     const Garticles_update_column._('sentences');
+const Garticles_update_column _$garticlesUpdateColumnsentences_type =
+    const Garticles_update_column._('sentences_type');
 const Garticles_update_column _$garticlesUpdateColumnthumbnail =
     const Garticles_update_column._('thumbnail');
 const Garticles_update_column _$garticlesUpdateColumntitle =
@@ -132,6 +139,8 @@ Garticles_update_column _$garticlesUpdateColumnValueOf(String name) {
       return _$garticlesUpdateColumnid;
     case 'sentences':
       return _$garticlesUpdateColumnsentences;
+    case 'sentences_type':
+      return _$garticlesUpdateColumnsentences_type;
     case 'thumbnail':
       return _$garticlesUpdateColumnthumbnail;
     case 'title':
@@ -155,6 +164,7 @@ final BuiltSet<Garticles_update_column> _$garticlesUpdateColumnValues =
   _$garticlesUpdateColumnfavicon,
   _$garticlesUpdateColumnid,
   _$garticlesUpdateColumnsentences,
+  _$garticlesUpdateColumnsentences_type,
   _$garticlesUpdateColumnthumbnail,
   _$garticlesUpdateColumntitle,
   _$garticlesUpdateColumnupdated_at,
@@ -3172,6 +3182,13 @@ class _$Garticles_bool_expSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Gjsonb_comparison_exp)));
     }
+    value = object.sentences_type;
+    if (value != null) {
+      result
+        ..add('sentences_type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(GString_comparison_exp)));
+    }
     value = object.thumbnail;
     if (value != null) {
       result
@@ -3282,6 +3299,11 @@ class _$Garticles_bool_expSerializer
           result.sentences.replace(serializers.deserialize(value,
                   specifiedType: const FullType(Gjsonb_comparison_exp))!
               as Gjsonb_comparison_exp);
+          break;
+        case 'sentences_type':
+          result.sentences_type.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(GString_comparison_exp))!
+              as GString_comparison_exp);
           break;
         case 'thumbnail':
           result.thumbnail.replace(serializers.deserialize(value,
@@ -3551,6 +3573,13 @@ class _$Garticles_insert_inputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(_i2.JsonObject)));
     }
+    value = object.sentences_type;
+    if (value != null) {
+      result
+        ..add('sentences_type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.thumbnail;
     if (value != null) {
       result
@@ -3632,6 +3661,10 @@ class _$Garticles_insert_inputSerializer
         case 'sentences':
           result.sentences = serializers.deserialize(value,
               specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
+          break;
+        case 'sentences_type':
+          result.sentences_type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'thumbnail':
           result.thumbnail = serializers.deserialize(value,
@@ -3849,6 +3882,13 @@ class _$Garticles_order_bySerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(Gorder_by)));
     }
+    value = object.sentences_type;
+    if (value != null) {
+      result
+        ..add('sentences_type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Gorder_by)));
+    }
     value = object.thumbnail;
     if (value != null) {
       result
@@ -3928,6 +3968,10 @@ class _$Garticles_order_bySerializer
           break;
         case 'sentences':
           result.sentences = serializers.deserialize(value,
+              specifiedType: const FullType(Gorder_by)) as Gorder_by?;
+          break;
+        case 'sentences_type':
+          result.sentences_type = serializers.deserialize(value,
               specifiedType: const FullType(Gorder_by)) as Gorder_by?;
           break;
         case 'thumbnail':
@@ -4134,6 +4178,13 @@ class _$Garticles_set_inputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(_i2.JsonObject)));
     }
+    value = object.sentences_type;
+    if (value != null) {
+      result
+        ..add('sentences_type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.thumbnail;
     if (value != null) {
       result
@@ -4207,6 +4258,10 @@ class _$Garticles_set_inputSerializer
         case 'sentences':
           result.sentences = serializers.deserialize(value,
               specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
+          break;
+        case 'sentences_type':
+          result.sentences_type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'thumbnail':
           result.thumbnail = serializers.deserialize(value,
@@ -4353,6 +4408,13 @@ class _$Garticles_stream_cursor_value_inputSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(_i2.JsonObject)));
     }
+    value = object.sentences_type;
+    if (value != null) {
+      result
+        ..add('sentences_type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.thumbnail;
     if (value != null) {
       result
@@ -4426,6 +4488,10 @@ class _$Garticles_stream_cursor_value_inputSerializer
         case 'sentences':
           result.sentences = serializers.deserialize(value,
               specifiedType: const FullType(_i2.JsonObject)) as _i2.JsonObject?;
+          break;
+        case 'sentences_type':
+          result.sentences_type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'thumbnail':
           result.thumbnail = serializers.deserialize(value,
@@ -25266,6 +25332,8 @@ class _$Garticles_bool_exp extends Garticles_bool_exp {
   @override
   final Gjsonb_comparison_exp? sentences;
   @override
+  final GString_comparison_exp? sentences_type;
+  @override
   final GString_comparison_exp? thumbnail;
   @override
   final GString_comparison_exp? title;
@@ -25294,6 +25362,7 @@ class _$Garticles_bool_exp extends Garticles_bool_exp {
       this.favicon,
       this.id,
       this.sentences,
+      this.sentences_type,
       this.thumbnail,
       this.title,
       this.updated_at,
@@ -25325,6 +25394,7 @@ class _$Garticles_bool_exp extends Garticles_bool_exp {
         favicon == other.favicon &&
         id == other.id &&
         sentences == other.sentences &&
+        sentences_type == other.sentences_type &&
         thumbnail == other.thumbnail &&
         title == other.title &&
         updated_at == other.updated_at &&
@@ -25352,17 +25422,21 @@ class _$Garticles_bool_exp extends Garticles_bool_exp {
                                                         $jc(
                                                             $jc(
                                                                 $jc(
-                                                                    0,
-                                                                    G_and
+                                                                    $jc(
+                                                                        0,
+                                                                        G_and
+                                                                            .hashCode),
+                                                                    G_not
                                                                         .hashCode),
-                                                                G_not.hashCode),
-                                                            G_or.hashCode),
-                                                        created_at.hashCode),
-                                                    created_by.hashCode),
-                                                deleted_at.hashCode),
-                                            favicon.hashCode),
-                                        id.hashCode),
-                                    sentences.hashCode),
+                                                                G_or.hashCode),
+                                                            created_at
+                                                                .hashCode),
+                                                        created_by.hashCode),
+                                                    deleted_at.hashCode),
+                                                favicon.hashCode),
+                                            id.hashCode),
+                                        sentences.hashCode),
+                                    sentences_type.hashCode),
                                 thumbnail.hashCode),
                             title.hashCode),
                         updated_at.hashCode),
@@ -25384,6 +25458,7 @@ class _$Garticles_bool_exp extends Garticles_bool_exp {
           ..add('favicon', favicon)
           ..add('id', id)
           ..add('sentences', sentences)
+          ..add('sentences_type', sentences_type)
           ..add('thumbnail', thumbnail)
           ..add('title', title)
           ..add('updated_at', updated_at)
@@ -25449,6 +25524,12 @@ class Garticles_bool_expBuilder
   set sentences(Gjsonb_comparison_expBuilder? sentences) =>
       _$this._sentences = sentences;
 
+  GString_comparison_expBuilder? _sentences_type;
+  GString_comparison_expBuilder get sentences_type =>
+      _$this._sentences_type ??= new GString_comparison_expBuilder();
+  set sentences_type(GString_comparison_expBuilder? sentences_type) =>
+      _$this._sentences_type = sentences_type;
+
   GString_comparison_expBuilder? _thumbnail;
   GString_comparison_expBuilder get thumbnail =>
       _$this._thumbnail ??= new GString_comparison_expBuilder();
@@ -25505,6 +25586,7 @@ class Garticles_bool_expBuilder
       _favicon = $v.favicon?.toBuilder();
       _id = $v.id?.toBuilder();
       _sentences = $v.sentences?.toBuilder();
+      _sentences_type = $v.sentences_type?.toBuilder();
       _thumbnail = $v.thumbnail?.toBuilder();
       _title = $v.title?.toBuilder();
       _updated_at = $v.updated_at?.toBuilder();
@@ -25545,6 +25627,7 @@ class Garticles_bool_expBuilder
               favicon: _favicon?.build(),
               id: _id?.build(),
               sentences: _sentences?.build(),
+              sentences_type: _sentences_type?.build(),
               thumbnail: _thumbnail?.build(),
               title: _title?.build(),
               updated_at: _updated_at?.build(),
@@ -25573,6 +25656,8 @@ class Garticles_bool_expBuilder
         _id?.build();
         _$failedField = 'sentences';
         _sentences?.build();
+        _$failedField = 'sentences_type';
+        _sentences_type?.build();
         _$failedField = 'thumbnail';
         _thumbnail?.build();
         _$failedField = 'title';
@@ -25871,6 +25956,8 @@ class _$Garticles_insert_input extends Garticles_insert_input {
   @override
   final _i2.JsonObject? sentences;
   @override
+  final String? sentences_type;
+  @override
   final String? thumbnail;
   @override
   final String? title;
@@ -25894,6 +25981,7 @@ class _$Garticles_insert_input extends Garticles_insert_input {
       this.favicon,
       this.id,
       this.sentences,
+      this.sentences_type,
       this.thumbnail,
       this.title,
       this.updated_at,
@@ -25921,6 +26009,7 @@ class _$Garticles_insert_input extends Garticles_insert_input {
         favicon == other.favicon &&
         id == other.id &&
         sentences == other.sentences &&
+        sentences_type == other.sentences_type &&
         thumbnail == other.thumbnail &&
         title == other.title &&
         updated_at == other.updated_at &&
@@ -25941,12 +26030,14 @@ class _$Garticles_insert_input extends Garticles_insert_input {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, created_at.hashCode),
-                                                created_by.hashCode),
-                                            deleted_at.hashCode),
-                                        favicon.hashCode),
-                                    id.hashCode),
-                                sentences.hashCode),
+                                            $jc(
+                                                $jc($jc(0, created_at.hashCode),
+                                                    created_by.hashCode),
+                                                deleted_at.hashCode),
+                                            favicon.hashCode),
+                                        id.hashCode),
+                                    sentences.hashCode),
+                                sentences_type.hashCode),
                             thumbnail.hashCode),
                         title.hashCode),
                     updated_at.hashCode),
@@ -25964,6 +26055,7 @@ class _$Garticles_insert_input extends Garticles_insert_input {
           ..add('favicon', favicon)
           ..add('id', id)
           ..add('sentences', sentences)
+          ..add('sentences_type', sentences_type)
           ..add('thumbnail', thumbnail)
           ..add('title', title)
           ..add('updated_at', updated_at)
@@ -26006,6 +26098,11 @@ class Garticles_insert_inputBuilder
   _i2.JsonObject? get sentences => _$this._sentences;
   set sentences(_i2.JsonObject? sentences) => _$this._sentences = sentences;
 
+  String? _sentences_type;
+  String? get sentences_type => _$this._sentences_type;
+  set sentences_type(String? sentences_type) =>
+      _$this._sentences_type = sentences_type;
+
   String? _thumbnail;
   String? get thumbnail => _$this._thumbnail;
   set thumbnail(String? thumbnail) => _$this._thumbnail = thumbnail;
@@ -26047,6 +26144,7 @@ class Garticles_insert_inputBuilder
       _favicon = $v.favicon;
       _id = $v.id?.toBuilder();
       _sentences = $v.sentences;
+      _sentences_type = $v.sentences_type;
       _thumbnail = $v.thumbnail;
       _title = $v.title;
       _updated_at = $v.updated_at?.toBuilder();
@@ -26083,6 +26181,7 @@ class Garticles_insert_inputBuilder
               favicon: favicon,
               id: _id?.build(),
               sentences: sentences,
+              sentences_type: sentences_type,
               thumbnail: thumbnail,
               title: title,
               updated_at: _updated_at?.build(),
@@ -26377,6 +26476,8 @@ class _$Garticles_order_by extends Garticles_order_by {
   @override
   final Gorder_by? sentences;
   @override
+  final Gorder_by? sentences_type;
+  @override
   final Gorder_by? thumbnail;
   @override
   final Gorder_by? title;
@@ -26400,6 +26501,7 @@ class _$Garticles_order_by extends Garticles_order_by {
       this.favicon,
       this.id,
       this.sentences,
+      this.sentences_type,
       this.thumbnail,
       this.title,
       this.updated_at,
@@ -26427,6 +26529,7 @@ class _$Garticles_order_by extends Garticles_order_by {
         favicon == other.favicon &&
         id == other.id &&
         sentences == other.sentences &&
+        sentences_type == other.sentences_type &&
         thumbnail == other.thumbnail &&
         title == other.title &&
         updated_at == other.updated_at &&
@@ -26447,12 +26550,14 @@ class _$Garticles_order_by extends Garticles_order_by {
                                 $jc(
                                     $jc(
                                         $jc(
-                                            $jc($jc(0, created_at.hashCode),
-                                                created_by.hashCode),
-                                            deleted_at.hashCode),
-                                        favicon.hashCode),
-                                    id.hashCode),
-                                sentences.hashCode),
+                                            $jc(
+                                                $jc($jc(0, created_at.hashCode),
+                                                    created_by.hashCode),
+                                                deleted_at.hashCode),
+                                            favicon.hashCode),
+                                        id.hashCode),
+                                    sentences.hashCode),
+                                sentences_type.hashCode),
                             thumbnail.hashCode),
                         title.hashCode),
                     updated_at.hashCode),
@@ -26470,6 +26575,7 @@ class _$Garticles_order_by extends Garticles_order_by {
           ..add('favicon', favicon)
           ..add('id', id)
           ..add('sentences', sentences)
+          ..add('sentences_type', sentences_type)
           ..add('thumbnail', thumbnail)
           ..add('title', title)
           ..add('updated_at', updated_at)
@@ -26507,6 +26613,11 @@ class Garticles_order_byBuilder
   Gorder_by? _sentences;
   Gorder_by? get sentences => _$this._sentences;
   set sentences(Gorder_by? sentences) => _$this._sentences = sentences;
+
+  Gorder_by? _sentences_type;
+  Gorder_by? get sentences_type => _$this._sentences_type;
+  set sentences_type(Gorder_by? sentences_type) =>
+      _$this._sentences_type = sentences_type;
 
   Gorder_by? _thumbnail;
   Gorder_by? get thumbnail => _$this._thumbnail;
@@ -26547,6 +26658,7 @@ class Garticles_order_byBuilder
       _favicon = $v.favicon;
       _id = $v.id;
       _sentences = $v.sentences;
+      _sentences_type = $v.sentences_type;
       _thumbnail = $v.thumbnail;
       _title = $v.title;
       _updated_at = $v.updated_at;
@@ -26583,6 +26695,7 @@ class Garticles_order_byBuilder
               favicon: favicon,
               id: id,
               sentences: sentences,
+              sentences_type: sentences_type,
               thumbnail: thumbnail,
               title: title,
               updated_at: updated_at,
@@ -26794,6 +26907,8 @@ class _$Garticles_set_input extends Garticles_set_input {
   @override
   final _i2.JsonObject? sentences;
   @override
+  final String? sentences_type;
+  @override
   final String? thumbnail;
   @override
   final String? title;
@@ -26815,6 +26930,7 @@ class _$Garticles_set_input extends Garticles_set_input {
       this.favicon,
       this.id,
       this.sentences,
+      this.sentences_type,
       this.thumbnail,
       this.title,
       this.updated_at,
@@ -26841,6 +26957,7 @@ class _$Garticles_set_input extends Garticles_set_input {
         favicon == other.favicon &&
         id == other.id &&
         sentences == other.sentences &&
+        sentences_type == other.sentences_type &&
         thumbnail == other.thumbnail &&
         title == other.title &&
         updated_at == other.updated_at &&
@@ -26859,12 +26976,14 @@ class _$Garticles_set_input extends Garticles_set_input {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, created_at.hashCode),
-                                            created_by.hashCode),
-                                        deleted_at.hashCode),
-                                    favicon.hashCode),
-                                id.hashCode),
-                            sentences.hashCode),
+                                        $jc(
+                                            $jc($jc(0, created_at.hashCode),
+                                                created_by.hashCode),
+                                            deleted_at.hashCode),
+                                        favicon.hashCode),
+                                    id.hashCode),
+                                sentences.hashCode),
+                            sentences_type.hashCode),
                         thumbnail.hashCode),
                     title.hashCode),
                 updated_at.hashCode),
@@ -26881,6 +27000,7 @@ class _$Garticles_set_input extends Garticles_set_input {
           ..add('favicon', favicon)
           ..add('id', id)
           ..add('sentences', sentences)
+          ..add('sentences_type', sentences_type)
           ..add('thumbnail', thumbnail)
           ..add('title', title)
           ..add('updated_at', updated_at)
@@ -26922,6 +27042,11 @@ class Garticles_set_inputBuilder
   _i2.JsonObject? get sentences => _$this._sentences;
   set sentences(_i2.JsonObject? sentences) => _$this._sentences = sentences;
 
+  String? _sentences_type;
+  String? get sentences_type => _$this._sentences_type;
+  set sentences_type(String? sentences_type) =>
+      _$this._sentences_type = sentences_type;
+
   String? _thumbnail;
   String? get thumbnail => _$this._thumbnail;
   set thumbnail(String? thumbnail) => _$this._thumbnail = thumbnail;
@@ -26955,6 +27080,7 @@ class Garticles_set_inputBuilder
       _favicon = $v.favicon;
       _id = $v.id?.toBuilder();
       _sentences = $v.sentences;
+      _sentences_type = $v.sentences_type;
       _thumbnail = $v.thumbnail;
       _title = $v.title;
       _updated_at = $v.updated_at?.toBuilder();
@@ -26990,6 +27116,7 @@ class Garticles_set_inputBuilder
               favicon: favicon,
               id: _id?.build(),
               sentences: sentences,
+              sentences_type: sentences_type,
               thumbnail: thumbnail,
               title: title,
               updated_at: _updated_at?.build(),
@@ -27152,6 +27279,8 @@ class _$Garticles_stream_cursor_value_input
   @override
   final _i2.JsonObject? sentences;
   @override
+  final String? sentences_type;
+  @override
   final String? thumbnail;
   @override
   final String? title;
@@ -27175,6 +27304,7 @@ class _$Garticles_stream_cursor_value_input
       this.favicon,
       this.id,
       this.sentences,
+      this.sentences_type,
       this.thumbnail,
       this.title,
       this.updated_at,
@@ -27201,6 +27331,7 @@ class _$Garticles_stream_cursor_value_input
         favicon == other.favicon &&
         id == other.id &&
         sentences == other.sentences &&
+        sentences_type == other.sentences_type &&
         thumbnail == other.thumbnail &&
         title == other.title &&
         updated_at == other.updated_at &&
@@ -27219,12 +27350,14 @@ class _$Garticles_stream_cursor_value_input
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, created_at.hashCode),
-                                            created_by.hashCode),
-                                        deleted_at.hashCode),
-                                    favicon.hashCode),
-                                id.hashCode),
-                            sentences.hashCode),
+                                        $jc(
+                                            $jc($jc(0, created_at.hashCode),
+                                                created_by.hashCode),
+                                            deleted_at.hashCode),
+                                        favicon.hashCode),
+                                    id.hashCode),
+                                sentences.hashCode),
+                            sentences_type.hashCode),
                         thumbnail.hashCode),
                     title.hashCode),
                 updated_at.hashCode),
@@ -27241,6 +27374,7 @@ class _$Garticles_stream_cursor_value_input
           ..add('favicon', favicon)
           ..add('id', id)
           ..add('sentences', sentences)
+          ..add('sentences_type', sentences_type)
           ..add('thumbnail', thumbnail)
           ..add('title', title)
           ..add('updated_at', updated_at)
@@ -27284,6 +27418,11 @@ class Garticles_stream_cursor_value_inputBuilder
   _i2.JsonObject? get sentences => _$this._sentences;
   set sentences(_i2.JsonObject? sentences) => _$this._sentences = sentences;
 
+  String? _sentences_type;
+  String? get sentences_type => _$this._sentences_type;
+  set sentences_type(String? sentences_type) =>
+      _$this._sentences_type = sentences_type;
+
   String? _thumbnail;
   String? get thumbnail => _$this._thumbnail;
   set thumbnail(String? thumbnail) => _$this._thumbnail = thumbnail;
@@ -27317,6 +27456,7 @@ class Garticles_stream_cursor_value_inputBuilder
       _favicon = $v.favicon;
       _id = $v.id?.toBuilder();
       _sentences = $v.sentences;
+      _sentences_type = $v.sentences_type;
       _thumbnail = $v.thumbnail;
       _title = $v.title;
       _updated_at = $v.updated_at?.toBuilder();
@@ -27353,6 +27493,7 @@ class Garticles_stream_cursor_value_inputBuilder
               favicon: favicon,
               id: _id?.build(),
               sentences: sentences,
+              sentences_type: sentences_type,
               thumbnail: thumbnail,
               title: title,
               updated_at: _updated_at?.build(),

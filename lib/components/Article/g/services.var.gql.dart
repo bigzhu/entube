@@ -62,6 +62,7 @@ abstract class GupdateSentencesVars
 
   _i1.Guuid? get id;
   _i3.JsonObject? get sentences;
+  String? get sentences_type;
   static Serializer<GupdateSentencesVars> get serializer =>
       _$gupdateSentencesVarsSerializer;
   Map<String, dynamic> toJson() => (_i2.serializers.serializeWith(

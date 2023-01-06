@@ -109,6 +109,7 @@ type articles {
     """JSON select path"""
     path: String
   ): jsonb
+  sentences_type: String
   thumbnail: String
   title: String
   updated_at: timestamptz!
@@ -187,6 +188,7 @@ input articles_bool_exp {
   favicon: String_comparison_exp
   id: uuid_comparison_exp
   sentences: jsonb_comparison_exp
+  sentences_type: String_comparison_exp
   thumbnail: String_comparison_exp
   title: String_comparison_exp
   updated_at: timestamptz_comparison_exp
@@ -242,6 +244,7 @@ input articles_insert_input {
   favicon: String
   id: uuid
   sentences: jsonb
+  sentences_type: String
   thumbnail: String
   title: String
   updated_at: timestamptz
@@ -257,6 +260,7 @@ type articles_max_fields {
   deleted_at: timestamptz
   favicon: String
   id: uuid
+  sentences_type: String
   thumbnail: String
   title: String
   updated_at: timestamptz
@@ -271,6 +275,7 @@ type articles_min_fields {
   deleted_at: timestamptz
   favicon: String
   id: uuid
+  sentences_type: String
   thumbnail: String
   title: String
   updated_at: timestamptz
@@ -316,6 +321,7 @@ input articles_order_by {
   favicon: order_by
   id: order_by
   sentences: order_by
+  sentences_type: order_by
   thumbnail: order_by
   title: order_by
   updated_at: order_by
@@ -357,6 +363,9 @@ enum articles_select_column {
   sentences
 
   """column name"""
+  sentences_type
+
+  """column name"""
   thumbnail
 
   """column name"""
@@ -382,6 +391,7 @@ input articles_set_input {
   favicon: String
   id: uuid
   sentences: jsonb
+  sentences_type: String
   thumbnail: String
   title: String
   updated_at: timestamptz
@@ -408,6 +418,7 @@ input articles_stream_cursor_value_input {
   favicon: String
   id: uuid
   sentences: jsonb
+  sentences_type: String
   thumbnail: String
   title: String
   updated_at: timestamptz
@@ -436,6 +447,9 @@ enum articles_update_column {
 
   """column name"""
   sentences
+
+  """column name"""
+  sentences_type
 
   """column name"""
   thumbnail

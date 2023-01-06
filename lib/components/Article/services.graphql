@@ -10,10 +10,15 @@ mutation insertArticles($object: articles_insert_input = {}) {
     id
   }
 }
-mutation updateSentences($id: uuid = "", $sentences: jsonb = "") {
+
+mutation updateSentences(
+  $id: uuid = ""
+  $sentences: jsonb = ""
+  $sentences_type: String = ""
+) {
   update_articles_by_pk(
     pk_columns: { id: $id }
-    _set: { sentences: $sentences }
+    _set: { sentences: $sentences, sentences_type: $sentences_type }
   ) {
     id
   }
