@@ -140,7 +140,7 @@ class _YouTubePlayerState extends ConsumerState<MyYoutubePlayer>
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("userArticle.play_at=${userArticle.play_at}");
+    debugPrint("build YouTubePlayer");
     //获取 sentences
     sentences = ref.watch(sentencesSP);
     Future(() {
@@ -158,9 +158,10 @@ class _YouTubePlayerState extends ConsumerState<MyYoutubePlayer>
           controller.addListener(() {
             int seconds = controller.value.position.inSeconds;
             if (seconds != 0) {
+              if (seconds == userArticle.play_at) return;
               if (seconds != userArticle.play_at) {
                 userArticle = userArticle.rebuild((b) => b..play_at = seconds);
-                updatePlayAt();
+                //updatePlayAt();
               }
               definePlaydingSentence();
             }
@@ -192,7 +193,7 @@ class _YouTubePlayerState extends ConsumerState<MyYoutubePlayer>
   @override
   void dispose() {
     // 更新阅读位置
-    //updatePlayAt();
+    updatePlayAt();
     //取消监听
     //streamSubscription.cancel();
     super.dispose();
