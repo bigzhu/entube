@@ -192,11 +192,11 @@ class _YouTubePlayerState extends ConsumerState<MyYoutubePlayer>
 
   @override
   void dispose() {
+    super.dispose();
     // 更新阅读位置
     updatePlayAt();
     //取消监听
     //streamSubscription.cancel();
-    super.dispose();
     WidgetsBinding.instance.removeObserver(this);
   }
 }
