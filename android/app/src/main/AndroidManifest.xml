@@ -30,12 +30,13 @@
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
-      <intent-filter android:label="string/filter_view_oauth_entube">
+      <intent-filter android:autoVerify="true">
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
-        <!-- Accepts URIs that begin with "entube://oauth.login.success” -->
-        <data android:scheme="entube" android:host="oauth.login.success" />
+        <data android:scheme="entube" />
+        <data android:host="oauth.login.success" />
+        <data android:host="oauth.login.failure" />
       </intent-filter>
     </activity>
     <!-- Don't delete the meta-data below.
