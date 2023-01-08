@@ -30,6 +30,7 @@ final List<String> noNeedBlank = [
   ":",
   "…",
   "%",
+  "na",
 ];
 final RegExp regHasLetter = RegExp(r"[a-zA-Z]{1}");
 final RegExp regNumber = RegExp(r'^[0-9]+$');
