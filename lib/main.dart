@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:logging/logging.dart';
+
 import 'package:app_links/app_links.dart';
 import 'package:entube/components/Auth/index.dart';
 import 'package:entube/components/LogoLoading.dart';
@@ -19,6 +21,8 @@ import 'package:http/http.dart' as http;
 import 'package:receive_sharing_intent/receive_sharing_intent.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+
+import 'utils/nhost/nhost_sdk/src/logging.dart';
 
 //import './article_items_page.dart';
 //import './acquiring_words_page.dart';
@@ -64,6 +68,11 @@ class MyApp extends HookConsumerWidget {
           }
           closeInAppWebView();
         });
+        // logging
+        Logger.root.level = Level.ALL; // defaults to Level.INFO
+        Logger.root.onRecord.listen((record) {
+          print('${record.level.name}: ${record.time}: ${record.message}');
+        });
         // set EasyLoading style
         EasyLoading.instance
           ..boxShadow = <
@@ -72,6 +81,7 @@ class MyApp extends HookConsumerWidget {
           ..textColor = Colors.white
           ..indicatorColor = Colors.white
           ..backgroundColor = Colors.black.withOpacity(0.3);
+
         return () {
           intentDataStreamSubscription.cancel();
           linkSubscription.cancel();

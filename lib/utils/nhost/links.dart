@@ -5,7 +5,6 @@ import 'package:gql_http_link/gql_http_link.dart' as ghl;
 import 'package:gql_link/gql_link.dart';
 import 'package:gql_websocket_link/gql_websocket_link.dart';
 import 'package:http/http.dart' as http;
-import 'package:meta/meta.dart';
 import 'package:entube/utils/nhost/nhost_sdk/nhost_sdk.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 import './nhost_sdk/src/logging.dart';

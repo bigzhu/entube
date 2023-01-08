@@ -634,6 +634,8 @@ class AuthClient {
     log.finest('Setting session, accessToken.hashCode='
         '${identityHashCode(session.accessToken)}');
 
+    log.finest('setSession session.accessToken=${session.accessToken}');
+
     final previouslyAuthenticated = authenticationState;
     _session.session = session;
     _currentUser = session.user;
