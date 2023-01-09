@@ -1,6 +1,11 @@
 /// Serialization for core dart types
 library foundation;
 
+Duration? durationFromSeconds(int? seconds) =>
+    seconds == null ? null : Duration(seconds: seconds);
+
+int? durationToSeconds(Duration? duration) => duration?.inSeconds;
+
 /// Deserializes a millisecond integer into a [Duration].
 Duration? durationFromMs(int? milliseconds) =>
     milliseconds == null ? null : Duration(milliseconds: milliseconds);

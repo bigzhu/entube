@@ -67,7 +67,7 @@ class Session {
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'accessToken': accessToken,
-      'accessTokenExpiresIn': durationToMs(accessTokenExpiresIn),
+      'accessTokenExpiresIn': durationToSeconds(accessTokenExpiresIn),
       'refreshToken': refreshToken,
       'user': user?.toJson(),
     };
@@ -77,7 +77,7 @@ class Session {
     return Session(
       accessToken: json['accessToken'] as String?,
       accessTokenExpiresIn:
-          durationFromMs(json['accessTokenExpiresIn'] as int?),
+          durationFromSeconds(json['accessTokenExpiresIn'] as int?),
       refreshToken: json['refreshToken'] as String?,
       user: json['user'] == null
           ? null

@@ -22,8 +22,6 @@ import 'package:receive_sharing_intent/receive_sharing_intent.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
-import 'utils/nhost/nhost_sdk/src/logging.dart';
-
 //import './article_items_page.dart';
 //import './acquiring_words_page.dart';
 //import '../components/PageRoute/provider.dart';
@@ -71,7 +69,7 @@ class MyApp extends HookConsumerWidget {
         // logging
         Logger.root.level = Level.ALL; // defaults to Level.INFO
         Logger.root.onRecord.listen((record) {
-          print('${record.level.name}: ${record.time}: ${record.message}');
+          debugPrint('${record.level.name}: ${record.time}: ${record.message}');
         });
         // set EasyLoading style
         EasyLoading.instance
