@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:entube/utils/index.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 
@@ -607,6 +609,16 @@ class AuthClient {
       if (e is ApiException && e.statusCode == unauthorizedStatus) {
         log.finest('Unauthorized refresh token. Forcing signout.');
         await signOut();
+      } else {
+        // 如果是其他异常, 等待后再次尝试
+        EasyLoading.showError(
+            'There is a network anomaly, preparing for automatic retry: $e',
+            duration: const Duration(seconds: 10),
+            dismissOnTap: true);
+        log.warning("$e");
+        Future.delayed(const Duration(seconds: 10), () {
+          _refreshSession();
+        });
       }
 
       log.severe('Exception during token refresh', e, st);
